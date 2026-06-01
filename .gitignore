@@ -1,0 +1,48 @@
+# Secrets
+.env
+*.env
+!.env.example
+secrets/
+*.pem
+*.key
+id_rsa*
+
+# Datasets and local generated artifacts
+/raw_datasets/
+/server_upload/
+/images/
+/server_package/
+/annotations_trainval2014.zip
+/pave_opd_server_package.zip
+/pave_opd_server_package.tar.gz
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Training outputs, logs, and caches
+outputs/
+logs/
+cache/
+wandb/
+.cache/
+
+# Model/checkpoint artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,59 @@
+student_model_name_or_path: Qwen/Qwen3-VL-8B-Instruct
+teacher_model_name_or_path:
+
+stage: sft
+train_file: data/pave_opd_train.jsonl
+image_root: .
+output_dir: outputs/pave_opd_qwen3vl8b_student_only
+
+bf16: true
+load_in_4bit: false
+gradient_checkpointing: true
+trust_remote_code: true
+
+freeze_vision_tower: true
+train_projector: true
+use_lora: true
+lora_rank: 64
+lora_alpha: 128
+lora_dropout: 0.05
+lora_target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+
+max_length: 4096
+max_new_tokens: 160
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 32
+num_train_epochs: 1
+max_steps: -1
+learning_rate: 1.0e-5
+weight_decay: 0.0
+warmup_ratio: 0.03
+max_grad_norm: 1.0
+logging_steps: 5
+save_steps: 200
+seed: 42
+
+num_rollouts: 1
+rollout_temperature: 0.7
+rollout_top_p: 0.9
+failure_rollout_weight: 1.0
+success_rollout_weight: 0.25
+opd_beta: 1.0
+sft_anchor_weight: 0.2
+unlikelihood_weight: 0.05
+phrase_weight: 3.0
+ocr_value_weight: 4.0
+refusal_weight: 3.0
+entropy_threshold: 4.0
+entropy_temperature: 0.5
+visual_advantage_scale: 0.0
+visual_advantage_temperature: 1.0
+disable_visual_advantage: true
+opd_on_failures_only: false
