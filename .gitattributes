@@ -1,14 +1,10 @@
 * text=auto eol=lf
-
-*.pdf binary
-*.jpg binary
-*.jpeg binary
+*.mp4 binary
+*.m4a binary
 *.png binary
-*.zip binary
-*.tar binary
-*.gz binary
-*.pt binary
-*.pth binary
-*.ckpt binary
-*.safetensors binary
-*.bin binary
+*.jpg binary
+*.webp binary
+*.docx binary
+*.xlsx binary
+public/media/** linguist-generated=true
+public/worlds/** linguist-generated=true
