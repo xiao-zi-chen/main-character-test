@@ -10,7 +10,7 @@ function answersFor(role) {
   dimensions.forEach((dimension,index)=>{
     const items=questions.filter(question=>question.dimension===dimension.id);
     const positive=Math.round(role.profile[index]/100*items.length);
-    items.forEach((question,i)=>{ answers[question.id]=i<positive?question.highAnswer:question.highAnswer==='A'?'B':'A'; });
+    items.forEach((question,i)=>{ const endpoint=i<positive?question.highAnswer:question.highAnswer==='A'?'B':'A';answers[question.id]=endpoint==='A'?0:14; });
   });
   return answers;
 }
@@ -30,7 +30,7 @@ test('exported portraits preserve every pixel of all twenty original covers', as
   await page.addInitScript(({key,profiles,hiddenKey,hiddenIds})=>{
     const role=new URL(location.href).searchParams.get('shareCardRole');
     if(profiles[role]) {
-      localStorage.setItem(key,JSON.stringify({version:1,answers:profiles[role],index:39}));
+      localStorage.setItem(key,JSON.stringify({version:2,answers:profiles[role],index:39,submitted:true}));
       localStorage.setItem(hiddenKey,JSON.stringify({version:1,enabled:hiddenIds.includes(role),unlocked:[]}));
     }
   },{key:STORAGE_KEY,profiles,hiddenKey:HIDDEN_STORAGE_KEY,hiddenIds:roles.filter(role=>role.hidden).map(role=>role.id)});

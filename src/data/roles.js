@@ -1,4 +1,5 @@
 import { season2Roles } from './roles-season2.js';
+import { mediaBaseUrl } from '../runtime-config.js';
 // Creative character prototypes. Order: explore, order, logic, imagine,
 // social, steady, purpose, freedom, boundary, focus. Values are 0–100.
 export const roles = [
@@ -159,4 +160,4 @@ export const regularRoles = roles.filter(role => !role.hidden);
 export const hiddenRoles = roles.filter(role => role.hidden);
 
 export const roleById = Object.fromEntries(roles.map(role => [role.id, role]));
-export const mediaPath = (role, extension = 'mp4', revision) => `${import.meta.env?.BASE_URL ?? '/'}media/${role.id}.${extension}${revision ? `?v=${encodeURIComponent(revision)}` : ''}`;
+export const mediaPath = (role, extension = 'mp4', revision) => `${mediaBaseUrl()}media/${role.id}.${extension}${revision ? `?v=${encodeURIComponent(revision)}` : ''}`;

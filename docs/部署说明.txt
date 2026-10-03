@@ -1,19 +1,48 @@
-主角请就位 · 第二季二十角色完整部署版
+主角请就位 · 第二季二十角色与 NBTI 数据收集版
 
 作者：陈嘉恒、卜俊程、李家兴、肖宇诚
 
-此 ZIP 是已经构建完成的静态网站，包含 40 道题、18 个常规结果、2 个隐藏结果及全部二十条角色影片。
+网站包含 40 道题、18 个常规结果、2 个隐藏结果及全部二十条角色影片。
+每题采用 15 档量表（0～14，7 为中立），保留原两种行为作为左右端点。
+角色原型、权重、稳定排序及隐藏阈值保持原样。
+调整量表只保存本地草稿，点击下一题或最终揭晓时才记录当前数值与本题累计用时。
 第一季影片为 10 秒，第二季影片为 15 秒原生对白版。人物画像和分享卡均完整保留竖图。
 
-部署：
-1. 选择静态网站或直接上传部署方式。
-2. 支持 ZIP 的平台可直接上传；需要文件夹的平台先解压，再上传内部全部内容。
-3. 保持 index.html 与 assets、media、worlds 文件夹同级，位于网站发布根目录。
-4. 此包已经构建，构建命令留空，不需要安装 Node.js、Python、FFmpeg 或数据库。
-5. 使用平台提供的公网域名访问。旧网站更新时上传本次完整文件，并刷新浏览器加载新页面脚本。
+源码维护：
+main-character-test/ 是可编辑的 React 源码，public/collector.js 是真实采集脚本。
+前端开发和构建需要 Node.js 22.12+，实际采集还需要 NBTI 根目录的 Node.js 接口及 MySQL。
+在源码目录依次执行 npm ci、npm test、npm run build；dist/ 是源码的构建输出。
+修改源码后，在 NBTI 根目录执行 npm run frontend:build。
+该命令运行 scripts/build-frontend.mjs，构建源码 dist/，同步根 index.html、assets/、
+collector.js、favicon.svg 和最终显示题库，旧产物备份到 .local/frontend-backups/。
+scripts/instrument-bundle.mjs 仅保留为历史静态注入工具，当前源码构建不再使用它。
+
+本地开发与预览：
+1. 在 NBTI 根目录首次运行 npm ci，然后运行 npm run local:start。
+2. 在 main-character-test/ 首次运行 npm ci，然后运行 npm run dev。
+3. 构建后可运行 npm run preview；dev 和 preview 都代理本机 127.0.0.1:3000。
+4. 按终端显示的地址访问；根服务提供采集 API 与 public-config.js 运行时配置。
+5. 未启动根服务时只能预览页面，采集队列暂存在浏览器中，无法入库。
+Windows PowerShell 可使用 npm.cmd 执行上述命令。
+
+正式部署：
+已有 A/B 数据库先执行 npm run local:stop -- -AppOnly，再执行 npm run db:migrate:local，
+保留 MySQL 运行，迁移将删除旧答卷。
+首次空库部署只导入 db/schema.sql；详情见根目录 DATABASE.txt。
+使用 NBTI 根目录构建产物和 Node.js 服务提供页面及接口，数据库使用 MySQL。
+云服务器与 COS 的发布包、媒体目录和运行配置见 NBTI 根目录 CLOUD_DEPLOY.txt。
+public-config.js 在运行时由根 Node.js 生成；源码静态占位仅回退到本地媒体，不含任何凭据。
+原静态部署 ZIP 和 GitHub Pages 可用于页面及媒体预览；纯静态网站不提供采集入库能力。
+仅预览时保持 index.html、collector.js、public-config.js 与 assets、media、worlds 同级。
+
+验证：
+源码目录 npm test 检查计分、隐藏条件与存储容错，npm run build 检查生产构建。
+NBTI 根目录 npm run test:frontend 对真实构建产物运行桌面/iPhone 16 浏览器套件，
+使用隔离数据库保存测试记录；npm run test:e2e 检查采集、COS 媒体配置与安全行为。
+根目录 test:e2e 运行前需启动项目；详细启动与验证步骤见根目录 DEPLOY.txt。
 
 网站采用 # 路由，可部署到域名根目录或子目录，无需设置路由重写。
-答题进度和隐藏解锁记录仅保存在当前浏览器。
+答题进度和隐藏解锁记录保存在当前浏览器；选择和用时通过 NBTI 接口匿名保存到 MySQL。
 首页左上角“主角请就位”连续点击五次可打开彩蛋设置；开启后，由完整答案决定能否解锁隐藏结果。
 初次浏览不会展示隐藏角色的姓名、画像或视频。
 灵感参考片入口、弹窗及相关参考素材已移除。

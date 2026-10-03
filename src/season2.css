@@ -13,4 +13,63 @@
 .modal-role-copy .dialogue-script{margin:14px 0}.modal-role-copy .modal-tags{margin-top:7px}.role-modal{max-height:calc(100dvh - 40px)}
 .role-poster.cinematic-poster{aspect-ratio:9/16}.role-poster.cinematic-poster>img,.portal-native-portrait{object-fit:contain;object-position:center;background:#0b1424}
 .filter-tabs{flex-wrap:wrap}.mystery-poster{aspect-ratio:9/16}.filter-tabs button{min-height:36px}
-@media(max-width:680px){.footer-authors{font-size:11px;letter-spacing:0;padding-top:16px}.filter-tabs{justify-content:flex-start;gap:6px}.filter-tabs button{padding:8px 10px;font-size:9px}.cta-footnote{font-size:7px;letter-spacing:0;right:20px;line-height:1.8}.native-sound-button{top:46px;font-size:10px;padding:7px 9px}.role-modal>.video-player{width:230px}.dialogue-script summary,.dialogue-script li>p{font-size:11px}.season-label{margin-top:11px}}
+@media(max-width:680px){.footer-authors{font-size:11px;letter-spacing:0;padding-top:16px}.filter-tabs{justify-content:flex-start;gap:6px}.filter-tabs button{padding:8px 10px;font-size:9px}.native-sound-button{top:46px;font-size:10px;padding:7px 9px}.role-modal>.video-player{width:230px}.dialogue-script summary,.dialogue-script li>p{font-size:11px}.season-label{margin-top:11px}}
+
+/* Keep every slogan visible on phones and narrower tablet screens. */
+@media (max-width: 1100px) {
+  .story-ribbon { padding-block: 14px; }
+  .story-ribbon > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 12px minmax(0, 1fr) 12px;
+    gap: 12px;
+    width: 100%;
+    padding-inline: 20px;
+    white-space: normal;
+  }
+  .story-ribbon span {
+    min-width: 0;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 1px;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+  .story-ribbon span:nth-of-type(3) {
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 1px;
+  }
+  .story-ribbon svg { width: 12px; height: 12px; }
+}
+
+@media (max-width: 680px) {
+  .bottom-cta {
+    display: grid;
+    gap: 24px;
+    min-height: 0;
+    padding: 32px 24px 24px;
+  }
+  .bottom-cta > div { min-width: 0; max-width: 100%; }
+  .bottom-cta .button { max-width: 100%; }
+  .cta-footnote {
+    position: static;
+    width: calc(100% - 88px);
+    font-size: 11px;
+    line-height: 1.8;
+    letter-spacing: .2px;
+  }
+  .cta-star {
+    width: 48px;
+    height: 48px;
+    right: 28px;
+    top: auto;
+    bottom: 28px;
+  }
+  .bottom-cta::after {
+    width: 80px;
+    height: 80px;
+    right: 12px;
+    top: auto;
+    bottom: 12px;
+  }
+}

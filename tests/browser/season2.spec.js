@@ -4,7 +4,7 @@ import {questions,dimensions} from '../../src/data/questions.js';
 import {HIDDEN_STORAGE_KEY} from '../../src/hidden-rules.js';
 
 function answersFor(role) {
-  const answers={};dimensions.forEach((dim,i)=>{const items=questions.filter(q=>q.dimension===dim.id);const n=Math.round(role.profile[i]/100*items.length);items.forEach((q,j)=>answers[q.id]=j<n?q.highAnswer:q.highAnswer==='A'?'B':'A');});return answers;
+  const answers={};dimensions.forEach((dim,i)=>{const items=questions.filter(q=>q.dimension===dim.id);const n=Math.round(role.profile[i]/100*items.length);items.forEach((q,j)=>{const endpoint=j<n?q.highAnswer:q.highAnswer==='A'?'B':'A';answers[q.id]=endpoint==='A'?0:14;});});return answers;
 }
 async function openSecrets(page) {
   for(let i=0;i<5;i++) await page.getByRole('link',{name:'主角请就位，返回首页',exact:true}).click();
@@ -55,7 +55,9 @@ test('secret entry, opt-in, both earned unlocks, persistence, and reset work end
       await expect(page).toHaveURL(/#\/test$/);
     }
     for(let i=0;i<questions.length;i++) {
-      await page.locator('.answer-option').nth(answers[questions[i].id]==='A'?0:1).click();
+      const slider=page.getByRole('slider');
+      await slider.focus();
+      await slider.press(answers[questions[i].id]===0?'Home':'End');
       await page.getByRole('button',{name:i===39?'揭晓我的主角':'下一幕',exact:true}).click();
     }
     await expect(page).toHaveURL(/#\/result$/);

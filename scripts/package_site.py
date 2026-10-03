@@ -19,7 +19,7 @@ for role in roles:
         if kind in entry: assert (build/'media'/entry[kind]).is_file()
 target.parent.mkdir(parents=True,exist_ok=True)
 staged=target.with_name(target.stem+'.staging.zip')
-files=[build/'index.html',build/'favicon.svg']
+files=[build/name for name in ['index.html','favicon.svg','collector.js','public-config.js']]
 for directory in ['assets','media','worlds']:files.extend(sorted(p for p in (build/directory).rglob('*') if p.is_file()))
 with zipfile.ZipFile(staged,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as archive:
     for file in files: archive.write(file,file.relative_to(build).as_posix())

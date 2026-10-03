@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { roles, regularRoles, hiddenRoles, roleById } from '../src/data/roles.js';
 import { questions, dimensions } from '../src/data/questions.js';
 import { getResult } from '../src/engine.js';
+import { SCALE_MIN, SCALE_MAX } from '../src/data/answer-scale.js';
 import { hiddenRoleForScores, readHiddenState, saveHiddenState, canViewRole } from '../src/hidden-rules.js';
 
 function answersFor(role) {
@@ -10,7 +11,7 @@ function answersFor(role) {
   dimensions.forEach((dimension,index)=>{
     const items=questions.filter(q=>q.dimension===dimension.id);
     const n=Math.round(role.profile[index]/100*items.length);
-    items.forEach((q,i)=>{answers[q.id]=i<n?q.highAnswer:q.highAnswer==='A'?'B':'A';});
+    items.forEach((q,i)=>{const option=i<n?q.highAnswer:q.highAnswer==='A'?'B':'A';answers[q.id]=option==='A'?SCALE_MIN:SCALE_MAX;});
   });return answers;
 }
 

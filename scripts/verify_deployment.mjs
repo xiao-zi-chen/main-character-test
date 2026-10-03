@@ -14,4 +14,6 @@ for(const role of roles) {
   }
 }
 await access(new URL('../dist/index.html',import.meta.url));
+await access(new URL('../dist/collector.js',import.meta.url));
+await access(new URL('../dist/public-config.js',import.meta.url));
 console.log('Verified built entry point and all twenty complete media sets.');

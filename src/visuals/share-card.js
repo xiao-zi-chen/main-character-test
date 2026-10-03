@@ -3,6 +3,8 @@
 export async function createRoleCard(role, portraitUrl) {
   await document.fonts.ready;
   const portrait=new Image();
+  // COS images need CORS permission to keep the canvas exportable.
+  portrait.crossOrigin='anonymous';
   portrait.src=portraitUrl;
   await portrait.decode();
   if(!portrait.naturalWidth || !portrait.naturalHeight) throw new Error('封面尺寸无效');

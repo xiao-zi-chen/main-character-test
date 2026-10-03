@@ -21,10 +21,11 @@ export function collectionDuration(manifest) {
   return min===max?min:`${min}–${max}`;
 }
 import { mediaPath } from './data/roles.js';
+import { mediaBaseUrl } from './runtime-config.js';
 
 export function mediaAsset(role, media, kind='portrait') {
   const filename=media?.[kind];
   return typeof filename==='string'&&/^[a-z0-9_-]+\.(png|jpg|webp|srt|m4a)$/.test(filename)
-    ? `${import.meta.env?.BASE_URL??'/'}media/${filename}${media.revision?`?v=${encodeURIComponent(media.revision)}`:''}`
+    ? `${mediaBaseUrl()}media/${filename}${media.revision?`?v=${encodeURIComponent(media.revision)}`:''}`
     : mediaPath(role,'jpg',media?.revision);
 }

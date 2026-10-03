@@ -1,0 +1,43 @@
+.answer-scale { margin-top: 27px; min-width: 0; }
+.answer-scale-anchors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; }
+.answer-scale-anchor { min-width: 0; padding: 17px 18px; border: 1px solid #3b4b62; border-radius: 8px; background: #0b16256b; }
+.answer-scale-anchor > span { display: block; font-size: 10px; letter-spacing: 1.3px; color: #d3b788; }
+.answer-scale-anchor:last-child > span { color: #a8c3dc; }
+.answer-scale-anchor p { margin: 9px 0 0; font-size: 13px; line-height: 1.9; color: #d8dce3; overflow-wrap: anywhere; }
+.answer-scale-instruction { margin: 25px 0 22px; font-size: 11px; line-height: 1.8; color: #99a8be; text-align: center; }
+.answer-scale-track { position: relative; display: grid; grid-template-columns: repeat(15, minmax(0, 1fr)); height: 46px; border: 1px solid #8292a654; border-radius: 7px; background: linear-gradient(90deg, #c49861b0, #e9d6b25e 43%, #becddd52 57%, #708eafc2); cursor: pointer; touch-action: none; user-select: none; outline: none; }
+.answer-scale-track:focus-visible { outline: 2px solid #eed4a8; outline-offset: 7px; }
+.answer-scale-cell { min-width: 0; border-right: 1px solid #0c182c6e; }
+.answer-scale-cell:nth-child(15) { border-right: 0; }
+.answer-scale-cell.major-boundary { border-right: 4px solid #ebd0a3; box-shadow: 1px 0 0 #111d31; }
+.answer-scale-thumb { position: absolute; top: -8px; height: 60px; width: 20px; transform: translateX(-50%); display: grid; place-items: center; background: linear-gradient(135deg, #f6e5c8, #d2aa74); border: 1px solid #f6e4c6; border-radius: 5px; box-shadow: 0 4px 14px #0006; opacity: .62; pointer-events: none; transition: left .12s ease, opacity .15s ease; }
+.answer-scale-thumb i { width: 4px; height: 16px; border-inline: 1px solid #69553296; }
+.answer-scale.has-answer .answer-scale-thumb, .answer-scale-track.dragging .answer-scale-thumb { opacity: 1; }
+.answer-scale-track.dragging .answer-scale-thumb { transition: none; box-shadow: 0 4px 18px #edc99738; }
+.answer-scale-labels { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px; margin-top: 17px; }
+.answer-scale-labels span { display: flex; align-items: center; justify-content: center; min-width: 0; min-height: 39px; padding: 7px 4px; border: 1px solid #71819a52; border-radius: 5px; background: #0b16259c; text-align: center; font-size: 11px; line-height: 1.7; color: #aeb9c9; }
+.answer-scale-labels span.active { border-color: #e3c591; color: #f5dfbb; background: #d7b17d20; box-shadow: inset 0 0 0 1px #e3c59130; }
+.answer-scale-labels span:first-child { color: #dbc39c; }
+.answer-scale-labels span:last-child { color: #b0c8e0; }
+.answer-scale-selection { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 7px; min-height: 23px; margin: 17px 0 0; font-size: 11px; line-height: 1.8; color: #8596af; }
+.answer-scale.has-answer .answer-scale-selection { color: #e8d1aa; }
+.answer-scale-selection small { font: 10px var(--mono); color: #9eacc0; }
+.scale-selection-mark { font-size: 12px; }
+.question-actions .keyboard-tip { text-align: center; line-height: 1.8; max-width: 165px; }
+/* Changing question height must not make a hovered navigation button jump
+   under the pointer and repeatedly enter/leave its own hit area. */
+.question-actions > .button:hover:not(:disabled) { transform: none; }
+@media (max-width: 680px) {
+  .answer-scale { margin-top: 22px; }
+  .answer-scale-anchors { gap: 11px; }
+  .answer-scale-anchor { padding: 13px 11px; }
+  .answer-scale-anchor > span { font-size: 10px; letter-spacing: .7px; }
+  .answer-scale-anchor p { font-size: 12px; line-height: 1.85; }
+  .answer-scale-instruction { margin: 22px 0; font-size: 10px; }
+  .answer-scale-track { height: 44px; }
+  .answer-scale-thumb { top: -7px; height: 56px; width: 14px; border-radius: 4px; }
+  .answer-scale-labels { gap: 4px; }
+  .answer-scale-labels span { min-height: 45px; padding: 5px 3px; font-size: 10px; text-wrap: balance; }
+  .answer-scale-selection { font-size: 10px; margin-top: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .answer-scale-thumb { transition: none; } }

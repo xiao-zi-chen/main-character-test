@@ -3,9 +3,9 @@ import { Play, Sparkles, Crown, Ghost, Flower2, Sun, MessageCircleHeart, Wrench,
 import { roles, regularRoles, roleById, mediaPath } from '../data/roles.js';
 import { worldSvg, worldNotes } from './world-art.js';
 import { durationLabel, durationSeconds, mediaAsset } from '../media.js';
+import { mediaBaseUrl } from '../runtime-config.js';
 
-const BASE = import.meta.env.BASE_URL;
-export const worldPath = role => `${BASE}worlds/${role.id}.svg`;
+export const worldPath = role => `${mediaBaseUrl()}worlds/${role.id}.svg`;
 
 export function WorldArt({ role, className = '', ...props }) {
   const id = useId();
