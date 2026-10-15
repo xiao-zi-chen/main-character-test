@@ -29,7 +29,6 @@ test('simple landing, searchable directory, videos and modal keyboard controls',
   await expect.poll(() => dialog.locator('video').evaluate(video => video.currentTime > 0)).toBe(true);
   expect(await dialog.locator('video').evaluate(video => video.duration)).toBeCloseTo(media['myth-keeper'].duration, 1);
   await expect(dialog.locator('.video-duration')).toHaveText('00:10');
-  await expect(dialog.locator('.video-label')).toContainText('主角高光时刻');
   await expect(dialog.locator('video')).toHaveAttribute('src',new RegExp(`myth-keeper\\.mp4\\?v=${media['myth-keeper'].revision}`));
   await dialog.getByRole('button', { name: '暂停视频' }).click();
   await dialog.getByRole('button', { name: '开启声音' }).click();
@@ -108,17 +107,18 @@ test('shared character links are public previews; incomplete answers cannot open
     await page.goto(`/#/role/${role.id}`);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(role.name);
     await expect(page.locator('.traits')).toHaveCount(0);
-    await expect.poll(() => page.locator('.result-media video').evaluate(v => v.readyState >= 2)).toBe(true);
-    expect(await page.locator('.result-media video').evaluate(v => v.duration)).toBeCloseTo(media[role.id].duration, 1);
+    await expect(page.locator('video')).toHaveCount(0);
+    await page.getByRole('button', {name:`观看${role.name}的短片`}).click();
+    await expect.poll(() => page.locator('dialog video').evaluate(v => v.readyState >= 2)).toBe(true);
+    expect(await page.locator('dialog video').evaluate(v => v.duration)).toBeCloseTo(media[role.id].duration, 1);
     await expect(page.locator('.video-duration')).toHaveText(formatPlaybackTime(media[role.id].duration));
-    await expect(page.locator('.video-label')).toContainText('主角高光时刻');
-    await expect(page.locator('.final-video-title')).toHaveCount(media[role.id].embeddedTitle?0:1);
-    if(!media[role.id].embeddedTitle) await expect(page.locator('.final-video-title strong')).toHaveText(role.name);
-    await page.locator('.result-media video').evaluate(video=>new Promise((resolve,reject)=>{
+
+    await page.locator('dialog video').evaluate(video=>new Promise((resolve,reject)=>{
       video.addEventListener('seeked',resolve,{once:true});
       video.addEventListener('error',()=>reject(new Error('Could not decode the ending card')),{once:true});
       video.currentTime=video.duration-.5;
     }));
-    expect(await page.locator('.result-media video').evaluate(video=>video.currentTime)).toBeGreaterThan(9);
+    expect(await page.locator('dialog video').evaluate(video=>video.currentTime)).toBeGreaterThan(9);
+    await page.getByRole('button',{name:'关闭弹窗',exact:true}).click();
   }
 });

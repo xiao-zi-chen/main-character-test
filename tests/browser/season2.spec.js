@@ -21,12 +21,13 @@ test('directory exposes regular roles, native dialogue, and author credit',async
   await expect(page.locator('.gallery-secret')).toBeVisible();
   for(const role of hiddenRoles) await expect(page.getByText(role.name,{exact:true})).toHaveCount(0);
   await page.goto('/#/role/villain-calmer');
+  await page.getByRole('button',{name:/^观看.*的短片$/}).click();
   await expect(page.locator('.video-duration')).toHaveText('00:15');
   await page.getByRole('button',{name:'开启声音',exact:true}).click();
-  await page.getByRole('button',{name:'播放视频',exact:true}).last().click();
   await expect.poll(()=>page.locator('video').evaluate(v=>!v.muted&&!v.paused&&v.currentTime>0)).toBe(true);
   await page.getByRole('button',{name:'关闭声音',exact:true}).click();
   await expect.poll(()=>page.locator('video').evaluate(v=>v.muted)).toBe(true);
+  await page.getByRole('button',{name:'关闭弹窗',exact:true}).click();
   await expect(page.locator('.dialogue-script')).toHaveCount(0);
   await expect(page.locator('.relationship-section')).toContainText('你的偏爱藏在这里');
   await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

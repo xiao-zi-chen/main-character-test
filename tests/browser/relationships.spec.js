@@ -2,6 +2,10 @@ import { test, expect } from '@playwright/test';
 import { regularRoles, roleById } from '../../src/data/roles.js';
 import { relationships } from '../../src/data/relationships.js';
 
+test.beforeEach(async ({page}) => {
+  await page.addInitScript(() => Object.defineProperty(navigator,'share',{value:undefined,configurable:true}));
+});
+
 test('social identities, reciprocal partners and share invitations work for every regular role', async ({page,context}) => {
   test.setTimeout(120000);
   await context.grantPermissions(['clipboard-read','clipboard-write']);

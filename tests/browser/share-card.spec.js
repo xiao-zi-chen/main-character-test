@@ -33,8 +33,8 @@ test('exported portraits preserve all twenty complete covers at their native asp
   for(const role of roles) {
     await page.goto(`/?shareCardRole=${role.id}#/result`);
     await expect(page.getByRole('heading',{level:1})).toHaveText(role.name);
-    await expect(page.locator('.result-media video')).toHaveAttribute('poster',/\?v=/);
-    const portraitUrl=await page.locator('.result-media video').getAttribute('poster');
+    await expect(page.locator('.result-media img')).toHaveAttribute('src',/\?v=/);
+    const portraitUrl=await page.locator('.result-media img').getAttribute('src');
     const downloading=page.waitForEvent('download');
     await page.getByRole('button',{name:'保存我的角色卡',exact:true}).click();
     const download=await downloading;
