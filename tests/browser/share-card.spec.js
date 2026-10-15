@@ -2,17 +2,12 @@ import { test, expect } from '@playwright/test';
 import { mkdir, readFile } from 'node:fs/promises';
 import { roles } from '../../src/data/roles.js';
 import { HIDDEN_STORAGE_KEY } from '../../src/hidden-rules.js';
+import { drawQuestions } from '../../src/question-session.js';
 import { questions, dimensions } from '../../src/data/questions.js';
 import { STORAGE_KEY, getResult } from '../../src/engine.js';
 
-function answersFor(role) {
-  const answers={};
-  dimensions.forEach((dimension,index)=>{
-    const items=questions.filter(question=>question.dimension===dimension.id);
-    const positive=Math.round(role.profile[index]/100*items.length);
-    items.forEach((question,i)=>{ const endpoint=i<positive?question.highAnswer:question.highAnswer==='A'?'B':'A';answers[question.id]=endpoint==='A'?0:14; });
-  });
-  return answers;
+function answersFor(role,questionIds) {
+  return Object.fromEntries(questionIds.map(id=>{const q=questions.find(item=>item.id===id);const units=Math.round(role.profile[dimensions.findIndex(d=>d.id===q.dimension)]*14/100);return [id,q.highAnswer==='A'?14-units:units];}));
 }
 
 test('exported portraits preserve all twenty complete covers at their native aspect ratios', async ({ page },testInfo)=>{
@@ -22,18 +17,19 @@ test('exported portraits preserve all twenty complete covers at their native asp
   const errors=[];
   page.on('pageerror',error=>errors.push(error.message));
   const profiles={};
+  const questionIds=drawQuestions();
   for(const role of roles) {
-    const answers=answersFor(role);
-    expect(getResult(answers,{hiddenEnabled:Boolean(role.hidden)}).role.id).toBe(role.id);
+    const answers=answersFor(role,questionIds);
+    expect(getResult(answers,{hiddenEnabled:Boolean(role.hidden),questionIds}).role.id).toBe(role.id);
     profiles[role.id]=answers;
   }
-  await page.addInitScript(({key,profiles,hiddenKey,hiddenIds})=>{
+  await page.addInitScript(({key,profiles,hiddenKey,hiddenIds,questionIds})=>{
     const role=new URL(location.href).searchParams.get('shareCardRole');
     if(profiles[role]) {
-      localStorage.setItem(key,JSON.stringify({version:2,answers:profiles[role],index:39,submitted:true}));
+      localStorage.setItem(key,JSON.stringify({version:3,questionIds,answers:profiles[role],index:19,submitted:true}));
       localStorage.setItem(hiddenKey,JSON.stringify({version:1,enabled:hiddenIds.includes(role),unlocked:[]}));
     }
-  },{key:STORAGE_KEY,profiles,hiddenKey:HIDDEN_STORAGE_KEY,hiddenIds:roles.filter(role=>role.hidden).map(role=>role.id)});
+  },{key:STORAGE_KEY,profiles,questionIds,hiddenKey:HIDDEN_STORAGE_KEY,hiddenIds:roles.filter(role=>role.hidden).map(role=>role.id)});
   for(const role of roles) {
     await page.goto(`/?shareCardRole=${role.id}#/result`);
     await expect(page.getByRole('heading',{level:1})).toHaveText(role.name);

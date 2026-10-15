@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const STORAGE_KEY = 'nbti:collector:v1';
-  const VERSION = 'nbti-2026-10-02-scale15';
+  const VERSION = 'nbti-2026-10-15-sample20';
   let state;
   let storageAvailable = true;
   const newToken = () => Array.from(crypto.getRandomValues(new Uint8Array(32)),
@@ -77,7 +77,7 @@
   }
   // The binary questionnaire has been retired. Keep an existing secure identity,
   // but remove its old outbox so a stale tab cannot restore deleted A/B records.
-  state.runs = state.runs.filter(run => run?.session?.questionnaireVersion === VERSION);
+  state.runs = state.runs.filter(run => [VERSION, 'nbti-2026-10-02-scale15'].includes(run?.session?.questionnaireVersion));
   delete state.legacyResume;
   try {
     localStorage.removeItem('nbti:collector:legacy:v1');
@@ -147,10 +147,11 @@
     segmentStartedAt = null;
     persist();
   }
-  function start({ resume = false } = {}) {
+  function start({ resume = false, questionIds } = {}) {
     const wasInQuiz = inQuiz;
+    if (!Array.isArray(questionIds) || questionIds.length !== 20 || new Set(questionIds).size !== 20) return;
     pause();
-    let run = resume && activeRun()?.session.questionnaireVersion === VERSION ? activeRun() : null;
+    let run = resume && activeRun()?.session.questionnaireVersion === VERSION && JSON.stringify(activeRun().session.questionIds) === JSON.stringify(questionIds) ? activeRun() : null;
     const resumed = Boolean(run);
     if (resumed) {
       // Reopening is a draft until another response is confirmed. The server
@@ -164,6 +165,7 @@
           id: randomUUID(),
           participantId: state.participantId,
           questionnaireVersion: VERSION,
+          questionIds: [...questionIds],
           startedAt: new Date().toISOString(),
           completedAt: null,
           totalElapsedMs: null
@@ -184,10 +186,11 @@
     void flush();
   }
   function show(questionId) {
-    if (activeRun()?.session.questionnaireVersion !== VERSION) start({ resume: true });
+    if (activeRun()?.session.questionnaireVersion !== VERSION) return;
     accumulate();
     const run = activeRun();
     const id = String(questionId);
+    if (!run.session.questionIds.includes(id)) return;
     if (run.questionId !== id) {
       run.questionId = id;
       run.questionElapsedMs = 0;
@@ -199,6 +202,7 @@
   function answer(questionId, scaleValue) {
     if (!Number.isInteger(scaleValue) || scaleValue < 0 || scaleValue > 14) return false;
     const id = String(questionId);
+    if (!activeRun()?.session.questionIds?.includes(id)) return false;
     if (!activeRun() || activeRun().questionId !== id) show(id);
     accumulate();
     const run = activeRun();
@@ -227,8 +231,9 @@
     const run = activeRun();
     if (!run || run.session.questionnaireVersion !== VERSION) return;
     // A pre-existing browser-only progress record has no recoverable response times.
-    // Such an incomplete collection must not be marked as a complete 40-question run.
-    if (new Set(run.answers.map(answer => answer.questionId)).size === 40) {
+    // Complete only the selected twenty questions, never a mixture of attempts.
+    const answered = new Set(run.answers.map(answer => answer.questionId));
+    if (run.session.questionIds?.length === 20 && run.session.questionIds.every(id => answered.has(id))) {
       run.session.completedAt = new Date().toISOString();
       run.session.totalElapsedMs = Math.round(run.activeElapsedMs);
     }

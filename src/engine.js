@@ -2,12 +2,13 @@ import { dimensions, questions } from './data/questions.js';
 import { regularRoles, roleById } from './data/roles.js';
 import { SCALE_MIN, SCALE_MAX } from './data/answer-scale.js';
 import { hiddenRoleForScores } from './hidden-rules.js';
+import { allQuestionIds, questionById, validQuestionIds, newProgress } from './question-session.js';
 
-export const STORAGE_KEY = 'main-character-casting:v2';
+export const STORAGE_KEY = 'main-character-casting:v3';
 export const LEGACY_STORAGE_KEY = 'main-character-casting:v1';
 export const isAnswer = value => Number.isInteger(value) && value >= SCALE_MIN && value <= SCALE_MAX;
-export const answeredCount = answers => Object.keys(cleanAnswers(answers)).length;
-export const isComplete = answers => answeredCount(answers) === questions.length;
+export const answeredCount = (answers, questionIds = allQuestionIds) => questionIds.filter(id => Object.hasOwn(answers ?? {}, id) && isAnswer(answers[id])).length;
+export const isComplete = (answers, questionIds = allQuestionIds) => questionIds.length > 0 && answeredCount(answers, questionIds) === questionIds.length;
 
 export function cleanAnswers(input) {
   if (!input || typeof input !== 'object' || Array.isArray(input)) return {};
@@ -19,30 +20,33 @@ export function readProgress(storage) {
   try { storage.removeItem?.(LEGACY_STORAGE_KEY); } catch { /* Storage may be blocked. */ }
   try {
     const data = JSON.parse(storage.getItem(STORAGE_KEY));
-    if (data?.version !== 2) return { answers: {}, index: 0, submitted: false };
-    const answers = cleanAnswers(data.answers);
-    const firstUnanswered = questions.findIndex(q => !isAnswer(answers[q.id]));
-    const maxIndex = firstUnanswered < 0 ? questions.length - 1 : firstUnanswered;
+    if (data?.version !== 3 || !validQuestionIds(data.questionIds)) return newProgress();
+    const questionIds = data.questionIds;
+    const answers = Object.fromEntries(Object.entries(cleanAnswers(data.answers)).filter(([id]) => questionIds.includes(id)));
+    const firstUnanswered = questionIds.findIndex(id => !isAnswer(answers[id]));
+    const maxIndex = firstUnanswered < 0 ? questionIds.length - 1 : firstUnanswered;
     const index = Number.isInteger(data.index) ? Math.max(0, Math.min(data.index, maxIndex)) : maxIndex;
-    return { answers, index, submitted: data.submitted === true && isComplete(answers) };
+    return { questionIds, answers, index, submitted: data.submitted === true && isComplete(answers, questionIds) };
   } catch {
-    return { answers: {}, index: 0, submitted: false };
+    return newProgress();
   }
 }
 
-export function saveProgress(storage, answers, index, submitted = false) {
+export function saveProgress(storage, answers, index, submitted = false, questionIds) {
   try {
-    const validAnswers = cleanAnswers(answers);
-    storage.setItem(STORAGE_KEY, JSON.stringify({ version: 2, answers: validAnswers, index, submitted: submitted === true && isComplete(validAnswers) }));
+    if (!validQuestionIds(questionIds)) return false;
+    const validAnswers = Object.fromEntries(Object.entries(cleanAnswers(answers)).filter(([id]) => questionIds.includes(id)));
+    storage.setItem(STORAGE_KEY, JSON.stringify({ version: 3, questionIds, answers: validAnswers, index, submitted: submitted === true && isComplete(validAnswers, questionIds) }));
     return true;
   } catch { return false; }
 }
 
-export function scoreAnswers(input) {
+export function scoreAnswers(input, questionIds = allQuestionIds) {
   const answers = cleanAnswers(input);
-  if (!isComplete(answers)) throw new Error('请完成全部 40 道题后再揭晓角色。');
+  if (questionIds !== allQuestionIds && !validQuestionIds(questionIds)) throw new Error('本轮题目无效，请重新开始。');
+  if (!isComplete(answers, questionIds)) throw new Error(`请完成全部 ${questionIds.length} 道题后再揭晓角色。`);
   return dimensions.map(dimension => {
-    const items = questions.filter(q => q.dimension === dimension.id);
+    const items = questionIds.map(id => questionById[id]).filter(q => q.dimension === dimension.id);
     const highUnits = items.reduce((sum, q) => sum + (q.highAnswer === 'A' ? SCALE_MAX - answers[q.id] : answers[q.id] - SCALE_MIN), 0);
     const positive = highUnits / (SCALE_MAX - SCALE_MIN);
     return { ...dimension, value: Math.round(highUnits / (items.length * (SCALE_MAX - SCALE_MIN)) * 100), positive, total: items.length };
@@ -58,7 +62,7 @@ export function rankRoles(scores) {
 }
 
 export function getResult(answers, options = {}) {
-  const scores = scoreAnswers(answers);
+  const scores = scoreAnswers(answers, options.questionIds);
   const ranking = rankRoles(scores);
   const hiddenId = options.hiddenEnabled ? hiddenRoleForScores(scores) : null;
   return { role: hiddenId ? roleById[hiddenId] : ranking[0].role, scores, ranking, hiddenUnlocked: Boolean(hiddenId) };

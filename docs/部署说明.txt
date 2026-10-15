@@ -2,7 +2,7 @@
 
 作者：拾壹、我燃起来了、FhwuTrqr、Le Prince Grenouille
 
-网站包含 40 道题、18 个常规结果、2 个隐藏结果及全部二十条角色影片。
+网站题库包含 40 道题，每轮按 10 个维度各随机抽 2 道，总计回答 20 道；18 个常规结果、2 个隐藏结果及全部二十条角色影片保持不变。
 每题采用 15 档量表（0～14，7 为中立），保留原两种行为作为左右端点。
 角色原型、权重、稳定排序及隐藏阈值保持原样。
 调整量表只保存本地草稿，点击下一题或最终揭晓时才记录当前数值与本题累计用时。
@@ -26,6 +26,8 @@ scripts/instrument-bundle.mjs 仅保留为历史静态注入工具，当前源�
 Windows PowerShell 可使用 npm.cmd 执行上述命令。
 
 正式部署：
+当前采集协议为 nbti-2026-10-15-sample20，session.questionIds 保存本轮 20 个题目 ID。
+外部 NBTI 服务端需支持新版本、抽题集校验与 20 题完成条件，详见 抽题与手机适配.md。
 已有 A/B 数据库先执行 npm run local:stop -- -AppOnly，再执行 npm run db:migrate:local，
 保留 MySQL 运行，迁移将删除旧答卷。
 首次空库部署只导入 db/schema.sql；详情见根目录 DATABASE.txt。

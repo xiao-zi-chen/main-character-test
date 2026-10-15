@@ -35,11 +35,11 @@ export function AnswerScale({ value, options, onChoose }) {
   };
   return <div className={`answer-scale ${answered ? 'has-answer' : ''}`}>
     <div className="answer-scale-anchors" aria-label="量表两端的反应">
-      {options.map((option, index) => <div className="answer-scale-anchor" key={index} id={index === 0 ? 'answer-scale-left' : 'answer-scale-right'}>
+      {options.map((option, index) => <button type="button" className={`answer-scale-anchor ${answered && value === (index === 0 ? SCALE_MIN : SCALE_MAX) ? 'selected' : ''}`} onClick={() => commit(index === 0 ? SCALE_MIN : SCALE_MAX)} key={index} id={index === 0 ? 'answer-scale-left' : 'answer-scale-right'} aria-pressed={answered && value === (index === 0 ? SCALE_MIN : SCALE_MAX)}>
         <span>{index === 0 ? '左侧反应' : '右侧反应'}</span><p>{option}</p>
-      </div>)}
+      </button>)}
     </div>
-    <div className="answer-scale-instruction" id="answer-scale-help">点击或拖动标记，选择更接近平时的你的位置</div>
+    <div className="answer-scale-instruction" id="answer-scale-help">哪一边更像你？</div>
     <div ref={track} className={`answer-scale-track ${draft !== null ? 'dragging' : ''}`} role="slider" tabIndex={0}
       aria-label="选择你的倾向" aria-describedby="answer-scale-left answer-scale-right answer-scale-help answer-scale-selection"
       aria-valuemin={SCALE_MIN} aria-valuemax={SCALE_MAX} aria-valuenow={displayed}
@@ -74,7 +74,7 @@ export function AnswerScale({ value, options, onChoose }) {
     </div>
     <div className="answer-scale-labels" aria-hidden="true">{labels.map((label, index) => <span key={label} className={(answered || draft !== null) && index === Math.floor(displayed / 3) ? 'active' : ''}>{label}</span>)}</div>
     <p className="answer-scale-selection" id="answer-scale-selection" role="status" aria-live="polite">
-      {answered ? <><span className="scale-selection-mark">✓</span> 已选择：{labelFor(value)}<small>第 {value + 1} / {cellCount} 档</small></> : '尚未选择 · 中间位置不会自动作答'}
+      {answered ? <><span className="scale-selection-mark">✓</span> 已选择：{labelFor(value)}<small>第 {value + 1} / {cellCount} 档</small></> : '还没决定，也可以选择中立'}
     </p>
   </div>;
 }

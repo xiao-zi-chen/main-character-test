@@ -25,9 +25,9 @@ test('scale requires an explicit response and supports neutral, zero, keyboard a
   await expect(page.locator('.answer-scale-labels .active')).toHaveText('中立');
   await expect(next).toBeEnabled();
   // Enter on the slider chooses neutral locally, without submitting the answer.
-  await expect(page.locator('.quiz-counter')).toHaveText('01 / 40');
+  await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
   await next.click();
-  await expect(page.locator('.quiz-counter')).toHaveText('02 / 40');
+  await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
   await expect(slider).toHaveAttribute('data-selected', 'false');
   await slider.focus();
   await slider.press('Home');
@@ -38,21 +38,22 @@ test('scale requires an explicit response and supports neutral, zero, keyboard a
   await slider.press('ArrowLeft');
   await expect(slider).toHaveAttribute('aria-valuenow', '0');
   // Focused arrow keys adjust the current answer instead of changing questions.
-  await expect(page.locator('.quiz-counter')).toHaveText('02 / 40');
+  await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
   await next.click();
   await page.reload();
-  await expect(page.locator('.quiz-counter')).toHaveText('03 / 40');
+  await expect(page.locator('.quiz-counter')).toHaveText('03 / 20');
   await page.getByRole('button', { name: '上一题', exact: true }).click();
   await expect(slider).toHaveAttribute('aria-valuenow', '0');
   await expect(next).toBeEnabled();
   const progress = await page.evaluate(key => JSON.parse(localStorage.getItem(key)), STORAGE_KEY);
-  expect(progress.version).toBe(2);
-  expect(progress.answers[questions[0].id]).toBe(7);
-  expect(progress.answers[questions[1].id]).toBe(0);
+  expect(progress.version).toBe(3);
+  expect(progress.answers[progress.questionIds[0]]).toBe(7);
+  expect(progress.answers[progress.questionIds[1]]).toBe(0);
 });
 
 test('scale adjustments stay local; Next submits once, and returning to revise submits the final value', async ({ page }) => {
   await start(page);
+  const firstId=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)).questionIds[0],STORAGE_KEY);
   await page.evaluate(() => {
     window.__scaleAnswers = [];
     const original = window.NBTICollector.answer;
@@ -95,8 +96,8 @@ test('scale adjustments stay local; Next submits once, and returning to revise s
   await expect(slider).toHaveAttribute('aria-valuenow', '0');
   expect(await page.evaluate(() => window.__scaleAnswers)).toEqual([]);
   await page.getByRole('button', { name: '下一幕', exact: true }).click();
-  await expect(page.locator('.quiz-counter')).toHaveText('02 / 40');
-  expect(await page.evaluate(() => window.__scaleAnswers)).toEqual([[questions[0].id, 0]]);
+  await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
+  expect(await page.evaluate(() => window.__scaleAnswers)).toEqual([[firstId, 0]]);
   await page.getByRole('button', { name: '上一题', exact: true }).click();
   await expect(slider).toHaveAttribute('aria-valuenow', '0');
   await slider.press('End');
@@ -109,14 +110,14 @@ test('scale adjustments stay local; Next submits once, and returning to revise s
     window.NBTICollector = { ...window.NBTICollector, answer: () => { window.__refusedScaleCalls++; return false; } };
   });
   await page.getByRole('button', { name: '下一幕', exact: true }).click();
-  await expect(page.locator('.quiz-counter')).toHaveText('01 / 40');
+  await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
   await expect(slider).toHaveAttribute('aria-valuenow', '14');
   expect(await page.evaluate(() => window.__refusedScaleCalls)).toBe(1);
   expect(await page.evaluate(() => window.__scaleAnswers.length)).toBe(1);
   await page.evaluate(() => { window.NBTICollector = { ...window.NBTICollector, answer: window.__acceptScaleAnswer }; });
   await page.getByRole('button', { name: '下一幕', exact: true }).click();
-  await expect(page.locator('.quiz-counter')).toHaveText('02 / 40');
-  expect(await page.evaluate(() => window.__scaleAnswers)).toEqual([[questions[0].id, 0], [questions[0].id, 14]]);
+  await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
+  expect(await page.evaluate(() => window.__scaleAnswers)).toEqual([[firstId, 0], [firstId, 14]]);
   const stored = await page.evaluate(() => window.NBTICollector.snapshot().runs.flatMap(run => run.answers));
   expect(stored.map(answer => answer.scaleValue)).toEqual([0, 14]);
 });
@@ -126,7 +127,7 @@ test('obsolete binary browser progress is removed before a fresh scale attempt',
     localStorage.setItem(legacyKey, JSON.stringify({ version: 1, answers: { [questionId]: 'B' }, index: 1 }));
   }, { legacyKey: LEGACY_STORAGE_KEY, questionId: questions[0].id });
   await start(page);
-  await expect(page.locator('.quiz-counter')).toHaveText('01 / 40');
+  await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
   await expect(page.getByRole('slider')).toHaveAttribute('data-selected', 'false');
   expect(await page.evaluate(key => localStorage.getItem(key), LEGACY_STORAGE_KEY)).toBeNull();
 });
@@ -146,6 +147,7 @@ test('phone scale fits; touch release selects locally and Next submits the value
   for (const width of [320, 393]) {
     await page.setViewportSize({ width, height: 659 });
     await start(page);
+    const firstId=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)).questionIds[0],STORAGE_KEY);
     const slider = page.getByRole('slider');
     await slider.scrollIntoViewIfNeeded();
     const bounds = await slider.boundingBox();
@@ -179,9 +181,9 @@ test('phone scale fits; touch release selects locally and Next submits the value
     }
     await page.locator('.question-section').screenshot({ path: `.work/answer-scale/phone-${width}.png`, scale: 'css' });
     await page.getByRole('button', { name: '下一幕', exact: true }).click();
-    await expect(page.locator('.quiz-counter')).toHaveText('02 / 40');
+    await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
     const submitted = await page.evaluate(() => window.NBTICollector.snapshot().runs.flatMap(run => run.answers));
-    expect(submitted.map(answer => [answer.questionId, answer.scaleValue])).toEqual([[questions[0].id, 11]]);
+    expect(submitted.map(answer => [answer.questionId, answer.scaleValue])).toEqual([[firstId, 11]]);
   }
   await touch.detach();
   expect(errors).toEqual([]);

@@ -1,5 +1,5 @@
 // Keep the questionnaire version distinct from the original binary questionnaire.
-export const QUESTIONNAIRE_VERSION = 'nbti-2026-10-02-scale15';
+export const QUESTIONNAIRE_VERSION = 'nbti-2026-10-15-sample20';
 export const LEGACY_QUESTIONNAIRE_VERSION = 'nbti-2026-10-01';
 
 // The original A wording anchors the left endpoint; B anchors the right endpoint.

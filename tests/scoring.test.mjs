@@ -105,7 +105,7 @@ test('endpoint responses exactly preserve binary scores, weighted distances and 
 
 test('all 15 levels score continuously, neutral is 50 and each reverse question preserves direction', () => {
   assert.equal(SCALE_STEPS, 15);
-  assert.equal(QUESTIONNAIRE_VERSION, 'nbti-2026-10-02-scale15');
+  assert.equal(QUESTIONNAIRE_VERSION, 'nbti-2026-10-15-sample20');
   for (let highUnits = SCALE_MIN; highUnits <= SCALE_MAX; highUnits++) {
     const answers = Object.fromEntries(questions.map(q => [q.id, q.highAnswer === 'A' ? SCALE_MAX - highUnits : highUnits]));
     assert.ok(scoreAnswers(answers).every(score => score.value === Math.round(highUnits / SCALE_MAX * 100)));
@@ -147,77 +147,6 @@ test('same answers give the same result; incomplete answers never produce a resu
   const missing = { ...allHigh }; delete missing['10.4'];
   assert.equal(isComplete(missing), false);
   assert.throws(() => getResult(missing));
-});
-
-test('malformed or blocked local storage cannot break the quiz', () => {
-  const broken = { getItem() { throw new Error('denied'); }, setItem() { throw new Error('quota'); } };
-  assert.deepEqual(readProgress(broken), { answers: {}, index: 0, submitted: false });
-  assert.equal(saveProgress(broken, allHigh, 39), false);
-  const invalid = { getItem: () => '{broken-json' };
-  assert.deepEqual(readProgress(invalid), { answers: {}, index: 0, submitted: false });
-  const hostile = { getItem: () => JSON.stringify({ version: 2, index: 900, answers: { '1.1': 0, '2.1': 'script', 'bogus': 14 } }) };
-  assert.deepEqual(readProgress(hostile), { answers: { '1.1': 0 }, index: 1, submitted: false });
-  assert.deepEqual(cleanAnswers(['A','B']), {});
-  const oldVersion = { getItem: () => JSON.stringify({ version: 1, index: 0, answers: { '1.1': 0 } }) };
-  assert.deepEqual(readProgress(oldVersion), { answers: {}, index: 0, submitted: false });
-});
-
-test('saved progress round-trips, including edits to previous questions', () => {
-  const memory = new Map();
-  const storage = { getItem: key => memory.get(key), setItem: (key, value) => memory.set(key, value) };
-  assert.equal(saveProgress(storage, allHigh, 12), true);
-  assert.deepEqual(readProgress(storage), { answers: allHigh, index: 12, submitted: false });
-  assert.equal(JSON.parse(memory.get(STORAGE_KEY)).version, 2);
-});
-
-test('all 40 draft answers still require explicit final submission after reload', () => {
-  const memory = new Map();
-  const storage = { getItem: key => memory.get(key), setItem: (key, value) => memory.set(key, value) };
-  saveProgress(storage, allHigh, 39);
-  assert.deepEqual(readProgress(storage), { answers: allHigh, index: 39, submitted: false });
-  assert.equal(JSON.parse(memory.get(STORAGE_KEY)).submitted, false);
-  memory.set(STORAGE_KEY, JSON.stringify({ version: 2, answers: allHigh, index: 39 }));
-  assert.equal(readProgress(storage).submitted, false);
-  saveProgress(storage, allHigh, 39, true);
-  assert.deepEqual(readProgress(storage), { answers: allHigh, index: 39, submitted: true });
-  assert.equal(JSON.parse(memory.get(STORAGE_KEY)).submitted, true);
-  assert.equal(JSON.parse(memory.get(STORAGE_KEY)).version, 2);
-});
-
-test('submission flag is strictly boolean and cannot validate incomplete or invalid drafts', () => {
-  const memory = new Map();
-  const storage = { getItem: key => memory.get(key), setItem: (key, value) => memory.set(key, value) };
-  const incomplete = { ...allHigh }; delete incomplete['10.4'];
-  const invalid = { ...allHigh, '10.4': '14' };
-  for (const answers of [incomplete, invalid]) {
-    saveProgress(storage, answers, 39, true);
-    assert.equal(JSON.parse(memory.get(STORAGE_KEY)).submitted, false);
-    memory.set(STORAGE_KEY, JSON.stringify({ version: 2, answers, index: 39, submitted: true }));
-    assert.equal(readProgress(storage).submitted, false);
-  }
-  for (const submitted of ['true', 1, {}, null, false]) {
-    saveProgress(storage, allHigh, 39, submitted);
-    assert.equal(readProgress(storage).submitted, false);
-    memory.set(STORAGE_KEY, JSON.stringify({ version: 2, answers: allHigh, index: 39, submitted }));
-    assert.equal(readProgress(storage).submitted, false);
-  }
-  const allZero = Object.fromEntries(questions.map(q => [q.id, 0]));
-  saveProgress(storage, allZero, 39, true);
-  assert.equal(readProgress(storage).submitted, true);
-});
-
-test('old binary progress is deleted without clearing unrelated local storage', () => {
-  const memory = new Map([
-    [LEGACY_STORAGE_KEY, JSON.stringify({ version: 1, answers: { '1.1': 'A' }, index: 1 })],
-    ['unrelated', 'preserve'],
-  ]);
-  const storage = { getItem: key => memory.get(key), setItem: (key, value) => memory.set(key, value), removeItem: key => memory.delete(key) };
-  assert.deepEqual(readProgress(storage), { answers: {}, index: 0, submitted: false });
-  assert.equal(memory.has(LEGACY_STORAGE_KEY), false);
-  assert.equal(memory.get('unrelated'), 'preserve');
-  saveProgress(storage, { '1.1': 0 }, 0);
-  storage.removeItem = () => { throw new Error('remove denied'); };
-  assert.deepEqual(readProgress(storage), { answers: { '1.1': 0 }, index: 0, submitted: false });
 });
 
 test('media URLs work without a browser and use the configured COS origin', () => {

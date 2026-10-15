@@ -42,7 +42,7 @@ test('landing, gallery filters, videos and modal keyboard controls', async ({ pa
   expect(errors).toEqual([]);
 });
 
-test('40-question journey persists, navigates back, reveals and exports a real result', async ({ page }, testInfo) => {
+test('20-question journey persists, navigates back, reveals and exports a real result', async ({ page }, testInfo) => {
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('/');
@@ -50,31 +50,32 @@ test('40-question journey persists, navigates back, reveals and exports a real r
   await expect(page.getByRole('button', { name: '下一幕', exact: true })).toBeDisabled();
   await page.keyboard.press('b');
   await page.keyboard.press('Enter');
-  await expect(page.locator('.quiz-counter')).toHaveText('02 / 40');
+  await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
   await page.reload();
-  await expect(page.locator('.quiz-counter')).toHaveText('02 / 40');
+  await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
   await page.getByRole('button', { name: '上一题', exact: true }).click();
   await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '14');
   await page.screenshot({ path: `.work/quiz-${testInfo.project.name}.png`, fullPage: true });
-  for (let i = 0; i < 40; i++) {
-    await expect(page.locator('.quiz-counter')).toHaveText(`${String(i+1).padStart(2,'0')} / 40`);
+  for (let i = 0; i < 20; i++) {
+    await expect(page.locator('.quiz-counter')).toHaveText(`${String(i+1).padStart(2,'0')} / 20`);
     const slider=page.getByRole('slider');
     await slider.focus();
     await slider.press(i % 3 === 0 ? 'End' : 'Home');
-    if (i === 39) {
+    if (i === 19) {
+      await slider.press('End');
       // A locally chosen final answer is not a submitted answer sheet.
-      await expect(page.locator('.header-cta')).toHaveText('继续选角');
+      await expect(page.locator('.site-header')).toHaveCount(0);
       await expect(page.getByRole('button', { name: '我的剧本', exact: true })).toHaveCount(0);
       await page.evaluate(() => { location.hash = '/result'; });
       await expect(page).toHaveURL(/#\/test$/);
-      await expect(page.locator('.quiz-counter')).toHaveText('40 / 40');
+      await expect(page.locator('.quiz-counter')).toHaveText('20 / 20');
       expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).submitted, STORAGE_KEY)).toBe(false);
       await page.reload();
-      await expect(page.locator('.quiz-counter')).toHaveText('40 / 40');
+      await expect(page.locator('.quiz-counter')).toHaveText('20 / 20');
       await expect(slider).toHaveAttribute('aria-valuenow', '14');
-      await expect(page.locator('.header-cta')).toHaveText('继续选角');
+      await expect(page.locator('.site-header')).toHaveCount(0);
     }
-    await page.getByRole('button', { name: i === 39 ? '揭晓我的主角' : '下一幕', exact: true }).click();
+    await page.getByRole('button', { name: i === 19 ? '揭晓我的主角' : '下一幕', exact: true }).click();
   }
   await expect(page).toHaveURL(/#\/result$/);
   expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).submitted, STORAGE_KEY)).toBe(true);
@@ -96,7 +97,7 @@ test('40-question journey persists, navigates back, reveals and exports a real r
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(name);
   await page.getByRole('button', { name: '再选一次，我有别的剧本' }).click();
   await page.getByRole('button', { name: '保留答案，回去修改' }).click();
-  await expect(page.locator('.quiz-counter')).toHaveText('01 / 40');
+  await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
   await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow','14');
   expect(errors).toEqual([]);
 });

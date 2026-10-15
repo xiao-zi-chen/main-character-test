@@ -1,10 +1,11 @@
 import {test,expect} from '@playwright/test';
 import {hiddenRoles,roleById} from '../../src/data/roles.js';
+import { STORAGE_KEY } from '../../src/engine.js';
 import {questions,dimensions} from '../../src/data/questions.js';
 import {HIDDEN_STORAGE_KEY} from '../../src/hidden-rules.js';
 
-function answersFor(role) {
-  const answers={};dimensions.forEach((dim,i)=>{const items=questions.filter(q=>q.dimension===dim.id);const n=Math.round(role.profile[i]/100*items.length);items.forEach((q,j)=>{const endpoint=j<n?q.highAnswer:q.highAnswer==='A'?'B':'A';answers[q.id]=endpoint==='A'?0:14;});});return answers;
+function answersFor(role,questionIds) {
+  return Object.fromEntries(questionIds.map(id=>{const q=questions.find(item=>item.id===id);const units=Math.round(role.profile[dimensions.findIndex(d=>d.id===q.dimension)]*14/100);return [id,q.highAnswer==='A'?14-units:units];}));
 }
 async function openSecrets(page) {
   for(let i=0;i<5;i++) await page.getByRole('link',{name:'主角请就位，返回首页',exact:true}).click();
@@ -47,18 +48,21 @@ test('secret entry, opt-in, both earned unlocks, persistence, and reset work end
   await page.getByRole('button',{name:'带着这个设置继续'}).click();
   await expect(page).toHaveURL(/#\/test$/);
   for(let round=0;round<hiddenRoles.length;round++) {
-    const role=hiddenRoles[round],answers=answersFor(role);
+    const role=hiddenRoles[round];
     if(round) {
       await page.goto('/#/result');
       await page.getByRole('button',{name:'再选一次，我有别的剧本'}).click();
       await page.getByRole('dialog').getByRole('button',{name:'重新开始',exact:true}).click();
       await expect(page).toHaveURL(/#\/test$/);
     }
-    for(let i=0;i<questions.length;i++) {
+    const questionIds=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)).questionIds,STORAGE_KEY);
+    const answers=answersFor(role,questionIds);
+    for(let i=0;i<questionIds.length;i++) {
       const slider=page.getByRole('slider');
       await slider.focus();
-      await slider.press(answers[questions[i].id]===0?'Home':'End');
-      await page.getByRole('button',{name:i===39?'揭晓我的主角':'下一幕',exact:true}).click();
+      await slider.press('Home');
+      for(let step=0;step<answers[questionIds[i]];step++) await slider.press('ArrowRight');
+      await page.getByRole('button',{name:i===19?'揭晓我的主角':'下一幕',exact:true}).click();
     }
     await expect(page).toHaveURL(/#\/result$/);
     await expect(page.getByRole('heading',{level:1})).toHaveText(role.name);
