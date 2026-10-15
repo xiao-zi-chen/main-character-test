@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { questions } from './data/questions.js';
 import { roles, regularRoles, hiddenRoles, roleById, mediaPath } from './data/roles.js';
+import { relationships } from './data/relationships.js';
 import { readHiddenState, saveHiddenState, canViewRole } from './hidden-rules.js';
 import { answeredCount, getResult, isAnswer, isComplete, readProgress, saveProgress } from './engine.js';
 import { AnswerScale } from './components/AnswerScale.jsx';
@@ -59,7 +60,7 @@ function Header({ route, count, onStart, onSection, onSecretTap }) {
 }
 
 function Footer({ onSection }) {
-  return <footer className="site-footer"><a href="#/" className="footer-brand"><Star /> 主角请就位</a><p>人生没有标准剧本。你，就是主角。</p><button onClick={() => onSection('faq')}>关于这场测试 <ArrowUpRight size={14} /></button><span className="footer-note">FOR FUN. FOR YOUR OWN STORY.</span><small className="footer-authors">作者：陈嘉恒、卜俊程、李家兴、肖宇诚</small></footer>;
+  return <footer className="site-footer"><a href="#/" className="footer-brand"><Star /> 主角请就位</a><p>人生没有标准剧本。你，就是主角。</p><button onClick={() => onSection('faq')}>关于这场测试 <ArrowUpRight size={14} /></button><span className="footer-note">FOR FUN. FOR YOUR OWN STORY.</span><small className="footer-authors"><span>作者：拾壹、我燃起来了、FhwuTrqr、Le Prince Grenouille</span><a className="footer-icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">辽ICP备2026023653号</a></small></footer>;
 }
 
 function Modal({ title, onClose, children, className = '' }) {
@@ -122,7 +123,7 @@ function VideoPlayer({ role, media, autoplay = true }) {
     <video ref={ref} src={src} poster={poster} muted={muted} loop playsInline preload="metadata" aria-label={`${role.name}，${lengthLabel}${status === 'final' ? '角色视频' : '动态分镜'}`} onLoadedMetadata={event=>setPlaybackSeconds(event.currentTarget.duration)} onPlay={event => {setPlaying(true);document.dispatchEvent(new CustomEvent('casting:video-play',{detail:event.currentTarget}));}} onPause={() => setPlaying(false)} onError={() => { setFailed(true); setPlaying(false); }} onTimeUpdate={event => { const video=event.currentTarget;setProgress(Number.isFinite(video.duration)&&video.duration>0?video.currentTime/video.duration*100:0); }} />
     <span className="video-label"><span />{status === 'final' ? '主角高光时刻' : '动态分镜预览'}</span>
     <span className="video-duration">{formatPlaybackTime(seconds)}</span>
-    {media?.nativeDialogue && muted && !failed && <button className="native-sound-button" onClick={hearDialogue}><Volume2 size={15}/> 听原声</button>}
+    {media?.hasAudio && muted && !failed && <button className="native-sound-button" onClick={hearDialogue}><Volume2 size={15}/> 听原声</button>}
     {!playing && !failed && <button className="big-play" onClick={toggle} aria-label="播放视频"><Play size={29} fill="currentColor" /></button>}
     {failed && <div className="video-error"><Film /><p>这场好戏暂时无法播放</p><span>你仍然可以查看下方的完整角色剧本。</span></div>}
     {status === 'final' && !media?.embeddedTitle && <div className="final-video-title"><small>你的主角身份</small><strong>{role.name}</strong></div>}
@@ -165,7 +166,7 @@ function Home({ count, onStart, onPreview, manifest, hiddenState, onHiddenHint }
 
     <section className="character-section page-width" id="characters" aria-labelledby="character-title">
       <div className="section-heading"><div><span className="eyebrow muted"><span className="section-index">01 /</span> THE MULTIVERSE ARCHIVE</span><h2 id="character-title">你的隐藏身份，<span>是哪一种？</span></h2></div><p>有人一念唤醒诸神，有人重生执掌棋局。<br/>十八个开放世界，还有两份等待解锁的隐藏剧本。</p></div>
-      <div className="gallery-toolbar"><div className="filter-tabs" aria-label="按题材筛选">{['全部剧本', '第二季新角', '爽文开挂', '古装大女主', '脑洞异世界'].map(value => <button key={value} aria-pressed={filter === value} className={value === filter ? 'selected' : ''} onClick={() => setFilter(value)}>{value}{value === '全部剧本' && <span>{regularRoles.length}＋{hiddenRoles.length}</span>}</button>)}</div><span className="gallery-hint"><Play size={12} /> 点击，偷看{movieLength===null?'':` ${movieLength} 秒`}主角人生</span></div>
+      <div className="gallery-toolbar"><div className="filter-tabs" aria-label="按题材筛选">{['全部剧本', '第二季新角', '爽文开挂', '古装大女主', '脑洞异世界', '都市脑洞'].map(value => <button key={value} aria-pressed={filter === value} className={value === filter ? 'selected' : ''} onClick={() => setFilter(value)}>{value}{value === '全部剧本' && <span>{regularRoles.length}＋{hiddenRoles.length}</span>}</button>)}</div><span className="gallery-hint"><Play size={12} /> 点击，偷看{movieLength===null?'':` ${movieLength} 秒`}主角人生</span></div>
       <div className="role-grid">{shown.map(role => <button className="role-card" key={role.id} style={{ '--role-color': role.color }} onClick={() => onPreview(role)} aria-label={`预览${role.name}`}>
         <RolePoster role={role} media={manifest[role.id]}/>
         {role.collection==='season2' && <span className="season-label">{role.hidden?'隐藏档案 · 已解锁':'第二季 · 新角色'}</span>}
@@ -263,6 +264,7 @@ function Result({ result, generic, manifest, onRestart, onStart, onShare, toast,
   const [showAll, setShowAll] = useState(false);
   const [saving, setSaving] = useState(false);
   const partner = roleById[role.partner];
+  const relationship = relationships[role.id];
   async function save() { setSaving(true); try { await saveRoleCard(role,manifest[role.id]); toast('角色卡已生成，正在下载'); } catch { toast('角色卡生成失败，请重试'); } finally { setSaving(false); } }
   return <main id="main-content" className="result-page page-width" style={{ '--role-color': role.color }}>
     <div className="result-world-backdrop"><WorldArt role={role}/></div>
@@ -276,7 +278,8 @@ function Result({ result, generic, manifest, onRestart, onStart, onShare, toast,
     <div className="result-detail-grid"><section className="story-panel"><span className="eyebrow muted">YOUR HIGHLIGHT SCENE</span><h2>如果镜头给到你。</h2><p>{role.story}</p><ol className="scene-beats">{role.beats.map((beat,i)=><li key={beat}><span>{["开局","反转","高光"][i]}</span><p>{beat}</p></li>)}</ol><DialogueScript role={role}/><div className="director-note"><Star /><div><span>给主角的一句话</span><p>{role.reminder}</p></div></div></section>
       {!generic && scores ? <section className="traits-panel"><div className="trait-heading"><div><span className="eyebrow muted">YOUR CHARACTER DNA</span><h2>你的主角底色</h2></div><ScanLine size={25} /></div><p className="trait-explanation">根据你的选择呈现的倾向，不是能力评分。</p><DestinyRadar scores={scores} color={role.color}/><p className="radar-caption">各维度量表倾向 · 下方为你的明显倾向</p><div className="traits">{(showAll ? scores : [...scores].sort((a,b)=>Math.abs(b.value-50)-Math.abs(a.value-50)).slice(0,5)).map(score => <div className="trait" key={score.id}><div><span>{score.label}</span><span>{score.value < 50 ? score.low : score.high}<b>{score.value < 50 ? 100-score.value : score.value}%</b></span></div><div className="trait-track"><i style={{ width: `${score.value < 50 ? 100-score.value : score.value}%` }} /></div></div>)}</div><button className="text-button all-traits" onClick={() => setShowAll(v=>!v)}>{showAll ? '收起倾向' : '查看全部 10 个倾向'}<ChevronDown size={15} className={showAll ? 'rotated' : ''} /></button></section> : <section className="generic-panel"><RoleIcon role={role} size={56} strokeWidth={1} /><h2>这会是你的主角剧本吗？</h2><p>40 个日常选择，找到属于你的那一种人生。</p><button className="button button-outline" onClick={onStart}>现在开始选角 <ArrowUpRight size={18} /></button></section>}
     </div>
-    <div className="partner-panel"><div className="partner-icon" style={{ '--partner-color': partner.color }}><RoleIcon role={partner} size={29} /></div><div><small>编剧为你安排的搭档</small><h3>{partner.name}<span>一起演，这集更精彩。</span></h3></div><button className="text-button" onClick={() => onPreview(partner)}>看看 TA 的剧本 <ArrowUpRight size={17} /></button></div>
+    <section className="relationship-section" aria-labelledby="relationship-title"><span className="eyebrow muted">YOU, IN SOMEONE ELSE'S STORY</span><h2 id="relationship-title">你在朋友那里的隐藏身份</h2><p className="relationship-identity">{relationship.identity}</p><dl className="relationship-details"><div><dt>熟人眼里的你</dt><dd>{relationship.familiar}</dd></div><div><dt>你的偏爱藏在这里</dt><dd>{relationship.affection}</dd></div><div><dt>最容易被误会的瞬间</dt><dd>{relationship.friction}</dd></div></dl></section>
+    <section className="relationship-bond" aria-label="你的剧情搭档"><div className="partner-panel"><div className="partner-icon" style={{ '--partner-color': partner.color }}><RoleIcon role={partner} size={29} /></div><div><small>{relationship.bond}</small><h3>{partner.name}</h3></div><button className="text-button" onClick={() => onPreview(partner)}>看看 TA 的剧本 <ArrowUpRight size={17} /></button></div><p className="bond-chemistry">{relationship.chemistry}</p><div className="bond-invitation"><p>{relationship.prompt}</p><button className="button button-outline" onClick={() => onShare(role)}><Share2 size={17}/> 找 TA 来认领</button></div></section>
     <p className="result-disclaimer">这是一次关于选择与想象的娱乐测试。角色性别属于剧情设定；你的人生，远比任何一种人设丰富。</p>
   </main>;
 }
@@ -326,8 +329,10 @@ function App() {
   const onDone = useCallback(() => go('/result'), []);
   async function onShare(role) {
     const url=new URL(window.location.href);url.hash=`/role/${role.id}`;
-    try { if(!navigator.clipboard?.writeText) throw new Error(); await navigator.clipboard.writeText(url.href); toast(role.hidden?'隐藏链接已复制；好友解锁后可见，也可直接分享角色卡':'角色链接已复制，分享给朋友看看吧'); }
-    catch { setModal({ kind: 'share', url: url.href }); }
+    const relationship=relationships[role.id];
+    const text=`我的主角人设是「${role.name}」：${relationship.identity}\n${relationship.prompt}\n${role.hidden?'这是隐藏剧本，解锁后可查看。':'我的剧情搭档是「'+roleById[role.partner].name+'」，你来认领吗？'}\n${url.href}`;
+    try { if(!navigator.clipboard?.writeText) throw new Error(); await navigator.clipboard.writeText(text); toast(role.hidden?'邀请已复制；隐藏剧本需好友解锁后查看':'角色和搭档邀请已复制，发给你想到的那个人'); }
+    catch { setModal({ kind: 'share', url: url.href, text }); }
   }
   const requestedRole = route.startsWith('/role/') && Object.hasOwn(roleById, route.slice(6)) ? roleById[route.slice(6)] : null;
   const lockedRole = requestedRole?.hidden && !canViewRole(requestedRole,hiddenState);
@@ -343,7 +348,7 @@ function App() {
     {modal?.kind==='hidden-hint' && <Modal title="隐藏剧本线索" onClose={closeModal} className="small-modal"><LockKeyhole className="modal-symbol" size={32}/><h2>有些剧本，不在常规名单里。</h2><p>试着连续点击首页左上角的“主角请就位”五次，进入彩蛋导演室。开启彩蛋设置后，再由你的完整答案决定是否揭晓。</p><button className="button button-lime" onClick={()=>{closeModal();go('/');}}>去片场看看 <ArrowRight size={18}/></button></Modal>}
     {modal?.kind==='secrets' && <Modal title="彩蛋导演室" onClose={closeModal} className="small-modal secret-settings"><Clapperboard className="modal-symbol" size={34}/><h2>彩蛋导演室</h2><p>开启后，特殊的答题组合才有机会产生两份隐藏剧本。普通结果仍然照常匹配。</p><label className="secret-toggle"><input type="checkbox" checked={hiddenState.enabled} onChange={event=>setHiddenState(old=>({...old,enabled:event.target.checked}))}/><span>允许解锁隐藏剧本</span></label><p className="secret-count">已解锁 {hiddenState.unlocked.length} / {hiddenRoles.length} 份隐藏档案</p><button className="button button-lime" onClick={()=>{closeModal();onStart();}}>带着这个设置继续 <ArrowRight size={18}/></button><button className="text-button" onClick={()=>{setHiddenState({enabled:false,unlocked:[]});toast('彩蛋记录已清空，隐藏模式已关闭');}}>清空彩蛋记录并关闭</button></Modal>}
     {modal?.kind==='restart' && <Modal title="重新选角" onClose={closeModal} className="small-modal"><RotateCcw className="modal-symbol" size={31} /><h2>再开一个新剧本？</h2><p>重新测试会清空这次的 40 道回答。你可以先保存角色卡，也可以保留答案回去修改。</p><button className="button button-lime" onClick={()=>{window.NBTICollector?.start({resume:false});setQuiz({answers:{},index:0,submitted:false});setModal(null);go('/test');}}>重新开始 <ArrowRight size={18} /></button><button className="button button-outline" onClick={()=>{window.NBTICollector?.start({resume:true});setQuiz(old=>({...old,index:0,submitted:false}));setModal(null);go('/test');}}>保留答案，回去修改</button><button className="text-button" onClick={closeModal}>先留在这个剧本</button></Modal>}
-    {modal?.kind==='share' && <Modal title="分享角色链接" onClose={closeModal} className="small-modal"><Share2 className="modal-symbol" size={31} /><h2>把这个剧本，分享出去。</h2><p>复制下方链接发给朋友。链接只展示角色，不会展示你的答题记录。对方需要能够访问这个网站地址。</p><input className="share-input" aria-label="角色分享链接" value={modal.url} readOnly onFocus={event=>event.target.select()} /><button className="button button-lime" onClick={closeModal}>完成 <Check size={18} /></button></Modal>}
+    {modal?.kind==='share' && <Modal title="分享角色链接" onClose={closeModal} className="small-modal"><Share2 className="modal-symbol" size={31} /><h2>这段关系，让 TA 来认领。</h2><textarea className="share-input share-invitation" aria-label="角色分享邀请" value={modal.text} readOnly onFocus={event=>event.target.select()} /><button className="button button-lime" onClick={closeModal}>完成 <Check size={18} /></button></Modal>}
     <div className={`toast ${toastMessage?'visible':''}`} role="status" aria-live="polite"><Check size={16} />{toastMessage}</div>
   </>;
 }

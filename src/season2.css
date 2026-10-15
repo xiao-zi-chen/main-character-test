@@ -5,6 +5,25 @@
 @media(max-width:600px){.mystery-poster{gap:12px;padding:15px}.mystery-poster strong{font-size:20px;letter-spacing:1px}.mystery-poster p{font-size:11px}.mystery-poster small{font-size:9px}.season-label{font-size:9px;margin-top:10px}.secret-toggle{font-size:13px}.hidden-gate{padding-inline:24px}}
 
 .footer-authors{flex-basis:100%;order:99;text-align:center;padding-top:18px;margin-top:7px;border-top:1px solid #aebbd515;font-size:12px;line-height:1.8;letter-spacing:.4px;color:#9aaac0}
+.footer-icp{display:block;width:fit-content;max-width:100%;margin:8px auto 0;letter-spacing:0;color:inherit}
+.footer-icp:hover,.footer-icp:focus-visible{text-decoration:underline}
+.footer-authors>span{display:block;overflow-wrap:anywhere}
+.relationship-section{margin-top:36px;padding:32px 0;border-top:1px solid #aebbd526}
+.relationship-section h2{font-size:24px;line-height:1.5;margin:12px 0}
+.relationship-identity{font-size:18px;line-height:1.8;color:var(--role-color);margin-bottom:24px}
+.relationship-details{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin:0}
+.relationship-details dt{font-size:13px;color:#e4d4b9;margin-bottom:10px}
+.relationship-details dd{margin:0;font-size:13px;line-height:2;color:#aebbd0;overflow-wrap:anywhere}
+.relationship-bond{padding:26px 0;border-block:1px solid #aebbd526}
+.relationship-bond .partner-panel{margin:0;padding:0;border:0;background:none;border-radius:0;box-shadow:none}
+.relationship-bond .partner-panel>div:nth-child(2){flex:1;min-width:0}
+.relationship-bond .partner-panel small{line-height:1.8;display:block}
+.bond-chemistry{color:#aebbd0;font-size:13px;line-height:2;margin:20px 0}
+.bond-invitation{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.bond-invitation p{font-size:14px;color:#e4d4b9;line-height:1.8}
+.bond-invitation .button{flex-shrink:0;font-size:12px;min-height:44px}
+.share-invitation{display:block;width:100%;min-height:190px;resize:vertical;white-space:pre-wrap;line-height:1.8;margin:20px 0;overflow-wrap:anywhere}
+@media(max-width:680px){.relationship-section{margin-top:28px;padding:25px 0}.relationship-section h2{font-size:20px}.relationship-identity{font-size:16px}.relationship-details{grid-template-columns:1fr;gap:22px}.relationship-bond .partner-panel{align-items:flex-start}.relationship-bond .partner-panel>.text-button{margin-left:0}.bond-invitation{align-items:flex-start;flex-direction:column;gap:14px}.bond-invitation .button{width:100%}}
 .native-sound-button{position:absolute;right:15px;top:55px;z-index:5;display:flex;align-items:center;gap:6px;padding:8px 10px;border:1px solid #dec19e66;border-radius:22px;background:#101a2be8;color:#eed5b4;font-size:11px;box-shadow:0 3px 14px #0003}
 .dialogue-script{margin:22px 0;width:100%;border:1px solid #7c8ba033;border-radius:7px;background:#080f1e4d;flex-shrink:0}
 .dialogue-script summary{display:flex;align-items:center;gap:9px;padding:13px 15px;color:#c5b89f;font-size:12px;cursor:pointer;list-style:none}

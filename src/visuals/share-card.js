@@ -53,7 +53,7 @@ export async function createRoleCard(role, portraitUrl) {
   ctx.fillText(role.name,87,1563,723);
   ctx.fillStyle='#b4b9ca';
   ctx.font='26px "Microsoft YaHei", sans-serif';
-  ctx.fillText(role.tagline,90,1630,720);
+  ctx.fillText(relationships[role.id].identity,90,1630,720);
 
   ctx.font='20px "Microsoft YaHei", sans-serif';
   let chipX=90,chipY=1681;
@@ -70,9 +70,9 @@ export async function createRoleCard(role, portraitUrl) {
   ctx.beginPath();ctx.moveTo(90,1805);ctx.lineTo(810,1805);ctx.stroke();
   ctx.fillStyle='#929aae';
   ctx.font='20px "Microsoft YaHei", sans-serif';
-  ctx.fillText('人生没有标准剧本。你，就是主角。',90,1856,720);
+  ctx.fillText(`我的剧情搭档：${roleById[role.partner].name}。你来认领吗？`,90,1856,720);
   ctx.fillStyle='#74849a';ctx.font='14px "Microsoft YaHei", sans-serif';
-  ctx.fillText('作者：陈嘉恒、卜俊程、李家兴、肖宇诚',90,1880,720);
+  ctx.fillText('作者：拾壹、我燃起来了、FhwuTrqr、Le Prince Grenouille',90,1880,720);
   return canvas;
 }
 
@@ -86,4 +86,5 @@ export async function downloadRoleCard(role, portraitUrl) {
   link.click();
   setTimeout(()=>URL.revokeObjectURL(url),10000);
 }
-import { roles } from '../data/roles.js';
+import { roles, roleById } from '../data/roles.js';
+import { relationships } from '../data/relationships.js';

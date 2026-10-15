@@ -48,10 +48,10 @@ export function Stardust({ color = '#dfbb83' }) {
 }
 
 const portals = [
-  {role:roleById['villain-calmer'],label:'反派降温',icon:MessageCircleHeart},
+  {role:roleById['villain-calmer'],label:'职场顺毛',icon:MessageCircleHeart},
   {role:roleById['immortal-support'],label:'修仙售后',icon:Wrench},
-  {role:roleById['dragon-office-worker'],label:'龙王打卡',icon:BriefcaseBusiness},
-  {role:roleById['lucky-disaster'],label:'锦鲤翻盘',icon:Sparkles},
+  {role:roleById['dragon-office-worker'],label:'生活救场',icon:BriefcaseBusiness},
+  {role:roleById['lucky-disaster'],label:'乌云随身',icon:Sparkles},
   {role:roles[1],label:'国运觉醒',icon:Sun},
   {role:roles[5],label:'重生翻盘',icon:Crown},
 ];

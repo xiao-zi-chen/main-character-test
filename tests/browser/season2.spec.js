@@ -14,7 +14,7 @@ async function openSecrets(page) {
 test('new season exposes eight new regular roles, native dialogue, and author credit',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');
-  await expect(page.locator('.footer-authors')).toHaveText('作者：陈嘉恒、卜俊程、李家兴、肖宇诚');
+  await expect(page.locator('.footer-authors > span')).toHaveText('作者：拾壹、我燃起来了、FhwuTrqr、Le Prince Grenouille');
   await page.getByRole('button',{name:'第二季新角',exact:true}).click();
   await expect(page.getByRole('button',{name:/^预览/})).toHaveCount(8);
   await expect(page.locator('.mystery-role')).toHaveCount(2);
@@ -25,8 +25,8 @@ test('new season exposes eight new regular roles, native dialogue, and author cr
   await expect.poll(()=>page.locator('video').evaluate(v=>!v.muted&&!v.paused&&v.currentTime>0)).toBe(true);
   await page.getByRole('button',{name:'关闭声音',exact:true}).click();
   await expect.poll(()=>page.locator('video').evaluate(v=>v.muted)).toBe(true);
-  await page.locator('.dialogue-script summary').click();
-  for(const line of roleById['villain-calmer'].dialogue) await expect(page.locator('.dialogue-script')).toContainText(line);
+  await expect(page.locator('.dialogue-script')).toHaveCount(0);
+  await expect(page.locator('.relationship-section')).toContainText('你的偏爱藏在这里');
   await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   expect(errors).toEqual([]);
 });

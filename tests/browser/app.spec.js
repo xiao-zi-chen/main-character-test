@@ -17,8 +17,12 @@ test('landing, gallery filters, videos and modal keyboard controls', async ({ pa
   await page.getByRole('button', { name: '重生翻盘', exact: true }).click();
   await expect(page.getByRole('button', { name: '重生翻盘', exact: true })).toHaveAttribute('aria-pressed','true');
   await expect(page.getByRole('button', { name: '观看重生复仇女王专属预告' })).toBeVisible();
-  await page.getByRole('button', { name: '古装大女主', exact: true }).click();
-  await expect(page.getByRole('button', { name: /^预览/ })).toHaveCount(5);
+  for (const category of new Set(roles.map(role=>role.category))) {
+    await page.getByRole('button', { name: category, exact: true }).click();
+    const categoryRoles=roles.filter(role=>role.category===category);
+    await expect(page.getByRole('button', { name: /^预览/ })).toHaveCount(categoryRoles.length);
+    for(const role of categoryRoles) await expect(page.getByRole('button',{name:`预览${role.name}`,exact:true})).toBeVisible();
+  }
   await page.getByRole('button', { name: /^全部剧本/ }).click();
   await expect(page.getByRole('button', { name: /^预览/ })).toHaveCount(18);
   await page.getByRole('button', { name: '预览失落神话继承人', exact: true }).click();
@@ -108,7 +112,8 @@ test('shared character links are public previews; incomplete answers cannot open
     expect(await page.locator('.result-media video').evaluate(v => v.duration)).toBeCloseTo(media[role.id].duration, 1);
     await expect(page.locator('.video-duration')).toHaveText(formatPlaybackTime(media[role.id].duration));
     await expect(page.locator('.video-label')).toContainText('主角高光时刻');
-    await expect(page.locator('.final-video-title')).toHaveCount(0);
+    await expect(page.locator('.final-video-title')).toHaveCount(media[role.id].embeddedTitle?0:1);
+    if(!media[role.id].embeddedTitle) await expect(page.locator('.final-video-title strong')).toHaveText(role.name);
     await page.locator('.result-media video').evaluate(video=>new Promise((resolve,reject)=>{
       video.addEventListener('seeked',resolve,{once:true});
       video.addEventListener('error',()=>reject(new Error('Could not decode the ending card')),{once:true});

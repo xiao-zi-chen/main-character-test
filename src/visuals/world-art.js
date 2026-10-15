@@ -14,11 +14,11 @@ const themes = {
 };
 
 export const worldNotes = {
-  'underworld-heir': { label: '祖谱开挂', power: '亲缘庇护', chapter: '鬼门关外，一声爷爷改写规则。', atmosphere: '冥灯 / 玄门 / 祖传底牌' },
+  'underworld-heir': {"label":"先问问我家长辈","power":"关键时刻找对人","chapter":"别人研究怎么破门，你先确认门里有没有熟人。","atmosphere":"祖传底牌流 / 祖传人脉通关王"},
   'myth-keeper': { label: '一念唤神', power: '失落记忆', chapter: '诸神沉寂，而你记得他们的名字。', atmosphere: '神域 / 天光 / 失落神话' },
-  'ghost-player': { label: '恐怖免疫', power: '规则之外', chapter: '全员都在逃生，你却遇见了熟人。', atmosphere: '回廊 / 赤月 / 无解副本' },
-  'plot-rewriter': { label: '改写命运', power: '剧情先知', chapter: '翻开第三章，把既定结局划掉。', atmosphere: '残卷 / 星轨 / 命运分岔' },
-  'hidden-player': { label: '满级觉醒', power: '隐藏系统', chapter: '在被低估的世界，悄悄点满技能树。', atmosphere: '数据 / 裂隙 / 终极权限' },
+  'ghost-player': {"label":"别人逃命我送水果","power":"紧张气氛自动降级","chapter":"队友连夜查攻略，你拎着橘子去看亲戚。","atmosphere":"诡异认亲流 / 诡异副本走亲戚"},
+  'plot-rewriter': {"label":"想要的我亲手造","power":"随口愿望认真记住","chapter":"别人说想想就好，你已经把愿望写进施工单。","atmosphere":"心愿造物流 / 心愿具象师"},
+  'hidden-player': {"label":"修仙但重装上阵","power":"准备直接拉满","chapter":"他们还在比拼灵根，你已经带着重装进场。","atmosphere":"机甲修仙流 / 爆弹至尊"},
   'reborn-queen': { label: '重启棋局', power: '重生布局', chapter: '这一世，轮到你先落子。', atmosphere: '宫阙 / 赤金 / 凤凰归来' },
   'mind-reader': { label: '心声外放', power: '全员读心', chapter: '你没说出口的真相，满朝都听见了。', atmosphere: '流光 / 宫灯 / 秘密回响' },
   'chaos-director': { label: '逻辑下线', power: '反套路脑洞', chapter: '请系好安全带，本集不负责合理。', atmosphere: '逆重力 / 浮岛 / 万物错位' },
@@ -27,54 +27,19 @@ export const worldNotes = {
 };
 
 Object.assign(worldNotes, {
-  "villain-calmer": {
-    "label": "先劝BOSS喝口水",
-    "power": "火气自动降温",
-    "chapter": "别人和反派拼命，你先劝他喝口水。",
-    "atmosphere": "反派安抚流 / 第二季 / 主角登场"
-  },
+  "villain-calmer": {"label":"先顺毛再开会","power":"读懂弦外之音","chapter":"别人猜领导的心思，你已经找到它追着跑的红点。","atmosphere":"职场顺毛流 / 猫老板情绪翻译官"},
   "immortal-support": {
     "label": "飞剑异响请重启",
     "power": "故障一眼定位",
     "chapter": "飞剑报错别着急，售后比掌门靠谱。",
     "atmosphere": "修仙售后流 / 第二季 / 主角登场"
   },
-  "apocalypse-caterer": {
-    "label": "世界重启饭别凉",
-    "power": "后勤永不断线",
-    "chapter": "世界可以重启，这顿饭必须趁热。",
-    "atmosphere": "末日后勤流 / 第二季 / 主角登场"
-  },
-  "lucky-disaster": {
-    "label": "失误也能开宝箱",
-    "power": "意外自动转运",
-    "chapter": "你只是失误了一下，世界替你开了挂。",
-    "atmosphere": "锦鲤翻盘流 / 第二季 / 主角登场"
-  },
-  "contract-judge": {
-    "label": "拔刀之前先结账",
-    "power": "边界写得很清楚",
-    "chapter": "你负责拔刀，我负责算违约金。",
-    "atmosphere": "江湖契约流 / 第二季 / 主角登场"
-  },
-  "social-shield": {
-    "label": "祝福到了人先不去",
-    "power": "个人空间守护者",
-    "chapter": "别人靠社交破圈，你靠结界省电。",
-    "atmosphere": "独处结界流 / 第二季 / 主角登场"
-  },
-  "dragon-office-worker": {
-    "label": "翻江倒海也要下班",
-    "power": "神级能力平常用",
-    "chapter": "翻江倒海算特长，准点下班是理想。",
-    "atmosphere": "龙王职场流 / 第二季 / 主角登场"
-  },
-  "spotlight-extra": {
-    "label": "只是路过就成主角",
-    "power": "镜头自动追焦",
-    "chapter": "你只是想借过，镜头却认定了主角。",
-    "atmosphere": "片场误认流 / 第二季 / 主角登场"
-  },
+  "apocalypse-caterer": {"label":"先把这顿饭吃好","power":"把关心落到实处","chapter":"饭桌上人声鼎沸，你先稳稳接住这一口热乎。","atmosphere":"饭桌定心流 / 全家开饭定海针"},
+  "lucky-disaster": {"label":"出门自带局部降雨","power":"翻车后还能动身","chapter":"别人查天气预报，你的天气直接跟着你走。","atmosphere":"乌云伴随流 / 乌云随身体验官"},
+  "contract-judge": {"label":"这粒灰也别想过关","power":"遗漏一眼识别","chapter":"别人说差不多了，你已经蹲下检查沙发底。","atmosphere":"细节审判流 / 家务验收判官"},
+  "social-shield": {"label":"边界直接随身带","power":"边界随身携带","chapter":"说要撑起门面，你真的把整扇门穿在了身上。","atmosphere":"字面门面流 / 门面担当"},
+  "dragon-office-worker": {"label":"平时擦桌关键救场","power":"突发情况先行动","chapter":"平时把桌面擦干净，关键时刻把局面稳下来。","atmosphere":"日常救场流 / 生活救场队长"},
+  "spotlight-extra": {"label":"走到哪都能组个局","power":"陌生场合不让人落单","chapter":"别人出门看风景，你出门给朋友圈扩地图。","atmosphere":"跨服交友流 / 跨服交友连接器"},
   "heaven-admin": {
     "label": "天劫报错先回滚",
     "power": "规则读得比天道熟",
