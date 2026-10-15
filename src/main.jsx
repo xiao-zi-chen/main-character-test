@@ -3,18 +3,17 @@ import { createRoot } from 'react-dom/client';
 import {
   ArrowUpRight, ArrowRight, ArrowLeft, ChevronDown, Check, X, Play, Pause,
   Volume2, VolumeX, RotateCcw, Download, Share2, Sparkles,
-  Film, Clock3, ShieldCheck, Crown, Sun, Ghost, BookOpen,
+  Film, ShieldCheck, Crown, Sun, Ghost, BookOpen,
   ScanLine, Gem, MessageCircleHeart, Orbit, Flower2, CookingPot, Wrench, FileCheck2, BriefcaseBusiness, Clapperboard, Cpu, LockKeyhole,
 } from 'lucide-react';
 import { SESSION_SIZE, questionById, newProgress } from './question-session.js';
-import { roles, regularRoles, hiddenRoles, roleById, mediaPath } from './data/roles.js';
+import { roles, hiddenRoles, roleById, mediaPath } from './data/roles.js';
 import { relationships } from './data/relationships.js';
 import { readHiddenState, saveHiddenState, canViewRole } from './hidden-rules.js';
 import { answeredCount, getResult, isAnswer, isComplete, readProgress, saveProgress } from './engine.js';
 import { AnswerScale } from './components/AnswerScale.jsx';
-import { WorldArt, WorldPortal, RolePoster, Stardust, DestinyRadar, AwakeningArt, worldPath } from './visuals/Cinematic.jsx';
-import { worldNotes } from './visuals/world-art.js';
-import { durationLabel, formatPlaybackTime, collectionDuration, mediaAsset } from './media.js';
+import { WorldArt, Stardust, DestinyRadar, AwakeningArt, worldPath } from './visuals/Cinematic.jsx';
+import { durationLabel, formatPlaybackTime, mediaAsset } from './media.js';
 import { questionCopy } from './data/question-copy.js';
 import { mediaBaseUrl } from './runtime-config.js';
 import { downloadRoleCard } from './visuals/share-card.js';
@@ -23,6 +22,8 @@ import './cinema.css';
 import './season2.css';
 import './experience.css';
 
+import './simple.css';
+import {SimpleHeader, SimpleHome, SimpleFooter, CharacterGallery} from './components/SimpleExperience.jsx';
 const iconMap = { Crown, Sun, Ghost, BookOpen, ScanLine, Gem, MessageCircleHeart, Orbit, Flower2, CookingPot, Wrench, FileCheck2, BriefcaseBusiness, Clapperboard, Cpu, Sparkles, ShieldCheck };
 const acts = [
   { title: '本能登场', description: '听听你的第一反应', caption: '不必想太久，第一直觉就很好。' },
@@ -42,27 +43,12 @@ function useReducedMotion() {
 }
 function routeFromHash() {
   const hash = window.location.hash.slice(1) || '/';
-  if (['/', '/test', '/reveal', '/result'].includes(hash)) return hash;
+  if (['/', '/test', '/reveal', '/result', '/characters'].includes(hash)) return hash;
   if (hash.startsWith('/role/') && Object.hasOwn(roleById, hash.slice(6))) return hash;
   return '/';
 }
 function go(route) { window.location.hash = route; }
 
-function Header({ route, count, onStart, onSection, onSecretTap }) {
-  return <header className="site-header">
-    <a className="wordmark" href="#/" onClick={onSecretTap} aria-label="主角请就位，返回首页"><span className="brand-icon"><Star /></span><span>主角请就位<small>THE MAIN CHARACTER PROJECT</small></span></a>
-    <nav aria-label="主导航">
-      <button className={route === '/' ? 'active' : ''} onClick={() => onSection('characters')}>主角图鉴</button>
-      <button onClick={() => onSection('how-it-works')}>测试说明</button>
-      {count === SESSION_SIZE && <button onClick={() => go('/result')}>我的剧本</button>}
-    </nav>
-    <button className="header-cta" onClick={onStart}>{count === SESSION_SIZE ? '我的主角人生' : count > 0 ? '继续选角' : '开启我的剧本'}<ArrowUpRight size={17} /></button>
-  </header>;
-}
-
-function Footer({ onSection }) {
-  return <footer className="site-footer"><a href="#/" className="footer-brand"><Star /> 主角请就位</a><p>人生没有标准剧本。你，就是主角。</p><button onClick={() => onSection('faq')}>关于这场测试 <ArrowUpRight size={14} /></button><span className="footer-note">FOR FUN. FOR YOUR OWN STORY.</span><small className="footer-authors"><span>作者：拾壹、我燃起来了、FhwuTrqr、Le Prince Grenouille</span><a className="footer-icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">辽ICP备2026023653号</a></small></footer>;
-}
 
 function Modal({ title, onClose, children, className = '' }) {
   const ref = useRef(null);
@@ -137,66 +123,6 @@ function DialogueScript({ role }) {
   return <details className="dialogue-script"><summary><MessageCircleHeart size={16}/><span>原生对白脚本</span><ChevronDown size={15}/></summary><ol>{role.dialogue.map((line,index)=><li key={index}><span>0{index+1}</span><p>{line}</p></li>)}</ol></details>;
 }
 
-function Home({ count, onStart, onPreview, manifest, hiddenState, onHiddenHint }) {
-  const [filter, setFilter] = useState('全部剧本');
-  const [activeWorld, setActiveWorld] = useState(roleById['villain-calmer']);
-  const movieLength=collectionDuration(manifest);
-  const available = roles.filter(role => canViewRole(role, hiddenState)).sort((a,b)=>Number(b.collection==='season2')-Number(a.collection==='season2')||a.number.localeCompare(b.number));
-  const shown = filter === '全部剧本' ? available : available.filter(role => filter==='第二季新角'?role.collection==='season2':role.category===filter);
-  const locked = hiddenRoles.filter(role => !canViewRole(role, hiddenState));
-  function explore() { document.getElementById('characters')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'}); }
-  return <main id="main-content" className="home-main" style={{'--world-color':activeWorld.color}}>
-    <section className="cinematic-hero" aria-labelledby="hero-title">
-      <div className="hero-nebula"/><Stardust color={activeWorld.color}/><span className="hero-outline-word" aria-hidden="true">PROTAGONIST</span>
-      <div className="hero page-width">
-        <div className="hero-copy">
-          <div className="eyebrow hero-eyebrow"><Sparkles size={13}/><span>平行宇宙 · 主角觉醒测试</span><i>VOL. 02</i></div>
-          <h1 id="hero-title">这一世，<br/>轮到你当<span className="hero-last"><em>主角</em><span className="hero-title-spark">✧</span><span className="title-period">。</span></span></h1>
-          <div className="hero-title-caption"><span/> EVERY ORDINARY SOUL. AN EXTRAORDINARY STORY.</div>
-          <p className="hero-description">20 个日常选择，找到你的主角人设。<br/>也找到那个，能和你接上戏的人。</p>
-          <div className="hero-action-row"><button className="button button-lime hero-button" onClick={onStart}>{count === SESSION_SIZE ? '查看我的主角剧本' : count > 0 ? `继续我的选角 · ${count}/${SESSION_SIZE}` : '测测我的主角人设'}<span><ArrowUpRight size={22}/></span></button><button className="hero-secondary" onClick={explore}>先逛逛平行世界 <ArrowRight size={15}/></button></div>
-          <div className="hero-facts"><span><Clock3 size={13}/> 约 2 分钟</span><span><ShieldCheck size={13}/> 无需登录</span><span><Star/> 只凭第一直觉</span></div>
-          <div className="hero-metrics"><div><strong>20<span>道</span></strong><small>日常选择，藏着伏笔</small></div><div><strong>{roles.length}<span>种</span></strong><small>主角人生，等你解锁</small></div><div><strong>{movieLength===null?'—':String(movieLength).padStart(2,'0')}<span>{movieLength===null?'短片':'秒'}</span></strong><small>你的专属高光时刻</small></div></div>
-        </div>
-        <WorldPortal role={activeWorld} onSelect={setActiveWorld} onPreview={onPreview} media={manifest[activeWorld.id]}/>
-      </div>
-      <div className="hero-bottom-line page-width"><button onClick={explore}><span className="scroll-indicator"/>下滑，发现另一种你 <span>SCROLL TO DISCOVER</span></button></div>
-    </section>
-
-    <div className="story-ribbon" aria-hidden="true"><div><span>不必拿别人的剧本</span><Star /><span>每一种你 都有高光</span><Star /><span>YOUR STORY STARTS HERE</span><Star /><span>今天 主角是你</span><Star /></div></div>
-
-    <section className="character-section page-width" id="characters" aria-labelledby="character-title">
-      <div className="section-heading"><div><span className="eyebrow muted"><span className="section-index">01 /</span> THE MULTIVERSE ARCHIVE</span><h2 id="character-title">你的隐藏身份，<span>是哪一种？</span></h2></div><p>有人一念唤醒诸神，有人重生执掌棋局。<br/>十八个开放世界，还有两份等待解锁的隐藏剧本。</p></div>
-      <div className="gallery-toolbar"><div className="filter-tabs" aria-label="按题材筛选">{['全部剧本', '第二季新角', '爽文开挂', '古装大女主', '脑洞异世界', '都市脑洞'].map(value => <button key={value} aria-pressed={filter === value} className={value === filter ? 'selected' : ''} onClick={() => setFilter(value)}>{value}{value === '全部剧本' && <span>{regularRoles.length}＋{hiddenRoles.length}</span>}</button>)}</div><span className="gallery-hint"><Play size={12} /> 点击，偷看{movieLength===null?'':` ${movieLength} 秒`}主角人生</span></div>
-      <div className="role-grid">{shown.map(role => <button className="role-card" key={role.id} style={{ '--role-color': role.color }} onClick={() => onPreview(role)} aria-label={`预览${role.name}`}>
-        <RolePoster role={role} media={manifest[role.id]}/>
-        {role.collection==='season2' && <span className="season-label">{role.hidden?'隐藏档案 · 已解锁':'第二季 · 新角色'}</span>}
-        <div className="role-card-heading"><span>{worldNotes[role.id].power}</span><ArrowUpRight size={16}/></div><p>{role.tagline}</p>
-      </button>)}
-      {(filter==='全部剧本'||filter==='第二季新角') && locked.map((role,index)=><button className="role-card mystery-role" key={role.id} onClick={onHiddenHint} aria-label={`查看隐藏剧本${index+1}的线索`}><div className="mystery-poster"><LockKeyhole size={34}/><span>UNLISTED SCRIPT</span><strong>未公开的剧本</strong><p>片场招牌里，似乎还藏着一个入口。</p><small>需要彩蛋设置与特殊答案组合</small></div><div className="role-card-heading"><span>隐藏角色 · 尚未解锁</span><ArrowUpRight size={16}/></div></button>)}
-      </div>
-      <div className="archive-end"><span/><p>你不需要成为任何人。<em>你只需要，成为你。</em></p><span/></div>
-    </section>
-
-    <section className="how-section page-width" id="how-it-works" aria-labelledby="how-title">
-      <div className="how-intro"><span className="eyebrow muted">A SMALL TEST. A NEW PERSPECTIVE.</span><h2 id="how-title">入戏很简单。<br /><span>做自己就好。</span></h2><p>不用准备，不用找“正确答案”。<br />一切从你的第一反应开始。</p></div>
-      <div className="how-steps">{[
-        ['01', '20 个日常选择', '从“想不想续摊”到“要不要试试新鲜事”，选更像平时的你的那一个。', <ScanLine />],
-        ['02', '找到你的主角底色', '从探索欲、社交节奏、目标感等十个倾向，匹配你的专属剧情人设。', <Sparkles />],
-        ['03', '领取你的高光剧本', '看一段角色高光短片，读你的主角档案，再把角色卡留给自己。', <Film />],
-      ].map(([number, title, text, icon]) => <div className="how-step" key={number}><span className="step-num">{number}</span><div><h3>{title}</h3><p>{text}</p></div><span className="step-icon">{icon}</span></div>)}</div>
-    </section>
-
-    <section className="bottom-cta page-width"><div><span className="eyebrow">THE NEXT SCENE IS YOURS</span><h2>别等彩蛋了。<br />你就是<span>主线剧情。</span></h2><button className="button button-dark" onClick={onStart}>开启我的主角人生 <ArrowUpRight size={23} /></button></div><Star className="cta-star" /><span className="cta-footnote">20 个选择 / 18 个常规角色＋2 个隐藏角色 / 一个独一无二的你</span></section>
-
-    <section className="faq-section page-width" id="faq"><h2>开场之前，你可能想知道</h2><div className="faq-list">
-      <details><summary>这是 MBTI 测试吗？<ChevronDown size={17} /></summary><p>这是借鉴人格测试交互方式的剧情娱乐测试，并非 MBTI 量表或心理诊断。40 道日常情境题组成题库，每轮均衡抽取 20 道，覆盖 10 个选择倾向，先匹配 18 种常规主角；开启彩蛋设置且命中特殊答案组合时，还能解锁 2 种隐藏主角。角色不分好坏，也没有标准答案。</p></details>
-      <details><summary>我的回答会保存在哪里？<ChevronDown size={17} /></summary><p>答题选择和用时会匿名保存，用于研究数据收集；同一浏览器使用同一匿名编号。</p></details>
-      <details><summary>结果会受性别影响吗？可以重新测试吗？<ChevronDown size={17} /></summary><p>测试不收集性别。女王、小祖宗等称呼属于虚构剧情设定，任何人都可能匹配到它们。你可以在结果页选择重新测试，也可以回到题目修改答案。每一版的你，都值得一个新剧本。</p></details>
-    </div></section>
-  </main>;
-}
-
 function Quiz({ quiz, setQuiz, onFinish, storageOkay }) {
   const { answers, index, questionIds } = quiz;
   const sessionQuestions = questionIds.map(id => questionById[id]);
@@ -269,19 +195,18 @@ function Result({ result, generic, manifest, onRestart, onStart, onShare, toast,
   const relationship = relationships[role.id];
   async function save() { setSaving(true); try { await saveRoleCard(role,manifest[role.id]); toast('角色卡已生成，正在下载'); } catch { toast('角色卡生成失败，请重试'); } finally { setSaving(false); } }
   return <main id="main-content" className="result-page page-width" style={{ '--role-color': role.color }}>
-    <div className="result-world-backdrop"><WorldArt role={role}/></div>
     <div className="result-topline"><button className="text-button" onClick={() => go('/')}><ArrowLeft size={15} /> 返回片场</button><span>{generic ? '角色图鉴 · 人生预告' : '选角完成 · 你的剧本已就位'}<Check size={14} /></span><span>ARCHIVE / {role.number}</span></div>
-    <div className="result-awakened"><span/><Sparkles size={14}/>{generic?'一张来自平行世界的角色邀请':'主角身份已觉醒 · 这是属于你的那束光'}<span/></div>
     <div className="result-layout"><div className="result-media"><div className="result-orbit"/><VideoPlayer key={role.id} role={role} media={manifest[role.id]} /><div className="result-film-caption"><Film size={14} /><span>{manifest[role.id]?.status === 'final' ? `你的 ${durationLabel(manifest[role.id])}高光时刻` : `${durationLabel(manifest[role.id])}动态分镜 · 真人版待接入`}</span><a href={mediaPath(role,'mp4',manifest[role.id]?.revision)} download={`${role.name}.mp4`} aria-label="下载角色短片"><Download size={15} /></a></div></div>
-      <div className="result-copy"><div className="eyebrow"><Star /> {generic ? 'MEET THE CHARACTER' : 'THE LEAD IS YOU'}</div><p className="result-intro">{generic ? '这一种平行人生，叫作——' : '平行世界里的你，是——'}</p><div className="result-type"><span>{role.genre}</span><small>NO. {role.number} / {roles.length}</small></div><h1>{role.name}</h1>{role.hidden && <span className="hidden-result-badge"><LockKeyhole size={14}/> 隐藏剧本已解锁</span>}<p className="result-tagline">{role.tagline}</p><div className="talent-tags">{role.talents.map(talent => <span key={talent}><Star />{talent}</span>)}</div><p className="result-description">{role.description}</p><blockquote>{role.quote}</blockquote>
+      <div className="result-copy"><div className="eyebrow"><Star /> {generic ? 'MEET THE CHARACTER' : 'THE LEAD IS YOU'}</div><p className="result-intro">{generic ? '这一种平行人生，叫作——' : '平行世界里的你，是——'}</p><div className="result-type"><span>{role.genre}</span><small>NO. {role.number} / {roles.length}</small></div><h1>{role.name}</h1>{role.hidden && <span className="hidden-result-badge"><LockKeyhole size={14}/> 隐藏剧本已解锁</span>}<p className="result-tagline">{relationship.identity}</p><div className="talent-tags">{role.talents.map(talent => <span key={talent}><Star />{talent}</span>)}</div>
         <div className="result-actions"><button className="button button-lime" onClick={generic ? onStart : save} disabled={saving}>{generic ? '测测我的主角人设' : saving ? '生成中…' : '保存我的角色卡'}{generic ? <ArrowUpRight size={19} /> : <Download size={19} />}</button><button className="button button-outline" onClick={() => onShare(role)}><Share2 size={18} />分享剧本</button></div>{!generic && <button className="text-button restart-button" onClick={onRestart}><RotateCcw size={14} /> 再选一次，我有别的剧本</button>}
       </div>
     </div>
-    <div className="result-detail-grid"><section className="story-panel"><span className="eyebrow muted">YOUR HIGHLIGHT SCENE</span><h2>如果镜头给到你。</h2><p>{role.story}</p><ol className="scene-beats">{role.beats.map((beat,i)=><li key={beat}><span>{["开局","反转","高光"][i]}</span><p>{beat}</p></li>)}</ol><DialogueScript role={role}/><div className="director-note"><Star /><div><span>给主角的一句话</span><p>{role.reminder}</p></div></div></section>
+    <section className="relationship-section" aria-labelledby="relationship-title"><span className="eyebrow muted">YOU, IN SOMEONE ELSE'S STORY</span><h2 id="relationship-title">和你相处，会发现</h2><dl className="relationship-details"><div><dt>熟人眼里的你</dt><dd>{relationship.familiar}</dd></div><div><dt>你的偏爱藏在这里</dt><dd>{relationship.affection}</dd></div><div><dt>最容易被误会的瞬间</dt><dd>{relationship.friction}</dd></div></dl></section>
+    <section className="relationship-bond" aria-label="你的剧情搭档"><div className="partner-panel"><div className="partner-icon" style={{ '--partner-color': partner.color }}><RoleIcon role={partner} size={29} /></div><div><small>{relationship.bond}</small><h3>{partner.name}</h3></div><button className="text-button" onClick={() => onPreview(partner)}>看看 TA 的剧本 <ArrowUpRight size={17} /></button></div><p className="bond-chemistry">{relationship.chemistry}</p><div className="bond-invitation"><p>{relationship.prompt}</p><button className="button button-outline" onClick={() => onShare(role)}><Share2 size={17}/> 找 TA 来认领</button></div></section>
+    <details className="result-more"><summary>展开剧情与性格倾向 <ChevronDown size={18}/></summary>    <div className="result-detail-grid"><section className="story-panel"><span className="eyebrow muted">YOUR HIGHLIGHT SCENE</span><h2>如果镜头给到你。</h2><p>{role.description}</p><p>{role.story}</p><ol className="scene-beats">{role.beats.map((beat,i)=><li key={beat}><span>{["开局","反转","高光"][i]}</span><p>{beat}</p></li>)}</ol><DialogueScript role={role}/><div className="director-note"><Star /><div><span>给主角的一句话</span><p>{role.reminder}</p></div></div></section>
       {!generic && scores ? <section className="traits-panel"><div className="trait-heading"><div><span className="eyebrow muted">YOUR CHARACTER DNA</span><h2>你的主角底色</h2></div><ScanLine size={25} /></div><p className="trait-explanation">根据你的选择呈现的倾向，不是能力评分。</p><DestinyRadar scores={scores} color={role.color}/><p className="radar-caption">各维度量表倾向 · 下方为你的明显倾向</p><div className="traits">{(showAll ? scores : [...scores].sort((a,b)=>Math.abs(b.value-50)-Math.abs(a.value-50)).slice(0,5)).map(score => <div className="trait" key={score.id}><div><span>{score.label}</span><span>{score.value < 50 ? score.low : score.high}<b>{score.value < 50 ? 100-score.value : score.value}%</b></span></div><div className="trait-track"><i style={{ width: `${score.value < 50 ? 100-score.value : score.value}%` }} /></div></div>)}</div><button className="text-button all-traits" onClick={() => setShowAll(v=>!v)}>{showAll ? '收起倾向' : '查看全部 10 个倾向'}<ChevronDown size={15} className={showAll ? 'rotated' : ''} /></button></section> : <section className="generic-panel"><RoleIcon role={role} size={56} strokeWidth={1} /><h2>这会是你的主角剧本吗？</h2><p>20 个日常选择，找到属于你的那一种人生。</p><button className="button button-outline" onClick={onStart}>现在开始选角 <ArrowUpRight size={18} /></button></section>}
     </div>
-    <section className="relationship-section" aria-labelledby="relationship-title"><span className="eyebrow muted">YOU, IN SOMEONE ELSE'S STORY</span><h2 id="relationship-title">你在朋友那里的隐藏身份</h2><p className="relationship-identity">{relationship.identity}</p><dl className="relationship-details"><div><dt>熟人眼里的你</dt><dd>{relationship.familiar}</dd></div><div><dt>你的偏爱藏在这里</dt><dd>{relationship.affection}</dd></div><div><dt>最容易被误会的瞬间</dt><dd>{relationship.friction}</dd></div></dl></section>
-    <section className="relationship-bond" aria-label="你的剧情搭档"><div className="partner-panel"><div className="partner-icon" style={{ '--partner-color': partner.color }}><RoleIcon role={partner} size={29} /></div><div><small>{relationship.bond}</small><h3>{partner.name}</h3></div><button className="text-button" onClick={() => onPreview(partner)}>看看 TA 的剧本 <ArrowUpRight size={17} /></button></div><p className="bond-chemistry">{relationship.chemistry}</p><div className="bond-invitation"><p>{relationship.prompt}</p><button className="button button-outline" onClick={() => onShare(role)}><Share2 size={17}/> 找 TA 来认领</button></div></section>
+</details>
     <p className="result-disclaimer">这是一次关于选择与想象的娱乐测试。角色性别属于剧情设定；你的人生，远比任何一种人设丰富。</p>
   </main>;
 }
@@ -321,7 +246,6 @@ function App() {
   }, [route, complete, count]);
   useEffect(() => { document.title = route === '/test' ? `第 ${quiz.index+1} 题 · 主角请就位` : route === '/result' && complete ? `${currentResult.role.name} · 我的主角剧本` : '主角请就位 — 这一世，轮到你当主角。'; }, [route,quiz,complete,hiddenState.enabled]);
   const onStart = () => { if (!complete) window.NBTICollector?.start({ resume: count > 0, questionIds: quiz.questionIds }); setModal(null); go(complete ? '/result' : '/test'); };
-  const onSection = id => { if(route !== '/') go('/'); setTimeout(()=>document.getElementById(id)?.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth', block: 'start' }),route==='/'?0:80); };
   const toast = message => { setToastMessage(message); clearTimeout(toastTimer.current); toastTimer.current=setTimeout(()=>setToastMessage(''),3400); };
   const onPreview = role => {if(canViewRole(role,hiddenState))setModal({kind:'role',role});else setModal({kind:'hidden-hint'});};
   const onSecretTap = event => {
@@ -345,9 +269,11 @@ function App() {
   else if(route === '/test') content=<Quiz quiz={quiz} setQuiz={setQuiz} onFinish={onFinish} storageOkay={storageOkay} />;
   else if(route === '/reveal' && complete) content=<Reveal onDone={onDone} role={currentResult.role} />;
   else if((route === '/result' && complete) || resultRole) content=<Result key={resultRole?.id ?? 'mine'} result={resultRole ? {role:resultRole} : currentResult} generic={Boolean(resultRole)} manifest={manifest} onRestart={()=>setModal({kind:'restart'})} onStart={onStart} onShare={onShare} toast={toast} onPreview={onPreview} />;
-  else content=<Home count={displayCount} onStart={onStart} onPreview={onPreview} manifest={manifest} hiddenState={hiddenState} onHiddenHint={()=>setModal({kind:'hidden-hint'})} />;
-  return <><a className="skip-link" href="#main-content" onClick={event=>{event.preventDefault();const main=document.getElementById('main-content');main?.setAttribute('tabindex','-1');main?.focus();}}>跳转到主要内容</a>{route !== '/test' && <Header route={route} count={displayCount} onStart={onStart} onSection={onSection} onSecretTap={onSecretTap} /> }{content}{route!=='/reveal' && route!=='/test' && <Footer onSection={onSection} />}
-    {modal?.kind==='role' && <Modal title={`${modal.role.name}的角色预告`} onClose={closeModal} className="role-modal"><VideoPlayer role={modal.role} media={manifest[modal.role.id]} /><div className="modal-role-copy" style={{'--role-color':modal.role.color}}><span className="eyebrow">CHARACTER {modal.role.number} / {roles.length}</span><span className="genre-badge">{modal.role.genre}</span><h2>{modal.role.name}</h2><p className="modal-tagline">{modal.role.tagline}</p><div className="modal-story"><span>这一幕，轮到 TA</span><p>{modal.role.story}</p></div><DialogueScript role={modal.role}/><div className="modal-tags">{modal.role.talents.map(t=><span key={t}>{t}</span>)}</div><button className="button button-lime" onClick={onStart}>{complete?'查看我的主角剧本':'解锁我的主角人设'}<ArrowUpRight size={20} /></button><small className="preview-note">{manifest[modal.role.id]?.status==='final'?`${durationLabel(manifest[modal.role.id])}角色高光短片`:'当前为动态分镜预览，真人版成片待接入。'}</small></div></Modal>}
+  else if(route === '/characters') content=<CharacterGallery manifest={manifest} hiddenState={hiddenState} onPreview={onPreview} onHiddenHint={()=>setModal({kind:'hidden-hint'})}/>;
+  else content=<SimpleHome count={displayCount} onStart={onStart} manifest={manifest}/>;
+  return <><a className="skip-link" href="#main-content" onClick={event=>{event.preventDefault();const main=document.getElementById('main-content');main?.setAttribute('tabindex','-1');main?.focus();}}>跳转到主要内容</a>{route !== '/test' && <SimpleHeader onSecretTap={onSecretTap} onAbout={()=>setModal({kind:'about'})}/> }{content}{route!=='/reveal' && route!=='/test' && <SimpleFooter/>}
+    {modal?.kind==='about' && <Modal title="关于测试" onClose={closeModal} className="small-modal"><h2>你的选择，你的故事。</h2><p>每轮从 40 道日常情境中抽取 20 道，约 2 分钟。按平时的反应回答，就会遇见属于你的人设和搭档。</p><p>这是剧情娱乐测试，没有标准答案，也不是心理诊断。进度保存在当前浏览器，随时可以回来继续。网站会匿名记录选择与答题用时，用于改进测试。</p><button className="button button-lime" onClick={onStart}>开始我的故事 <ArrowRight size={18}/></button></Modal>}
+    {modal?.kind==='role' && <Modal title={modal.role.name+'的角色预告'} onClose={closeModal} className="role-modal"><VideoPlayer role={modal.role} media={manifest[modal.role.id]}/><div className="modal-role-copy"><h2>{modal.role.name}</h2><p className="modal-tagline">{relationships[modal.role.id].identity}</p><p className="preview-relationship">{relationships[modal.role.id].familiar}</p><button className="button button-lime" onClick={onStart}>测测我的主角人设 <ArrowRight size={18}/></button><button className="preview-profile" onClick={()=>{closeModal();go('/role/'+modal.role.id);}}>认识这个人和 TA 的搭档 <ArrowRight size={16}/></button></div></Modal>}
     {modal?.kind==='hidden-hint' && <Modal title="隐藏剧本线索" onClose={closeModal} className="small-modal"><LockKeyhole className="modal-symbol" size={32}/><h2>有些剧本，不在常规名单里。</h2><p>试着连续点击首页左上角的“主角请就位”五次，进入彩蛋导演室。开启彩蛋设置后，再由你的完整答案决定是否揭晓。</p><button className="button button-lime" onClick={()=>{closeModal();go('/');}}>去片场看看 <ArrowRight size={18}/></button></Modal>}
     {modal?.kind==='secrets' && <Modal title="彩蛋导演室" onClose={closeModal} className="small-modal secret-settings"><Clapperboard className="modal-symbol" size={34}/><h2>彩蛋导演室</h2><p>开启后，特殊的答题组合才有机会产生两份隐藏剧本。普通结果仍然照常匹配。</p><label className="secret-toggle"><input type="checkbox" checked={hiddenState.enabled} onChange={event=>setHiddenState(old=>({...old,enabled:event.target.checked}))}/><span>允许解锁隐藏剧本</span></label><p className="secret-count">已解锁 {hiddenState.unlocked.length} / {hiddenRoles.length} 份隐藏档案</p><button className="button button-lime" onClick={()=>{closeModal();onStart();}}>带着这个设置继续 <ArrowRight size={18}/></button><button className="text-button" onClick={()=>{setHiddenState({enabled:false,unlocked:[]});toast('彩蛋记录已清空，隐藏模式已关闭');}}>清空彩蛋记录并关闭</button></Modal>}
     {modal?.kind==='restart' && <Modal title="重新选角" onClose={closeModal} className="small-modal"><RotateCcw className="modal-symbol" size={31} /><h2>再开一个新剧本？</h2><p>重新测试会重新抽取 20 道题，并清空本轮回答。你可以先保存角色卡，也可以保留答案回去修改。</p><button className="button button-lime" onClick={()=>{const fresh=newProgress();window.NBTICollector?.start({resume:false,questionIds:fresh.questionIds});setQuiz(fresh);setModal(null);go('/test');}}>重新开始 <ArrowRight size={18} /></button><button className="button button-outline" onClick={()=>{window.NBTICollector?.start({resume:true,questionIds:quiz.questionIds});setQuiz(old=>({...old,index:0,submitted:false}));setModal(null);go('/test');}}>保留答案，回去修改</button><button className="text-button" onClick={closeModal}>先留在这个剧本</button></Modal>}

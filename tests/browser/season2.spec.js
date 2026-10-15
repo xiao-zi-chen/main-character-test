@@ -12,17 +12,18 @@ async function openSecrets(page) {
   await expect(page.getByRole('dialog',{name:'彩蛋导演室'})).toBeVisible();
 }
 
-test('new season exposes eight new regular roles, native dialogue, and author credit',async({page})=>{
+test('directory exposes regular roles, native dialogue, and author credit',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');
-  await expect(page.locator('.footer-authors > span')).toHaveText('作者：拾壹、我燃起来了、FhwuTrqr、Le Prince Grenouille');
-  await page.getByRole('button',{name:'第二季新角',exact:true}).click();
-  await expect(page.getByRole('button',{name:/^预览/})).toHaveCount(8);
-  await expect(page.locator('.mystery-role')).toHaveCount(2);
+  await expect(page.locator('.simple-footer > span')).toHaveText('拾壹 / 我燃起来了 / FhwuTrqr / Le Prince Grenouille');
+  await page.goto('/#/characters');
+  await expect(page.getByRole('button',{name:/^预览/})).toHaveCount(18);
+  await expect(page.locator('.gallery-secret')).toBeVisible();
   for(const role of hiddenRoles) await expect(page.getByText(role.name,{exact:true})).toHaveCount(0);
   await page.goto('/#/role/villain-calmer');
   await expect(page.locator('.video-duration')).toHaveText('00:15');
-  await page.getByRole('button',{name:'听原声',exact:true}).click();
+  await page.getByRole('button',{name:'开启声音',exact:true}).click();
+  await page.getByRole('button',{name:'播放视频',exact:true}).last().click();
   await expect.poll(()=>page.locator('video').evaluate(v=>!v.muted&&!v.paused&&v.currentTime>0)).toBe(true);
   await page.getByRole('button',{name:'关闭声音',exact:true}).click();
   await expect.poll(()=>page.locator('video').evaluate(v=>v.muted)).toBe(true);
@@ -34,7 +35,7 @@ test('new season exposes eight new regular roles, native dialogue, and author cr
 
 test('secret entry, opt-in, both earned unlocks, persistence, and reset work end to end',async({page})=>{
   test.setTimeout(120000);
-  await page.goto('/');
+  await page.goto('/#/characters');
   await expect(page.getByRole('button',{name:/^预览/})).toHaveCount(18);
   for(const role of hiddenRoles) {
     await page.goto(`/#/role/${role.id}`);
@@ -72,15 +73,16 @@ test('secret entry, opt-in, both earned unlocks, persistence, and reset work end
     await expect(page.getByRole('heading',{level:1})).toHaveText(role.name);
     await page.goto(`/#/role/${role.id}`);
     await expect(page.getByRole('heading',{level:1})).toHaveText(role.name);
-    await page.goto('/#/');
+    await page.goto('/#/characters');
     await expect(page.getByRole('button',{name:/^预览/})).toHaveCount(19+round);
   }
   await openSecrets(page);
   await expect(page.locator('.secret-count')).toContainText('2 / 2');
   await page.getByRole('button',{name:'清空彩蛋记录并关闭'}).click();
   await page.getByRole('button',{name:'关闭弹窗',exact:true}).click();
+  await page.goto('/#/characters');
   await expect(page.getByRole('button',{name:/^预览/})).toHaveCount(18);
-  await expect(page.locator('.mystery-role')).toHaveCount(2);
+  await expect(page.locator('.gallery-secret')).toBeVisible();
   await page.goto(`/#/role/${hiddenRoles[0].id}`);
   await expect(page.getByRole('heading',{level:1})).toHaveText('这份隐藏剧本，还没有解锁');
 });

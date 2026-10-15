@@ -6,24 +6,21 @@ import { STORAGE_KEY } from '../../src/engine.js';
 
 const media=JSON.parse(await readFile(new URL('../../public/media/manifest.json',import.meta.url),'utf8'));
 
-test('landing, gallery filters, videos and modal keyboard controls', async ({ page }, testInfo) => {
+test('simple landing, searchable directory, videos and modal keyboard controls', async ({ page }, testInfo) => {
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('轮到你当');
-  await expect(page.getByRole('button', { name: /^预览/ })).toHaveCount(18);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('主角请就位');
+  await expect(page.getByRole('button', { name: /^预览/ })).toHaveCount(0);
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: `.work/home-${testInfo.project.name}.png`, fullPage: true });
-  await page.getByRole('button', { name: '重生翻盘', exact: true }).click();
-  await expect(page.getByRole('button', { name: '重生翻盘', exact: true })).toHaveAttribute('aria-pressed','true');
-  await expect(page.getByRole('button', { name: '观看重生复仇女王专属预告' })).toBeVisible();
-  for (const category of new Set(roles.map(role=>role.category))) {
-    await page.getByRole('button', { name: category, exact: true }).click();
-    const categoryRoles=roles.filter(role=>role.category===category);
-    await expect(page.getByRole('button', { name: /^预览/ })).toHaveCount(categoryRoles.length);
-    for(const role of categoryRoles) await expect(page.getByRole('button',{name:`预览${role.name}`,exact:true})).toBeVisible();
-  }
-  await page.getByRole('button', { name: /^全部剧本/ }).click();
+  await expect(page.locator('a[href="#/characters"]')).toHaveCount(0);
+  await page.goto('/#/characters');
+  await page.getByRole('textbox', { name: '搜索角色' }).fill('失落神话');
+  await expect(page.getByRole('button', { name: /^预览/ })).toHaveCount(1);
+  await page.getByRole('textbox', { name: '搜索角色' }).fill('不存在的人设');
+  await expect(page.locator('.gallery-empty')).toBeVisible();
+  await page.getByRole('textbox', { name: '搜索角色' }).fill('');
   await expect(page.getByRole('button', { name: /^预览/ })).toHaveCount(18);
   await page.getByRole('button', { name: '预览失落神话继承人', exact: true }).click();
   const dialog = page.getByRole('dialog');
@@ -81,6 +78,8 @@ test('20-question journey persists, navigates back, reveals and exports a real r
   expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).submitted, STORAGE_KEY)).toBe(true);
   const name = await page.getByRole('heading', { level: 1 }).innerText();
   expect(roles.map(role => role.name)).toContain(name);
+  await expect(page.locator('.result-more')).not.toHaveAttribute('open', '');
+  await page.locator('.result-more > summary').click();
   await expect(page.locator('.traits .trait')).toHaveCount(5);
   await expect(page.getByRole('img', { name: /十个选择倾向雷达图/ })).toBeVisible();
   await page.getByRole('button', { name: '查看全部 10 个倾向' }).click();

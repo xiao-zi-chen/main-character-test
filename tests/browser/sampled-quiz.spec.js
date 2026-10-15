@@ -24,7 +24,7 @@ test('all forty questions fit in one phone screen, including both choices and na
       expect(layout.scrollWidth).toBeLessThanOrEqual(layout.width);
       for(const key of ['heading','anchors','slider','actions']){expect(layout[key].top).toBeGreaterThanOrEqual(0);expect(layout[key].bottom).toBeLessThanOrEqual(layout.height);}
       expect(layout.heading.bottom).toBeLessThanOrEqual(layout.anchors.top);
-      expect(layout.meta.bottom).toBeLessThanOrEqual(layout.kicker.top);
+      expect(layout.meta.bottom).toBeLessThanOrEqual(layout.heading.top);
       expect(layout.selection.bottom).toBeLessThanOrEqual(layout.actions.top);
       expect(layout.anchors.bottom).toBeLessThanOrEqual(layout.slider.top);
       expect(layout.slider.bottom).toBeLessThanOrEqual(layout.actions.top);

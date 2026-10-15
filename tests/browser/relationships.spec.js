@@ -8,7 +8,7 @@ test('social identities, reciprocal partners and share invitations work for ever
   const errors=[];page.on('pageerror',error=>errors.push(error.message));
   for(const role of regularRoles) {
     await page.goto(`/#/role/${role.id}`);
-    await expect(page.locator('.relationship-identity')).toHaveText(relationships[role.id].identity);
+    await expect(page.locator('.result-tagline')).toHaveText(relationships[role.id].identity);
     await expect(page.locator('.relationship-details > div')).toHaveCount(3);
     await expect(page.locator('.partner-panel h3')).toHaveText(roleById[role.partner].name);
     await page.getByRole('button',{name:'找 TA 来认领'}).click();
