@@ -60,7 +60,7 @@ function DialogueScript({ role }) {
   return <details className="dialogue-script"><summary><MessageCircleHeart size={16}/><span>原生对白脚本</span><ChevronDown size={15}/></summary><ol>{role.dialogue.map((line,index)=><li key={index}><span>0{index+1}</span><p>{line}</p></li>)}</ol></details>;
 }
 
-function Quiz({ quiz, setQuiz, onFinish, storageOkay }) {
+function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
   const { answers, index, questionIds } = quiz;
   const sessionQuestions = questionIds.map(id => questionById[id]);
   const question = {...sessionQuestions[index],...questionCopy[questionIds[index]]};
@@ -69,16 +69,27 @@ function Quiz({ quiz, setQuiz, onFinish, storageOkay }) {
   const actIndex = Math.floor(index / 5);
   const heading = useRef(null);
   const [submitError, setSubmitError] = useState('');
+  const [collectionRecovery, setCollectionRecovery] = useState(null);
   const choose = useCallback(value => {
     setQuiz(old => ({ ...old, answers: { ...old.answers, [old.questionIds[old.index]]: value }, submitted: false }));
     return true;
   }, [setQuiz]);
   const next = useCallback(() => {
-    if (!isAnswer(selected)) return;
+    if (!isAnswer(selected) || collectionRecovery) return;
     setSubmitError('');
+    const collector = window.NBTICollector;
+    if (typeof collector?.answer !== 'function' || typeof collector?.complete !== 'function') {
+      setSubmitError('答题记录服务暂未加载，答案还在，请重新加载页面后继续。');
+      setCollectionRecovery('reload');
+      return;
+    }
     try {
-      if (window.NBTICollector?.answer(question.id, selected) === false) throw new Error('Answer was not recorded');
-      if (index === SESSION_SIZE - 1) window.NBTICollector?.complete();
+      if (collector.answer(question.id, selected) !== true) throw new Error('Answer was not recorded');
+      if (index === SESSION_SIZE - 1 && collector.complete() !== true) {
+        setSubmitError('本轮答题记录未能完整恢复，请重新开始测试，以准确记录选择和用时。');
+        setCollectionRecovery('restart');
+        return;
+      }
     } catch {
       setSubmitError('这一步暂时未能保存，答案还在，请再试一次。');
       return;
@@ -89,11 +100,26 @@ function Quiz({ quiz, setQuiz, onFinish, storageOkay }) {
       onFinish();
     }
     else setQuiz(old => ({ ...old, index: Math.min(old.index + 1, SESSION_SIZE - 1) }));
-  }, [selected, index, question.id, onFinish, setQuiz]);
-  const previous = useCallback(() => setQuiz(old => ({ ...old, index: Math.max(0, old.index - 1) })), [setQuiz]);
-  useLayoutEffect(() => { window.NBTICollector?.start({resume:true,questionIds}); }, [questionIds]);
+  }, [selected, index, question.id, onFinish, setQuiz, collectionRecovery]);
+  const previous = useCallback(() => { setSubmitError(''); setQuiz(old => ({ ...old, index: Math.max(0, old.index - 1) })); }, [setQuiz]);
+  useLayoutEffect(() => {
+    setCollectionRecovery(null);
+    setSubmitError('');
+    const collector = window.NBTICollector;
+    if (typeof collector?.start !== 'function' || typeof collector?.snapshot !== 'function') return;
+    collector.start({resume:true,questionIds});
+    const state = collector.snapshot();
+    const run = state.runs.find(item => item.session.id === state.activeSessionId);
+    const recorded = new Set(run?.answers.map(answer => answer.questionId));
+    // Earlier pages were confirmed with Next. A later page can still contain a
+    // local draft after Back, so it must not be mistaken for a lost event.
+    if (questionIds.slice(0, index).some(id => !recorded.has(id))) {
+      setSubmitError('本轮答题记录未能完整恢复，请重新开始测试，以准确记录选择和用时。');
+      setCollectionRecovery('restart');
+    }
+  }, [questionIds]);
   useLayoutEffect(() => { window.NBTICollector?.show(question.id); }, [question.id]);
-  useEffect(() => { setSubmitError(''); heading.current?.focus({ preventScroll: true }); }, [index]);
+  useEffect(() => { heading.current?.focus({ preventScroll: true }); }, [index]);
   useEffect(() => {
     const onKey = event => {
       if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || ['INPUT', 'TEXTAREA'].includes(event.target.tagName) || event.target.closest('[role="slider"]')) return;
@@ -115,8 +141,8 @@ function Quiz({ quiz, setQuiz, onFinish, storageOkay }) {
         <div className="question-content" key={question.id}><span className="question-kicker">主角请就位 · 你的第 {index + 1} 个选择</span><h1 id="question-title" ref={heading} tabIndex={-1}>{question.prompt}</h1>
           <AnswerScale value={selected} options={question.options} onChoose={choose} />
         </div>
-        {submitError && <p className="quiz-submit-error" role="alert">{submitError}</p>}
-        <div className="question-actions"><button className="text-button" disabled={index === 0} onClick={previous}><ArrowLeft size={16} /> 上一题</button><button className="button button-lime" disabled={!isAnswer(selected)} onClick={next}>{index === SESSION_SIZE - 1 ? '揭晓我的主角' : '下一幕'}{index === SESSION_SIZE - 1 ? <Sparkles size={18} /> : <ArrowRight size={19} />}</button></div>
+        {submitError && <div className="quiz-submit-error" role="alert"><p>{submitError}</p>{collectionRecovery && <button className="text-button" onClick={collectionRecovery === 'reload' ? () => window.location.reload() : onRestart}>{collectionRecovery === 'reload' ? '重新加载页面' : '重新开始测试'}<RotateCcw size={14}/></button>}</div>}
+        <div className="question-actions"><button className="text-button" disabled={index === 0 || Boolean(collectionRecovery)} onClick={previous}><ArrowLeft size={16} /> 上一题</button><button className="button button-lime" disabled={!isAnswer(selected) || Boolean(collectionRecovery)} onClick={next}>{index === SESSION_SIZE - 1 ? '揭晓我的主角' : '下一幕'}{index === SESSION_SIZE - 1 ? <Sparkles size={18} /> : <ArrowRight size={19} />}</button></div>
       </section>
     </div>
   </main>;
@@ -201,6 +227,13 @@ function App() {
   };
   const onFinish = useCallback(() => go('/reveal'), []);
   const onDone = useCallback(() => go('/result'), []);
+  const restartQuiz = () => {
+    const fresh = newProgress();
+    window.NBTICollector?.start({resume:false,questionIds:fresh.questionIds});
+    setQuiz(fresh);
+    setModal(null);
+    go('/test');
+  };
   async function onShare(role) {
     const url=new URL(window.location.href);url.search='';url.hash=`/role/${role.id}`;
     const relationship=relationships[role.id];
@@ -218,7 +251,7 @@ function App() {
   const resultRole = lockedRole ? null : requestedRole;
   let content;
   if(lockedRole) content=<main id="main-content" className="page-width hidden-gate"><LockKeyhole size={46}/><span className="eyebrow">UNLISTED SCRIPT</span><h1>这份隐藏剧本，还没有解锁</h1><p>它需要彩蛋设置与特殊的答题组合。先回到片场，看看招牌里藏着什么。</p><button className="button button-lime" onClick={()=>go('/')}>回到片场 <ArrowRight size={18}/></button></main>;
-  else if(route === '/test') content=<Quiz quiz={quiz} setQuiz={setQuiz} onFinish={onFinish} storageOkay={storageOkay} />;
+  else if(route === '/test') content=<Quiz key={quiz.questionIds.join(',')} quiz={quiz} setQuiz={setQuiz} onFinish={onFinish} onRestart={restartQuiz} storageOkay={storageOkay} />;
   else if(route === '/reveal' && complete) content=<Reveal onDone={onDone} role={currentResult.role} />;
   else if((route === '/result' && complete) || resultRole) content=<Result key={resultRole?.id ?? 'mine'} result={resultRole ? {role:resultRole} : currentResult} generic={Boolean(resultRole)} manifest={manifest} onRestart={()=>setModal({kind:'restart'})} onStart={onStart} onShare={onShare} toast={toast} onPreview={onPreview} onWatch={role=>setModal({kind:'video',role})} hasResult={complete} startLabel={complete?'查看我的结果':count?'继续我的测试':'测测我是谁'} />;
   else if(route === '/characters') content=<CharacterGallery manifest={manifest} hiddenState={hiddenState} onPreview={onPreview} onHiddenHint={()=>setModal({kind:'hidden-hint'})}/>;

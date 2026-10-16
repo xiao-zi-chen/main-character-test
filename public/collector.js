@@ -149,7 +149,7 @@
   }
   function start({ resume = false, questionIds } = {}) {
     const wasInQuiz = inQuiz;
-    if (!Array.isArray(questionIds) || questionIds.length !== 20 || new Set(questionIds).size !== 20) return;
+    if (!Array.isArray(questionIds) || questionIds.length !== 20 || new Set(questionIds).size !== 20) return false;
     pause();
     let run = resume && activeRun()?.session.questionnaireVersion === VERSION && JSON.stringify(activeRun().session.questionIds) === JSON.stringify(questionIds) ? activeRun() : null;
     const resumed = Boolean(run);
@@ -184,6 +184,7 @@
     state.runs = state.runs.filter(item => item === run || pending(item));
     persist();
     void flush();
+    return true;
   }
   function show(questionId) {
     if (activeRun()?.session.questionnaireVersion !== VERSION) return;
@@ -229,18 +230,18 @@
   function complete() {
     accumulate();
     const run = activeRun();
-    if (!run || run.session.questionnaireVersion !== VERSION) return;
+    if (!run || run.session.questionnaireVersion !== VERSION) return false;
     // A pre-existing browser-only progress record has no recoverable response times.
     // Complete only the selected twenty questions, never a mixture of attempts.
     const answered = new Set(run.answers.map(answer => answer.questionId));
-    if (run.session.questionIds?.length === 20 && run.session.questionIds.every(id => answered.has(id))) {
-      run.session.completedAt = new Date().toISOString();
-      run.session.totalElapsedMs = Math.round(run.activeElapsedMs);
-    }
+    if (run.session.questionIds?.length !== 20 || !run.session.questionIds.every(id => answered.has(id))) return false;
+    run.session.completedAt = new Date().toISOString();
+    run.session.totalElapsedMs = Math.round(run.activeElapsedMs);
     inQuiz = false;
     segmentStartedAt = null;
     persist();
     void flush();
+    return true;
   }
   function leave() {
     pause();

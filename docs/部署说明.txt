@@ -6,7 +6,8 @@
 每题采用 15 档量表（0～14，7 为中立），保留原两种行为作为左右端点。
 角色原型、权重、稳定排序及隐藏阈值保持原样。
 调整量表只保存本地草稿，点击下一题或最终揭晓时才记录当前数值与本题累计用时。
-第一季影片为 10 秒，第二季影片为 15 秒原生对白版。人物画像和分享卡均完整保留竖图。
+本轮已更新部分影片与封面，影片时长、画像和声音设置以 public/media/manifest.json 为准。
+人物画像和分享卡均完整保留竖图。
 
 源码维护：
 main-character-test/ 是可编辑的 React 源码，public/collector.js 是真实采集脚本。
@@ -14,7 +15,13 @@ main-character-test/ 是可编辑的 React 源码，public/collector.js 是真�
 在源码目录依次执行 npm ci、npm test、npm run build；dist/ 是源码的构建输出。
 修改源码后，在 NBTI 根目录执行 npm run frontend:build。
 该命令运行 scripts/build-frontend.mjs，构建源码 dist/，同步根 index.html、assets/、
-collector.js、favicon.svg 和最终显示题库，旧产物备份到 .local/frontend-backups/。
+collector.js、favicon.svg、最终显示题库及媒体，旧产物备份到 .local/frontend-backups/。
+构建按当前 public/media/manifest.json 引用文件及二十个角色 SVG 复制资源，
+不会把 public/ 中所有文件直接发布；退役素材与生成说明归档到根目录的私有
+.local/retired-public/，旧前端保留在 .local/frontend-backups/，均不进入公开部署。
+根服务用 data/public-assets.json 限定可公开路径；旧题库仅供后端历史数据兼容，
+不显示旧问卷入口，也不允许以静态文件下载。重建后重启根服务以加载新清单。
+新版 manifest 直接编入前端 JavaScript，修改媒体清单后也需重新构建。
 scripts/instrument-bundle.mjs 仅保留为历史静态注入工具，当前源码构建不再使用它。
 
 本地开发与预览：
@@ -25,14 +32,31 @@ scripts/instrument-bundle.mjs 仅保留为历史静态注入工具，当前源�
 5. 未启动根服务时只能预览页面，采集队列暂存在浏览器中，无法入库。
 Windows PowerShell 可使用 npm.cmd 执行上述命令。
 
-正式部署：
+本轮部署与数据兼容：
 当前采集协议为 nbti-2026-10-15-sample20，session.questionIds 保存本轮 20 个题目 ID。
-外部 NBTI 服务端需支持新版本、抽题集校验与 20 题完成条件，详见 抽题与手机适配.md。
-已有 A/B 数据库先执行 npm run local:stop -- -AppOnly，再执行 npm run db:migrate:local，
-保留 MySQL 运行，迁移将删除旧答卷。
+NBTI 服务端校验每轮恰好 20 个不重复题目、每个维度 2 道，并按 20 题完成条件提交。
+data/questions.json 包含 sessionSize=20、questionsPerDimension=2 和每题 dimension；
+本轮显示顺序写入 quiz_sessions.question_ids（可空 JSON），重测才生成新抽题集。
+旧 nbti-2026-10-02-scale15 的 40 题答卷保留，question_ids 为 NULL，
+按原题库与 40 题完成条件解释；旧浏览器该版本待同步队列仍可补传。
+本机及现网均已于 2026-10-16 完成 question_ids 迁移，无需再次执行。
+其他尚未升级的旧 40 题量表实例，先执行 npm run local:stop -- -AppOnly 保留 MySQL 运行，
+若数据库尚未启动，执行 npm run local:start -- -DatabaseOnly 只准备数据库；
+再执行 npm run db:migrate:sample20:local，添加 question_ids，不删除历史数据。
+不要执行 db:migrate:local 或 db/migrate-scale15.sql，它们是旧 A/B 转量表的破坏性迁移。
 首次空库部署只导入 db/schema.sql；详情见根目录 DATABASE.txt。
 使用 NBTI 根目录构建产物和 Node.js 服务提供页面及接口，数据库使用 MySQL。
-云服务器与 COS 的发布包、媒体目录和运行配置见 NBTI 根目录 CLOUD_DEPLOY.txt。
+本地 MEDIA_BASE_URL 留空，从本地 media/、worlds/ 读取新版素材。
+本轮已于 2026-10-16 20:26（北京时间）正式发布至 https://www.nbti.cn，
+/opt/nbti 指向 /opt/nbti-releases/20261016T122600Z-sample20；
+发布前备份为 /var/backups/nbti-sample20-20261016T122600Z，历史 4 份答卷和 161 条事件核对未变。
+线上媒体地址为 https://static.nbti.cn/，当前 COS/CDN 共 73 个文件，SHA-256 全部匹配。
+运行环境、服务凭据、HTTPS 和端口保持；详细发布及验证记录见 NBTI 根目录 CLOUD_DEPLOY.txt。
+后续云发布使用新 release 目录后切换入口，COS 只上传本次 cos/ 发布包；
+退役公开对象应先私有备份再清理，同时刷新 CDN 对应缓存并验证旧 URL 已不可访问。
+Nginx 使用发布包生成的 deploy/public-assets.nginx.conf，nginx -t 通过后 reload。
+本轮服务器切换、COS 旧对象清理和 CDN 目录刷新已完成；49 个退役普通 URL 与
+49 个带旧 revision 的 URL 均返回 404。Nginx 已启用精确清单，并回源标准 nbti-media 桶。
 public-config.js 在运行时由根 Node.js 生成；源码静态占位仅回退到本地媒体，不含任何凭据。
 原静态部署 ZIP 和 GitHub Pages 可用于页面及媒体预览；纯静态网站不提供采集入库能力。
 仅预览时保持 index.html、collector.js、public-config.js 与 assets、media、worlds 同级。
@@ -42,11 +66,21 @@ public-config.js 在运行时由根 Node.js 生成；源码静态占位仅回退
 NBTI 根目录 npm run test:frontend 对真实构建产物运行桌面/iPhone 16 浏览器套件，
 使用隔离数据库保存测试记录；npm run test:e2e 检查采集、COS 媒体配置与安全行为。
 根目录 test:e2e 运行前需启动项目；详细启动与验证步骤见根目录 DEPLOY.txt。
+2026-10-16 20:27 公网桌面 Chrome 与 Chromium 模拟 iPhone 16 验证通过：
+首页和封面、角色目录、代表视频默认声音/跳转、CDN 直连、Range、SVG、CSP/CORS 及画布读取正常。
+该检查未启动问卷或提交生产答卷；记录为根目录 .local/remote-setup/sample20-live-browser-result.json。
+完整答卷隔离复验已通过：两端各完成 20 题、刷新续答、改答、单题与整轮计时、
+视频播放和角色卡导出；正式库无此次复验记录，临时资源已清理。
+答卷传输使用验收桥接入 SSH 隔离 API；页面、CDN 与后端代码来自实际生产发布。
+详细记录见根目录 CLOUD_DEPLOY.txt 和 .local/remote-setup/sample20-browser-result-73fcf1440d87.json。
 
-网站采用 # 路由，可部署到域名根目录或子目录，无需设置路由重写。
+网站采用 # 路由，推荐将站点和 /api/ 部署到同一域名根目录，无需页面路由重写。
 答题进度和隐藏解锁记录保存在当前浏览器；选择和用时通过 NBTI 接口匿名保存到 MySQL。
 首页左上角“主角请就位”连续点击五次可打开彩蛋设置；开启后，由完整答案决定能否解锁隐藏结果。
 初次浏览不会展示隐藏角色的姓名、画像或视频。
 灵感参考片入口、弹窗及相关参考素材已移除。
 
-2026-10-01 更新：新增十个角色与原生对白，加入作者署名，优化题目显示文案，修复分享卡裁头及重测跳转问题。
+2026-10-16 本地及云端更新：同步 20 题平衡抽样、简化首页与结果页、角色羁绊、手机适配及新版媒体。
+视频播放默认开启声音，浏览器限制自动播放时可点击播放继续；声音按钮仍可切换静音。
+首页封面使用局部修补的 media/plot-rewriter-cover.jpg，去除左上角标识并保留原构图。
+manifest 的 portrait/poster/avatar 均使用此封面；原始 plot-rewriter.jpg 在私有备份中保留备用。

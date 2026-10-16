@@ -26,12 +26,15 @@ test('simple landing, searchable directory, videos and modal keyboard controls',
   const dialog = page.getByRole('dialog');
   await expect(dialog).toBeVisible();
   await dialog.getByRole('button', { name: '播放视频', exact: true }).first().click();
-  await expect.poll(() => dialog.locator('video').evaluate(video => video.currentTime > 0)).toBe(true);
+  await expect.poll(() => dialog.locator('video').evaluate(video => video.currentTime > 0 && !video.muted)).toBe(true);
   expect(await dialog.locator('video').evaluate(video => video.duration)).toBeCloseTo(media['myth-keeper'].duration, 1);
   await expect(dialog.locator('.video-duration')).toHaveText('00:10');
   await expect(dialog.locator('video')).toHaveAttribute('src',new RegExp(`myth-keeper\\.mp4\\?v=${media['myth-keeper'].revision}`));
   await dialog.getByRole('button', { name: '暂停视频' }).click();
+  await dialog.getByRole('button', { name: '关闭声音' }).click();
+  await expect(dialog.locator('video')).toHaveJSProperty('muted', true);
   await dialog.getByRole('button', { name: '开启声音' }).click();
+  await expect(dialog.locator('video')).toHaveJSProperty('muted', false);
   await expect(dialog.getByRole('button', { name: '关闭声音' })).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(dialog).toHaveCount(0);

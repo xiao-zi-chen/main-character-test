@@ -48,12 +48,12 @@
     "hasAudio": true,
     "embeddedTitle": false,
     "posterTime": 7,
-    "revision": "9baaf9557b8c",
+    "revision": "ce26e0e2742a",
     "sha256": "072a0d8214734b6b02eeb1e6017902236937829888e12ac7f7536b156e8c3129",
     "nativeDialogue": false,
-    "portrait": "plot-rewriter.jpg",
-    "poster": "plot-rewriter.jpg",
-    "avatar": "plot-rewriter.jpg"
+    "portrait": "plot-rewriter-cover.jpg",
+    "poster": "plot-rewriter-cover.jpg",
+    "avatar": "plot-rewriter-cover.jpg"
   },
   "hidden-player": {
     "status": "final",

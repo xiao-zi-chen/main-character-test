@@ -5,7 +5,7 @@ import { durationLabel, formatPlaybackTime, mediaAsset } from '../media.js';
 
 export function VideoPlayer({ role, media, autoplay = false }) {
   const ref = useRef(null);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [failed, setFailed] = useState(false);
   const [waiting, setWaiting] = useState(false);
@@ -17,12 +17,15 @@ export function VideoPlayer({ role, media, autoplay = false }) {
     const video = ref.current;
     setFailed(false);
     setPlaying(false);
+    setWaiting(false);
     setProgress(0);
     const pauseOther = event => { if (event.detail !== video) video.pause(); };
     const pauseHidden = () => { if (document.hidden) video.pause(); };
     document.addEventListener('casting:video-play', pauseOther);
     document.addEventListener('visibilitychange', pauseHidden);
-    if (autoplay) video.play().catch(() => setPlaying(false));
+    // Opening a short film requests sound. If the browser requires another
+    // gesture, leave the play button available instead of silently muting it.
+    if (autoplay) play();
     return () => {
       video.pause();
       document.removeEventListener('casting:video-play', pauseOther);
