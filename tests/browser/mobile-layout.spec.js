@@ -11,7 +11,7 @@ test('simple home, directory and result fit narrow and landscape screens', async
     expect(bounds).toBe(true);
     await page.screenshot({path:`.work/simple-home-${viewport.width}.png`,fullPage:true});
     await page.goto('/#/characters');
-    await expect(page.locator('.simple-character')).toHaveCount(18);
+    await expect(page.locator('.simple-character')).toHaveCount(28);
     await page.locator('.simple-character').first().click();
     await expect(page.getByRole('dialog')).toBeVisible();
     await page.getByRole('button',{name:'关闭弹窗',exact:true}).click();

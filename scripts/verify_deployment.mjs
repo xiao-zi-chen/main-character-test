@@ -10,7 +10,7 @@ const sourceManifest=JSON.parse(await readFile(new URL('../public/media/manifest
 if(!isDeepStrictEqual(manifest,sourceManifest)) {
   throw new Error('Built media manifest differs from public/media/manifest.json. Rebuild the current frontend before deployment.');
 }
-if(roles.length!==20) throw new Error('Expected twenty character results');
+if(roles.length!==28) throw new Error('Expected twenty-eight selected character results');
 if(!isDeepStrictEqual(Object.keys(manifest).sort(),roles.map(role=>role.id).sort())) {
   throw new Error('Media manifest must contain exactly the current character IDs.');
 }
@@ -56,11 +56,16 @@ if(!bundledAssets.some(name=>name.endsWith('.js')) || !bundledAssets.some(name=>
 for(const role of roles) {
   const media=manifest[role.id];
   if(media?.status!=='final') throw new Error(`Missing final video: ${role.id}`);
-  const video=await readFile(new URL(`../dist/media/${role.id}.mp4`,import.meta.url));
+  const video=await readFile(new URL(`../dist/media/${media.video}`,import.meta.url));
   if(createHash('sha256').update(video).digest('hex')!==media.sha256) throw new Error(`Video hash mismatch: ${role.id}`);
   for(const type of ['portrait','poster','avatar','voice','subtitles']) {
     if(media[type]) await access(new URL(`../dist/media/${media[type]}`,import.meta.url));
   }
+}
+for(const role of roles) {
+  const media=manifest[role.id];
+  const portrait=await readFile(new URL(`../dist/media/${media.portrait}`,import.meta.url));
+  if(createHash('sha256').update(portrait).digest('hex')!==media.portraitSha256) throw new Error(`Portrait hash mismatch: ${role.id}`);
 }
 await access(new URL('../dist/index.html',import.meta.url));
 await access(new URL('../dist/collector.js',import.meta.url));
@@ -74,4 +79,4 @@ for(const question of questions) {
     if(createHash('sha256').update(image).digest('hex')!==asset.sha256) throw new Error(`Question image hash mismatch: ${asset.file}`);
   }
 }
-console.log(`Verified deployment whitelist (${expected.size} public files), entry point, all twenty current media sets, and 120 question images.`);
+console.log(`Verified deployment whitelist (${expected.size} public files), entry point, ${roles.length} character portraits, 17 shared films, and 120 question images.`);

@@ -5,19 +5,19 @@ test('home loads one cover and result loads video only after an explicit request
   page.on('request', request => { if(request.url().includes('/media/')) mediaRequests.push(request.url()); });
   await page.goto('/');
   await expect.poll(()=>page.locator('.opening-image').evaluate(image=>image.complete&&image.naturalWidth>0)).toBe(true);
-  expect(mediaRequests.filter(url=>url.includes('plot-rewriter-cover.jpg'))).toHaveLength(1);
+  expect(mediaRequests.filter(url=>url.includes('plot-rewriter-selected.webp'))).toHaveLength(1);
   expect(mediaRequests.some(url=>url.includes('.mp4'))).toBe(false);
-  await page.goto('/#/role/myth-keeper');
+  await page.goto('/#/role/plot-rewriter');
   await expect(page.locator('.result-video-preview img')).toBeVisible();
   expect(mediaRequests.some(url=>url.includes('.mp4'))).toBe(false);
-  await page.getByRole('button',{name:'观看失落神话继承人的短片'}).click();
+  await page.getByRole('button',{name:'观看心之所向的短片'}).click();
   await expect.poll(()=>page.locator('dialog video').evaluate(video=>video.currentTime>0&&!video.muted)).toBe(true);
   const player=await page.locator('dialog video').boundingBox();
   expect(player.width).toBeGreaterThan(200);
   expect(player.y+player.height).toBeLessThanOrEqual(page.viewportSize().height);
   await page.getByRole('button',{name:'关闭弹窗',exact:true}).click();
   await expect(page.locator('video')).toHaveCount(0);
-  await expect(page.getByRole('button',{name:'观看失落神话继承人的短片'})).toBeFocused();
+  await expect(page.getByRole('button',{name:'观看心之所向的短片'})).toBeFocused();
 });
 
 test('blocked autoplay keeps sound enabled and permits a manual play request', async ({ page }) => {
@@ -35,8 +35,8 @@ test('blocked autoplay keeps sound enabled and permits a manual play request', a
       return play.call(this);
     };
   });
-  await page.goto('/#/role/myth-keeper');
-  await page.getByRole('button', { name: '观看失落神话继承人的短片' }).click();
+  await page.goto('/#/role/plot-rewriter');
+  await page.getByRole('button', { name: '观看心之所向的短片' }).click();
   const video = page.locator('dialog video');
   await expect(page.locator('.big-play')).toBeVisible();
   await expect(page.locator('.video-loading')).toHaveCount(0);
@@ -87,16 +87,16 @@ test('landscape video controls stay inside the player and remain tappable', asyn
 
 test('a failed short film can be retried without losing the result', async ({ page }) => {
   let blocked=true;
-  await page.route('**/media/myth-keeper.mp4*', route=>blocked?route.abort():route.continue());
-  await page.goto('/#/role/myth-keeper');
-  await page.getByRole('button',{name:'观看失落神话继承人的短片'}).click();
+  await page.route('**/media/film-follow-your-heart.mp4*', route=>blocked?route.abort():route.continue());
+  await page.goto('/#/role/plot-rewriter');
+  await page.getByRole('button',{name:'观看心之所向的短片'}).click();
   const retry=page.getByRole('button',{name:'重新加载',exact:true});
   await expect(retry).toBeVisible();
   blocked=false;
   await retry.click();
   await expect.poll(()=>page.locator('dialog video').evaluate(video=>video.currentTime>0&&!video.paused)).toBe(true);
   await page.getByRole('button',{name:'关闭弹窗',exact:true}).click();
-  await expect(page.getByRole('heading',{level:1})).toHaveText('失落神话继承人');
+  await expect(page.getByRole('heading',{level:1})).toHaveText('心之所向');
 });
 
 test('collection rejection shows a recoverable error and preserves the chosen response', async ({ page }) => {
@@ -109,7 +109,7 @@ test('collection rejection shows a recoverable error and preserves the chosen re
   });
   await page.getByRole('button',{name:'下一幕',exact:true}).click();
   await expect(page.getByRole('alert')).toContainText('答案还在');
-  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow','14');
+  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow','4');
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
   await page.getByRole('button',{name:'下一幕',exact:true}).click();
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
@@ -135,9 +135,9 @@ test('a missing collector preserves the selected draft and offers a page reload'
   await page.getByRole('button', { name: '下一幕', exact: true }).click();
   await expect(page.getByRole('alert')).toContainText('答题记录服务暂未加载');
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
-  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '14');
+  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '4');
   await page.getByRole('button', { name: '重新加载页面', exact: true }).click();
-  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '14');
+  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '4');
   await page.getByRole('button', { name: '下一幕', exact: true }).click();
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
 });
@@ -148,14 +148,14 @@ test('lost confirmed records require an explicit new attempt without inventing t
     await page.getByRole('slider').press('Home');
     await page.getByRole('button', { name: '下一幕', exact: true }).click();
   }
-  const before = await page.evaluate(() => JSON.parse(localStorage.getItem('main-character-casting:v3')));
+  const before = await page.evaluate(() => JSON.parse(localStorage.getItem('main-character-casting:v4')));
   // The outgoing document saves on pagehide. Remove only its collector state
   // in the next document, before collector.js can restore it.
   await page.addInitScript(() => localStorage.removeItem('nbti:collector:v1'));
   await page.reload();
   await expect(page.getByRole('alert')).toContainText('答题记录未能完整恢复');
   await expect(page.locator('.quiz-counter')).toHaveText('03 / 20');
-  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('main-character-casting:v3')).answers)).toEqual(before.answers);
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('main-character-casting:v4')).answers)).toEqual(before.answers);
   expect(await page.evaluate(() => window.NBTICollector.snapshot().runs[0].answers)).toEqual([]);
   await page.getByRole('button', { name: '重新开始测试', exact: true }).click();
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
@@ -178,7 +178,7 @@ test('an unconfirmed completion cannot reveal a result and offers a fresh attemp
   await expect(page.getByRole('alert')).toContainText('答题记录未能完整恢复');
   await expect(page.getByRole('button', { name: '揭晓我的主角', exact: true })).toBeDisabled();
   const state = await page.evaluate(() => ({
-    progress: JSON.parse(localStorage.getItem('main-character-casting:v3')),
+    progress: JSON.parse(localStorage.getItem('main-character-casting:v4')),
     collector: window.NBTICollector.snapshot()
   }));
   expect(state.progress.submitted).toBe(false);
@@ -195,12 +195,12 @@ test('phone sharing uses the native sheet and cancelling it does not show an err
       throw new DOMException('Cancelled','AbortError');
     }});
   });
-  await page.goto('/#/role/myth-keeper');
+  await page.goto('/#/role/plot-rewriter');
   await page.getByRole('button',{name:'找 TA 来认领'}).click();
   const invitations=await page.evaluate(()=>window.sharedInvitations);
   expect(invitations).toHaveLength(1);
-  expect(invitations[0].text).toContain('失落神话继承人');
-  expect(invitations[0].url).toContain('#/role/myth-keeper');
+  expect(invitations[0].text).toContain('心之所向');
+  expect(invitations[0].url).toContain('#/role/plot-rewriter');
   await expect(page.getByRole('dialog')).toHaveCount(0);
   await expect(page.locator('.toast.visible')).toHaveCount(0);
 });

@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState, useCallback } from
 import { createRoot } from 'react-dom/client';
 import {
   ArrowUpRight, ArrowRight, ArrowLeft, ChevronDown, Check, Play,
-  RotateCcw, Download, Share2, Sparkles,
+  RotateCcw, Download, Share2, Sparkles, Search,
   ShieldCheck, Crown, Sun, Ghost, BookOpen,
   ScanLine, Gem, MessageCircleHeart, Orbit, Flower2, CookingPot, Wrench, FileCheck2, BriefcaseBusiness, Clapperboard, Cpu, LockKeyhole,
 } from 'lucide-react';
@@ -30,7 +30,7 @@ import './experience.css';
 import './simple.css';
 import './question-art.css';
 import {SimpleHeader, SimpleHome, SimpleFooter, CharacterGallery} from './components/SimpleExperience.jsx';
-const iconMap = { Crown, Sun, Ghost, BookOpen, ScanLine, Gem, MessageCircleHeart, Orbit, Flower2, CookingPot, Wrench, FileCheck2, BriefcaseBusiness, Clapperboard, Cpu, Sparkles, ShieldCheck };
+const iconMap = { Crown, Sun, Ghost, BookOpen, ScanLine, Gem, MessageCircleHeart, Orbit, Flower2, CookingPot, Wrench, FileCheck2, BriefcaseBusiness, Clapperboard, Cpu, Sparkles, ShieldCheck, Search };
 const acts = [
   { title: '本能登场', description: '听听你的第一反应', caption: '不必想太久，第一直觉就很好。' },
   { title: '人际江湖', description: '在关系里，看见自己', caption: '没有标准答案，也没有需要扮演的人。' },
@@ -128,7 +128,7 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
     const onKey = event => {
       if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || ['INPUT', 'TEXTAREA'].includes(event.target.tagName) || event.target.closest('[role="slider"]')) return;
       if (['a', 'A', '1'].includes(event.key)) { event.preventDefault(); choose(0); }
-      if (['b', 'B', '2'].includes(event.key)) { event.preventDefault(); choose(14); }
+      if (['b', 'B', '2'].includes(event.key)) { event.preventDefault(); choose(4); }
       if (event.key === 'ArrowLeft') { event.preventDefault(); previous(); }
       if ((event.key === 'Enter' && event.target.tagName !== 'BUTTON' && event.target.tagName !== 'A') || event.key === 'ArrowRight') { event.preventDefault(); next(); }
     };
@@ -179,6 +179,7 @@ function Result({ result, generic, manifest, onRestart, onStart, startLabel, onS
       <div className="result-action-group"><div className="result-actions"><button className="button button-lime" onClick={generic ? onStart : save} disabled={saving} aria-label={generic ? startLabel : '保存我的角色卡'}>{generic ? startLabel : saving ? '生成中…' : '保存角色卡'}{generic ? <ArrowUpRight size={19} /> : <Download size={19} />}</button><button className="button button-outline" onClick={() => onShare(role)}><Share2 size={18} />分享剧本</button></div>{!generic && <button className="text-button restart-button" onClick={onRestart}><RotateCcw size={14} /> 再选一次，我有别的剧本</button>}
       </div>
     </div>
+    <section className="film-cast" aria-label="这条影片里的人物"><p>来自《{role.filmTitle}》</p><div>{role.castIds.map(id => <a key={id} href={`#/role/${id}`} aria-current={id === role.id ? 'page' : undefined}><img src={mediaAsset(roleById[id],manifest[id],'avatar')} alt=""/><span>{roleById[id].name}</span></a>)}</div></section>
     <section className="relationship-section" aria-labelledby="relationship-title"><span className="eyebrow muted">YOU, IN SOMEONE ELSE'S STORY</span><h2 id="relationship-title">和你相处，会发现</h2><dl className="relationship-details"><div><dt>熟人眼里的你</dt><dd>{relationship.familiar}</dd></div><div><dt>你的偏爱藏在这里</dt><dd>{relationship.affection}</dd></div><div><dt>最容易被误会的瞬间</dt><dd>{relationship.friction}</dd></div></dl></section>
     <section className="relationship-bond" aria-label="你的剧情搭档"><div className="partner-panel"><div className="partner-icon" style={{ '--partner-color': partner.color }}><RoleIcon role={partner} size={29} /></div><div><small>{relationship.bond}</small><h3>{partner.name}</h3></div><button className="text-button" onClick={() => onPreview(partner)}>看看 TA 的剧本 <ArrowUpRight size={17} /></button></div><p className="bond-chemistry">{relationship.chemistry}</p><div className="bond-invitation"><p>{relationship.prompt}</p><button className="button button-outline" onClick={() => onShare(role)}><Share2 size={17}/> 找 TA 来认领</button></div></section>
     <details className="result-more"><summary>展开剧情与性格倾向 <ChevronDown size={18}/></summary>    <div className="result-detail-grid"><section className="story-panel"><span className="eyebrow muted">YOUR HIGHLIGHT SCENE</span><h2>如果镜头给到你。</h2><p>{role.description}</p><p>{role.story}</p><ol className="scene-beats">{role.beats.map((beat,i)=><li key={beat}><span>{["开局","反转","高光"][i]}</span><p>{beat}</p></li>)}</ol><DialogueScript role={role}/><div className="director-note"><Star /><div><span>给主角的一句话</span><p>{role.reminder}</p></div></div></section>
@@ -237,6 +238,7 @@ function App() {
   const toast = message => { setToastMessage(message); clearTimeout(toastTimer.current); toastTimer.current=setTimeout(()=>setToastMessage(''),3400); };
   const onPreview = role => {if(canViewRole(role,hiddenState))setModal({kind:'role',role});else setModal({kind:'hidden-hint'});};
   const onSecretTap = event => {
+    if (!hiddenRoles.length) return;
     const now=Date.now();secretTaps.current={count:now-secretTaps.current.time<5000?secretTaps.current.count+1:1,time:now};
     if(secretTaps.current.count>=5){event.preventDefault();secretTaps.current.count=0;setModal({kind:'secrets'});}
   };

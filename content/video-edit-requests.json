@@ -1,0 +1,42 @@
+{
+  "status": "prepared-not-generated",
+  "format": "9:16 portrait, H.264, native synchronized Chinese dialogue, no added subtitles or title cards",
+  "requests": [
+    {
+      "filmId": "chaos-comedy",
+      "source": "public/media/film-chaos-comedy.mp4",
+      "spreadsheetNote": "身后的角色给一个略惊讶的面部表情",
+      "cast": ["chaos-director", "chaos-witness"],
+      "direction": "保留白衣主角与身后灰衣同伴的身份、服装和古装街景。主角把对峙转成意想不到的喜剧处理；给身后同伴明确但不过度的反应特写：眼睛微睁、眉毛抬起、短暂停顿，再朝主角伸出半只劝阻的手。镜头必须让观众看清是哪一个同伴在反应，不能把前景黑衣对手当作同伴。",
+      "proposedDialogue": [{"speaker":"chaos-director","line":"别紧张，我是来做饭的。"},{"speaker":"chaos-witness","line":"兄弟，别搞。"}],
+      "acceptance": ["两个人均能被单独识别并截取清晰画像", "同伴的微惊讶发生在主角出奇招之后", "对白由对应人物说出且口型同步", "不添加画面文字"]
+    },
+    {
+      "filmId": "social-connection",
+      "source": "public/media/film-social-connection.mp4",
+      "spreadsheetNote": "最后给人一个特写 链接一下",
+      "cast": ["spotlight-extra"],
+      "direction": "以当前片中棕发主角为唯一主人公，保持其面容、服装和现有风格。保留从陌生人打招呼到建立连接的情节，结尾不要停在抽象网络或标题页；切回主人公的正面近景，眼睛看向交谈对象，轻松微笑，亲口说出最后一句，结束时仍停留在这个人的脸上。",
+      "proposedDialogue": [{"speaker":"spotlight-extra","line":"链接一下。"}],
+      "acceptance": ["结尾是清晰人物特写而非网络图", "主角亲口说出链接一下且口型同步", "最后一句完整可听", "不添加字幕、标语或片尾文字"]
+    },
+    {
+      "filmId": "mind-reading",
+      "source": "public/media/film-mind-reading.mp4",
+      "spreadsheetNote": "参照老视频",
+      "cast": ["mind-reader", "frustrated-courtier"],
+      "direction": "严格参考当前老片的宫廷场景、粉衣女性和金色服装男性身份。女性表面保持礼貌，心声以自然的内心旁白表达；切到听见心声的男性，手握紧后放松，嘴角克制、眼神微动，清楚表现有火却不好直接发作。两人各有一个无遮挡近景，保持时序：心声在先，听见后的反应在后。不得把普通侍从错绑为这个反应人物。",
+      "proposedDialogue": [{"speaker":"mind-reader","mode":"inner-monologue","line":"这脸色，藏着密令吧。"},{"speaker":"frustrated-courtier","mode":"spoken","line":"你刚才……算了。"}],
+      "acceptance": ["人物与老片身份一致", "旁白与口头对白可区分", "听见心声后的压抑情绪可被看懂", "没有文字气泡或字幕"]
+    },
+    {
+      "filmId": "reborn-revenge",
+      "source": "public/media/film-reborn-revenge.mp4",
+      "spreadsheetNote": "加点戏和台词，同时给到身边人一个心理特写",
+      "cast": ["reborn-queen", "queen-companion"],
+      "direction": "保留红衣女主、深绿衣同伴与原片桌边场景。女主停下手中动作，抬眼、整理衣袖，认真宣告要拿回选择权；给深绿衣同伴一个独立心理反应特写，从礼貌微笑变成短暂疑惑，眼神看一眼女主又移开，内心旁白带轻微无奈。再回到双人构图，让庄重宣言与同伴日常反应形成喜剧反差。",
+      "proposedDialogue": [{"speaker":"reborn-queen","mode":"spoken","line":"这一世，我将拿回属于我的一切。"},{"speaker":"queen-companion","mode":"inner-monologue","line":"又谁得罪你了？"}],
+      "acceptance": ["女主新增完整宣言", "身边人有明确心理特写和内心旁白", "两个人物面容和服装不串换", "不把心理活动写成画面文字"]
+    }
+  ]
+}

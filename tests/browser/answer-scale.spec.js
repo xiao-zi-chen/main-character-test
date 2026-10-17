@@ -13,10 +13,10 @@ test('scale requires an explicit response and supports neutral, zero, keyboard a
   await start(page);
   const slider = page.getByRole('slider');
   const next = page.getByRole('button', { name: '下一幕', exact: true });
-  await expect(slider).toHaveAttribute('aria-valuenow', '7');
+  await expect(slider).toHaveAttribute('aria-valuenow', '2');
   await expect(slider).toHaveAttribute('data-selected', 'false');
-  await expect(page.locator('.answer-scale-cell')).toHaveCount(15);
-  await expect(page.locator('.answer-scale-cell.major-boundary')).toHaveCount(4);
+  await expect(page.locator('.answer-scale-cell')).toHaveCount(5);
+  await expect(page.locator('.answer-scale-cell.major-boundary')).toHaveCount(0);
   await expect(page.locator('.answer-scale-labels .active')).toHaveCount(0);
   await expect(next).toBeDisabled();
   await slider.focus();
@@ -46,8 +46,8 @@ test('scale requires an explicit response and supports neutral, zero, keyboard a
   await expect(slider).toHaveAttribute('aria-valuenow', '0');
   await expect(next).toBeEnabled();
   const progress = await page.evaluate(key => JSON.parse(localStorage.getItem(key)), STORAGE_KEY);
-  expect(progress.version).toBe(3);
-  expect(progress.answers[progress.questionIds[0]]).toBe(7);
+  expect(progress.version).toBe(4);
+  expect(progress.answers[progress.questionIds[0]]).toBe(2);
   expect(progress.answers[progress.questionIds[1]]).toBe(0);
 });
 
@@ -64,31 +64,31 @@ test('scale adjustments stay local; Next submits once, and returning to revise s
     const bounds = element.getBoundingClientRect();
     const fire = (type, value) => element.dispatchEvent(new PointerEvent(type, {
       bubbles: true, pointerId: 11, isPrimary: true, button: 0,
-      clientX: bounds.left + (value + .5) / 15 * bounds.width, clientY: bounds.top + 20,
+      clientX: bounds.left + (value + .5) / 5 * bounds.width, clientY: bounds.top + 20,
     }));
     // Synthetic dispatch has no active browser pointer, so only this test shim
     // bypasses capture; production retains real pointer capture for dragging.
     element.setPointerCapture = () => {};
     fire('pointerdown', 0);
+    fire('pointermove', 1);
+    fire('pointermove', 2);
     fire('pointermove', 4);
-    fire('pointermove', 9);
-    fire('pointermove', 14);
   });
-  await expect(slider).toHaveAttribute('aria-valuenow', '14');
+  await expect(slider).toHaveAttribute('aria-valuenow', '4');
   expect(await page.evaluate(() => window.__scaleAnswers.length)).toBe(0);
   await expect(page.getByRole('button', { name: '下一幕', exact: true })).toBeDisabled();
   await slider.evaluate(element => {
     const bounds = element.getBoundingClientRect();
     element.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, pointerId: 11, button: 0, clientX: bounds.right - 2 }));
   });
-  await expect(slider).toHaveAttribute('aria-valuenow', '14');
+  await expect(slider).toHaveAttribute('aria-valuenow', '4');
   expect(await page.evaluate(() => window.__scaleAnswers)).toEqual([]);
   await slider.evaluate(element => {
     const bounds = element.getBoundingClientRect();
     element.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, pointerId: 12, isPrimary: true, button: 0, clientX: bounds.left + 2 }));
     element.dispatchEvent(new PointerEvent('pointercancel', { bubbles: true, pointerId: 12 }));
   });
-  await expect(slider).toHaveAttribute('aria-valuenow', '14');
+  await expect(slider).toHaveAttribute('aria-valuenow', '4');
   expect(await page.evaluate(() => window.__scaleAnswers.length)).toBe(0);
   await slider.press('Home');
   await slider.press('End');
@@ -101,7 +101,7 @@ test('scale adjustments stay local; Next submits once, and returning to revise s
   await page.getByRole('button', { name: '上一题', exact: true }).click();
   await expect(slider).toHaveAttribute('aria-valuenow', '0');
   await slider.press('End');
-  await expect(slider).toHaveAttribute('aria-valuenow', '14');
+  await expect(slider).toHaveAttribute('aria-valuenow', '4');
   expect(await page.evaluate(() => window.__scaleAnswers.length)).toBe(1);
   // Collector refusal blocks Next while retaining the locally chosen answer.
   await page.evaluate(() => {
@@ -111,15 +111,15 @@ test('scale adjustments stay local; Next submits once, and returning to revise s
   });
   await page.getByRole('button', { name: '下一幕', exact: true }).click();
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
-  await expect(slider).toHaveAttribute('aria-valuenow', '14');
+  await expect(slider).toHaveAttribute('aria-valuenow', '4');
   expect(await page.evaluate(() => window.__refusedScaleCalls)).toBe(1);
   expect(await page.evaluate(() => window.__scaleAnswers.length)).toBe(1);
   await page.evaluate(() => { window.NBTICollector = { ...window.NBTICollector, answer: window.__acceptScaleAnswer }; });
   await page.getByRole('button', { name: '下一幕', exact: true }).click();
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
-  expect(await page.evaluate(() => window.__scaleAnswers)).toEqual([[firstId, 0], [firstId, 14]]);
+  expect(await page.evaluate(() => window.__scaleAnswers)).toEqual([[firstId, 0], [firstId, 4]]);
   const stored = await page.evaluate(() => window.NBTICollector.snapshot().runs.flatMap(run => run.answers));
-  expect(stored.map(answer => answer.scaleValue)).toEqual([0, 14]);
+  expect(stored.map(answer => answer.scaleValue)).toEqual([0, 4]);
 });
 
 test('obsolete binary browser progress is removed before a fresh scale attempt', async ({ page }) => {
@@ -152,27 +152,27 @@ test('phone scale fits; touch release selects locally and Next submits the value
     await slider.scrollIntoViewIfNeeded();
     const bounds = await slider.boundingBox();
     const y = bounds.y + bounds.height / 2;
-    const point = value => ({ x: bounds.x + (value + .5) / 15 * bounds.width, y });
+    const point = value => ({ x: bounds.x + (value + .5) / 5 * bounds.width, y });
     await touch.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [point(0)] });
-    await touch.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [point(5)] });
-    await touch.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [point(11)] });
-    await expect(slider).toHaveAttribute('aria-valuenow', '11');
+    await touch.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [point(1)] });
+    await touch.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [point(3)] });
+    await expect(slider).toHaveAttribute('aria-valuenow', '3');
     await expect(page.locator('.answer-scale-labels .active')).toHaveText('偏右');
     await expect(slider).toHaveAttribute('data-selected', 'false');
     await touch.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
     await expect(slider).toHaveAttribute('data-selected', 'true');
-    await expect(slider).toHaveAttribute('aria-valuenow', '11');
+    await expect(slider).toHaveAttribute('aria-valuenow', '3');
     expect(await page.evaluate(() => window.NBTICollector.snapshot().runs.flatMap(run => run.answers))).toEqual([]);
     const layout = await page.evaluate(() => {
       const section = document.querySelector('.question-section').getBoundingClientRect();
-      const elements = [...document.querySelectorAll('.answer-scale-anchor, .answer-scale-labels span, .answer-scale-track, .answer-scale-thumb')];
+      const elements = [...document.querySelectorAll('.answer-scale-anchor, .answer-scale-labels button, .answer-scale-track, .answer-scale-thumb')];
       return { width: innerWidth, documentWidth: document.documentElement.scrollWidth, left: section.left, right: section.right,
         minorDivider: parseFloat(getComputedStyle(document.querySelector('.answer-scale-cell')).borderRightWidth),
         majorDividers: [...document.querySelectorAll('.answer-scale-cell.major-boundary')].map(element => parseFloat(getComputedStyle(element).borderRightWidth)),
         bounds: elements.map(element => { const box = element.getBoundingClientRect(); return { left: box.left, right: box.right, scrollWidth: element.scrollWidth, width: element.clientWidth }; }) };
     });
     expect(layout.documentWidth).toBeLessThanOrEqual(layout.width);
-    expect(layout.majorDividers).toHaveLength(4);
+    expect(layout.majorDividers).toHaveLength(0);
     for (const divider of layout.majorDividers) expect(divider).toBeGreaterThanOrEqual(layout.minorDivider * 3);
     for (const box of layout.bounds) {
       expect(box.left).toBeGreaterThanOrEqual(layout.left);
@@ -183,7 +183,7 @@ test('phone scale fits; touch release selects locally and Next submits the value
     await page.getByRole('button', { name: '下一幕', exact: true }).click();
     await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
     const submitted = await page.evaluate(() => window.NBTICollector.snapshot().runs.flatMap(run => run.answers));
-    expect(submitted.map(answer => [answer.questionId, answer.scaleValue])).toEqual([[firstId, 11]]);
+    expect(submitted.map(answer => [answer.questionId, answer.scaleValue])).toEqual([[firstId, 3]]);
   }
   await touch.detach();
   expect(errors).toEqual([]);

@@ -1,0 +1,886 @@
+{
+  "status": "prepared-not-generated",
+  "useCase": "illustration-story",
+  "questions": [
+    {
+      "id": "1.1",
+      "prompt": "朋友约你周末出门，两种安排你更心动哪一个？",
+      "options": [
+        "去熟悉的店，舒服又不会踩雷",
+        "去没试过的地方，看看会发生什么"
+      ],
+      "seed": 2026101700,
+      "artDirection": {
+        "id": "watercolor-travel",
+        "label": "旅行水彩",
+        "family": "watercolor",
+        "medium": "Transparent watercolor on white cold-pressed paper, loose architectural washes, fine pencil contours, airy travel sketchbook illustration. Visible paper grain, luminous white highlights, not a digital cartoon.",
+        "protagonist": "a young woman with a long auburn braid, round spectacles, a mustard yellow raincoat and navy jeans",
+        "palette": "cobalt blue, lemon yellow, white paper and terracotta",
+        "setting": "a leafy seaside neighborhood with small independent shops"
+      },
+      "scene": "OUTDOORS: The protagonist and one VISUALLY DIFFERENT friend stand on a neighborhood street considering a free weekend. The FRIEND is a tall man with short curly black hair, no glasses, a denim jacket and brown trousers. The protagonist retains the CHARACTER DESIGN above. Do not give both people the same face or hairstyle.",
+      "left": "Sip familiar coffee at the usual cafe.",
+      "right": "Both hands shape wet clay at a pottery wheel.",
+      "generationPrompt": "STYLE: Transparent watercolor on white cold-pressed paper, loose architectural washes, fine pencil contours, airy travel sketchbook illustration. Visible paper grain, luminous white highlights, not a digital cartoon.\nPROTAGONIST: a young woman with a long auburn braid, round spectacles, a mustard yellow raincoat and navy jeans\nPALETTE: cobalt blue, lemon yellow, white paper and terracotta\nSETTING: a leafy seaside neighborhood with small independent shops\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: OUTDOORS: The protagonist and one VISUALLY DIFFERENT friend stand on a neighborhood street considering a free weekend. The FRIEND is a tall man with short curly black hair, no glasses, a denim jacket and brown trousers. The protagonist retains the CHARACTER DESIGN above. Do not give both people the same face or hairstyle.\nMIDDLE — left response: Sip familiar coffee at the usual cafe.\nBOTTOM — right response: Both hands shape wet clay at a pottery wheel.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "2.1",
+      "prompt": "周五要交的东西，你周三就有空做完。你通常会？",
+      "options": [
+        "提前完成，后面两天心里踏实",
+        "先做别的，临近截止再集中完成"
+      ],
+      "seed": 2026101701,
+      "artDirection": {
+        "id": "clay-desk",
+        "label": "黏土定格",
+        "family": "clay",
+        "medium": "Photographed handmade clay stop-motion miniature. Rounded sculpted human puppets, visible fingerprints on matte plasticine, tiny tactile furniture, soft studio light and shallow depth of field. Truly three-dimensional, not drawn.",
+        "protagonist": "a clay young man with tightly curled dark hair, a plum purple sweatshirt and cream trousers",
+        "palette": "lavender, apricot, cream and plum",
+        "setting": "a compact attic home office with sloped windows and tiny handcrafted props"
+      },
+      "scene": "ONE PERSON ONLY: The protagonist sits at a tidy home desk considering an unfinished project on a laptop. Afternoon light, plant, plain wall, no text on screen.",
+      "left": "Closed laptop, finished work stacked, stretching with relief.",
+      "right": "Actively play guitar; unfinished work waits on the open laptop behind.",
+      "generationPrompt": "STYLE: Photographed handmade clay stop-motion miniature. Rounded sculpted human puppets, visible fingerprints on matte plasticine, tiny tactile furniture, soft studio light and shallow depth of field. Truly three-dimensional, not drawn.\nPROTAGONIST: a clay young man with tightly curled dark hair, a plum purple sweatshirt and cream trousers\nPALETTE: lavender, apricot, cream and plum\nSETTING: a compact attic home office with sloped windows and tiny handcrafted props\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: ONE PERSON ONLY: The protagonist sits at a tidy home desk considering an unfinished project on a laptop. Afternoon light, plant, plain wall, no text on screen.\nMIDDLE — left response: Closed laptop, finished work stacked, stretching with relief.\nBOTTOM — right response: Actively play guitar; unfinished work waits on the open laptop behind.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "3.1",
+      "prompt": "朋友讲错了一个你熟悉的细节，大家正聊得开心。你会？",
+      "options": [
+        "自然地补充一下，事情还是说准好",
+        "先接着聊，找私下的机会再提醒"
+      ],
+      "seed": 2026101702,
+      "artDirection": {
+        "id": "pop-comic",
+        "label": "波普美漫",
+        "family": "comic",
+        "medium": "Bold American pop comic illustration, thick black contour ink, vivid flat colors, halftone Ben-Day dot shading, energetic but readable facial acting. No speech balloons or lettering.",
+        "protagonist": "a young Black woman with a high curly ponytail, red varsity jacket and white shirt",
+        "palette": "signal red, cyan, bright yellow and deep black",
+        "setting": "a lively retro diner with checked flooring and round cafe tables"
+      },
+      "scene": "FOUR friends chat happily around a cafe table; the green-clad protagonist listens as a blue-clad friend tells a story.",
+      "left": "Raise a hand to add a fact while all four friends listen.",
+      "right": "Quietly remind the storyteller one-to-one away from the group.",
+      "generationPrompt": "STYLE: Bold American pop comic illustration, thick black contour ink, vivid flat colors, halftone Ben-Day dot shading, energetic but readable facial acting. No speech balloons or lettering.\nPROTAGONIST: a young Black woman with a high curly ponytail, red varsity jacket and white shirt\nPALETTE: signal red, cyan, bright yellow and deep black\nSETTING: a lively retro diner with checked flooring and round cafe tables\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: FOUR friends chat happily around a cafe table; the green-clad protagonist listens as a blue-clad friend tells a story.\nMIDDLE — left response: Raise a hand to add a fact while all four friends listen.\nBOTTOM — right response: Quietly remind the storyteller one-to-one away from the group.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "4.1",
+      "prompt": "朋友说“要是人生能存档就好了”，你更容易接哪句？",
+      "options": [
+        "那能试多少种不同的人生啊？",
+        "先把眼前这关过好，再想下一关"
+      ],
+      "seed": 2026101703,
+      "artDirection": {
+        "id": "pixel-savepoint",
+        "label": "像素游戏",
+        "family": "pixel",
+        "medium": "Authentic 16-bit pixel art, clearly visible square pixel clusters, limited color palette, crisp stair-step silhouettes, retro adventure-game backgrounds, absolutely no smooth painted gradients or realistic rendering.",
+        "protagonist": "a young man with spiky silver hair, a cobalt blue hoodie and orange headphones",
+        "palette": "indigo, electric blue, orange and lilac",
+        "setting": "a compact gaming lounge with a console, CRT screen and beanbag chairs"
+      },
+      "scene": "Two friends pause a video game on the sofa and imagine what a save point in real life would mean.",
+      "left": "Controller idle; imagine several visibly different possible lives.",
+      "right": "Both hands on the controller, focused on the current game challenge.",
+      "generationPrompt": "STYLE: Authentic 16-bit pixel art, clearly visible square pixel clusters, limited color palette, crisp stair-step silhouettes, retro adventure-game backgrounds, absolutely no smooth painted gradients or realistic rendering.\nPROTAGONIST: a young man with spiky silver hair, a cobalt blue hoodie and orange headphones\nPALETTE: indigo, electric blue, orange and lilac\nSETTING: a compact gaming lounge with a console, CRT screen and beanbag chairs\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Two friends pause a video game on the sofa and imagine what a save point in real life would mean.\nMIDDLE — left response: Controller idle; imagine several visibly different possible lives.\nBOTTOM — right response: Both hands on the controller, focused on the current game challenge.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "5.1",
+      "prompt": "来到一个没什么熟人的聚会，你更可能？",
+      "options": [
+        "找个话题，先认识身边的人",
+        "先安静待着，等自然的聊天机会"
+      ],
+      "seed": 2026101704,
+      "artDirection": {
+        "id": "fashion-marker",
+        "label": "时装马克笔",
+        "family": "marker",
+        "medium": "Editorial fashion drawing in alcohol marker and fine black pen. Confident sketchy lines, translucent marker streaks, elegant elongated human figures, large clean color fields on ivory paper.",
+        "protagonist": "a tall young woman with a straight black bob, a bright magenta blazer and wide white trousers",
+        "palette": "fuchsia, ivory, charcoal and pale blush",
+        "setting": "a modern rooftop gathering with tall windows and a snack bar"
+      },
+      "scene": "The protagonist arrives at a cozy house gathering where most guests are unfamiliar, drinks and snacks on a side table.",
+      "left": "Walk toward a new guest with an open friendly greeting.",
+      "right": "Sit contentedly with a snack and quietly observe the gathering.",
+      "generationPrompt": "STYLE: Editorial fashion drawing in alcohol marker and fine black pen. Confident sketchy lines, translucent marker streaks, elegant elongated human figures, large clean color fields on ivory paper.\nPROTAGONIST: a tall young woman with a straight black bob, a bright magenta blazer and wide white trousers\nPALETTE: fuchsia, ivory, charcoal and pale blush\nSETTING: a modern rooftop gathering with tall windows and a snack bar\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: The protagonist arrives at a cozy house gathering where most guests are unfamiliar, drinks and snacks on a side table.\nMIDDLE — left response: Walk toward a new guest with an open friendly greeting.\nBOTTOM — right response: Sit contentedly with a snack and quietly observe the gathering.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "6.1",
+      "prompt": "朋友最近进步很快，群里都在夸他，你心里更接近？",
+      "options": [
+        "替他开心，也忍不住看看自己落后没",
+        "替他开心，我也有自己的进度"
+      ],
+      "seed": 2026101705,
+      "artDirection": {
+        "id": "risograph-progress",
+        "label": "双色孔版印刷",
+        "family": "print",
+        "medium": "Two-color risograph print on uncoated paper. Blue and vermilion ink layers, visible misregistration, grainy flat silhouettes, simple expressive human faces, deliberate graphic composition.",
+        "protagonist": "a young man with wavy shoulder-length hair, a striped polo shirt and an orange knit cap",
+        "palette": "vermilion, ultramarine and off-white paper only",
+        "setting": "a small contemporary studio with a wall pinboard and desk plants"
+      },
+      "scene": "The protagonist reads a group chat celebrating a friend's recent progress, sitting at a personal worktable.",
+      "left": "Compare the friends achievement with own progress, slightly tense shoulders.",
+      "right": "Warmly celebrate the friend, then calmly tend own ongoing project.",
+      "generationPrompt": "STYLE: Two-color risograph print on uncoated paper. Blue and vermilion ink layers, visible misregistration, grainy flat silhouettes, simple expressive human faces, deliberate graphic composition.\nPROTAGONIST: a young man with wavy shoulder-length hair, a striped polo shirt and an orange knit cap\nPALETTE: vermilion, ultramarine and off-white paper only\nSETTING: a small contemporary studio with a wall pinboard and desk plants\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: The protagonist reads a group chat celebrating a friend's recent progress, sitting at a personal worktable.\nMIDDLE — left response: Compare the friends achievement with own progress, slightly tense shoulders.\nBOTTOM — right response: Warmly celebrate the friend, then calmly tend own ongoing project.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "7.1",
+      "prompt": "忙了很久，终于有一个自由的下午。你更想？",
+      "options": [
+        "随心看看，什么轻松就做什么",
+        "投入一直惦记的爱好，终于有空了"
+      ],
+      "seed": 2026101706,
+      "artDirection": {
+        "id": "sunlight-film",
+        "label": "日光胶片摄影",
+        "family": "photography",
+        "medium": "Natural live-action 35mm color film photographs of a real human, candid lifestyle editorial, realistic skin texture and anatomy, sunlight on linen, gentle film grain. Not illustration, not anime, not 3D animation.",
+        "protagonist": "a woman in her early thirties with dark hair in a messy bun, a pale blue linen blouse and loose white trousers",
+        "palette": "sky blue, white linen, honey sunlight and natural wood",
+        "setting": "a bright apartment with large windows, a low sofa and a painting desk"
+      },
+      "scene": "ONE PERSON ONLY: After a busy week the protagonist stands in a sunny living room, with a cozy sofa and a watercolor desk nearby, considering a free afternoon.",
+      "left": "Relax freely, several casual choices nearby, no particular task chosen.",
+      "right": "Eagerly return to a cherished painting project and pick up the brush.",
+      "generationPrompt": "STYLE: Natural live-action 35mm color film photographs of a real human, candid lifestyle editorial, realistic skin texture and anatomy, sunlight on linen, gentle film grain. Not illustration, not anime, not 3D animation.\nPROTAGONIST: a woman in her early thirties with dark hair in a messy bun, a pale blue linen blouse and loose white trousers\nPALETTE: sky blue, white linen, honey sunlight and natural wood\nSETTING: a bright apartment with large windows, a low sofa and a painting desk\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: ONE PERSON ONLY: After a busy week the protagonist stands in a sunny living room, with a cozy sofa and a watercolor desk nearby, considering a free afternoon.\nMIDDLE — left response: Relax freely, several casual choices nearby, no particular task chosen.\nBOTTOM — right response: Eagerly return to a cherished painting project and pick up the brush.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "8.1",
+      "prompt": "和一个人越来越亲近，你对关系的期待更像哪种？",
+      "options": [
+        "聊清彼此的定位，约定让人安心",
+        "先享受相处，不急着套进固定定义"
+      ],
+      "seed": 2026101707,
+      "artDirection": {
+        "id": "art-nouveau-cafe",
+        "label": "新艺术装饰画",
+        "family": "decorative",
+        "medium": "Art Nouveau illustrative panels with elegant flowing contours, stylized botanical shapes integrated into the setting, flat jewel colors, delicate decorative linework and graceful human figures. No poster titles or outer ornamental border.",
+        "protagonist": "a young woman with flowing chestnut hair, a deep burgundy dress and a small pearl necklace",
+        "palette": "burgundy, peacock blue, antique gold and cream",
+        "setting": "a cafe with curved woodwork, floral glass and a riverside walkway"
+      },
+      "scene": "Exactly TWO DISTINCT ADULTS share a quiet cafe evening: the protagonist is the long chestnut-haired WOMAN in a burgundy dress. Her companion is a MAN with short curly black hair, a navy jacket and ivory shirt. Never render two matching burgundy-dressed women.",
+      "left": "Two close people face each other and make a clear mutual promise.",
+      "right": "Two people enjoy a relaxed stroll without formal definitions or promises.",
+      "generationPrompt": "STYLE: Art Nouveau illustrative panels with elegant flowing contours, stylized botanical shapes integrated into the setting, flat jewel colors, delicate decorative linework and graceful human figures. No poster titles or outer ornamental border.\nPROTAGONIST: a young woman with flowing chestnut hair, a deep burgundy dress and a small pearl necklace\nPALETTE: burgundy, peacock blue, antique gold and cream\nSETTING: a cafe with curved woodwork, floral glass and a riverside walkway\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Exactly TWO DISTINCT ADULTS share a quiet cafe evening: the protagonist is the long chestnut-haired WOMAN in a burgundy dress. Her companion is a MAN with short curly black hair, a navy jacket and ivory shirt. Never render two matching burgundy-dressed women.\nMIDDLE — left response: Two close people face each other and make a clear mutual promise.\nBOTTOM — right response: Two people enjoy a relaxed stroll without formal definitions or promises.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "9.1",
+      "prompt": "难得有个空闲晚上，家人喊你一起吃饭。你更想？",
+      "options": [
+        "这次留给自己，改天再好好聚",
+        "回去围坐一桌，热闹也让人充电"
+      ],
+      "seed": 2026101708,
+      "artDirection": {
+        "id": "ink-family",
+        "label": "国风水墨设色",
+        "family": "ink",
+        "medium": "Contemporary Chinese ink-and-wash painting on textured rice paper. Expressive black brush lines, translucent vermilion and blue washes, generous unpainted white areas, restrained natural human faces. No calligraphy, seals or text.",
+        "protagonist": "a young man with cropped black hair, a rust-red knit sweater and dark trousers",
+        "palette": "ink black, vermilion, muted blue and rice-paper white",
+        "setting": "a modern Chinese home with walnut furniture, a reading chair and round family dinner table"
+      },
+      "scene": "On a quiet evening the protagonist sits on a cozy green sofa, looking at an invitation on their phone. A small warm table lamp and a closed book are nearby. ONLY ONE PERSON is visible, no dining table.",
+      "left": "ONE person alone at home, relaxed with a book and lamp; no dinner party.",
+      "right": "Same protagonist actively shares a hot meal at a table with family.",
+      "generationPrompt": "STYLE: Contemporary Chinese ink-and-wash painting on textured rice paper. Expressive black brush lines, translucent vermilion and blue washes, generous unpainted white areas, restrained natural human faces. No calligraphy, seals or text.\nPROTAGONIST: a young man with cropped black hair, a rust-red knit sweater and dark trousers\nPALETTE: ink black, vermilion, muted blue and rice-paper white\nSETTING: a modern Chinese home with walnut furniture, a reading chair and round family dinner table\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: On a quiet evening the protagonist sits on a cozy green sofa, looking at an invitation on their phone. A small warm table lamp and a closed book are nearby. ONLY ONE PERSON is visible, no dining table.\nMIDDLE — left response: ONE person alone at home, relaxed with a book and lamp; no dinner party.\nBOTTOM — right response: Same protagonist actively shares a hot meal at a table with family.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "10.1",
+      "prompt": "想开始一个小创作，什么更能推动你？",
+      "options": [
+        "脑子里有个成品，想把它做出来",
+        "过程应该很好玩，先试了再看"
+      ],
+      "seed": 2026101709,
+      "artDirection": {
+        "id": "layered-paper-craft",
+        "label": "立体剪纸",
+        "family": "paper",
+        "medium": "A photographed layered cut-paper diorama. Every person, desk and object is made from precisely cut colored paper, visible paper edges, overlapping layers and cast shadows. Flat paper faces with simple eyes, rich dimensional construction.",
+        "protagonist": "a young paper-cut woman with two black braids, a turquoise apron and a coral long-sleeve top",
+        "palette": "turquoise, coral, ochre and cream",
+        "setting": "a craft workroom made of folded paper with tidy shelves of materials"
+      },
+      "scene": "The protagonist is about to begin a small handmade creative project at a desk with paper, pencils and craft materials.",
+      "left": "Work carefully toward a specific finished model shown beside the workbench.",
+      "right": "Playfully mix materials and try shapes with no fixed model.",
+      "generationPrompt": "STYLE: A photographed layered cut-paper diorama. Every person, desk and object is made from precisely cut colored paper, visible paper edges, overlapping layers and cast shadows. Flat paper faces with simple eyes, rich dimensional construction.\nPROTAGONIST: a young paper-cut woman with two black braids, a turquoise apron and a coral long-sleeve top\nPALETTE: turquoise, coral, ochre and cream\nSETTING: a craft workroom made of folded paper with tidy shelves of materials\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: The protagonist is about to begin a small handmade creative project at a desk with paper, pencils and craft materials.\nMIDDLE — left response: Work carefully toward a specific finished model shown beside the workbench.\nBOTTOM — right response: Playfully mix materials and try shapes with no fixed model.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "1.2",
+      "prompt": "空出半小时，你打开视频软件，更想看什么？",
+      "options": [
+        "一直在追的内容，接着看就很开心",
+        "首页的陌生主题，说不定打开新世界"
+      ],
+      "seed": 2026101710,
+      "artDirection": {
+        "id": "lowpoly-video",
+        "label": "低多边形三维",
+        "family": "lowpoly",
+        "medium": "Low-poly 3D illustration with obvious faceted polygonal surfaces, angular human characters, simple geometric furniture, ambient occlusion and soft directional light. No drawn outlines, no smooth photoreal faces.",
+        "protagonist": "a young man with an angular dark-blue undercut, an orange T-shirt and slate shorts",
+        "palette": "burnt orange, slate blue, pale gray and soft cyan",
+        "setting": "a minimal apartment with angular furniture and a large modular sofa"
+      },
+      "scene": "At home with half an hour free, the protagonist holds a tablet with a grid of abstract video thumbnails, no readable text.",
+      "left": "Recognize a favorite video and settle back comfortably.",
+      "right": "Lean toward an unfamiliar planet documentary.",
+      "generationPrompt": "STYLE: Low-poly 3D illustration with obvious faceted polygonal surfaces, angular human characters, simple geometric furniture, ambient occlusion and soft directional light. No drawn outlines, no smooth photoreal faces.\nPROTAGONIST: a young man with an angular dark-blue undercut, an orange T-shirt and slate shorts\nPALETTE: burnt orange, slate blue, pale gray and soft cyan\nSETTING: a minimal apartment with angular furniture and a large modular sofa\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: At home with half an hour free, the protagonist holds a tablet with a grid of abstract video thumbnails, no readable text.\nMIDDLE — left response: Recognize a favorite video and settle back comfortably.\nBOTTOM — right response: Lean toward an unfamiliar planet documentary.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "2.2",
+      "prompt": "和朋友约了七点见面，按导航刚好能准时到。你会？",
+      "options": [
+        "按算好的时间出门，不用多等",
+        "再提前一点，给路上留些余量"
+      ],
+      "seed": 2026101711,
+      "artDirection": {
+        "id": "midcentury-travel",
+        "label": "复古旅行海报",
+        "family": "poster",
+        "medium": "Mid-century screen-printed travel illustration, strong simplified geometric architecture, flat graphic human silhouettes, limited spot colors, subtle printing texture. Absolutely no poster captions or lettering.",
+        "protagonist": "a young woman with a short chestnut pixie haircut, a navy trench coat and scarlet shoulder bag",
+        "palette": "navy, tomato red, cream and powder blue",
+        "setting": "a walkable tram neighborhood with a cozy corner cafe"
+      },
+      "scene": "Tight portrait of exactly ONE WOMAN: the protagonist checking a phone route in her home. She has the specified short pixie hair, navy trench coat and scarlet bag. Plain wall behind her, no background figures. No man or second person.",
+      "left": "Step through the front door at the planned time.",
+      "right": "Already seated at the meeting place with an empty chair, waiting calmly.",
+      "generationPrompt": "STYLE: Mid-century screen-printed travel illustration, strong simplified geometric architecture, flat graphic human silhouettes, limited spot colors, subtle printing texture. Absolutely no poster captions or lettering.\nPROTAGONIST: a young woman with a short chestnut pixie haircut, a navy trench coat and scarlet shoulder bag\nPALETTE: navy, tomato red, cream and powder blue\nSETTING: a walkable tram neighborhood with a cozy corner cafe\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Tight portrait of exactly ONE WOMAN: the protagonist checking a phone route in her home. She has the specified short pixie hair, navy trench coat and scarlet bag. Plain wall behind her, no background figures. No man or second person.\nMIDDLE — left response: Step through the front door at the planned time.\nBOTTOM — right response: Already seated at the meeting place with an empty chair, waiting calmly.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "3.2",
+      "prompt": "和朋友讨论分歧，对方开始不开心，你更想？",
+      "options": [
+        "先把理由说明白，再一起讨论",
+        "先照顾情绪，平静下来再聊事情"
+      ],
+      "seed": 2026101712,
+      "artDirection": {
+        "id": "charcoal-conversation",
+        "label": "炭笔素描",
+        "family": "drawing",
+        "medium": "Expressive charcoal and white-chalk figure drawing on gray paper. Hand-smudged tonal masses, crisp charcoal accents, realistic human anatomy, sensitive faces, entirely grayscale, visible textured paper.",
+        "protagonist": "a man in his thirties with round glasses, a close-cropped beard and a plain dark cardigan",
+        "palette": "charcoal black, gray paper and white chalk only",
+        "setting": "an intimate quiet tea room with soft window light"
+      },
+      "scene": "Two friends discuss different opinions at a table; one friend looks slightly upset while the protagonist listens.",
+      "left": "Arrange a clear object-based reasoning diagram on the table.",
+      "right": "Put the diagram away and offer the upset friend tea and attention.",
+      "generationPrompt": "STYLE: Expressive charcoal and white-chalk figure drawing on gray paper. Hand-smudged tonal masses, crisp charcoal accents, realistic human anatomy, sensitive faces, entirely grayscale, visible textured paper.\nPROTAGONIST: a man in his thirties with round glasses, a close-cropped beard and a plain dark cardigan\nPALETTE: charcoal black, gray paper and white chalk only\nSETTING: an intimate quiet tea room with soft window light\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Two friends discuss different opinions at a table; one friend looks slightly upset while the protagonist listens.\nMIDDLE — left response: Arrange a clear object-based reasoning diagram on the table.\nBOTTOM — right response: Put the diagram away and offer the upset friend tea and attention.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "4.2",
+      "prompt": "聚会突然安静下来，你通常会？",
+      "options": [
+        "主动抛个话题，把大家接起来",
+        "自在地等一等，不急着打破安静"
+      ],
+      "seed": 2026101713,
+      "artDirection": {
+        "id": "fauvist-gathering",
+        "label": "高彩油画",
+        "family": "oil",
+        "medium": "Vibrant modern figurative oil painting with thick palette-knife impasto, expressive visible brushstrokes, saturated nonliteral colors and clear readable gestures. Painterly canvas surface, not cartoon line art.",
+        "protagonist": "a woman with short copper curls, a turquoise blouse and yellow earrings",
+        "palette": "cobalt, orange, turquoise and acid yellow",
+        "setting": "a colorful sunroom with friends around a low coffee table"
+      },
+      "scene": "A quiet moment among FOUR friends seated at a coffee table. The protagonist is the ONLY person in GREEN; the others wear ivory, blue and coral. Everyone is quietly relaxed.",
+      "left": "Lean forward to start a topic; the three friends turn toward the speaker.",
+      "right": "Sip tea peacefully while the whole group enjoys comfortable silence.",
+      "generationPrompt": "STYLE: Vibrant modern figurative oil painting with thick palette-knife impasto, expressive visible brushstrokes, saturated nonliteral colors and clear readable gestures. Painterly canvas surface, not cartoon line art.\nPROTAGONIST: a woman with short copper curls, a turquoise blouse and yellow earrings\nPALETTE: cobalt, orange, turquoise and acid yellow\nSETTING: a colorful sunroom with friends around a low coffee table\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: A quiet moment among FOUR friends seated at a coffee table. The protagonist is the ONLY person in GREEN; the others wear ivory, blue and coral. Everyone is quietly relaxed.\nMIDDLE — left response: Lean forward to start a topic; the three friends turn toward the speaker.\nBOTTOM — right response: Sip tea peacefully while the whole group enjoys comfortable silence.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "5.2",
+      "prompt": "有人主动问你“第一次来吗”，你会？",
+      "options": [
+        "顺势聊下去，可能就认识新朋友了",
+        "礼貌回应几句，继续做自己的事"
+      ],
+      "seed": 2026101714,
+      "artDirection": {
+        "id": "collage-gallery",
+        "label": "拼贴画",
+        "family": "collage",
+        "medium": "Handmade editorial collage from torn colored paper and cropped photographic textures. Cut-out human faces and garments, rough torn edges, playful asymmetrical composition, no text scraps or newspaper lettering.",
+        "protagonist": "a young man with dark curly hair, a cobalt overshirt and beige trousers",
+        "palette": "cobalt, coral pink, kraft brown and white",
+        "setting": "a contemporary art gallery with framed flower paintings and blank walls"
+      },
+      "scene": "Inside an art exhibition with plain walls and framed flower pictures, the curly-haired MALE protagonist in a cobalt overshirt meets a clearly different FEMALE attendee with short red hair and a mustard yellow dress. Only these TWO people. Never duplicate the male protagonist.",
+      "left": "Turn fully toward the new acquaintance, continue an animated conversation.",
+      "right": "After a polite nod turn back to the painting; the acquaintance moves away.",
+      "generationPrompt": "STYLE: Handmade editorial collage from torn colored paper and cropped photographic textures. Cut-out human faces and garments, rough torn edges, playful asymmetrical composition, no text scraps or newspaper lettering.\nPROTAGONIST: a young man with dark curly hair, a cobalt overshirt and beige trousers\nPALETTE: cobalt, coral pink, kraft brown and white\nSETTING: a contemporary art gallery with framed flower paintings and blank walls\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Inside an art exhibition with plain walls and framed flower pictures, the curly-haired MALE protagonist in a cobalt overshirt meets a clearly different FEMALE attendee with short red hair and a mustard yellow dress. Only these TWO people. Never duplicate the male protagonist.\nMIDDLE — left response: Turn fully toward the new acquaintance, continue an animated conversation.\nBOTTOM — right response: After a polite nod turn back to the painting; the acquaintance moves away.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "6.2",
+      "prompt": "你刚学的东西，朋友说自己早就会了。你会？",
+      "options": [
+        "正好请教一下，按自己的节奏学",
+        "有点受刺激，想尽快追上他的水平"
+      ],
+      "seed": 2026101715,
+      "artDirection": {
+        "id": "clearline-comic",
+        "label": "欧式清线漫画",
+        "family": "comic",
+        "medium": "European clear-line comic drawing, precise uniform fine black outlines, flat bright colors without hatching, detailed readable environments, expressive natural human faces. No text or speech balloons.",
+        "protagonist": "a young woman with a strawberry-blonde ponytail, a cherry red turtleneck and denim overalls",
+        "palette": "cherry red, sky blue, butter yellow and clean white",
+        "setting": "a small neighborhood drawing class with wooden worktables"
+      },
+      "scene": "At a drawing table the protagonist practices a new skill beside ONE experienced friend: a dark-haired woman with round glasses and a pale yellow shirt. The protagonist keeps the strawberry ponytail, red turtleneck and denim overalls.",
+      "left": "Put own pencil down and watch the experienced friend demonstrate.",
+      "right": "Actively practice with own pencil and determined eyebrows to catch up.",
+      "generationPrompt": "STYLE: European clear-line comic drawing, precise uniform fine black outlines, flat bright colors without hatching, detailed readable environments, expressive natural human faces. No text or speech balloons.\nPROTAGONIST: a young woman with a strawberry-blonde ponytail, a cherry red turtleneck and denim overalls\nPALETTE: cherry red, sky blue, butter yellow and clean white\nSETTING: a small neighborhood drawing class with wooden worktables\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: At a drawing table the protagonist practices a new skill beside ONE experienced friend: a dark-haired woman with round glasses and a pale yellow shirt. The protagonist keeps the strawberry ponytail, red turtleneck and denim overalls.\nMIDDLE — left response: Put own pencil down and watch the experienced friend demonstrate.\nBOTTOM — right response: Actively practice with own pencil and determined eyebrows to catch up.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "7.2",
+      "prompt": "喜欢的事迟迟没进展，另一个方向更容易出成果。你会？",
+      "options": [
+        "试试新方向，现在的机会也值得抓",
+        "再给喜欢的事一些时间，还想继续"
+      ],
+      "seed": 2026101716,
+      "artDirection": {
+        "id": "cel-animation",
+        "label": "赛璐璐动画",
+        "family": "animation",
+        "medium": "Hand-painted 1990s cel animation stills, clean expressive anime faces, crisp two-tone cel shadows, detailed painted backgrounds, subtle analog film texture. Distinct traditional animation production design.",
+        "protagonist": "a young man with navy-black hair tied in a short ponytail, an ivory shirt and a red artist apron",
+        "palette": "deep red, ivory, muted violet and sky blue",
+        "setting": "a personal art studio with an easel, colored paper and a broad daylight window"
+      },
+      "scene": "ALONE at a creative worktable the protagonist considers an unfinished watercolor landscape and colorful origami paper.",
+      "left": "Set a stalled project aside and begin a distinctly different promising project.",
+      "right": "Return patiently to the same cherished unfinished project.",
+      "generationPrompt": "STYLE: Hand-painted 1990s cel animation stills, clean expressive anime faces, crisp two-tone cel shadows, detailed painted backgrounds, subtle analog film texture. Distinct traditional animation production design.\nPROTAGONIST: a young man with navy-black hair tied in a short ponytail, an ivory shirt and a red artist apron\nPALETTE: deep red, ivory, muted violet and sky blue\nSETTING: a personal art studio with an easel, colored paper and a broad daylight window\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: ALONE at a creative worktable the protagonist considers an unfinished watercolor landscape and colorful origami paper.\nMIDDLE — left response: Set a stalled project aside and begin a distinctly different promising project.\nBOTTOM — right response: Return patiently to the same cherished unfinished project.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "8.2",
+      "prompt": "两种生活地图摆在面前，你更愿意选哪张？",
+      "options": [
+        "路标清楚，能到达期待的地方",
+        "留着很多空白，可以画自己的路"
+      ],
+      "seed": 2026101717,
+      "artDirection": {
+        "id": "isometric-maps",
+        "label": "等距微缩模型",
+        "family": "diorama",
+        "medium": "Isometric 3D miniature world photographed from a consistent elevated three-quarter angle. Tiny articulated human figurines, precise scale-model props, soft shadows, clean toy-like materials, tilt-shift depth of field.",
+        "protagonist": "a miniature woman with a black topknot, a tangerine jacket and white sneakers",
+        "palette": "tangerine, teal, sand and white",
+        "setting": "a tiny mapmaker's home studio with miniature hills and route maps on a large desk"
+      },
+      "scene": "ONE PERSON ONLY: The protagonist unfolds TWO MAPS on a wooden table: one has a clear single colored route toward a little house icon; the other has wide blank areas. No text.",
+      "left": "Trace the clear existing route on a map toward its destination pin.",
+      "right": "Draw a new route in the blank area of a map.",
+      "generationPrompt": "STYLE: Isometric 3D miniature world photographed from a consistent elevated three-quarter angle. Tiny articulated human figurines, precise scale-model props, soft shadows, clean toy-like materials, tilt-shift depth of field.\nPROTAGONIST: a miniature woman with a black topknot, a tangerine jacket and white sneakers\nPALETTE: tangerine, teal, sand and white\nSETTING: a tiny mapmaker's home studio with miniature hills and route maps on a large desk\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: ONE PERSON ONLY: The protagonist unfolds TWO MAPS on a wooden table: one has a clear single colored route toward a little house icon; the other has wide blank areas. No text.\nMIDDLE — left response: Trace the clear existing route on a map toward its destination pin.\nBOTTOM — right response: Draw a new route in the blank area of a map.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "9.2",
+      "prompt": "和很亲近的人相处，哪种日常更让你舒服？",
+      "options": [
+        "彼此在意，也保留一点私人空间",
+        "很多小事都想分享，常常保持联系"
+      ],
+      "seed": 2026101718,
+      "artDirection": {
+        "id": "needlefelt-home",
+        "label": "羊毛毡定格",
+        "family": "felt",
+        "medium": "Handmade needle-felt wool puppet photography. Soft fuzzy fibers visible on human puppet faces, clothes and furniture, tiny stitched details, cozy stop-motion set lighting. Material must clearly be fuzzy wool, not smooth clay.",
+        "protagonist": "a felt young woman with dark yarn hair in a bun, a lilac cardigan and a mustard skirt",
+        "palette": "lilac, mustard, dusty pink and oatmeal",
+        "setting": "a cozy wool-felt living room with a sofa, separate armchair and a knitted rug"
+      },
+      "scene": "TWO PEOPLE: the protagonist in a GREEN OVERSHIRT and the friend in a CORAL SWEATER share tea in a comfortable living room. These exact clothes stay the same in all panels.",
+      "left": "Two close people peacefully enjoy separate hobbies with space between them.",
+      "right": "Two close people shoulder to shoulder share small daily discoveries.",
+      "generationPrompt": "STYLE: Handmade needle-felt wool puppet photography. Soft fuzzy fibers visible on human puppet faces, clothes and furniture, tiny stitched details, cozy stop-motion set lighting. Material must clearly be fuzzy wool, not smooth clay.\nPROTAGONIST: a felt young woman with dark yarn hair in a bun, a lilac cardigan and a mustard skirt\nPALETTE: lilac, mustard, dusty pink and oatmeal\nSETTING: a cozy wool-felt living room with a sofa, separate armchair and a knitted rug\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: TWO PEOPLE: the protagonist in a GREEN OVERSHIRT and the friend in a CORAL SWEATER share tea in a comfortable living room. These exact clothes stay the same in all panels.\nMIDDLE — left response: Two close people peacefully enjoy separate hobbies with space between them.\nBOTTOM — right response: Two close people shoulder to shoulder share small daily discoveries.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "10.2",
+      "prompt": "出门办事，路上发现一条很有意思的小街。你会？",
+      "options": [
+        "先把原定的事办完，再考虑绕回来",
+        "进去逛逛，沿途的发现也很重要"
+      ],
+      "seed": 2026101719,
+      "artDirection": {
+        "id": "neon-street-film",
+        "label": "霓虹都市摄影",
+        "family": "photography",
+        "medium": "Cinematic live-action night street photography, realistic human, rain-polished pavement, luminous cyan and coral shop lights, deep shadows, sharp skin texture with soft bokeh. No illustrations or cartoon faces.",
+        "protagonist": "a young woman with a chin-length silver bob, a charcoal coat and a bright coral scarf",
+        "palette": "cyan neon, coral neon, deep navy and rain-gray",
+        "setting": "a contemporary city street at blue hour, parcel counter and a glowing flower shop; no legible signage"
+      },
+      "scene": "At a street junction, the protagonist carrying a small parcel notices an inviting side alley with a colorful flower shop.",
+      "left": "Keep walking toward the original errand destination, saving the side street for later.",
+      "right": "Immediately turn into the intriguing side street and explore.",
+      "generationPrompt": "STYLE: Cinematic live-action night street photography, realistic human, rain-polished pavement, luminous cyan and coral shop lights, deep shadows, sharp skin texture with soft bokeh. No illustrations or cartoon faces.\nPROTAGONIST: a young woman with a chin-length silver bob, a charcoal coat and a bright coral scarf\nPALETTE: cyan neon, coral neon, deep navy and rain-gray\nSETTING: a contemporary city street at blue hour, parcel counter and a glowing flower shop; no legible signage\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: At a street junction, the protagonist carrying a small parcel notices an inviting side alley with a colorful flower shop.\nMIDDLE — left response: Keep walking toward the original errand destination, saving the side street for later.\nBOTTOM — right response: Immediately turn into the intriguing side street and explore.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "1.3",
+      "prompt": "朋友对你很确定的一件事提出了新解释，你会？",
+      "options": [
+        "追问一下，也许有我没见过的角度",
+        "先保留判断，熟悉的经验更让我信服"
+      ],
+      "seed": 2026101720,
+      "artDirection": {
+        "id": "colored-pencil-debate",
+        "label": "彩铅速写",
+        "family": "pencil",
+        "medium": "Hand-drawn colored-pencil illustration on ivory sketch paper, overlapping pencil hatch marks, soft uneven outlines, delicate human portrait detail, visibly dry wax-pencil texture.",
+        "protagonist": "a young woman with dark curly hair and round brass glasses, wearing a lavender knit vest over a white blouse",
+        "palette": "lavender, sepia, leaf green and ivory",
+        "setting": "a small book cafe with mismatched chairs and generous natural light"
+      },
+      "scene": "Two friends sit over coffee discussing a familiar topic, one friend offers a new explanation with a gentle hand gesture.",
+      "left": "Lean toward the speaker and ask to understand the new idea.",
+      "right": "Hold a well-worn notebook and thoughtfully reserve judgment.",
+      "generationPrompt": "STYLE: Hand-drawn colored-pencil illustration on ivory sketch paper, overlapping pencil hatch marks, soft uneven outlines, delicate human portrait detail, visibly dry wax-pencil texture.\nPROTAGONIST: a young woman with dark curly hair and round brass glasses, wearing a lavender knit vest over a white blouse\nPALETTE: lavender, sepia, leaf green and ivory\nSETTING: a small book cafe with mismatched chairs and generous natural light\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Two friends sit over coffee discussing a familiar topic, one friend offers a new explanation with a gentle hand gesture.\nMIDDLE — left response: Lean toward the speaker and ask to understand the new idea.\nBOTTOM — right response: Hold a well-worn notebook and thoughtfully reserve judgment.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "2.3",
+      "prompt": "明早要赶早班车，你今晚更可能怎么准备？",
+      "options": [
+        "东西装好，路线和闹钟都确认",
+        "带上必需品，明早看情况再安排"
+      ],
+      "seed": 2026101721,
+      "artDirection": {
+        "id": "manga-night",
+        "label": "黑白日漫",
+        "family": "manga",
+        "medium": "Black-and-white manga pages with controlled fine ink linework, crisp black shapes, screentone gradients and expressive but natural human faces. Monochrome only, no captions, no speech bubbles.",
+        "protagonist": "a young man with straight black hair falling over one eyebrow, a striped pajama shirt and dark lounge trousers",
+        "palette": "pure black, white and gray screentone only",
+        "setting": "a compact bedroom at night with a travel bag, bedside lamp and alarm clock"
+      },
+      "scene": "The protagonist is preparing for an early morning train, with a small travel bag and essentials in a bedroom at night.",
+      "left": "Check the packed suitcase, laid-out clothes and alarm clock.",
+      "right": "Put only essentials in a bag and switch off the lamp for sleep.",
+      "generationPrompt": "STYLE: Black-and-white manga pages with controlled fine ink linework, crisp black shapes, screentone gradients and expressive but natural human faces. Monochrome only, no captions, no speech bubbles.\nPROTAGONIST: a young man with straight black hair falling over one eyebrow, a striped pajama shirt and dark lounge trousers\nPALETTE: pure black, white and gray screentone only\nSETTING: a compact bedroom at night with a travel bag, bedside lamp and alarm clock\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: The protagonist is preparing for an early morning train, with a small travel bag and essentials in a bedroom at night.\nMIDDLE — left response: Check the packed suitcase, laid-out clothes and alarm clock.\nBOTTOM — right response: Put only essentials in a bag and switch off the lamp for sleep.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "3.3",
+      "prompt": "小组里两个人争起来，请你帮忙判断，你会先？",
+      "options": [
+        "听清各自的依据，看看哪边说得通",
+        "弄清各自的感受，先缓和下来"
+      ],
+      "seed": 2026101722,
+      "artDirection": {
+        "id": "geometric-editorial",
+        "label": "几何扁平插画",
+        "family": "flat",
+        "medium": "Bold contemporary geometric editorial illustration. Simplified human figures built from clean shapes, oversized expressive hands, flat solid colors, no painterly texture, no 3D shading, crisp edges.",
+        "protagonist": "a young Black man with close-cropped hair, a coral jacket and a navy T-shirt",
+        "palette": "coral, navy, mint and pale peach",
+        "setting": "an open coworking room with a simple rectangular collaboration table"
+      },
+      "scene": "Two teammates disagree at a shared worktable and turn to the protagonist to help them work it out.",
+      "left": "Compare both teammates evidence side by side.",
+      "right": "Invite both upset teammates to sit and gently hear their feelings.",
+      "generationPrompt": "STYLE: Bold contemporary geometric editorial illustration. Simplified human figures built from clean shapes, oversized expressive hands, flat solid colors, no painterly texture, no 3D shading, crisp edges.\nPROTAGONIST: a young Black man with close-cropped hair, a coral jacket and a navy T-shirt\nPALETTE: coral, navy, mint and pale peach\nSETTING: an open coworking room with a simple rectangular collaboration table\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Two teammates disagree at a shared worktable and turn to the protagonist to help them work it out.\nMIDDLE — left response: Compare both teammates evidence side by side.\nBOTTOM — right response: Invite both upset teammates to sit and gently hear their feelings.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "4.3",
+      "prompt": "朋友发来一个奇怪的小谜题，你第一反应是？",
+      "options": [
+        "先解出来，看看答案是什么",
+        "他为什么问这个，背后有故事吗"
+      ],
+      "seed": 2026101723,
+      "artDirection": {
+        "id": "cyanotype-mystery",
+        "label": "蓝晒插画",
+        "family": "cyanotype",
+        "medium": "Cyanotype-inspired photographic illustration, deep Prussian blue silhouettes and white illuminated details on textured blue paper, poetic photographic contours, visible chemical-print texture. Blue and white only, not regular color cartoon.",
+        "protagonist": "a woman with a high ponytail, round glasses and a white button-up shirt",
+        "palette": "Prussian blue, pale cyan and white only",
+        "setting": "a quiet desk by a window, a phone and geometric puzzle notes"
+      },
+      "scene": "At a desk the protagonist receives a curious visual puzzle from a friend on a phone; the puzzle is abstract geometric shapes.",
+      "left": "Actively assemble geometric puzzle pieces toward a solution.",
+      "right": "Look thoughtfully at the senders portrait, wondering why they asked.",
+      "generationPrompt": "STYLE: Cyanotype-inspired photographic illustration, deep Prussian blue silhouettes and white illuminated details on textured blue paper, poetic photographic contours, visible chemical-print texture. Blue and white only, not regular color cartoon.\nPROTAGONIST: a woman with a high ponytail, round glasses and a white button-up shirt\nPALETTE: Prussian blue, pale cyan and white only\nSETTING: a quiet desk by a window, a phone and geometric puzzle notes\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: At a desk the protagonist receives a curious visual puzzle from a friend on a phone; the puzzle is abstract geometric shapes.\nMIDDLE — left response: Actively assemble geometric puzzle pieces toward a solution.\nBOTTOM — right response: Look thoughtfully at the senders portrait, wondering why they asked.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "5.3",
+      "prompt": "刚认识的人说“改天一起玩”，你通常会？",
+      "options": [
+        "接着约时间，让下次真的发生",
+        "先留着联系，等合适的机会再说"
+      ],
+      "seed": 2026101724,
+      "artDirection": {
+        "id": "soft-3d-animation",
+        "label": "柔光三维动画",
+        "family": "3d-animation",
+        "medium": "High-quality stylized 3D animated-film stills, appealing rounded adult human characters, sculpted hair, detailed fabric materials, soft subsurface lighting and cinematic depth. No 2D painted outlines.",
+        "protagonist": "a young woman with a voluminous dark curly bob, a sunflower yellow bomber jacket and white sneakers",
+        "palette": "sunflower yellow, aqua, cream and soft plum",
+        "setting": "a bright modern coffee shop entrance with glass doors and potted plants"
+      },
+      "scene": "Exactly TWO distinct adults chat at a cafe doorway: the protagonist is a curly-haired WOMAN in a YELLOW bomber jacket. The newly acquainted friend is an East Asian MAN with short straight black hair and a TEAL jacket. One yellow-clad woman and one teal-clad man, never two copies of the woman.",
+      "left": "Both people point to the same calendar square for the next meeting.",
+      "right": "Wave goodbye with phones put away, leaving the next meeting open.",
+      "generationPrompt": "STYLE: High-quality stylized 3D animated-film stills, appealing rounded adult human characters, sculpted hair, detailed fabric materials, soft subsurface lighting and cinematic depth. No 2D painted outlines.\nPROTAGONIST: a young woman with a voluminous dark curly bob, a sunflower yellow bomber jacket and white sneakers\nPALETTE: sunflower yellow, aqua, cream and soft plum\nSETTING: a bright modern coffee shop entrance with glass doors and potted plants\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Exactly TWO distinct adults chat at a cafe doorway: the protagonist is a curly-haired WOMAN in a YELLOW bomber jacket. The newly acquainted friend is an East Asian MAN with short straight black hair and a TEAL jacket. One yellow-clad woman and one teal-clad man, never two copies of the woman.\nMIDDLE — left response: Both people point to the same calendar square for the next meeting.\nBOTTOM — right response: Wave goodbye with phones put away, leaving the next meeting open.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "6.3",
+      "prompt": "大家都在晒最近的成果，你更自然的反应是？",
+      "options": [
+        "看看就好，接着做自己的事",
+        "多看几遍，确认自己有没有掉队"
+      ],
+      "seed": 2026101725,
+      "artDirection": {
+        "id": "duotone-photography",
+        "label": "黑白街拍人物",
+        "family": "photography",
+        "medium": "Black-and-white documentary lifestyle photography of a real adult human, strong window light, rich silver-gelatin tones, candid expression, realistic skin and clothes, subtle photographic grain. No illustration.",
+        "protagonist": "a man in his thirties with a shaved head, dark rectangular glasses and a white ribbed sweater",
+        "palette": "silver black, pearl white and neutral grays only",
+        "setting": "a modest modern apartment with a phone, notebook and a small creative workbench"
+      },
+      "scene": "At home the protagonist browses a phone feed of friends' recent creative achievements, abstract thumbnails without words.",
+      "left": "Put phone face down after a quick glance and return to own craft.",
+      "right": "Repeatedly compare the phone achievements with own progress notebook.",
+      "generationPrompt": "STYLE: Black-and-white documentary lifestyle photography of a real adult human, strong window light, rich silver-gelatin tones, candid expression, realistic skin and clothes, subtle photographic grain. No illustration.\nPROTAGONIST: a man in his thirties with a shaved head, dark rectangular glasses and a white ribbed sweater\nPALETTE: silver black, pearl white and neutral grays only\nSETTING: a modest modern apartment with a phone, notebook and a small creative workbench\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: At home the protagonist browses a phone feed of friends' recent creative achievements, abstract thumbnails without words.\nMIDDLE — left response: Put phone face down after a quick glance and return to own craft.\nBOTTOM — right response: Repeatedly compare the phone achievements with own progress notebook.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "7.3",
+      "prompt": "很在意的目标遇到变化，需要改掉大半计划。你会？",
+      "options": [
+        "重新看看现在想要什么，目标也能换",
+        "方式可以换，核心愿望还想留住"
+      ],
+      "seed": 2026101726,
+      "artDirection": {
+        "id": "wooden-puppet",
+        "label": "木偶微缩片场",
+        "family": "wood",
+        "medium": "Photographed hand-carved wooden human puppets in a miniature workshop. Visible wood grain, simple painted eyes, articulated joints, tiny fabric clothes and warm cinematic practical light. Clearly real wooden objects.",
+        "protagonist": "a wooden young man puppet with carved brown hair, a brick-red fabric vest and cream sleeves",
+        "palette": "walnut brown, brick red, cream and muted blue",
+        "setting": "a tiny architectural craft workshop with a model house, model boat and loose planning cards"
+      },
+      "scene": "ONE PERSON ONLY: The protagonist at a desk studies a difficult plan for a handmade MODEL HOUSE, surrounded by loose blank planning cards and craft tools.",
+      "left": "Put the original destination token aside and consider a different destination.",
+      "right": "Keep the same destination token fixed while rearranging the route to it.",
+      "generationPrompt": "STYLE: Photographed hand-carved wooden human puppets in a miniature workshop. Visible wood grain, simple painted eyes, articulated joints, tiny fabric clothes and warm cinematic practical light. Clearly real wooden objects.\nPROTAGONIST: a wooden young man puppet with carved brown hair, a brick-red fabric vest and cream sleeves\nPALETTE: walnut brown, brick red, cream and muted blue\nSETTING: a tiny architectural craft workshop with a model house, model boat and loose planning cards\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: ONE PERSON ONLY: The protagonist at a desk studies a difficult plan for a handmade MODEL HOUSE, surrounded by loose blank planning cards and craft tools.\nMIDDLE — left response: Put the original destination token aside and consider a different destination.\nBOTTOM — right response: Keep the same destination token fixed while rearranging the route to it.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "8.3",
+      "prompt": "大家说“这件事一直就是这么做的”，你会？",
+      "options": [
+        "现有做法能用，先按惯例推进",
+        "问问为什么，也许有另一种办法"
+      ],
+      "seed": 2026101727,
+      "artDirection": {
+        "id": "blueprint-linework",
+        "label": "技术蓝图插画",
+        "family": "technical",
+        "medium": "Elegant architectural blueprint drawing with fine white and cyan technical linework on deep blue paper. Human figures and furniture drawn as precise outlined forms, a few orange accents, no numbers or annotations.",
+        "protagonist": "a woman with a short asymmetrical haircut, an orange work jacket and rolled-up sleeves",
+        "palette": "blueprint navy, cyan, white and small orange accents",
+        "setting": "a maker workshop with worktables and rows of small storage boxes"
+      },
+      "scene": "A small team demonstrates a familiar routine using organized boxes at a worktable while the protagonist observes.",
+      "left": "Follow an established practical method from a picture-only guide.",
+      "right": "Turn the same object around and test an alternative method.",
+      "generationPrompt": "STYLE: Elegant architectural blueprint drawing with fine white and cyan technical linework on deep blue paper. Human figures and furniture drawn as precise outlined forms, a few orange accents, no numbers or annotations.\nPROTAGONIST: a woman with a short asymmetrical haircut, an orange work jacket and rolled-up sleeves\nPALETTE: blueprint navy, cyan, white and small orange accents\nSETTING: a maker workshop with worktables and rows of small storage boxes\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: A small team demonstrates a familiar routine using organized boxes at a worktable while the protagonist observes.\nMIDDLE — left response: Follow an established practical method from a picture-only guide.\nBOTTOM — right response: Turn the same object around and test an alternative method.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "9.3",
+      "prompt": "朋友群里总在分享吃了什么、走到哪里，你通常？",
+      "options": [
+        "偶尔看看，自己的日常留给自己",
+        "也发一点小事，参与彼此的生活"
+      ],
+      "seed": 2026101728,
+      "artDirection": {
+        "id": "gouache-food",
+        "label": "美食广告水粉",
+        "family": "gouache",
+        "medium": "Playful hand-painted food editorial in opaque gouache, broad brush shapes, creamy paint texture, friendly rounded human faces, exaggerated appetizing food colors, bold simple compositions.",
+        "protagonist": "a young woman with long dark hair in a low braid, a white T-shirt and bright orange dungarees",
+        "palette": "tomato orange, peach, turquoise and cream",
+        "setting": "a small breakfast nook with a single diner, a noodle bowl and a phone"
+      },
+      "scene": "ONE PERSON ONLY: The green-clad protagonist looks at their phone while seated at a small table with a bowl of noodles. Show the back of the phone, no text or bubbles.",
+      "left": "Briefly glance at updates then put the phone away, keeping own day private.",
+      "right": "Photograph own meal to share with friends, cheerful active participation.",
+      "generationPrompt": "STYLE: Playful hand-painted food editorial in opaque gouache, broad brush shapes, creamy paint texture, friendly rounded human faces, exaggerated appetizing food colors, bold simple compositions.\nPROTAGONIST: a young woman with long dark hair in a low braid, a white T-shirt and bright orange dungarees\nPALETTE: tomato orange, peach, turquoise and cream\nSETTING: a small breakfast nook with a single diner, a noodle bowl and a phone\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: ONE PERSON ONLY: The green-clad protagonist looks at their phone while seated at a small table with a bowl of noodles. Show the back of the phone, no text or bubbles.\nMIDDLE — left response: Briefly glance at updates then put the phone away, keeping own day private.\nBOTTOM — right response: Photograph own meal to share with friends, cheerful active participation.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "10.3",
+      "prompt": "几场想去的活动撞了时间，你更倾向？",
+      "options": [
+        "挑最想去的一场，从头体验到尾",
+        "每场感受一点，多看看不同内容"
+      ],
+      "seed": 2026101729,
+      "artDirection": {
+        "id": "embroidery-festival",
+        "label": "刺绣布艺",
+        "family": "textile",
+        "medium": "Hand-embroidered textile illustration photographed in detail. Every human and object rendered in colored thread and fabric applique, visible stitch direction and linen weave, tidy stitched faces, soft textile relief.",
+        "protagonist": "a young embroidered man with black thread hair, a vivid blue jacket and a yellow backpack",
+        "palette": "royal blue, yellow, red thread and natural linen",
+        "setting": "a cheerful community arts venue with music, crafts and small picture displays"
+      },
+      "scene": "The protagonist studies several nearby community activities happening at the same time: music, craft and a small exhibition.",
+      "left": "Stay at one event, one ticket in hand, fully focused on the performance.",
+      "right": "Move between clearly different neighboring activities for brief experiences.",
+      "generationPrompt": "STYLE: Hand-embroidered textile illustration photographed in detail. Every human and object rendered in colored thread and fabric applique, visible stitch direction and linen weave, tidy stitched faces, soft textile relief.\nPROTAGONIST: a young embroidered man with black thread hair, a vivid blue jacket and a yellow backpack\nPALETTE: royal blue, yellow, red thread and natural linen\nSETTING: a cheerful community arts venue with music, crafts and small picture displays\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: The protagonist studies several nearby community activities happening at the same time: music, craft and a small exhibition.\nMIDDLE — left response: Stay at one event, one ticket in hand, fully focused on the performance.\nBOTTOM — right response: Move between clearly different neighboring activities for brief experiences.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "1.4",
+      "prompt": "和朋友去陌生城市吃饭，你更偏向哪家？",
+      "options": [
+        "吃过的连锁店，味道心里有数",
+        "没见过的小店，试试当地的新鲜感"
+      ],
+      "seed": 2026101730,
+      "artDirection": {
+        "id": "pastel-city",
+        "label": "粉彩城市画",
+        "family": "pastel",
+        "medium": "Soft oil-pastel illustration on rough dark paper, luminous chalky color blocks, confident loose contours, textured atmospheric city scenes and warm expressive people.",
+        "protagonist": "a young woman with a high auburn bun, a cream trench coat and a violet scarf",
+        "palette": "violet, cream, brick orange and midnight blue",
+        "setting": "an unfamiliar city street with a modern casual restaurant and a tiny local noodle kitchen"
+      },
+      "scene": "Exactly TWO WOMEN in the foreground of an unfamiliar city street: the protagonist has an AUBURN BUN, CREAM TRENCH COAT and VIOLET SCARF; her friend has straight BLACK shoulder-length hair and a CORAL SWEATER. Both consider where to eat. Keep their identities different.",
+      "left": "Enjoy a familiar rice meal in a modern chain restaurant.",
+      "right": "Try an unfamiliar noodle dish at a small local kitchen counter.",
+      "generationPrompt": "STYLE: Soft oil-pastel illustration on rough dark paper, luminous chalky color blocks, confident loose contours, textured atmospheric city scenes and warm expressive people.\nPROTAGONIST: a young woman with a high auburn bun, a cream trench coat and a violet scarf\nPALETTE: violet, cream, brick orange and midnight blue\nSETTING: an unfamiliar city street with a modern casual restaurant and a tiny local noodle kitchen\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Exactly TWO WOMEN in the foreground of an unfamiliar city street: the protagonist has an AUBURN BUN, CREAM TRENCH COAT and VIOLET SCARF; her friend has straight BLACK shoulder-length hair and a CORAL SWEATER. Both consider where to eat. Keep their identities different.\nMIDDLE — left response: Enjoy a familiar rice meal in a modern chain restaurant.\nBOTTOM — right response: Try an unfamiliar noodle dish at a small local kitchen counter.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "2.4",
+      "prompt": "群里在约下周的聚会，你更喜欢哪种安排？",
+      "options": [
+        "早点定时间地点，方便安排其他事",
+        "先约着，到时候再看大家的兴致"
+      ],
+      "seed": 2026101731,
+      "artDirection": {
+        "id": "fashion-magazine-photo",
+        "label": "清爽生活摄影",
+        "family": "photography",
+        "medium": "Bright high-key editorial lifestyle photography, real adult human, crisp white interior, natural skin, subtle soft shadows and clean composition. Magazine photo quality, no drawing, no clay, no CGI.",
+        "protagonist": "a young East Asian man with wavy dark hair, a salmon pink polo shirt and cream trousers",
+        "palette": "white, salmon pink, light oak and soft blue",
+        "setting": "a bright white apartment with a pale sofa, simple calendar and headphones"
+      },
+      "scene": "ONE PERSON ONLY: The protagonist on a sofa considers an invitation on their phone. Show ONLY THE BACK of the phone, no screen UI. Plain living room walls. No speech balloons or writing anywhere.",
+      "left": "Decisively circle one square on a numberless calendar.",
+      "right": "Lounge with headphones; calendar closed, phone face down.",
+      "generationPrompt": "STYLE: Bright high-key editorial lifestyle photography, real adult human, crisp white interior, natural skin, subtle soft shadows and clean composition. Magazine photo quality, no drawing, no clay, no CGI.\nPROTAGONIST: a young East Asian man with wavy dark hair, a salmon pink polo shirt and cream trousers\nPALETTE: white, salmon pink, light oak and soft blue\nSETTING: a bright white apartment with a pale sofa, simple calendar and headphones\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: ONE PERSON ONLY: The protagonist on a sofa considers an invitation on their phone. Show ONLY THE BACK of the phone, no screen UI. Plain living room walls. No speech balloons or writing anywhere.\nMIDDLE — left response: Decisively circle one square on a numberless calendar.\nBOTTOM — right response: Lounge with headphones; calendar closed, phone face down.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "3.4",
+      "prompt": "朋友很期待一个计划，但你看出了明显的问题。你会？",
+      "options": [
+        "把风险说具体，免得之后吃亏",
+        "先理解他的期待，再慢慢提建议"
+      ],
+      "seed": 2026101732,
+      "artDirection": {
+        "id": "linocut-advice",
+        "label": "套色木刻版画",
+        "family": "woodcut",
+        "medium": "Two-ink linocut woodblock print. Strong carved black contour shapes, visible gouged hatching, rough print texture and a second ochre ink layer. Stylized human figures with clearly readable pointing and listening gestures.",
+        "protagonist": "a woman in her thirties with shoulder-length wavy hair, an ochre blouse and dark vest",
+        "palette": "ink black, ochre and natural cream paper only",
+        "setting": "a small cafe table with a fragile paper tower model and tea cups"
+      },
+      "scene": "An excited friend in coral shares a small paper tower project across a cafe table with the green-clad protagonist. The tower's base looks narrow.",
+      "left": "Point precisely at the unstable base of the friends model tower.",
+      "right": "Set the model aside and listen warmly to the friends excitement.",
+      "generationPrompt": "STYLE: Two-ink linocut woodblock print. Strong carved black contour shapes, visible gouged hatching, rough print texture and a second ochre ink layer. Stylized human figures with clearly readable pointing and listening gestures.\nPROTAGONIST: a woman in her thirties with shoulder-length wavy hair, an ochre blouse and dark vest\nPALETTE: ink black, ochre and natural cream paper only\nSETTING: a small cafe table with a fragile paper tower model and tea cups\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: An excited friend in coral shares a small paper tower project across a cafe table with the green-clad protagonist. The tower's base looks narrow.\nMIDDLE — left response: Point precisely at the unstable base of the friends model tower.\nBOTTOM — right response: Set the model aside and listen warmly to the friends excitement.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "4.4",
+      "prompt": "电影散场后，朋友开始讨论没讲明的结局。你会？",
+      "options": [
+        "按已经演出来的剧情理解就好",
+        "忍不住脑补，接着推演别的可能"
+      ],
+      "seed": 2026101733,
+      "artDirection": {
+        "id": "surreal-cinema",
+        "label": "超现实电影插画",
+        "family": "surreal",
+        "medium": "Surreal cinematic matte-painting illustration with realistic adult figures, deep dreamlike perspective, glowing colored light and imaginative floating forms only when specified. Rich dark theatrical atmosphere, not cozy storybook art.",
+        "protagonist": "a young man with a silver streak in black hair, a midnight blue velvet jacket and a white scarf",
+        "palette": "midnight blue, plum, moonlight silver and electric amber",
+        "setting": "a small art-house cinema lobby at night with plain glowing panels and no writing"
+      },
+      "scene": "Three friends leave a small cinema at night discussing an ambiguous film. Background has plain glowing colored panels, absolutely NO movie posters or written signage.",
+      "left": "Point calmly to one actual scene from the film.",
+      "right": "Imagine distinct alternative endings, spaceship and sailboat overhead.",
+      "generationPrompt": "STYLE: Surreal cinematic matte-painting illustration with realistic adult figures, deep dreamlike perspective, glowing colored light and imaginative floating forms only when specified. Rich dark theatrical atmosphere, not cozy storybook art.\nPROTAGONIST: a young man with a silver streak in black hair, a midnight blue velvet jacket and a white scarf\nPALETTE: midnight blue, plum, moonlight silver and electric amber\nSETTING: a small art-house cinema lobby at night with plain glowing panels and no writing\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Three friends leave a small cinema at night discussing an ambiguous film. Background has plain glowing colored panels, absolutely NO movie posters or written signage.\nMIDDLE — left response: Point calmly to one actual scene from the film.\nBOTTOM — right response: Imagine distinct alternative endings, spaceship and sailboat overhead.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "5.4",
+      "prompt": "旅途中，邻座很想和你聊聊天。你更接近？",
+      "options": [
+        "聊聊彼此的故事，路上也挺有趣",
+        "简单回应，想保留自己的时间"
+      ],
+      "seed": 2026101734,
+      "artDirection": {
+        "id": "retro-anime-train",
+        "label": "复古动画电影",
+        "family": "animation",
+        "medium": "Retro hand-painted anime film stills with delicate realistic proportions, soft cel shading, atmospheric detailed train backgrounds, gentle analog film grain and contemplative human acting.",
+        "protagonist": "a young woman with a long dark ponytail, a burgundy cardigan and a cream dress",
+        "palette": "burgundy, sage-gray seats, cream and soft landscape blue",
+        "setting": "a sunlit regional train carriage with large windows and passing countryside"
+      },
+      "scene": "Two DISTINCT train passengers: the protagonist is a young WOMAN with a LONG DARK PONYTAIL and BURGUNDY CARDIGAN, seated by the window. Beside her is a middle-aged MAN with short gray hair, rectangular glasses and a BROWN LEATHER JACKET; he turns toward her to chat. Never two copies of the woman.",
+      "left": "Turn toward the train neighbor and exchange travel stories.",
+      "right": "Return to a book beside the window; neighbor faces ahead.",
+      "generationPrompt": "STYLE: Retro hand-painted anime film stills with delicate realistic proportions, soft cel shading, atmospheric detailed train backgrounds, gentle analog film grain and contemplative human acting.\nPROTAGONIST: a young woman with a long dark ponytail, a burgundy cardigan and a cream dress\nPALETTE: burgundy, sage-gray seats, cream and soft landscape blue\nSETTING: a sunlit regional train carriage with large windows and passing countryside\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Two DISTINCT train passengers: the protagonist is a young WOMAN with a LONG DARK PONYTAIL and BURGUNDY CARDIGAN, seated by the window. Beside her is a middle-aged MAN with short gray hair, rectangular glasses and a BROWN LEATHER JACKET; he turns toward her to chat. Never two copies of the woman.\nMIDDLE — left response: Turn toward the train neighbor and exchange travel stories.\nBOTTOM — right response: Return to a book beside the window; neighbor faces ahead.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "6.4",
+      "prompt": "和特别厉害的人组队，你更多感受到？",
+      "options": [
+        "安心，能学习，也能贡献自己的部分",
+        "压力，担心不够好拖了后腿"
+      ],
+      "seed": 2026101735,
+      "artDirection": {
+        "id": "toy-brick-team",
+        "label": "积木人偶场景",
+        "family": "toy",
+        "medium": "Photographed interlocking toy-brick diorama with original block-shaped human mini figures, plastic studded surfaces, articulated toy hands, clean high-detail macro photography and soft studio shadows. No brands or logos.",
+        "protagonist": "an original blocky human toy figure with dark plastic hair, a purple torso and tan legs",
+        "palette": "purple, turquoise, yellow and light gray plastic",
+        "setting": "a toy-brick creative workshop with a collaborative tabletop construction"
+      },
+      "scene": "The protagonist joins a collaborative creative project with several skilled teammates around a studio worktable.",
+      "left": "Confidently add own piece to a shared model with welcoming teammates.",
+      "right": "Tensely recheck own small piece while skilled teammates work nearby.",
+      "generationPrompt": "STYLE: Photographed interlocking toy-brick diorama with original block-shaped human mini figures, plastic studded surfaces, articulated toy hands, clean high-detail macro photography and soft studio shadows. No brands or logos.\nPROTAGONIST: an original blocky human toy figure with dark plastic hair, a purple torso and tan legs\nPALETTE: purple, turquoise, yellow and light gray plastic\nSETTING: a toy-brick creative workshop with a collaborative tabletop construction\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: The protagonist joins a collaborative creative project with several skilled teammates around a studio worktable.\nMIDDLE — left response: Confidently add own piece to a shared model with welcoming teammates.\nBOTTOM — right response: Tensely recheck own small piece while skilled teammates work nearby.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "7.4",
+      "prompt": "朋友问“以后想过怎样的生活”，你更接近？",
+      "options": [
+        "有一些在意的方向，想慢慢靠近",
+        "还想多体验，答案也许会变化"
+      ],
+      "seed": 2026101736,
+      "artDirection": {
+        "id": "botanical-sketch",
+        "label": "植物手账速写",
+        "family": "botanical",
+        "medium": "Delicate botanical sketchbook illustration mixing fine sepia pen, restrained green watercolor and precisely drawn human figures. Detailed leaves and park plants, generous cream-paper negative space, no written notes.",
+        "protagonist": "a young woman with a long black braid, a pale pink cardigan and a brown linen skirt",
+        "palette": "botanical green, dusty rose, sepia and cream",
+        "setting": "a leafy public garden with a wooden bench and branching paths"
+      },
+      "scene": "Two friends sit on a park bench talking about future life. The green-clad protagonist holds a closed plain notebook. Natural park scene only, NO floating symbols, NO writing, NO speech balloons.",
+      "left": "Hold one cherished destination picture and take a steady step toward it.",
+      "right": "Consider several very different possibilities, destination still undecided.",
+      "generationPrompt": "STYLE: Delicate botanical sketchbook illustration mixing fine sepia pen, restrained green watercolor and precisely drawn human figures. Detailed leaves and park plants, generous cream-paper negative space, no written notes.\nPROTAGONIST: a young woman with a long black braid, a pale pink cardigan and a brown linen skirt\nPALETTE: botanical green, dusty rose, sepia and cream\nSETTING: a leafy public garden with a wooden bench and branching paths\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Two friends sit on a park bench talking about future life. The green-clad protagonist holds a closed plain notebook. Natural park scene only, NO floating symbols, NO writing, NO speech balloons.\nMIDDLE — left response: Hold one cherished destination picture and take a steady step toward it.\nBOTTOM — right response: Consider several very different possibilities, destination still undecided.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "8.4",
+      "prompt": "眼前有一条大家认可的稳妥路线，你更想？",
+      "options": [
+        "沿着成熟路径走，少绕一些弯路",
+        "留一点空间，试试自己的走法"
+      ],
+      "seed": 2026101737,
+      "artDirection": {
+        "id": "landscape-oil",
+        "label": "山野风景油画",
+        "family": "landscape",
+        "medium": "Plein-air landscape oil painting on coarse canvas. Visible broken brush strokes, expansive hills and moving cloud light, a small naturalistically painted human figure in the landscape, muted realistic colors.",
+        "protagonist": "a hiker in their thirties with short dark hair, a bright orange windbreaker and a blue daypack",
+        "palette": "sky blue, grass green, cloud white and orange",
+        "setting": "a spacious green hillside where a paved village road and a narrow wildflower trail diverge"
+      },
+      "scene": "ONE PERSON ONLY: Seen from BEHIND, the green-clad protagonist pauses where a broad paved path and a narrow wildflower footpath diverge on a green hillside. No crowds, no signs or words.",
+      "left": "Walk along a clear maintained path toward the established destination.",
+      "right": "Take a side trail to explore a personal route.",
+      "generationPrompt": "STYLE: Plein-air landscape oil painting on coarse canvas. Visible broken brush strokes, expansive hills and moving cloud light, a small naturalistically painted human figure in the landscape, muted realistic colors.\nPROTAGONIST: a hiker in their thirties with short dark hair, a bright orange windbreaker and a blue daypack\nPALETTE: sky blue, grass green, cloud white and orange\nSETTING: a spacious green hillside where a paved village road and a narrow wildflower trail diverge\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: ONE PERSON ONLY: Seen from BEHIND, the green-clad protagonist pauses where a broad paved path and a narrow wildflower footpath diverge on a green hillside. No crowds, no signs or words.\nMIDDLE — left response: Walk along a clear maintained path toward the established destination.\nBOTTOM — right response: Take a side trail to explore a personal route.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "9.4",
+      "prompt": "聚会结束，亲近的朋友们喊着再续一摊，你更想？",
+      "options": [
+        "今天很开心了，回去独处一会儿",
+        "难得聚齐，再多待一阵也很好"
+      ],
+      "seed": 2026101738,
+      "artDirection": {
+        "id": "cinema-noir",
+        "label": "黑金电影感",
+        "family": "noir",
+        "medium": "Stylized noir film photography of real human adults, high-contrast black shadows, warm golden practical lights, cinematic night reflections, realistic skin and fabric, subtle film grain. Restrained gold and black treatment, not illustration.",
+        "protagonist": "a young man with neatly combed dark hair, a camel overcoat and a black turtleneck",
+        "palette": "golden amber, black, warm gray and pale highlights",
+        "setting": "a city cafe and a quiet lamplit street after an evening gathering"
+      },
+      "scene": "Four close friends stand outside a cafe at night considering whether to continue the evening. The protagonist wears green; the others blue, coral and ivory.",
+      "left": "Wave goodbye and head home alone, content and ready for quiet time.",
+      "right": "Enthusiastically join the same friends moving on to another gathering.",
+      "generationPrompt": "STYLE: Stylized noir film photography of real human adults, high-contrast black shadows, warm golden practical lights, cinematic night reflections, realistic skin and fabric, subtle film grain. Restrained gold and black treatment, not illustration.\nPROTAGONIST: a young man with neatly combed dark hair, a camel overcoat and a black turtleneck\nPALETTE: golden amber, black, warm gray and pale highlights\nSETTING: a city cafe and a quiet lamplit street after an evening gathering\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: Four close friends stand outside a cafe at night considering whether to continue the evening. The protagonist wears green; the others blue, coral and ivory.\nMIDDLE — left response: Wave goodbye and head home alone, content and ready for quiet time.\nBOTTOM — right response: Enthusiastically join the same friends moving on to another gathering.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    },
+    {
+      "id": "10.4",
+      "prompt": "手作和预想不一样，但能改成另一种东西。你会？",
+      "options": [
+        "尽量修回原样，完成最初的想法",
+        "顺着变化做下去，看看会得到什么"
+      ],
+      "seed": 2026101739,
+      "artDirection": {
+        "id": "ceramic-porcelain-world",
+        "label": "陶瓷釉面三维",
+        "family": "ceramic",
+        "medium": "A miniature world made of glazed ceramic figurines and hand-thrown pottery, photographed with gentle reflections. Shiny porcelain human faces, rounded glazed hair, tactile clay props and soft studio lighting, clearly sculptural ceramic material.",
+        "protagonist": "a ceramic young woman figurine with glossy dark hair in two small buns, a cobalt blue apron and white sleeves",
+        "palette": "cobalt blue, porcelain white, terracotta and soft jade",
+        "setting": "a pottery studio with a worktable, unfinished clay bowl and sculptural planter"
+      },
+      "scene": "ONE PERSON ONLY: At a craft desk the protagonist compares a lopsided unfinished clay bowl with a simple DRAWING of a smooth round bowl on paper. No writing.",
+      "left": "Repair clay into the smooth round bowl shown in the original drawing; no plant.",
+      "right": "Make a playful irregular planter with a green plant; set the bowl drawing aside.",
+      "generationPrompt": "STYLE: A miniature world made of glazed ceramic figurines and hand-thrown pottery, photographed with gentle reflections. Shiny porcelain human faces, rounded glazed hair, tactile clay props and soft studio lighting, clearly sculptural ceramic material.\nPROTAGONIST: a ceramic young woman figurine with glossy dark hair in two small buns, a cobalt blue apron and white sleeves\nPALETTE: cobalt blue, porcelain white, terracotta and soft jade\nSETTING: a pottery studio with a worktable, unfinished clay bowl and sculptural planter\n\nCreate ONE tall storyboard with exactly THREE equal wide horizontal panels, stacked top/middle/bottom, no margins or inset frames. Preserve one protagonist's face, hair and clothes across all three panels; keep supporting people visibly distinct. One moment and one unmistakable action per panel. Large visible face and hands; the protagonist fills at least half the useful panel. Remove irrelevant props.\nTOP — situation: ONE PERSON ONLY: At a craft desk the protagonist compares a lopsided unfinished clay bowl with a simple DRAWING of a smooth round bowl on paper. No writing.\nMIDDLE — left response: Repair clay into the smooth round bowl shown in the original drawing; no plant.\nBOTTOM — right response: Make a playful irregular planter with a green plant; set the bowl drawing aside.\nThe two responses MUST differ in body pose, hand action, gaze and decisive object. Design the difference to remain readable on a small phone. Exaggerate the relevant action, with expressive simple facial shapes inspired by kaomoji. Small wordless pictograms may reinforce an action. Keep both choices equally appealing; do not make one a correct answer or a bad person. No written words, letters, numbers, labels, captions, readable screens, speech bubbles, logos or watermarks. Do not render literal kaomoji strings; express their emotion in the face itself. Retain this question's own art medium and character, not a shared protagonist across the question bank."
+    }
+  ]
+}

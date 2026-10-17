@@ -59,7 +59,7 @@ test('every one of the regular character endings is reachable through real answe
   }
 });
 
-test('all 18 regular roles are reachable with graded responses close to their original profiles', () => {
+test('all 28 selected characters are reachable with graded responses close to their original profiles', () => {
   for (const role of roles) {
     const answers = {};
     dimensions.forEach((dimension, index) => {
@@ -103,9 +103,9 @@ test('endpoint responses exactly preserve binary scores, weighted distances and 
   }
 });
 
-test('all 15 levels score continuously, neutral is 50 and each reverse question preserves direction', () => {
-  assert.equal(SCALE_STEPS, 15);
-  assert.equal(QUESTIONNAIRE_VERSION, 'nbti-2026-10-15-sample20');
+test('all 5 levels score continuously, neutral is 50 and each reverse question preserves direction', () => {
+  assert.equal(SCALE_STEPS, 5);
+  assert.equal(QUESTIONNAIRE_VERSION, 'nbti-2026-10-17-scale5-sample20');
   for (let highUnits = SCALE_MIN; highUnits <= SCALE_MAX; highUnits++) {
     const answers = Object.fromEntries(questions.map(q => [q.id, q.highAnswer === 'A' ? SCALE_MAX - highUnits : highUnits]));
     assert.ok(scoreAnswers(answers).every(score => score.value === Math.round(highUnits / SCALE_MAX * 100)));
@@ -123,17 +123,17 @@ test('half-point rounding uses exact integer response units', () => {
   const dimension = dimensions.find(d => questions.filter(q => q.dimension === d.id).length === 4);
   const items = questions.filter(q => q.dimension === dimension.id);
   const answers = { ...allHigh };
-  const highUnits = [10, 13, 13, 13];
+  const highUnits = [3, 3, 4, 4];
   items.forEach((q, i) => { answers[q.id] = q.highAnswer === 'A' ? SCALE_MAX - highUnits[i] : highUnits[i]; });
   assert.equal(scoreAnswers(answers).find(score => score.id === dimension.id).value, 88);
 });
 
 test('strict numeric scale validation counts the zero endpoint and excludes forged or missing answers', () => {
-  assert.ok(Array.from({ length: 15 }, (_, value) => isAnswer(value)).every(Boolean));
-  for (const value of ['A', 'B', '0', '14', -1, 15, 1.5, null, undefined, true, false, NaN, Infinity, {}, []]) {
+  assert.ok(Array.from({ length: 5 }, (_, value) => isAnswer(value)).every(Boolean));
+  for (const value of ['A', 'B', '0', '4', -1, 5, 7, 14, 1.5, null, undefined, true, false, NaN, Infinity, {}, []]) {
     assert.equal(isAnswer(value), false);
   }
-  assert.deepEqual(cleanAnswers({ '1.1': 0, '2.1': 14, '3.1': '7', '4.1': 7.5, unknown: 7 }), { '1.1': 0, '2.1': 14 });
+  assert.deepEqual(cleanAnswers({ '1.1': 0, '2.1': 4, '3.1': '7', '4.1': 7.5, unknown: 7 }), { '1.1': 0, '2.1': 4 });
   assert.equal(answeredCount({ '1.1': 0 }), 1);
   assert.equal(answeredCount(), 0);
   assert.deepEqual(cleanAnswers(Object.create({ '1.1': 0 })), {});
@@ -155,10 +155,10 @@ test('media URLs work without a browser and use the configured COS origin', () =
   try {
     delete globalThis.window;
     assert.equal(mediaBaseUrl(), './');
-    assert.equal(mediaPath(role), `./media/${role.id}.mp4`);
+    assert.equal(mediaPath(role), `./media/${role.videoId}.mp4`);
     assert.equal(mediaAsset(role, { portrait: 'portrait.webp' }), './media/portrait.webp');
     globalThis.window = { NBTI_PUBLIC_CONFIG: { mediaBaseUrl: 'https://static.example.com/assets/' } };
-    assert.equal(mediaPath(role, 'mp4', 'v 1'), `https://static.example.com/assets/media/${role.id}.mp4?v=v%201`);
+    assert.equal(mediaPath(role, 'mp4', 'v 1'), `https://static.example.com/assets/media/${role.videoId}.mp4?v=v%201`);
     assert.equal(mediaAsset(role, { portrait: 'portrait.webp', revision: 'v 1' }), 'https://static.example.com/assets/media/portrait.webp?v=v%201');
     assert.equal(mediaAsset(role, { portrait: '../private.webp' }), `https://static.example.com/assets/media/${role.id}.jpg`);
     globalThis.window.NBTI_PUBLIC_CONFIG.mediaBaseUrl = '';

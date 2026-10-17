@@ -142,7 +142,7 @@ export function worldSvg(role, uniqueId = role.id) {
     <path fill="${url('sky')}" d="M0 0H600V900H0Z"/>
     <ellipse cx="300" cy="382" rx="369" ry="403" fill="${url('aura')}" opacity=".5"/>
     <g class="world-stars">${stars}</g>
-    ${scenes[role.id]}
+    ${scenes[role.id] ?? scenes['plot-rewriter']}
     <path d="M-70 744Q121 652 293 728T675 667M-25 810Q145 718 327 794T646 735" fill="none" stroke="${secondary}" stroke-width="35" stroke-opacity=".04"/>
     <path fill="${url('fade')}" d="M0 0H600V900H0Z"/>
     <g stroke="${light}" stroke-opacity=".2"><path d="M30 72V30H72M528 30H570V72M30 828V870H72M528 870H570V828" stroke-width="1"/></g>

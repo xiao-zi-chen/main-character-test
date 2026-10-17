@@ -1,4 +1,5 @@
 import { questions } from '../src/data/questions.js';
+import { roles as currentRoles } from '../src/data/roles.js';
 
 const roleIdPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const imagePattern = /^[a-z0-9_-]+\.(?:jpg|png|webp)$/;
@@ -14,13 +15,15 @@ export function publicAssetPaths(manifest) {
     throw new Error('Expected a media manifest object.');
   }
   const roles = Object.entries(manifest);
-  if (roles.length !== 20) throw new Error('Expected exactly twenty current media entries.');
+  if (roles.length !== currentRoles.length || currentRoles.some(role => !Object.hasOwn(manifest,role.id))) throw new Error('Expected exactly the current character media entries.');
   const paths = new Set(['media/manifest.json']);
   for (const [id, media] of roles) {
     if (!roleIdPattern.test(id) || !media || typeof media !== 'object' || Array.isArray(media) || media.status !== 'final') {
       throw new Error(`Invalid current media entry: ${id}`);
     }
-    paths.add(`media/${id}.mp4`);
+    const role = currentRoles.find(role => role.id === id);
+    if (media.video !== `${role.videoId}.mp4`) throw new Error(`Invalid shared video filename for ${id}`);
+    paths.add(`media/${media.video}`);
     paths.add(`worlds/${id}.svg`);
     // Match mediaAsset(): a missing image field uses the role's default JPG.
     for (const kind of ['portrait', 'poster', 'avatar']) {

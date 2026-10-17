@@ -22,7 +22,7 @@ test('sampled scoring ignores unselected answers and keeps every regular and hid
   for(let draw=0;draw<30;draw++) {
     const questionIds=drawQuestions();
     for(const role of roles) {
-      const answers=Object.fromEntries(questionIds.map(id=>{const q=questionById[id];const units=Math.round(role.profile[dimensions.findIndex(d=>d.id===q.dimension)]*14/100);return [id,q.highAnswer==='A'?14-units:units];}));
+      const answers=Object.fromEntries(questionIds.map(id=>{const q=questionById[id];const units=Math.round(role.profile[dimensions.findIndex(d=>d.id===q.dimension)]*4/100);return [id,q.highAnswer==='A'?4-units:units];}));
       const result=getResult(answers,{questionIds,hiddenEnabled:Boolean(role.hidden)});
       assert.equal(result.role.id,role.id);
       assert.ok(result.scores.every(score=>score.total===2));
@@ -38,7 +38,7 @@ test('sample and answer order survive refresh, edits and explicit submission',()
   const memory=new Map();
   const storage={getItem:key=>memory.get(key),setItem:(key,value)=>memory.set(key,value),removeItem:key=>memory.delete(key)};
   const initial=newProgress();
-  const answers=Object.fromEntries(initial.questionIds.map(id=>[id,7]));
+  const answers=Object.fromEntries(initial.questionIds.map(id=>[id,2]));
   assert.ok(saveProgress(storage,answers,19,false,initial.questionIds));
   assert.deepEqual(readProgress(storage),{...initial,answers,index:19});
   assert.ok(saveProgress(storage,answers,19,true,initial.questionIds));

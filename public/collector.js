@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const STORAGE_KEY = 'nbti:collector:v1';
-  const VERSION = 'nbti-2026-10-15-sample20';
+  const VERSION = 'nbti-2026-10-17-scale5-sample20';
   let state;
   let storageAvailable = true;
   const newToken = () => Array.from(crypto.getRandomValues(new Uint8Array(32)),
@@ -77,7 +77,7 @@
   }
   // The binary questionnaire has been retired. Keep an existing secure identity,
   // but remove its old outbox so a stale tab cannot restore deleted A/B records.
-  state.runs = state.runs.filter(run => [VERSION, 'nbti-2026-10-02-scale15'].includes(run?.session?.questionnaireVersion));
+  state.runs = state.runs.filter(run => [VERSION, 'nbti-2026-10-15-sample20', 'nbti-2026-10-02-scale15'].includes(run?.session?.questionnaireVersion));
   delete state.legacyResume;
   try {
     localStorage.removeItem('nbti:collector:legacy:v1');
@@ -201,7 +201,8 @@
     persist();
   }
   function answer(questionId, scaleValue) {
-    if (!Number.isInteger(scaleValue) || scaleValue < 0 || scaleValue > 14) return false;
+    if (!Number.isInteger(scaleValue) || scaleValue < 0 || scaleValue > 4) return false;
+    if (activeRun()?.session.questionnaireVersion !== VERSION) return false;
     const id = String(questionId);
     if (!activeRun()?.session.questionIds?.includes(id)) return false;
     if (!activeRun() || activeRun().questionId !== id) show(id);

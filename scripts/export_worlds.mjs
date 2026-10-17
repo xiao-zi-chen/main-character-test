@@ -7,7 +7,7 @@ import { worldSvg } from '../src/visuals/world-art.js';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const output=resolve(root,'public/worlds');
 await mkdir(output,{recursive:true});
-for(const role of roles) await writeFile(resolve(output,`${role.id}.svg`),worldSvg(role));
+for(const role of roles) await writeFile(resolve(output,`${role.id}.svg`),worldSvg(role).split('\n').map(line=>line.trimEnd()).join('\n'));
 console.log(`Exported ${roles.length} original illustrated worlds.`);
 
 if (process.argv.includes('--raster')) {

@@ -16,20 +16,20 @@ test('simple landing, searchable directory, videos and modal keyboard controls',
   await page.screenshot({ path: `.work/home-${testInfo.project.name}.png`, fullPage: true });
   await expect(page.locator('a[href="#/characters"]')).toHaveCount(0);
   await page.goto('/#/characters');
-  await page.getByRole('textbox', { name: '搜索角色' }).fill('失落神话');
+  await page.getByRole('textbox', { name: '搜索角色' }).fill('心之所向');
   await expect(page.getByRole('button', { name: /^预览/ })).toHaveCount(1);
   await page.getByRole('textbox', { name: '搜索角色' }).fill('不存在的人设');
   await expect(page.locator('.gallery-empty')).toBeVisible();
   await page.getByRole('textbox', { name: '搜索角色' }).fill('');
-  await expect(page.getByRole('button', { name: /^预览/ })).toHaveCount(18);
-  await page.getByRole('button', { name: '预览失落神话继承人', exact: true }).click();
+  await expect(page.getByRole('button', { name: /^预览/ })).toHaveCount(28);
+  await page.getByRole('button', { name: '预览心之所向', exact: true }).click();
   const dialog = page.getByRole('dialog');
   await expect(dialog).toBeVisible();
   await dialog.getByRole('button', { name: '播放视频', exact: true }).first().click();
   await expect.poll(() => dialog.locator('video').evaluate(video => video.currentTime > 0 && !video.muted)).toBe(true);
-  expect(await dialog.locator('video').evaluate(video => video.duration)).toBeCloseTo(media['myth-keeper'].duration, 1);
-  await expect(dialog.locator('.video-duration')).toHaveText('00:10');
-  await expect(dialog.locator('video')).toHaveAttribute('src',new RegExp(`myth-keeper\\.mp4\\?v=${media['myth-keeper'].revision}`));
+  expect(await dialog.locator('video').evaluate(video => video.duration)).toBeCloseTo(media['plot-rewriter'].duration, 1);
+  await expect(dialog.locator('.video-duration')).toHaveText(formatPlaybackTime(media['plot-rewriter'].duration));
+  await expect(dialog.locator('video')).toHaveAttribute('src',new RegExp(`${media['plot-rewriter'].video}\\?v=${media['plot-rewriter'].videoRevision}`));
   await dialog.getByRole('button', { name: '暂停视频' }).click();
   await dialog.getByRole('button', { name: '关闭声音' }).click();
   await expect(dialog.locator('video')).toHaveJSProperty('muted', true);
@@ -53,7 +53,7 @@ test('20-question journey persists, navigates back, reveals and exports a real r
   await page.reload();
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
   await page.getByRole('button', { name: '上一题', exact: true }).click();
-  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '14');
+  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '4');
   await page.screenshot({ path: `.work/quiz-${testInfo.project.name}.png`, fullPage: true });
   for (let i = 0; i < 20; i++) {
     await expect(page.locator('.quiz-counter')).toHaveText(`${String(i+1).padStart(2,'0')} / 20`);
@@ -71,7 +71,7 @@ test('20-question journey persists, navigates back, reveals and exports a real r
       expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).submitted, STORAGE_KEY)).toBe(false);
       await page.reload();
       await expect(page.locator('.quiz-counter')).toHaveText('20 / 20');
-      await expect(slider).toHaveAttribute('aria-valuenow', '14');
+      await expect(slider).toHaveAttribute('aria-valuenow', '4');
       await expect(page.locator('.site-header')).toHaveCount(0);
     }
     await page.getByRole('button', { name: i === 19 ? '揭晓我的主角' : '下一幕', exact: true }).click();
@@ -103,7 +103,7 @@ test('20-question journey persists, navigates back, reveals and exports a real r
   await page.getByRole('button', { name: '再选一次，我有别的剧本' }).click();
   await page.getByRole('button', { name: '保留答案，回去修改' }).click();
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
-  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow','14');
+  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow','4');
   expect(errors).toEqual([]);
 });
 

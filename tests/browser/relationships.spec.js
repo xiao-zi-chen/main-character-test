@@ -30,5 +30,5 @@ test('manual sharing preserves the invitation when clipboard access fails',async
   await page.addInitScript(()=>Object.defineProperty(navigator,'clipboard',{value:{writeText:()=>Promise.reject(new Error('denied'))}}));
   await page.goto('/#/role/social-shield');
   await page.getByRole('button',{name:'找 TA 来认领'}).click();
-  await expect(page.getByRole('textbox',{name:'角色分享邀请'})).toHaveValue(/门面担当[\s\S]*猫老板情绪翻译官[\s\S]*#\/role\/social-shield/);
+  await expect(page.getByRole('textbox',{name:'角色分享邀请'})).toHaveValue(/那我给了呗[\s\S]*规则就是用来打破的[\s\S]*#\/role\/social-shield/);
 });

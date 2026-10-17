@@ -10,7 +10,7 @@ test('all forty questions fit in one phone screen, including both choices and na
     const ids=dimensions.flatMap(d=>questions.filter(q=>q.dimension===d.id).sort((a,b)=>Number(b.id===target.id)-Number(a.id===target.id)).slice(0,2).map(q=>q.id));
     return [target.id,[target.id,...ids.filter(id=>id!==target.id)]];
   }));
-  await page.addInitScript(({key,fixtures})=>{const q=new URL(location.href).searchParams.get('question');if(fixtures[q])localStorage.setItem(key,JSON.stringify({version:3,questionIds:fixtures[q],answers:{},index:0,submitted:false}));},{key:STORAGE_KEY,fixtures});
+  await page.addInitScript(({key,fixtures})=>{const q=new URL(location.href).searchParams.get('question');if(fixtures[q])localStorage.setItem(key,JSON.stringify({version:4,questionIds:fixtures[q],answers:{},index:0,submitted:false}));},{key:STORAGE_KEY,fixtures});
   for(const viewport of [{width:320,height:568},{width:390,height:844}]) {
     await page.setViewportSize(viewport);
     for(const question of questions) {
@@ -50,7 +50,7 @@ test('refresh keeps a draw, finish records twenty responses and restart makes a 
   await page.getByRole('button',{name:'关闭弹窗',exact:true}).click();
   const collected=await page.evaluate(()=>window.NBTICollector.snapshot());
   const run=collected.runs.find(r=>r.session.id===collected.activeSessionId);
-  expect(run.session.questionnaireVersion).toBe('nbti-2026-10-15-sample20');
+  expect(run.session.questionnaireVersion).toBe('nbti-2026-10-17-scale5-sample20');
   expect(run.session.questionIds).toEqual(first);
   expect(run.answers).toHaveLength(20);
   expect(run.session.completedAt).toBeTruthy();

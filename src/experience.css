@@ -4,8 +4,8 @@ button:focus-visible,a:focus-visible{outline:2px solid #b4efcb;outline-offset:4p
 .answer-scale-anchor{text-align:left;cursor:pointer;transition:border-color .15s,background .15s}
 .answer-scale-anchor:hover,.answer-scale-anchor.selected{border-color:#d9c29a;background:#d9c29a12}
 .answer-scale-anchor:last-child.selected{border-color:#94ddce;background:#94ddce12}
-.answer-scale-labels span{border:0;background:none;box-shadow:none;padding-inline:0}
-.answer-scale-labels span.active{background:none;box-shadow:none;color:#f4d29f}
+.answer-scale-labels button{border:0;background:none;box-shadow:none;padding-inline:0}
+.answer-scale-labels button.active{background:none;box-shadow:none;color:#f4d29f}
 .quiz-page{max-width:1120px;min-height:100svh;padding-top:28px;padding-bottom:40px}
 .quiz-topline{padding-bottom:14px}
 .quiz-counter{font-variant-numeric:tabular-nums;color:#f2d4a5}
@@ -71,7 +71,7 @@ button:focus-visible,a:focus-visible{outline:2px solid #b4efcb;outline-offset:4p
   .answer-scale-track{height:44px}
   .answer-scale-thumb{top:-5px;height:52px;width:16px}
   .answer-scale-labels{margin-top:10px;gap:3px}
-  .answer-scale-labels span{font-size:10px;min-height:30px;line-height:1.4;padding:0}
+  .answer-scale-labels button{font-size:10px;min-height:30px;line-height:1.4;padding:0}
   .quiz-page .answer-scale-selection{font-size:11px;margin-top:8px;min-height:24px}
   .question-actions{flex:none;margin-top:14px;padding-top:12px;gap:18px;display:flex;align-items:center;justify-content:space-between}
   .question-actions>.text-button{min-height:46px;font-size:12px}

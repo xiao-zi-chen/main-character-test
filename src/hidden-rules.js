@@ -13,7 +13,7 @@ export const hiddenUnlockRules = [
     label: '脑洞与连接共同开场',
     conditions: { explore: ['>=', 75], imagine: ['>=', 67], social: ['>=', 80], freedom: ['>=', 75], focus: ['<=', 25] },
   },
-];
+].filter(rule => allowedIds.has(rule.roleId));
 
 export function hiddenRoleForScores(scores) {
   const values = Object.fromEntries(scores.map(score => [score.id, score.value]));

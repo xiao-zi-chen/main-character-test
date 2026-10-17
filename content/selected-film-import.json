@@ -1,0 +1,536 @@
+[
+  {
+    "filmId": "dont-embarrass-us",
+    "source": "视频/564d5e71dcc4abd3ce4106d3bcb67729.mp4",
+    "file": "film-dont-embarrass-us.mp4",
+    "sha256": "b2163927f8d2e8fbacd08c9b8fc98f9d9f03746602cd38c45848db9946237544",
+    "cast": [
+      {
+        "id": "chovy-son",
+        "name": "儿子我chovy",
+        "portrait": {
+          "time": 0.65,
+          "crop": [
+            0.16,
+            0.34,
+            0.75,
+            0.5
+          ]
+        }
+      },
+      {
+        "id": "face-keeper",
+        "name": "别让人笑话",
+        "portrait": {
+          "time": 3,
+          "crop": [
+            0.43,
+            0.2,
+            0.53,
+            0.55
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  },
+  {
+    "filmId": "trend-chasing-boss",
+    "source": "视频/daaa3bfeaa9ff378b929cc44fd997f74.mp4",
+    "file": "film-trend-chasing-boss.mp4",
+    "sha256": "8ac821b9592cb4fd3e211cf2e527bb83b038f066426c778a54839f9684cf5f09",
+    "cast": [
+      {
+        "id": "villain-calmer",
+        "name": "无奈员工",
+        "portrait": {
+          "time": 0.65,
+          "crop": [
+            0.05,
+            0.08,
+            0.45,
+            0.65
+          ]
+        }
+      },
+      {
+        "id": "trend-boss",
+        "name": "追热点的老板",
+        "portrait": {
+          "time": 3,
+          "crop": [
+            0.48,
+            0.4,
+            0.48,
+            0.43
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  },
+  {
+    "filmId": "new-year-peace",
+    "source": "视频/19d3c50b17e262475ad54cbe452b023d.mp4",
+    "file": "film-new-year-peace.mp4",
+    "sha256": "1461b0352c159d422b5e52f1c2b4e13a91a17be376e18e1ae5374db39f9e3bb4",
+    "cast": [
+      {
+        "id": "apocalypse-caterer",
+        "name": "和稀泥和事老",
+        "portrait": {
+          "time": 3.6,
+          "crop": [
+            0.26,
+            0.3,
+            0.43,
+            0.4
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  },
+  {
+    "filmId": "not-a-coward",
+    "source": "视频/6592352454b4042ac7055d6079f0b504.mp4",
+    "file": "film-not-a-coward.mp4",
+    "sha256": "b4810b52a72a09c154327f3a0ca545ee919e32c045bbdf442d946da59ba92cb0",
+    "cast": [
+      {
+        "id": "dragon-office-worker",
+        "name": "急急急男主",
+        "portrait": {
+          "time": 2.5,
+          "crop": [
+            0.1,
+            0.12,
+            0.77,
+            0.7
+          ]
+        }
+      },
+      {
+        "id": "calm-responder",
+        "name": "我知道你很急但是你先别急",
+        "portrait": {
+          "time": 11.2,
+          "crop": [
+            0.08,
+            0.04,
+            0.88,
+            0.75
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  },
+  {
+    "filmId": "never-give-up",
+    "source": "视频/5e3e0ac1ba0f26537ee0e7a8ec5d48b1.mp4",
+    "file": "film-never-give-up.mp4",
+    "sha256": "450a04a397fbd92045e631e9e08c47b851986f046c43d043b7c1a05afd75df16",
+    "cast": [
+      {
+        "id": "never-give-up",
+        "name": "永不言弃",
+        "portrait": {
+          "time": 2,
+          "crop": [
+            0.04,
+            0.08,
+            0.92,
+            0.75
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  },
+  {
+    "filmId": "too-much-thrill",
+    "source": "视频/67c3dc00f4514aceb526925b93162ff3.mp4",
+    "file": "film-too-much-thrill.mp4",
+    "sha256": "e1b66784bae549402f169338996c93a921741a8afe55a9a347078babd0caba10",
+    "cast": [
+      {
+        "id": "lucky-disaster",
+        "name": "刺激过头了",
+        "portrait": {
+          "time": 8.1,
+          "crop": [
+            0.19,
+            0.37,
+            0.6,
+            0.6
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  },
+  {
+    "filmId": "royal-doorframe",
+    "source": "视频/311b1b9ea5ba0cfe31a002712aebf64d.mp4",
+    "file": "film-royal-doorframe.mp4",
+    "sha256": "2543f9605c998f1d8a7a5a96ebff018c669a0187875cecc8cadfb6de28f48773",
+    "cast": [
+      {
+        "id": "rule-breaker",
+        "name": "规则就是用来打破的",
+        "portrait": {
+          "time": 3,
+          "crop": [
+            0.39,
+            0.12,
+            0.58,
+            0.7
+          ]
+        }
+      },
+      {
+        "id": "social-shield",
+        "name": "那我给了呗",
+        "portrait": {
+          "time": 0.6,
+          "crop": [
+            0,
+            0.34,
+            0.51,
+            0.36
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  },
+  {
+    "filmId": "royal-kitchen",
+    "source": "I:/题目/H3生成结果_20260930/15秒MiniMax原生声画版/royal-chef.mp4",
+    "file": "film-royal-kitchen.mp4",
+    "sha256": "c2cfc20d6767eb60bdd49348892dc2acd5cff1c202c3ff5e0dbaf97ac8e64f68",
+    "cast": [
+      {
+        "id": "royal-client",
+        "name": "甲方",
+        "portrait": {
+          "time": 3,
+          "crop": [
+            0.1,
+            0.27,
+            0.49,
+            0.4
+          ]
+        }
+      },
+      {
+        "id": "royal-chef",
+        "name": "乙方",
+        "portrait": {
+          "time": 11.1,
+          "crop": [
+            0.32,
+            0.12,
+            0.65,
+            0.53
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  },
+  {
+    "filmId": "follow-your-heart",
+    "source": "视频/4.mp4",
+    "file": "film-follow-your-heart.mp4",
+    "sha256": "072a0d8214734b6b02eeb1e6017902236937829888e12ac7f7536b156e8c3129",
+    "cast": [
+      {
+        "id": "plot-rewriter",
+        "name": "心之所向",
+        "portrait": {
+          "time": 8.2,
+          "crop": [
+            0.27,
+            0.25,
+            0.7,
+            0.65
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  },
+  {
+    "filmId": "only-the-emperor",
+    "source": "视频/f9ee89bc9a30c1797ab1514e30f17559.mp4",
+    "file": "film-only-the-emperor.mp4",
+    "sha256": "f64b31de855f9699b03338d17e89fb600113af7d485c966dc1273f96b702f3a6",
+    "cast": [
+      {
+        "id": "hidden-player",
+        "name": "阿斯塔顿",
+        "portrait": {
+          "time": 5.4,
+          "crop": [
+            0.02,
+            0.08,
+            0.96,
+            0.8
+          ]
+        }
+      },
+      {
+        "id": "flexible-challenger",
+        "name": "大丈夫（能屈能伸）",
+        "portrait": {
+          "time": 11.2,
+          "crop": [
+            0.1,
+            0.11,
+            0.82,
+            0.67
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  },
+  {
+    "filmId": "chaos-comedy",
+    "source": "I:/题目/H3生成结果_20260930/15秒MiniMax原生声画版/chaos-director.mp4",
+    "file": "film-chaos-comedy.mp4",
+    "sha256": "7f39657918840db2084bd70eef08e2f80933df7a60eeb8f23faf888252307cfd",
+    "cast": [
+      {
+        "id": "chaos-director",
+        "name": "反套路脑回路",
+        "portrait": {
+          "time": 5.4,
+          "crop": [
+            0.03,
+            0.1,
+            0.94,
+            0.55
+          ]
+        }
+      },
+      {
+        "id": "chaos-witness",
+        "name": "兄弟别搞",
+        "portrait": {
+          "time": 0.6,
+          "crop": [
+            0,
+            0.27,
+            0.125,
+            0.19
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "身后的角色给一个略惊讶的面部表情",
+    "editStatus": "pending-generation"
+  },
+  {
+    "filmId": "public-roast",
+    "source": "视频/ea8433d25c97819ea6459d72876bba5c.mp4",
+    "file": "film-public-roast.mp4",
+    "sha256": "00b9245e243f4eaaeebba2593ad0b62f1a76733267d5c4938588f2cf152698d3",
+    "cast": [
+      {
+        "id": "public-roaster",
+        "name": "闲的没事笑话笑话你们",
+        "portrait": {
+          "time": 8.2,
+          "crop": [
+            0.04,
+            0.18,
+            0.93,
+            0.58
+          ]
+        }
+      },
+      {
+        "id": "quiet-bystander",
+        "name": "我跟他不熟",
+        "portrait": {
+          "time": 13.6,
+          "crop": [
+            0.56,
+            0.07,
+            0.39,
+            0.35
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  },
+  {
+    "filmId": "social-connection",
+    "source": "视频/7.mp4",
+    "file": "film-social-connection.mp4",
+    "sha256": "779ff260d186f1fd6ed5585a4dc7d3b7b629a0be0897f7e3ac3f77c7fa9aad6b",
+    "cast": [
+      {
+        "id": "spotlight-extra",
+        "name": "链接一下",
+        "portrait": {
+          "time": 8.2,
+          "crop": [
+            0.05,
+            0.29,
+            0.48,
+            0.63
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "最后给人一个特写 链接一下",
+    "editStatus": "pending-generation"
+  },
+  {
+    "filmId": "mind-reading",
+    "source": "I:/题目/H3生成结果_20260930/15秒MiniMax原生声画版/mind-reader.mp4",
+    "file": "film-mind-reading.mp4",
+    "sha256": "99ff48aa01b66995310aa0963decd079a186376ed3e412cbe3ba87d0d9785173",
+    "cast": [
+      {
+        "id": "mind-reader",
+        "name": "读心团宠",
+        "portrait": {
+          "time": 0.6,
+          "crop": [
+            0.15,
+            0.16,
+            0.67,
+            0.66
+          ]
+        }
+      },
+      {
+        "id": "frustrated-courtier",
+        "name": "总感觉有火发不出",
+        "portrait": {
+          "time": 5.4,
+          "crop": [
+            0.11,
+            0.11,
+            0.81,
+            0.69
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "参照老视频",
+    "editStatus": "pending-generation"
+  },
+  {
+    "filmId": "cosmic-stage",
+    "source": "public/media/cosmic-director.mp4",
+    "file": "film-cosmic-stage.mp4",
+    "sha256": "f7c5d2ae14210f11b159a322b03bc00519653074f9a470af1edd48cb59b0891f",
+    "cast": [
+      {
+        "id": "stage-lead",
+        "name": "台上主角",
+        "portrait": {
+          "time": 0.6,
+          "crop": [
+            0.49,
+            0.31,
+            0.4,
+            0.37
+          ]
+        }
+      },
+      {
+        "id": "cosmic-director",
+        "name": "台下大手",
+        "portrait": {
+          "time": 5.4,
+          "crop": [
+            0.1,
+            0.12,
+            0.81,
+            0.68
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  },
+  {
+    "filmId": "reborn-revenge",
+    "source": "I:/题目/H3生成结果_20260930/15秒MiniMax原生声画版/reborn-queen.mp4",
+    "file": "film-reborn-revenge.mp4",
+    "sha256": "5b2b23d8f43e0b2b04800900e457bb5160562a63290f5e04511289a0d92dd623",
+    "cast": [
+      {
+        "id": "reborn-queen",
+        "name": "这一世我将拿回属于我的一切",
+        "portrait": {
+          "time": 5.4,
+          "crop": [
+            0.1,
+            0.09,
+            0.81,
+            0.56
+          ]
+        }
+      },
+      {
+        "id": "queen-companion",
+        "name": "又谁得罪你了",
+        "portrait": {
+          "time": 0.6,
+          "crop": [
+            0.57,
+            0.12,
+            0.39,
+            0.58
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "加点戏和台词，同时给到身边人一个心理特写",
+    "editStatus": "pending-generation"
+  },
+  {
+    "filmId": "cultivation-support",
+    "source": "public/media/immortal-support.mp4",
+    "file": "film-cultivation-support.mp4",
+    "sha256": "c477e94ddf9f3eed693dec24e2bab6aaffdc7e8b56a010c3a061c69d89c7af5f",
+    "cast": [
+      {
+        "id": "immortal-support",
+        "name": "我的手里不允许有差评",
+        "portrait": {
+          "time": 11.1,
+          "crop": [
+            0.12,
+            0.1,
+            0.76,
+            0.7
+          ]
+        }
+      }
+    ],
+    "requestedEdit": "",
+    "editStatus": "not-requested"
+  }
+]

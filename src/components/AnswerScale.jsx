@@ -6,7 +6,7 @@ import { QuestionArt } from './QuestionArt.jsx';
 
 const labels = ['更接近左侧', '偏左', '中立', '偏右', '更接近右侧'];
 const middle = (SCALE_MIN + SCALE_MAX) / 2;
-const labelFor = value => labels[Math.floor(value / 3)];
+const labelFor = value => labels[value];
 
 export function AnswerScale({ value, options, onChoose, questionId }) {
   const track = useRef(null);
@@ -23,7 +23,7 @@ export function AnswerScale({ value, options, onChoose, questionId }) {
   const cancel = () => { gesture.current = null; setDraft(null); };
   const onKeyDown = event => {
     if (event.ctrlKey || event.metaKey || event.altKey) return;
-    const change = { ArrowLeft: -1, ArrowDown: -1, ArrowRight: 1, ArrowUp: 1, PageDown: -3, PageUp: 3 }[event.key];
+    const change = { ArrowLeft: -1, ArrowDown: -1, ArrowRight: 1, ArrowUp: 1, PageDown: -1, PageUp: 1 }[event.key];
     let next;
     if (change !== undefined) next = Math.max(SCALE_MIN, Math.min(SCALE_MAX, displayed + change));
     else if (event.key === 'Home') next = SCALE_MIN;
@@ -71,10 +71,10 @@ export function AnswerScale({ value, options, onChoose, questionId }) {
       }}
       onPointerCancel={event => { if (gesture.current?.pointerId === event.pointerId) cancel(); }}
       onLostPointerCapture={() => { if (gesture.current) cancel(); }}>
-      {Array.from({ length: cellCount }, (_, index) => <span key={index} className={`answer-scale-cell ${index % 3 === 2 && index !== cellCount - 1 ? 'major-boundary' : ''}`} aria-hidden="true" />)}
+      {Array.from({ length: cellCount }, (_, index) => <span key={index} className="answer-scale-cell" aria-hidden="true" />)}
       <span className="answer-scale-thumb" style={{ left: `${(displayed - SCALE_MIN + .5) / cellCount * 100}%` }} aria-hidden="true"><i /></span>
     </div>
-    <div className="answer-scale-labels" aria-hidden="true">{labels.map((label, index) => <span key={label} className={(answered || draft !== null) && index === Math.floor(displayed / 3) ? 'active' : ''}>{label}</span>)}</div>
+    <div className="answer-scale-labels">{labels.map((label, index) => <button type="button" key={label} aria-pressed={answered && value === index} onClick={() => commit(index)} className={(answered || draft !== null) && index === displayed ? 'active' : ''}>{label}</button>)}</div>
     <p className="answer-scale-selection" id="answer-scale-selection" role="status" aria-live="polite">
       {answered ? <><span className="scale-selection-mark">✓</span> 已选择：{labelFor(value)}<small>第 {value + 1} / {cellCount} 档</small></> : '还没决定，也可以选择中立'}
     </p>

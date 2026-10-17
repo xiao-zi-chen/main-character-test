@@ -11,7 +11,7 @@ export function VideoPlayer({ role, media, autoplay = false }) {
   const [waiting, setWaiting] = useState(false);
   const [progress, setProgress] = useState(0);
   const [seconds, setSeconds] = useState(Number(media?.duration) || 0);
-  const src = mediaPath(role, 'mp4', media?.revision);
+  const src = mediaPath(role, 'mp4', media?.videoRevision ?? media?.revision);
 
   useEffect(() => {
     const video = ref.current;
