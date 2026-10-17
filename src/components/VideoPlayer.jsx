@@ -43,7 +43,7 @@ export function VideoPlayer({ role, media, autoplay = false }) {
     play();
   }
   return <div className="video-player">
-    <video ref={ref} src={src} poster={mediaAsset(role, media)} muted={muted} loop playsInline preload="metadata"
+    <video ref={ref} src={src} poster={mediaAsset(role, media)} muted={muted} loop playsInline preload={autoplay ? 'auto' : 'metadata'}
       aria-label={`${role.name}，${durationLabel({duration:seconds})}角色视频`}
       onLoadedMetadata={event => setSeconds(event.currentTarget.duration)}
       onPlay={event => { setPlaying(true); document.dispatchEvent(new CustomEvent('casting:video-play', { detail:event.currentTarget })); }}

@@ -1,3 +1,5 @@
+import { questions } from '../src/data/questions.js';
+
 const roleIdPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const imagePattern = /^[a-z0-9_-]+\.(?:jpg|png|webp)$/;
 const optionalAssetPatterns = {
@@ -40,3 +42,22 @@ export function publicAssetPaths(manifest) {
 }
 
 export const publicEntryPaths = Object.freeze(['collector.js', 'public-config.js', 'favicon.svg']);
+
+export function questionArtPaths(manifest) {
+  const entries = manifest?.questions;
+  if (!entries || typeof entries !== 'object' || Array.isArray(entries)
+    || Object.keys(entries).length !== questions.length) {
+    throw new Error('Expected artwork for exactly the current forty questions.');
+  }
+  const paths = ['question-art/manifest.json'];
+  for (const { id } of questions) {
+    for (const kind of ['scene', 'left', 'right']) {
+      const filename = `${id.replace('.', '-')}/${kind}.webp`;
+      if (entries[id]?.assets?.[kind]?.file !== filename) {
+        throw new Error(`Invalid question image: ${id}/${kind}`);
+      }
+      paths.push(`question-art/${filename}`);
+    }
+  }
+  return paths.sort();
+}

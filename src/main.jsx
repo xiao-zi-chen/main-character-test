@@ -18,6 +18,8 @@ import mediaManifest from '../public/media/manifest.json';
 import { DestinyRadar } from './visuals/Cinematic.jsx';
 import { durationLabel, mediaAsset } from './media.js';
 import { questionCopy } from './data/question-copy.js';
+import { QuestionArt } from './components/QuestionArt.jsx';
+import { preloadQuestionArt } from './question-art.js';
 
 import { downloadRoleCard } from './visuals/share-card.js';
 import './styles.css';
@@ -26,6 +28,7 @@ import './season2.css';
 import './experience.css';
 
 import './simple.css';
+import './question-art.css';
 import {SimpleHeader, SimpleHome, SimpleFooter, CharacterGallery} from './components/SimpleExperience.jsx';
 const iconMap = { Crown, Sun, Ghost, BookOpen, ScanLine, Gem, MessageCircleHeart, Orbit, Flower2, CookingPot, Wrench, FileCheck2, BriefcaseBusiness, Clapperboard, Cpu, Sparkles, ShieldCheck };
 const acts = [
@@ -120,6 +123,7 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
   }, [questionIds]);
   useLayoutEffect(() => { window.NBTICollector?.show(question.id); }, [question.id]);
   useEffect(() => { heading.current?.focus({ preventScroll: true }); }, [index]);
+  useEffect(() => { preloadQuestionArt(questionIds[index + 1]); }, [index, questionIds]);
   useEffect(() => {
     const onKey = event => {
       if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || ['INPUT', 'TEXTAREA'].includes(event.target.tagName) || event.target.closest('[role="slider"]')) return;
@@ -138,8 +142,9 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
     <div className="quiz-layout"><aside className="quiz-sidebar"><div className="act-list">{acts.map((act, i) => <div className={`act ${i === actIndex ? 'current' : ''} ${i < actIndex ? 'done' : ''}`} key={act.title} aria-current={i === actIndex ? 'step' : undefined}><span className="act-number">{i < actIndex ? <Check size={16} /> : `0${i + 1}`}</span><div><h3>第{['一', '二', '三', '四'][i]}幕 · {act.title}</h3><p>{act.description}</p></div></div>)}</div></aside>
       <section className="question-section" aria-labelledby="question-title">
         <div className="question-meta"><span>第{['一', '二', '三', '四'][actIndex]}幕 <i /> {acts[actIndex].title}</span><span>SCENE {String(index + 1).padStart(2, '0')}</span></div>
-        <div className="question-content" key={question.id}><span className="question-kicker">主角请就位 · 你的第 {index + 1} 个选择</span><h1 id="question-title" ref={heading} tabIndex={-1}>{question.prompt}</h1>
-          <AnswerScale value={selected} options={question.options} onChoose={choose} />
+        <div className="question-content" key={question.id}><span className="question-kicker">主角请就位 · 你的第 {index + 1} 个选择</span>
+          <div className="question-scene"><QuestionArt id={question.id} alt="这一次，你在故事里" priority/><h1 id="question-title" ref={heading} tabIndex={-1}>{question.prompt}</h1></div>
+          <AnswerScale value={selected} options={question.options} onChoose={choose} questionId={question.id}/>
         </div>
         {submitError && <div className="quiz-submit-error" role="alert"><p>{submitError}</p>{collectionRecovery && <button className="text-button" onClick={collectionRecovery === 'reload' ? () => window.location.reload() : onRestart}>{collectionRecovery === 'reload' ? '重新加载页面' : '重新开始测试'}<RotateCcw size={14}/></button>}</div>}
         <div className="question-actions"><button className="text-button" disabled={index === 0 || Boolean(collectionRecovery)} onClick={previous}><ArrowLeft size={16} /> 上一题</button><button className="button button-lime" disabled={!isAnswer(selected) || Boolean(collectionRecovery)} onClick={next}>{index === SESSION_SIZE - 1 ? '揭晓我的主角' : '下一幕'}{index === SESSION_SIZE - 1 ? <Sparkles size={18} /> : <ArrowRight size={19} />}</button></div>
@@ -194,10 +199,20 @@ function App() {
   const [modal, setModal] = useState(null);
   const [toastMessage, setToastMessage] = useState('');
   const toastTimer = useRef(null);
+  const pendingResultVideo = useRef(false);
   const count = answeredCount(quiz.answers, quiz.questionIds);
   const complete = isComplete(quiz.answers, quiz.questionIds) && quiz.submitted === true;
   const displayCount = count === SESSION_SIZE && !complete ? SESSION_SIZE - 1 : count;
   const currentResult = complete ? getResult(quiz.answers,{hiddenEnabled:hiddenState.enabled,questionIds:quiz.questionIds}) : null;
+  useEffect(() => {
+    if (route === '/result' && currentResult && pendingResultVideo.current) {
+      pendingResultVideo.current = false;
+      setModal({ kind: 'video', role: currentResult.role });
+    }
+  }, [route, currentResult?.role.id]);
+  useEffect(() => {
+    if (route !== '/reveal' && route !== '/result') pendingResultVideo.current = false;
+  }, [route]);
   useEffect(()=>{try{saveHiddenState(window.localStorage,hiddenState);}catch{}},[hiddenState]);
   useEffect(()=>{
     if(route==='/result' && currentResult?.role.hidden && hiddenState.enabled){
@@ -225,7 +240,7 @@ function App() {
     const now=Date.now();secretTaps.current={count:now-secretTaps.current.time<5000?secretTaps.current.count+1:1,time:now};
     if(secretTaps.current.count>=5){event.preventDefault();secretTaps.current.count=0;setModal({kind:'secrets'});}
   };
-  const onFinish = useCallback(() => go('/reveal'), []);
+  const onFinish = useCallback(() => { pendingResultVideo.current = true; go('/reveal'); }, []);
   const onDone = useCallback(() => go('/result'), []);
   const restartQuiz = () => {
     const fresh = newProgress();

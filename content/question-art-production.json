@@ -1,0 +1,967 @@
+{
+  "provider": "Local MiniMax H3 via ComfyUI",
+  "useCase": "illustration-story",
+  "layout": "Three equal horizontal panels; exported as scene / left / right",
+  "questions": [
+    {
+      "id": "1.1",
+      "prompt": "朋友约你周末出门，两种安排你更心动哪一个？",
+      "options": [
+        "去熟悉的店，舒服又不会踩雷",
+        "去没试过的地方，看看会发生什么"
+      ],
+      "seed": 2026101800,
+      "artDirection": {
+        "id": "watercolor-travel",
+        "label": "旅行水彩",
+        "family": "watercolor",
+        "medium": "Transparent watercolor on white cold-pressed paper, loose architectural washes, fine pencil contours, airy travel sketchbook illustration. Visible paper grain, luminous white highlights, not a digital cartoon.",
+        "protagonist": "a young woman with a long auburn braid, round spectacles, a mustard yellow raincoat and navy jeans",
+        "palette": "cobalt blue, lemon yellow, white paper and terracotta",
+        "setting": "a leafy seaside neighborhood with small independent shops"
+      },
+      "scene": "OUTDOORS: The protagonist and one VISUALLY DIFFERENT friend stand on a neighborhood street considering a free weekend. The FRIEND is a tall man with short curly black hair, no glasses, a denim jacket and brown trousers. The protagonist retains the CHARACTER DESIGN above. Do not give both people the same face or hairstyle.",
+      "left": "INSIDE A CAFE: The protagonist and the same black-haired male friend in denim are SEATED at their usual cafe table, sipping familiar coffee beside the window. A cozy cafe INTERIOR, no street walking. Keep their distinct faces and outfits.",
+      "right": "INSIDE A POTTERY STUDIO: The protagonist and the SAME black-haired male friend in denim are STANDING at a pottery wheel, curiously looking at clay bowls and shelves of ceramics. Hands reaching toward a clay bowl. No cafe or street walking. Keep their distinct faces and outfits.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Transparent watercolor on white cold-pressed paper, loose architectural washes, fine pencil contours, airy travel sketchbook illustration. Visible paper grain, luminous white highlights, not a digital cartoon.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young woman with a long auburn braid, round spectacles, a mustard yellow raincoat and navy jeans. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: cobalt blue, lemon yellow, white paper and terracotta.\nSETTING DESIGN: a leafy seaside neighborhood with small independent shops.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: OUTDOORS: The protagonist and one VISUALLY DIFFERENT friend stand on a neighborhood street considering a free weekend. The FRIEND is a tall man with short curly black hair, no glasses, a denim jacket and brown trousers. The protagonist retains the CHARACTER DESIGN above. Do not give both people the same face or hairstyle.\nMIDDLE PANEL — FIRST REACTION: INSIDE A CAFE: The protagonist and the same black-haired male friend in denim are SEATED at their usual cafe table, sipping familiar coffee beside the window. A cozy cafe INTERIOR, no street walking. Keep their distinct faces and outfits.\nBOTTOM PANEL — SECOND REACTION: INSIDE A POTTERY STUDIO: The protagonist and the SAME black-haired male friend in denim are STANDING at a pottery wheel, curiously looking at clay bowls and shelves of ceramics. Hands reaching toward a clay bowl. No cafe or street walking. Keep their distinct faces and outfits.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Transparent watercolor on white cold-pressed paper, loose architectural washes, fine pencil contours, airy travel sketchbook illustration. Visible paper grain, luminous white highlights, not a digital cartoon.",
+      "sourceVersion": "question-art-v5",
+      "promptId": "4eeb2c9a-9bb2-4aa7-8227-4693027ad518"
+    },
+    {
+      "id": "2.1",
+      "prompt": "周五要交的东西，你周三就有空做完。你通常会？",
+      "options": [
+        "提前完成，后面两天心里踏实",
+        "先做别的，临近截止再集中完成"
+      ],
+      "seed": 2026101801,
+      "artDirection": {
+        "id": "clay-desk",
+        "label": "黏土定格",
+        "family": "clay",
+        "medium": "Photographed handmade clay stop-motion miniature. Rounded sculpted human puppets, visible fingerprints on matte plasticine, tiny tactile furniture, soft studio light and shallow depth of field. Truly three-dimensional, not drawn.",
+        "protagonist": "a clay young man with tightly curled dark hair, a plum purple sweatshirt and cream trousers",
+        "palette": "lavender, apricot, cream and plum",
+        "setting": "a compact attic home office with sloped windows and tiny handcrafted props"
+      },
+      "scene": "ONE PERSON ONLY: The protagonist sits at a tidy home desk considering an unfinished project on a laptop. Afternoon light, plant, plain wall, no text on screen.",
+      "left": "ONE PERSON ONLY: Project completed EARLY. The protagonist has CLOSED the laptop, stacked the finished pages neatly and leans back stretching contentedly in the chair. A feeling of free time ahead.",
+      "right": "ONE PERSON ONLY: The project waits unfinished on the desk in the background. In the foreground the protagonist plays an acoustic GUITAR on a separate armchair, choosing another activity now. Laptop stays open in the background.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Photographed handmade clay stop-motion miniature. Rounded sculpted human puppets, visible fingerprints on matte plasticine, tiny tactile furniture, soft studio light and shallow depth of field. Truly three-dimensional, not drawn.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a clay young man with tightly curled dark hair, a plum purple sweatshirt and cream trousers. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: lavender, apricot, cream and plum.\nSETTING DESIGN: a compact attic home office with sloped windows and tiny handcrafted props.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: ONE PERSON ONLY: The protagonist sits at a tidy home desk considering an unfinished project on a laptop. Afternoon light, plant, plain wall, no text on screen.\nMIDDLE PANEL — FIRST REACTION: ONE PERSON ONLY: Project completed EARLY. The protagonist has CLOSED the laptop, stacked the finished pages neatly and leans back stretching contentedly in the chair. A feeling of free time ahead.\nBOTTOM PANEL — SECOND REACTION: ONE PERSON ONLY: The project waits unfinished on the desk in the background. In the foreground the protagonist plays an acoustic GUITAR on a separate armchair, choosing another activity now. Laptop stays open in the background.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Photographed handmade clay stop-motion miniature. Rounded sculpted human puppets, visible fingerprints on matte plasticine, tiny tactile furniture, soft studio light and shallow depth of field. Truly three-dimensional, not drawn.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "b0569665-5d3e-4888-9623-900f660ab318"
+    },
+    {
+      "id": "3.1",
+      "prompt": "朋友讲错了一个你熟悉的细节，大家正聊得开心。你会？",
+      "options": [
+        "自然地补充一下，事情还是说准好",
+        "先接着聊，找私下的机会再提醒"
+      ],
+      "seed": 2026101802,
+      "artDirection": {
+        "id": "pop-comic",
+        "label": "波普美漫",
+        "family": "comic",
+        "medium": "Bold American pop comic illustration, thick black contour ink, vivid flat colors, halftone Ben-Day dot shading, energetic but readable facial acting. No speech balloons or lettering.",
+        "protagonist": "a young Black woman with a high curly ponytail, red varsity jacket and white shirt",
+        "palette": "signal red, cyan, bright yellow and deep black",
+        "setting": "a lively retro diner with checked flooring and round cafe tables"
+      },
+      "scene": "FOUR friends chat happily around a cafe table; the protagonist in their specified outfit listens as a blue-clad friend tells a story.",
+      "left": "Still with all FOUR friends, the protagonist in their specified outfit lifts one hand gently and speaks, adding a factual detail; the blue-clad storyteller and other two friends listen attentively.",
+      "right": "A different, closer shot with ONLY TWO PEOPLE: the protagonist in their specified outfit quietly speaks one-to-one to the blue-clad storyteller beside the cafe window, away from the other friends.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Bold American pop comic illustration, thick black contour ink, vivid flat colors, halftone Ben-Day dot shading, energetic but readable facial acting. No speech balloons or lettering.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young Black woman with a high curly ponytail, red varsity jacket and white shirt. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: signal red, cyan, bright yellow and deep black.\nSETTING DESIGN: a lively retro diner with checked flooring and round cafe tables.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: FOUR friends chat happily around a cafe table; the protagonist in their specified outfit listens as a blue-clad friend tells a story.\nMIDDLE PANEL — FIRST REACTION: Still with all FOUR friends, the protagonist in their specified outfit lifts one hand gently and speaks, adding a factual detail; the blue-clad storyteller and other two friends listen attentively.\nBOTTOM PANEL — SECOND REACTION: A different, closer shot with ONLY TWO PEOPLE: the protagonist in their specified outfit quietly speaks one-to-one to the blue-clad storyteller beside the cafe window, away from the other friends.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Bold American pop comic illustration, thick black contour ink, vivid flat colors, halftone Ben-Day dot shading, energetic but readable facial acting. No speech balloons or lettering.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "c6946aa4-6ca8-4e13-89ab-1ce7898bc923"
+    },
+    {
+      "id": "4.1",
+      "prompt": "朋友说“要是人生能存档就好了”，你更容易接哪句？",
+      "options": [
+        "那能试多少种不同的人生啊？",
+        "先把眼前这关过好，再想下一关"
+      ],
+      "seed": 2026101803,
+      "artDirection": {
+        "id": "pixel-savepoint",
+        "label": "像素游戏",
+        "family": "pixel",
+        "medium": "Authentic 16-bit pixel art, clearly visible square pixel clusters, limited color palette, crisp stair-step silhouettes, retro adventure-game backgrounds, absolutely no smooth painted gradients or realistic rendering.",
+        "protagonist": "a young man with spiky silver hair, a cobalt blue hoodie and orange headphones",
+        "palette": "indigo, electric blue, orange and lilac",
+        "setting": "a compact gaming lounge with a console, CRT screen and beanbag chairs"
+      },
+      "scene": "Two friends pause a video game on the sofa and imagine what a save point in real life would mean.",
+      "left": "The protagonist daydreams about several possible lives, shown as softly glowing little windows above the same sofa.",
+      "right": "The protagonist smiles and returns attention to the current game level, holding the controller and taking the next step.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Authentic 16-bit pixel art, clearly visible square pixel clusters, limited color palette, crisp stair-step silhouettes, retro adventure-game backgrounds, absolutely no smooth painted gradients or realistic rendering.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young man with spiky silver hair, a cobalt blue hoodie and orange headphones. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: indigo, electric blue, orange and lilac.\nSETTING DESIGN: a compact gaming lounge with a console, CRT screen and beanbag chairs.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Two friends pause a video game on the sofa and imagine what a save point in real life would mean.\nMIDDLE PANEL — FIRST REACTION: The protagonist daydreams about several possible lives, shown as softly glowing little windows above the same sofa.\nBOTTOM PANEL — SECOND REACTION: The protagonist smiles and returns attention to the current game level, holding the controller and taking the next step.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Authentic 16-bit pixel art, clearly visible square pixel clusters, limited color palette, crisp stair-step silhouettes, retro adventure-game backgrounds, absolutely no smooth painted gradients or realistic rendering.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "857fb2ea-1c78-4743-9f4a-125d2797f263"
+    },
+    {
+      "id": "5.1",
+      "prompt": "来到一个没什么熟人的聚会，你更可能？",
+      "options": [
+        "找个话题，先认识身边的人",
+        "先安静待着，等自然的聊天机会"
+      ],
+      "seed": 2026101804,
+      "artDirection": {
+        "id": "fashion-marker",
+        "label": "时装马克笔",
+        "family": "marker",
+        "medium": "Editorial fashion drawing in alcohol marker and fine black pen. Confident sketchy lines, translucent marker streaks, elegant elongated human figures, large clean color fields on ivory paper.",
+        "protagonist": "a tall young woman with a straight black bob, a bright magenta blazer and wide white trousers",
+        "palette": "fuchsia, ivory, charcoal and pale blush",
+        "setting": "a modern rooftop gathering with tall windows and a snack bar"
+      },
+      "scene": "The protagonist arrives at a cozy house gathering where most guests are unfamiliar, drinks and snacks on a side table.",
+      "left": "The protagonist smiles and introduces themself to a nearby guest, opening an easy friendly conversation.",
+      "right": "The protagonist sits comfortably by the snack table, quietly enjoying the atmosphere and waiting for a natural chance to talk.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Editorial fashion drawing in alcohol marker and fine black pen. Confident sketchy lines, translucent marker streaks, elegant elongated human figures, large clean color fields on ivory paper.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a tall young woman with a straight black bob, a bright magenta blazer and wide white trousers. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: fuchsia, ivory, charcoal and pale blush.\nSETTING DESIGN: a modern rooftop gathering with tall windows and a snack bar.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: The protagonist arrives at a cozy house gathering where most guests are unfamiliar, drinks and snacks on a side table.\nMIDDLE PANEL — FIRST REACTION: The protagonist smiles and introduces themself to a nearby guest, opening an easy friendly conversation.\nBOTTOM PANEL — SECOND REACTION: The protagonist sits comfortably by the snack table, quietly enjoying the atmosphere and waiting for a natural chance to talk.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Editorial fashion drawing in alcohol marker and fine black pen. Confident sketchy lines, translucent marker streaks, elegant elongated human figures, large clean color fields on ivory paper.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "976c579c-158a-4cd3-b213-6e857c510761"
+    },
+    {
+      "id": "6.1",
+      "prompt": "朋友最近进步很快，群里都在夸他，你心里更接近？",
+      "options": [
+        "替他开心，也忍不住看看自己落后没",
+        "替他开心，我也有自己的进度"
+      ],
+      "seed": 2026101805,
+      "artDirection": {
+        "id": "risograph-progress",
+        "label": "双色孔版印刷",
+        "family": "print",
+        "medium": "Two-color risograph print on uncoated paper. Blue and vermilion ink layers, visible misregistration, grainy flat silhouettes, simple expressive human faces, deliberate graphic composition.",
+        "protagonist": "a young man with wavy shoulder-length hair, a striped polo shirt and an orange knit cap",
+        "palette": "vermilion, ultramarine and off-white paper only",
+        "setting": "a small contemporary studio with a wall pinboard and desk plants"
+      },
+      "scene": "The protagonist reads a group chat celebrating a friend's recent progress, sitting at a personal worktable.",
+      "left": "Feeling happy for the friend, the protagonist also looks thoughtfully at their own progress notebook, comparing milestones.",
+      "right": "Feeling happy for the friend, the protagonist returns contentedly to their own ongoing project at their own pace.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Two-color risograph print on uncoated paper. Blue and vermilion ink layers, visible misregistration, grainy flat silhouettes, simple expressive human faces, deliberate graphic composition.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young man with wavy shoulder-length hair, a striped polo shirt and an orange knit cap. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: vermilion, ultramarine and off-white paper only.\nSETTING DESIGN: a small contemporary studio with a wall pinboard and desk plants.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: The protagonist reads a group chat celebrating a friend's recent progress, sitting at a personal worktable.\nMIDDLE PANEL — FIRST REACTION: Feeling happy for the friend, the protagonist also looks thoughtfully at their own progress notebook, comparing milestones.\nBOTTOM PANEL — SECOND REACTION: Feeling happy for the friend, the protagonist returns contentedly to their own ongoing project at their own pace.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Two-color risograph print on uncoated paper. Blue and vermilion ink layers, visible misregistration, grainy flat silhouettes, simple expressive human faces, deliberate graphic composition.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "73ed26b8-f52d-4af6-8fc0-9f0cc90342c5"
+    },
+    {
+      "id": "7.1",
+      "prompt": "忙了很久，终于有一个自由的下午。你更想？",
+      "options": [
+        "随心看看，什么轻松就做什么",
+        "投入一直惦记的爱好，终于有空了"
+      ],
+      "seed": 2026101806,
+      "artDirection": {
+        "id": "sunlight-film",
+        "label": "日光胶片摄影",
+        "family": "photography",
+        "medium": "Natural live-action 35mm color film photographs of a real human, candid lifestyle editorial, realistic skin texture and anatomy, sunlight on linen, gentle film grain. Not illustration, not anime, not 3D animation.",
+        "protagonist": "a woman in her early thirties with dark hair in a messy bun, a pale blue linen blouse and loose white trousers",
+        "palette": "sky blue, white linen, honey sunlight and natural wood",
+        "setting": "a bright apartment with large windows, a low sofa and a painting desk"
+      },
+      "scene": "ONE PERSON ONLY: After a busy week the protagonist stands in a sunny living room, with a cozy sofa and a watercolor desk nearby, considering a free afternoon.",
+      "left": "ONE PERSON ONLY: The protagonist lies comfortably back on the SOFA, with tea nearby and a magazine resting loosely on their lap, doing whatever feels easy. No one is at the desk.",
+      "right": "ONE PERSON ONLY: The protagonist is now SEATED AT THE DESK, actively painting a watercolor landscape with a brush and enjoying a long-awaited hobby. The sofa is empty.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Natural live-action 35mm color film photographs of a real human, candid lifestyle editorial, realistic skin texture and anatomy, sunlight on linen, gentle film grain. Not illustration, not anime, not 3D animation.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a woman in her early thirties with dark hair in a messy bun, a pale blue linen blouse and loose white trousers. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: sky blue, white linen, honey sunlight and natural wood.\nSETTING DESIGN: a bright apartment with large windows, a low sofa and a painting desk.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: ONE PERSON ONLY: After a busy week the protagonist stands in a sunny living room, with a cozy sofa and a watercolor desk nearby, considering a free afternoon.\nMIDDLE PANEL — FIRST REACTION: ONE PERSON ONLY: The protagonist lies comfortably back on the SOFA, with tea nearby and a magazine resting loosely on their lap, doing whatever feels easy. No one is at the desk.\nBOTTOM PANEL — SECOND REACTION: ONE PERSON ONLY: The protagonist is now SEATED AT THE DESK, actively painting a watercolor landscape with a brush and enjoying a long-awaited hobby. The sofa is empty.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Natural live-action 35mm color film photographs of a real human, candid lifestyle editorial, realistic skin texture and anatomy, sunlight on linen, gentle film grain. Not illustration, not anime, not 3D animation.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "f1cb9007-3a16-44a8-b787-a17ade568be7"
+    },
+    {
+      "id": "8.1",
+      "prompt": "和一个人越来越亲近，你对关系的期待更像哪种？",
+      "options": [
+        "聊清彼此的定位，约定让人安心",
+        "先享受相处，不急着套进固定定义"
+      ],
+      "seed": 2026101807,
+      "artDirection": {
+        "id": "art-nouveau-cafe",
+        "label": "新艺术装饰画",
+        "family": "decorative",
+        "medium": "Art Nouveau illustrative panels with elegant flowing contours, stylized botanical shapes integrated into the setting, flat jewel colors, delicate decorative linework and graceful human figures. No poster titles or outer ornamental border.",
+        "protagonist": "a young woman with flowing chestnut hair, a deep burgundy dress and a small pearl necklace",
+        "palette": "burgundy, peacock blue, antique gold and cream",
+        "setting": "a cafe with curved woodwork, floral glass and a riverside walkway"
+      },
+      "scene": "Exactly TWO DISTINCT ADULTS share a quiet cafe evening: the protagonist is the long chestnut-haired WOMAN in a burgundy dress. Her companion is a MAN with short curly black hair, a navy jacket and ivory shirt. Never render two matching burgundy-dressed women.",
+      "left": "The chestnut-haired WOMAN in burgundy and black-haired MAN in navy sit face to face and discuss what their relationship means, making a shared promise with hands close together. Keep these TWO distinct identities and clothes.",
+      "right": "The SAME WOMAN in burgundy and MAN in navy enjoy walking SIDE BY SIDE beside the cafe window, smiling and looking at the view without needing a fixed relationship definition. No kissing or hugging; relaxed companionship. Keep the two identities clearly different.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Art Nouveau illustrative panels with elegant flowing contours, stylized botanical shapes integrated into the setting, flat jewel colors, delicate decorative linework and graceful human figures. No poster titles or outer ornamental border.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young woman with flowing chestnut hair, a deep burgundy dress and a small pearl necklace. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: burgundy, peacock blue, antique gold and cream.\nSETTING DESIGN: a cafe with curved woodwork, floral glass and a riverside walkway.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Exactly TWO DISTINCT ADULTS share a quiet cafe evening: the protagonist is the long chestnut-haired WOMAN in a burgundy dress. Her companion is a MAN with short curly black hair, a navy jacket and ivory shirt. Never render two matching burgundy-dressed women.\nMIDDLE PANEL — FIRST REACTION: The chestnut-haired WOMAN in burgundy and black-haired MAN in navy sit face to face and discuss what their relationship means, making a shared promise with hands close together. Keep these TWO distinct identities and clothes.\nBOTTOM PANEL — SECOND REACTION: The SAME WOMAN in burgundy and MAN in navy enjoy walking SIDE BY SIDE beside the cafe window, smiling and looking at the view without needing a fixed relationship definition. No kissing or hugging; relaxed companionship. Keep the two identities clearly different.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Art Nouveau illustrative panels with elegant flowing contours, stylized botanical shapes integrated into the setting, flat jewel colors, delicate decorative linework and graceful human figures. No poster titles or outer ornamental border.",
+      "sourceVersion": "question-art-v5",
+      "promptId": "f54d18a4-4143-4822-963f-8b37c8c73c91"
+    },
+    {
+      "id": "9.1",
+      "prompt": "难得有个空闲晚上，家人喊你一起吃饭。你更想？",
+      "options": [
+        "这次留给自己，改天再好好聚",
+        "回去围坐一桌，热闹也让人充电"
+      ],
+      "seed": 2026101808,
+      "artDirection": {
+        "id": "ink-family",
+        "label": "国风水墨设色",
+        "family": "ink",
+        "medium": "Contemporary Chinese ink-and-wash painting on textured rice paper. Expressive black brush lines, translucent vermilion and blue washes, generous unpainted white areas, restrained natural human faces. No calligraphy, seals or text.",
+        "protagonist": "a young man with cropped black hair, a rust-red knit sweater and dark trousers",
+        "palette": "ink black, vermilion, muted blue and rice-paper white",
+        "setting": "a modern Chinese home with walnut furniture, a reading chair and round family dinner table"
+      },
+      "scene": "On a quiet evening the protagonist sits on a cozy green sofa, looking at an invitation on their phone. A small warm table lamp and a closed book are nearby. ONLY ONE PERSON is visible, no dining table.",
+      "left": "A closer view of the protagonist seated ALONE on the same green sofa reading the book beside a cup of tea, content and peaceful. The phone rests on the side table. ONLY ONE PERSON is visible, no doorway, no dining table, no duplicated person.",
+      "right": "The same protagonist now sits on the LEFT at a warm family dinner table with three relatives in DIFFERENT colored clothes: an older woman in coral, an older man in blue, a sibling in ochre. Four distinct people share food and relaxed conversation. No phone, no sofa.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Contemporary Chinese ink-and-wash painting on textured rice paper. Expressive black brush lines, translucent vermilion and blue washes, generous unpainted white areas, restrained natural human faces. No calligraphy, seals or text.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young man with cropped black hair, a rust-red knit sweater and dark trousers. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: ink black, vermilion, muted blue and rice-paper white.\nSETTING DESIGN: a modern Chinese home with walnut furniture, a reading chair and round family dinner table.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: On a quiet evening the protagonist sits on a cozy green sofa, looking at an invitation on their phone. A small warm table lamp and a closed book are nearby. ONLY ONE PERSON is visible, no dining table.\nMIDDLE PANEL — FIRST REACTION: A closer view of the protagonist seated ALONE on the same green sofa reading the book beside a cup of tea, content and peaceful. The phone rests on the side table. ONLY ONE PERSON is visible, no doorway, no dining table, no duplicated person.\nBOTTOM PANEL — SECOND REACTION: The same protagonist now sits on the LEFT at a warm family dinner table with three relatives in DIFFERENT colored clothes: an older woman in coral, an older man in blue, a sibling in ochre. Four distinct people share food and relaxed conversation. No phone, no sofa.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Contemporary Chinese ink-and-wash painting on textured rice paper. Expressive black brush lines, translucent vermilion and blue washes, generous unpainted white areas, restrained natural human faces. No calligraphy, seals or text.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "deefaa97-7ef2-4b66-af64-973db05f1269"
+    },
+    {
+      "id": "10.1",
+      "prompt": "想开始一个小创作，什么更能推动你？",
+      "options": [
+        "脑子里有个成品，想把它做出来",
+        "过程应该很好玩，先试了再看"
+      ],
+      "seed": 2026101809,
+      "artDirection": {
+        "id": "layered-paper-craft",
+        "label": "立体剪纸",
+        "family": "paper",
+        "medium": "A photographed layered cut-paper diorama. Every person, desk and object is made from precisely cut colored paper, visible paper edges, overlapping layers and cast shadows. Flat paper faces with simple eyes, rich dimensional construction.",
+        "protagonist": "a young paper-cut woman with two black braids, a turquoise apron and a coral long-sleeve top",
+        "palette": "turquoise, coral, ochre and cream",
+        "setting": "a craft workroom made of folded paper with tidy shelves of materials"
+      },
+      "scene": "The protagonist is about to begin a small handmade creative project at a desk with paper, pencils and craft materials.",
+      "left": "The protagonist follows a clear sketch of the desired finished paper house, steadily building toward that imagined result.",
+      "right": "The protagonist playfully experiments with paper shapes, enjoying discovering what the materials can become.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: A photographed layered cut-paper diorama. Every person, desk and object is made from precisely cut colored paper, visible paper edges, overlapping layers and cast shadows. Flat paper faces with simple eyes, rich dimensional construction.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young paper-cut woman with two black braids, a turquoise apron and a coral long-sleeve top. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: turquoise, coral, ochre and cream.\nSETTING DESIGN: a craft workroom made of folded paper with tidy shelves of materials.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: The protagonist is about to begin a small handmade creative project at a desk with paper, pencils and craft materials.\nMIDDLE PANEL — FIRST REACTION: The protagonist follows a clear sketch of the desired finished paper house, steadily building toward that imagined result.\nBOTTOM PANEL — SECOND REACTION: The protagonist playfully experiments with paper shapes, enjoying discovering what the materials can become.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. A photographed layered cut-paper diorama. Every person, desk and object is made from precisely cut colored paper, visible paper edges, overlapping layers and cast shadows. Flat paper faces with simple eyes, rich dimensional construction.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "4cc41488-d5c3-4f7f-b077-9634bf753bd9"
+    },
+    {
+      "id": "1.2",
+      "prompt": "空出半小时，你打开视频软件，更想看什么？",
+      "options": [
+        "一直在追的内容，接着看就很开心",
+        "首页的陌生主题，说不定打开新世界"
+      ],
+      "seed": 2026101810,
+      "artDirection": {
+        "id": "lowpoly-video",
+        "label": "低多边形三维",
+        "family": "lowpoly",
+        "medium": "Low-poly 3D illustration with obvious faceted polygonal surfaces, angular human characters, simple geometric furniture, ambient occlusion and soft directional light. No drawn outlines, no smooth photoreal faces.",
+        "protagonist": "a young man with an angular dark-blue undercut, an orange T-shirt and slate shorts",
+        "palette": "burnt orange, slate blue, pale gray and soft cyan",
+        "setting": "a minimal apartment with angular furniture and a large modular sofa"
+      },
+      "scene": "At home with half an hour free, the protagonist holds a tablet with a grid of abstract video thumbnails, no readable text.",
+      "left": "Relaxing on the sofa, the protagonist continues a favorite familiar series on the tablet with a content smile.",
+      "right": "On the same sofa the protagonist taps an unfamiliar astronomy documentary, curious about a glowing planet on screen.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Low-poly 3D illustration with obvious faceted polygonal surfaces, angular human characters, simple geometric furniture, ambient occlusion and soft directional light. No drawn outlines, no smooth photoreal faces.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young man with an angular dark-blue undercut, an orange T-shirt and slate shorts. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: burnt orange, slate blue, pale gray and soft cyan.\nSETTING DESIGN: a minimal apartment with angular furniture and a large modular sofa.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: At home with half an hour free, the protagonist holds a tablet with a grid of abstract video thumbnails, no readable text.\nMIDDLE PANEL — FIRST REACTION: Relaxing on the sofa, the protagonist continues a favorite familiar series on the tablet with a content smile.\nBOTTOM PANEL — SECOND REACTION: On the same sofa the protagonist taps an unfamiliar astronomy documentary, curious about a glowing planet on screen.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Low-poly 3D illustration with obvious faceted polygonal surfaces, angular human characters, simple geometric furniture, ambient occlusion and soft directional light. No drawn outlines, no smooth photoreal faces.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "2cf5f9e7-046b-47e5-9275-5ad51041c8ed"
+    },
+    {
+      "id": "2.2",
+      "prompt": "和朋友约了七点见面，按导航刚好能准时到。你会？",
+      "options": [
+        "按算好的时间出门，不用多等",
+        "再提前一点，给路上留些余量"
+      ],
+      "seed": 2026101811,
+      "artDirection": {
+        "id": "midcentury-travel",
+        "label": "复古旅行海报",
+        "family": "poster",
+        "medium": "Mid-century screen-printed travel illustration, strong simplified geometric architecture, flat graphic human silhouettes, limited spot colors, subtle printing texture. Absolutely no poster captions or lettering.",
+        "protagonist": "a young woman with a short chestnut pixie haircut, a navy trench coat and scarlet shoulder bag",
+        "palette": "navy, tomato red, cream and powder blue",
+        "setting": "a walkable tram neighborhood with a cozy corner cafe"
+      },
+      "scene": "Tight portrait of exactly ONE WOMAN: the protagonist checking a phone route in her home. She has the specified short pixie hair, navy trench coat and scarlet bag. Plain wall behind her, no background figures. No man or second person.",
+      "left": "Exactly ONE WOMAN: the SAME pixie-haired protagonist in navy coat with scarlet bag steps OUT THROUGH HER FRONT DOOR. Empty hallway behind her, no other people. One figure only.",
+      "right": "Exactly ONE WOMAN: the SAME pixie-haired protagonist in navy coat is SEATED ALONE beside a cafe window, waiting comfortably with tea. The opposite chair is EMPTY. A close shot showing only this seated woman, the table and the empty chair; no standing figures, no pedestrians, no repeated person.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Mid-century screen-printed travel illustration, strong simplified geometric architecture, flat graphic human silhouettes, limited spot colors, subtle printing texture. Absolutely no poster captions or lettering.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young woman with a short chestnut pixie haircut, a navy trench coat and scarlet shoulder bag. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: navy, tomato red, cream and powder blue.\nSETTING DESIGN: a walkable tram neighborhood with a cozy corner cafe.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Tight portrait of exactly ONE WOMAN: the protagonist checking a phone route in her home. She has the specified short pixie hair, navy trench coat and scarlet bag. Plain wall behind her, no background figures. No man or second person.\nMIDDLE PANEL — FIRST REACTION: Exactly ONE WOMAN: the SAME pixie-haired protagonist in navy coat with scarlet bag steps OUT THROUGH HER FRONT DOOR. Empty hallway behind her, no other people. One figure only.\nBOTTOM PANEL — SECOND REACTION: Exactly ONE WOMAN: the SAME pixie-haired protagonist in navy coat is SEATED ALONE beside a cafe window, waiting comfortably with tea. The opposite chair is EMPTY. A close shot showing only this seated woman, the table and the empty chair; no standing figures, no pedestrians, no repeated person.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Mid-century screen-printed travel illustration, strong simplified geometric architecture, flat graphic human silhouettes, limited spot colors, subtle printing texture. Absolutely no poster captions or lettering.",
+      "sourceVersion": "question-art-v5",
+      "promptId": "720d2f0c-c3d5-4fed-a77a-62b5c1370bf4"
+    },
+    {
+      "id": "3.2",
+      "prompt": "和朋友讨论分歧，对方开始不开心，你更想？",
+      "options": [
+        "先把理由说明白，再一起讨论",
+        "先照顾情绪，平静下来再聊事情"
+      ],
+      "seed": 2026101812,
+      "artDirection": {
+        "id": "charcoal-conversation",
+        "label": "炭笔素描",
+        "family": "drawing",
+        "medium": "Expressive charcoal and white-chalk figure drawing on gray paper. Hand-smudged tonal masses, crisp charcoal accents, realistic human anatomy, sensitive faces, entirely grayscale, visible textured paper.",
+        "protagonist": "a man in his thirties with round glasses, a close-cropped beard and a plain dark cardigan",
+        "palette": "charcoal black, gray paper and white chalk only",
+        "setting": "an intimate quiet tea room with soft window light"
+      },
+      "scene": "Two friends discuss different opinions at a table; one friend looks slightly upset while the protagonist listens.",
+      "left": "The protagonist patiently lays out a simple diagram on paper to explain the reasoning, speaking gently.",
+      "right": "The protagonist puts the paper aside and offers a cup of tea, first attending to the friend's feelings.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Expressive charcoal and white-chalk figure drawing on gray paper. Hand-smudged tonal masses, crisp charcoal accents, realistic human anatomy, sensitive faces, entirely grayscale, visible textured paper.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a man in his thirties with round glasses, a close-cropped beard and a plain dark cardigan. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: charcoal black, gray paper and white chalk only.\nSETTING DESIGN: an intimate quiet tea room with soft window light.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Two friends discuss different opinions at a table; one friend looks slightly upset while the protagonist listens.\nMIDDLE PANEL — FIRST REACTION: The protagonist patiently lays out a simple diagram on paper to explain the reasoning, speaking gently.\nBOTTOM PANEL — SECOND REACTION: The protagonist puts the paper aside and offers a cup of tea, first attending to the friend's feelings.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Expressive charcoal and white-chalk figure drawing on gray paper. Hand-smudged tonal masses, crisp charcoal accents, realistic human anatomy, sensitive faces, entirely grayscale, visible textured paper.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "7b579447-60f6-4a79-9724-fc8e65d3ba52"
+    },
+    {
+      "id": "4.2",
+      "prompt": "聚会突然安静下来，你通常会？",
+      "options": [
+        "主动抛个话题，把大家接起来",
+        "自在地等一等，不急着打破安静"
+      ],
+      "seed": 2026101813,
+      "artDirection": {
+        "id": "fauvist-gathering",
+        "label": "高彩油画",
+        "family": "oil",
+        "medium": "Vibrant modern figurative oil painting with thick palette-knife impasto, expressive visible brushstrokes, saturated nonliteral colors and clear readable gestures. Painterly canvas surface, not cartoon line art.",
+        "protagonist": "a woman with short copper curls, a turquoise blouse and yellow earrings",
+        "palette": "cobalt, orange, turquoise and acid yellow",
+        "setting": "a colorful sunroom with friends around a low coffee table"
+      },
+      "scene": "A quiet moment among FOUR friends seated at a coffee table. the protagonist wears the outfit specified in CHARACTER DESIGN; the others wear ivory, blue and coral. Everyone is quietly relaxed.",
+      "left": "the protagonist in their specified outfit leans forward and SPEAKS with an inviting OPEN HAND gesture. The three friends turn toward this protagonist and smile, joining the new conversation.",
+      "right": "the protagonist in their specified outfit brings a TEACUP to their mouth, eyes softly lowered, enjoying the quiet. The three friends also sit peacefully. Only the protagonist in their specified outfit drinks from a cup.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Vibrant modern figurative oil painting with thick palette-knife impasto, expressive visible brushstrokes, saturated nonliteral colors and clear readable gestures. Painterly canvas surface, not cartoon line art.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a woman with short copper curls, a turquoise blouse and yellow earrings. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: cobalt, orange, turquoise and acid yellow.\nSETTING DESIGN: a colorful sunroom with friends around a low coffee table.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: A quiet moment among FOUR friends seated at a coffee table. the protagonist wears the outfit specified in CHARACTER DESIGN; the others wear ivory, blue and coral. Everyone is quietly relaxed.\nMIDDLE PANEL — FIRST REACTION: the protagonist in their specified outfit leans forward and SPEAKS with an inviting OPEN HAND gesture. The three friends turn toward this protagonist and smile, joining the new conversation.\nBOTTOM PANEL — SECOND REACTION: the protagonist in their specified outfit brings a TEACUP to their mouth, eyes softly lowered, enjoying the quiet. The three friends also sit peacefully. Only the protagonist in their specified outfit drinks from a cup.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Vibrant modern figurative oil painting with thick palette-knife impasto, expressive visible brushstrokes, saturated nonliteral colors and clear readable gestures. Painterly canvas surface, not cartoon line art.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "4cbd21a0-dce1-4488-aad4-189bdfc208d4"
+    },
+    {
+      "id": "5.2",
+      "prompt": "有人主动问你“第一次来吗”，你会？",
+      "options": [
+        "顺势聊下去，可能就认识新朋友了",
+        "礼貌回应几句，继续做自己的事"
+      ],
+      "seed": 2026101814,
+      "artDirection": {
+        "id": "collage-gallery",
+        "label": "拼贴画",
+        "family": "collage",
+        "medium": "Handmade editorial collage from torn colored paper and cropped photographic textures. Cut-out human faces and garments, rough torn edges, playful asymmetrical composition, no text scraps or newspaper lettering.",
+        "protagonist": "a young man with dark curly hair, a cobalt overshirt and beige trousers",
+        "palette": "cobalt, coral pink, kraft brown and white",
+        "setting": "a contemporary art gallery with framed flower paintings and blank walls"
+      },
+      "scene": "Inside an art exhibition with plain walls and framed flower pictures, the curly-haired MALE protagonist in a cobalt overshirt meets a clearly different FEMALE attendee with short red hair and a mustard yellow dress. Only these TWO people. Never duplicate the male protagonist.",
+      "left": "The curly-haired MAN in cobalt turns toward the red-haired WOMAN in mustard. They smile and continue a warm conversation, gesturing toward each other. Keep the TWO distinct identities and outfits. No other people, no writing.",
+      "right": "The curly-haired MAN in cobalt turns to thoughtfully view a framed flower painting after his polite greeting. The red-haired WOMAN in mustard walks away in the background. Two distinct people only; no second blue-shirted man.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Handmade editorial collage from torn colored paper and cropped photographic textures. Cut-out human faces and garments, rough torn edges, playful asymmetrical composition, no text scraps or newspaper lettering.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young man with dark curly hair, a cobalt overshirt and beige trousers. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: cobalt, coral pink, kraft brown and white.\nSETTING DESIGN: a contemporary art gallery with framed flower paintings and blank walls.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Inside an art exhibition with plain walls and framed flower pictures, the curly-haired MALE protagonist in a cobalt overshirt meets a clearly different FEMALE attendee with short red hair and a mustard yellow dress. Only these TWO people. Never duplicate the male protagonist.\nMIDDLE PANEL — FIRST REACTION: The curly-haired MAN in cobalt turns toward the red-haired WOMAN in mustard. They smile and continue a warm conversation, gesturing toward each other. Keep the TWO distinct identities and outfits. No other people, no writing.\nBOTTOM PANEL — SECOND REACTION: The curly-haired MAN in cobalt turns to thoughtfully view a framed flower painting after his polite greeting. The red-haired WOMAN in mustard walks away in the background. Two distinct people only; no second blue-shirted man.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Handmade editorial collage from torn colored paper and cropped photographic textures. Cut-out human faces and garments, rough torn edges, playful asymmetrical composition, no text scraps or newspaper lettering.",
+      "sourceVersion": "question-art-v5",
+      "promptId": "8fd7ace0-f5db-4806-9c90-6fdde8ac6564"
+    },
+    {
+      "id": "6.2",
+      "prompt": "你刚学的东西，朋友说自己早就会了。你会？",
+      "options": [
+        "正好请教一下，按自己的节奏学",
+        "有点受刺激，想尽快追上他的水平"
+      ],
+      "seed": 2026101815,
+      "artDirection": {
+        "id": "clearline-comic",
+        "label": "欧式清线漫画",
+        "family": "comic",
+        "medium": "European clear-line comic drawing, precise uniform fine black outlines, flat bright colors without hatching, detailed readable environments, expressive natural human faces. No text or speech balloons.",
+        "protagonist": "a young woman with a strawberry-blonde ponytail, a cherry red turtleneck and denim overalls",
+        "palette": "cherry red, sky blue, butter yellow and clean white",
+        "setting": "a small neighborhood drawing class with wooden worktables"
+      },
+      "scene": "At a drawing table the protagonist practices a new skill beside ONE experienced friend: a dark-haired woman with round glasses and a pale yellow shirt. The protagonist keeps the strawberry ponytail, red turtleneck and denim overalls.",
+      "left": "Close view of TWO distinct people: the dark-haired FRIEND in pale yellow demonstrates a pencil stroke with her hand on the paper; the strawberry-haired PROTAGONIST in red WATCHES her friend's hand attentively, having put her own pencil down to ask and learn.",
+      "right": "Close view of the strawberry-haired PROTAGONIST in red ACTIVELY DRAWING with renewed focus, leaning forward over her own sketch and holding her own pencil. The dark-haired friend is a smaller figure in the background. A clear change from watching a demonstration to doing her own intensive practice.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: European clear-line comic drawing, precise uniform fine black outlines, flat bright colors without hatching, detailed readable environments, expressive natural human faces. No text or speech balloons.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young woman with a strawberry-blonde ponytail, a cherry red turtleneck and denim overalls. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: cherry red, sky blue, butter yellow and clean white.\nSETTING DESIGN: a small neighborhood drawing class with wooden worktables.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: At a drawing table the protagonist practices a new skill beside ONE experienced friend: a dark-haired woman with round glasses and a pale yellow shirt. The protagonist keeps the strawberry ponytail, red turtleneck and denim overalls.\nMIDDLE PANEL — FIRST REACTION: Close view of TWO distinct people: the dark-haired FRIEND in pale yellow demonstrates a pencil stroke with her hand on the paper; the strawberry-haired PROTAGONIST in red WATCHES her friend's hand attentively, having put her own pencil down to ask and learn.\nBOTTOM PANEL — SECOND REACTION: Close view of the strawberry-haired PROTAGONIST in red ACTIVELY DRAWING with renewed focus, leaning forward over her own sketch and holding her own pencil. The dark-haired friend is a smaller figure in the background. A clear change from watching a demonstration to doing her own intensive practice.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. European clear-line comic drawing, precise uniform fine black outlines, flat bright colors without hatching, detailed readable environments, expressive natural human faces. No text or speech balloons.",
+      "sourceVersion": "question-art-v5",
+      "promptId": "5dffb75b-601f-4cdc-9094-931ba6d42ae5"
+    },
+    {
+      "id": "7.2",
+      "prompt": "喜欢的事迟迟没进展，另一个方向更容易出成果。你会？",
+      "options": [
+        "试试新方向，现在的机会也值得抓",
+        "再给喜欢的事一些时间，还想继续"
+      ],
+      "seed": 2026101816,
+      "artDirection": {
+        "id": "cel-animation",
+        "label": "赛璐璐动画",
+        "family": "animation",
+        "medium": "Hand-painted 1990s cel animation stills, clean expressive anime faces, crisp two-tone cel shadows, detailed painted backgrounds, subtle analog film texture. Distinct traditional animation production design.",
+        "protagonist": "a young man with navy-black hair tied in a short ponytail, an ivory shirt and a red artist apron",
+        "palette": "deep red, ivory, muted violet and sky blue",
+        "setting": "a personal art studio with an easel, colored paper and a broad daylight window"
+      },
+      "scene": "ALONE at a creative worktable the protagonist considers an unfinished watercolor landscape and colorful origami paper.",
+      "left": "The protagonist makes a colorful PAPER CRANE with BOTH HANDS folding paper. The watercolor is turned face down in the background, brushes are put away. Clearly show an origami crane in the hands. One person only.",
+      "right": "The protagonist holds a PAINTBRUSH and patiently paints the cherished watercolor landscape on an upright easel. Origami paper is put away, the brush touches the painting. One person only.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Hand-painted 1990s cel animation stills, clean expressive anime faces, crisp two-tone cel shadows, detailed painted backgrounds, subtle analog film texture. Distinct traditional animation production design.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young man with navy-black hair tied in a short ponytail, an ivory shirt and a red artist apron. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: deep red, ivory, muted violet and sky blue.\nSETTING DESIGN: a personal art studio with an easel, colored paper and a broad daylight window.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: ALONE at a creative worktable the protagonist considers an unfinished watercolor landscape and colorful origami paper.\nMIDDLE PANEL — FIRST REACTION: The protagonist makes a colorful PAPER CRANE with BOTH HANDS folding paper. The watercolor is turned face down in the background, brushes are put away. Clearly show an origami crane in the hands. One person only.\nBOTTOM PANEL — SECOND REACTION: The protagonist holds a PAINTBRUSH and patiently paints the cherished watercolor landscape on an upright easel. Origami paper is put away, the brush touches the painting. One person only.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Hand-painted 1990s cel animation stills, clean expressive anime faces, crisp two-tone cel shadows, detailed painted backgrounds, subtle analog film texture. Distinct traditional animation production design.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "34066d82-9564-44e0-bc65-7e66d743b0b1"
+    },
+    {
+      "id": "8.2",
+      "prompt": "两种生活地图摆在面前，你更愿意选哪张？",
+      "options": [
+        "路标清楚，能到达期待的地方",
+        "留着很多空白，可以画自己的路"
+      ],
+      "seed": 2026101817,
+      "artDirection": {
+        "id": "isometric-maps",
+        "label": "等距微缩模型",
+        "family": "diorama",
+        "medium": "Isometric 3D miniature world photographed from a consistent elevated three-quarter angle. Tiny articulated human figurines, precise scale-model props, soft shadows, clean toy-like materials, tilt-shift depth of field.",
+        "protagonist": "a miniature woman with a black topknot, a tangerine jacket and white sneakers",
+        "palette": "tangerine, teal, sand and white",
+        "setting": "a tiny mapmaker's home studio with miniature hills and route maps on a large desk"
+      },
+      "scene": "ONE PERSON ONLY: The protagonist unfolds TWO MAPS on a wooden table: one has a clear single colored route toward a little house icon; the other has wide blank areas. No text.",
+      "left": "ONE PERSON ONLY: The protagonist chooses the FIRST map and traces its already marked route with a finger, the little destination house visible. No pencil in hand.",
+      "right": "ONE PERSON ONLY: The protagonist chooses the SECOND mostly blank map and uses a PENCIL to draw a new personal winding route across its open space. The first map is rolled up at the side.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Isometric 3D miniature world photographed from a consistent elevated three-quarter angle. Tiny articulated human figurines, precise scale-model props, soft shadows, clean toy-like materials, tilt-shift depth of field.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a miniature woman with a black topknot, a tangerine jacket and white sneakers. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: tangerine, teal, sand and white.\nSETTING DESIGN: a tiny mapmaker's home studio with miniature hills and route maps on a large desk.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: ONE PERSON ONLY: The protagonist unfolds TWO MAPS on a wooden table: one has a clear single colored route toward a little house icon; the other has wide blank areas. No text.\nMIDDLE PANEL — FIRST REACTION: ONE PERSON ONLY: The protagonist chooses the FIRST map and traces its already marked route with a finger, the little destination house visible. No pencil in hand.\nBOTTOM PANEL — SECOND REACTION: ONE PERSON ONLY: The protagonist chooses the SECOND mostly blank map and uses a PENCIL to draw a new personal winding route across its open space. The first map is rolled up at the side.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Isometric 3D miniature world photographed from a consistent elevated three-quarter angle. Tiny articulated human figurines, precise scale-model props, soft shadows, clean toy-like materials, tilt-shift depth of field.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "c28a4b89-b4d6-4968-b6c2-d28a7635a5db"
+    },
+    {
+      "id": "9.2",
+      "prompt": "和很亲近的人相处，哪种日常更让你舒服？",
+      "options": [
+        "彼此在意，也保留一点私人空间",
+        "很多小事都想分享，常常保持联系"
+      ],
+      "seed": 2026101818,
+      "artDirection": {
+        "id": "needlefelt-home",
+        "label": "羊毛毡定格",
+        "family": "felt",
+        "medium": "Handmade needle-felt wool puppet photography. Soft fuzzy fibers visible on human puppet faces, clothes and furniture, tiny stitched details, cozy stop-motion set lighting. Material must clearly be fuzzy wool, not smooth clay.",
+        "protagonist": "a felt young woman with dark yarn hair in a bun, a lilac cardigan and a mustard skirt",
+        "palette": "lilac, mustard, dusty pink and oatmeal",
+        "setting": "a cozy wool-felt living room with a sofa, separate armchair and a knitted rug"
+      },
+      "scene": "TWO PEOPLE: the protagonist in a outfit specified in CHARACTER DESIGN and the friend in a CORAL SWEATER share tea in a comfortable living room. The specified character designs stay the same in all panels.",
+      "left": "the protagonist in their specified outfit reads a book in an ARMCHAIR on the left; the CORAL-clad friend listens to headphones on the SOFA on the right. Separate comfortable spaces, same room, independent activities. Keep the protagonist and friend outfits unchanged.",
+      "right": "the protagonist in their specified outfit and CORAL-clad friend sit CLOSE TOGETHER on the sofa, happily sharing a phone photo and talking. Keep the protagonist and friend outfits unchanged.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Handmade needle-felt wool puppet photography. Soft fuzzy fibers visible on human puppet faces, clothes and furniture, tiny stitched details, cozy stop-motion set lighting. Material must clearly be fuzzy wool, not smooth clay.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a felt young woman with dark yarn hair in a bun, a lilac cardigan and a mustard skirt. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: lilac, mustard, dusty pink and oatmeal.\nSETTING DESIGN: a cozy wool-felt living room with a sofa, separate armchair and a knitted rug.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: TWO PEOPLE: the protagonist in a outfit specified in CHARACTER DESIGN and the friend in a CORAL SWEATER share tea in a comfortable living room. The specified character designs stay the same in all panels.\nMIDDLE PANEL — FIRST REACTION: the protagonist in their specified outfit reads a book in an ARMCHAIR on the left; the CORAL-clad friend listens to headphones on the SOFA on the right. Separate comfortable spaces, same room, independent activities. Keep the protagonist and friend outfits unchanged.\nBOTTOM PANEL — SECOND REACTION: the protagonist in their specified outfit and CORAL-clad friend sit CLOSE TOGETHER on the sofa, happily sharing a phone photo and talking. Keep the protagonist and friend outfits unchanged.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Handmade needle-felt wool puppet photography. Soft fuzzy fibers visible on human puppet faces, clothes and furniture, tiny stitched details, cozy stop-motion set lighting. Material must clearly be fuzzy wool, not smooth clay.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "4ec82dca-6da4-4342-aa76-cf2278013d3c"
+    },
+    {
+      "id": "10.2",
+      "prompt": "出门办事，路上发现一条很有意思的小街。你会？",
+      "options": [
+        "先把原定的事办完，再考虑绕回来",
+        "进去逛逛，沿途的发现也很重要"
+      ],
+      "seed": 2026101819,
+      "artDirection": {
+        "id": "neon-street-film",
+        "label": "霓虹都市摄影",
+        "family": "photography",
+        "medium": "Cinematic live-action night street photography, realistic human, rain-polished pavement, luminous cyan and coral shop lights, deep shadows, sharp skin texture with soft bokeh. No illustrations or cartoon faces.",
+        "protagonist": "a young woman with a chin-length silver bob, a charcoal coat and a bright coral scarf",
+        "palette": "cyan neon, coral neon, deep navy and rain-gray",
+        "setting": "a contemporary city street at blue hour, parcel counter and a glowing flower shop; no legible signage"
+      },
+      "scene": "At a street junction, the protagonist carrying a small parcel notices an inviting side alley with a colorful flower shop.",
+      "left": "At a POST OFFICE counter, the protagonist hands over the parcel to a clerk, completing the original errand. An indoor postal counter with shelves and packages. No flower shop, no street.",
+      "right": "INSIDE THE FLOWER SHOP in the side alley, the protagonist still carrying the parcel pauses to admire colorful flowers and little ceramics. A relaxed curious discovery, no post office.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Cinematic live-action night street photography, realistic human, rain-polished pavement, luminous cyan and coral shop lights, deep shadows, sharp skin texture with soft bokeh. No illustrations or cartoon faces.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young woman with a chin-length silver bob, a charcoal coat and a bright coral scarf. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: cyan neon, coral neon, deep navy and rain-gray.\nSETTING DESIGN: a contemporary city street at blue hour, parcel counter and a glowing flower shop; no legible signage.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: At a street junction, the protagonist carrying a small parcel notices an inviting side alley with a colorful flower shop.\nMIDDLE PANEL — FIRST REACTION: At a POST OFFICE counter, the protagonist hands over the parcel to a clerk, completing the original errand. An indoor postal counter with shelves and packages. No flower shop, no street.\nBOTTOM PANEL — SECOND REACTION: INSIDE THE FLOWER SHOP in the side alley, the protagonist still carrying the parcel pauses to admire colorful flowers and little ceramics. A relaxed curious discovery, no post office.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Cinematic live-action night street photography, realistic human, rain-polished pavement, luminous cyan and coral shop lights, deep shadows, sharp skin texture with soft bokeh. No illustrations or cartoon faces.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "9806db50-c093-4be7-a7f3-600b20616862"
+    },
+    {
+      "id": "1.3",
+      "prompt": "朋友对你很确定的一件事提出了新解释，你会？",
+      "options": [
+        "追问一下，也许有我没见过的角度",
+        "先保留判断，熟悉的经验更让我信服"
+      ],
+      "seed": 2026101820,
+      "artDirection": {
+        "id": "colored-pencil-debate",
+        "label": "彩铅速写",
+        "family": "pencil",
+        "medium": "Hand-drawn colored-pencil illustration on ivory sketch paper, overlapping pencil hatch marks, soft uneven outlines, delicate human portrait detail, visibly dry wax-pencil texture.",
+        "protagonist": "a young woman with dark curly hair and round brass glasses, wearing a lavender knit vest over a white blouse",
+        "palette": "lavender, sepia, leaf green and ivory",
+        "setting": "a small book cafe with mismatched chairs and generous natural light"
+      },
+      "scene": "Two friends sit over coffee discussing a familiar topic, one friend offers a new explanation with a gentle hand gesture.",
+      "left": "The protagonist leans forward with an open notebook and an inquisitive gesture, asking about the new perspective.",
+      "right": "The protagonist calmly considers the explanation while referring to their own well-used notebook of experience.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Hand-drawn colored-pencil illustration on ivory sketch paper, overlapping pencil hatch marks, soft uneven outlines, delicate human portrait detail, visibly dry wax-pencil texture.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young woman with dark curly hair and round brass glasses, wearing a lavender knit vest over a white blouse. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: lavender, sepia, leaf green and ivory.\nSETTING DESIGN: a small book cafe with mismatched chairs and generous natural light.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Two friends sit over coffee discussing a familiar topic, one friend offers a new explanation with a gentle hand gesture.\nMIDDLE PANEL — FIRST REACTION: The protagonist leans forward with an open notebook and an inquisitive gesture, asking about the new perspective.\nBOTTOM PANEL — SECOND REACTION: The protagonist calmly considers the explanation while referring to their own well-used notebook of experience.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Hand-drawn colored-pencil illustration on ivory sketch paper, overlapping pencil hatch marks, soft uneven outlines, delicate human portrait detail, visibly dry wax-pencil texture.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "69c412d5-f808-4748-8c04-14ba930352f6"
+    },
+    {
+      "id": "2.3",
+      "prompt": "明早要赶早班车，你今晚更可能怎么准备？",
+      "options": [
+        "东西装好，路线和闹钟都确认",
+        "带上必需品，明早看情况再安排"
+      ],
+      "seed": 2026101821,
+      "artDirection": {
+        "id": "manga-night",
+        "label": "黑白日漫",
+        "family": "manga",
+        "medium": "Black-and-white manga pages with controlled fine ink linework, crisp black shapes, screentone gradients and expressive but natural human faces. Monochrome only, no captions, no speech bubbles.",
+        "protagonist": "a young man with straight black hair falling over one eyebrow, a striped pajama shirt and dark lounge trousers",
+        "palette": "pure black, white and gray screentone only",
+        "setting": "a compact bedroom at night with a travel bag, bedside lamp and alarm clock"
+      },
+      "scene": "The protagonist is preparing for an early morning train, with a small travel bag and essentials in a bedroom at night.",
+      "left": "The travel bag is fully packed, clothes laid out and phone alarm set beside the bed; the protagonist checks the route.",
+      "right": "The protagonist places just a few essentials in a light bag and gets ready to sleep, leaving details for the morning.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Black-and-white manga pages with controlled fine ink linework, crisp black shapes, screentone gradients and expressive but natural human faces. Monochrome only, no captions, no speech bubbles.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young man with straight black hair falling over one eyebrow, a striped pajama shirt and dark lounge trousers. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: pure black, white and gray screentone only.\nSETTING DESIGN: a compact bedroom at night with a travel bag, bedside lamp and alarm clock.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: The protagonist is preparing for an early morning train, with a small travel bag and essentials in a bedroom at night.\nMIDDLE PANEL — FIRST REACTION: The travel bag is fully packed, clothes laid out and phone alarm set beside the bed; the protagonist checks the route.\nBOTTOM PANEL — SECOND REACTION: The protagonist places just a few essentials in a light bag and gets ready to sleep, leaving details for the morning.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Black-and-white manga pages with controlled fine ink linework, crisp black shapes, screentone gradients and expressive but natural human faces. Monochrome only, no captions, no speech bubbles.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "29351043-bb85-466a-bc70-7a7240435f2c"
+    },
+    {
+      "id": "3.3",
+      "prompt": "小组里两个人争起来，请你帮忙判断，你会先？",
+      "options": [
+        "听清各自的依据，看看哪边说得通",
+        "弄清各自的感受，先缓和下来"
+      ],
+      "seed": 2026101822,
+      "artDirection": {
+        "id": "geometric-editorial",
+        "label": "几何扁平插画",
+        "family": "flat",
+        "medium": "Bold contemporary geometric editorial illustration. Simplified human figures built from clean shapes, oversized expressive hands, flat solid colors, no painterly texture, no 3D shading, crisp edges.",
+        "protagonist": "a young Black man with close-cropped hair, a coral jacket and a navy T-shirt",
+        "palette": "coral, navy, mint and pale peach",
+        "setting": "an open coworking room with a simple rectangular collaboration table"
+      },
+      "scene": "Two teammates disagree at a shared worktable and turn to the protagonist to help them work it out.",
+      "left": "The protagonist carefully compares both teammates' notes laid side by side, hearing the evidence from each.",
+      "right": "The protagonist listens warmly to both teammates, inviting them to sit and settle their emotions together.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Bold contemporary geometric editorial illustration. Simplified human figures built from clean shapes, oversized expressive hands, flat solid colors, no painterly texture, no 3D shading, crisp edges.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young Black man with close-cropped hair, a coral jacket and a navy T-shirt. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: coral, navy, mint and pale peach.\nSETTING DESIGN: an open coworking room with a simple rectangular collaboration table.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Two teammates disagree at a shared worktable and turn to the protagonist to help them work it out.\nMIDDLE PANEL — FIRST REACTION: The protagonist carefully compares both teammates' notes laid side by side, hearing the evidence from each.\nBOTTOM PANEL — SECOND REACTION: The protagonist listens warmly to both teammates, inviting them to sit and settle their emotions together.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Bold contemporary geometric editorial illustration. Simplified human figures built from clean shapes, oversized expressive hands, flat solid colors, no painterly texture, no 3D shading, crisp edges.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "2a5fc9c4-52ca-4b26-acad-aab3a8a53b4f"
+    },
+    {
+      "id": "4.3",
+      "prompt": "朋友发来一个奇怪的小谜题，你第一反应是？",
+      "options": [
+        "先解出来，看看答案是什么",
+        "他为什么问这个，背后有故事吗"
+      ],
+      "seed": 2026101823,
+      "artDirection": {
+        "id": "cyanotype-mystery",
+        "label": "蓝晒插画",
+        "family": "cyanotype",
+        "medium": "Cyanotype-inspired photographic illustration, deep Prussian blue silhouettes and white illuminated details on textured blue paper, poetic photographic contours, visible chemical-print texture. Blue and white only, not regular color cartoon.",
+        "protagonist": "a woman with a high ponytail, round glasses and a white button-up shirt",
+        "palette": "Prussian blue, pale cyan and white only",
+        "setting": "a quiet desk by a window, a phone and geometric puzzle notes"
+      },
+      "scene": "At a desk the protagonist receives a curious visual puzzle from a friend on a phone; the puzzle is abstract geometric shapes.",
+      "left": "The protagonist sketches possible solutions on paper and studies the geometric puzzle with focused curiosity.",
+      "right": "The protagonist thoughtfully looks at the friend's small avatar and abstract chat bubbles, wondering about the story behind the puzzle.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Cyanotype-inspired photographic illustration, deep Prussian blue silhouettes and white illuminated details on textured blue paper, poetic photographic contours, visible chemical-print texture. Blue and white only, not regular color cartoon.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a woman with a high ponytail, round glasses and a white button-up shirt. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: Prussian blue, pale cyan and white only.\nSETTING DESIGN: a quiet desk by a window, a phone and geometric puzzle notes.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: At a desk the protagonist receives a curious visual puzzle from a friend on a phone; the puzzle is abstract geometric shapes.\nMIDDLE PANEL — FIRST REACTION: The protagonist sketches possible solutions on paper and studies the geometric puzzle with focused curiosity.\nBOTTOM PANEL — SECOND REACTION: The protagonist thoughtfully looks at the friend's small avatar and abstract chat bubbles, wondering about the story behind the puzzle.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Cyanotype-inspired photographic illustration, deep Prussian blue silhouettes and white illuminated details on textured blue paper, poetic photographic contours, visible chemical-print texture. Blue and white only, not regular color cartoon.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "7df18b48-e984-49ad-930a-954aefcb254d"
+    },
+    {
+      "id": "5.3",
+      "prompt": "刚认识的人说“改天一起玩”，你通常会？",
+      "options": [
+        "接着约时间，让下次真的发生",
+        "先留着联系，等合适的机会再说"
+      ],
+      "seed": 2026101824,
+      "artDirection": {
+        "id": "soft-3d-animation",
+        "label": "柔光三维动画",
+        "family": "3d-animation",
+        "medium": "High-quality stylized 3D animated-film stills, appealing rounded adult human characters, sculpted hair, detailed fabric materials, soft subsurface lighting and cinematic depth. No 2D painted outlines.",
+        "protagonist": "a young woman with a voluminous dark curly bob, a sunflower yellow bomber jacket and white sneakers",
+        "palette": "sunflower yellow, aqua, cream and soft plum",
+        "setting": "a bright modern coffee shop entrance with glass doors and potted plants"
+      },
+      "scene": "Exactly TWO distinct adults chat at a cafe doorway: the protagonist is a curly-haired WOMAN in a YELLOW bomber jacket. The newly acquainted friend is an East Asian MAN with short straight black hair and a TEAL jacket. One yellow-clad woman and one teal-clad man, never two copies of the woman.",
+      "left": "The curly-haired WOMAN in YELLOW opens her phone calendar and the short-haired MAN in TEAL looks at it as they choose a concrete date, both smiling. Keep these two distinct people and outfits.",
+      "right": "The SAME curly-haired woman in yellow and short-haired man in teal wave goodbye with their phones put away, leaving another meeting open for a suitable time. Exactly two distinct people, no duplicated yellow jackets.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: High-quality stylized 3D animated-film stills, appealing rounded adult human characters, sculpted hair, detailed fabric materials, soft subsurface lighting and cinematic depth. No 2D painted outlines.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young woman with a voluminous dark curly bob, a sunflower yellow bomber jacket and white sneakers. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: sunflower yellow, aqua, cream and soft plum.\nSETTING DESIGN: a bright modern coffee shop entrance with glass doors and potted plants.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Exactly TWO distinct adults chat at a cafe doorway: the protagonist is a curly-haired WOMAN in a YELLOW bomber jacket. The newly acquainted friend is an East Asian MAN with short straight black hair and a TEAL jacket. One yellow-clad woman and one teal-clad man, never two copies of the woman.\nMIDDLE PANEL — FIRST REACTION: The curly-haired WOMAN in YELLOW opens her phone calendar and the short-haired MAN in TEAL looks at it as they choose a concrete date, both smiling. Keep these two distinct people and outfits.\nBOTTOM PANEL — SECOND REACTION: The SAME curly-haired woman in yellow and short-haired man in teal wave goodbye with their phones put away, leaving another meeting open for a suitable time. Exactly two distinct people, no duplicated yellow jackets.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. High-quality stylized 3D animated-film stills, appealing rounded adult human characters, sculpted hair, detailed fabric materials, soft subsurface lighting and cinematic depth. No 2D painted outlines.",
+      "sourceVersion": "question-art-v5",
+      "promptId": "997cdd9b-7815-4b8c-9363-e6e46cd9a321"
+    },
+    {
+      "id": "6.3",
+      "prompt": "大家都在晒最近的成果，你更自然的反应是？",
+      "options": [
+        "看看就好，接着做自己的事",
+        "多看几遍，确认自己有没有掉队"
+      ],
+      "seed": 2026101825,
+      "artDirection": {
+        "id": "duotone-photography",
+        "label": "黑白街拍人物",
+        "family": "photography",
+        "medium": "Black-and-white documentary lifestyle photography of a real adult human, strong window light, rich silver-gelatin tones, candid expression, realistic skin and clothes, subtle photographic grain. No illustration.",
+        "protagonist": "a man in his thirties with a shaved head, dark rectangular glasses and a white ribbed sweater",
+        "palette": "silver black, pearl white and neutral grays only",
+        "setting": "a modest modern apartment with a phone, notebook and a small creative workbench"
+      },
+      "scene": "At home the protagonist browses a phone feed of friends' recent creative achievements, abstract thumbnails without words.",
+      "left": "The protagonist puts the phone aside after a brief look and contentedly continues their own small project.",
+      "right": "The protagonist takes a closer second look at the achievements and compares them with their own progress notes.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Black-and-white documentary lifestyle photography of a real adult human, strong window light, rich silver-gelatin tones, candid expression, realistic skin and clothes, subtle photographic grain. No illustration.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a man in his thirties with a shaved head, dark rectangular glasses and a white ribbed sweater. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: silver black, pearl white and neutral grays only.\nSETTING DESIGN: a modest modern apartment with a phone, notebook and a small creative workbench.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: At home the protagonist browses a phone feed of friends' recent creative achievements, abstract thumbnails without words.\nMIDDLE PANEL — FIRST REACTION: The protagonist puts the phone aside after a brief look and contentedly continues their own small project.\nBOTTOM PANEL — SECOND REACTION: The protagonist takes a closer second look at the achievements and compares them with their own progress notes.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Black-and-white documentary lifestyle photography of a real adult human, strong window light, rich silver-gelatin tones, candid expression, realistic skin and clothes, subtle photographic grain. No illustration.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "3fd54191-3381-4de4-8447-e7ed22ff3037"
+    },
+    {
+      "id": "7.3",
+      "prompt": "很在意的目标遇到变化，需要改掉大半计划。你会？",
+      "options": [
+        "重新看看现在想要什么，目标也能换",
+        "方式可以换，核心愿望还想留住"
+      ],
+      "seed": 2026101826,
+      "artDirection": {
+        "id": "wooden-puppet",
+        "label": "木偶微缩片场",
+        "family": "wood",
+        "medium": "Photographed hand-carved wooden human puppets in a miniature workshop. Visible wood grain, simple painted eyes, articulated joints, tiny fabric clothes and warm cinematic practical light. Clearly real wooden objects.",
+        "protagonist": "a wooden young man puppet with carved brown hair, a brick-red fabric vest and cream sleeves",
+        "palette": "walnut brown, brick red, cream and muted blue",
+        "setting": "a tiny architectural craft workshop with a model house, model boat and loose planning cards"
+      },
+      "scene": "ONE PERSON ONLY: The protagonist at a desk studies a difficult plan for a handmade MODEL HOUSE, surrounded by loose blank planning cards and craft tools.",
+      "left": "ONE PERSON ONLY: The protagonist explores a NEW GOAL, putting the model house aside and beginning to design a small MODEL BOAT with folded paper. The boat is clearly different from a house.",
+      "right": "ONE PERSON ONLY: The protagonist keeps the original MODEL HOUSE as the cherished goal, using DIFFERENT materials to rebuild its roof while rearranging the blank planning cards. Still a house, not a boat.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Photographed hand-carved wooden human puppets in a miniature workshop. Visible wood grain, simple painted eyes, articulated joints, tiny fabric clothes and warm cinematic practical light. Clearly real wooden objects.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a wooden young man puppet with carved brown hair, a brick-red fabric vest and cream sleeves. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: walnut brown, brick red, cream and muted blue.\nSETTING DESIGN: a tiny architectural craft workshop with a model house, model boat and loose planning cards.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: ONE PERSON ONLY: The protagonist at a desk studies a difficult plan for a handmade MODEL HOUSE, surrounded by loose blank planning cards and craft tools.\nMIDDLE PANEL — FIRST REACTION: ONE PERSON ONLY: The protagonist explores a NEW GOAL, putting the model house aside and beginning to design a small MODEL BOAT with folded paper. The boat is clearly different from a house.\nBOTTOM PANEL — SECOND REACTION: ONE PERSON ONLY: The protagonist keeps the original MODEL HOUSE as the cherished goal, using DIFFERENT materials to rebuild its roof while rearranging the blank planning cards. Still a house, not a boat.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Photographed hand-carved wooden human puppets in a miniature workshop. Visible wood grain, simple painted eyes, articulated joints, tiny fabric clothes and warm cinematic practical light. Clearly real wooden objects.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "77fe1c49-4fb4-4846-98cc-ac2b08d4ca1f"
+    },
+    {
+      "id": "8.3",
+      "prompt": "大家说“这件事一直就是这么做的”，你会？",
+      "options": [
+        "现有做法能用，先按惯例推进",
+        "问问为什么，也许有另一种办法"
+      ],
+      "seed": 2026101827,
+      "artDirection": {
+        "id": "blueprint-linework",
+        "label": "技术蓝图插画",
+        "family": "technical",
+        "medium": "Elegant architectural blueprint drawing with fine white and cyan technical linework on deep blue paper. Human figures and furniture drawn as precise outlined forms, a few orange accents, no numbers or annotations.",
+        "protagonist": "a woman with a short asymmetrical haircut, an orange work jacket and rolled-up sleeves",
+        "palette": "blueprint navy, cyan, white and small orange accents",
+        "setting": "a maker workshop with worktables and rows of small storage boxes"
+      },
+      "scene": "A small team demonstrates a familiar routine using organized boxes at a worktable while the protagonist observes.",
+      "left": "The protagonist comfortably follows the established process, arranging the boxes in the familiar sequence with teammates.",
+      "right": "The protagonist asks a curious question and sketches an alternative arrangement beside the same boxes.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Elegant architectural blueprint drawing with fine white and cyan technical linework on deep blue paper. Human figures and furniture drawn as precise outlined forms, a few orange accents, no numbers or annotations.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a woman with a short asymmetrical haircut, an orange work jacket and rolled-up sleeves. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: blueprint navy, cyan, white and small orange accents.\nSETTING DESIGN: a maker workshop with worktables and rows of small storage boxes.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: A small team demonstrates a familiar routine using organized boxes at a worktable while the protagonist observes.\nMIDDLE PANEL — FIRST REACTION: The protagonist comfortably follows the established process, arranging the boxes in the familiar sequence with teammates.\nBOTTOM PANEL — SECOND REACTION: The protagonist asks a curious question and sketches an alternative arrangement beside the same boxes.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Elegant architectural blueprint drawing with fine white and cyan technical linework on deep blue paper. Human figures and furniture drawn as precise outlined forms, a few orange accents, no numbers or annotations.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "84172c98-b3d9-49ac-9592-2f5effb5bba5"
+    },
+    {
+      "id": "9.3",
+      "prompt": "朋友群里总在分享吃了什么、走到哪里，你通常？",
+      "options": [
+        "偶尔看看，自己的日常留给自己",
+        "也发一点小事，参与彼此的生活"
+      ],
+      "seed": 2026101828,
+      "artDirection": {
+        "id": "gouache-food",
+        "label": "美食广告水粉",
+        "family": "gouache",
+        "medium": "Playful hand-painted food editorial in opaque gouache, broad brush shapes, creamy paint texture, friendly rounded human faces, exaggerated appetizing food colors, bold simple compositions.",
+        "protagonist": "a young woman with long dark hair in a low braid, a white T-shirt and bright orange dungarees",
+        "palette": "tomato orange, peach, turquoise and cream",
+        "setting": "a small breakfast nook with a single diner, a noodle bowl and a phone"
+      },
+      "scene": "ONE PERSON ONLY: the protagonist in their specified outfit looks at their phone while seated at a small table with a bowl of noodles. Show the back of the phone, no text or bubbles.",
+      "left": "ONE PERSON ONLY: The phone is clearly FACE DOWN on the table. the protagonist in their specified outfit is EATING noodles with chopsticks, enjoying a private meal, NOT looking at or holding the phone.",
+      "right": "ONE PERSON ONLY: Before eating, the protagonist in their specified outfit HOLDS THE PHONE ABOVE THE BOWL to take a food photo for friends. Chopsticks rest on the table. Clearly a photographing gesture, no speech bubbles.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Playful hand-painted food editorial in opaque gouache, broad brush shapes, creamy paint texture, friendly rounded human faces, exaggerated appetizing food colors, bold simple compositions.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young woman with long dark hair in a low braid, a white T-shirt and bright orange dungarees. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: tomato orange, peach, turquoise and cream.\nSETTING DESIGN: a small breakfast nook with a single diner, a noodle bowl and a phone.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: ONE PERSON ONLY: the protagonist in their specified outfit looks at their phone while seated at a small table with a bowl of noodles. Show the back of the phone, no text or bubbles.\nMIDDLE PANEL — FIRST REACTION: ONE PERSON ONLY: The phone is clearly FACE DOWN on the table. the protagonist in their specified outfit is EATING noodles with chopsticks, enjoying a private meal, NOT looking at or holding the phone.\nBOTTOM PANEL — SECOND REACTION: ONE PERSON ONLY: Before eating, the protagonist in their specified outfit HOLDS THE PHONE ABOVE THE BOWL to take a food photo for friends. Chopsticks rest on the table. Clearly a photographing gesture, no speech bubbles.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Playful hand-painted food editorial in opaque gouache, broad brush shapes, creamy paint texture, friendly rounded human faces, exaggerated appetizing food colors, bold simple compositions.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "b431cdf8-64ab-4cd0-aa42-a7a53dd0885f"
+    },
+    {
+      "id": "10.3",
+      "prompt": "几场想去的活动撞了时间，你更倾向？",
+      "options": [
+        "挑最想去的一场，从头体验到尾",
+        "每场感受一点，多看看不同内容"
+      ],
+      "seed": 2026101829,
+      "artDirection": {
+        "id": "embroidery-festival",
+        "label": "刺绣布艺",
+        "family": "textile",
+        "medium": "Hand-embroidered textile illustration photographed in detail. Every human and object rendered in colored thread and fabric applique, visible stitch direction and linen weave, tidy stitched faces, soft textile relief.",
+        "protagonist": "a young embroidered man with black thread hair, a vivid blue jacket and a yellow backpack",
+        "palette": "royal blue, yellow, red thread and natural linen",
+        "setting": "a cheerful community arts venue with music, crafts and small picture displays"
+      },
+      "scene": "The protagonist studies several nearby community activities happening at the same time: music, craft and a small exhibition.",
+      "left": "The protagonist settles into the chosen craft workshop, absorbed in experiencing one activity from start to finish.",
+      "right": "The protagonist moves between the neighboring activities, enjoying glimpses of the music, crafts and exhibition.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Hand-embroidered textile illustration photographed in detail. Every human and object rendered in colored thread and fabric applique, visible stitch direction and linen weave, tidy stitched faces, soft textile relief.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young embroidered man with black thread hair, a vivid blue jacket and a yellow backpack. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: royal blue, yellow, red thread and natural linen.\nSETTING DESIGN: a cheerful community arts venue with music, crafts and small picture displays.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: The protagonist studies several nearby community activities happening at the same time: music, craft and a small exhibition.\nMIDDLE PANEL — FIRST REACTION: The protagonist settles into the chosen craft workshop, absorbed in experiencing one activity from start to finish.\nBOTTOM PANEL — SECOND REACTION: The protagonist moves between the neighboring activities, enjoying glimpses of the music, crafts and exhibition.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Hand-embroidered textile illustration photographed in detail. Every human and object rendered in colored thread and fabric applique, visible stitch direction and linen weave, tidy stitched faces, soft textile relief.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "262002cb-caf6-4c50-8ef2-99d6e0becc17"
+    },
+    {
+      "id": "1.4",
+      "prompt": "和朋友去陌生城市吃饭，你更偏向哪家？",
+      "options": [
+        "吃过的连锁店，味道心里有数",
+        "没见过的小店，试试当地的新鲜感"
+      ],
+      "seed": 2026101830,
+      "artDirection": {
+        "id": "pastel-city",
+        "label": "粉彩城市画",
+        "family": "pastel",
+        "medium": "Soft oil-pastel illustration on rough dark paper, luminous chalky color blocks, confident loose contours, textured atmospheric city scenes and warm expressive people.",
+        "protagonist": "a young woman with a high auburn bun, a cream trench coat and a violet scarf",
+        "palette": "violet, cream, brick orange and midnight blue",
+        "setting": "an unfamiliar city street with a modern casual restaurant and a tiny local noodle kitchen"
+      },
+      "scene": "Exactly TWO WOMEN in the foreground of an unfamiliar city street: the protagonist has an AUBURN BUN, CREAM TRENCH COAT and VIOLET SCARF; her friend has straight BLACK shoulder-length hair and a CORAL SWEATER. Both consider where to eat. Keep their identities different.",
+      "left": "Exactly the SAME TWO WOMEN are seated facing each other at a table INSIDE a bright modern chain restaurant, enjoying familiar rice meals. The auburn-bun protagonist wears her cream trench and violet scarf; the black-haired friend wears coral. No male character joins them.",
+      "right": "Exactly the SAME TWO WOMEN sit side by side AT THE COUNTER of a rustic noodle kitchen. Clearly show the auburn-bun protagonist with her VIOLET SCARF and cream trench beside the black-haired CORAL-clad friend; both hold noodle bowls. No replacement man, no new foreground person. Show both women's faces.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Soft oil-pastel illustration on rough dark paper, luminous chalky color blocks, confident loose contours, textured atmospheric city scenes and warm expressive people.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young woman with a high auburn bun, a cream trench coat and a violet scarf. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: violet, cream, brick orange and midnight blue.\nSETTING DESIGN: an unfamiliar city street with a modern casual restaurant and a tiny local noodle kitchen.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Exactly TWO WOMEN in the foreground of an unfamiliar city street: the protagonist has an AUBURN BUN, CREAM TRENCH COAT and VIOLET SCARF; her friend has straight BLACK shoulder-length hair and a CORAL SWEATER. Both consider where to eat. Keep their identities different.\nMIDDLE PANEL — FIRST REACTION: Exactly the SAME TWO WOMEN are seated facing each other at a table INSIDE a bright modern chain restaurant, enjoying familiar rice meals. The auburn-bun protagonist wears her cream trench and violet scarf; the black-haired friend wears coral. No male character joins them.\nBOTTOM PANEL — SECOND REACTION: Exactly the SAME TWO WOMEN sit side by side AT THE COUNTER of a rustic noodle kitchen. Clearly show the auburn-bun protagonist with her VIOLET SCARF and cream trench beside the black-haired CORAL-clad friend; both hold noodle bowls. No replacement man, no new foreground person. Show both women's faces.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Soft oil-pastel illustration on rough dark paper, luminous chalky color blocks, confident loose contours, textured atmospheric city scenes and warm expressive people.",
+      "sourceVersion": "question-art-v5",
+      "promptId": "2f9d2562-4408-450f-94fa-d57e0dfe78c0"
+    },
+    {
+      "id": "2.4",
+      "prompt": "群里在约下周的聚会，你更喜欢哪种安排？",
+      "options": [
+        "早点定时间地点，方便安排其他事",
+        "先约着，到时候再看大家的兴致"
+      ],
+      "seed": 2026101831,
+      "artDirection": {
+        "id": "fashion-magazine-photo",
+        "label": "清爽生活摄影",
+        "family": "photography",
+        "medium": "Bright high-key editorial lifestyle photography, real adult human, crisp white interior, natural skin, subtle soft shadows and clean composition. Magazine photo quality, no drawing, no clay, no CGI.",
+        "protagonist": "a young East Asian man with wavy dark hair, a salmon pink polo shirt and cream trousers",
+        "palette": "white, salmon pink, light oak and soft blue",
+        "setting": "a bright white apartment with a pale sofa, simple calendar and headphones"
+      },
+      "scene": "ONE PERSON ONLY: The protagonist on a sofa considers an invitation on their phone. Show ONLY THE BACK of the phone, no screen UI. Plain living room walls. No speech balloons or writing anywhere.",
+      "left": "ONE PERSON ONLY: Close view at the desk: the protagonist marks a DATE with a simple colored CIRCLE on a BLANK GRID paper calendar and places a cafe photo beside it. No words, no text, no speech balloons.",
+      "right": "ONE PERSON ONLY: The protagonist casually lounges on the sofa with headphones and tea, phone placed face down, calendar CLOSED. Open-ended spontaneous attitude. No words, no speech balloons.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Bright high-key editorial lifestyle photography, real adult human, crisp white interior, natural skin, subtle soft shadows and clean composition. Magazine photo quality, no drawing, no clay, no CGI.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young East Asian man with wavy dark hair, a salmon pink polo shirt and cream trousers. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: white, salmon pink, light oak and soft blue.\nSETTING DESIGN: a bright white apartment with a pale sofa, simple calendar and headphones.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: ONE PERSON ONLY: The protagonist on a sofa considers an invitation on their phone. Show ONLY THE BACK of the phone, no screen UI. Plain living room walls. No speech balloons or writing anywhere.\nMIDDLE PANEL — FIRST REACTION: ONE PERSON ONLY: Close view at the desk: the protagonist marks a DATE with a simple colored CIRCLE on a BLANK GRID paper calendar and places a cafe photo beside it. No words, no text, no speech balloons.\nBOTTOM PANEL — SECOND REACTION: ONE PERSON ONLY: The protagonist casually lounges on the sofa with headphones and tea, phone placed face down, calendar CLOSED. Open-ended spontaneous attitude. No words, no speech balloons.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Bright high-key editorial lifestyle photography, real adult human, crisp white interior, natural skin, subtle soft shadows and clean composition. Magazine photo quality, no drawing, no clay, no CGI.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "2905ed02-3642-40b7-8f89-527ebee32514"
+    },
+    {
+      "id": "3.4",
+      "prompt": "朋友很期待一个计划，但你看出了明显的问题。你会？",
+      "options": [
+        "把风险说具体，免得之后吃亏",
+        "先理解他的期待，再慢慢提建议"
+      ],
+      "seed": 2026101832,
+      "artDirection": {
+        "id": "linocut-advice",
+        "label": "套色木刻版画",
+        "family": "woodcut",
+        "medium": "Two-ink linocut woodblock print. Strong carved black contour shapes, visible gouged hatching, rough print texture and a second ochre ink layer. Stylized human figures with clearly readable pointing and listening gestures.",
+        "protagonist": "a woman in her thirties with shoulder-length wavy hair, an ochre blouse and dark vest",
+        "palette": "ink black, ochre and natural cream paper only",
+        "setting": "a small cafe table with a fragile paper tower model and tea cups"
+      },
+      "scene": "An excited friend in coral shares a small paper tower project across a cafe table with the protagonist in their specified outfit. The tower's base looks narrow.",
+      "left": "the protagonist in their specified outfit POINTS precisely at the tower's weak narrow base while explaining a practical concern; the coral-clad friend looks at the base. Emphasis on the model and the pointing finger.",
+      "right": "the protagonist in their specified outfit puts the model to one side and offers the coral-clad friend TEA, listening warmly with eye contact. Emphasis on supportive human connection, no pointing at the model.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Two-ink linocut woodblock print. Strong carved black contour shapes, visible gouged hatching, rough print texture and a second ochre ink layer. Stylized human figures with clearly readable pointing and listening gestures.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a woman in her thirties with shoulder-length wavy hair, an ochre blouse and dark vest. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: ink black, ochre and natural cream paper only.\nSETTING DESIGN: a small cafe table with a fragile paper tower model and tea cups.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: An excited friend in coral shares a small paper tower project across a cafe table with the protagonist in their specified outfit. The tower's base looks narrow.\nMIDDLE PANEL — FIRST REACTION: the protagonist in their specified outfit POINTS precisely at the tower's weak narrow base while explaining a practical concern; the coral-clad friend looks at the base. Emphasis on the model and the pointing finger.\nBOTTOM PANEL — SECOND REACTION: the protagonist in their specified outfit puts the model to one side and offers the coral-clad friend TEA, listening warmly with eye contact. Emphasis on supportive human connection, no pointing at the model.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Two-ink linocut woodblock print. Strong carved black contour shapes, visible gouged hatching, rough print texture and a second ochre ink layer. Stylized human figures with clearly readable pointing and listening gestures.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "9c661906-d1e0-4165-b9a8-301a5302323c"
+    },
+    {
+      "id": "4.4",
+      "prompt": "电影散场后，朋友开始讨论没讲明的结局。你会？",
+      "options": [
+        "按已经演出来的剧情理解就好",
+        "忍不住脑补，接着推演别的可能"
+      ],
+      "seed": 2026101833,
+      "artDirection": {
+        "id": "surreal-cinema",
+        "label": "超现实电影插画",
+        "family": "surreal",
+        "medium": "Surreal cinematic matte-painting illustration with realistic adult figures, deep dreamlike perspective, glowing colored light and imaginative floating forms only when specified. Rich dark theatrical atmosphere, not cozy storybook art.",
+        "protagonist": "a young man with a silver streak in black hair, a midnight blue velvet jacket and a white scarf",
+        "palette": "midnight blue, plum, moonlight silver and electric amber",
+        "setting": "a small art-house cinema lobby at night with plain glowing panels and no writing"
+      },
+      "scene": "Three friends leave a small cinema at night discussing an ambiguous film. Background has plain glowing colored panels, absolutely NO movie posters or written signage.",
+      "left": "the protagonist in their specified outfit calmly recalls the actual film, showing one simple picture of a person by a seaside lighthouse on the phone to the two friends. No writing or lettering.",
+      "right": "the protagonist in their specified outfit enthusiastically imagines possibilities with a wide open gesture. Soft translucent silhouettes of a spaceship and a sailing boat appear above the friends as visual imagination. Plain walls, no lettering or speech bubbles.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Surreal cinematic matte-painting illustration with realistic adult figures, deep dreamlike perspective, glowing colored light and imaginative floating forms only when specified. Rich dark theatrical atmosphere, not cozy storybook art.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young man with a silver streak in black hair, a midnight blue velvet jacket and a white scarf. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: midnight blue, plum, moonlight silver and electric amber.\nSETTING DESIGN: a small art-house cinema lobby at night with plain glowing panels and no writing.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Three friends leave a small cinema at night discussing an ambiguous film. Background has plain glowing colored panels, absolutely NO movie posters or written signage.\nMIDDLE PANEL — FIRST REACTION: the protagonist in their specified outfit calmly recalls the actual film, showing one simple picture of a person by a seaside lighthouse on the phone to the two friends. No writing or lettering.\nBOTTOM PANEL — SECOND REACTION: the protagonist in their specified outfit enthusiastically imagines possibilities with a wide open gesture. Soft translucent silhouettes of a spaceship and a sailing boat appear above the friends as visual imagination. Plain walls, no lettering or speech bubbles.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Surreal cinematic matte-painting illustration with realistic adult figures, deep dreamlike perspective, glowing colored light and imaginative floating forms only when specified. Rich dark theatrical atmosphere, not cozy storybook art.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "19e277d6-16e6-4574-a676-0d211509cc05"
+    },
+    {
+      "id": "5.4",
+      "prompt": "旅途中，邻座很想和你聊聊天。你更接近？",
+      "options": [
+        "聊聊彼此的故事，路上也挺有趣",
+        "简单回应，想保留自己的时间"
+      ],
+      "seed": 2026101834,
+      "artDirection": {
+        "id": "retro-anime-train",
+        "label": "复古动画电影",
+        "family": "animation",
+        "medium": "Retro hand-painted anime film stills with delicate realistic proportions, soft cel shading, atmospheric detailed train backgrounds, gentle analog film grain and contemplative human acting.",
+        "protagonist": "a young woman with a long dark ponytail, a burgundy cardigan and a cream dress",
+        "palette": "burgundy, sage-gray seats, cream and soft landscape blue",
+        "setting": "a sunlit regional train carriage with large windows and passing countryside"
+      },
+      "scene": "Two DISTINCT train passengers: the protagonist is a young WOMAN with a LONG DARK PONYTAIL and BURGUNDY CARDIGAN, seated by the window. Beside her is a middle-aged MAN with short gray hair, rectangular glasses and a BROWN LEATHER JACKET; he turns toward her to chat. Never two copies of the woman.",
+      "left": "The ponytailed WOMAN in BURGUNDY and the gray-haired MAN in BROWN face each other and enjoy exchanging travel stories. The woman speaks with an open friendly gesture; the man listens. Keep their distinct faces, hair and clothes.",
+      "right": "The ponytailed WOMAN in BURGUNDY turns peacefully toward the window and reads her BOOK after a polite reply. The gray-haired MAN in BROWN looks ahead in his own seat. Two different people, a clear shift from active conversation to the woman's personal reading time.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Retro hand-painted anime film stills with delicate realistic proportions, soft cel shading, atmospheric detailed train backgrounds, gentle analog film grain and contemplative human acting.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young woman with a long dark ponytail, a burgundy cardigan and a cream dress. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: burgundy, sage-gray seats, cream and soft landscape blue.\nSETTING DESIGN: a sunlit regional train carriage with large windows and passing countryside.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Two DISTINCT train passengers: the protagonist is a young WOMAN with a LONG DARK PONYTAIL and BURGUNDY CARDIGAN, seated by the window. Beside her is a middle-aged MAN with short gray hair, rectangular glasses and a BROWN LEATHER JACKET; he turns toward her to chat. Never two copies of the woman.\nMIDDLE PANEL — FIRST REACTION: The ponytailed WOMAN in BURGUNDY and the gray-haired MAN in BROWN face each other and enjoy exchanging travel stories. The woman speaks with an open friendly gesture; the man listens. Keep their distinct faces, hair and clothes.\nBOTTOM PANEL — SECOND REACTION: The ponytailed WOMAN in BURGUNDY turns peacefully toward the window and reads her BOOK after a polite reply. The gray-haired MAN in BROWN looks ahead in his own seat. Two different people, a clear shift from active conversation to the woman's personal reading time.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Retro hand-painted anime film stills with delicate realistic proportions, soft cel shading, atmospheric detailed train backgrounds, gentle analog film grain and contemplative human acting.",
+      "sourceVersion": "question-art-v5",
+      "promptId": "c383a9ad-ba74-4c72-b5ad-526d41ca5475"
+    },
+    {
+      "id": "6.4",
+      "prompt": "和特别厉害的人组队，你更多感受到？",
+      "options": [
+        "安心，能学习，也能贡献自己的部分",
+        "压力，担心不够好拖了后腿"
+      ],
+      "seed": 2026101835,
+      "artDirection": {
+        "id": "toy-brick-team",
+        "label": "积木人偶场景",
+        "family": "toy",
+        "medium": "Photographed interlocking toy-brick diorama with original block-shaped human mini figures, plastic studded surfaces, articulated toy hands, clean high-detail macro photography and soft studio shadows. No brands or logos.",
+        "protagonist": "an original blocky human toy figure with dark plastic hair, a purple torso and tan legs",
+        "palette": "purple, turquoise, yellow and light gray plastic",
+        "setting": "a toy-brick creative workshop with a collaborative tabletop construction"
+      },
+      "scene": "The protagonist joins a collaborative creative project with several skilled teammates around a studio worktable.",
+      "left": "The protagonist confidently contributes one part of the shared model, feeling supported and learning from the teammates.",
+      "right": "The protagonist carefully double-checks their part of the same model, feeling mild pressure to keep up with the skilled team.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Photographed interlocking toy-brick diorama with original block-shaped human mini figures, plastic studded surfaces, articulated toy hands, clean high-detail macro photography and soft studio shadows. No brands or logos.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: an original blocky human toy figure with dark plastic hair, a purple torso and tan legs. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: purple, turquoise, yellow and light gray plastic.\nSETTING DESIGN: a toy-brick creative workshop with a collaborative tabletop construction.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: The protagonist joins a collaborative creative project with several skilled teammates around a studio worktable.\nMIDDLE PANEL — FIRST REACTION: The protagonist confidently contributes one part of the shared model, feeling supported and learning from the teammates.\nBOTTOM PANEL — SECOND REACTION: The protagonist carefully double-checks their part of the same model, feeling mild pressure to keep up with the skilled team.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Photographed interlocking toy-brick diorama with original block-shaped human mini figures, plastic studded surfaces, articulated toy hands, clean high-detail macro photography and soft studio shadows. No brands or logos.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "78dde185-dfea-4c91-9e2a-8a08ba2bd459"
+    },
+    {
+      "id": "7.4",
+      "prompt": "朋友问“以后想过怎样的生活”，你更接近？",
+      "options": [
+        "有一些在意的方向，想慢慢靠近",
+        "还想多体验，答案也许会变化"
+      ],
+      "seed": 2026101836,
+      "artDirection": {
+        "id": "botanical-sketch",
+        "label": "植物手账速写",
+        "family": "botanical",
+        "medium": "Delicate botanical sketchbook illustration mixing fine sepia pen, restrained green watercolor and precisely drawn human figures. Detailed leaves and park plants, generous cream-paper negative space, no written notes.",
+        "protagonist": "a young woman with a long black braid, a pale pink cardigan and a brown linen skirt",
+        "palette": "botanical green, dusty rose, sepia and cream",
+        "setting": "a leafy public garden with a wooden bench and branching paths"
+      },
+      "scene": "Two friends sit on a park bench talking about future life. the protagonist in their specified outfit holds a closed plain notebook. Natural park scene only, NO floating symbols, NO writing, NO speech balloons.",
+      "left": "Close view: the protagonist in their specified outfit opens the notebook and shows a simple DRAWING of a little home and a paintbrush on the page. The blue-clad friend listens. The drawing exists ONLY ON THE PAGE, no words anywhere.",
+      "right": "Wider view: the protagonist in their specified outfit has CLOSED the notebook and looks with curiosity down the park's branching paths, ready for more experiences. The blue-clad friend sits nearby. No drawings, symbols, text or floating objects.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Delicate botanical sketchbook illustration mixing fine sepia pen, restrained green watercolor and precisely drawn human figures. Detailed leaves and park plants, generous cream-paper negative space, no written notes.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young woman with a long black braid, a pale pink cardigan and a brown linen skirt. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: botanical green, dusty rose, sepia and cream.\nSETTING DESIGN: a leafy public garden with a wooden bench and branching paths.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Two friends sit on a park bench talking about future life. the protagonist in their specified outfit holds a closed plain notebook. Natural park scene only, NO floating symbols, NO writing, NO speech balloons.\nMIDDLE PANEL — FIRST REACTION: Close view: the protagonist in their specified outfit opens the notebook and shows a simple DRAWING of a little home and a paintbrush on the page. The blue-clad friend listens. The drawing exists ONLY ON THE PAGE, no words anywhere.\nBOTTOM PANEL — SECOND REACTION: Wider view: the protagonist in their specified outfit has CLOSED the notebook and looks with curiosity down the park's branching paths, ready for more experiences. The blue-clad friend sits nearby. No drawings, symbols, text or floating objects.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Delicate botanical sketchbook illustration mixing fine sepia pen, restrained green watercolor and precisely drawn human figures. Detailed leaves and park plants, generous cream-paper negative space, no written notes.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "cdc92693-6f5c-4a98-8cc4-b7ad89e348f2"
+    },
+    {
+      "id": "8.4",
+      "prompt": "眼前有一条大家认可的稳妥路线，你更想？",
+      "options": [
+        "沿着成熟路径走，少绕一些弯路",
+        "留一点空间，试试自己的走法"
+      ],
+      "seed": 2026101837,
+      "artDirection": {
+        "id": "landscape-oil",
+        "label": "山野风景油画",
+        "family": "landscape",
+        "medium": "Plein-air landscape oil painting on coarse canvas. Visible broken brush strokes, expansive hills and moving cloud light, a small naturalistically painted human figure in the landscape, muted realistic colors.",
+        "protagonist": "a hiker in their thirties with short dark hair, a bright orange windbreaker and a blue daypack",
+        "palette": "sky blue, grass green, cloud white and orange",
+        "setting": "a spacious green hillside where a paved village road and a narrow wildflower trail diverge"
+      },
+      "scene": "ONE PERSON ONLY: Seen from BEHIND, the protagonist in their specified outfit pauses where a broad paved path and a narrow wildflower footpath diverge on a green hillside. No crowds, no signs or words.",
+      "left": "ONE PERSON ONLY: Seen from behind walking on the BROAD PAVED PATH, the protagonist calmly approaches a small welcoming village ahead. The smooth regular paving stones are clearly visible.",
+      "right": "ONE PERSON ONLY: Seen from behind walking along the NARROW WILDFLOWER FOOTPATH across a grassy hill, the protagonist explores their own route. No paving stones, close grasses and flowers by their feet.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Plein-air landscape oil painting on coarse canvas. Visible broken brush strokes, expansive hills and moving cloud light, a small naturalistically painted human figure in the landscape, muted realistic colors.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a hiker in their thirties with short dark hair, a bright orange windbreaker and a blue daypack. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: sky blue, grass green, cloud white and orange.\nSETTING DESIGN: a spacious green hillside where a paved village road and a narrow wildflower trail diverge.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: ONE PERSON ONLY: Seen from BEHIND, the protagonist in their specified outfit pauses where a broad paved path and a narrow wildflower footpath diverge on a green hillside. No crowds, no signs or words.\nMIDDLE PANEL — FIRST REACTION: ONE PERSON ONLY: Seen from behind walking on the BROAD PAVED PATH, the protagonist calmly approaches a small welcoming village ahead. The smooth regular paving stones are clearly visible.\nBOTTOM PANEL — SECOND REACTION: ONE PERSON ONLY: Seen from behind walking along the NARROW WILDFLOWER FOOTPATH across a grassy hill, the protagonist explores their own route. No paving stones, close grasses and flowers by their feet.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Plein-air landscape oil painting on coarse canvas. Visible broken brush strokes, expansive hills and moving cloud light, a small naturalistically painted human figure in the landscape, muted realistic colors.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "de448ccd-3143-4b0b-9857-366781685dd4"
+    },
+    {
+      "id": "9.4",
+      "prompt": "聚会结束，亲近的朋友们喊着再续一摊，你更想？",
+      "options": [
+        "今天很开心了，回去独处一会儿",
+        "难得聚齐，再多待一阵也很好"
+      ],
+      "seed": 2026101838,
+      "artDirection": {
+        "id": "cinema-noir",
+        "label": "黑金电影感",
+        "family": "noir",
+        "medium": "Stylized noir film photography of real human adults, high-contrast black shadows, warm golden practical lights, cinematic night reflections, realistic skin and fabric, subtle film grain. Restrained gold and black treatment, not illustration.",
+        "protagonist": "a young man with neatly combed dark hair, a camel overcoat and a black turtleneck",
+        "palette": "golden amber, black, warm gray and pale highlights",
+        "setting": "a city cafe and a quiet lamplit street after an evening gathering"
+      },
+      "scene": "Four close friends stand outside a cafe at night considering whether to continue the evening. the protagonist wears the outfit specified in CHARACTER DESIGN; the others blue, coral and ivory.",
+      "left": "the protagonist in their specified outfit walks AWAY ALONE along a quiet lamplit street, waving back over one shoulder; the other three friends remain small figures by the cafe door in the distance.",
+      "right": "All FOUR friends including the protagonist in their specified outfit walk TOGETHER toward a new softly lit cafe, chatting and enjoying more time together. No letters or shop signs.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: Stylized noir film photography of real human adults, high-contrast black shadows, warm golden practical lights, cinematic night reflections, realistic skin and fabric, subtle film grain. Restrained gold and black treatment, not illustration.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a young man with neatly combed dark hair, a camel overcoat and a black turtleneck. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: golden amber, black, warm gray and pale highlights.\nSETTING DESIGN: a city cafe and a quiet lamplit street after an evening gathering.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: Four close friends stand outside a cafe at night considering whether to continue the evening. the protagonist wears the outfit specified in CHARACTER DESIGN; the others blue, coral and ivory.\nMIDDLE PANEL — FIRST REACTION: the protagonist in their specified outfit walks AWAY ALONE along a quiet lamplit street, waving back over one shoulder; the other three friends remain small figures by the cafe door in the distance.\nBOTTOM PANEL — SECOND REACTION: All FOUR friends including the protagonist in their specified outfit walk TOGETHER toward a new softly lit cafe, chatting and enjoying more time together. No letters or shop signs.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. Stylized noir film photography of real human adults, high-contrast black shadows, warm golden practical lights, cinematic night reflections, realistic skin and fabric, subtle film grain. Restrained gold and black treatment, not illustration.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "cab5a376-0a4e-4194-b447-f9ffdb19cfcc"
+    },
+    {
+      "id": "10.4",
+      "prompt": "手作和预想不一样，但能改成另一种东西。你会？",
+      "options": [
+        "尽量修回原样，完成最初的想法",
+        "顺着变化做下去，看看会得到什么"
+      ],
+      "seed": 2026101839,
+      "artDirection": {
+        "id": "ceramic-porcelain-world",
+        "label": "陶瓷釉面三维",
+        "family": "ceramic",
+        "medium": "A miniature world made of glazed ceramic figurines and hand-thrown pottery, photographed with gentle reflections. Shiny porcelain human faces, rounded glazed hair, tactile clay props and soft studio lighting, clearly sculptural ceramic material.",
+        "protagonist": "a ceramic young woman figurine with glossy dark hair in two small buns, a cobalt blue apron and white sleeves",
+        "palette": "cobalt blue, porcelain white, terracotta and soft jade",
+        "setting": "a pottery studio with a worktable, unfinished clay bowl and sculptural planter"
+      },
+      "scene": "ONE PERSON ONLY: At a craft desk the protagonist compares a lopsided unfinished clay bowl with a simple DRAWING of a smooth round bowl on paper. No writing.",
+      "left": "ONE PERSON ONLY: The protagonist carefully shapes the clay into a SMOOTH REGULAR ROUND BOWL matching the drawing, hands working patiently on the rim. No plant, no irregular sculpture.",
+      "right": "ONE PERSON ONLY: The protagonist smiles at a new PLAYFUL SCULPTURAL PLANTER made from the same clay, irregular wavy sides and a small GREEN PLANT growing inside. The original round-bowl drawing is pushed aside. Clearly a different creative outcome.",
+      "generationPrompt": "ART MEDIUM — APPLY TO EVERY PANEL: A miniature world made of glazed ceramic figurines and hand-thrown pottery, photographed with gentle reflections. Shiny porcelain human faces, rounded glazed hair, tactile clay props and soft studio lighting, clearly sculptural ceramic material.\nCHARACTER DESIGN — SAME IN THESE THREE PANELS ONLY: a ceramic young woman figurine with glossy dark hair in two small buns, a cobalt blue apron and white sleeves. Keep this exact face, hairstyle and outfit in all three panels. Supporting people must be visually different.\nPALETTE: cobalt blue, porcelain white, terracotta and soft jade.\nSETTING DESIGN: a pottery studio with a worktable, unfinished clay bowl and sculptural planter.\nBoth reactions are equally valid: balanced warmth and appeal, no moral judgment. The art medium is essential; keep its visible material and rendering characteristics.\n\nONE tall contact sheet made of EXACTLY THREE equally sized wide horizontal illustration panels stacked vertically: TOP, MIDDLE, BOTTOM. Each panel occupies exactly one third of the canvas height, edge to edge, separated only by a thin straight horizontal line. No outer margins. No vertical divisions, no inset pictures. The SAME protagonist, identical face, hairstyle and clothing throughout all three panels. Keep a coherent palette and design, but the backgrounds MUST follow each panel description, including a CHANGE OF LOCATION when specified. The top panel establishes the situation; the middle and bottom panels show two clearly DIFFERENT alternative reactions. Each panel MUST depict its own specified action, with a distinct pose and framing, NOT three copies of the establishing shot. Each panel is ONE single camera shot of ONE moment. EXACTLY ONE instance of the protagonist in each panel; never duplicate a person within a panel. Do NOT add extra people or bystanders unless the panel description explicitly calls for them. Supporting people wear different colored outfits. Full coherent scene in every panel, main action centered, no collage inside a panel. No text, lettering, logos, labels, subtitles, speech balloons, watermarks or panel numbers.\n\nTOP PANEL — SITUATION: ONE PERSON ONLY: At a craft desk the protagonist compares a lopsided unfinished clay bowl with a simple DRAWING of a smooth round bowl on paper. No writing.\nMIDDLE PANEL — FIRST REACTION: ONE PERSON ONLY: The protagonist carefully shapes the clay into a SMOOTH REGULAR ROUND BOWL matching the drawing, hands working patiently on the rim. No plant, no irregular sculpture.\nBOTTOM PANEL — SECOND REACTION: ONE PERSON ONLY: The protagonist smiles at a new PLAYFUL SCULPTURAL PLANTER made from the same clay, irregular wavy sides and a small GREEN PLANT growing inside. The original round-bowl drawing is pushed aside. Clearly a different creative outcome.\n\nKeep the three panels equal in height. Static artwork, no movement. Repeat this question's character design and chosen art medium in all three panels. A miniature world made of glazed ceramic figurines and hand-thrown pottery, photographed with gentle reflections. Shiny porcelain human faces, rounded glazed hair, tactile clay props and soft studio lighting, clearly sculptural ceramic material.",
+      "sourceVersion": "question-art-v4",
+      "promptId": "2044c4c9-de02-4cf0-bf50-721302259c97"
+    }
+  ]
+}

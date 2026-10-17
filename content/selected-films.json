@@ -1,0 +1,287 @@
+{
+  "source": "视频排序(4).xlsx",
+  "films": [
+    {
+      "id": "dont-embarrass-us",
+      "title": "别让人笑话",
+      "sourceRow": 2,
+      "rankTotal": 11,
+      "characterCount": 2,
+      "cast": [
+        {
+          "id": "chovy-son",
+          "name": "儿子我chovy"
+        },
+        {
+          "id": "face-keeper",
+          "name": "别让人笑话"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "trend-chasing-boss",
+      "title": "老板又去追热点了",
+      "sourceRow": 3,
+      "rankTotal": 6,
+      "characterCount": 2,
+      "cast": [
+        {
+          "id": "villain-calmer",
+          "name": "无奈员工"
+        },
+        {
+          "id": "trend-boss",
+          "name": "追热点的老板"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "new-year-peace",
+      "title": "大过年的",
+      "sourceRow": 4,
+      "rankTotal": 17,
+      "characterCount": 1,
+      "cast": [
+        {
+          "id": "apocalypse-caterer",
+          "name": "和稀泥和事老"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "not-a-coward",
+      "title": "告诉妈我不是孬种",
+      "sourceRow": 5,
+      "rankTotal": 26,
+      "characterCount": 2,
+      "cast": [
+        {
+          "id": "dragon-office-worker",
+          "name": "急急急男主"
+        },
+        {
+          "id": "calm-responder",
+          "name": "我知道你很急但是你先别急"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "never-give-up",
+      "title": "莫欺少年穷",
+      "sourceRow": 6,
+      "rankTotal": 28,
+      "characterCount": 1,
+      "cast": [
+        {
+          "id": "never-give-up",
+          "name": "永不言弃"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "too-much-thrill",
+      "title": "刺激过头了",
+      "sourceRow": 7,
+      "rankTotal": 37,
+      "characterCount": 1,
+      "cast": [
+        {
+          "id": "lucky-disaster",
+          "name": "刺激过头了"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "royal-doorframe",
+      "title": "废物殿下-门面担当",
+      "sourceRow": 8,
+      "rankTotal": 37,
+      "characterCount": 2,
+      "cast": [
+        {
+          "id": "rule-breaker",
+          "name": "规则就是用来打破的"
+        },
+        {
+          "id": "social-shield",
+          "name": "那我给了呗"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "royal-kitchen",
+      "title": "御膳房厨子",
+      "sourceRow": 9,
+      "rankTotal": 37,
+      "characterCount": 2,
+      "cast": [
+        {
+          "id": "royal-client",
+          "name": "甲方"
+        },
+        {
+          "id": "royal-chef",
+          "name": "乙方"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "follow-your-heart",
+      "title": "心之所向",
+      "sourceRow": 10,
+      "rankTotal": 40,
+      "characterCount": 1,
+      "cast": [
+        {
+          "id": "plot-rewriter",
+          "name": "心之所向"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "only-the-emperor",
+      "title": "我只拜帝皇",
+      "sourceRow": 11,
+      "rankTotal": 41,
+      "characterCount": 2,
+      "cast": [
+        {
+          "id": "hidden-player",
+          "name": "阿斯塔顿"
+        },
+        {
+          "id": "flexible-challenger",
+          "name": "大丈夫（能屈能伸）"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "chaos-comedy",
+      "title": "反套路整活大师",
+      "sourceRow": 12,
+      "rankTotal": 42,
+      "characterCount": 2,
+      "cast": [
+        {
+          "id": "chaos-director",
+          "name": "反套路脑回路"
+        },
+        {
+          "id": "chaos-witness",
+          "name": "兄弟别搞"
+        }
+      ],
+      "notes": "身后的角色给一个略惊讶的面部表情"
+    },
+    {
+      "id": "public-roast",
+      "title": "太让人笑话了",
+      "sourceRow": 13,
+      "rankTotal": 47,
+      "characterCount": 2,
+      "cast": [
+        {
+          "id": "public-roaster",
+          "name": "闲的没事笑话笑话你们"
+        },
+        {
+          "id": "quiet-bystander",
+          "name": "我跟他不熟"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "social-connection",
+      "title": "社交连接器",
+      "sourceRow": 14,
+      "rankTotal": 50,
+      "characterCount": 1,
+      "cast": [
+        {
+          "id": "spotlight-extra",
+          "name": "链接一下"
+        }
+      ],
+      "notes": "最后给人一个特写 链接一下"
+    },
+    {
+      "id": "mind-reading",
+      "title": "全员读心团宠",
+      "sourceRow": 15,
+      "rankTotal": 58,
+      "characterCount": 2,
+      "cast": [
+        {
+          "id": "mind-reader",
+          "name": "读心团宠"
+        },
+        {
+          "id": "frustrated-courtier",
+          "name": "总感觉有火发不出"
+        }
+      ],
+      "notes": "参照老视频"
+    },
+    {
+      "id": "cosmic-stage",
+      "title": "宇宙片场总导演",
+      "sourceRow": 16,
+      "rankTotal": 59,
+      "characterCount": 2,
+      "cast": [
+        {
+          "id": "stage-lead",
+          "name": "台上主角"
+        },
+        {
+          "id": "cosmic-director",
+          "name": "台下大手"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "reborn-revenge",
+      "title": "重生复仇女王",
+      "sourceRow": 17,
+      "rankTotal": 59,
+      "characterCount": 2,
+      "cast": [
+        {
+          "id": "reborn-queen",
+          "name": "这一世我将拿回属于我的一切"
+        },
+        {
+          "id": "queen-companion",
+          "name": "又谁得罪你了"
+        }
+      ],
+      "notes": "加点戏和台词，同时给到身边人一个心理特写"
+    },
+    {
+      "id": "cultivation-support",
+      "title": "修仙售后客服",
+      "sourceRow": 18,
+      "rankTotal": 61,
+      "characterCount": 1,
+      "cast": [
+        {
+          "id": "immortal-support",
+          "name": "我的手里不允许有差评"
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

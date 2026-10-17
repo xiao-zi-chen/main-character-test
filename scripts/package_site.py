@@ -20,13 +20,19 @@ for role in roles:
 target.parent.mkdir(parents=True,exist_ok=True)
 staged=target.with_name(target.stem+'.staging.zip')
 files=[build/name for name in ['index.html','favicon.svg','collector.js','public-config.js']]
-for directory in ['assets','media','worlds']:files.extend(sorted(p for p in (build/directory).rglob('*') if p.is_file()))
+for directory in ['assets','media','worlds','question-art']:files.extend(sorted(p for p in (build/directory).rglob('*') if p.is_file()))
 with zipfile.ZipFile(staged,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as archive:
     for file in files: archive.write(file,file.relative_to(build).as_posix())
     archive.write(site/'docs/部署说明.txt','DEPLOY.txt')
 with zipfile.ZipFile(staged) as archive:
     assert archive.testzip() is None
     names=set(archive.namelist());assert 'index.html' in names
+    art=json.loads(archive.read('question-art/manifest.json'))
+    assert len(art['questions'])==40
+    for question in art['questions'].values():
+        for kind in ['scene','left','right']:
+            asset=question['assets'][kind]
+            assert hashlib.sha256(archive.read('question-art/'+asset['file'])).hexdigest()==asset['sha256']
     assert all('\\' not in name and not name.startswith('/') and '..' not in Path(name).parts for name in names)
     for relative in re.findall(r'(?:src|href)="\./([^"?#]+)"',archive.read('index.html').decode('utf-8')):assert relative in names
     for role in roles:

@@ -2,12 +2,13 @@ import React, { useRef, useState } from 'react';
 import { isAnswer } from '../engine.js';
 import { SCALE_MIN, SCALE_MAX } from '../data/answer-scale.js';
 import './answer-scale.css';
+import { QuestionArt } from './QuestionArt.jsx';
 
 const labels = ['更接近左侧', '偏左', '中立', '偏右', '更接近右侧'];
 const middle = (SCALE_MIN + SCALE_MAX) / 2;
 const labelFor = value => labels[Math.floor(value / 3)];
 
-export function AnswerScale({ value, options, onChoose }) {
+export function AnswerScale({ value, options, onChoose, questionId }) {
   const track = useRef(null);
   const gesture = useRef(null);
   const [draft, setDraft] = useState(null);
@@ -35,7 +36,8 @@ export function AnswerScale({ value, options, onChoose }) {
   };
   return <div className={`answer-scale ${answered ? 'has-answer' : ''}`}>
     <div className="answer-scale-anchors" aria-label="量表两端的反应">
-      {options.map((option, index) => <button type="button" className={`answer-scale-anchor ${answered && value === (index === 0 ? SCALE_MIN : SCALE_MAX) ? 'selected' : ''}`} onClick={() => commit(index === 0 ? SCALE_MIN : SCALE_MAX)} key={index} id={index === 0 ? 'answer-scale-left' : 'answer-scale-right'} aria-pressed={answered && value === (index === 0 ? SCALE_MIN : SCALE_MAX)}>
+      {options.map((option, index) => <button type="button" className={`answer-scale-anchor ${questionId ? 'illustrated-choice' : ''} ${answered && value === (index === 0 ? SCALE_MIN : SCALE_MAX) ? 'selected' : ''}`} onClick={() => commit(index === 0 ? SCALE_MIN : SCALE_MAX)} key={index} id={index === 0 ? 'answer-scale-left' : 'answer-scale-right'} aria-pressed={answered && value === (index === 0 ? SCALE_MIN : SCALE_MAX)} aria-label={`${index === 0 ? '左侧反应' : '右侧反应'}：${option}`}>
+        {questionId && <QuestionArt key={`${questionId}-${index}`} id={questionId} kind={index === 0 ? 'left' : 'right'} alt=""/>}
         <span>{index === 0 ? '左侧反应' : '右侧反应'}</span><p>{option}</p>
       </button>)}
     </div>

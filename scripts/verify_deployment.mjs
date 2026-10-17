@@ -2,7 +2,8 @@ import { readFile, access, readdir, lstat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual } from 'node:util';
 import { roles } from '../src/data/roles.js';
-import { publicAssetPaths, publicEntryPaths } from './public-assets.mjs';
+import { publicAssetPaths, publicEntryPaths, questionArtPaths } from './public-assets.mjs';
+import { questions } from '../src/data/questions.js';
 
 const manifest=JSON.parse(await readFile(new URL('../dist/media/manifest.json',import.meta.url),'utf8'));
 const sourceManifest=JSON.parse(await readFile(new URL('../public/media/manifest.json',import.meta.url),'utf8'));
@@ -13,7 +14,15 @@ if(roles.length!==20) throw new Error('Expected twenty character results');
 if(!isDeepStrictEqual(Object.keys(manifest).sort(),roles.map(role=>role.id).sort())) {
   throw new Error('Media manifest must contain exactly the current character IDs.');
 }
-const expected=new Set(['index.html',...publicEntryPaths,...publicAssetPaths(manifest)]);
+const art=JSON.parse(await readFile(new URL('../dist/question-art/manifest.json',import.meta.url),'utf8'));
+const sourceArt=JSON.parse(await readFile(new URL('../public/question-art/manifest.json',import.meta.url),'utf8'));
+if(!isDeepStrictEqual(art,sourceArt)) throw new Error('Built question artwork manifest differs from source. Rebuild before deployment.');
+const expected=new Set(['index.html',...publicEntryPaths,...publicAssetPaths(manifest),...questionArtPaths(art)]);
+const expectedDirectories=new Set(['assets']);
+for(const filename of expected) {
+  const parts=filename.split('/');
+  for(let depth=1;depth<parts.length;depth++) expectedDirectories.add(parts.slice(0,depth).join('/'));
+}
 const html=await readFile(new URL('../dist/index.html',import.meta.url),'utf8');
 // The application currently has one eager entry with no dynamic imports.
 // Do not accept unrelated old bundles just because their extension is valid.
@@ -27,7 +36,7 @@ async function inspect(directory='') {
     const info=await lstat(new URL(name,base));
     if(info.isSymbolicLink()) throw new Error(`Unexpected deployment symlink: ${relative}`);
     if(info.isDirectory()) {
-      if(directory || !['assets','media','worlds'].includes(name)) throw new Error(`Unexpected deployment directory: ${relative}`);
+      if(!expectedDirectories.has(relative)) throw new Error(`Unexpected deployment directory: ${relative}`);
       await inspect(relative+'/');
     } else if(info.isFile() && expected.has(relative)) {
       seen.add(relative);
@@ -56,4 +65,13 @@ for(const role of roles) {
 await access(new URL('../dist/index.html',import.meta.url));
 await access(new URL('../dist/collector.js',import.meta.url));
 await access(new URL('../dist/public-config.js',import.meta.url));
-console.log(`Verified deployment whitelist (${expected.size} public files), entry point and all twenty current media sets.`);
+if(Object.keys(art.questions).length!==questions.length) throw new Error('Missing question artwork');
+for(const question of questions) {
+  for(const kind of ['scene','left','right']) {
+    const asset=art.questions[question.id]?.assets[kind];
+    if(!asset || asset.file!==`${question.id.replace('.', '-')}/${kind}.webp`) throw new Error(`Invalid question image: ${question.id}/${kind}`);
+    const image=await readFile(new URL(`../dist/question-art/${asset.file}`,import.meta.url));
+    if(createHash('sha256').update(image).digest('hex')!==asset.sha256) throw new Error(`Question image hash mismatch: ${asset.file}`);
+  }
+}
+console.log(`Verified deployment whitelist (${expected.size} public files), entry point, all twenty current media sets, and 120 question images.`);

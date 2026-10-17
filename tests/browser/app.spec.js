@@ -77,6 +77,9 @@ test('20-question journey persists, navigates back, reveals and exports a real r
     await page.getByRole('button', { name: i === 19 ? '揭晓我的主角' : '下一幕', exact: true }).click();
   }
   await expect(page).toHaveURL(/#\/result$/);
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await expect.poll(() => page.locator('dialog video').evaluate(video => !video.muted && !video.paused && video.currentTime > 0)).toBe(true);
+  await page.getByRole('button', { name: '关闭弹窗', exact: true }).click();
   expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).submitted, STORAGE_KEY)).toBe(true);
   const name = await page.getByRole('heading', { level: 1 }).innerText();
   expect(roles.map(role => role.name)).toContain(name);
@@ -96,6 +99,7 @@ test('20-question journey persists, navigates back, reveals and exports a real r
   await download.saveAs(`.work/share-${testInfo.project.name}.png`);
   await page.reload();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(name);
+  await expect(page.getByRole('dialog')).toHaveCount(0);
   await page.getByRole('button', { name: '再选一次，我有别的剧本' }).click();
   await page.getByRole('button', { name: '保留答案，回去修改' }).click();
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');

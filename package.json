@@ -12,6 +12,7 @@
     "import:questions": "python -X utf8 scripts/import_questions.py",
     "render:videos": "python -X utf8 scripts/render_videos.py",
     "media:sync": "node scripts/sync_media.mjs",
+    "media:questions": "node scripts/verify_question_art.mjs",
     "export:worlds": "node scripts/export_worlds.mjs",
     "render:cinema": "node scripts/export_worlds.mjs --raster && python -X utf8 scripts/render_cinema.py"
   },

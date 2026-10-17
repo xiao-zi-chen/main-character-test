@@ -46,6 +46,8 @@ test('refresh keeps a draw, finish records twenty responses and restart makes a 
     await page.getByRole('button',{name:i===19?'揭晓我的主角':'下一幕',exact:true}).click();
   }
   await expect(page).toHaveURL(/#\/result$/);
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await page.getByRole('button',{name:'关闭弹窗',exact:true}).click();
   const collected=await page.evaluate(()=>window.NBTICollector.snapshot());
   const run=collected.runs.find(r=>r.session.id===collected.activeSessionId);
   expect(run.session.questionnaireVersion).toBe('nbti-2026-10-15-sample20');

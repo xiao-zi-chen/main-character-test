@@ -17,10 +17,13 @@ main-character-test/ 是可编辑的 React 源码，public/collector.js 是真�
 该命令运行 scripts/build-frontend.mjs，构建源码 dist/，同步根 index.html、assets/、
 collector.js、favicon.svg、最终显示题库及媒体，旧产物备份到 .local/frontend-backups/。
 构建按当前 public/media/manifest.json 引用文件及二十个角色 SVG 复制资源，
+题图按 public/question-art/manifest.json 复制当前 40 题的 120 张图片及清单；
 不会把 public/ 中所有文件直接发布；退役素材与生成说明归档到根目录的私有
 .local/retired-public/，旧前端保留在 .local/frontend-backups/，均不进入公开部署。
 根服务用 data/public-assets.json 限定可公开路径；旧题库仅供后端历史数据兼容，
 不显示旧问卷入口，也不允许以静态文件下载。重建后重启根服务以加载新清单。
+外部 NBTI 发布脚本需同步 question-art/，并将当前题图路径加入根服务和 Nginx
+公开文件清单；仅推送本 GitHub 源码仓库不会自动更新 www.nbti.cn 的生产部署。
 新版 manifest 直接编入前端 JavaScript，修改媒体清单后也需重新构建。
 scripts/instrument-bundle.mjs 仅保留为历史静态注入工具，当前源码构建不再使用它。
 
@@ -59,7 +62,7 @@ Nginx 使用发布包生成的 deploy/public-assets.nginx.conf，nginx -t 通过
 49 个带旧 revision 的 URL 均返回 404。Nginx 已启用精确清单，并回源标准 nbti-media 桶。
 public-config.js 在运行时由根 Node.js 生成；源码静态占位仅回退到本地媒体，不含任何凭据。
 原静态部署 ZIP 和 GitHub Pages 可用于页面及媒体预览；纯静态网站不提供采集入库能力。
-仅预览时保持 index.html、collector.js、public-config.js 与 assets、media、worlds 同级。
+仅预览时保持 index.html、collector.js、public-config.js 与 assets、media、worlds、question-art 同级。
 
 验证：
 源码目录 npm test 检查计分、隐藏条件与存储容错，npm run build 检查生产构建。

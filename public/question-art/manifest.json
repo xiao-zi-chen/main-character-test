@@ -1,0 +1,2006 @@
+{
+  "provider": "MiniMax H3 (local ComfyUI)",
+  "revision": "diverse-ee371d38ac34",
+  "questions": {
+    "1.1": {
+      "id": "1.1",
+      "seed": 2026101800,
+      "promptId": "4eeb2c9a-9bb2-4aa7-8227-4693027ad518",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.7,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "watercolor-travel",
+        "label": "旅行水彩",
+        "family": "watercolor",
+        "medium": "Transparent watercolor on white cold-pressed paper, loose architectural washes, fine pencil contours, airy travel sketchbook illustration. Visible paper grain, luminous white highlights, not a digital cartoon.",
+        "protagonist": "a young woman with a long auburn braid, round spectacles, a mustard yellow raincoat and navy jeans",
+        "palette": "cobalt blue, lemon yellow, white paper and terracotta",
+        "setting": "a leafy seaside neighborhood with small independent shops"
+      },
+      "sourceVersion": "question-art-v5",
+      "assets": {
+        "scene": {
+          "file": "1-1/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 139702,
+          "sha256": "3d68bdebc4548476ee369da61ca6bce12559edc509381264ed4f3495c36a198f"
+        },
+        "left": {
+          "file": "1-1/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 112520,
+          "sha256": "3340e57de054b1c9f11d897d114406bccd0cd42ef68f8a9430dbf01b4408cf67"
+        },
+        "right": {
+          "file": "1-1/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 112840,
+          "sha256": "345b4b60ae231b8e3294a5668a579082233d2e13e8e59a8f45f68712ed821007"
+        }
+      }
+    },
+    "2.1": {
+      "id": "2.1",
+      "seed": 2026101801,
+      "promptId": "b0569665-5d3e-4888-9623-900f660ab318",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.5,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "clay-desk",
+        "label": "黏土定格",
+        "family": "clay",
+        "medium": "Photographed handmade clay stop-motion miniature. Rounded sculpted human puppets, visible fingerprints on matte plasticine, tiny tactile furniture, soft studio light and shallow depth of field. Truly three-dimensional, not drawn.",
+        "protagonist": "a clay young man with tightly curled dark hair, a plum purple sweatshirt and cream trousers",
+        "palette": "lavender, apricot, cream and plum",
+        "setting": "a compact attic home office with sloped windows and tiny handcrafted props"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "2-1/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 81970,
+          "sha256": "63b704dc96a4c1a5770c20531132b07cf5a4f38c28ad0c312e97253c8dfa0363"
+        },
+        "left": {
+          "file": "2-1/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 81524,
+          "sha256": "daa721185fabad5bae198b423a3901ff134911176cf56b5fed7371c5048959c9"
+        },
+        "right": {
+          "file": "2-1/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 104168,
+          "sha256": "d88986b1bccb087d6ae50830a2ff039d7cf15ed4e7311b2b539c9db9eeea6f4f"
+        }
+      }
+    },
+    "3.1": {
+      "id": "3.1",
+      "seed": 2026101802,
+      "promptId": "c6946aa4-6ca8-4e13-89ab-1ce7898bc923",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "pop-comic",
+        "label": "波普美漫",
+        "family": "comic",
+        "medium": "Bold American pop comic illustration, thick black contour ink, vivid flat colors, halftone Ben-Day dot shading, energetic but readable facial acting. No speech balloons or lettering.",
+        "protagonist": "a young Black woman with a high curly ponytail, red varsity jacket and white shirt",
+        "palette": "signal red, cyan, bright yellow and deep black",
+        "setting": "a lively retro diner with checked flooring and round cafe tables"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "3-1/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 130816,
+          "sha256": "418b221b0b26ad8a7ed3fd69ed7f3cb98256baff8ddb0cd60c52ac9c110e47d4"
+        },
+        "left": {
+          "file": "3-1/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 141818,
+          "sha256": "fed9d63d8bf370904b8c2393237c667f372b370b494aec6237ff9eb28934d710"
+        },
+        "right": {
+          "file": "3-1/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 135042,
+          "sha256": "5442464690d4a8b369b678de3a57e895bd45b85bf8500be62377def9d1a67215"
+        }
+      }
+    },
+    "4.1": {
+      "id": "4.1",
+      "seed": 2026101803,
+      "promptId": "857fb2ea-1c78-4743-9f4a-125d2797f263",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "pixel-savepoint",
+        "label": "像素游戏",
+        "family": "pixel",
+        "medium": "Authentic 16-bit pixel art, clearly visible square pixel clusters, limited color palette, crisp stair-step silhouettes, retro adventure-game backgrounds, absolutely no smooth painted gradients or realistic rendering.",
+        "protagonist": "a young man with spiky silver hair, a cobalt blue hoodie and orange headphones",
+        "palette": "indigo, electric blue, orange and lilac",
+        "setting": "a compact gaming lounge with a console, CRT screen and beanbag chairs"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "4-1/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 91868,
+          "sha256": "3d357e8dc658572a3a68cd31c889c8f45c06d3c82bd326a22bcaf7485ace3fe7"
+        },
+        "left": {
+          "file": "4-1/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 109446,
+          "sha256": "2072c49b2a807e3fad4c6a01d205b80c0e6a1ee44cb1b3e1c900ec860f02a366"
+        },
+        "right": {
+          "file": "4-1/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 91592,
+          "sha256": "ef51444aeb154f540e21ab0bdefcc16757f1442101d68fb2835edb1e7634f364"
+        }
+      }
+    },
+    "5.1": {
+      "id": "5.1",
+      "seed": 2026101804,
+      "promptId": "976c579c-158a-4cd3-b213-6e857c510761",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.7,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "fashion-marker",
+        "label": "时装马克笔",
+        "family": "marker",
+        "medium": "Editorial fashion drawing in alcohol marker and fine black pen. Confident sketchy lines, translucent marker streaks, elegant elongated human figures, large clean color fields on ivory paper.",
+        "protagonist": "a tall young woman with a straight black bob, a bright magenta blazer and wide white trousers",
+        "palette": "fuchsia, ivory, charcoal and pale blush",
+        "setting": "a modern rooftop gathering with tall windows and a snack bar"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "5-1/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 122772,
+          "sha256": "4ce001fb137bcae86ba1c9732fcda4c4692c216194f314a9dcf0a4a5c5a4d84e"
+        },
+        "left": {
+          "file": "5-1/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 127964,
+          "sha256": "68d4783543ddbd7efc68f21d33de5b822628aead6051011d57e306cda7616337"
+        },
+        "right": {
+          "file": "5-1/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 129074,
+          "sha256": "12bfa6a20144b59c62efa13935e3ee7dfd74971094ca2ec871fa96abb5b32545"
+        }
+      }
+    },
+    "6.1": {
+      "id": "6.1",
+      "seed": 2026101805,
+      "promptId": "73ed26b8-f52d-4af6-8fc0-9f0cc90342c5",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.5,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "risograph-progress",
+        "label": "双色孔版印刷",
+        "family": "print",
+        "medium": "Two-color risograph print on uncoated paper. Blue and vermilion ink layers, visible misregistration, grainy flat silhouettes, simple expressive human faces, deliberate graphic composition.",
+        "protagonist": "a young man with wavy shoulder-length hair, a striped polo shirt and an orange knit cap",
+        "palette": "vermilion, ultramarine and off-white paper only",
+        "setting": "a small contemporary studio with a wall pinboard and desk plants"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "6-1/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 97702,
+          "sha256": "3e44b5cb87ef3c5f60a637d73383a96e539c5af5205a21d53a73b1720e828ce2"
+        },
+        "left": {
+          "file": "6-1/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 97904,
+          "sha256": "0543214004d49b0378e77fb47620fe68fd6383d858532488df42e92f98f03719"
+        },
+        "right": {
+          "file": "6-1/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 99924,
+          "sha256": "2ab878f4ce0f717fb7911a77e167e670d93ef6d5367cd42f9c0622181c9384c0"
+        }
+      }
+    },
+    "7.1": {
+      "id": "7.1",
+      "seed": 2026101806,
+      "promptId": "f1cb9007-3a16-44a8-b787-a17ade568be7",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "sunlight-film",
+        "label": "日光胶片摄影",
+        "family": "photography",
+        "medium": "Natural live-action 35mm color film photographs of a real human, candid lifestyle editorial, realistic skin texture and anatomy, sunlight on linen, gentle film grain. Not illustration, not anime, not 3D animation.",
+        "protagonist": "a woman in her early thirties with dark hair in a messy bun, a pale blue linen blouse and loose white trousers",
+        "palette": "sky blue, white linen, honey sunlight and natural wood",
+        "setting": "a bright apartment with large windows, a low sofa and a painting desk"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "7-1/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 97632,
+          "sha256": "6a64989bb0283263ce022affd23cd047050560f07af529d6b808ce3ad1c7100c"
+        },
+        "left": {
+          "file": "7-1/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 113932,
+          "sha256": "1ba79d4c74e72b4c21d377ffb6deab6f31249eb82422fe770695585a234ff9e0"
+        },
+        "right": {
+          "file": "7-1/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 70216,
+          "sha256": "c33429981f9a59df453a02fb5c0a9d61527c2827f7c671da500e14b3d6c9f0c0"
+        }
+      }
+    },
+    "8.1": {
+      "id": "8.1",
+      "seed": 2026101807,
+      "promptId": "f54d18a4-4143-4822-963f-8b37c8c73c91",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "art-nouveau-cafe",
+        "label": "新艺术装饰画",
+        "family": "decorative",
+        "medium": "Art Nouveau illustrative panels with elegant flowing contours, stylized botanical shapes integrated into the setting, flat jewel colors, delicate decorative linework and graceful human figures. No poster titles or outer ornamental border.",
+        "protagonist": "a young woman with flowing chestnut hair, a deep burgundy dress and a small pearl necklace",
+        "palette": "burgundy, peacock blue, antique gold and cream",
+        "setting": "a cafe with curved woodwork, floral glass and a riverside walkway"
+      },
+      "sourceVersion": "question-art-v5",
+      "assets": {
+        "scene": {
+          "file": "8-1/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 120424,
+          "sha256": "3207c0dcc3ddc3e753483eecc032a4e1fad854ccc810147a643b8b62804d7670"
+        },
+        "left": {
+          "file": "8-1/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 127324,
+          "sha256": "c2d623da266b1d27dd10812958db0293b1e469821412159ffce43a7567d0e96b"
+        },
+        "right": {
+          "file": "8-1/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 125012,
+          "sha256": "ca6c933d85ff07508d27433fd39fc41e0089c6b6ca36a7b5e0159562c17fa4c7"
+        }
+      }
+    },
+    "9.1": {
+      "id": "9.1",
+      "seed": 2026101808,
+      "promptId": "deefaa97-7ef2-4b66-af64-973db05f1269",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.5,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "ink-family",
+        "label": "国风水墨设色",
+        "family": "ink",
+        "medium": "Contemporary Chinese ink-and-wash painting on textured rice paper. Expressive black brush lines, translucent vermilion and blue washes, generous unpainted white areas, restrained natural human faces. No calligraphy, seals or text.",
+        "protagonist": "a young man with cropped black hair, a rust-red knit sweater and dark trousers",
+        "palette": "ink black, vermilion, muted blue and rice-paper white",
+        "setting": "a modern Chinese home with walnut furniture, a reading chair and round family dinner table"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "9-1/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 100234,
+          "sha256": "4f1da5ec6d2e9d2d2b10b2350b91013118aaf4b0a82374d7a55bad8af6a0177c"
+        },
+        "left": {
+          "file": "9-1/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 74134,
+          "sha256": "19493b3b922f25cde0e3f830eb0302ca254a6e02543c1a4900cc6e33a0eaad96"
+        },
+        "right": {
+          "file": "9-1/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 89194,
+          "sha256": "1ef842fb145c4e44ed2610205afd6baf621d9e9aea519d80377381f36cfd1778"
+        }
+      }
+    },
+    "10.1": {
+      "id": "10.1",
+      "seed": 2026101809,
+      "promptId": "4cc41488-d5c3-4f7f-b077-9634bf753bd9",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.5,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "layered-paper-craft",
+        "label": "立体剪纸",
+        "family": "paper",
+        "medium": "A photographed layered cut-paper diorama. Every person, desk and object is made from precisely cut colored paper, visible paper edges, overlapping layers and cast shadows. Flat paper faces with simple eyes, rich dimensional construction.",
+        "protagonist": "a young paper-cut woman with two black braids, a turquoise apron and a coral long-sleeve top",
+        "palette": "turquoise, coral, ochre and cream",
+        "setting": "a craft workroom made of folded paper with tidy shelves of materials"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "10-1/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 87300,
+          "sha256": "dfcd54f23feee9351e8779326992d72c7cc2552a10710d2be9519f6ffdeb8d56"
+        },
+        "left": {
+          "file": "10-1/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 90704,
+          "sha256": "cf4849decf3acfa7f4bcec1f32176f9b2ccf3eafa448bbfbf145c956095236d5"
+        },
+        "right": {
+          "file": "10-1/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 88258,
+          "sha256": "e698a0162e532d91a9ebc2dfe9aba6fff88a880f8529df1634a7aca343abd8a3"
+        }
+      }
+    },
+    "1.2": {
+      "id": "1.2",
+      "seed": 2026101810,
+      "promptId": "2cf5f9e7-046b-47e5-9275-5ad51041c8ed",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.4,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "lowpoly-video",
+        "label": "低多边形三维",
+        "family": "lowpoly",
+        "medium": "Low-poly 3D illustration with obvious faceted polygonal surfaces, angular human characters, simple geometric furniture, ambient occlusion and soft directional light. No drawn outlines, no smooth photoreal faces.",
+        "protagonist": "a young man with an angular dark-blue undercut, an orange T-shirt and slate shorts",
+        "palette": "burnt orange, slate blue, pale gray and soft cyan",
+        "setting": "a minimal apartment with angular furniture and a large modular sofa"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "1-2/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 56508,
+          "sha256": "e57b10750a322243f345bb143c97a723f4652a19bc0b8ccb815586d7c5867b01"
+        },
+        "left": {
+          "file": "1-2/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 53382,
+          "sha256": "77c33d23c436b7ca25e31e880848a7de07ecfea0d2f6fd46ccde804b15a6ece0"
+        },
+        "right": {
+          "file": "1-2/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 47396,
+          "sha256": "a8a48be4e29e408aa2daf7ba9da6b469ef690c0565f684d327874aea2065854d"
+        }
+      }
+    },
+    "2.2": {
+      "id": "2.2",
+      "seed": 2026101811,
+      "promptId": "720d2f0c-c3d5-4fed-a77a-62b5c1370bf4",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.4,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "midcentury-travel",
+        "label": "复古旅行海报",
+        "family": "poster",
+        "medium": "Mid-century screen-printed travel illustration, strong simplified geometric architecture, flat graphic human silhouettes, limited spot colors, subtle printing texture. Absolutely no poster captions or lettering.",
+        "protagonist": "a young woman with a short chestnut pixie haircut, a navy trench coat and scarlet shoulder bag",
+        "palette": "navy, tomato red, cream and powder blue",
+        "setting": "a walkable tram neighborhood with a cozy corner cafe"
+      },
+      "sourceVersion": "question-art-v5",
+      "assets": {
+        "scene": {
+          "file": "2-2/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 54072,
+          "sha256": "95e69aec562d2802c293af06c50a6de23c453b834f5eb14565d5e86203019c8a"
+        },
+        "left": {
+          "file": "2-2/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 70264,
+          "sha256": "74fa9075b40431fea74b8e49709b1bedf271f21f9c9f18ae395cb599d72195f4"
+        },
+        "right": {
+          "file": "2-2/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 61972,
+          "sha256": "288156f95fd081beabecfb1bace8fb947f359ecadc4bdd4f5e148dbcdb1e9bd4"
+        }
+      }
+    },
+    "3.2": {
+      "id": "3.2",
+      "seed": 2026101812,
+      "promptId": "7b579447-60f6-4a79-9724-fc8e65d3ba52",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.8,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "charcoal-conversation",
+        "label": "炭笔素描",
+        "family": "drawing",
+        "medium": "Expressive charcoal and white-chalk figure drawing on gray paper. Hand-smudged tonal masses, crisp charcoal accents, realistic human anatomy, sensitive faces, entirely grayscale, visible textured paper.",
+        "protagonist": "a man in his thirties with round glasses, a close-cropped beard and a plain dark cardigan",
+        "palette": "charcoal black, gray paper and white chalk only",
+        "setting": "an intimate quiet tea room with soft window light"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "3-2/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 141636,
+          "sha256": "29149866f8a26e68d61fa6faf4c7842f11fc0f04ba14d4599d435c11f29b65ee"
+        },
+        "left": {
+          "file": "3-2/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 144954,
+          "sha256": "2807241e82ce2814d00d34e872d67d61565096afb7a0f47ae27b166b89f4c149"
+        },
+        "right": {
+          "file": "3-2/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 144284,
+          "sha256": "76724e4c7299ce28c4768fdf65629e2d8cd45a61038e4fa783cad6725ffcc410"
+        }
+      }
+    },
+    "4.2": {
+      "id": "4.2",
+      "seed": 2026101813,
+      "promptId": "4cbd21a0-dce1-4488-aad4-189bdfc208d4",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "fauvist-gathering",
+        "label": "高彩油画",
+        "family": "oil",
+        "medium": "Vibrant modern figurative oil painting with thick palette-knife impasto, expressive visible brushstrokes, saturated nonliteral colors and clear readable gestures. Painterly canvas surface, not cartoon line art.",
+        "protagonist": "a woman with short copper curls, a turquoise blouse and yellow earrings",
+        "palette": "cobalt, orange, turquoise and acid yellow",
+        "setting": "a colorful sunroom with friends around a low coffee table"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "4-2/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 114668,
+          "sha256": "f27a9493dd9e96fed6c58bb41fa8e457cad0e86ff003ef655c7dbe7e414e46de"
+        },
+        "left": {
+          "file": "4-2/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 117910,
+          "sha256": "753388fa7f476029921a734a3757ea30927f0919b2b7ed44fc13f8f675d2fbf4"
+        },
+        "right": {
+          "file": "4-2/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 117086,
+          "sha256": "020658fff72a51955944043047ee1fc22fa2669df40148c8972d6222a84360e3"
+        }
+      }
+    },
+    "5.2": {
+      "id": "5.2",
+      "seed": 2026101814,
+      "promptId": "8fd7ace0-f5db-4806-9c90-6fdde8ac6564",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.4,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "collage-gallery",
+        "label": "拼贴画",
+        "family": "collage",
+        "medium": "Handmade editorial collage from torn colored paper and cropped photographic textures. Cut-out human faces and garments, rough torn edges, playful asymmetrical composition, no text scraps or newspaper lettering.",
+        "protagonist": "a young man with dark curly hair, a cobalt overshirt and beige trousers",
+        "palette": "cobalt, coral pink, kraft brown and white",
+        "setting": "a contemporary art gallery with framed flower paintings and blank walls"
+      },
+      "sourceVersion": "question-art-v5",
+      "assets": {
+        "scene": {
+          "file": "5-2/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 53622,
+          "sha256": "de4007d599e125b7f20787e0d6cbaf8b4ef99749b6f9a5a7a39b92cce1948bd8"
+        },
+        "left": {
+          "file": "5-2/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 56000,
+          "sha256": "2a9b53dd419acf9c2f54b2b8f67c637c0421488eba063434110191d279142fdd"
+        },
+        "right": {
+          "file": "5-2/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 53756,
+          "sha256": "4fdeaf2d0f1f47dbf7c1e6a21d4f061a59576712de2e28e81f613dd2a419884d"
+        }
+      }
+    },
+    "6.2": {
+      "id": "6.2",
+      "seed": 2026101815,
+      "promptId": "5dffb75b-601f-4cdc-9094-931ba6d42ae5",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "clearline-comic",
+        "label": "欧式清线漫画",
+        "family": "comic",
+        "medium": "European clear-line comic drawing, precise uniform fine black outlines, flat bright colors without hatching, detailed readable environments, expressive natural human faces. No text or speech balloons.",
+        "protagonist": "a young woman with a strawberry-blonde ponytail, a cherry red turtleneck and denim overalls",
+        "palette": "cherry red, sky blue, butter yellow and clean white",
+        "setting": "a small neighborhood drawing class with wooden worktables"
+      },
+      "sourceVersion": "question-art-v5",
+      "assets": {
+        "scene": {
+          "file": "6-2/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 137314,
+          "sha256": "ee39d4eed9a9c627bc05d6370d5840f854871245b9024aca1872d23a3b227a95"
+        },
+        "left": {
+          "file": "6-2/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 132316,
+          "sha256": "30b9cd13a6183726d474b15e101fe0c087435eb4c7682ff829227de4c358f746"
+        },
+        "right": {
+          "file": "6-2/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 135038,
+          "sha256": "e382dc41390d09e0bec3c64d593e8fad5faa9db99e0b98785175152555b487cb"
+        }
+      }
+    },
+    "7.2": {
+      "id": "7.2",
+      "seed": 2026101816,
+      "promptId": "34066d82-9564-44e0-bc65-7e66d743b0b1",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.5,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "cel-animation",
+        "label": "赛璐璐动画",
+        "family": "animation",
+        "medium": "Hand-painted 1990s cel animation stills, clean expressive anime faces, crisp two-tone cel shadows, detailed painted backgrounds, subtle analog film texture. Distinct traditional animation production design.",
+        "protagonist": "a young man with navy-black hair tied in a short ponytail, an ivory shirt and a red artist apron",
+        "palette": "deep red, ivory, muted violet and sky blue",
+        "setting": "a personal art studio with an easel, colored paper and a broad daylight window"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "7-2/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 109326,
+          "sha256": "10364cd422b3e56d7e2ff9be566a1eca40c2dbd8f23280df8a6972f4d6fd9198"
+        },
+        "left": {
+          "file": "7-2/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 104802,
+          "sha256": "8b05051f4e1b0d85e4a4b9e9351594074f0c959bef1cec96a6d671e00531b361"
+        },
+        "right": {
+          "file": "7-2/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 72888,
+          "sha256": "3c3b80bca9561dcbd0a0b1a331d836ee1806ba236b2609c2595e29e72968b24d"
+        }
+      }
+    },
+    "8.2": {
+      "id": "8.2",
+      "seed": 2026101817,
+      "promptId": "c28a4b89-b4d6-4968-b6c2-d28a7635a5db",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "isometric-maps",
+        "label": "等距微缩模型",
+        "family": "diorama",
+        "medium": "Isometric 3D miniature world photographed from a consistent elevated three-quarter angle. Tiny articulated human figurines, precise scale-model props, soft shadows, clean toy-like materials, tilt-shift depth of field.",
+        "protagonist": "a miniature woman with a black topknot, a tangerine jacket and white sneakers",
+        "palette": "tangerine, teal, sand and white",
+        "setting": "a tiny mapmaker's home studio with miniature hills and route maps on a large desk"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "8-2/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 96998,
+          "sha256": "73b5e6477904a737bc60ec8a5e07d9f3d094fb1ee70f9ca9348a7defbd0d3082"
+        },
+        "left": {
+          "file": "8-2/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 96466,
+          "sha256": "d000ad0842a936bc0f9834698692d9b2ada6d234475c6b3464602d6bce44a210"
+        },
+        "right": {
+          "file": "8-2/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 94606,
+          "sha256": "ef0c78dbdaae3af5ee9bb298e1a40d7893d0a9542d3e69f7f2b4a967e950066f"
+        }
+      }
+    },
+    "9.2": {
+      "id": "9.2",
+      "seed": 2026101818,
+      "promptId": "4ec82dca-6da4-4342-aa76-cf2278013d3c",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "needlefelt-home",
+        "label": "羊毛毡定格",
+        "family": "felt",
+        "medium": "Handmade needle-felt wool puppet photography. Soft fuzzy fibers visible on human puppet faces, clothes and furniture, tiny stitched details, cozy stop-motion set lighting. Material must clearly be fuzzy wool, not smooth clay.",
+        "protagonist": "a felt young woman with dark yarn hair in a bun, a lilac cardigan and a mustard skirt",
+        "palette": "lilac, mustard, dusty pink and oatmeal",
+        "setting": "a cozy wool-felt living room with a sofa, separate armchair and a knitted rug"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "9-2/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 112634,
+          "sha256": "82e8549e7402bde0c7a99561769d49ba6b01a7f5929da36aa4b1768ca9303334"
+        },
+        "left": {
+          "file": "9-2/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 110702,
+          "sha256": "3a59c31e4706f6e6af7b69df9921d16cdf616f440a0f92cf12e4b0655e2c0053"
+        },
+        "right": {
+          "file": "9-2/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 108974,
+          "sha256": "ed42787a6c67c185c30bb47140dc8c1e28950dfc33f59f8b6a649593de674a6e"
+        }
+      }
+    },
+    "10.2": {
+      "id": "10.2",
+      "seed": 2026101819,
+      "promptId": "9806db50-c093-4be7-a7f3-600b20616862",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.5,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "neon-street-film",
+        "label": "霓虹都市摄影",
+        "family": "photography",
+        "medium": "Cinematic live-action night street photography, realistic human, rain-polished pavement, luminous cyan and coral shop lights, deep shadows, sharp skin texture with soft bokeh. No illustrations or cartoon faces.",
+        "protagonist": "a young woman with a chin-length silver bob, a charcoal coat and a bright coral scarf",
+        "palette": "cyan neon, coral neon, deep navy and rain-gray",
+        "setting": "a contemporary city street at blue hour, parcel counter and a glowing flower shop; no legible signage"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "10-2/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 114992,
+          "sha256": "ce2fb18174d16447c6dd58eaf38ab9d7d7ed36b8630101d09a9e152d92341417"
+        },
+        "left": {
+          "file": "10-2/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 67632,
+          "sha256": "4f0f0000c27a42bcc7e6b255686cd1255f791791b69b373852b99455651aa17f"
+        },
+        "right": {
+          "file": "10-2/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 98498,
+          "sha256": "e3b559e9da14e38c776cec5fbc28adecbf8fe38b248f38644423cbfbc861a8d5"
+        }
+      }
+    },
+    "1.3": {
+      "id": "1.3",
+      "seed": 2026101820,
+      "promptId": "69c412d5-f808-4748-8c04-14ba930352f6",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.7,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "colored-pencil-debate",
+        "label": "彩铅速写",
+        "family": "pencil",
+        "medium": "Hand-drawn colored-pencil illustration on ivory sketch paper, overlapping pencil hatch marks, soft uneven outlines, delicate human portrait detail, visibly dry wax-pencil texture.",
+        "protagonist": "a young woman with dark curly hair and round brass glasses, wearing a lavender knit vest over a white blouse",
+        "palette": "lavender, sepia, leaf green and ivory",
+        "setting": "a small book cafe with mismatched chairs and generous natural light"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "1-3/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 136680,
+          "sha256": "d899b2d0762f04521067314cf8515f6f476ae7d91ccf8e3458768981f3107faa"
+        },
+        "left": {
+          "file": "1-3/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 136972,
+          "sha256": "6fcaf5c20ad7aa944c60bb0d16f81b897d069136f1582fc8a118ad1148b6eedc"
+        },
+        "right": {
+          "file": "1-3/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 135838,
+          "sha256": "10061ffa256eaade0e19284f8b60c111c00dbddbd13e56802d1b701e3431b376"
+        }
+      }
+    },
+    "2.3": {
+      "id": "2.3",
+      "seed": 2026101821,
+      "promptId": "29351043-bb85-466a-bc70-7a7240435f2c",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.5,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "manga-night",
+        "label": "黑白日漫",
+        "family": "manga",
+        "medium": "Black-and-white manga pages with controlled fine ink linework, crisp black shapes, screentone gradients and expressive but natural human faces. Monochrome only, no captions, no speech bubbles.",
+        "protagonist": "a young man with straight black hair falling over one eyebrow, a striped pajama shirt and dark lounge trousers",
+        "palette": "pure black, white and gray screentone only",
+        "setting": "a compact bedroom at night with a travel bag, bedside lamp and alarm clock"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "2-3/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 104662,
+          "sha256": "ce1657abe919645eea149e74ba0048f89c7cbe7701be8e6ebfc86f3e5b7f3548"
+        },
+        "left": {
+          "file": "2-3/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 112644,
+          "sha256": "9c05fb260687bcecf9b8d22b84b8129d8936459b16b2ae3fc466edab01741516"
+        },
+        "right": {
+          "file": "2-3/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 97124,
+          "sha256": "025549340554030820f1f2358b6e9a14de3f9ac8afa3de4259b2b494788932fb"
+        }
+      }
+    },
+    "3.3": {
+      "id": "3.3",
+      "seed": 2026101822,
+      "promptId": "2a5fc9c4-52ca-4b26-acad-aab3a8a53b4f",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.3,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "geometric-editorial",
+        "label": "几何扁平插画",
+        "family": "flat",
+        "medium": "Bold contemporary geometric editorial illustration. Simplified human figures built from clean shapes, oversized expressive hands, flat solid colors, no painterly texture, no 3D shading, crisp edges.",
+        "protagonist": "a young Black man with close-cropped hair, a coral jacket and a navy T-shirt",
+        "palette": "coral, navy, mint and pale peach",
+        "setting": "an open coworking room with a simple rectangular collaboration table"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "3-3/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 49936,
+          "sha256": "03156e08ad45d4c2867c044be10d11f6c66894d43e50d668094f5a990d9e743d"
+        },
+        "left": {
+          "file": "3-3/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 48640,
+          "sha256": "5c9fb72dc035cf4f6d3a1aaec9f1d43c53c8019aaceb47df755c44839c95dc71"
+        },
+        "right": {
+          "file": "3-3/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 49516,
+          "sha256": "6d39b36fc583a86a9794c829ea8c304b54ac1666df1a9a828f37410fd0db3b14"
+        }
+      }
+    },
+    "4.3": {
+      "id": "4.3",
+      "seed": 2026101823,
+      "promptId": "7df18b48-e984-49ad-930a-954aefcb254d",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "cyanotype-mystery",
+        "label": "蓝晒插画",
+        "family": "cyanotype",
+        "medium": "Cyanotype-inspired photographic illustration, deep Prussian blue silhouettes and white illuminated details on textured blue paper, poetic photographic contours, visible chemical-print texture. Blue and white only, not regular color cartoon.",
+        "protagonist": "a woman with a high ponytail, round glasses and a white button-up shirt",
+        "palette": "Prussian blue, pale cyan and white only",
+        "setting": "a quiet desk by a window, a phone and geometric puzzle notes"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "4-3/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 106336,
+          "sha256": "7a6f863248426cbd460a680648bac743757d7925f7161fefc11de890a821d515"
+        },
+        "left": {
+          "file": "4-3/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 103608,
+          "sha256": "f20a89ef3e71167b227fde6a35f1becdefb9bd06e5fddaf868c9bbd008ba7157"
+        },
+        "right": {
+          "file": "4-3/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 110870,
+          "sha256": "3b2c89e0b5b0898a63fe88e7a240f16b6bf25a4f42279ca0451e23c6f3420056"
+        }
+      }
+    },
+    "5.3": {
+      "id": "5.3",
+      "seed": 2026101824,
+      "promptId": "997cdd9b-7815-4b8c-9363-e6e46cd9a321",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "soft-3d-animation",
+        "label": "柔光三维动画",
+        "family": "3d-animation",
+        "medium": "High-quality stylized 3D animated-film stills, appealing rounded adult human characters, sculpted hair, detailed fabric materials, soft subsurface lighting and cinematic depth. No 2D painted outlines.",
+        "protagonist": "a young woman with a voluminous dark curly bob, a sunflower yellow bomber jacket and white sneakers",
+        "palette": "sunflower yellow, aqua, cream and soft plum",
+        "setting": "a bright modern coffee shop entrance with glass doors and potted plants"
+      },
+      "sourceVersion": "question-art-v5",
+      "assets": {
+        "scene": {
+          "file": "5-3/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 94288,
+          "sha256": "a38c22500604645f6c8e2dc6cb21900ddfeb1200c88ec7141906b7e53f399094"
+        },
+        "left": {
+          "file": "5-3/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 83096,
+          "sha256": "15dce4498a51c5f0014723411d415a81740c1a72c6421fa88d38c102518d66ac"
+        },
+        "right": {
+          "file": "5-3/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 81648,
+          "sha256": "2aebe481e3818ce705bd11b4dbdf402e9e5bfce22d8f49b4484f89c7e7ef27c3"
+        }
+      }
+    },
+    "6.3": {
+      "id": "6.3",
+      "seed": 2026101825,
+      "promptId": "3fd54191-3381-4de4-8447-e7ed22ff3037",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.5,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "duotone-photography",
+        "label": "黑白街拍人物",
+        "family": "photography",
+        "medium": "Black-and-white documentary lifestyle photography of a real adult human, strong window light, rich silver-gelatin tones, candid expression, realistic skin and clothes, subtle photographic grain. No illustration.",
+        "protagonist": "a man in his thirties with a shaved head, dark rectangular glasses and a white ribbed sweater",
+        "palette": "silver black, pearl white and neutral grays only",
+        "setting": "a modest modern apartment with a phone, notebook and a small creative workbench"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "6-3/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 73810,
+          "sha256": "ba37ed18d3bb77e8e1aceb4ec80fb628ae60a97398df9805808fe2507382158b"
+        },
+        "left": {
+          "file": "6-3/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 74632,
+          "sha256": "7d97e2ba85c3ba38f3abdc19ade83d9ad0d7a9e1b87adbec9e8f51d831c19702"
+        },
+        "right": {
+          "file": "6-3/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 72698,
+          "sha256": "70c24916a7b0eccfd5fa20cff6c733eff845915b47192c00a75c6f0ca151cf4e"
+        }
+      }
+    },
+    "7.3": {
+      "id": "7.3",
+      "seed": 2026101826,
+      "promptId": "77fe1c49-4fb4-4846-98cc-ac2b08d4ca1f",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "wooden-puppet",
+        "label": "木偶微缩片场",
+        "family": "wood",
+        "medium": "Photographed hand-carved wooden human puppets in a miniature workshop. Visible wood grain, simple painted eyes, articulated joints, tiny fabric clothes and warm cinematic practical light. Clearly real wooden objects.",
+        "protagonist": "a wooden young man puppet with carved brown hair, a brick-red fabric vest and cream sleeves",
+        "palette": "walnut brown, brick red, cream and muted blue",
+        "setting": "a tiny architectural craft workshop with a model house, model boat and loose planning cards"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "7-3/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 119156,
+          "sha256": "49a9ca755f0b0dcbd5340cbd43589dcf705ab657a4988b7a6d5b20039c916604"
+        },
+        "left": {
+          "file": "7-3/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 108730,
+          "sha256": "b08338a1ea57106d7669249939544f5639e6f79f1a78510f8f05bc3f11f9e831"
+        },
+        "right": {
+          "file": "7-3/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 112430,
+          "sha256": "3965c5baaadf3fc9fc6383553d000ced652d33d9228523b0ce2ef1935850c153"
+        }
+      }
+    },
+    "8.3": {
+      "id": "8.3",
+      "seed": 2026101827,
+      "promptId": "84172c98-b3d9-49ac-9592-2f5effb5bba5",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "blueprint-linework",
+        "label": "技术蓝图插画",
+        "family": "technical",
+        "medium": "Elegant architectural blueprint drawing with fine white and cyan technical linework on deep blue paper. Human figures and furniture drawn as precise outlined forms, a few orange accents, no numbers or annotations.",
+        "protagonist": "a woman with a short asymmetrical haircut, an orange work jacket and rolled-up sleeves",
+        "palette": "blueprint navy, cyan, white and small orange accents",
+        "setting": "a maker workshop with worktables and rows of small storage boxes"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "8-3/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 110480,
+          "sha256": "7187617b1426f6b53ffce689c4a0a99bbe97deaf806dd54b0dd886f84ca22560"
+        },
+        "left": {
+          "file": "8-3/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 115304,
+          "sha256": "6a3b5a2a658013f5ddb1fd95c097015f62b25879ed1aa836fdd92e416c4f4f27"
+        },
+        "right": {
+          "file": "8-3/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 118850,
+          "sha256": "36a75ddcdbd62a452bbfdcd5526ea652037e3bc3cd3cc41f43f17d60c1095a08"
+        }
+      }
+    },
+    "9.3": {
+      "id": "9.3",
+      "seed": 2026101828,
+      "promptId": "b431cdf8-64ab-4cd0-aa42-a7a53dd0885f",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.5,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "gouache-food",
+        "label": "美食广告水粉",
+        "family": "gouache",
+        "medium": "Playful hand-painted food editorial in opaque gouache, broad brush shapes, creamy paint texture, friendly rounded human faces, exaggerated appetizing food colors, bold simple compositions.",
+        "protagonist": "a young woman with long dark hair in a low braid, a white T-shirt and bright orange dungarees",
+        "palette": "tomato orange, peach, turquoise and cream",
+        "setting": "a small breakfast nook with a single diner, a noodle bowl and a phone"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "9-3/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 83412,
+          "sha256": "f6ad881404d1362c16bf82c1aceac99250c570b6d6453f4475645f990ee31b5b"
+        },
+        "left": {
+          "file": "9-3/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 85364,
+          "sha256": "b34bec9d3c542b7691f91e0785f4a0629570626dbc8da357debc87658f74631c"
+        },
+        "right": {
+          "file": "9-3/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 83958,
+          "sha256": "8e96f4451157412d5d5f78a77eeb2b3d46300336ed9f481c65c826264abcbdb0"
+        }
+      }
+    },
+    "10.3": {
+      "id": "10.3",
+      "seed": 2026101829,
+      "promptId": "262002cb-caf6-4c50-8ef2-99d6e0becc17",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.9,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "embroidery-festival",
+        "label": "刺绣布艺",
+        "family": "textile",
+        "medium": "Hand-embroidered textile illustration photographed in detail. Every human and object rendered in colored thread and fabric applique, visible stitch direction and linen weave, tidy stitched faces, soft textile relief.",
+        "protagonist": "a young embroidered man with black thread hair, a vivid blue jacket and a yellow backpack",
+        "palette": "royal blue, yellow, red thread and natural linen",
+        "setting": "a cheerful community arts venue with music, crafts and small picture displays"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "10-3/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 185136,
+          "sha256": "51fe931190f0b3d4f8f07e2db5dbf069300873c2944f668da9822ac38a580756"
+        },
+        "left": {
+          "file": "10-3/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 162982,
+          "sha256": "71377feaa091758e502e583065100faf41a72123fd4bc4429fa6dcbee50d8150"
+        },
+        "right": {
+          "file": "10-3/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 176732,
+          "sha256": "4f71a673a2d4ceb40bdc421c31c6046c69aa2a97b9897f3b865153a5a02f0b9f"
+        }
+      }
+    },
+    "1.4": {
+      "id": "1.4",
+      "seed": 2026101830,
+      "promptId": "2f9d2562-4408-450f-94fa-d57e0dfe78c0",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "pastel-city",
+        "label": "粉彩城市画",
+        "family": "pastel",
+        "medium": "Soft oil-pastel illustration on rough dark paper, luminous chalky color blocks, confident loose contours, textured atmospheric city scenes and warm expressive people.",
+        "protagonist": "a young woman with a high auburn bun, a cream trench coat and a violet scarf",
+        "palette": "violet, cream, brick orange and midnight blue",
+        "setting": "an unfamiliar city street with a modern casual restaurant and a tiny local noodle kitchen"
+      },
+      "sourceVersion": "question-art-v5",
+      "assets": {
+        "scene": {
+          "file": "1-4/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 127370,
+          "sha256": "05cab005a434f66528ac80fa8e4ddc5e9ae977bb7cc98dbcec528ce228d991dc"
+        },
+        "left": {
+          "file": "1-4/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 110030,
+          "sha256": "bf6a161e602603e9b8a141847028efb109f8a91c00fbfd424a35f4a10f37ea8a"
+        },
+        "right": {
+          "file": "1-4/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 120892,
+          "sha256": "a61e68e57c5012ef98c2f7176bad4a2676d6bcf7d5d41023007e079c3a2475e8"
+        }
+      }
+    },
+    "2.4": {
+      "id": "2.4",
+      "seed": 2026101831,
+      "promptId": "2905ed02-3642-40b7-8f89-527ebee32514",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.4,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "fashion-magazine-photo",
+        "label": "清爽生活摄影",
+        "family": "photography",
+        "medium": "Bright high-key editorial lifestyle photography, real adult human, crisp white interior, natural skin, subtle soft shadows and clean composition. Magazine photo quality, no drawing, no clay, no CGI.",
+        "protagonist": "a young East Asian man with wavy dark hair, a salmon pink polo shirt and cream trousers",
+        "palette": "white, salmon pink, light oak and soft blue",
+        "setting": "a bright white apartment with a pale sofa, simple calendar and headphones"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "2-4/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 58590,
+          "sha256": "af48d2e62925649662d62a180953058236d711880900382ec9c6265474143336"
+        },
+        "left": {
+          "file": "2-4/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 60550,
+          "sha256": "1ea95d80d5b1e825ea7390fddca5c911357c5fc2c5458a511e3cd107ad95ba4d"
+        },
+        "right": {
+          "file": "2-4/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 65482,
+          "sha256": "305487556ff9efa34536df87781933a6806650483f61c3001fa1396b10d73b77"
+        }
+      }
+    },
+    "3.4": {
+      "id": "3.4",
+      "seed": 2026101832,
+      "promptId": "9c661906-d1e0-4165-b9a8-301a5302323c",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.7,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "linocut-advice",
+        "label": "套色木刻版画",
+        "family": "woodcut",
+        "medium": "Two-ink linocut woodblock print. Strong carved black contour shapes, visible gouged hatching, rough print texture and a second ochre ink layer. Stylized human figures with clearly readable pointing and listening gestures.",
+        "protagonist": "a woman in her thirties with shoulder-length wavy hair, an ochre blouse and dark vest",
+        "palette": "ink black, ochre and natural cream paper only",
+        "setting": "a small cafe table with a fragile paper tower model and tea cups"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "3-4/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 124616,
+          "sha256": "ce239427083c2ba0d17fcb9a1e0160a037542de98cb0f3bdbfabfcaae6e47324"
+        },
+        "left": {
+          "file": "3-4/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 138234,
+          "sha256": "57ab94fbf334ecbc6414883fddf2596632a646f53d3aa8fc89ef9f6ea6da513f"
+        },
+        "right": {
+          "file": "3-4/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 124798,
+          "sha256": "d25e058ef3ebf288a3be5afe35257465b786736fa551ad3714d25d8a8b8f3372"
+        }
+      }
+    },
+    "4.4": {
+      "id": "4.4",
+      "seed": 2026101833,
+      "promptId": "19e277d6-16e6-4574-a676-0d211509cc05",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.4,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "surreal-cinema",
+        "label": "超现实电影插画",
+        "family": "surreal",
+        "medium": "Surreal cinematic matte-painting illustration with realistic adult figures, deep dreamlike perspective, glowing colored light and imaginative floating forms only when specified. Rich dark theatrical atmosphere, not cozy storybook art.",
+        "protagonist": "a young man with a silver streak in black hair, a midnight blue velvet jacket and a white scarf",
+        "palette": "midnight blue, plum, moonlight silver and electric amber",
+        "setting": "a small art-house cinema lobby at night with plain glowing panels and no writing"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "4-4/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 57626,
+          "sha256": "26412032c39cb48dcef2adcd009663cb830a18eba99fd3a58965676781e39e22"
+        },
+        "left": {
+          "file": "4-4/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 67888,
+          "sha256": "b39a320a816862cee6e0bb5078851612998505785cfd1a74f39041083bb7b962"
+        },
+        "right": {
+          "file": "4-4/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 65290,
+          "sha256": "afccff62272a3f74ae7e83ce52a2c0aa6c071621e3c88c1a61a9592e2d5a6d84"
+        }
+      }
+    },
+    "5.4": {
+      "id": "5.4",
+      "seed": 2026101834,
+      "promptId": "c383a9ad-ba74-4c72-b5ad-526d41ca5475",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.5,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "retro-anime-train",
+        "label": "复古动画电影",
+        "family": "animation",
+        "medium": "Retro hand-painted anime film stills with delicate realistic proportions, soft cel shading, atmospheric detailed train backgrounds, gentle analog film grain and contemplative human acting.",
+        "protagonist": "a young woman with a long dark ponytail, a burgundy cardigan and a cream dress",
+        "palette": "burgundy, sage-gray seats, cream and soft landscape blue",
+        "setting": "a sunlit regional train carriage with large windows and passing countryside"
+      },
+      "sourceVersion": "question-art-v5",
+      "assets": {
+        "scene": {
+          "file": "5-4/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 61596,
+          "sha256": "6fa17c94fc9852a8db1b3f16b541579781bea7eb18481c20d9aa7515dc19044a"
+        },
+        "left": {
+          "file": "5-4/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 65840,
+          "sha256": "0a0bf34fcdbb67e3e3f71bc97723095af8b1008ceda084fa3ee26d5528f584cb"
+        },
+        "right": {
+          "file": "5-4/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 71632,
+          "sha256": "da1362d8a5c1c0ee8b9bfb64f9cf281bdca5d448171a42ff98051ed473575c7b"
+        }
+      }
+    },
+    "6.4": {
+      "id": "6.4",
+      "seed": 2026101835,
+      "promptId": "78dde185-dfea-4c91-9e2a-8a08ba2bd459",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "toy-brick-team",
+        "label": "积木人偶场景",
+        "family": "toy",
+        "medium": "Photographed interlocking toy-brick diorama with original block-shaped human mini figures, plastic studded surfaces, articulated toy hands, clean high-detail macro photography and soft studio shadows. No brands or logos.",
+        "protagonist": "an original blocky human toy figure with dark plastic hair, a purple torso and tan legs",
+        "palette": "purple, turquoise, yellow and light gray plastic",
+        "setting": "a toy-brick creative workshop with a collaborative tabletop construction"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "6-4/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 98536,
+          "sha256": "9b509790fc8ca8ce14254e054184dd2d14194f6a4670f2fb5f6745cb9a26e402"
+        },
+        "left": {
+          "file": "6-4/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 100344,
+          "sha256": "7828f8d2fd4d631b34f4e34796a7424f8dc5c48c72dd4d5a67cb31b0d169b6c5"
+        },
+        "right": {
+          "file": "6-4/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 97394,
+          "sha256": "1bd306ad86eedd028814a7c6200f7e9b88ed511098ca90b0e23c6b7ba337d017"
+        }
+      }
+    },
+    "7.4": {
+      "id": "7.4",
+      "seed": 2026101836,
+      "promptId": "cdc92693-6f5c-4a98-8cc4-b7ad89e348f2",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.6,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "botanical-sketch",
+        "label": "植物手账速写",
+        "family": "botanical",
+        "medium": "Delicate botanical sketchbook illustration mixing fine sepia pen, restrained green watercolor and precisely drawn human figures. Detailed leaves and park plants, generous cream-paper negative space, no written notes.",
+        "protagonist": "a young woman with a long black braid, a pale pink cardigan and a brown linen skirt",
+        "palette": "botanical green, dusty rose, sepia and cream",
+        "setting": "a leafy public garden with a wooden bench and branching paths"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "7-4/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 118014,
+          "sha256": "1bace4067087d307933b1460825449ed21056e482d9aaea0b0839771c9d408e4"
+        },
+        "left": {
+          "file": "7-4/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 98372,
+          "sha256": "d4b2f3487f56ccb4669d7f0ffda47284179de7ea3bbdc3d961961d37b45d7bdd"
+        },
+        "right": {
+          "file": "7-4/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 111872,
+          "sha256": "85d7976bbba65339e543e08ec8047bc9eb0a78bf66c93277e67d4a419dc83c3f"
+        }
+      }
+    },
+    "8.4": {
+      "id": "8.4",
+      "seed": 2026101837,
+      "promptId": "de448ccd-3143-4b0b-9857-366781685dd4",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.7,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "landscape-oil",
+        "label": "山野风景油画",
+        "family": "landscape",
+        "medium": "Plein-air landscape oil painting on coarse canvas. Visible broken brush strokes, expansive hills and moving cloud light, a small naturalistically painted human figure in the landscape, muted realistic colors.",
+        "protagonist": "a hiker in their thirties with short dark hair, a bright orange windbreaker and a blue daypack",
+        "palette": "sky blue, grass green, cloud white and orange",
+        "setting": "a spacious green hillside where a paved village road and a narrow wildflower trail diverge"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "8-4/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 109796,
+          "sha256": "934912543a834f2b0d27de8ee4facc693c3139dbc0bf87e068282ec771c9dd3f"
+        },
+        "left": {
+          "file": "8-4/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 123138,
+          "sha256": "1b92d094d4c5c75712ba1083cd7fdfffa4a40769d1b2c5e1d0c6dbca2d01e4d1"
+        },
+        "right": {
+          "file": "8-4/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 123116,
+          "sha256": "ccbc3d00a14cbc13164dac76a10091118d295c38150c75adcd556638a6f49871"
+        }
+      }
+    },
+    "9.4": {
+      "id": "9.4",
+      "seed": 2026101838,
+      "promptId": "cab5a376-0a4e-4194-b447-f9ffdb19cfcc",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.5,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "cinema-noir",
+        "label": "黑金电影感",
+        "family": "noir",
+        "medium": "Stylized noir film photography of real human adults, high-contrast black shadows, warm golden practical lights, cinematic night reflections, realistic skin and fabric, subtle film grain. Restrained gold and black treatment, not illustration.",
+        "protagonist": "a young man with neatly combed dark hair, a camel overcoat and a black turtleneck",
+        "palette": "golden amber, black, warm gray and pale highlights",
+        "setting": "a city cafe and a quiet lamplit street after an evening gathering"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "9-4/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 71420,
+          "sha256": "9dbc43dda7b3b560a90f0fd4a8b3218c1df76064d76c0373496207009050e96b"
+        },
+        "left": {
+          "file": "9-4/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 94610,
+          "sha256": "e97d73ed87b9327542c45f63b1f76468bf4446871aa0d3b315dd510c467ab118"
+        },
+        "right": {
+          "file": "9-4/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 68150,
+          "sha256": "760035fed2f928058d70ff91f7d02f88049206caab4a16a5bd3e441bfefe0f05"
+        }
+      }
+    },
+    "10.4": {
+      "id": "10.4",
+      "seed": 2026101839,
+      "promptId": "2044c4c9-de02-4cf0-bf50-721302259c97",
+      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+      "seconds": 15.4,
+      "sourceSize": [
+        1152,
+        1728
+      ],
+      "artDirection": {
+        "id": "ceramic-porcelain-world",
+        "label": "陶瓷釉面三维",
+        "family": "ceramic",
+        "medium": "A miniature world made of glazed ceramic figurines and hand-thrown pottery, photographed with gentle reflections. Shiny porcelain human faces, rounded glazed hair, tactile clay props and soft studio lighting, clearly sculptural ceramic material.",
+        "protagonist": "a ceramic young woman figurine with glossy dark hair in two small buns, a cobalt blue apron and white sleeves",
+        "palette": "cobalt blue, porcelain white, terracotta and soft jade",
+        "setting": "a pottery studio with a worktable, unfinished clay bowl and sculptural planter"
+      },
+      "sourceVersion": "question-art-v4",
+      "assets": {
+        "scene": {
+          "file": "10-4/scene.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 44834,
+          "sha256": "3a0386b08db058beb9fec6a795ba3a0824ef02cf1abd3a2d0509296db08ae853"
+        },
+        "left": {
+          "file": "10-4/left.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 44350,
+          "sha256": "24c9592058e13aebf361b7c0fba4d6d522683b9794d43478998b3622ad16e6fd"
+        },
+        "right": {
+          "file": "10-4/right.webp",
+          "size": [
+            1136,
+            556
+          ],
+          "bytes": 49136,
+          "sha256": "ca51e8dfd6b218c38abab57f852c712b52a2e2410f96accfe547718dccadf065"
+        }
+      }
+    }
+  }
+}

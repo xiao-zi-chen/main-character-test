@@ -1,9 +1,28 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { publicAssetPaths, publicEntryPaths } from '../scripts/public-assets.mjs';
+import { publicAssetPaths, publicEntryPaths, questionArtPaths } from '../scripts/public-assets.mjs';
 
 const manifest=JSON.parse(await readFile(new URL('../public/media/manifest.json',import.meta.url),'utf8'));
+const art=JSON.parse(await readFile(new URL('../public/question-art/manifest.json',import.meta.url),'utf8'));
+
+test('question release includes only the current artwork and rejects missing or unsafe assets',()=>{
+  const files=questionArtPaths(art);
+  assert.equal(files.length,121);
+  assert.equal(new Set(files).size,121);
+  assert.ok(files.includes('question-art/manifest.json'));
+  for(const filename of ['../scene.webp','1-1/backup.webp','https://example.com/scene.webp']) {
+    const changed=structuredClone(art);
+    changed.questions['1.1'].assets.scene.file=filename;
+    assert.throws(()=>questionArtPaths(changed),/Invalid question image/);
+  }
+  const missing=structuredClone(art);
+  delete missing.questions['1.1'];
+  assert.throws(()=>questionArtPaths(missing),/current forty questions/);
+  const extra=structuredClone(art);
+  extra.questions['obsolete']=extra.questions['1.1'];
+  assert.throws(()=>questionArtPaths(extra),/current forty questions/);
+});
 
 test('release includes current videos and fallback images without obsolete alternatives',()=>{
   const files=publicAssetPaths(manifest);
