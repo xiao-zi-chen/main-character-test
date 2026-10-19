@@ -20,5 +20,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+      - run: npm run media:questions
       - run: npm run build
       - run: node scripts/verify_deployment.mjs

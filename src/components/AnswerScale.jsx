@@ -3,6 +3,7 @@ import { isAnswer } from '../engine.js';
 import { SCALE_MIN, SCALE_MAX } from '../data/answer-scale.js';
 import './answer-scale.css';
 import { QuestionArt } from './QuestionArt.jsx';
+import { questionReactions } from '../data/question-reactions.js';
 
 const labels = ['更接近左侧', '偏左', '中立', '偏右', '更接近右侧'];
 const middle = (SCALE_MIN + SCALE_MAX) / 2;
@@ -41,7 +42,7 @@ export function AnswerScale({ value, options, onChoose, questionId }) {
         <span>{index === 0 ? '左侧反应' : '右侧反应'}</span><p>{option}</p>
       </button>)}
     </div>
-    <div className="answer-scale-instruction" id="answer-scale-help">哪一边更像你？</div>
+    <div className={`answer-scale-instruction ${answered && questionReactions[questionId] ? 'answer-reaction-caption' : ''}`} id="answer-scale-help" role="status">{answered && questionReactions[questionId] ? questionReactions[questionId][value].caption : '哪一边更像你？选一档，看看你的反应画面'}</div>
     <div ref={track} className={`answer-scale-track ${draft !== null ? 'dragging' : ''}`} role="slider" tabIndex={0}
       aria-label="选择你的倾向" aria-describedby="answer-scale-left answer-scale-right answer-scale-help answer-scale-selection"
       aria-valuemin={SCALE_MIN} aria-valuemax={SCALE_MAX} aria-valuenow={displayed}

@@ -197,11 +197,13 @@ test('phone sharing uses the native sheet and cancelling it does not show an err
     }});
   });
   await page.goto('/#/role/plot-rewriter');
-  await page.getByRole('button',{name:'分享剧本',exact:true}).click();
+  await page.getByRole('button',{name:'分享剧本',exact:true}).first().click();
+  await page.getByRole('button',{name:'更多分享方式',exact:true}).click();
   const invitations=await page.evaluate(()=>window.sharedInvitations);
   expect(invitations).toHaveLength(1);
   expect(invitations[0].text).toContain('心之所向');
   expect(invitations[0].url).toContain('#/role/plot-rewriter');
-  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await expect(page.locator('.share-status')).not.toContainText('无法');
   await expect(page.locator('.toast.visible')).toHaveCount(0);
 });

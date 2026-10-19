@@ -8,9 +8,10 @@ const art=JSON.parse(await readFile(new URL('../public/question-art/manifest.jso
 
 test('question release includes only the current artwork and rejects missing or unsafe assets',()=>{
   const files=questionArtPaths(art);
-  assert.equal(files.length,121);
-  assert.equal(new Set(files).size,121);
+  assert.equal(files.length,321);
+  assert.equal(new Set(files).size,321);
   assert.ok(files.includes('question-art/manifest.json'));
+  assert.ok(files.includes('question-art/1-1/scale-2.webp'));
   for(const filename of ['../scene.webp','1-1/backup.webp','https://example.com/scene.webp']) {
     const changed=structuredClone(art);
     changed.questions['1.1'].assets.scene.file=filename;

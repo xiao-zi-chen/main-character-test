@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { questions } from '../src/data/questions.js';
 import { questionCopy } from '../src/data/question-copy.js';
+import { questionReactions } from '../src/data/question-reactions.js';
 
 const root = new URL('../public/question-art/', import.meta.url);
 const manifest = JSON.parse(await readFile(new URL('manifest.json', root), 'utf8'));
@@ -25,8 +26,13 @@ for (const question of questions) {
   assert.ok(prompt.generationPrompt.includes(directions[question.id].medium), `Style missing from actual prompt: ${question.id}`);
   styleIds.add(prompt.artDirection.id);
   protagonists.add(prompt.artDirection.protagonist);
-  for (const kind of ['scene', 'left', 'right']) {
+  assert.equal(questionReactions[question.id].length, 5);
+  assert.equal(new Set(questionReactions[question.id].map(item => item.caption)).size, 5);
+  for (const kind of ['scene', 'left', 'right', 'scale-0', 'scale-1', 'scale-2', 'scale-3', 'scale-4']) {
     const asset = entry.assets[kind];
+    assert.ok(prompt.assets[kind].prompt.includes(prompt.assets[kind].action.replace(/(?:GREEN|green|BLUE|blue|CORAL|coral)-clad protagonist/g,'protagonist')));
+    assert.equal(asset.seed, prompt.assets[kind].seed);
+    assert.ok(asset.promptId, `Missing generated provenance: ${question.id}/${kind}`);
     const expectedPath = `${question.id.replace('.', '-')}/${kind}.webp`;
     assert.equal(asset.file, expectedPath);
     const file = new URL(asset.file, root);

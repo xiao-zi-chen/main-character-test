@@ -5,11 +5,11 @@ import { STORAGE_KEY } from '../../src/engine.js';
 
 const ids = dimensions.flatMap(d => questions.filter(q => q.dimension === d.id).slice(0, 2).map(q => q.id));
 
-test('all forty questions have three distinct decodable images', async ({ page }) => {
+test('all forty questions have eight distinct decodable images', async ({ page }) => {
   await page.goto('/');
   const assets = await page.evaluate(async ids => {
     return Promise.all(ids.map(async id => {
-      const sources = ['scene', 'left', 'right'].map(kind => `/question-art/${id.replace('.', '-')}/${kind}.webp`);
+      const sources = ['scene', 'left', 'right', 'scale-0', 'scale-1', 'scale-2', 'scale-3', 'scale-4'].map(kind => `/question-art/${id.replace('.', '-')}/${kind}.webp`);
       const images = await Promise.all(sources.map(src => new Promise(resolve => {
         const image = new Image();
         image.onload = () => resolve({ src, width: image.naturalWidth, height: image.naturalHeight });
@@ -21,7 +21,7 @@ test('all forty questions have three distinct decodable images', async ({ page }
   }, questions.map(q => q.id));
   expect(assets).toHaveLength(40);
   for (const asset of assets) {
-    expect(new Set(asset.images.map(image => image.src)).size).toBe(3);
+    expect(new Set(asset.images.map(image => image.src)).size).toBe(8);
     for (const image of asset.images) {
       expect(image.width, image.src).toBeGreaterThanOrEqual(1000);
       expect(image.height, image.src).toBeGreaterThanOrEqual(500);

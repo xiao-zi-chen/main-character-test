@@ -28,6 +28,10 @@ test('all forty questions fit in one phone screen, including both choices and na
       expect(layout.selection.bottom).toBeLessThanOrEqual(layout.actions.top);
       expect(layout.anchors.bottom).toBeLessThanOrEqual(layout.slider.top);
       expect(layout.slider.bottom).toBeLessThanOrEqual(layout.actions.top);
+      await page.locator('.answer-scale-labels button').nth(2).click();
+      await expect(page.locator('.answer-reaction-caption')).toBeInViewport();
+      await expect(page.getByRole('button',{name:'下一幕',exact:true})).toBeInViewport();
+      expect(await page.evaluate(()=>document.documentElement.scrollHeight)).toBeLessThanOrEqual(viewport.height+1);
     }
     await page.screenshot({path:`.work/quiz-screen-${viewport.width}.png`});
   }

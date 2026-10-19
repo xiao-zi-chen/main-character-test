@@ -54,7 +54,7 @@ export function questionArtPaths(manifest) {
   }
   const paths = ['question-art/manifest.json'];
   for (const { id } of questions) {
-    for (const kind of ['scene', 'left', 'right']) {
+    for (const kind of ['scene', 'left', 'right', 'scale-0', 'scale-1', 'scale-2', 'scale-3', 'scale-4']) {
       const filename = `${id.replace('.', '-')}/${kind}.webp`;
       if (entries[id]?.assets?.[kind]?.file !== filename) {
         throw new Error(`Invalid question image: ${id}/${kind}`);

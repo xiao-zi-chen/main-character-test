@@ -1,0 +1,13 @@
+.script-share-modal { max-width:560px; }
+.script-share-modal h2 { font-size:23px; line-height:1.5; }
+.share-role-name { color:#dce9d4; }
+.share-destinations { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0; }
+.share-destinations .button { padding:12px 10px; min-width:0; font-size:13px; }
+.share-status { min-height:44px; font-size:13px; line-height:1.7; color:#c5d3c8; }
+.script-share-modal .share-invitation { min-height:130px; margin:10px 0; width:100%; }
+.share-card-preview>p { font-size:12px; line-height:1.7; }
+.share-card-preview>img { display:block; width:min(100%,300px); height:auto; margin:14px auto; border-radius:8px; }
+.share-card-actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+.result-share-footer { border-top:1px solid #34483d; padding:24px 0; margin-top:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.result-share-footer p { color:#bac9c0; line-height:1.7; }
+@media(max-width:480px) { .result-share-footer { align-items:flex-start; flex-direction:column; } .script-share-modal h2 { font-size:20px; } }

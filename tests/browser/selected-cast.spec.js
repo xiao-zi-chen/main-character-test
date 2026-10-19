@@ -19,8 +19,8 @@ test('each dual cast member has a distinct URL, portrait and personality while s
     for(const person of film.cast) {
       await page.goto(`/#/role/${person.id}`);
       await expect(page.getByRole('heading',{level:1})).toHaveText(person.name);
-      await expect(page.locator('.film-cast a')).toHaveCount(2);
-      await expect(page.locator('.film-cast a[aria-current="page"]')).toHaveAttribute('href',`#/role/${person.id}`);
+      await expect(page.locator('.film-cast,.relationship-bond')).toHaveCount(0);
+      await expect(page.locator('.result-copy h1')).toHaveCount(1);
       portraits.push(await page.locator('.result-media img').getAttribute('src'));
       descriptions.push(await page.locator('.relationship-details').innerText());
       await page.getByRole('button',{name:`观看${person.name}的短片`,exact:true}).click();
@@ -31,7 +31,7 @@ test('each dual cast member has a distinct URL, portrait and personality while s
     expect(new Set(portraits).size,film.id).toBe(2);
     expect(new Set(descriptions).size,film.id).toBe(2);
     expect(new Set(videos).size,film.id).toBe(1);
-    await page.locator(`.film-cast a[href="#/role/${film.cast[0].id}"]`).click();
+    await page.goto(`/#/role/${film.cast[0].id}`);
     await expect(page.getByRole('heading',{level:1})).toHaveText(film.cast[0].name);
   }
 });

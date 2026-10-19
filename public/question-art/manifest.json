@@ -1,17 +1,9 @@
 {
-  "provider": "MiniMax H3 (local ComfyUI)",
-  "revision": "diverse-ee371d38ac34",
+  "revision": "2026-10-19-minimax-five-v7-r1",
+  "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+  "imageCount": 320,
   "questions": {
     "1.1": {
-      "id": "1.1",
-      "seed": 2026101800,
-      "promptId": "4eeb2c9a-9bb2-4aa7-8227-4693027ad518",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.7,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "watercolor-travel",
         "label": "旅行水彩",
@@ -21,47 +13,115 @@
         "palette": "cobalt blue, lemon yellow, white paper and terracotta",
         "setting": "a leafy seaside neighborhood with small independent shops"
       },
-      "sourceVersion": "question-art-v5",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "1-1/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 139702,
-          "sha256": "3d68bdebc4548476ee369da61ca6bce12559edc509381264ed4f3495c36a198f"
+          "bytes": 139588,
+          "sha256": "8a17d09b5b3886a4c93284b929b775e6536bea8d3644841f9de58ecd58123aa5",
+          "seed": 2026101900,
+          "promptId": "16d1e1d1-0e3a-492f-80b0-5f9f3ce645dc",
+          "seconds": 8.1,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "1-1/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 112520,
-          "sha256": "3340e57de054b1c9f11d897d114406bccd0cd42ef68f8a9430dbf01b4408cf67"
+          "bytes": 105660,
+          "sha256": "7d247099d4eeb5d72a2da8bf30cd11bae19a022f279022fbb57d2dda925d154d",
+          "seed": 2026101901,
+          "promptId": "00e56a3d-f0ce-4fb9-8154-27ccd478a329",
+          "seconds": 10.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "1-1/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 112840,
-          "sha256": "345b4b60ae231b8e3294a5668a579082233d2e13e8e59a8f45f68712ed821007"
+          "bytes": 118982,
+          "sha256": "4605a6ff8eced7cd2a9ced75d9b4e3a99d85e036aa0318ac06f7a81e64094e8a",
+          "seed": 2026101902,
+          "promptId": "9567c727-3e87-4ccf-a268-15ab5b1f8b90",
+          "seconds": 11.03,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "1-1/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 140538,
+          "sha256": "6d70f9989d74362b96e58bd47b74d6240d83c6ea9fc9c856c9712b6e81b82e16",
+          "seed": 2026101903,
+          "promptId": "e0fa6cbd-a031-401b-a5ee-0697d20e1881",
+          "seconds": 10.48,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "1-1/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 134636,
+          "sha256": "ee26eeac4be498ecdbe8720afc41305aba4062bb706d781052c72e47c65d217c",
+          "seed": 2026101904,
+          "promptId": "68ba2d16-c708-408c-88dd-35df9264dbfb",
+          "seconds": 10.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "1-1/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 139176,
+          "sha256": "de99bc6b550d2936d353c01273a6348bb0e47bed323217ddbe012a95e58b6fdb",
+          "seed": 2026101905,
+          "promptId": "2984f571-ea68-4554-b23c-f9cb6c8a9e6a",
+          "seconds": 5.67,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "1-1/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 138800,
+          "sha256": "3e4906a13d6f10b3e18af5996d37ad2a90a84b255c8ea03aae165ba839863c3d",
+          "seed": 2026101906,
+          "promptId": "b78ff3a5-05be-401c-8bb6-78bac5f2b5c4",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "1-1/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 139948,
+          "sha256": "706cd58183331fa53d7ca4a576660ea37bbc08cb3058951bd83fe4bfc2c5fc39",
+          "seed": 2026101907,
+          "promptId": "9d79c987-4e5f-4e4e-ba2d-2514353dca0a",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "2.1": {
-      "id": "2.1",
-      "seed": 2026101801,
-      "promptId": "b0569665-5d3e-4888-9623-900f660ab318",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.5,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "clay-desk",
         "label": "黏土定格",
@@ -71,47 +131,115 @@
         "palette": "lavender, apricot, cream and plum",
         "setting": "a compact attic home office with sloped windows and tiny handcrafted props"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "2-1/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 81970,
-          "sha256": "63b704dc96a4c1a5770c20531132b07cf5a4f38c28ad0c312e97253c8dfa0363"
+          "bytes": 52576,
+          "sha256": "5f9ada4eb7594c40134ee17dadde345bc95b326f5e2de5cad935bed9b6ed89ec",
+          "seed": 2026101910,
+          "promptId": "0c2a33d7-36c0-4602-afdc-7d680c973254",
+          "seconds": 5.56,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "2-1/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 81524,
-          "sha256": "daa721185fabad5bae198b423a3901ff134911176cf56b5fed7371c5048959c9"
+          "bytes": 67290,
+          "sha256": "f7cbc4bd0ffaacf3dc775c593a2a4e4d1e6f71fec8ef5189b80b539887d42946",
+          "seed": 2026101911,
+          "promptId": "8844f7da-b9b4-45e8-b846-e5b8ac0aa339",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "2-1/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 104168,
-          "sha256": "d88986b1bccb087d6ae50830a2ff039d7cf15ed4e7311b2b539c9db9eeea6f4f"
+          "bytes": 80258,
+          "sha256": "f8bc2f295ea54d95b87282a1a7cfe39e6cb1c81e5a5c008bea80d0fe6edc1cf5",
+          "seed": 2026101912,
+          "promptId": "21226e4b-0b9d-44e0-b7fd-5c819cbe4470",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "2-1/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 75062,
+          "sha256": "255824b856bd2b0a7e5a2f2ffad0ac26c239c0c917878baf5462fa66aff78532",
+          "seed": 2026101913,
+          "promptId": "410d345b-8f7c-4271-952b-bcf914369b37",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "2-1/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 61602,
+          "sha256": "a4d4140d16c8915cf8920c1b2d73b3f70b893cc7bc760a955918f2202d1ab88d",
+          "seed": 2026101914,
+          "promptId": "9e339885-c686-4f37-bff4-a3a0b503545a",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "2-1/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 74150,
+          "sha256": "aad68eb9829f4fe4f69874ed8d74c7eb1b5eef97a901fcbf8802f1151ab3ce0c",
+          "seed": 2026101915,
+          "promptId": "1d23d49c-75af-4e5e-9159-2cd6f3eba3cb",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "2-1/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 69426,
+          "sha256": "416dffb8019533f0ce6dbdb19dd78cbd2288b0045e7217cfdbc1077277107766",
+          "seed": 2026101916,
+          "promptId": "a9f1d7e8-0098-4f90-8154-9d6b2a5c666c",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "2-1/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 86388,
+          "sha256": "0c57185749126d1004d1896421f693fca5d8ae187adbb526197e7e4e46c416cc",
+          "seed": 2026101917,
+          "promptId": "3ea33fd0-8b50-4cf3-ab09-85c57bce1b2f",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "3.1": {
-      "id": "3.1",
-      "seed": 2026101802,
-      "promptId": "c6946aa4-6ca8-4e13-89ab-1ce7898bc923",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "pop-comic",
         "label": "波普美漫",
@@ -121,47 +249,115 @@
         "palette": "signal red, cyan, bright yellow and deep black",
         "setting": "a lively retro diner with checked flooring and round cafe tables"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "3-1/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 130816,
-          "sha256": "418b221b0b26ad8a7ed3fd69ed7f3cb98256baff8ddb0cd60c52ac9c110e47d4"
+          "bytes": 155992,
+          "sha256": "d758e2528eb4c2902e1471ff89b43dce168c9b9bd2ec333d561e76dfe51daa3b",
+          "seed": 2026101920,
+          "promptId": "feba7705-1115-40ba-85b0-24ffe30b3c94",
+          "seconds": 5.67,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "3-1/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 141818,
-          "sha256": "fed9d63d8bf370904b8c2393237c667f372b370b494aec6237ff9eb28934d710"
+          "bytes": 130316,
+          "sha256": "3e4ac391ddbd15b90bcbad3a4e0fff3f7db86faf84b26a4040a28d8912764075",
+          "seed": 2026101921,
+          "promptId": "32ccb15c-6e33-4116-ac46-24be76bbf336",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "3-1/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 135042,
-          "sha256": "5442464690d4a8b369b678de3a57e895bd45b85bf8500be62377def9d1a67215"
+          "bytes": 157566,
+          "sha256": "e87735ab169231f8f378a1734b88cca2ddf2548bfc85b5db7937184c84d93e21",
+          "seed": 2026101922,
+          "promptId": "cdf0483f-c459-4455-a7f2-9878fbc811c9",
+          "seconds": 5.65,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "3-1/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 144774,
+          "sha256": "15f1d147682597d0975856a0b7b91cf5b5a6f0c9d2b761844550d5535a206128",
+          "seed": 2026101923,
+          "promptId": "948ca63e-c510-45c8-8d80-e58f72ab1d43",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "3-1/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 123046,
+          "sha256": "c0a143e458ed4f01fce34e80d0b5ed8cc3a47962486f371d000433447c9b402b",
+          "seed": 2026101924,
+          "promptId": "13fba796-1ac2-4537-8a9b-4c3f26406e18",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "3-1/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 165570,
+          "sha256": "84153ab6781e36e2eb7d265f7d34af126440c34513fd8b39ed33605e67050a60",
+          "seed": 2026101925,
+          "promptId": "68ebd94b-48f4-4af1-835c-a3db96cdd004",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "3-1/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 153462,
+          "sha256": "27c10fb1efd9a50ba8818f7728a456fb7743b00574b727edeabcefe233265901",
+          "seed": 2026101926,
+          "promptId": "938de81a-9c00-43a3-add8-acf073d89e08",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "3-1/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 173614,
+          "sha256": "43ba992e4963cef23388d701f14325a5a9c1f2f464a3c19ede07f3dfddde19f5",
+          "seed": 2026101927,
+          "promptId": "d8b6bc00-d41c-4ee9-86c5-eaef638b20f4",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "4.1": {
-      "id": "4.1",
-      "seed": 2026101803,
-      "promptId": "857fb2ea-1c78-4743-9f4a-125d2797f263",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "pixel-savepoint",
         "label": "像素游戏",
@@ -171,47 +367,115 @@
         "palette": "indigo, electric blue, orange and lilac",
         "setting": "a compact gaming lounge with a console, CRT screen and beanbag chairs"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "4-1/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 91868,
-          "sha256": "3d357e8dc658572a3a68cd31c889c8f45c06d3c82bd326a22bcaf7485ace3fe7"
+          "bytes": 101448,
+          "sha256": "37f5491888e1c10fa3e63f8a2e22770db4acd824b27dedd42cf89dd115d66f72",
+          "seed": 2026101930,
+          "promptId": "9f6a1584-7242-4404-a6cf-218f279c42ee",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "4-1/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 109446,
-          "sha256": "2072c49b2a807e3fad4c6a01d205b80c0e6a1ee44cb1b3e1c900ec860f02a366"
+          "bytes": 84778,
+          "sha256": "7e02185f0d4c5a674c2720dea9a6ff762b3eef80a89f55fdd369c34f8099db5e",
+          "seed": 2026101931,
+          "promptId": "5a574e95-bfbc-4215-90f1-a098d259b3a2",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "4-1/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 91592,
-          "sha256": "ef51444aeb154f540e21ab0bdefcc16757f1442101d68fb2835edb1e7634f364"
+          "bytes": 87820,
+          "sha256": "45802e0de83d55afad65aa72235b7478d3d79f1f2c31c65b250f74a8eaf4fe98",
+          "seed": 2026101932,
+          "promptId": "c0f7efcd-6878-49e0-a859-0f5424e024fa",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "4-1/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 119500,
+          "sha256": "59888ba277750900d08d034c698ea87359e80f979684870baa6924b9d1a80b4e",
+          "seed": 2026101933,
+          "promptId": "78db0a05-2570-437b-bfbd-927924b9c5ca",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "4-1/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 87398,
+          "sha256": "27c8650c67d09180f04b533e27563dd6cb318e1a9d6015c45fdea6a3b8f18b76",
+          "seed": 2026101934,
+          "promptId": "9d25464f-4b60-4e1f-9988-80aa2580801a",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "4-1/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 107832,
+          "sha256": "2287bc18f48776676189429b8e0e2fade64c4f140d799aa40e2b3567a67f6b90",
+          "seed": 2026101935,
+          "promptId": "28f73a92-6d7e-4437-a423-c2b3c4bb6d51",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "4-1/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 105508,
+          "sha256": "79045c2cd25808030f27ac5549405e34be2db9e11c2fa6a6d77df9d7ddca8bea",
+          "seed": 2026101936,
+          "promptId": "0b177b9a-2f8b-4a67-baad-6f73eeba0df1",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "4-1/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 78984,
+          "sha256": "df9175b91b9e2a2ab4c36a597bdf63673752a499564be28d88e8775cbd236221",
+          "seed": 2026101937,
+          "promptId": "62c4781b-ff93-40ed-bba8-817b110444b1",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "5.1": {
-      "id": "5.1",
-      "seed": 2026101804,
-      "promptId": "976c579c-158a-4cd3-b213-6e857c510761",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.7,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "fashion-marker",
         "label": "时装马克笔",
@@ -221,47 +485,115 @@
         "palette": "fuchsia, ivory, charcoal and pale blush",
         "setting": "a modern rooftop gathering with tall windows and a snack bar"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "5-1/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 122772,
-          "sha256": "4ce001fb137bcae86ba1c9732fcda4c4692c216194f314a9dcf0a4a5c5a4d84e"
+          "bytes": 114014,
+          "sha256": "a0d128b1509b402add1cc6f427c918e842ed1226eb10e70b557438c74615c0a4",
+          "seed": 2026101940,
+          "promptId": "171ab39c-c18a-43a9-a481-f0953f4a15f2",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "5-1/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 127964,
-          "sha256": "68d4783543ddbd7efc68f21d33de5b822628aead6051011d57e306cda7616337"
+          "bytes": 65092,
+          "sha256": "cc6def3969c37f1a423677d7e7a0d5fb8b4fb83c3cf4a6e1590823483a98b591",
+          "seed": 2026101941,
+          "promptId": "b2858a84-8806-4224-9ad6-e88ac78d7669",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "5-1/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 129074,
-          "sha256": "12bfa6a20144b59c62efa13935e3ee7dfd74971094ca2ec871fa96abb5b32545"
+          "bytes": 83300,
+          "sha256": "e0e78c4b55f5e973d7a46e2c59ced696cfe6085fb95d0066f4842a89639010e3",
+          "seed": 2026101942,
+          "promptId": "1bb94a4a-a15f-4b65-af12-6045a6dc9d1d",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "5-1/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 88200,
+          "sha256": "aab84b37369db1fe5b530f2050982d39e0a6f9d7bc814a3c470a5ee3adff984e",
+          "seed": 2026101943,
+          "promptId": "a48768d0-d22f-4c2d-a2cd-261bbeea7b80",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "5-1/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 123494,
+          "sha256": "5166e38c14f9c89c3a257ea670a1af68b38038c2b62e84846f3a4cdb2fe0cca1",
+          "seed": 2026101944,
+          "promptId": "b11eab8f-baee-4d3a-8bea-00f5c555021f",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "5-1/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 70508,
+          "sha256": "665d111583b1b076134dd027db16feb43ba6579ca1978c08ff2725e20c350a91",
+          "seed": 2026101945,
+          "promptId": "b5a48c78-5095-4ae2-bd13-876b72328e87",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "5-1/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 65622,
+          "sha256": "54439be177640e2e7ba7d49e2800679161656afeb089dd2e67c6c3ce242c3978",
+          "seed": 2026101946,
+          "promptId": "58fd39ea-4eb5-4e25-8fef-0279b096662e",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "5-1/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 79910,
+          "sha256": "e979cc7c4b98efc2ec8088ad8aa468bc2735c6e08545a8d0b412970fab3d7ee3",
+          "seed": 2026101947,
+          "promptId": "921d159e-3149-4280-9c3a-7d1d7111f61c",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "6.1": {
-      "id": "6.1",
-      "seed": 2026101805,
-      "promptId": "73ed26b8-f52d-4af6-8fc0-9f0cc90342c5",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.5,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "risograph-progress",
         "label": "双色孔版印刷",
@@ -271,47 +603,123 @@
         "palette": "vermilion, ultramarine and off-white paper only",
         "setting": "a small contemporary studio with a wall pinboard and desk plants"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "question-art-v7 + question-art-v8-refined",
       "assets": {
         "scene": {
           "file": "6-1/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 97702,
-          "sha256": "3e44b5cb87ef3c5f60a637d73383a96e539c5af5205a21d53a73b1720e828ce2"
+          "bytes": 87152,
+          "sha256": "245d392f7121a5f72686142252dd8c1ea62504c51b8a2fac99efc731f3eac3d9",
+          "seed": 2026101950,
+          "promptId": "c3cc4ae7-30c4-4463-a7f5-a0d1d0ad9f0a",
+          "seconds": 7.11,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
         },
         "left": {
           "file": "6-1/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 97904,
-          "sha256": "0543214004d49b0378e77fb47620fe68fd6383d858532488df42e92f98f03719"
+          "bytes": 84588,
+          "sha256": "8355c68e6491abab0dbb072815434e121123e6b267db3ab83aa8bef1b385e299",
+          "seed": 2026101951,
+          "promptId": "5a3ffd97-937e-4e4a-be26-8f7e5d1b8138",
+          "seconds": 10.4,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
         },
         "right": {
           "file": "6-1/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 99924,
-          "sha256": "2ab878f4ce0f717fb7911a77e167e670d93ef6d5367cd42f9c0622181c9384c0"
+          "bytes": 48860,
+          "sha256": "f7f2c43e5888ea581059aa447a51bb43f68806b97af9ad44ba72ab4379b87a67",
+          "seed": 2026101952,
+          "promptId": "5fbadd48-9a78-407f-bff7-65951533e30f",
+          "seconds": 10.43,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-0": {
+          "file": "6-1/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 90840,
+          "sha256": "339753a29f543bc9000d792ae7cfbfd2b49f227a28ebcb5e69087d1885e488bc",
+          "seed": 2026101953,
+          "promptId": "18ff96aa-4680-4945-9103-e62881d91e41",
+          "seconds": 10.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-1": {
+          "file": "6-1/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 89020,
+          "sha256": "9363f01d548c8e4c0de8a4adcca3aa9307e8e4dffc560c5e9c3cc63aa117ddad",
+          "seed": 2026101954,
+          "promptId": "e87ce58c-78fb-425e-935e-a4b132b8b123",
+          "seconds": 10.4,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-2": {
+          "file": "6-1/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 79990,
+          "sha256": "3de014600378f0e55890bc3c7c7a756504d485dd7bbad8178e45d7beccd9e3f7",
+          "seed": 2026101955,
+          "promptId": "97019af4-d666-444c-a662-15b6c10cc0aa",
+          "seconds": 10.5,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-3": {
+          "file": "6-1/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 88500,
+          "sha256": "970e07e0c92e86cc5d5507404434753626d37fc9f5141ece223424823238c976",
+          "seed": 2026101956,
+          "promptId": "2fcf267b-0821-4149-8254-00b1ef3411ac",
+          "seconds": 10.42,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-4": {
+          "file": "6-1/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 92198,
+          "sha256": "2a70d6bde3585567d2fc1444e8e1e220f39782e583c2724f9a6d5e492425f618",
+          "seed": 2026101957,
+          "promptId": "e6d5b5c6-518d-4246-9cd6-07992db88b54",
+          "seconds": 10.53,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
         }
       }
     },
     "7.1": {
-      "id": "7.1",
-      "seed": 2026101806,
-      "promptId": "f1cb9007-3a16-44a8-b787-a17ade568be7",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "sunlight-film",
         "label": "日光胶片摄影",
@@ -321,47 +729,115 @@
         "palette": "sky blue, white linen, honey sunlight and natural wood",
         "setting": "a bright apartment with large windows, a low sofa and a painting desk"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "7-1/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 97632,
-          "sha256": "6a64989bb0283263ce022affd23cd047050560f07af529d6b808ce3ad1c7100c"
+          "bytes": 81672,
+          "sha256": "f41470a5420c0e1fe18b65ec9445df2afcf060a43e3eaddc497c1481dcf6ec12",
+          "seed": 2026101960,
+          "promptId": "a7ce7a0d-291c-4431-a259-3c49137c2ea9",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "7-1/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 113932,
-          "sha256": "1ba79d4c74e72b4c21d377ffb6deab6f31249eb82422fe770695585a234ff9e0"
+          "bytes": 128508,
+          "sha256": "3bfd8a225d5e8ea1020614c6e8d19836e98d9a5c0c41769e32a651d04ebfe257",
+          "seed": 2026101961,
+          "promptId": "8e8b7c9f-63b4-4c23-9e2a-45fb6548d9d2",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "7-1/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 70216,
-          "sha256": "c33429981f9a59df453a02fb5c0a9d61527c2827f7c671da500e14b3d6c9f0c0"
+          "bytes": 101782,
+          "sha256": "585c116f94d28e1a13a08ed801a6e05cd6802f1f58dcff566f39a2f9d6451a46",
+          "seed": 2026101962,
+          "promptId": "76a33052-6ba9-43ba-97af-d9c1775418e7",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "7-1/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 79790,
+          "sha256": "10f9410eefa40fca55c2ef99a0498576e422eec94feb42cb0ae75c584e769458",
+          "seed": 2026101963,
+          "promptId": "e4d6fd69-9424-428a-9d6e-fc9dd15631cb",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "7-1/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 81624,
+          "sha256": "5bd986e3a1fe215020ca41557d69201c77330bdbcd124565464bb808c5765528",
+          "seed": 2026101964,
+          "promptId": "7fc27ff8-345f-498c-9bad-73642a92eb74",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "7-1/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 71818,
+          "sha256": "44a9f41c414fef4c07e942f8ea9eadcced7c96e23f8e93bec67822e62453db10",
+          "seed": 2026101965,
+          "promptId": "93481fd3-489c-49c6-8976-d21dff404437",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "7-1/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 81936,
+          "sha256": "c09cc7ed6d04a23b7671e3dd3728cb8fe5601ec159ca0e32fa09e2c1f4050aad",
+          "seed": 2026101966,
+          "promptId": "b2e08f66-0197-4ba1-a9d8-ee17c3604539",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "7-1/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 82294,
+          "sha256": "dbfd154813eeba4d6b75faa61382c15db6aa304b9722de62a7a7489555f112bb",
+          "seed": 2026101967,
+          "promptId": "808a3066-e8a8-464f-9a74-1c7960b249ab",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "8.1": {
-      "id": "8.1",
-      "seed": 2026101807,
-      "promptId": "f54d18a4-4143-4822-963f-8b37c8c73c91",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "art-nouveau-cafe",
         "label": "新艺术装饰画",
@@ -371,47 +847,118 @@
         "palette": "burgundy, peacock blue, antique gold and cream",
         "setting": "a cafe with curved woodwork, floral glass and a riverside walkway"
       },
-      "sourceVersion": "question-art-v5",
+      "sourceVersion": "question-art-v7 + question-art-v8-refined",
       "assets": {
         "scene": {
           "file": "8-1/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 120424,
-          "sha256": "3207c0dcc3ddc3e753483eecc032a4e1fad854ccc810147a643b8b62804d7670"
+          "bytes": 134012,
+          "sha256": "8cff719c1467e768e360dbc141aabda91506415f25b26ecad349c3fc26d4b158",
+          "seed": 2026101970,
+          "promptId": "0c851daa-adfc-4c89-bd8a-4955bb04655b",
+          "seconds": 5.69,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "8-1/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 127324,
-          "sha256": "c2d623da266b1d27dd10812958db0293b1e469821412159ffce43a7567d0e96b"
+          "bytes": 106560,
+          "sha256": "ed94e1b4249a6f90e33b72ee9a0d34612479cbe50eab8d1ab9af211e7f0392a7",
+          "seed": 2026101971,
+          "promptId": "7fa060ba-d2ce-4042-883d-0da31c5e69e1",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "8-1/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 125012,
-          "sha256": "ca6c933d85ff07508d27433fd39fc41e0089c6b6ca36a7b5e0159562c17fa4c7"
+          "bytes": 108134,
+          "sha256": "3d4743604595848a836745a841426bb438c72bd7a03b95eabaca06210416e36e",
+          "seed": 2026101972,
+          "promptId": "43ee12c3-44ba-4ba2-847d-51a28cfc5ac9",
+          "seconds": 5.84,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "8-1/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 117008,
+          "sha256": "015a7bb5e235970180519e6e3d0873552058d43a4a29983c18daf3e95d312dd9",
+          "seed": 2026101973,
+          "promptId": "26af16de-cf4e-4d71-8e80-a1087ea247e0",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "8-1/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 125738,
+          "sha256": "d502132fc9507bbd33ae4b5fdc27baa7592d14b4f69eeff0ead5e55ce14bebbe",
+          "seed": 2026101974,
+          "promptId": "bef50674-262c-49b7-9c4c-36179b179439",
+          "seconds": 10.49,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-2": {
+          "file": "8-1/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 124502,
+          "sha256": "5311944638e8bf13d060c3c02a6192384900ed6183439fa0c1cb14dfd5f990f7",
+          "seed": 2026101975,
+          "promptId": "be8a6c9b-4632-4c7c-882d-5262ae738cf1",
+          "seconds": 10.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-3": {
+          "file": "8-1/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 121134,
+          "sha256": "cc1c820a105ee421759668a195eab8876d2581f4ce590d706065024fbae8f52a",
+          "seed": 2026101976,
+          "promptId": "11dffa21-fcc2-4d2a-b8ba-1e3360fc1960",
+          "seconds": 10.73,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-4": {
+          "file": "8-1/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 97516,
+          "sha256": "5436fac279a84f4cc25b1d9f637d7fdeabf80727e7aeaed3155d1a7f674ff3b7",
+          "seed": 2026101977,
+          "promptId": "03e7a055-0d1a-40b5-b0c3-6c26480f8440",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "9.1": {
-      "id": "9.1",
-      "seed": 2026101808,
-      "promptId": "deefaa97-7ef2-4b66-af64-973db05f1269",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.5,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "ink-family",
         "label": "国风水墨设色",
@@ -421,47 +968,115 @@
         "palette": "ink black, vermilion, muted blue and rice-paper white",
         "setting": "a modern Chinese home with walnut furniture, a reading chair and round family dinner table"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "9-1/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 100234,
-          "sha256": "4f1da5ec6d2e9d2d2b10b2350b91013118aaf4b0a82374d7a55bad8af6a0177c"
+          "bytes": 108078,
+          "sha256": "fd30711aa94893ab4994cbdbf316ccd8de1321b9afd0c8ddb63e93e6922b0aa7",
+          "seed": 2026101980,
+          "promptId": "dd8e3575-8edc-428c-9b96-342e4d660a43",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "9-1/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 74134,
-          "sha256": "19493b3b922f25cde0e3f830eb0302ca254a6e02543c1a4900cc6e33a0eaad96"
+          "bytes": 80546,
+          "sha256": "36fc39f9f653c6940413265fe2847197cdd633f53929fb2b97125aa604cecc76",
+          "seed": 2026101981,
+          "promptId": "7d99609d-53b5-4987-adb1-e11218f58ea8",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "9-1/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 89194,
-          "sha256": "1ef842fb145c4e44ed2610205afd6baf621d9e9aea519d80377381f36cfd1778"
+          "bytes": 111274,
+          "sha256": "ec0da1b8310a94403e38f2f39ff645c55ecd8d6efa251e21ad6cfcedaad18c48",
+          "seed": 2026101982,
+          "promptId": "51e1d270-5d4e-4689-bc23-63ac40a6f5db",
+          "seconds": 5.65,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "9-1/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 85596,
+          "sha256": "50dcb366d81dfa6f232771748e75ba18853cd3aa6a763e111f751133f62ba3ad",
+          "seed": 2026101983,
+          "promptId": "a7b87b26-276e-4807-a195-23eb3f5ddaea",
+          "seconds": 6.26,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "9-1/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 83878,
+          "sha256": "ce76bb0d3016b19c02af6efd5397c16fde956ef390e7d5528ed64e8ad3bad016",
+          "seed": 2026101984,
+          "promptId": "e8cb3f2a-7e13-4165-8a37-b0ea8f7b8f0c",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "9-1/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 110660,
+          "sha256": "4da97b31fcfb8730e175a813b3bf3f4ec219d68439bb1e1912df36be05e1f658",
+          "seed": 2026101985,
+          "promptId": "a4707884-8158-41a2-885f-33f60626f144",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "9-1/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 112572,
+          "sha256": "9c223ec13cc355ccc209130fd384667170e06f969a0e431b4aa67abfb33d2bf9",
+          "seed": 2026101986,
+          "promptId": "7c7818ac-d0cb-4e98-85fa-2db1ae266317",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "9-1/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 112276,
+          "sha256": "d01a395e0362bee853c529745424b2dc8e6b80f94ea734ebbfbf6e09d6f3030f",
+          "seed": 2026101987,
+          "promptId": "a024a48e-eba3-490f-bfe4-265c4467d043",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "10.1": {
-      "id": "10.1",
-      "seed": 2026101809,
-      "promptId": "4cc41488-d5c3-4f7f-b077-9634bf753bd9",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.5,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "layered-paper-craft",
         "label": "立体剪纸",
@@ -471,47 +1086,115 @@
         "palette": "turquoise, coral, ochre and cream",
         "setting": "a craft workroom made of folded paper with tidy shelves of materials"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "10-1/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 87300,
-          "sha256": "dfcd54f23feee9351e8779326992d72c7cc2552a10710d2be9519f6ffdeb8d56"
+          "bytes": 69032,
+          "sha256": "fbd5a087493253fa5c43d351045c94aa7f77e006a4f5ebc3ddf1411dbd9b1845",
+          "seed": 2026101990,
+          "promptId": "82a8cbfa-da4f-48ee-9bcc-8f807b09f0c7",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "10-1/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 90704,
-          "sha256": "cf4849decf3acfa7f4bcec1f32176f9b2ccf3eafa448bbfbf145c956095236d5"
+          "bytes": 61598,
+          "sha256": "e17e9b41aa6eba7ebe27f011b66286521114a13766d8d37ac3e244cca5187195",
+          "seed": 2026101991,
+          "promptId": "4425e668-a802-45f0-9807-123479f25dee",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "10-1/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 88258,
-          "sha256": "e698a0162e532d91a9ebc2dfe9aba6fff88a880f8529df1634a7aca343abd8a3"
+          "bytes": 56506,
+          "sha256": "d3f0e1177a513e19fc28122a727a7e565663e381109d4ed5dd5868d55dd03e40",
+          "seed": 2026101992,
+          "promptId": "22aad5c7-f94d-4dd1-b031-0bcbdd33d31b",
+          "seconds": 5.55,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "10-1/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 75198,
+          "sha256": "62992af7b14531922dd86607a58df763844e7ce8ec3741da9e1488fb607c63cd",
+          "seed": 2026101993,
+          "promptId": "f4fede58-efd7-4da3-8cec-6068d1bf2572",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "10-1/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 52816,
+          "sha256": "c66c3945f2e7328990fe99ed5fa6320f933accf608b75ed9107cef1c48a324f7",
+          "seed": 2026101994,
+          "promptId": "f0e5f164-690a-44cd-80ba-8c48f85a332a",
+          "seconds": 5.55,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "10-1/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 60586,
+          "sha256": "1e9a00705d98a40aa8bef0b4e64e1e513c0c9d2cbcd2b22f75e616a343a3eee1",
+          "seed": 2026101995,
+          "promptId": "1a14a386-1db2-4a64-bc61-e5eefc491f46",
+          "seconds": 5.56,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "10-1/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 36018,
+          "sha256": "457f30e9c9a3de73f3f3f96cb8f3c1e8c76e12ef82d2852251ee6b6189ac4556",
+          "seed": 2026101996,
+          "promptId": "40f6b068-8b0c-418c-b23c-2b22906a2a58",
+          "seconds": 5.53,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "10-1/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 58930,
+          "sha256": "59de04113b9a84129294a5e8c873d20b30fc785b7691758b1b77925d99b52ed7",
+          "seed": 2026101997,
+          "promptId": "b8dff4a3-0859-4aa8-8bcb-30690b8645cc",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "1.2": {
-      "id": "1.2",
-      "seed": 2026101810,
-      "promptId": "2cf5f9e7-046b-47e5-9275-5ad51041c8ed",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.4,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "lowpoly-video",
         "label": "低多边形三维",
@@ -521,47 +1204,115 @@
         "palette": "burnt orange, slate blue, pale gray and soft cyan",
         "setting": "a minimal apartment with angular furniture and a large modular sofa"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "1-2/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 56508,
-          "sha256": "e57b10750a322243f345bb143c97a723f4652a19bc0b8ccb815586d7c5867b01"
+          "bytes": 76352,
+          "sha256": "dd0b65302dfaa45c6a08687866205d7381735cd90df60c073fa61380da4e8030",
+          "seed": 2026102000,
+          "promptId": "de4dfa2f-5d27-49c6-bf3b-b799f87f2956",
+          "seconds": 5.91,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "1-2/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 53382,
-          "sha256": "77c33d23c436b7ca25e31e880848a7de07ecfea0d2f6fd46ccde804b15a6ece0"
+          "bytes": 43888,
+          "sha256": "3fdb6301bcb03af39c9b270880354dfe480dca8786e67be5e1c4eb2dc3bb0756",
+          "seed": 2026102001,
+          "promptId": "0f83c836-f0ab-47ea-beab-9bd7c662e120",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "1-2/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 47396,
-          "sha256": "a8a48be4e29e408aa2daf7ba9da6b469ef690c0565f684d327874aea2065854d"
+          "bytes": 51052,
+          "sha256": "71ebfcaba6ae69ccbc162185d68aa294de6972dbcf3c141601a397272358f82e",
+          "seed": 2026102002,
+          "promptId": "ef4ddd19-e33f-4e59-b773-bc4c3c96a4dd",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "1-2/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 43498,
+          "sha256": "ff61cfa66d66998176706a7812d9ea8927df00f11782c59351a43ceab32b6b45",
+          "seed": 2026102003,
+          "promptId": "7b382ed3-eac5-45f3-b2cd-d3eaea78c24d",
+          "seconds": 5.55,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "1-2/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 36604,
+          "sha256": "13866a77c640166db0a25d896523e3cb7c9b60aaf55643066a74f00cecdc980a",
+          "seed": 2026102004,
+          "promptId": "80c2f39a-376c-4ce9-824c-fadf5f842ad8",
+          "seconds": 5.54,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "1-2/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 40892,
+          "sha256": "f05f7bc9669d4de1b55824925cde74cd35d796548e71946ed2f91ecc46658ec8",
+          "seed": 2026102005,
+          "promptId": "321a3b21-ed25-47d7-8e92-af00469a6ced",
+          "seconds": 5.55,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "1-2/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 42994,
+          "sha256": "8bfd9a3120ecb63c6f35ce91c4f4479e6231fb0c399fe16a6267bc51317dba4f",
+          "seed": 2026102006,
+          "promptId": "8134182e-3b9d-482e-85aa-891876594bad",
+          "seconds": 5.54,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "1-2/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 27484,
+          "sha256": "d748f3b523737c99ffd74249b3332520706b9a479f67846f063a8eedf8873894",
+          "seed": 2026102007,
+          "promptId": "17431131-abeb-4c68-ba3d-85736a647338",
+          "seconds": 5.52,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "2.2": {
-      "id": "2.2",
-      "seed": 2026101811,
-      "promptId": "720d2f0c-c3d5-4fed-a77a-62b5c1370bf4",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.4,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "midcentury-travel",
         "label": "复古旅行海报",
@@ -571,47 +1322,115 @@
         "palette": "navy, tomato red, cream and powder blue",
         "setting": "a walkable tram neighborhood with a cozy corner cafe"
       },
-      "sourceVersion": "question-art-v5",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "2-2/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 54072,
-          "sha256": "95e69aec562d2802c293af06c50a6de23c453b834f5eb14565d5e86203019c8a"
+          "bytes": 60758,
+          "sha256": "d096a48d07e171457fdc2e8e46d9b6d120bb109682c7ed45f602a14a572f18f5",
+          "seed": 2026102010,
+          "promptId": "791fb49a-8621-487f-a06d-8cb763ae1cbe",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "2-2/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 70264,
-          "sha256": "74fa9075b40431fea74b8e49709b1bedf271f21f9c9f18ae395cb599d72195f4"
+          "bytes": 77346,
+          "sha256": "cf5ef7d2df21c65890bf0970230fde77dd0fbda16ba50abe02fda19f703f6759",
+          "seed": 2026102011,
+          "promptId": "29b71e6e-8891-4d32-a696-c6f0b68bc4fe",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "2-2/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 61972,
-          "sha256": "288156f95fd081beabecfb1bace8fb947f359ecadc4bdd4f5e148dbcdb1e9bd4"
+          "bytes": 106098,
+          "sha256": "8c40c5baf1ea7104d4d1684ef7db2fdf1cf0419dacca127ed62eda6f0d4a06de",
+          "seed": 2026102012,
+          "promptId": "8cc13a13-1fe0-4909-a2a7-7d13996459fc",
+          "seconds": 5.7,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "2-2/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 55056,
+          "sha256": "a6c1ed98c5034f62b9b218176109af136fbc81f4e3a8adc6f5468d096d83cb2e",
+          "seed": 2026102013,
+          "promptId": "13788693-2ebf-4aaf-940c-3d8d94850a92",
+          "seconds": 5.56,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "2-2/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 71510,
+          "sha256": "d095694d3d4f373d7140265f9f2c2260fc21bd49717daf4babbe3896ace468db",
+          "seed": 2026102014,
+          "promptId": "800030cc-26aa-4bd3-94fa-e8cfb60d5131",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "2-2/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 79516,
+          "sha256": "55d63d0e1438f3e87a7cedc3bb0ef04eb9884acd08067673ff33f8ce3b0403b6",
+          "seed": 2026102015,
+          "promptId": "e6960955-843f-4e13-be84-faae8d5faebc",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "2-2/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 89842,
+          "sha256": "b30716662eddcbde4421d9aef3af7e1ee3176b517fb2ff8a2fccccf330363f18",
+          "seed": 2026102016,
+          "promptId": "373bae07-e10b-4d35-a37a-260e3c736644",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "2-2/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 105122,
+          "sha256": "65ea336ccd027a362921ba0ee7c63ba14920a073ba3e3c3dbc52402320e33ad5",
+          "seed": 2026102017,
+          "promptId": "c3670caa-55c5-42ad-bf06-a6febf090a66",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "3.2": {
-      "id": "3.2",
-      "seed": 2026101812,
-      "promptId": "7b579447-60f6-4a79-9724-fc8e65d3ba52",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.8,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "charcoal-conversation",
         "label": "炭笔素描",
@@ -621,47 +1440,115 @@
         "palette": "charcoal black, gray paper and white chalk only",
         "setting": "an intimate quiet tea room with soft window light"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "3-2/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 141636,
-          "sha256": "29149866f8a26e68d61fa6faf4c7842f11fc0f04ba14d4599d435c11f29b65ee"
+          "bytes": 138432,
+          "sha256": "72d84680da70472370bd94365941b63df0de0d93910478b95154ac863e752a74",
+          "seed": 2026102020,
+          "promptId": "5fd4cda0-fb34-46fd-8f3a-025c138fa54a",
+          "seconds": 5.67,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "3-2/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 144954,
-          "sha256": "2807241e82ce2814d00d34e872d67d61565096afb7a0f47ae27b166b89f4c149"
+          "bytes": 123954,
+          "sha256": "7160e867f00f40cf224048a392aed96a9a775031409acbec43fcffb5504ded52",
+          "seed": 2026102021,
+          "promptId": "5fff53a0-b83c-494b-b567-0e0f370150c9",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "3-2/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 144284,
-          "sha256": "76724e4c7299ce28c4768fdf65629e2d8cd45a61038e4fa783cad6725ffcc410"
+          "bytes": 149992,
+          "sha256": "646505fbd9f2f65ff73899d0be9ca9515c589220b8d094beac579e5f3b9d1df7",
+          "seed": 2026102022,
+          "promptId": "bd1eb928-2d9e-4f8f-a19d-6a6b89dd5539",
+          "seconds": 5.71,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "3-2/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 144432,
+          "sha256": "5d4b04def3226b7f45571b34ce1aa2889d27d17e0ecb21e2854c9fe1142a6eff",
+          "seed": 2026102023,
+          "promptId": "9957102b-66b1-466a-84fe-adef1348f86d",
+          "seconds": 5.71,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "3-2/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 132818,
+          "sha256": "98950c11fa559798e6a82a1850cb917adc6947de8861aaa0f62cd9c68d2f829b",
+          "seed": 2026102024,
+          "promptId": "aaca3987-602f-48f6-9d33-5fd8362754aa",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "3-2/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 140098,
+          "sha256": "0b402800d2c9e6b3f6a89631aa4a6961c73ded031f6f8e9a6a1b42a0b524b112",
+          "seed": 2026102025,
+          "promptId": "9ee9056f-abae-48b7-ae7c-aee2143010a5",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "3-2/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 154350,
+          "sha256": "ebfc237f623b61a28e11c9ed7852e8384a6aec7dbcbd78a2893519b0e007caf9",
+          "seed": 2026102026,
+          "promptId": "1a0f2a20-408e-4264-8a82-14c61a95278b",
+          "seconds": 5.0,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "3-2/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 155792,
+          "sha256": "954444decf574cf4b0b3468898692784e1cf1246bc3cfa18c64c590a19764bf5",
+          "seed": 2026102027,
+          "promptId": "a266e71a-ab0e-4627-b151-9b3dbdbeaafc",
+          "seconds": 5.75,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "4.2": {
-      "id": "4.2",
-      "seed": 2026101813,
-      "promptId": "4cbd21a0-dce1-4488-aad4-189bdfc208d4",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "fauvist-gathering",
         "label": "高彩油画",
@@ -671,47 +1558,115 @@
         "palette": "cobalt, orange, turquoise and acid yellow",
         "setting": "a colorful sunroom with friends around a low coffee table"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "4-2/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 114668,
-          "sha256": "f27a9493dd9e96fed6c58bb41fa8e457cad0e86ff003ef655c7dbe7e414e46de"
+          "bytes": 148866,
+          "sha256": "c3af1d0ea4bb6891499e0e84b99a1121e472ac04ad65bb42f2f2914a32733493",
+          "seed": 2026102030,
+          "promptId": "88529fff-1f2e-493d-99cf-749be8818744",
+          "seconds": 5.7,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "4-2/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 117910,
-          "sha256": "753388fa7f476029921a734a3757ea30927f0919b2b7ed44fc13f8f675d2fbf4"
+          "bytes": 133538,
+          "sha256": "4f085131c7b9538437b8bcc98f311f0a2835aa1827b48a52d710ca018aebf9f3",
+          "seed": 2026102031,
+          "promptId": "260fbf5a-4130-41d5-80b0-0203cce91689",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "4-2/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 117086,
-          "sha256": "020658fff72a51955944043047ee1fc22fa2669df40148c8972d6222a84360e3"
+          "bytes": 136274,
+          "sha256": "39e036ab8f21e25377408c0adec7003c1bae267ce670edfbea89ee7dc058967b",
+          "seed": 2026102032,
+          "promptId": "205f9bdf-f133-433f-bf8a-0974197f1a56",
+          "seconds": 5.67,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "4-2/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 133136,
+          "sha256": "b275adf6ad2370d915f2857a225800d05347b44f00788b717e5bef36713a8d53",
+          "seed": 2026102033,
+          "promptId": "c09b0cc0-9ce1-4390-8ba6-efa8eea96a76",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "4-2/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 137360,
+          "sha256": "af68d158a97fba64f2b794a568f15302331ded31d5d5b48887a5a5fd03a1cc99",
+          "seed": 2026102034,
+          "promptId": "09d51c24-91df-4802-aa01-d6c187582857",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "4-2/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 138476,
+          "sha256": "386a44958ebc67c832257f6e2ba0578c24825ad09d56a561f5ac9f5cd3880b8d",
+          "seed": 2026102035,
+          "promptId": "2c0b7fd9-7e10-4700-b0a5-a4de00d167b6",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "4-2/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 135368,
+          "sha256": "ec552e5e30e849b5805652f8ca8f756459955cc10e6f2a5874d38542ae145bff",
+          "seed": 2026102036,
+          "promptId": "7d6d51d7-23de-4882-af3e-995332c6b06f",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "4-2/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 141500,
+          "sha256": "ce86ad8d2454a2f666d2c9eec62c4504d3f69086e20d28ca175d11d4c5b329be",
+          "seed": 2026102037,
+          "promptId": "76382264-b426-4d3c-806c-d7198624f65f",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "5.2": {
-      "id": "5.2",
-      "seed": 2026101814,
-      "promptId": "8fd7ace0-f5db-4806-9c90-6fdde8ac6564",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.4,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "collage-gallery",
         "label": "拼贴画",
@@ -721,47 +1676,116 @@
         "palette": "cobalt, coral pink, kraft brown and white",
         "setting": "a contemporary art gallery with framed flower paintings and blank walls"
       },
-      "sourceVersion": "question-art-v5",
+      "sourceVersion": "question-art-v7 + question-art-v8-refined",
       "assets": {
         "scene": {
           "file": "5-2/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 53622,
-          "sha256": "de4007d599e125b7f20787e0d6cbaf8b4ef99749b6f9a5a7a39b92cce1948bd8"
+          "bytes": 89474,
+          "sha256": "a88a54dbb8be23b7bdced1f9f5798f99868cdbd0e09712e3b581c8d2faca4390",
+          "seed": 2026102040,
+          "promptId": "b7f43d40-d462-4d6a-8eb6-0be9ac53bbd0",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "5-2/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 56000,
-          "sha256": "2a9b53dd419acf9c2f54b2b8f67c637c0421488eba063434110191d279142fdd"
+          "bytes": 57570,
+          "sha256": "1f21c99806484e0904ed413686d43577ecde904d37cfd44ffafee1c4ce28ee0d",
+          "seed": 2026102041,
+          "promptId": "6dab6b62-b065-4f52-9359-f7974ba307e3",
+          "seconds": 5.54,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "5-2/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 53756,
-          "sha256": "4fdeaf2d0f1f47dbf7c1e6a21d4f061a59576712de2e28e81f613dd2a419884d"
+          "bytes": 64390,
+          "sha256": "9ffe141c991e0ceef4169838ec9acb05d10a4c0b6419608f068eaa75c5bd9df5",
+          "seed": 2026102042,
+          "promptId": "8dcbb49d-a187-45d9-85d4-ce8b3789494a",
+          "seconds": 5.56,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "5-2/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 52394,
+          "sha256": "306bfe2844819c90bc8b9ad6f2638a6217d83c07ffc622be9450cfad0b09ed67",
+          "seed": 2026102043,
+          "promptId": "d59e2f38-17bf-43b5-8e56-b016dcdd1331",
+          "seconds": 10.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "5-2/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 94952,
+          "sha256": "b3130f3e7dce16582b1aa79f2ed2247d06d8bd441bf5097bbc0b4d1543f4f0cc",
+          "seed": 2026102044,
+          "promptId": "a8bc9ba6-4e2c-4daa-b624-2a4d9fb1ede9",
+          "seconds": 10.51,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "5-2/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 77858,
+          "sha256": "e332a7e861546f21b6855ca4db5471c9ed5f5a7f55f0fac0397177b86064eb4f",
+          "seed": 2026102045,
+          "promptId": "a8f94466-b8b0-44c7-ab76-aeadf6a8ac9f",
+          "seconds": 10.39,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "5-2/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 122386,
+          "sha256": "4420240b9d2df76b58431a482919f35802a4ad247d6a163bb1a4ba53dcafb680",
+          "seed": 2026102046,
+          "promptId": "9e759ebc-208d-4d4f-8b5b-997e9379184f",
+          "seconds": 16.19,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-4": {
+          "file": "5-2/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 74166,
+          "sha256": "3d2360717bfbcd844736f02c4e1446cfc1c63b8b0eab14e655a498ad8e584e85",
+          "seed": 2026102047,
+          "promptId": "90d0a618-2f62-436a-9460-1c56bd29dc3a",
+          "seconds": 10.99,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "6.2": {
-      "id": "6.2",
-      "seed": 2026101815,
-      "promptId": "5dffb75b-601f-4cdc-9094-931ba6d42ae5",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "clearline-comic",
         "label": "欧式清线漫画",
@@ -771,47 +1795,115 @@
         "palette": "cherry red, sky blue, butter yellow and clean white",
         "setting": "a small neighborhood drawing class with wooden worktables"
       },
-      "sourceVersion": "question-art-v5",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "6-2/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 137314,
-          "sha256": "ee39d4eed9a9c627bc05d6370d5840f854871245b9024aca1872d23a3b227a95"
+          "bytes": 112438,
+          "sha256": "6607f521f7c471cb1885c320b38059802ca1cf61301ded921a7c97eb9e88e9ab",
+          "seed": 2026102050,
+          "promptId": "8163a449-f557-439a-b99d-f1a61afe16c1",
+          "seconds": 10.42,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "6-2/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 132316,
-          "sha256": "30b9cd13a6183726d474b15e101fe0c087435eb4c7682ff829227de4c358f746"
+          "bytes": 106136,
+          "sha256": "9ba06b5da04e83fd7002829b935655faa559b3ee3cf70018ff34e68f1968a6a7",
+          "seed": 2026102051,
+          "promptId": "bc11ae5b-2ddb-4f5b-b9aa-40ce1f727578",
+          "seconds": 10.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "6-2/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 135038,
-          "sha256": "e382dc41390d09e0bec3c64d593e8fad5faa9db99e0b98785175152555b487cb"
+          "bytes": 67518,
+          "sha256": "1351b05a66b19970c4d7542ba338714ec2ab681463c71e1917891a686b6ef090",
+          "seed": 2026102052,
+          "promptId": "51849ad5-a707-49d5-9cff-c4a9f4e0f75b",
+          "seconds": 10.97,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "6-2/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 96970,
+          "sha256": "43d86e483abac23be579568b312d0a753b484ffe9113a0fa46cf414246bd089a",
+          "seed": 2026102053,
+          "promptId": "a2e5f168-ab30-4cc9-8d6b-45fab51e772d",
+          "seconds": 10.5,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "6-2/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 94138,
+          "sha256": "1ae29f47d224cbd8b4686a900acf4bc584bff659668ecc64e069f7c3ab4a6e19",
+          "seed": 2026102054,
+          "promptId": "7c30e6b4-ce58-4b66-9db0-daef8088ece4",
+          "seconds": 10.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "6-2/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 87102,
+          "sha256": "30d3ff70b46c64078db4e1528fa77b915458068d3bca18ad9b3e02ed6e9801e5",
+          "seed": 2026102055,
+          "promptId": "391e5e50-2bb6-4a78-8d73-540bd1f1a8b2",
+          "seconds": 10.51,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "6-2/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 103040,
+          "sha256": "3b3f29a4dbcb017ff6606c3ba392788bbc3e75b95e60980506cf1194db724e90",
+          "seed": 2026102056,
+          "promptId": "f80743ab-ca28-4c45-a8b0-b752a1429e9b",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "6-2/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 116278,
+          "sha256": "82427ab77e824a959981f908de1a053200a783718034b991840b6e16a54825ee",
+          "seed": 2026102057,
+          "promptId": "f4b66318-6002-4b01-b253-867a9a321f68",
+          "seconds": 5.77,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "7.2": {
-      "id": "7.2",
-      "seed": 2026101816,
-      "promptId": "34066d82-9564-44e0-bc65-7e66d743b0b1",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.5,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "cel-animation",
         "label": "赛璐璐动画",
@@ -821,97 +1913,242 @@
         "palette": "deep red, ivory, muted violet and sky blue",
         "setting": "a personal art studio with an easel, colored paper and a broad daylight window"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "question-art-v7 + question-art-v8-refined",
       "assets": {
         "scene": {
           "file": "7-2/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 109326,
-          "sha256": "10364cd422b3e56d7e2ff9be566a1eca40c2dbd8f23280df8a6972f4d6fd9198"
+          "bytes": 75978,
+          "sha256": "cecfd98256b7c8aef166d9118c38a88495c2748e970487b3e7828ae3f8a0fadc",
+          "seed": 2026102060,
+          "promptId": "e0df6249-5085-4548-b567-daf29ac02abc",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "7-2/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 104802,
-          "sha256": "8b05051f4e1b0d85e4a4b9e9351594074f0c959bef1cec96a6d671e00531b361"
+          "bytes": 63402,
+          "sha256": "aa168f3a797dabaa667785b62690b3fdc95afcfb94aaa36358ba2981467999ec",
+          "seed": 2026102061,
+          "promptId": "74154513-5974-437c-8ea1-1818a200f4b4",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "7-2/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 72888,
-          "sha256": "3c3b80bca9561dcbd0a0b1a331d836ee1806ba236b2609c2595e29e72968b24d"
+          "bytes": 67900,
+          "sha256": "43b29d83a21f82d33323a5b0a75fcbf1c983de53b67a5c1f4b30a24d9b118288",
+          "seed": 2026102062,
+          "promptId": "0a8e99d4-aed8-463d-8785-f35a0366f010",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "7-2/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 63874,
+          "sha256": "4d6eecc065b88e5429235faec7de6a764f1b8dd4977b2b423df16d71d93ecdef",
+          "seed": 2026102063,
+          "promptId": "ed1a8563-c302-4c83-991c-c8745619fa0d",
+          "seconds": 5.7,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "7-2/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 66862,
+          "sha256": "36960488d120106ac6b78770cfca5b8d1b2c4ad5da75695b153ef43bf5cd2da0",
+          "seed": 2026102064,
+          "promptId": "2e135fa1-1ce5-4b84-a1f2-c0b4970185e3",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "7-2/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 75182,
+          "sha256": "4cfab889b8db6937fdde3cdd47d362256bf42b5f4b766b22128d3149749f6cc7",
+          "seed": 2026102065,
+          "promptId": "0cca8160-e837-42e9-93cc-2f131cea0678",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "7-2/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 75252,
+          "sha256": "9fecba54a590d06bc7c58e63c1e955b8a8d80f288b54155a6c5cd0fc405fcb7f",
+          "seed": 2026102066,
+          "promptId": "22f12b37-d0bf-43e4-acfc-fc463ff68190",
+          "seconds": 15.82,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-4": {
+          "file": "7-2/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 69684,
+          "sha256": "e09dcb45edae354be61f1e88022cef187646fa2fecceb94fb947ea490b6f021f",
+          "seed": 2026102067,
+          "promptId": "f1e3038b-d116-4f28-8b37-6dce5049770b",
+          "seconds": 5.7,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "8.2": {
-      "id": "8.2",
-      "seed": 2026101817,
-      "promptId": "c28a4b89-b4d6-4968-b6c2-d28a7635a5db",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "isometric-maps",
         "label": "等距微缩模型",
         "family": "diorama",
-        "medium": "Isometric 3D miniature world photographed from a consistent elevated three-quarter angle. Tiny articulated human figurines, precise scale-model props, soft shadows, clean toy-like materials, tilt-shift depth of field.",
+        "medium": "Macro photograph of ONE handcrafted clay miniature character at a simple tabletop. Elevated three-quarter close view of the expressive face and oversized hands, tactile matte painted clay, clean soft studio shadows, a completely plain cream backdrop. One single continuous scene; no inset or background map, no printing or typography.",
         "protagonist": "a miniature woman with a black topknot, a tangerine jacket and white sneakers",
         "palette": "tangerine, teal, sand and white",
         "setting": "a tiny mapmaker's home studio with miniature hills and route maps on a large desk"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "question-art-v7 + question-art-v8-refined",
       "assets": {
         "scene": {
           "file": "8-2/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 96998,
-          "sha256": "73b5e6477904a737bc60ec8a5e07d9f3d094fb1ee70f9ca9348a7defbd0d3082"
+          "bytes": 41034,
+          "sha256": "e4cd5c900d864aab1ea6412b3db805a5eb5188ea7374773df3dc9e2e050d2f51",
+          "seed": 2026102070,
+          "promptId": "fb24ef30-62a0-4eaf-b5e3-85f827f22b89",
+          "seconds": 15.65,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
         },
         "left": {
           "file": "8-2/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 96466,
-          "sha256": "d000ad0842a936bc0f9834698692d9b2ada6d234475c6b3464602d6bce44a210"
+          "bytes": 63626,
+          "sha256": "eb8c93b4b1e5c7186bb21788dc113ed66c7558a83f5c4cfe3c18d8df02ab9827",
+          "seed": 2026102071,
+          "promptId": "39e0edec-bd2d-4730-9fbe-6bd4bcd9708f",
+          "seconds": 16.39,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
         },
         "right": {
           "file": "8-2/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 94606,
-          "sha256": "ef0c78dbdaae3af5ee9bb298e1a40d7893d0a9542d3e69f7f2b4a967e950066f"
+          "bytes": 59152,
+          "sha256": "f68c697137cc71905bf91e4e81cfd004665aee0ab1d9d0c9f7fa13c6e4c47737",
+          "seed": 2026102072,
+          "promptId": "36bd28af-076a-406d-be41-336e828a4cec",
+          "seconds": 15.72,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-0": {
+          "file": "8-2/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 41002,
+          "sha256": "498440e7b7faa96e9283a74d2654b595495eb86c954c4d300ac12510678b03ae",
+          "seed": 2026102073,
+          "promptId": "5e919538-c89b-475a-8b24-622c0012030b",
+          "seconds": 15.95,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-1": {
+          "file": "8-2/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 38628,
+          "sha256": "cfc90b698facc58e94cdf350ce512682280fa04d28847bab2983c7cd92c1bd0a",
+          "seed": 2026102074,
+          "promptId": "16c837ca-793c-4424-b1fa-55773bd91ceb",
+          "seconds": 16.08,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-2": {
+          "file": "8-2/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 39194,
+          "sha256": "89a36a5c3c74284c89c9f84d0a0e6e1c5ee8a924346ee3c5ee710adf5a0ec355",
+          "seed": 2026102075,
+          "promptId": "18e6a997-6819-4ec8-a7ce-c73d418dd0f8",
+          "seconds": 10.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-3": {
+          "file": "8-2/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 37236,
+          "sha256": "6e942d94090f08d6ce64eb28d113aa003cf4bc3cf8bcf81a9043fc422e845112",
+          "seed": 2026102076,
+          "promptId": "6931de70-41d1-4d16-a8ef-1cffaeffd51b",
+          "seconds": 10.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-4": {
+          "file": "8-2/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 53822,
+          "sha256": "277cf1490aaab933a25576df6953c5cbf3384c94e059013c12c73e73a3e1aecd",
+          "seed": 2026102077,
+          "promptId": "21a1adb5-6b53-4fd6-8861-6d16b2cb0dad",
+          "seconds": 10.65,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
         }
       }
     },
     "9.2": {
-      "id": "9.2",
-      "seed": 2026101818,
-      "promptId": "4ec82dca-6da4-4342-aa76-cf2278013d3c",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "needlefelt-home",
         "label": "羊毛毡定格",
@@ -921,47 +2158,115 @@
         "palette": "lilac, mustard, dusty pink and oatmeal",
         "setting": "a cozy wool-felt living room with a sofa, separate armchair and a knitted rug"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "9-2/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 112634,
-          "sha256": "82e8549e7402bde0c7a99561769d49ba6b01a7f5929da36aa4b1768ca9303334"
+          "bytes": 138640,
+          "sha256": "f18854348897486bfbe2f4372993c320806cb597436f6788987940417f2a9522",
+          "seed": 2026102080,
+          "promptId": "d4563c0a-9e04-4160-9ae1-cf8dd1644e4e",
+          "seconds": 5.67,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "9-2/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 110702,
-          "sha256": "3a59c31e4706f6e6af7b69df9921d16cdf616f440a0f92cf12e4b0655e2c0053"
+          "bytes": 146948,
+          "sha256": "e21b2ec720ffde2bbb58f19c5155c221d81382f7a54b83f60752b97e76af6ec8",
+          "seed": 2026102081,
+          "promptId": "75bc448b-346c-41a5-b67f-96e8922946f0",
+          "seconds": 5.76,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "9-2/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 108974,
-          "sha256": "ed42787a6c67c185c30bb47140dc8c1e28950dfc33f59f8b6a649593de674a6e"
+          "bytes": 148266,
+          "sha256": "9addeec33be72c46c7cb56c24216de714d2d28fead838a0ae0e1b257b7da5894",
+          "seed": 2026102082,
+          "promptId": "98805b0c-7523-40a1-a030-0b3b0e918fa0",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "9-2/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 130456,
+          "sha256": "b8b50072a0f8c54b585e8a6e60c7f721d93b7644d68e418c4fa763fd372ef061",
+          "seed": 2026102083,
+          "promptId": "80be855e-1081-49b8-8bbf-6e300ab8d0d6",
+          "seconds": 5.8,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "9-2/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 132262,
+          "sha256": "01d2332162415b85ae9deced41435fd38c9cbc738e3940caf0728c26fbaec97e",
+          "seed": 2026102084,
+          "promptId": "2bed0ae3-969a-4409-b410-dc0e54db6fe1",
+          "seconds": 5.67,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "9-2/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 115858,
+          "sha256": "41a4b809806c6cb5891d88c290d8bfd5f688f5bd4273892fdd86a499a475fadd",
+          "seed": 2026102085,
+          "promptId": "34c07365-dab0-4a6c-88ad-ed01b85a7fbf",
+          "seconds": 5.65,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "9-2/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 127604,
+          "sha256": "e53952ddbf20b628ffd06f8573065e7ab0b9c0b5510e82879e584675bbce251b",
+          "seed": 2026102086,
+          "promptId": "26e29953-b726-45b7-b9bd-49231944c2da",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "9-2/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 124342,
+          "sha256": "3fc3391350bf4e4868b02b44c31a20d966362b617ef085dc079b9735ce520b19",
+          "seed": 2026102087,
+          "promptId": "ae443fd0-d067-4d31-a7d4-20704cf5f153",
+          "seconds": 5.7,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "10.2": {
-      "id": "10.2",
-      "seed": 2026101819,
-      "promptId": "9806db50-c093-4be7-a7f3-600b20616862",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.5,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "neon-street-film",
         "label": "霓虹都市摄影",
@@ -971,47 +2276,115 @@
         "palette": "cyan neon, coral neon, deep navy and rain-gray",
         "setting": "a contemporary city street at blue hour, parcel counter and a glowing flower shop; no legible signage"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "10-2/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 114992,
-          "sha256": "ce2fb18174d16447c6dd58eaf38ab9d7d7ed36b8630101d09a9e152d92341417"
+          "bytes": 78122,
+          "sha256": "ace65c114d805c0ae12794fb2bb470c2dcbc40952dd81efc2c57ed115400f9b9",
+          "seed": 2026102090,
+          "promptId": "29fb339d-3a57-459e-9b27-51f4cab1fc8a",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "10-2/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 67632,
-          "sha256": "4f0f0000c27a42bcc7e6b255686cd1255f791791b69b373852b99455651aa17f"
+          "bytes": 99840,
+          "sha256": "46b0b8264a484efc3c2eb92c6c8fbaa4067aa546d79498804b6b42730cf1676d",
+          "seed": 2026102091,
+          "promptId": "728ffa34-465d-4e9d-8664-42757c597466",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "10-2/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 98498,
-          "sha256": "e3b559e9da14e38c776cec5fbc28adecbf8fe38b248f38644423cbfbc861a8d5"
+          "bytes": 107886,
+          "sha256": "6ef9560a66738e696c0900a37a620f424c6f0d49cb9324525d5f397c59c13d18",
+          "seed": 2026102092,
+          "promptId": "9245b414-66f8-47f5-9fa0-a2208b21a563",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "10-2/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 98276,
+          "sha256": "022a07305310a4bc8be491478349946c171d0ef84e155dc1bed051c1f2e81652",
+          "seed": 2026102093,
+          "promptId": "a6ad8958-7ae4-4587-a4b2-8d1ed8d8d360",
+          "seconds": 5.74,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "10-2/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 95078,
+          "sha256": "e23a93bbd9b8cb9146da263e66d9ce6eb3b30e2afc6498a32e44638eb452734b",
+          "seed": 2026102094,
+          "promptId": "e36b8ef6-2982-4994-84de-779d78d21ce2",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "10-2/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 99008,
+          "sha256": "97f7cde744c9cce1228811ad375eb094c1840a63d93bd205d09c22886c222b40",
+          "seed": 2026102095,
+          "promptId": "ee18b240-f5b9-4c1c-9245-3c2462960f21",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "10-2/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 112724,
+          "sha256": "8a86d641272b237e542a52cf7931536316e67a95fe2a21c9969e5514ddf92824",
+          "seed": 2026102096,
+          "promptId": "1879a102-8f75-4cea-82ad-5fb99cbe744c",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "10-2/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 100500,
+          "sha256": "762e46f2dc6294c96386f568715a25cda58f5351fca8249aaca37fbc8efe1df1",
+          "seed": 2026102097,
+          "promptId": "3cbf25fb-03c9-4053-8f1b-1bfecd637962",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "1.3": {
-      "id": "1.3",
-      "seed": 2026101820,
-      "promptId": "69c412d5-f808-4748-8c04-14ba930352f6",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.7,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "colored-pencil-debate",
         "label": "彩铅速写",
@@ -1021,47 +2394,117 @@
         "palette": "lavender, sepia, leaf green and ivory",
         "setting": "a small book cafe with mismatched chairs and generous natural light"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "question-art-v7 + question-art-v8-refined",
       "assets": {
         "scene": {
           "file": "1-3/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 136680,
-          "sha256": "d899b2d0762f04521067314cf8515f6f476ae7d91ccf8e3458768981f3107faa"
+          "bytes": 115202,
+          "sha256": "bf3acc260a173920de8ddc624d9ed8e4521fe0be4cb09a4a1af064ed6b18cede",
+          "seed": 2026102100,
+          "promptId": "64538a38-2028-4255-9256-f17125829d1f",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "1-3/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 136972,
-          "sha256": "6fcaf5c20ad7aa944c60bb0d16f81b897d069136f1582fc8a118ad1148b6eedc"
+          "bytes": 122178,
+          "sha256": "aa4b7073f904953205924b7c26cb10d5ebe861715c3a5a201e6f878830350e8f",
+          "seed": 2026102101,
+          "promptId": "aa1a30ed-855b-47ff-bb9d-a3e165c8c276",
+          "seconds": 10.65,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
         },
         "right": {
           "file": "1-3/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 135838,
-          "sha256": "10061ffa256eaade0e19284f8b60c111c00dbddbd13e56802d1b701e3431b376"
+          "bytes": 76904,
+          "sha256": "be5024574c40a51928296fc05cde7c960b477fbe9db83427391d9b5d811a31af",
+          "seed": 2026102102,
+          "promptId": "0a10feae-0e52-443e-98dc-6c85fb4adcca",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "1-3/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 139780,
+          "sha256": "a65d0ad0cff82b35cc7261adbc00fb3ef89f8ca7fc19fcaf1eca93a7d0982b04",
+          "seed": 2026102103,
+          "promptId": "37bc3304-aa27-454d-b71f-3e26c3e4af67",
+          "seconds": 10.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-1": {
+          "file": "1-3/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 114838,
+          "sha256": "cf1a460f0fe34430ead9f90a6668d38c25be2f8a2166a9daafb8a7564ab032a6",
+          "seed": 2026102104,
+          "promptId": "6ee68c99-b526-4b0d-850b-d1cf523f5f02",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "1-3/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 115852,
+          "sha256": "e891c0aaf6dadbd0e31c224cf615e2b7378eab078d6054e67f3813f32339c5b0",
+          "seed": 2026102105,
+          "promptId": "2c1eb121-6d13-4438-8d27-3c8faae0660c",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "1-3/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 71418,
+          "sha256": "ed9659f3ae4649db7ca2821ed208df4e496fbb23db23d586f5a54e2871b02f59",
+          "seed": 2026102106,
+          "promptId": "3406502f-9f4b-47f3-a4e4-42108f8c893c",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "1-3/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 87196,
+          "sha256": "5f889d5685b280274f5286c97490beb5f20cd7120b5ec2e5bab2eab794d591ce",
+          "seed": 2026102107,
+          "promptId": "4f8e96c6-57ce-42da-87a6-e33b8edc4de7",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "2.3": {
-      "id": "2.3",
-      "seed": 2026101821,
-      "promptId": "29351043-bb85-466a-bc70-7a7240435f2c",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.5,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "manga-night",
         "label": "黑白日漫",
@@ -1071,47 +2514,115 @@
         "palette": "pure black, white and gray screentone only",
         "setting": "a compact bedroom at night with a travel bag, bedside lamp and alarm clock"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "2-3/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 104662,
-          "sha256": "ce1657abe919645eea149e74ba0048f89c7cbe7701be8e6ebfc86f3e5b7f3548"
+          "bytes": 148698,
+          "sha256": "646a7eb23bb6359eedddbe8035125dfe6f059715561932a3109c77279a9c6516",
+          "seed": 2026102110,
+          "promptId": "71b97e64-8ab8-4f5f-82a0-83cf1ffe8147",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "2-3/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 112644,
-          "sha256": "9c05fb260687bcecf9b8d22b84b8129d8936459b16b2ae3fc466edab01741516"
+          "bytes": 122174,
+          "sha256": "2e86067423a6e56b87c3018d3ee73d68d42da3f216f999404ae6afa16f3f095b",
+          "seed": 2026102111,
+          "promptId": "73f620fb-9f84-41e5-aae6-9fb757ef395e",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "2-3/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 97124,
-          "sha256": "025549340554030820f1f2358b6e9a14de3f9ac8afa3de4259b2b494788932fb"
+          "bytes": 62612,
+          "sha256": "e5e6ad293b21038738ec4d72f934cf3a0edaed043b2f84f6acb050c64a1868a6",
+          "seed": 2026102112,
+          "promptId": "0a42df80-2f8e-4486-ac71-a7c1e9d7c2bc",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "2-3/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 155660,
+          "sha256": "9fd4b9e29ba706d8541cf7409a3f457c36cd8297c6bb98b9f3a7996aedf76611",
+          "seed": 2026102113,
+          "promptId": "27a389d7-7b64-4ec2-afce-5d55396b5af5",
+          "seconds": 5.67,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "2-3/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 117464,
+          "sha256": "c41e95a90568e70cab253f12cd87824eebe935fa061274d5ff906226574bad10",
+          "seed": 2026102114,
+          "promptId": "e80b5a0c-2d5f-46d4-9594-58321c8c63ea",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "2-3/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 142676,
+          "sha256": "e726187b238266ae94f57ef8eb1214f94afa145ff9d8e6ed9489d1b77f363316",
+          "seed": 2026102115,
+          "promptId": "2991dbe1-a6cd-4bd0-adf7-4e3f98ad8d9e",
+          "seconds": 5.65,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "2-3/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 108156,
+          "sha256": "eda1e94bc96e4a7dcdbac7d4a0cbad3d183ff0f58d2daa7183cef6779f9bbfe0",
+          "seed": 2026102116,
+          "promptId": "0b6a8440-c77c-459e-869a-b78a0137bab1",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "2-3/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 98748,
+          "sha256": "9d76f8746b0244fa3884794d7eebc9dccaff604b91901a73167e7ea6550f83a0",
+          "seed": 2026102117,
+          "promptId": "fb38aa2d-6b24-459b-a9d1-f81dc6cff4af",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "3.3": {
-      "id": "3.3",
-      "seed": 2026101822,
-      "promptId": "2a5fc9c4-52ca-4b26-acad-aab3a8a53b4f",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.3,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "geometric-editorial",
         "label": "几何扁平插画",
@@ -1121,47 +2632,115 @@
         "palette": "coral, navy, mint and pale peach",
         "setting": "an open coworking room with a simple rectangular collaboration table"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "3-3/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 49936,
-          "sha256": "03156e08ad45d4c2867c044be10d11f6c66894d43e50d668094f5a990d9e743d"
+          "bytes": 52490,
+          "sha256": "f441b0305f2aa84f59a7488fbe96990144fb8ca39a1749b074037dd8de308902",
+          "seed": 2026102120,
+          "promptId": "e292c17b-d029-43fa-b151-9777ee6c5786",
+          "seconds": 5.54,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "3-3/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 48640,
-          "sha256": "5c9fb72dc035cf4f6d3a1aaec9f1d43c53c8019aaceb47df755c44839c95dc71"
+          "bytes": 51938,
+          "sha256": "bb5dc54fa6b464e5346e1381f01c0e7116e973b08bd666340921484810ebaf58",
+          "seed": 2026102121,
+          "promptId": "830cdb47-0c69-4b56-abf9-3a4a892ca75f",
+          "seconds": 5.55,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "3-3/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 49516,
-          "sha256": "6d39b36fc583a86a9794c829ea8c304b54ac1666df1a9a828f37410fd0db3b14"
+          "bytes": 50150,
+          "sha256": "4edcdaaf8049f7afdad51b0bfb17a1afc9166216334284cfb41ad732c09cfba2",
+          "seed": 2026102122,
+          "promptId": "7f889071-2bcd-4c4e-b553-e6c236cf80b0",
+          "seconds": 5.54,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "3-3/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 66352,
+          "sha256": "82d821fa354a5d795a04457db628d6ce0b95d668a5cedf92fd097e6705a4f6af",
+          "seed": 2026102123,
+          "promptId": "47966d38-0f19-4910-b322-8b0575834c00",
+          "seconds": 5.56,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "3-3/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 46048,
+          "sha256": "a9b48910f04c86dacc65b2e68582daf2fb97928a287442ed89ba81245be21ca0",
+          "seed": 2026102124,
+          "promptId": "dddfccb5-dc59-4658-9c20-a6615f3c9751",
+          "seconds": 5.54,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "3-3/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 53684,
+          "sha256": "8bb1db0a3e1c65008cddf55713008ed5689f94354868e3e2162f2b082072d8af",
+          "seed": 2026102125,
+          "promptId": "165d40dc-bf21-4362-bed2-398250722355",
+          "seconds": 5.54,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "3-3/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 71048,
+          "sha256": "85711300ffa13a815cb786500d6873012783581c3a26fff99e284df581aae8e0",
+          "seed": 2026102126,
+          "promptId": "17f2c75a-d715-4e4e-98b2-3b81c4415ed2",
+          "seconds": 5.56,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "3-3/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 39786,
+          "sha256": "7306fde9852f10eea2e3027187aec5a5a25db6b7a60e452551ae509fbe376913",
+          "seed": 2026102127,
+          "promptId": "c87d9906-cfcf-4d28-af37-23b431807af4",
+          "seconds": 10.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "4.3": {
-      "id": "4.3",
-      "seed": 2026101823,
-      "promptId": "7df18b48-e984-49ad-930a-954aefcb254d",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "cyanotype-mystery",
         "label": "蓝晒插画",
@@ -1171,47 +2750,116 @@
         "palette": "Prussian blue, pale cyan and white only",
         "setting": "a quiet desk by a window, a phone and geometric puzzle notes"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "question-art-v7 + question-art-v8-refined",
       "assets": {
         "scene": {
           "file": "4-3/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 106336,
-          "sha256": "7a6f863248426cbd460a680648bac743757d7925f7161fefc11de890a821d515"
+          "bytes": 131914,
+          "sha256": "1c7bd5c7d9be32cfef77370dd763bf8d5d3315073b0f2b69a2dc76857bcfe0b4",
+          "seed": 2026102130,
+          "promptId": "e1ff237f-3cfa-42ed-a5db-2f953f8c6703",
+          "seconds": 10.76,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "4-3/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 103608,
-          "sha256": "f20a89ef3e71167b227fde6a35f1becdefb9bd06e5fddaf868c9bbd008ba7157"
+          "bytes": 75370,
+          "sha256": "b1f58d3eae275f9820407ee2c0ff0ee5af99f7a07f23cc4e52c1f68decc1c906",
+          "seed": 2026102131,
+          "promptId": "1ca27897-4b77-414a-af44-9e07d799aafe",
+          "seconds": 10.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "4-3/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 110870,
-          "sha256": "3b2c89e0b5b0898a63fe88e7a240f16b6bf25a4f42279ca0451e23c6f3420056"
+          "bytes": 92230,
+          "sha256": "d9bf5a072a8dac3e4201b08c28066c06bd00e01cab7587cdb3824b78768d8a27",
+          "seed": 2026102132,
+          "promptId": "d164e93f-b6fa-4e45-88b5-2e8a4c9cdf87",
+          "seconds": 10.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "4-3/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 72522,
+          "sha256": "3b09adbbc50b6f840505e541afa62c0c80eaccb820d3eb9b06a226dc576bce53",
+          "seed": 2026102133,
+          "promptId": "cd51feba-1484-4454-ae00-94591b0d867c",
+          "seconds": 10.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "4-3/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 101892,
+          "sha256": "fc0afbe7fdb875161e4d8c1be1d48bbcbcf98e685152a46e034a8dedd9411e11",
+          "seed": 2026102134,
+          "promptId": "fb1a9efa-f8e0-42f5-af0e-403a8580e72c",
+          "seconds": 10.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "4-3/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 89000,
+          "sha256": "db65c121c8e28fb3c4630620703b1143b4bc67ad510dd95272ed0623e92ea456",
+          "seed": 2026102135,
+          "promptId": "567ebac8-478f-4996-a0a8-d144dfaef6d3",
+          "seconds": 11.0,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "4-3/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 95492,
+          "sha256": "05c54d8a6ebe928a5d5301c303a6ecb51f7decbe419ccef6b4a2d2cd1f1173bf",
+          "seed": 2026102136,
+          "promptId": "1ae9203c-b7c4-43cb-afcc-cc0ed6e5d033",
+          "seconds": 11.03,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "4-3/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 77356,
+          "sha256": "482f3de62f99b8ee733a57f1322bb56af6b2f91074a8921f185a594ce320d28f",
+          "seed": 2026102137,
+          "promptId": "29128e82-265f-434b-9d7e-0a04d1a29947",
+          "seconds": 10.99,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
         }
       }
     },
     "5.3": {
-      "id": "5.3",
-      "seed": 2026101824,
-      "promptId": "997cdd9b-7815-4b8c-9363-e6e46cd9a321",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "soft-3d-animation",
         "label": "柔光三维动画",
@@ -1221,47 +2869,115 @@
         "palette": "sunflower yellow, aqua, cream and soft plum",
         "setting": "a bright modern coffee shop entrance with glass doors and potted plants"
       },
-      "sourceVersion": "question-art-v5",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "5-3/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 94288,
-          "sha256": "a38c22500604645f6c8e2dc6cb21900ddfeb1200c88ec7141906b7e53f399094"
+          "bytes": 114202,
+          "sha256": "25faf599927d12d40d8c8e900ae7894f2bab2699f64155f91e23b0cd982df1d2",
+          "seed": 2026102140,
+          "promptId": "f4549941-ecb6-4bb9-ab6c-f2dd81190fa9",
+          "seconds": 10.67,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "5-3/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 83096,
-          "sha256": "15dce4498a51c5f0014723411d415a81740c1a72c6421fa88d38c102518d66ac"
+          "bytes": 69968,
+          "sha256": "3dd178849fc9e54095c8e6a09fc5ed0a8243bce078bd31869ac616eb464c7c57",
+          "seed": 2026102141,
+          "promptId": "a742892f-9346-4c3f-b62c-9c27012a8a51",
+          "seconds": 5.73,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "5-3/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 81648,
-          "sha256": "2aebe481e3818ce705bd11b4dbdf402e9e5bfce22d8f49b4484f89c7e7ef27c3"
+          "bytes": 69202,
+          "sha256": "f5a2c226dc5c30de5c454774d8144db0d60becb63b272fa41a2ae8c62ab00512",
+          "seed": 2026102142,
+          "promptId": "c16e54f7-5985-4494-9d86-d172810f7349",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "5-3/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 81624,
+          "sha256": "fa2a923813ba517d9331a3946aeb929d90ba77ffdcc18d9f16d2bc51ce80fe11",
+          "seed": 2026102143,
+          "promptId": "a7bb6146-cc44-4acb-8f8a-e363063f785b",
+          "seconds": 5.74,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "5-3/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 115466,
+          "sha256": "611757c5fc7cbd064a95f4bc52aebdabaecfe272ef50ab471608811b947019ec",
+          "seed": 2026102144,
+          "promptId": "4f3f5996-fc04-4cb1-bf5d-9cf6917a1086",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "5-3/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 88930,
+          "sha256": "cbb2e3666ec5817b043b01a1711599d14d5145159ecc53f5cb17814787b51756",
+          "seed": 2026102145,
+          "promptId": "a27b88bd-82d7-4701-8c2b-5176c4fa2960",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "5-3/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 106662,
+          "sha256": "cc4bf8050d390eaefe076b60caef1d2052058ae31435fd319d414412030563a8",
+          "seed": 2026102146,
+          "promptId": "1709033c-37e9-485e-8511-1e7c79182683",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "5-3/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 77574,
+          "sha256": "d3495677c08819d0fce76cda30eeae952ac284d9ce5c5b6874b724d7f22301ce",
+          "seed": 2026102147,
+          "promptId": "741dbeea-da27-4767-b34d-fed5562bb3f3",
+          "seconds": 5.69,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "6.3": {
-      "id": "6.3",
-      "seed": 2026101825,
-      "promptId": "3fd54191-3381-4de4-8447-e7ed22ff3037",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.5,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "duotone-photography",
         "label": "黑白街拍人物",
@@ -1271,47 +2987,122 @@
         "palette": "silver black, pearl white and neutral grays only",
         "setting": "a modest modern apartment with a phone, notebook and a small creative workbench"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "question-art-v7 + question-art-v8-refined",
       "assets": {
         "scene": {
           "file": "6-3/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 73810,
-          "sha256": "ba37ed18d3bb77e8e1aceb4ec80fb628ae60a97398df9805808fe2507382158b"
+          "bytes": 73774,
+          "sha256": "4446d7d6d5f757fe1a1f3f265c844deadf70d09cddd4734b99146f9e4203dad1",
+          "seed": 2026102150,
+          "promptId": "99c1425f-358a-4f60-a842-ea88d294a5a1",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "6-3/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 74632,
-          "sha256": "7d97e2ba85c3ba38f3abdc19ade83d9ad0d7a9e1b87adbec9e8f51d831c19702"
+          "bytes": 87090,
+          "sha256": "6167c123199737fff03c99323a81235339b8fe155f93f63d5c1a6c219c1e8fb3",
+          "seed": 2026102151,
+          "promptId": "6b540145-f54b-4f5f-98b6-fec57c524e45",
+          "seconds": 12.39,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
         },
         "right": {
           "file": "6-3/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 72698,
-          "sha256": "70c24916a7b0eccfd5fa20cff6c733eff845915b47192c00a75c6f0ca151cf4e"
+          "bytes": 100086,
+          "sha256": "dbfe5291536fe65aecd30f1cc70768c67ab00f531d8cc9dfa72325f7b0d0d0e7",
+          "seed": 2026102152,
+          "promptId": "c5660776-f0a3-4585-9851-e098013e797a",
+          "seconds": 15.99,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-0": {
+          "file": "6-3/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 101026,
+          "sha256": "5ee02cef86a35d96c25c745a65f16b188fd0572f3da0944f83b2225078f5f316",
+          "seed": 2026102153,
+          "promptId": "fe82c412-fc6c-4dea-a32d-419ab604551e",
+          "seconds": 15.86,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-1": {
+          "file": "6-3/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 83894,
+          "sha256": "e82bb41e62239977a381b2ca840f69a22e095ecf7c0d55dd38f3916b6b9b84a9",
+          "seed": 2026102154,
+          "promptId": "b90265e3-df4b-49e0-adc9-c88a4390b087",
+          "seconds": 15.89,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-2": {
+          "file": "6-3/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 98628,
+          "sha256": "da811356c5318408517319a001568b2a963d77e50853c00c8adc1fcc1cfc6366",
+          "seed": 2026102155,
+          "promptId": "e2b25a9f-5aff-4675-95c9-1158e901fd77",
+          "seconds": 16.18,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-3": {
+          "file": "6-3/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 96054,
+          "sha256": "07d8b4044d6482221cd31a6f3e81012ecc7e531446ef276fe331dc7cf9cba044",
+          "seed": 2026102156,
+          "promptId": "eb496a3e-de78-4503-a5e0-0f11431bb8c4",
+          "seconds": 15.93,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
+        },
+        "scale-4": {
+          "file": "6-3/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 97026,
+          "sha256": "4dcbacdc26a9439d3fb87aabe84441f7a47be9bd0141149de8b5a163695ab1fa",
+          "seed": 2026102157,
+          "promptId": "392f636e-0211-4796-992b-70bf4d09b36d",
+          "seconds": 16.05,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
         }
       }
     },
     "7.3": {
-      "id": "7.3",
-      "seed": 2026101826,
-      "promptId": "77fe1c49-4fb4-4846-98cc-ac2b08d4ca1f",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "wooden-puppet",
         "label": "木偶微缩片场",
@@ -1321,47 +3112,115 @@
         "palette": "walnut brown, brick red, cream and muted blue",
         "setting": "a tiny architectural craft workshop with a model house, model boat and loose planning cards"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "7-3/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 119156,
-          "sha256": "49a9ca755f0b0dcbd5340cbd43589dcf705ab657a4988b7a6d5b20039c916604"
+          "bytes": 95384,
+          "sha256": "e59d0bcda613f1c310b1a6281423dfc8f2c3e06939ac52728bf02ce982025c3d",
+          "seed": 2026102160,
+          "promptId": "de6c073b-d334-46b9-892b-25bb4d5b5cce",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "7-3/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 108730,
-          "sha256": "b08338a1ea57106d7669249939544f5639e6f79f1a78510f8f05bc3f11f9e831"
+          "bytes": 114606,
+          "sha256": "161f303096cd72d9ae5de997be734082c422bd9a4367817553fef4131ecb3067",
+          "seed": 2026102161,
+          "promptId": "c1c97780-b8c5-4a09-827e-8b18cc0f319a",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "7-3/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 112430,
-          "sha256": "3965c5baaadf3fc9fc6383553d000ced652d33d9228523b0ce2ef1935850c153"
+          "bytes": 124624,
+          "sha256": "0da231e1c39eddf8e1a22ad045dfe184f450eb79ececce95e406d1867e971797",
+          "seed": 2026102162,
+          "promptId": "83d167f9-c08d-498c-b570-228bb26dac26",
+          "seconds": 5.65,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "7-3/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 107866,
+          "sha256": "2c2533e2270360b01cece3791b37a1a0b73e5485538f4c885a61edccf6c53884",
+          "seed": 2026102163,
+          "promptId": "ba39e58b-aa7d-4dd0-a295-a4483b1093dc",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "7-3/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 107468,
+          "sha256": "9d2cc508f38e30c73999fdafdbfb1b7f826a1c615ce3bcbe1fa5588890394814",
+          "seed": 2026102164,
+          "promptId": "8a30f873-68f5-4a59-b4dc-ffd1c8749e8e",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "7-3/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 104022,
+          "sha256": "32530649f9bff8fc974fbefc0ce84ee78288288db82d396649f044e9698499ea",
+          "seed": 2026102165,
+          "promptId": "151be7ee-9bb0-4f21-a4eb-7860bcbf3a10",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "7-3/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 136570,
+          "sha256": "e16cfc25e49751e1e75878029b06d5cd03a61316b7e57a0410eedc97ce224486",
+          "seed": 2026102166,
+          "promptId": "9f017135-200d-4a1f-9342-9827c4d4ce1a",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "7-3/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 82978,
+          "sha256": "a28ef5d9089e9c1ed21f3aaf896c153431acdf4d90b9c3f9bb2861c61177b038",
+          "seed": 2026102167,
+          "promptId": "1f9ba11f-c0d2-46b2-a058-c36cd08041a0",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "8.3": {
-      "id": "8.3",
-      "seed": 2026101827,
-      "promptId": "84172c98-b3d9-49ac-9592-2f5effb5bba5",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "blueprint-linework",
         "label": "技术蓝图插画",
@@ -1371,47 +3230,115 @@
         "palette": "blueprint navy, cyan, white and small orange accents",
         "setting": "a maker workshop with worktables and rows of small storage boxes"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "8-3/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 110480,
-          "sha256": "7187617b1426f6b53ffce689c4a0a99bbe97deaf806dd54b0dd886f84ca22560"
+          "bytes": 125548,
+          "sha256": "786851764da765942552dabae987f67dfbd148df703078a5e8fbce34ffcee267",
+          "seed": 2026102170,
+          "promptId": "ac613e19-7aa6-497e-b76d-83960f3cfe1d",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "8-3/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 115304,
-          "sha256": "6a3b5a2a658013f5ddb1fd95c097015f62b25879ed1aa836fdd92e416c4f4f27"
+          "bytes": 129518,
+          "sha256": "2ba5e0efe170df280a34c99cc6ad2c1de45f66dca9be63e7830ed489c5c812b9",
+          "seed": 2026102171,
+          "promptId": "8ecb715d-3688-4d67-8a04-794d23733000",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "8-3/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 118850,
-          "sha256": "36a75ddcdbd62a452bbfdcd5526ea652037e3bc3cd3cc41f43f17d60c1095a08"
+          "bytes": 123472,
+          "sha256": "094d8d7e09934e22355aac6d3daaa011a0825ba8855a97edc05baa09f1c58a12",
+          "seed": 2026102172,
+          "promptId": "503efb6d-ccc2-4b6e-9b6b-a5058cbcda84",
+          "seconds": 10.48,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "8-3/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 111936,
+          "sha256": "d7e4ef9fca42033feebae29daf14f8c11aa16befc1d64210221825b231dd34cb",
+          "seed": 2026102173,
+          "promptId": "fa1581b3-4ac1-4406-b70f-1f7465dc661f",
+          "seconds": 10.43,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "8-3/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 123932,
+          "sha256": "fb553ad5ade9e8de1bd5a9514bfbd6799967a9ce3323e99acf277bba846c717b",
+          "seed": 2026102174,
+          "promptId": "86dabce0-b21e-4045-ba76-6d80858e7a36",
+          "seconds": 10.48,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "8-3/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 128960,
+          "sha256": "1754a1062b059bb2a3f8563d9897ee48812f9707cde1a1a334f48e7815017e79",
+          "seed": 2026102175,
+          "promptId": "25ff3ebf-7775-4515-8a61-25bb1d4de859",
+          "seconds": 10.44,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "8-3/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 132110,
+          "sha256": "6ce3ba664d1ba5d4aa73f2b05a2635ef8119e627429a1845fcc0dc2271d13e1d",
+          "seed": 2026102176,
+          "promptId": "7dede2ed-ce61-4e5b-9335-483bbb81a1bc",
+          "seconds": 10.44,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "8-3/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 142522,
+          "sha256": "6c78d4688c766eed4db6af5b058d886082f778580626a281abc7d1f2188b0c0f",
+          "seed": 2026102177,
+          "promptId": "1b2e5c86-fdf8-44cd-8b7a-0a5086eaa7f7",
+          "seconds": 10.44,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "9.3": {
-      "id": "9.3",
-      "seed": 2026101828,
-      "promptId": "b431cdf8-64ab-4cd0-aa42-a7a53dd0885f",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.5,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "gouache-food",
         "label": "美食广告水粉",
@@ -1421,47 +3348,115 @@
         "palette": "tomato orange, peach, turquoise and cream",
         "setting": "a small breakfast nook with a single diner, a noodle bowl and a phone"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "9-3/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 83412,
-          "sha256": "f6ad881404d1362c16bf82c1aceac99250c570b6d6453f4475645f990ee31b5b"
+          "bytes": 84990,
+          "sha256": "e7edea21e5e2306986b1753b4cad7dd77c7d6dd543673f5787132680324d5586",
+          "seed": 2026102180,
+          "promptId": "31e56710-04ef-4425-acdf-fe7c87fffefb",
+          "seconds": 10.48,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "9-3/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 85364,
-          "sha256": "b34bec9d3c542b7691f91e0785f4a0629570626dbc8da357debc87658f74631c"
+          "bytes": 76346,
+          "sha256": "dc68d1248054c6d9d5c4bb712becd4a2ca3e2aa0bfaee2634999462a1deb4060",
+          "seed": 2026102181,
+          "promptId": "318b6421-e0d7-4947-a61b-4796e71585ba",
+          "seconds": 10.45,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "9-3/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 83958,
-          "sha256": "8e96f4451157412d5d5f78a77eeb2b3d46300336ed9f481c65c826264abcbdb0"
+          "bytes": 95026,
+          "sha256": "52f90a61ce9a6afe9cdf7c5b114c2704ba18d6bd90f192ef6e730a50630175ca",
+          "seed": 2026102182,
+          "promptId": "744e2999-b0bd-4211-9029-ad906528672b",
+          "seconds": 10.69,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "9-3/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 61666,
+          "sha256": "c6ffeb3c3535c3f46523b4510a8af1e9e0edf493dd9847929634828efe050b2d",
+          "seed": 2026102183,
+          "promptId": "b7354ee8-2b7b-4004-b122-8e1dd7a38704",
+          "seconds": 10.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "9-3/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 107740,
+          "sha256": "336fc59ac7b216ab111baf151448c1425e80a59d7305ba6d3bd7cb698fcddd81",
+          "seed": 2026102184,
+          "promptId": "234c8b8a-8322-4a87-b14a-9b1216f0209e",
+          "seconds": 15.88,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "9-3/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 94602,
+          "sha256": "b53e3dc182c44dcc3ae5b61574803640e7fe406c167825488e3448f3bf3a8306",
+          "seed": 2026102185,
+          "promptId": "897ebdf1-7bd5-41ab-8ee8-f6c50082872c",
+          "seconds": 16.03,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "9-3/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 93560,
+          "sha256": "4c2350710ac75c98b3ac2e179ff3e5d1a5cb0d3392a2fa7a260678f915b2b0d3",
+          "seed": 2026102186,
+          "promptId": "b0c03f4f-2c47-4e24-8d67-1120fb0ea8e3",
+          "seconds": 15.82,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "9-3/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 61078,
+          "sha256": "2100939e5c3a7c7c7d4e2aed83b8e25ed4a6aa26395ebb7c3500cad98f24af2c",
+          "seed": 2026102187,
+          "promptId": "3c0b6c6f-67df-4072-bef2-5848964dd3ee",
+          "seconds": 16.39,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "10.3": {
-      "id": "10.3",
-      "seed": 2026101829,
-      "promptId": "262002cb-caf6-4c50-8ef2-99d6e0becc17",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.9,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "embroidery-festival",
         "label": "刺绣布艺",
@@ -1471,47 +3466,115 @@
         "palette": "royal blue, yellow, red thread and natural linen",
         "setting": "a cheerful community arts venue with music, crafts and small picture displays"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "10-3/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 185136,
-          "sha256": "51fe931190f0b3d4f8f07e2db5dbf069300873c2944f668da9822ac38a580756"
+          "bytes": 217416,
+          "sha256": "ff7728e4958ed973f92ee20690c39008f2636d969945dc0d91d67355a1ed6561",
+          "seed": 2026102190,
+          "promptId": "2143b827-000f-4bc0-a8f7-2233a59a6999",
+          "seconds": 16.2,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "10-3/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 162982,
-          "sha256": "71377feaa091758e502e583065100faf41a72123fd4bc4429fa6dcbee50d8150"
+          "bytes": 252458,
+          "sha256": "53650556f27d27016be9fbaff1decafcd0d033eb336ae95f8849b5023c7356fd",
+          "seed": 2026102191,
+          "promptId": "7e9ece67-d30c-4ef3-8579-3013bf14721b",
+          "seconds": 16.02,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "10-3/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 176732,
-          "sha256": "4f71a673a2d4ceb40bdc421c31c6046c69aa2a97b9897f3b865153a5a02f0b9f"
+          "bytes": 238818,
+          "sha256": "8cf70e6166c9c4dc6bbba9ebe34543f8d86de7aff50025d3846c97ba22d36f21",
+          "seed": 2026102192,
+          "promptId": "960391dd-29d7-4133-acaf-73b80979e71b",
+          "seconds": 16.07,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "10-3/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 252248,
+          "sha256": "e2a0424f90650adf341b14a65efe9b6d7a18240b04134704f1ed7dcb6158af4d",
+          "seed": 2026102193,
+          "promptId": "35ec24fd-9570-4b9c-b17f-2255ee318e73",
+          "seconds": 10.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "10-3/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 254702,
+          "sha256": "868f622f76e7e1f3279d19652c515b2b9eabf094b66d188e9657ff0328209d89",
+          "seed": 2026102194,
+          "promptId": "1c909cb9-54a9-4005-a0f0-40c13b3780bc",
+          "seconds": 10.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "10-3/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 262326,
+          "sha256": "0a69e27242dbf1194005a6e58004f8f0c39a52f5975659ca62af39dca221d98d",
+          "seed": 2026102195,
+          "promptId": "b56a1e4e-2430-4c96-8f1a-bc449930ae2e",
+          "seconds": 10.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "10-3/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 217054,
+          "sha256": "2fed115fb3adda3460952a8a826e001da5cffe759409c3c3fd13c6e520c942ec",
+          "seed": 2026102196,
+          "promptId": "e2b7fc58-9a2d-4048-b6e5-bfc6cf775699",
+          "seconds": 10.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "10-3/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 230994,
+          "sha256": "370f348cd0684c5bf3034bb6574d6eacf681d06c2afbd2bd2352d76f60b06b01",
+          "seed": 2026102197,
+          "promptId": "f44faaba-a9f2-4ebd-9d5e-7a776ea001a3",
+          "seconds": 10.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "1.4": {
-      "id": "1.4",
-      "seed": 2026101830,
-      "promptId": "2f9d2562-4408-450f-94fa-d57e0dfe78c0",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "pastel-city",
         "label": "粉彩城市画",
@@ -1521,47 +3584,115 @@
         "palette": "violet, cream, brick orange and midnight blue",
         "setting": "an unfamiliar city street with a modern casual restaurant and a tiny local noodle kitchen"
       },
-      "sourceVersion": "question-art-v5",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "1-4/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 127370,
-          "sha256": "05cab005a434f66528ac80fa8e4ddc5e9ae977bb7cc98dbcec528ce228d991dc"
+          "bytes": 145684,
+          "sha256": "a4ca536858b97ee660fe2177456676f80d77a19d7a62277a52719a2ba0a5bbab",
+          "seed": 2026102200,
+          "promptId": "9de63297-1c82-4276-93eb-6ef4261cd1bb",
+          "seconds": 10.56,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "1-4/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 110030,
-          "sha256": "bf6a161e602603e9b8a141847028efb109f8a91c00fbfd424a35f4a10f37ea8a"
+          "bytes": 158982,
+          "sha256": "981fdec113ccfdb5af23c6061d2f073b4a810146ee1592216c4b7faa424925de",
+          "seed": 2026102201,
+          "promptId": "143c9d3b-e4f7-4740-8a25-9b2f7a7c0172",
+          "seconds": 11.09,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "1-4/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 120892,
-          "sha256": "a61e68e57c5012ef98c2f7176bad4a2676d6bcf7d5d41023007e079c3a2475e8"
+          "bytes": 155400,
+          "sha256": "aa9d2c2b106324842b5e57764d5745f8477a20fe44d48eccd975be114b97371b",
+          "seed": 2026102202,
+          "promptId": "5c4e6ec8-0862-4c65-adb0-03a874f39511",
+          "seconds": 5.86,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "1-4/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 156600,
+          "sha256": "d10ec0f1b562950ad051ed2db95498aa37f217bdc47d6c8c43c3779b7abfa203",
+          "seed": 2026102203,
+          "promptId": "fe387e1e-524a-42df-a46d-9d2d4e936d4d",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "1-4/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 150786,
+          "sha256": "3e8a9edb194bc1aecb49744200e915cf7d46bb655fcfccfbda4618343292983f",
+          "seed": 2026102204,
+          "promptId": "8a11d0c4-af2e-480a-bd0f-d80574095170",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "1-4/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 164292,
+          "sha256": "8aa73a7a7c37185c98a4cdcd3d3980954ba64a8c4748e6504f87c1c176501b78",
+          "seed": 2026102205,
+          "promptId": "a4308f4c-49a1-4904-bf3a-7dcf6a0d3fdb",
+          "seconds": 5.69,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "1-4/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 181692,
+          "sha256": "61d22ddac87298193984cf9e598eb75abad671cf1d1a8767375bb1c45e16f60a",
+          "seed": 2026102206,
+          "promptId": "6c7e55cc-e7fd-4dd8-bfe0-208e272c41ea",
+          "seconds": 5.71,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "1-4/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 137688,
+          "sha256": "074bd510760aa4c422a439b8c3e094aff7b04683cb646d1faef053b731701814",
+          "seed": 2026102207,
+          "promptId": "55743455-8290-409b-a1d6-515ad4257230",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "2.4": {
-      "id": "2.4",
-      "seed": 2026101831,
-      "promptId": "2905ed02-3642-40b7-8f89-527ebee32514",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.4,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "fashion-magazine-photo",
         "label": "清爽生活摄影",
@@ -1571,47 +3702,115 @@
         "palette": "white, salmon pink, light oak and soft blue",
         "setting": "a bright white apartment with a pale sofa, simple calendar and headphones"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "2-4/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 58590,
-          "sha256": "af48d2e62925649662d62a180953058236d711880900382ec9c6265474143336"
+          "bytes": 83990,
+          "sha256": "d7d48e53d8e51da8524d3e8e0558a9cb7a2b98c2b6b33449955c5d9ffc92f4c9",
+          "seed": 2026102210,
+          "promptId": "96e2c04d-182e-4a94-8191-1363e117a18b",
+          "seconds": 5.69,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "2-4/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 60550,
-          "sha256": "1ea95d80d5b1e825ea7390fddca5c911357c5fc2c5458a511e3cd107ad95ba4d"
+          "bytes": 82680,
+          "sha256": "6862537e7291b2363c988619a9853406722df90608ccd7fb1e9f1ed432046b60",
+          "seed": 2026102211,
+          "promptId": "5f542fa1-1bcd-4bda-a541-718dbf94cbfe",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "2-4/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 65482,
-          "sha256": "305487556ff9efa34536df87781933a6806650483f61c3001fa1396b10d73b77"
+          "bytes": 70604,
+          "sha256": "49be17d6215ca203cd525f53a9bbd181951635da2ac14871d8a73a025789a765",
+          "seed": 2026102212,
+          "promptId": "86a6e126-8f19-4c17-99e8-a24bdb682f4e",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "2-4/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 62378,
+          "sha256": "7c5022d3b2ab35643d2e23182957a98dbbab82ef77f181d9b874dff90cf271c1",
+          "seed": 2026102213,
+          "promptId": "600978b3-9ec5-49c5-adf0-f22f651c9ad6",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "2-4/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 78510,
+          "sha256": "bc5aaa2131f72caa5b1d227fe0d986be8392bd7e5b0e58b8993b61f6261367e4",
+          "seed": 2026102214,
+          "promptId": "2e3ea089-2b0e-4042-9c2a-fdb57064a46e",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "2-4/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 76812,
+          "sha256": "52481d47b0f35b743a6caef24773d409f829e07fe2ff0aacd0fc5394d8486fba",
+          "seed": 2026102215,
+          "promptId": "bda4e7b5-5139-41ba-b131-6a0b8ab354c2",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "2-4/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 41698,
+          "sha256": "f8538474d2f334400e31a454759a2052ff596e59ef87295142ad12561f0f4382",
+          "seed": 2026102216,
+          "promptId": "b3c5b47b-e3d9-4aa6-a55a-fa562528b75d",
+          "seconds": 5.55,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "2-4/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 68680,
+          "sha256": "7c6a80fd83f41c1ff543b656ae26217301312fc44c0d8ac9fe736569bd13a3fa",
+          "seed": 2026102217,
+          "promptId": "6a9be46d-bf52-4ab4-91d7-2961d98533df",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "3.4": {
-      "id": "3.4",
-      "seed": 2026101832,
-      "promptId": "9c661906-d1e0-4165-b9a8-301a5302323c",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.7,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "linocut-advice",
         "label": "套色木刻版画",
@@ -1621,47 +3820,116 @@
         "palette": "ink black, ochre and natural cream paper only",
         "setting": "a small cafe table with a fragile paper tower model and tea cups"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "question-art-v7 + question-art-v8-refined",
       "assets": {
         "scene": {
           "file": "3-4/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 124616,
-          "sha256": "ce239427083c2ba0d17fcb9a1e0160a037542de98cb0f3bdbfabfcaae6e47324"
+          "bytes": 152922,
+          "sha256": "96d1107e28df38104734e8d2ca3532b03ec00a4789b209cccd4a15c1d8a52a0c",
+          "seed": 2026102220,
+          "promptId": "aed6295d-37a9-43b0-a2e1-1889f64b2a06",
+          "seconds": 5.67,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "3-4/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 138234,
-          "sha256": "57ab94fbf334ecbc6414883fddf2596632a646f53d3aa8fc89ef9f6ea6da513f"
+          "bytes": 96840,
+          "sha256": "791f322c001df21350935b52a2e4221d4d6c63adc9587a220ee52645c336f034",
+          "seed": 2026102221,
+          "promptId": "0f09396b-6ff2-40d7-a7d7-cb814f00e617",
+          "seconds": 6.46,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
+          "sourceVersion": "question-art-v8-refined"
         },
         "right": {
           "file": "3-4/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 124798,
-          "sha256": "d25e058ef3ebf288a3be5afe35257465b786736fa551ad3714d25d8a8b8f3372"
+          "bytes": 68644,
+          "sha256": "23f0253cdad439e1317ed06a0f3a90fbed333d8744dd761e1d27987ff599a749",
+          "seed": 2026102222,
+          "promptId": "caecd653-39ee-4944-b4db-eb1c8eecca9c",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "3-4/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 104284,
+          "sha256": "2816c237fc5a3c9a47eae65f6c1316f1d4dcb55d300cf8a66d1c74f42b6fd867",
+          "seed": 2026102223,
+          "promptId": "71ed838a-efca-4044-ae5b-92ebc9adfd5f",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "3-4/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 92730,
+          "sha256": "ccfa465c26f76adaa650a45babf2e53714690d6fa0a5d323f5d1999f95a4d919",
+          "seed": 2026102224,
+          "promptId": "f4794902-296a-4762-b10e-ab794f261702",
+          "seconds": 5.65,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "3-4/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 103850,
+          "sha256": "5b9947fb3d0f7113e5ebcd9dc8ea90240b293164a6f45bda04b18b43e6162e69",
+          "seed": 2026102225,
+          "promptId": "fba9e8c3-58e1-4ae8-90df-649227ddd26e",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "3-4/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 116286,
+          "sha256": "f803c36db7e018951d8a4f59a306e5a48883f8bc23b3a89ae45a94d2a8fffb8e",
+          "seed": 2026102226,
+          "promptId": "440f4293-1b53-461c-8d49-98db834b3b3d",
+          "seconds": 5.72,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "3-4/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 85290,
+          "sha256": "2bd178fe3971cb9d47794c4c5965f30214d870c3a2c8919ffe2d41f5acffb6bf",
+          "seed": 2026102227,
+          "promptId": "aa2462c4-a8f9-46f1-afe4-707566dcd549",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "4.4": {
-      "id": "4.4",
-      "seed": 2026101833,
-      "promptId": "19e277d6-16e6-4574-a676-0d211509cc05",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.4,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "surreal-cinema",
         "label": "超现实电影插画",
@@ -1671,47 +3939,115 @@
         "palette": "midnight blue, plum, moonlight silver and electric amber",
         "setting": "a small art-house cinema lobby at night with plain glowing panels and no writing"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "4-4/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 57626,
-          "sha256": "26412032c39cb48dcef2adcd009663cb830a18eba99fd3a58965676781e39e22"
+          "bytes": 110764,
+          "sha256": "70ba050508dca9c9c3a1bde1f533d5faa398acfb16890138a1caae5535f2e720",
+          "seed": 2026102230,
+          "promptId": "a739b263-7c1f-4ad9-ba37-68f502f8568c",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "4-4/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 67888,
-          "sha256": "b39a320a816862cee6e0bb5078851612998505785cfd1a74f39041083bb7b962"
+          "bytes": 123256,
+          "sha256": "131f1f4b8738657a8839964d9217a32d4b2905e90cef71bad389719a16e72132",
+          "seed": 2026102231,
+          "promptId": "d7e5697f-623e-4e79-b923-1981c20d13e7",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "4-4/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 65290,
-          "sha256": "afccff62272a3f74ae7e83ce52a2c0aa6c071621e3c88c1a61a9592e2d5a6d84"
+          "bytes": 97856,
+          "sha256": "5cc00940f107f872232102a3ecf4918251195beb58d4556b1820480583d34a1d",
+          "seed": 2026102232,
+          "promptId": "22f553f4-9fca-4439-83b2-0d8581685e61",
+          "seconds": 5.69,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "4-4/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 127712,
+          "sha256": "33cdb4e1bed280b4d63f2f133d179132948d7b7b0668c2d1c363b8319d76533e",
+          "seed": 2026102233,
+          "promptId": "d6729c80-5ffc-46bc-a16b-c9de6265eb68",
+          "seconds": 5.65,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "4-4/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 117268,
+          "sha256": "b6ea25c159a19355f67f2ddd79da8b7016f1d1ec1b67a7d872e40c8bd9779265",
+          "seed": 2026102234,
+          "promptId": "183f6dff-8e63-4e28-926f-eedbaaaec130",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "4-4/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 92574,
+          "sha256": "546afd84f25b509e9162e67d4d823a5dd7647bdf9a07bdebc5986edc1acd0bfc",
+          "seed": 2026102235,
+          "promptId": "d99080c1-6849-4342-b7bd-27933323067b",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "4-4/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 81538,
+          "sha256": "6a38322324be821ad9940d8332f58bf38607c270d4091589e85a5154a60c532f",
+          "seed": 2026102236,
+          "promptId": "a8fc1758-c354-4c14-b0f0-7f4e7cce3a38",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "4-4/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 91244,
+          "sha256": "1295edd9f4ea95bc939ef8757618e953acf095f8324697c40ac05ee4ac1d0510",
+          "seed": 2026102237,
+          "promptId": "9146d506-3cb3-44db-9295-4c16e6ffd2e0",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "5.4": {
-      "id": "5.4",
-      "seed": 2026101834,
-      "promptId": "c383a9ad-ba74-4c72-b5ad-526d41ca5475",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.5,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "retro-anime-train",
         "label": "复古动画电影",
@@ -1721,47 +4057,115 @@
         "palette": "burgundy, sage-gray seats, cream and soft landscape blue",
         "setting": "a sunlit regional train carriage with large windows and passing countryside"
       },
-      "sourceVersion": "question-art-v5",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "5-4/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 61596,
-          "sha256": "6fa17c94fc9852a8db1b3f16b541579781bea7eb18481c20d9aa7515dc19044a"
+          "bytes": 62638,
+          "sha256": "6320457be42df64e64de7785408f77db436916da45312d28dd926c76a5b60e66",
+          "seed": 2026102240,
+          "promptId": "dd328d6a-6a81-44b0-bebc-458dcf5c95f1",
+          "seconds": 5.76,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "5-4/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 65840,
-          "sha256": "0a0bf34fcdbb67e3e3f71bc97723095af8b1008ceda084fa3ee26d5528f584cb"
+          "bytes": 62820,
+          "sha256": "2c0e727afa8da0fa907a2e71f9fa76efd972c591fb6b0ae3e9f59c45376ffa11",
+          "seed": 2026102241,
+          "promptId": "54bb769a-d6b0-4140-a7f0-386f0e8f7eb9",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "5-4/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 71632,
-          "sha256": "da1362d8a5c1c0ee8b9bfb64f9cf281bdca5d448171a42ff98051ed473575c7b"
+          "bytes": 71416,
+          "sha256": "a2ca3570edd73128ec8a9b555b9433862abc7f8cda9ebae91b22f3ad961850f5",
+          "seed": 2026102242,
+          "promptId": "4dcb3e78-849a-42fb-b82d-8acdd20d5592",
+          "seconds": 5.72,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "5-4/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 61808,
+          "sha256": "f7f1219ee1bfa7f66042b6920f960e43a5a1100455a55f174b6e958fca925fb8",
+          "seed": 2026102243,
+          "promptId": "ca66aca3-b0e9-4db4-8ec6-9c11b8197061",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "5-4/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 76510,
+          "sha256": "76f56c70e51e016b569f0042887f5a7f76aa787f3bbaa242370d10098eea368c",
+          "seed": 2026102244,
+          "promptId": "298b7e17-d37a-4a4d-911c-8ebdb2a699e5",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "5-4/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 73730,
+          "sha256": "2a6777d1105bd8af4de73f58ead5d82cebf946bf33e6b7769c775864aba18e56",
+          "seed": 2026102245,
+          "promptId": "626c8467-bea8-48a9-b798-dbf6010b4e6b",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "5-4/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 61410,
+          "sha256": "a7b818c09f818d8a7a52024210897589949a22d64e07df8bf6f7089f2e4ee2e3",
+          "seed": 2026102246,
+          "promptId": "8bdbe740-1db3-4272-b4ab-662a1e4dd6bf",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "5-4/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 67682,
+          "sha256": "36a591926a0ef074984085d22d5b22e0116166cda2b32445eea0378c4f186190",
+          "seed": 2026102247,
+          "promptId": "3d21c0ca-5372-4a74-9bff-9c5784b59e07",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "6.4": {
-      "id": "6.4",
-      "seed": 2026101835,
-      "promptId": "78dde185-dfea-4c91-9e2a-8a08ba2bd459",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "toy-brick-team",
         "label": "积木人偶场景",
@@ -1771,47 +4175,115 @@
         "palette": "purple, turquoise, yellow and light gray plastic",
         "setting": "a toy-brick creative workshop with a collaborative tabletop construction"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "6-4/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 98536,
-          "sha256": "9b509790fc8ca8ce14254e054184dd2d14194f6a4670f2fb5f6745cb9a26e402"
+          "bytes": 73264,
+          "sha256": "703de1f1e87c8ee7e0b4495e7b82831a615b12b234a185c982aefa2c389a3c5a",
+          "seed": 2026102250,
+          "promptId": "7035ce43-a88f-4c2e-bd5f-177725cfc884",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "6-4/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 100344,
-          "sha256": "7828f8d2fd4d631b34f4e34796a7424f8dc5c48c72dd4d5a67cb31b0d169b6c5"
+          "bytes": 89122,
+          "sha256": "1bb4c194a5665874dc589eaeb93c40690bbfcd12d69d834fe336ac213da95118",
+          "seed": 2026102251,
+          "promptId": "ac9fbbad-c645-4e6a-b6cd-0a6949c70612",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "6-4/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 97394,
-          "sha256": "1bd306ad86eedd028814a7c6200f7e9b88ed511098ca90b0e23c6b7ba337d017"
+          "bytes": 69010,
+          "sha256": "a869d78af17c4a68177efe4cbfe6cb03e818ca1a7fa1b5fa3eb7795e367b11bc",
+          "seed": 2026102252,
+          "promptId": "a7fbdf73-1716-47a8-ac35-2e070a1ccc0a",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "6-4/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 88560,
+          "sha256": "ab36e7e039be6636c6648322dcda0655a83b092b9fb5add4eeede4ad074d5909",
+          "seed": 2026102253,
+          "promptId": "d24670c8-06c7-41e3-8398-e8d2d0b6d5a4",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "6-4/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 72024,
+          "sha256": "a5adb5a0cfbf335ae877d1ff021fdf272c0043f5fba01ae6c55e56e7ce0a9dab",
+          "seed": 2026102254,
+          "promptId": "fe7cb74f-a796-4e79-9d39-a53e8951eea5",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "6-4/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 66586,
+          "sha256": "1b3a81a318c5057589dd284e0bb390055810cac0509a01193d9f8e9cbc228b65",
+          "seed": 2026102255,
+          "promptId": "759f7eda-8b6d-45ee-be81-4f21218e2b7c",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "6-4/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 80004,
+          "sha256": "7ded167531d5970f76d4212ea68bf55a6bffdb4fdfd6a10601f6f34a9c3c438a",
+          "seed": 2026102256,
+          "promptId": "b9b8da21-d51f-452a-ab94-7b79e2f99271",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "6-4/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 86604,
+          "sha256": "bbd74fb7d3722a2576dd100d614837ce0b73aa73639effb1c9a582766a1dc603",
+          "seed": 2026102257,
+          "promptId": "b041b15a-982b-4bb6-9acc-5ca480821ecc",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "7.4": {
-      "id": "7.4",
-      "seed": 2026101836,
-      "promptId": "cdc92693-6f5c-4a98-8cc4-b7ad89e348f2",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.6,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "botanical-sketch",
         "label": "植物手账速写",
@@ -1821,47 +4293,115 @@
         "palette": "botanical green, dusty rose, sepia and cream",
         "setting": "a leafy public garden with a wooden bench and branching paths"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "7-4/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 118014,
-          "sha256": "1bace4067087d307933b1460825449ed21056e482d9aaea0b0839771c9d408e4"
+          "bytes": 94274,
+          "sha256": "9e38ea28e1afcef8f8ef8dd66015c7d20bf9dd440ae736c1e5a46f1e2921f05e",
+          "seed": 2026102260,
+          "promptId": "8782b70b-f9c0-48a3-adae-b7a7ea444921",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "7-4/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 98372,
-          "sha256": "d4b2f3487f56ccb4669d7f0ffda47284179de7ea3bbdc3d961961d37b45d7bdd"
+          "bytes": 103976,
+          "sha256": "0aa322755f00487ec935c3550d9e9ee052d9c9eea19951139548e13b31fbee68",
+          "seed": 2026102261,
+          "promptId": "61dc5845-7ae9-43f0-adf3-fac81ecd7c79",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "7-4/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 111872,
-          "sha256": "85d7976bbba65339e543e08ec8047bc9eb0a78bf66c93277e67d4a419dc83c3f"
+          "bytes": 103064,
+          "sha256": "745cf69ccf825f1a71b66335e23b5d2aae061fad04964e24e49eac0a73cc64df",
+          "seed": 2026102262,
+          "promptId": "f7e57610-caa2-4c5e-8db3-a93145c975b6",
+          "seconds": 5.69,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "7-4/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 84410,
+          "sha256": "9b41ab4e3d9fad4521722b5d3d8fa869b8a7c3ac0267121b245127a81ccabada",
+          "seed": 2026102263,
+          "promptId": "3d20e6f0-12ff-4028-b228-51ae108a226b",
+          "seconds": 5.59,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "7-4/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 100174,
+          "sha256": "604a3d03777b3197876737f962c3657c94b8b0c9f966a06b81113adecbdbefee",
+          "seed": 2026102264,
+          "promptId": "f6a49422-92a8-4484-bd75-a185880e263a",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "7-4/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 100312,
+          "sha256": "4926e5957e3770108366555ea14b11318e5052ab890384a4531819860df8e752",
+          "seed": 2026102265,
+          "promptId": "c5e8ce27-e401-4bb3-a462-799c071d583b",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "7-4/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 108568,
+          "sha256": "fef79d27acd075286b8ff3eaa6615318f07cf7f530ca7e77ef5abc6ba0b811d2",
+          "seed": 2026102266,
+          "promptId": "761499e2-c8ed-4c28-b4b6-8f53c3996cef",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "7-4/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 111976,
+          "sha256": "4b6da29631f7e97845c4850587ca0421439ca56a2c91be36b9cb09a091130f1c",
+          "seed": 2026102267,
+          "promptId": "d41ce6c2-c787-4f3b-b0b5-05981268c5ab",
+          "seconds": 5.62,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "8.4": {
-      "id": "8.4",
-      "seed": 2026101837,
-      "promptId": "de448ccd-3143-4b0b-9857-366781685dd4",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.7,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "landscape-oil",
         "label": "山野风景油画",
@@ -1871,47 +4411,115 @@
         "palette": "sky blue, grass green, cloud white and orange",
         "setting": "a spacious green hillside where a paved village road and a narrow wildflower trail diverge"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "8-4/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 109796,
-          "sha256": "934912543a834f2b0d27de8ee4facc693c3139dbc0bf87e068282ec771c9dd3f"
+          "bytes": 128370,
+          "sha256": "a5199fd11b641b0189a6476275106a954e77fa90fc491cabd08942d67e32b5f3",
+          "seed": 2026102270,
+          "promptId": "5c42cc7e-7d8b-420d-b2a5-f1421fe69698",
+          "seconds": 11.12,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "8-4/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 123138,
-          "sha256": "1b92d094d4c5c75712ba1083cd7fdfffa4a40769d1b2c5e1d0c6dbca2d01e4d1"
+          "bytes": 112836,
+          "sha256": "60cc1486f8b38be6e4cab8212d17ddc8d740c567ff1525af3964500ce980508f",
+          "seed": 2026102271,
+          "promptId": "be90e309-fa60-4290-a322-e5413bbf9f15",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "8-4/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 123116,
-          "sha256": "ccbc3d00a14cbc13164dac76a10091118d295c38150c75adcd556638a6f49871"
+          "bytes": 121042,
+          "sha256": "166491bdc50f58b184d8a4a1ea4d1ed74bce4bb64fd4af17bd836f4e7806c667",
+          "seed": 2026102272,
+          "promptId": "50bc4308-a6a9-4013-9d4f-0756fffd1fde",
+          "seconds": 5.65,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "8-4/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 137134,
+          "sha256": "2bdf9d7d4aa50d90a484d547321a5cf905b5a55a6adb52661d50264cc12c92aa",
+          "seed": 2026102273,
+          "promptId": "117742db-4829-48a0-81b1-623827217d50",
+          "seconds": 5.78,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "8-4/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 132582,
+          "sha256": "f17b7c462969320e56b0acbeafe9503d79753566094761cd6e35d178d6870f12",
+          "seed": 2026102274,
+          "promptId": "ca35aa3b-d68c-4b4c-b326-33b404de549f",
+          "seconds": 5.66,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "8-4/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 137132,
+          "sha256": "0d7cee986c941fad98f9860b5a6b0c6ac6ac588124bb97ca6ec79c6136195afc",
+          "seed": 2026102275,
+          "promptId": "6e98b42f-6f84-4e24-b38a-298ce8234993",
+          "seconds": 5.71,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "8-4/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 146754,
+          "sha256": "f4b0d9d5a32a53e7aa977a666075ceb3bf04199e8f2f15560a1c493495b7e61f",
+          "seed": 2026102276,
+          "promptId": "0ef69ba1-a587-4fa7-8a8f-04739809a083",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "8-4/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 147462,
+          "sha256": "b62b3292f635daed3d4a3636e9e4e12cd3d28f87021e0b0477e417249a3568f2",
+          "seed": 2026102277,
+          "promptId": "b9fe1656-a874-413f-8638-32a16fe02eff",
+          "seconds": 5.84,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "9.4": {
-      "id": "9.4",
-      "seed": 2026101838,
-      "promptId": "cab5a376-0a4e-4194-b447-f9ffdb19cfcc",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.5,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "cinema-noir",
         "label": "黑金电影感",
@@ -1921,47 +4529,115 @@
         "palette": "golden amber, black, warm gray and pale highlights",
         "setting": "a city cafe and a quiet lamplit street after an evening gathering"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "9-4/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 71420,
-          "sha256": "9dbc43dda7b3b560a90f0fd4a8b3218c1df76064d76c0373496207009050e96b"
+          "bytes": 90440,
+          "sha256": "40343ba099ab8b5138481d4644552bdbbf985a348f8628891bdf62f65527b71e",
+          "seed": 2026102280,
+          "promptId": "6753bf4d-a2be-4185-9f9c-851352348bd1",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "9-4/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 94610,
-          "sha256": "e97d73ed87b9327542c45f63b1f76468bf4446871aa0d3b315dd510c467ab118"
+          "bytes": 67348,
+          "sha256": "edf6845b58478b71c8eeaa44d463890c49f7970ee5cefe1add83cd3b92450d61",
+          "seed": 2026102281,
+          "promptId": "c308d926-6527-4e04-955a-889390192216",
+          "seconds": 5.64,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "9-4/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 68150,
-          "sha256": "760035fed2f928058d70ff91f7d02f88049206caab4a16a5bd3e441bfefe0f05"
+          "bytes": 65776,
+          "sha256": "2a2229f8d260a8e608d58deab94e29f15cfdde2e414dcce2fbef94a473bcf1da",
+          "seed": 2026102282,
+          "promptId": "b9289531-f5ce-4a83-8218-317d57f3655a",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "9-4/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 91378,
+          "sha256": "29efedd230504796bf99b25ee7bb8e3ce4d48cb901414d3f0c4d14d1a8466019",
+          "seed": 2026102283,
+          "promptId": "b311dbe5-32ba-4925-80c7-960433324efa",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "9-4/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 82374,
+          "sha256": "974fd714957601bd561a5a9a405f759742b233f0b5e013d65d8f02a54ea2b99a",
+          "seed": 2026102284,
+          "promptId": "e3150cba-70ee-4079-b43d-1fa46642ba34",
+          "seconds": 5.61,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "9-4/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 76594,
+          "sha256": "d493e877fa0abf2b2f41483696436cb41b6b7664125262c3aa0a462971f1bd16",
+          "seed": 2026102285,
+          "promptId": "e2ba7a66-f5e6-450c-8d8d-6b16c5647435",
+          "seconds": 5.6,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "9-4/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 65592,
+          "sha256": "4ae210a6adf13662f1c613fd09f3bb0ec9323e7cce8ba003983113a3f21e43b0",
+          "seed": 2026102286,
+          "promptId": "b88e2b2c-f81b-437a-bd3e-b81bfebae31e",
+          "seconds": 5.58,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "9-4/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 84700,
+          "sha256": "61b65c0e6ea3496fb4d061830f19cd4fb320f84a319258d439198afad0a8d9ad",
+          "seed": 2026102287,
+          "promptId": "3b60ec8c-154b-4609-b13b-acecfb4f9bfc",
+          "seconds": 5.73,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     },
     "10.4": {
-      "id": "10.4",
-      "seed": 2026101839,
-      "promptId": "2044c4c9-de02-4cf0-bf50-721302259c97",
-      "model": "MiniMax H3 fl2va int8 + 8-step LoRA",
-      "seconds": 15.4,
-      "sourceSize": [
-        1152,
-        1728
-      ],
       "artDirection": {
         "id": "ceramic-porcelain-world",
         "label": "陶瓷釉面三维",
@@ -1971,34 +4647,111 @@
         "palette": "cobalt blue, porcelain white, terracotta and soft jade",
         "setting": "a pottery studio with a worktable, unfinished clay bowl and sculptural planter"
       },
-      "sourceVersion": "question-art-v4",
+      "sourceVersion": "v7-independent-eight",
       "assets": {
         "scene": {
           "file": "10-4/scene.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 44834,
-          "sha256": "3a0386b08db058beb9fec6a795ba3a0824ef02cf1abd3a2d0509296db08ae853"
+          "bytes": 49024,
+          "sha256": "1e3efcae9ceebf1a613a6dc66a7c17a2d07980d6ac743ffeca09d93b15a592c3",
+          "seed": 2026102290,
+          "promptId": "6d8ecb55-ace9-4d11-a70a-59a025f70af3",
+          "seconds": 5.56,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "left": {
           "file": "10-4/left.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 44350,
-          "sha256": "24c9592058e13aebf361b7c0fba4d6d522683b9794d43478998b3622ad16e6fd"
+          "bytes": 49588,
+          "sha256": "6b160365d380e0a0a37841259b66dda17258b7fc332c69195cf9b6161339f787",
+          "seed": 2026102291,
+          "promptId": "593f0539-8d1c-46b2-9f39-2ae1b1660a0d",
+          "seconds": 5.56,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         },
         "right": {
           "file": "10-4/right.webp",
           "size": [
-            1136,
-            556
+            1152,
+            640
           ],
-          "bytes": 49136,
-          "sha256": "ca51e8dfd6b218c38abab57f852c712b52a2e2410f96accfe547718dccadf065"
+          "bytes": 44070,
+          "sha256": "445d8b8a9a401e09f30b7e8062e8d7d1c0271dc8dce938cfda27662cdb4a2165",
+          "seed": 2026102292,
+          "promptId": "c5ae1df5-ffcd-4a69-9c7d-49e814200ccd",
+          "seconds": 5.55,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-0": {
+          "file": "10-4/scale-0.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 42984,
+          "sha256": "c4f5d7ffff5beb81e057d2b3a63bd4a4a8d28f685aa89d5479c5d04df5713648",
+          "seed": 2026102293,
+          "promptId": "83502f89-9121-4e32-a919-c74a387d0ca7",
+          "seconds": 5.63,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-1": {
+          "file": "10-4/scale-1.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 56536,
+          "sha256": "447f437bad75cdf5772dc9115375fc4a9f5c742b0324d1b799e78dd42e26327e",
+          "seed": 2026102294,
+          "promptId": "a4590076-46c7-4524-a9ed-99b251b09ad4",
+          "seconds": 5.57,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-2": {
+          "file": "10-4/scale-2.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 41618,
+          "sha256": "943da9dd7beda9c74d5ea1f6a95b9536bd83450a05be25a7acc6efa3edad9c20",
+          "seed": 2026102295,
+          "promptId": "cea014b2-7374-4265-a0db-260fea647f89",
+          "seconds": 5.55,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-3": {
+          "file": "10-4/scale-3.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 41272,
+          "sha256": "cbde928f4cb7c7f84b71d7fd1cd05e733945fcf4a8badc2b3ed2bd36a313fa6f",
+          "seed": 2026102296,
+          "promptId": "c6cad550-1ef4-4ad1-8e46-9f0cc393704b",
+          "seconds": 5.55,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
+        },
+        "scale-4": {
+          "file": "10-4/scale-4.webp",
+          "size": [
+            1152,
+            640
+          ],
+          "bytes": 33276,
+          "sha256": "a04328e1fff6745f981b8f82aafd72e0d5f852a01502ad3e4951dd2adc00bd2d",
+          "seed": 2026102297,
+          "promptId": "58e3d08b-f399-4f60-99e9-6bf22b355011",
+          "seconds": 5.68,
+          "model": "MiniMax H3 fl2va int8 + 8-step LoRA"
         }
       }
     }

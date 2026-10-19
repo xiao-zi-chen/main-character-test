@@ -74,11 +74,11 @@ await access(new URL('../dist/collector.js',import.meta.url));
 await access(new URL('../dist/public-config.js',import.meta.url));
 if(Object.keys(art.questions).length!==questions.length) throw new Error('Missing question artwork');
 for(const question of questions) {
-  for(const kind of ['scene','left','right']) {
+  for(const kind of ['scene','left','right','scale-0','scale-1','scale-2','scale-3','scale-4']) {
     const asset=art.questions[question.id]?.assets[kind];
     if(!asset || asset.file!==`${question.id.replace('.', '-')}/${kind}.webp`) throw new Error(`Invalid question image: ${question.id}/${kind}`);
     const image=await readFile(new URL(`../dist/question-art/${asset.file}`,import.meta.url));
     if(createHash('sha256').update(image).digest('hex')!==asset.sha256) throw new Error(`Question image hash mismatch: ${asset.file}`);
   }
 }
-console.log(`Verified deployment whitelist (${expected.size} public files), entry point, ${roles.length} character portraits, 17 shared films, and 120 question images.`);
+console.log(`Verified deployment whitelist (${expected.size} public files), entry point, ${roles.length} character portraits, 17 shared films, and 320 question images.`);

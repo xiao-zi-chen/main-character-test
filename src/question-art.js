@@ -12,3 +12,11 @@ export function preloadQuestionArt(id) {
     image.src = questionArt(id, kind);
   }
 }
+
+export function preloadQuestionReactions(id) {
+  if (!id) return;
+  for (let value = 0; value < 5; value++) {
+    const image = new Image();
+    image.src = questionArt(id, `scale-${value}`);
+  }
+}

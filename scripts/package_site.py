@@ -30,7 +30,7 @@ with zipfile.ZipFile(staged) as archive:
     art=json.loads(archive.read('question-art/manifest.json'))
     assert len(art['questions'])==40
     for question in art['questions'].values():
-        for kind in ['scene','left','right']:
+        for kind in ['scene','left','right','scale-0','scale-1','scale-2','scale-3','scale-4']:
             asset=question['assets'][kind]
             assert hashlib.sha256(archive.read('question-art/'+asset['file'])).hexdigest()==asset['sha256']
     assert all('\\' not in name and not name.startswith('/') and '..' not in Path(name).parts for name in names)
