@@ -76,6 +76,7 @@ test('scale adjustments stay local; Next submits once, and returning to revise s
   });
   await expect(slider).toHaveAttribute('aria-valuenow', '4');
   expect(await page.evaluate(() => window.__scaleAnswers.length)).toBe(0);
+  await expect(page.getByRole('region', { name: '所选反应预览' })).toHaveCount(0);
   await expect(page.getByRole('button', { name: '下一幕', exact: true })).toBeDisabled();
   await slider.evaluate(element => {
     const bounds = element.getBoundingClientRect();
@@ -83,6 +84,7 @@ test('scale adjustments stay local; Next submits once, and returning to revise s
   });
   await expect(slider).toHaveAttribute('aria-valuenow', '4');
   expect(await page.evaluate(() => window.__scaleAnswers)).toEqual([]);
+  await expect(page.getByRole('region', { name: '所选反应预览' }).locator('img')).toHaveAttribute('src', /scale-4.webp/);
   await slider.evaluate(element => {
     const bounds = element.getBoundingClientRect();
     element.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, pointerId: 12, isPrimary: true, button: 0, clientX: bounds.left + 2 }));

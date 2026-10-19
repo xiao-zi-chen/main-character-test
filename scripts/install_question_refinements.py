@@ -7,6 +7,8 @@ from sync_question_five import PinnedHost, ROOT
 
 public=ROOT/'public/question-art'
 manifest=json.loads((public/'manifest.json').read_text(encoding='utf-8'))
+if 'minimax-five-v7' not in manifest.get('revision',''):
+    raise RuntimeError('This is the historical v7 installer. Use install_realistic_question_art.py for the current realistic set.')
 if manifest.get('imageCount')!=320:
     raise RuntimeError('Sync all 320 base images before installing refinements.')
 production=json.loads((ROOT/'content/question-art-five-prompts.json').read_text(encoding='utf-8'))

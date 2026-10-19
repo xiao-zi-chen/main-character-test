@@ -1,0 +1,283 @@
+{
+  "method": "LaMa subtitle-region inpainting",
+  "images": {
+    "3.1/scale-3": {
+      "file": "3-1/scale-3.webp",
+      "regions": [
+        [
+          486,
+          560,
+          673,
+          601
+        ]
+      ],
+      "sourceSha256": "84db0e67138ab5af93c699ed136657c8e86ebe47a7b090b65e307f1b9c97deee",
+      "sourceVersion": "question-art-v11-realistic-refined"
+    },
+    "5.1/left": {
+      "file": "5-1/left.webp",
+      "regions": [
+        [
+          432,
+          531,
+          723,
+          585
+        ]
+      ],
+      "sourceSha256": "db8509aca31c29cc5c7d4f71c8c90f358486a17ae513e6373c1f201fcb4238ae",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "8.1/scale-3": {
+      "file": "8-1/scale-3.webp",
+      "regions": [
+        [
+          469,
+          574,
+          683,
+          611
+        ]
+      ],
+      "sourceSha256": "489d4175dd469b4d54b6831101dfe9fa76074869caa62d25f61f3887b7d6af56",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "1.2/scale-4": {
+      "file": "1-2/scale-4.webp",
+      "regions": [
+        [
+          395,
+          563,
+          763,
+          599
+        ]
+      ],
+      "sourceSha256": "84b6fb52bbf00fa5989a8c76a544c96910691722d30384d25af9aecc242559a0",
+      "sourceVersion": "question-art-v11-realistic-refined"
+    },
+    "3.2/scale-0": {
+      "file": "3-2/scale-0.webp",
+      "regions": [
+        [
+          466,
+          532,
+          721,
+          569
+        ],
+        [
+          413,
+          577,
+          764,
+          605
+        ]
+      ],
+      "sourceSha256": "6d963c877c718667fab8022cb60c11da367b780848b767ce226aee43884ad089",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "3.2/scale-1": {
+      "file": "3-2/scale-1.webp",
+      "regions": [
+        [
+          418,
+          580,
+          735,
+          613
+        ]
+      ],
+      "sourceSha256": "71643b1b9b7224de16726ae6866cd6fc073e5a97e4352c29d3b9796acebfa867",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "3.2/scale-2": {
+      "file": "3-2/scale-2.webp",
+      "regions": [
+        [
+          417,
+          551,
+          736,
+          596
+        ]
+      ],
+      "sourceSha256": "2768e65bafb0a454babc98d1cb031cfdba4d214687d6f7d2a9cdf66b61de070c",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "4.2/scene": {
+      "file": "4-2/scene.webp",
+      "regions": [
+        [
+          441,
+          565,
+          713,
+          604
+        ]
+      ],
+      "sourceSha256": "5b004abb3a47a3e4b72a0310b52ea3e01e4e9ac5ebe2b047f100b7152f339914",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "8.2/right": {
+      "file": "8-2/right.webp",
+      "regions": [
+        [
+          404,
+          554,
+          762,
+          601
+        ]
+      ],
+      "sourceSha256": "66e4180499969ec8f0a98f16dc94666d1cff142e1b4ec52d03547ac5d4f8a5fd",
+      "sourceVersion": "question-art-v11-realistic-refined"
+    },
+    "10.2/left": {
+      "file": "10-2/left.webp",
+      "regions": [
+        [
+          487,
+          546,
+          669,
+          581
+        ],
+        [
+          453,
+          581,
+          699,
+          610
+        ]
+      ],
+      "sourceSha256": "5500ca1f2789fe971a550deee9c062b455b5d6909af5bc1320f0f56c0ce4e7dd",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "3.3/right": {
+      "file": "3-3/right.webp",
+      "regions": [
+        [
+          490,
+          562,
+          666,
+          599
+        ]
+      ],
+      "sourceSha256": "1caf00e8f80d25c196a3f79648b7b1b8f95ea799ce4ae3f53ba54031993ff0af",
+      "sourceVersion": "question-art-v11-realistic-refined"
+    },
+    "3.3/scale-1": {
+      "file": "3-3/scale-1.webp",
+      "regions": [
+        [
+          439,
+          562,
+          716,
+          605
+        ]
+      ],
+      "sourceSha256": "6a142c5254c9ee880c73bce137b2ba3999cf18210d1cfeb3c8cf34baa9e6bd1b",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "5.3/scale-4": {
+      "file": "5-3/scale-4.webp",
+      "regions": [
+        [
+          441,
+          542,
+          713,
+          586
+        ]
+      ],
+      "sourceSha256": "e5c7e4a59be33b324eb186fdd31f306de39fd4dcec62bd8ad2b56e914e1b1b18",
+      "sourceVersion": "question-art-v11-realistic-refined"
+    },
+    "8.3/scale-2": {
+      "file": "8-3/scale-2.webp",
+      "regions": [
+        [
+          454,
+          537,
+          699,
+          580
+        ],
+        [
+          430,
+          577,
+          717,
+          617
+        ]
+      ],
+      "sourceSha256": "0fc1ed2ed9ea07d54f1bf081b82be8c15eebd35e1cf972b98a981f3709e75ed1",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "9.3/scale-2": {
+      "file": "9-3/scale-2.webp",
+      "regions": [
+        [
+          473,
+          561,
+          684,
+          600
+        ]
+      ],
+      "sourceSha256": "e45e4ed25168af4920975bbb973279d2ef81829c1dd3ce011ff0a027e732f74f",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "5.4/left": {
+      "file": "5-4/left.webp",
+      "regions": [
+        [
+          480,
+          562,
+          666,
+          597
+        ]
+      ],
+      "sourceSha256": "556292f073b5b6cef0e520c0e4c51b8f3a33e09beb2a14d3cbe16d76707f5a2a",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "5.4/scale-0": {
+      "file": "5-4/scale-0.webp",
+      "regions": [
+        [
+          423,
+          570,
+          733,
+          608
+        ]
+      ],
+      "sourceSha256": "3acfa6148ba6b4639aa6d070acc830a1df5025e8a1602e692f5d14c522fa9ea6",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "5.4/scale-3": {
+      "file": "5-4/scale-3.webp",
+      "regions": [
+        [
+          426,
+          563,
+          730,
+          600
+        ]
+      ],
+      "sourceSha256": "ff00e833751a098a40204b6650593bb40e434844fd3fe8645213dea40b0dab1b",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "9.4/scale-1": {
+      "file": "9-4/scale-1.webp",
+      "regions": [
+        [
+          484,
+          563,
+          677,
+          600
+        ]
+      ],
+      "sourceSha256": "563ef7d2493defa1423df47954d89ae5c10944d4ee9a81368db0d286809b81e5",
+      "sourceVersion": "question-art-v10-realistic"
+    },
+    "2.4/right": {
+      "file": "2-4/right.webp",
+      "regions": [
+        [
+          458,
+          558,
+          688,
+          614
+        ]
+      ],
+      "sourceSha256": "11e1d013a1941ae7975cf914e9bb5d0befec6a93b32f170738fade6ed54b5bc0",
+      "sourceVersion": "question-art-v10-realistic"
+    }
+  }
+}

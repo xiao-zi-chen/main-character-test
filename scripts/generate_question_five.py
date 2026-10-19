@@ -59,7 +59,7 @@ def generate(args):
                         image.convert('RGB').save(target,quality=90,method=6)
                         size=list(image.size)
                     data=target.read_bytes()
-                    record=dict(file=f'{slug}/{kind}.webp',size=size,bytes=len(data),sha256=hashlib.sha256(data).hexdigest(),seed=spec['seed'],promptId=prompt_id,seconds=round(time.time()-started,2),model='MiniMax H3 fl2va int8 + 8-step LoRA',sourceVersion=args.output.name)
+                    record=dict(file=f'{slug}/{kind}.webp',size=size,bytes=len(data),sha256=hashlib.sha256(data).hexdigest(),seed=spec['seed'],promptId=prompt_id,promptSha256=hashlib.sha256(spec['prompt'].encode('utf-8')).hexdigest(),seconds=round(time.time()-started,2),model='MiniMax H3 fl2va int8 + 8-step LoRA',sourceVersion=args.output.name)
                     complete.write_text(json.dumps(record,indent=2))
                     print(f'DONE {question["id"]}/{kind} {record["seconds"]}s',flush=True)
                     break

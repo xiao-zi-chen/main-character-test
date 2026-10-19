@@ -23,15 +23,19 @@ for (const question of questions) {
   assert.deepEqual(prompt.options, questionCopy[question.id].options, `Choice order changed: ${question.id}`);
   assert.deepEqual(prompt.artDirection, directions[question.id], `Stale art direction: ${question.id}`);
   assert.deepEqual(entry.artDirection, directions[question.id], `Wrong generated style: ${question.id}`);
+  assert.equal(prompt.artDirection.family, 'photography', `Expected realistic photography: ${question.id}`);
+  assert.ok(prompt.artDirection.protagonist.includes('Chinese'), `Expected Chinese everyday characters: ${question.id}`);
   assert.ok(prompt.generationPrompt.includes(directions[question.id].medium), `Style missing from actual prompt: ${question.id}`);
   styleIds.add(prompt.artDirection.id);
   protagonists.add(prompt.artDirection.protagonist);
   assert.equal(questionReactions[question.id].length, 5);
+  assert.equal(new Set(questionReactions[question.id].map(item => item.face)).size, 5, `Expressions must vary across all five degrees: ${question.id}`);
   assert.equal(new Set(questionReactions[question.id].map(item => item.caption)).size, 5);
   for (const kind of ['scene', 'left', 'right', 'scale-0', 'scale-1', 'scale-2', 'scale-3', 'scale-4']) {
     const asset = entry.assets[kind];
     assert.ok(prompt.assets[kind].prompt.includes(prompt.assets[kind].action.replace(/(?:GREEN|green|BLUE|blue|CORAL|coral)-clad protagonist/g,'protagonist')));
     assert.equal(asset.seed, prompt.assets[kind].seed);
+    assert.equal(asset.promptSha256, createHash('sha256').update(prompt.assets[kind].prompt).digest('hex'), `Prompt provenance mismatch: ${question.id}/${kind}`);
     assert.ok(asset.promptId, `Missing generated provenance: ${question.id}/${kind}`);
     const expectedPath = `${question.id.replace('.', '-')}/${kind}.webp`;
     assert.equal(asset.file, expectedPath);

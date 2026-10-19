@@ -44,7 +44,7 @@ export function publicAssetPaths(manifest) {
   return [...paths].sort();
 }
 
-export const publicEntryPaths = Object.freeze(['collector.js', 'public-config.js', 'favicon.svg']);
+export const publicEntryPaths = Object.freeze(['collector.js', 'public-config.js', 'favicon.svg', 'question-art-review.html']);
 
 export function questionArtPaths(manifest) {
   const entries = manifest?.questions;

@@ -1,0 +1,629 @@
+{
+  "revision": "2026-10-19-chatanywhere-image25-flare-v1",
+  "questionsReviewed": 40,
+  "imagesReviewed": 320,
+  "generatedImagesIncludingReplacements": 354,
+  "refinedAssets": 28,
+  "criteria": [
+    "A/B direction",
+    "physical actions and five-degree progression",
+    "scene relevance",
+    "visible words, labels and watermarks",
+    "obvious anatomy and distracting duplicate props"
+  ],
+  "ocr": {
+    "engine": "RapidOCR ONNX",
+    "imagesScanned": 320,
+    "confidenceThreshold": 0.65,
+    "remainingDetections": {
+      "5-1__left.png": [
+        "士"
+      ],
+      "6-1__scale-2.png": [
+        "厂"
+      ],
+      "8-1__right.png": [
+        "山"
+      ],
+      "8-2__scene.png": [
+        "S"
+      ],
+      "2-3__left.png": [
+        "L"
+      ],
+      "4-3__scale-4.png": [
+        "日"
+      ],
+      "5-3__right.png": [
+        "FH"
+      ],
+      "7-3__scale-2.png": [
+        "田田"
+      ],
+      "9-3__scale-2.png": [
+        "8"
+      ],
+      "9-3__scale-3.png": [
+        "茶"
+      ],
+      "2-4__left.png": [
+        "公餐"
+      ],
+      "2-4__scale-3.png": [
+        "M"
+      ],
+      "5-4__scale-0.png": [
+        "A"
+      ],
+      "7-4__scale-1.png": [
+        "田",
+        "口田"
+      ]
+    },
+    "disposition": "Manually inspected crops: remaining detections are window frames, buildings, plants, furniture, hands, camera lenses, route drawings or model-house windows; no actual written words in these crops.",
+    "limitations": "Automated text detection and visual review cannot guarantee the absence of every tiny incidental mark."
+  },
+  "identityContinuity": "Same descriptive character and outfit per question. Independent text-to-image generation may vary likeness and supporting people.",
+  "reviews": {
+    "1.1": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "87785087e26457eb651471e0cb35c852332ac89684133bb8011c64cfe407543f",
+        "left": "1914d79c63638e82ec5c1d665e43ab41040eecac0edec68863c38477bd63fb0f",
+        "right": "ee73ca4d5eaaf6de49a04fc9a48697841805feec3794c37725dfd53cd84cdbd3",
+        "scale-0": "8e0dab8ee76d372240e9c8d3c11cb267531a6c2b63a2d8eddaa319e04b3d1ba6",
+        "scale-1": "e1a8ff8a2466a7dbb7bc9ef3f4a325c50a1521b3e4de52d7ee7ea54265851cd0",
+        "scale-2": "b52ff328ea8da730e102aa06e9389ffd339c1440e9f8fb1857bf73c295482eb9",
+        "scale-3": "ae9e68786920c1c861b85ec08dd0fc6066ba8263db86ce0636bfe3cd67734448",
+        "scale-4": "6ea617407d82a2d095e4d571ee616cecc4a9a42aa99fcd9ccf613dc22e7929f2"
+      }
+    },
+    "2.1": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "bd64f5227c4b7a0f708511db7fcf16889fad01d2cf2eea3302c36d613ed0d977",
+        "left": "77befc954e9be59ed80d84b6a9526ed2dfb857a1dfadb57d6f2445bdc7ba8509",
+        "right": "d1c65e98ccf900bc561b30196b76874e04da8a04db676ac7bd0e777c75aefa64",
+        "scale-0": "a7f62d04391d63a9ea7e34a99c51e60a0071213c0e0832bc00ed5ee9b71a311f",
+        "scale-1": "832ed294675ba970949f2dd0e0779f19f81ec9f6abf4ceafbd11699284e20418",
+        "scale-2": "e0175d8f040df3fd90a49376726b89cc50b415e32ded604d5f4fe59161a7e38c",
+        "scale-3": "414512471e0fc229d8c7433780ebc9cb734cab2023b0c7f50a35a513c702f06b",
+        "scale-4": "c3ece6212f2fbf172d9c4b78b48e46aee1b7d98da2f57b469ba73f5c833987a5"
+      }
+    },
+    "3.1": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "5b5473e91c8dd257b417a5445db7aec5c1bf74d80dd3972acc7f2cce3f97322f",
+        "left": "84a66ad9d7ad480820fedf0f77978a4b15fb5d0da254a1b05967a9331b24e0bd",
+        "right": "7e445c926356dce45e5d58cd04af2c266bb502482815fe28e51bcc471c1b90fb",
+        "scale-0": "a2a74b2070f381ffc07092ba9824d32ff362dcbeaa76725ac865bb18c126a8ac",
+        "scale-1": "1679f29d8261d50f861dc3b1aef5acc38bea4e353c477f41b458ae7f7ce07848",
+        "scale-2": "ea9a5d678830c85631c459ebfe7bb908e2912da7a84f47dfc13882f2fcfbccb1",
+        "scale-3": "ff0c060ccaac03e35ec87367793d48c4fa05037949cf8e0189729585a464ee9c",
+        "scale-4": "62e6a1e36a86d28a58a2aa38c603f135287af7cf22ee47ec6680dbe7eb0fc556"
+      }
+    },
+    "4.1": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "8ed2523b6c55036e4c9e9c719e4831dbb7bd0a8f7af0358859374df5d23e7329",
+        "left": "5220122a5b2632e6a63424474e9b719fb2b7a4567363eb707908d976d8d218af",
+        "right": "bdaf59c4b739367c622bc2f9503753cf28c73c0fa9edce88f980628c0fb40bf9",
+        "scale-0": "8ac86165cead484f56103f032477b435e219b4198ab6519a625563e40e577c3c",
+        "scale-1": "aa1ca33c2e07fd3bf9350325a33e0a15563ebbc9ce55798783c3f0fc2a9e1a3f",
+        "scale-2": "2f4c2b8eb3011732108e3cb45366e36f28d547d755f2bab6e538a0f0f2291cac",
+        "scale-3": "446588539d32018905e4b45ed97bcc9ad84243d488bc33ebd2ea07887d3e074b",
+        "scale-4": "e52d2e802d7c36ea4e5de76a890215bf942162bc9c5143a037044ef70e689622"
+      }
+    },
+    "5.1": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "440ca6ad98376a24195a7802996582b19ca52842a414f26e2fadf7c71b490aa4",
+        "left": "c6e8db14444a6f7d4b3a02985177bf5e6c53d9ae397dd4a6f9fcd54915910c1b",
+        "right": "07249617af4c9db8c3a116698e82d17c951fbcc6f754d12da0d4d518b2f06633",
+        "scale-0": "6106e064e78a1ef5a767fc2abc5e795d96a6b68622ceedb1474573ea78135b1f",
+        "scale-1": "2cef115e81b865e51e734509fe95554eb5edf0618e8afd87e048feac75ea32dc",
+        "scale-2": "6c33c30c94a418211196e3ad7a6c08672319830880b40e014f0cd63bff9b34d6",
+        "scale-3": "1a9604512d8eeea985fe0fc3b491bdf5bce0a58a3059d8b948ec9d6a13d942e4",
+        "scale-4": "e85b427dbe9b6b5132327d3055b64045b1ffda1c07344b185d0424843398cc8f"
+      }
+    },
+    "6.1": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "c66f730247a9907f462c2b9b8afc816911a42034674bb58ae85c8228d55f7d2b",
+        "left": "61b092c8bc787feb90eaaeb9e3113a345cdc9f90ea9727d048ac055dce7e3be2",
+        "right": "f7b08e56a540498c2d4b46603ad322b2143f3cc98cc3655617bff0ad9739a732",
+        "scale-0": "24232c5066a608e5d94a740571412c3c1b8f1ff948c204cac029a61a71a1213f",
+        "scale-1": "6bc51584216c22851b88d325cbe2436084e66918ede2cbe7bfce05f82ec4d517",
+        "scale-2": "4b030f4e5f110d7d3864e76ccfafefa5e4f5e2cbcbe10ca3142b5aea3883570f",
+        "scale-3": "38297c3760bd2813a7879a5f05a9d3c15adc35dde9505916f03b6767e6ce3ff5",
+        "scale-4": "18c4d8a8c82cdcd6993a03403f131b68d78176e72929a499ca4ebe14ea50121f"
+      }
+    },
+    "7.1": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "df61f76748f60e2f6956bbae2f8017b2fa3563f47275651da388e8a7b0bf61da",
+        "left": "08916f87ff2a019193b051e68178a969dd9bdb1e53c48629c87ad58d66838b4d",
+        "right": "d208b9da17e62f6399500b96b7591c41eda13c868387f78051dff4f3fa20b056",
+        "scale-0": "7979be3e486008a1581455ff167bddedceba7bed9e0141586065bc9be6715c69",
+        "scale-1": "e63197aacf71d73d0976567fba799a0e24d8c4ee6c67da4625114f96d29d6b1b",
+        "scale-2": "0155b074188f7841bc4c39b3982bb5922d992cc3d27aead97e51a750d69e5095",
+        "scale-3": "58488a7245d897c588f71c3fc749d9dcf3496df19330163d732a9be6428a3cee",
+        "scale-4": "17d02bb7c6c3e2238c1e51ff320d0fcad993c0444441ecd1be33d61d881daa1b"
+      }
+    },
+    "8.1": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "aaac754bc3236cfbbcceb91d1236a293489ea8d88b536fb9b5ed9b10fc2cea61",
+        "left": "ebcf955a5717ce093b62dfa54308cfdb66267f0ef5d060ea36f5dc85a0f810cd",
+        "right": "0373db4840000161dfb0c62c590d4b29975bcb861a40e61a1c36c8ad975ec31e",
+        "scale-0": "b8ff225cecc4e4fe4fc95201a0b8ecfd31e04da71e88d97c806370aa8b9dd9f2",
+        "scale-1": "1a7c7b4bb68166ad34017f58b4f653189ab5ae2a54d081ff1051ea9c6bc0baca",
+        "scale-2": "1be716ca06d5654164f71c7adf6c2b0f8276e8b26887cf0edf476aa7f520f987",
+        "scale-3": "7265aea7375b94397b55a97d819e254a22b5d115cf50d99a001378b5a4f60612",
+        "scale-4": "6ea18a8aa5c8fd2e135fa050304079953ee6ede61919a306ab68fbf71e557220"
+      }
+    },
+    "9.1": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "0cfddb820ef7bd4f46612b25eb33ec097a93162ea2d3c91c589af8f21df71a0e",
+        "left": "0436b7e9f5775ff0d9df2648f0e9c93419a9bc3d4d0c745ba6f06fc8b04d6187",
+        "right": "356ad4db8df5a30bed97c94196b6ce32978c7d318f1a000c2f8982974d5ab9bd",
+        "scale-0": "44add937f8f7df94029f8c8436cd55cb2a9fc7e3b44d0b2bd817179f59c81bf8",
+        "scale-1": "322697696849ea16ab25ef7a1cccf5bb874343245f9b5bfe321526f9cd976219",
+        "scale-2": "b5e56585fe8d4712753a9bb846569a602a8bbe6adf3a6d2f60ac600f78464247",
+        "scale-3": "5e027df6617f0dab8fff3bf180a1063c6e7ea9b7a475bfdfb5e4badbbb94f62c",
+        "scale-4": "ed190dbc01d5532befc13f9430702b04da59e9554a1924cc4bd8e48d051f62f4"
+      }
+    },
+    "10.1": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "ba793b09c2eb345d9f09c5b33bbc925330ae8db3543be5af494cb7c6e8fafe3f",
+        "left": "2dd5a4735b144122f7c8beabe4810ff7b41febe40b4e2efc4542b2bea484646d",
+        "right": "ad05df8f6e0701860e3e389a64f15aa4d524f435ec56a98f78f4e10b155a812e",
+        "scale-0": "37862771f5fe9974fb198260c209fa3694489ae5bc8f9b4ca3c97c2ef2d98e10",
+        "scale-1": "9ad6422199cb5dc293eaa9f18ffd662554a68d295666b2d6cff02b7e19d8a369",
+        "scale-2": "093a939fab2a2a8ff2732ca4513d07c90d2190400d3db723e9dace5dcefa82bd",
+        "scale-3": "73b002d8b2ffffccf147c372cc8a946bd4ca3a5338163f0f49ecfa5f27f14143",
+        "scale-4": "3f93f8dfe11f2eb0a8b6702efc2b78fab4810e2e19da7500dd5cdc2034166b8f"
+      }
+    },
+    "1.2": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "08d93fe794070a82f51fc3910835df700a1cd48b9dc01e063c57bdcb1f1f256b",
+        "left": "6c5a8e96c8e3afb8e01e0c759c9c191204ea874cbaed6f689479d2f07e8029e2",
+        "right": "a45749809c527255561c16c3cde31b7dc36b69cd89e42ef209d39dc5f8f6cbc5",
+        "scale-0": "55cf172767259d84f205c9172743e98b509bbb1febb4ec2b41870ec7ed6bb507",
+        "scale-1": "7d3210e96ced873935cc8f0d080fb04c6a063719f7fa183da78c1c37e71a97e7",
+        "scale-2": "de4d1ae64c7ddb00b318ee60fcb93a60a54ca2b586bf00edceed54eb23709974",
+        "scale-3": "b4a0cba7f045377de1db99da5ea2a31b5b5abcd74b1624b6d7de006de8a9a8df",
+        "scale-4": "6250398d8c5ca8590cd95d190a704979a8dfe9d3b9ed6001ad5e2896f123384f"
+      }
+    },
+    "2.2": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "88deaa0fa84350ee95b2b9b024e19f8ca68903fccaca1664b0e763db93d98d9a",
+        "left": "d9d17f0739b157acebca75187011b378dc9bac4c6d86732eb8d7c1e472f4458f",
+        "right": "308787c6e3d5ea099aeba97896b746c61d3917c41126c087066cb2c85de34288",
+        "scale-0": "d355ace6c038c79a13585450612a82e7835055bb26a678db9795e4c5322c8498",
+        "scale-1": "c7da4cfc9674626a9917bedfd7881018e248a11dfd48fb6c9a03f2f62b5fb553",
+        "scale-2": "40caec2b6d2b774766d4c23b9d0fc7438846fc15a91a3123cb568664b111ff6e",
+        "scale-3": "ae25930ba08a065d92676321d1cc81d1da0e6b8a292b85022b53fafff8513ed7",
+        "scale-4": "79451e4daa8c41948c0dfd6a265b4cbcd5abbf2b7e14aef1acdc49e5b455813d"
+      }
+    },
+    "3.2": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "f6f2b560b64e4b25421ba9164ec7266bd30d39469675e08ebd6684162a8b6f4a",
+        "left": "f78a2a34430d263178c6ab865db4415e175b008445d59194088d80732966df6f",
+        "right": "67da652afd5cf04afcc76d285c1ecd93e64e316516f87ab8ed8b73a525136c09",
+        "scale-0": "8a78fbd586abc39cacc94a024f51cb5d7488334bd788e36256aa1ee98978cabb",
+        "scale-1": "7c861ae730ba23534a4a486194e1443b9854a16848e2af871b34e87b503b9fa7",
+        "scale-2": "d4cfe5195cf874590cc6651213f60c2457536a3e3418e0752699ef0ca47e5a6f",
+        "scale-3": "c93214a06515e90a8269b116d4bca3d575c19f3cd9fe6e07efb62b0fcebbfb73",
+        "scale-4": "de5ae1c8f3e04ad38b10eb222bd7b2d6b30e139c20b3330f90a0e132a77b8c25"
+      }
+    },
+    "4.2": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "fbd88e393f2b2c49054a622ae6ccdf28e3c5ecb3d7e84ccf916d03619c6871b0",
+        "left": "d39d5fc3a475e06f1207da4d70a5d1de8e8d61b7788c2fc85739c3e32a6c38d4",
+        "right": "a5986a2fd5fb4a6a4f7ed62895cb3f8d5d6318b13e03a382d463e7df8aa14781",
+        "scale-0": "83d9873c17558adc5c5964101e527522336d2392b4ef8f1e48c65dd33f9117a3",
+        "scale-1": "07028cbeebf0dc05f54258a624a0df5bc1d387bee8b2cf983d59c1a351fb9cc0",
+        "scale-2": "4bcdcb9a91118311cae9cbc2f8ec85c2a641c654e276709436ee428aec4d1cfc",
+        "scale-3": "71ad4ce0695fef6554281eedec61064f2f9b4968417e2ad8188f19fea84f8bce",
+        "scale-4": "694fece1e152227c6964df7c4f055bba6a067aaa5d38a13d4bd474699d6360b9"
+      }
+    },
+    "5.2": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "dea41d128922755ffea0428627ef55fcf4cdc6efbaf0048632171ca0f2e7e7be",
+        "left": "38ff6721d2de37381a1c82c90a3a85ca6715fd1b2ca788521d04dadfa55ff24a",
+        "right": "ef7536e0e2f780a5e95828fb8fc6fa7810b9c1309cd06e080f24439fe3309fb1",
+        "scale-0": "86fe9500a4e573573fcb5df642885399a2ba95e4c58a9b1a411a53f1a8841be4",
+        "scale-1": "37ca1b39102386c29ef5ba0cffa20a877635c6c6ff60728d31267323daa27508",
+        "scale-2": "2e774b85cb5139a687521ebb527b3a41c83ef33e7ba002dd61721b4a45ca4478",
+        "scale-3": "006317f4145063fa9b7d88e65ed812b00386d7fbc59f575d5f4d6af8847de3d0",
+        "scale-4": "fa66f29b5f5c10ef8451d8e1679473d58bf3f6ecd933819c6bac0b216f35cc3f"
+      }
+    },
+    "6.2": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "221a8003a7f3a68441afde2eec8baa38526be33c8cb2e38ece9e8e78538867e7",
+        "left": "ba56923a03c841610468d0f530f54c7dd05d3191f9c7c8e3010fb2dddb8781ca",
+        "right": "929350b1c3dd1929de242b23143e894bb781a5fe9f0d2e7fd5e2385f9442ad56",
+        "scale-0": "4300811cb84efc8e77032b102bbc63d63572076f30f2e9d0b9ba6589dd5a4c69",
+        "scale-1": "d8cb3a9a65085be88cb40044342529b39d4cc67acf5716f142ae78e3ef7df366",
+        "scale-2": "b095ea61e16da14e1fc5c20ceac94bee797b0024fd52ebc2f122d1e8e836d63c",
+        "scale-3": "1014ace2fca44744545b43dc9411055323889419cf90320f16ff9d651c3dc6d5",
+        "scale-4": "0d64f5b7d75deafa171ea52568b0b0f6776312fccd2309026554e046e3891ae2"
+      }
+    },
+    "7.2": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "6349bddc6a21aad9c80644b115925ea28986a9de08e83f7f52293f5eb1ad0d2f",
+        "left": "e706cf92f05d8cda1bf6fe14aff2f73d381f5b32e97e0e1d519670c49efc2d3f",
+        "right": "260e56657a01db4af68c4f2503015b9912321b6d410fe2929d7b79ff344ed1d1",
+        "scale-0": "4bedb2a43654c6ced46895a797df1d729b480c8fb5648d3de0ca7186392a7bd2",
+        "scale-1": "f3e718cf4886a6e8291bf4554e8d1e735ab7a8589f65dd8c64312b30a6a81109",
+        "scale-2": "ec6bb209236af87daac6ff79c6ddf1a2fdf6a235a0fe929a3fc48b73a0234caa",
+        "scale-3": "52ecf28d8f89c47f79f67cbfc4b5f7b58d393dcdd807388cb13f394b943af07a",
+        "scale-4": "02272d93cecb40d0a20f9a8ee2dd78e2c21d51a357a2fdd7cdabdcb2abd20aae"
+      }
+    },
+    "8.2": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "0c6268480251243ef0b236a186caf3eeb7c8883efe67c4f8f209f8c3053ea375",
+        "left": "368d8f00f70d260a6c9410cb6054bd1450b0a2293693ec8f468040ee2af983a1",
+        "right": "44e850af672b24643d5385ed0d0f3c6a733e7a34e4450963bcd178d49fba50dd",
+        "scale-0": "2d77adc54d26eab27d1e469d182d27d2d873a42cc1e4cf291455198ee9182363",
+        "scale-1": "1d4016dec343c0454cd0de62e067ce2af799873a45e8baa88685c6d426f8047c",
+        "scale-2": "5c30d29cb7487a094477c4d06ba6da91c7c6cba7e7810994515f20c4b2fe2791",
+        "scale-3": "a35edd302184e71fa0be1f9c6062f34c2be3fa978a9cbec6be865f0d0d3a3c3d",
+        "scale-4": "8457f31e6981cc2326524d69a2a8c67a4b200eaf7298840c17454d718b01eb13"
+      }
+    },
+    "9.2": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "fb20b679d39674ee21a12c8e80d4104175b8d72ddc633735e02349343b6a1c7d",
+        "left": "a418f7991dc3dac52182b5ed85041a6fa689c964e499184610c7228116ac429e",
+        "right": "52f1527ab39b6595956e5672242c0ab18a15301bb98fc5af9a7e027ca0bc6551",
+        "scale-0": "102c0c42ae77e1c4a9929da7d80b0fc8488f23afb1ad24603c42917019e745fb",
+        "scale-1": "545a01a1c34c69cee7bc82736b48a03137de26a5fd75805801262773acfefa07",
+        "scale-2": "14def3ad6ee244d28afbba418ac4c89d37e05ad3a07fc1e1d906e2af710187f7",
+        "scale-3": "c80d03b1194b98e18e81c57522345c1874bb8bfab272eb58cc7e67d1213ae083",
+        "scale-4": "d5617708412e311f8743a96b4fd3a12cb16861d5f05baf8fd6b523b984be1113"
+      }
+    },
+    "10.2": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "ecbeaf58b64740aad34bdb0d1c55e924fca64ef19b23ebe1a023a095ef73366d",
+        "left": "ac82d47d4fa9af08ea5b33f3f27186a3eafd3a945e6d8d484c8c9404713f342e",
+        "right": "1e792453e8df3fd297f75113d7e16a4344d11ede4738413e043f159739206721",
+        "scale-0": "fa586fb1bc184dab19222fb60c9f55b3c429dccb3413016f20cd8e903844a262",
+        "scale-1": "b340a192fc220201aea3d74679b3748376a2d06bfb3fb24da7d062b78b47a86e",
+        "scale-2": "e2833810a759450db485d5a7274b42712b9d287b2bffce4d9b52f6c0ee97cf7d",
+        "scale-3": "7e42523313729122fe7f6097b74075cc8d82c6ca7cbc77c4de9104242c621394",
+        "scale-4": "b0dd0c1db70157d21dfc7380548dbf0b037064972b0b07fd12f9537588d62928"
+      }
+    },
+    "1.3": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "a96e9a8f264e46a832654bc127635dedd5ffb81e0627fb452f466917c7489553",
+        "left": "d5b52fb2f8a7d03d14a3b70f203923f7788c630e8247030c8ede574d496244fa",
+        "right": "145a641e91a747d17410aef83b26cd951107eb7ba49258ce7679d99cad396353",
+        "scale-0": "7b4d43befc7c71a7c01fe099ae66de6362d460cfd94850c5b7842701cf1a10d2",
+        "scale-1": "f68bfa8796584da1a603a2b1e50281ec8eb9006762f77434a9953f40b0ab8947",
+        "scale-2": "d8b36783a41435a48e291d9550f97ac21744c82aae33c964b12a39d939b938f7",
+        "scale-3": "06fdc39231745660dac6df548254de76b470343967485f1845f78b87711883e2",
+        "scale-4": "c1266910d7ebc7e2b0aea521de13a67746e77877ce36b0d3655ef0dd14f7657f"
+      }
+    },
+    "2.3": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "bd5b17c9cbd479b8a5810eae56dd89e24ad0ba5a0cdc03f5a14cedf588fbf588",
+        "left": "2e851e8c3c9c92a1b31845846460109c295a344efc09c8a818ee9299062f7b99",
+        "right": "600d8d2442df49e934b6bba58ab95a53fba92d55e6ee5ec52624bdc1d6f1c16e",
+        "scale-0": "bbaaa8f9812b9b81b72f2eb805df26a60dabbcac35c6e66801579c66778be704",
+        "scale-1": "06b3c87838be17328af202ecd4a7e680e08c5631d5d66a5a9c259d67bde2eff1",
+        "scale-2": "a0e92cb7d79f1d70ff87cf677b73033733e1b40696081f169286c6c4fbac6299",
+        "scale-3": "a5da7c2f2f4e7672b4f0c6a23f06e270715051a882e425e2d00dbe4a917847bb",
+        "scale-4": "c189ca48b4fa06495e440a3e24d1bb433641cdc3018b7bdd4c74e8cdfa05092b"
+      }
+    },
+    "3.3": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "d3342ca887c92f6b1d716d2be8a5ba83adf9f147fcdf3dfdd586e8c4bd6e921b",
+        "left": "897870c345a28b8551dd5743ab1134ca0534576775851aefeed73fd245fef3f8",
+        "right": "0f940eaf78e02b61086a28bd6920210c5710e0c25c3e17999a729d6c2bba87ff",
+        "scale-0": "afd94e570c03a3f376ba4e3f7a299093663a81e09f69e8b85c2c02a4c6cc31b3",
+        "scale-1": "b42bc277ae81ef18d0ee93c7a22b620ef362717d2f286ed19826fcf4f18b83b7",
+        "scale-2": "e25f4ec759912596e2471561172ff03a39e6bec92afc9692be7d3a0209ffb31a",
+        "scale-3": "dc53d559938d522b2262537131720eb804aa205ad78c158d123a7cc102755141",
+        "scale-4": "4a1e57d2d9bd161e283d99e6f68a05aa8ecc13832a7ebbdc2bdd7cd70c3158a4"
+      }
+    },
+    "4.3": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "707f55414a79607d980c51adcf50333c4eab8b2fb919ba237f885166a5cb3e29",
+        "left": "73b83f2d2a56c2de4cc7a213a59ad5035c9c0d1b62919dccec90104d3999ffb0",
+        "right": "7dfc5bb7c25778eca23bc495be0ffa4ca62e5ecac03fecc08ccf7f2db622fe95",
+        "scale-0": "af62a47765235b615b695e660a05b95c455673adb5be26f2d8e4fdc0a9f9b399",
+        "scale-1": "e010a705c020eff701607bda47be35ee6adb99a507ffe6700ed7f6afe365ef92",
+        "scale-2": "b894ddce7d9b326c917c3b6415556249bb37d4f2eb7b1f503191df45e045ddc3",
+        "scale-3": "4b09d9740c702b8fdba486c910e1caaafe866282ced3dc21e4e8ec4dbf122119",
+        "scale-4": "216a9ae2ed939c610a21bf3da1eeacfb9625e79963cabe74973a0707867ebd45"
+      }
+    },
+    "5.3": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "cf3cc88bf1a1b153bda8875dafbb3f0625f265528d1ff072f461059690c9612f",
+        "left": "334c1f34f67cd6623e5e10d0adec47ad73ca89e8470492176fcb476dc320554e",
+        "right": "48ec6a684490a8da142ddb300cc656e047e2226cb1572b6f65cf3788ac9857cb",
+        "scale-0": "83deeb58d12c6d89405b2afbc0dad98e30abf706ee11889454031cd1ae8be4b3",
+        "scale-1": "9ece1c141c2eb8663142b6cd0766707b4ddb35766b35865518f9044f12703195",
+        "scale-2": "95bc379a1d9d6b4031c759c95b29c0d0acc9acdff66642e5e6f69f80de0a7818",
+        "scale-3": "940c6be78b7585d0a590928ca5134e8eab6384959b9c68f6458c12efc48f8856",
+        "scale-4": "1df1d9888c055ade6a25c716233aff74775b84d425ef875646b77b343990f266"
+      }
+    },
+    "6.3": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "a3d33f78989a1870b8322f140d83c2498648429d09b938ab811199dea2d1aa4a",
+        "left": "daee12ac8dcb9cd4c0b1525d35b3f49c21f9015fd96ed74ec4c6858333392361",
+        "right": "56b2f17edc042ff13be6cfaf79d5f50dbbe55c75c79ecf1c5032756f4dc2c29c",
+        "scale-0": "6f3661a7655dc74d4d503e983e23ac42b1248e1919cc5a9ffa441cfa8c2692f0",
+        "scale-1": "e734b341b8f05133b241cc1df32d7eb984c34644caae3c792a319c6a2bcf2f0b",
+        "scale-2": "6b5165919fb21eb7a78b691e6f744c565abc7225bedb05c55fd7706179357667",
+        "scale-3": "d4d9ad14f1de8d85e654ad4e644f1e57bcaae7f7b4d81b5cc576448495bac18a",
+        "scale-4": "29c5cea80fc49c3ea65ec903351cf0fdc787fb2ad1f49bd46c737dbe110c4d5e"
+      }
+    },
+    "7.3": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "5e328ac31b261621bb15eb7a9d4d250b6ba51563c2157feebd993e2c81620469",
+        "left": "ba413088ca2451b3c6429ac8fef3bee698b27314f3b74f7b2b4058b2f8ebe2dd",
+        "right": "ecbfa340297e1085579439f4636494ce7598b96c276ca030a9cd94b87eaa9775",
+        "scale-0": "a3aa368bd550e73d7f3e1ab246e880bf3c0d8087f00c0ddea56986ba0c3d2b93",
+        "scale-1": "d7ab9d66ca31897238331ff605f1b70c634bf015a0d9b8dc78e9424c722efd82",
+        "scale-2": "10b33a746ebfa1576af3dd51d66cf9e0ef6eb1b4705b083ba20b15084ed2179e",
+        "scale-3": "6022c86744e4ca55042b99de23f90ee0014e76adf248115d0a3f200fc5f9c05c",
+        "scale-4": "e1a4b7fda0d71f43a9df3c166cacc9577a5af2cfee32fa6aa1f9ab5cd7be5b2d"
+      }
+    },
+    "8.3": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "3eb0b6a385b85018138932babc0cfd11b50faf31551e2bb60b79523af094454f",
+        "left": "d811673008b5be91c146acd6df0d25db9117429a458fd420a7e83901984da247",
+        "right": "1e7935c943180e142c22e02cf1396d9a57cfe50ec4366339f4a24da05af3be48",
+        "scale-0": "6504e8325ba4e9578572cefa645b31e436b94046a2f5396edf4cada7866765ae",
+        "scale-1": "274c305a012d786fb72a1a845a486bb39393fc170cc3c979aa2f023aeee5f092",
+        "scale-2": "704d740d2e472c273dcfd80792cf8a1d3455d694ac764e31d70680ca9b3e0f31",
+        "scale-3": "745af617ccb7856c238065a8486987fced2bb55c28f62d230a25265f2cd9b634",
+        "scale-4": "f45c316c544d911a83973f99a0c36014cdad38ea44f6647c8412722153d38d09"
+      }
+    },
+    "9.3": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "7b597f819b102208b76af18e9206b4b4610c528533c7c9b4ff67eeabcb06bdbd",
+        "left": "7a5e1dc2d8fab9b24ff569a5dc0aa688daee7d1863d26954d3e681bbb3dfd70f",
+        "right": "254dbc42c23a884f54560ec5c7bc33afbf880794a70e5d142ece223bd84e9b9b",
+        "scale-0": "e88f33dd4743fe0479751dfabbb70596824838bb853027bbb3b0ecbd60183200",
+        "scale-1": "6457772bdf40db7858d10383b4ecb01402a11befe45a60c1d6851ac33499c98d",
+        "scale-2": "51ed0102b1bb4568ee6b8fc17f42674b15a149653f768fd462632a47b899beca",
+        "scale-3": "3f69c9af99727574df3292525245d09a57353f6937469f61fcf880c860bb860e",
+        "scale-4": "879382405a71cba3f827b572416ab73094f865b464b5fe7aa11e10e037e7d916"
+      }
+    },
+    "10.3": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "2ae34e381073792c992103ea31f14daf037e30cea10364d6d41722ea06e9fb75",
+        "left": "a32863323d3db7fb085f011b9b534c77f46fb2728a574322c3f0335b7c8f0578",
+        "right": "ccde027e74dcd084bd1d3237eb9a1f2a9be1a053b5033e18edda776fdb2da0f8",
+        "scale-0": "939eab2db7f7d6ddd3d8fedae64a09b7a6a2965b20be0bb997ffabb471c4d56d",
+        "scale-1": "469e4612cf9b4e290f1aea707b08b57bae2bb55b6e3d46297fad071c831acd92",
+        "scale-2": "aa5ade84670a42815f2cfcc4d32dbc5521d49db4be8824aa1dfdc61da4b43b66",
+        "scale-3": "229d03a719e22bfbbc881490b9cdb2277c309e2a664c4c89a3efc6bc83b40749",
+        "scale-4": "871b3b594aa1f9f452fb0894d27e6ff8f75ab338bbb2347cb12eb59c35ecc2cc"
+      }
+    },
+    "1.4": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "3507ab02aa82406ae0539ddbbb699e5a582750f829e6ee9e5208e0f28c3af47a",
+        "left": "48b0d49de3c369dbe3dbae329c65f64f237c044706cc3d4a0c649e83a4bdbe90",
+        "right": "e29f7af3cb45254e18e44eb473e0cbff2142ac0d24877d840e88aeed1d437aa7",
+        "scale-0": "4f26f36d376e40adf6b822fa687c645306451bdee8511ad70483fa5f09476c3f",
+        "scale-1": "c4d3000196c5a579556a9f2d04c4016ce3bf22063823ff95816e0a3180d3ae36",
+        "scale-2": "7f2113a4e88597cd24f859984ef8b97afc1918f602c7e6e9c02d44e5cd30dfac",
+        "scale-3": "24a99e32ec242982b12542810868c5d7a8ec207d54b45ab9d91600565d015a91",
+        "scale-4": "e3631b20f92334312fe3c5fbc78dfab07150633b88c378c4dd63a22d989c1ad6"
+      }
+    },
+    "2.4": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "44a31eddaf4b3011d8ab3ec9173e531c2379042b3c19808f424b521ba0357b91",
+        "left": "64d815903e44b8e49f38b42898947e51a015b1ddb0115a2aa0c80852c723205d",
+        "right": "e567e54cddd967407e91788a8679a46c0a36759115acf4eed6981a53b6b22b29",
+        "scale-0": "3ce35c3a1e89ce118cbc541359a89105a70155df27d91a5e24fad3300191ecb4",
+        "scale-1": "2b2950e39d830001ffd0ec488cafe95a726c62a82561c0db1c21312cc3eb043d",
+        "scale-2": "cd4007f71759de4a734e88d376f4c761dde1a900f354364d80474201ce8c23a3",
+        "scale-3": "495a33736935298239d449d7cbf2debc47efccfb2b746944bc04d5acaa951d12",
+        "scale-4": "696a521430d250946fcd034c985a6bff7ba2e70f0ec32507a71bbf7a0dec9856"
+      }
+    },
+    "3.4": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "0b6f99db26e9960d3863651d377eb8646165f55dc8947f462fc746353ddcce03",
+        "left": "8ba3cc2180d540387e790c8c8810814a569d94d644dc82ae7fb9994958db95cb",
+        "right": "f9ec6f6c12a429890866b69036e62b563706be6c93d0d17f14b710c1004f6c99",
+        "scale-0": "66fbc7c5c04c39d6b99a3f1ca417256d987884fa5a740dd875b2b4f7915d6549",
+        "scale-1": "54750b50d402767337b7cf1dff335613c09e4c617f041173ea87f618568dbcb3",
+        "scale-2": "c62d655600a9f14b3f37f5d3fb92efbaf4f6b08b35b2cfb72841fa0d6ee5b531",
+        "scale-3": "43f8700d9412a5de8f9c2315e4d1280906cb29b44456271bb399c4717355d98a",
+        "scale-4": "3feb75518d57356183d670efd7459c8e3a9da6eeb090382828d101b2def51099"
+      }
+    },
+    "4.4": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "4b779fa86f0b938072d487818c0d5540e7f5e39d1c43df62f574475840bf6b19",
+        "left": "a7154c0019ad7bfd78be2159378375ed57a0211bd87e3b314e9c4e32ea16397c",
+        "right": "dbade61be334c16b7108414c2f71a221aa4bc41754dc6a30c2fe1068bfd77745",
+        "scale-0": "1856aa929877b0d4806835185bccc328b92cb90ff69433073e141772ebb47c44",
+        "scale-1": "e0033b04c32cfe93abfecf42b35461fed5753efd4ffec33c7204c6390c771d92",
+        "scale-2": "520d735669137647fe157ed915bb77121ab4137b3df8fc7534b3432df6ebdabe",
+        "scale-3": "bf267ee5ad885be0a08aa9c1217b8b3c68eecdabc3984315cd3ead61c3733ed0",
+        "scale-4": "5f272328f6783c85552f8bc13350b4efac3759e55ceefb4593d70955558c573e"
+      }
+    },
+    "5.4": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "9ae88dbfe0eb1b4a55a325271139a409f86a4d166f29b26c4c0881c344ae45a2",
+        "left": "e6704f7f4c123452dce7b64bbc6b426388eed0a4bfc08d47a1e18ac831a851e2",
+        "right": "bf4548f8dbfa91be4976c6b91da142444cba1cc11b854ef46bc3493af799cd81",
+        "scale-0": "67cd707d72c62c7bb9d0aa76fc78db28778b9ccd7cae76030f644eb9a07ac58a",
+        "scale-1": "0ab96338995c80edf2685bb9188d23917ebb4ecfd440306d9df720669546ec97",
+        "scale-2": "e325ad4708de8bfe8af2c0bad996aa024443829fb79306cc9cec21be2c4cb0a2",
+        "scale-3": "f086669d2f1d5f27a1b494ec273a5e6cfee0d78cdb7b746f6cc08f70d2e33416",
+        "scale-4": "ff3251ed228741167354d0f21fb533002fc8680363ac02f0763758d877289afc"
+      }
+    },
+    "6.4": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "e5587b35525737bd09559af590d2e52eb68563975990ecb53c9b62d42acbdb0b",
+        "left": "84675fe376d828b95d260c72954d9d0f477e0abb11202c7ec8ee44b300365572",
+        "right": "2110b422b0a4153f6dab76b541246479e4c2fdfb0be08419419e840850a57925",
+        "scale-0": "739c4ae764538c81cc6b77cc11ed0ea36f7c7880900382d8991203ea973e0858",
+        "scale-1": "91470b2ed99b0c50f7c4df09b6dd857e42027ba4c7651a2e761bf3aed29f4fd6",
+        "scale-2": "429a0fbb6cad4f66a1820bdde6a1705ed2da87efa7b454d77d99ebfeee7014e8",
+        "scale-3": "2e5b2a87672988c102b934277f25f9d77d23aefe4d23cdebf3972ed0e75c028f",
+        "scale-4": "05d772d7a21dd16545cfc8449f04a5b49a96d5a777c7463f226579923f34b620"
+      }
+    },
+    "7.4": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "f21e96cce2dc7616bb8f0720db59fcafa46aef0bc3c7f9e498451da15c36d6cd",
+        "left": "970ce97812d24d9c88f6fd966a0b76231f6b0bfd42a8b58a1d7084dc1b7fe4e3",
+        "right": "e09e4dfbe0b34fad7b16162368f3f62f3bc288fd9490b11681ef1a58b65cc4aa",
+        "scale-0": "253a656d36d5349171cd53be0b1aa35be46df48ce75cafa1d0e46a2ed552d3c0",
+        "scale-1": "a404306e2a1fde85ea5a46482977bbaefeee0bea8838ece60819dc9f5a1fd52f",
+        "scale-2": "5980f1c413e83ab2b5404f3622361b2df772659da3090b9377950032f1ca8b24",
+        "scale-3": "b3233993d7443ca24d6e525de3efa1dd0fa9f2e00ab12bab42799898dff2377b",
+        "scale-4": "5f58238c912a91690cb6878b793e713ae431522611639dd3f1ae2ed5b881e00f"
+      }
+    },
+    "8.4": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "7239e2e744579820ddb22fb2706b3f30a2c9dd9455e3eca8040c9f862c9560a3",
+        "left": "dc584ca5bcd225b9be50c1c142093283b94dcae805835a550705d57e93a54e6c",
+        "right": "b5ac279afc4006043a5942677e37175acd1fdae7a0fc6eb90011b7424847f4f8",
+        "scale-0": "48e0e571082c57cf5062166fbddf9a42d20d17fd3f90e1de9350fa75b6b02c2f",
+        "scale-1": "21743731093af9371a492397621ca89097f21eed11f9099c44612ea0afea9b47",
+        "scale-2": "7e0d6a9b83b74ea964efd9ad98573c46dac5998b3b1a4bfcc899bf873cc3c465",
+        "scale-3": "ae450554e0e397d4d05710e2a2f6fc8acf47441a145e41b52750aa067914a5c2",
+        "scale-4": "162c45732ad56b7466eed952d6f5b920b5b77ac6cea02dd7e4bbd1a23c46391c"
+      }
+    },
+    "9.4": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "d100f0a1498832905aa038f8cd9ab7a4ac254a42087d7753e1bc9a48a2a1fb0e",
+        "left": "5de2e251ef379c044f108f7b57a3eb026895ce6fa65fbb76f7430697e904cbb2",
+        "right": "645abd395669e6bd90b7ff6aca0a3f16d97ca0d3eeb19c0444ba22e648e541ee",
+        "scale-0": "8298e340ebed22ea2374445a3207ab3f4ef597cf888255434605ca1eafe437bb",
+        "scale-1": "20e43643cee38c6d15d6621969f14e60423cab4bfa8d5685209fd3c71a7f4680",
+        "scale-2": "0bb5bd48ec094b298901bff9fd6809e69715377da002ac984eece33d5bca605c",
+        "scale-3": "400bac4a8c657f49713f8f5a877c6b3dc18f3af1c8defdca6d19ecb7197ed3ac",
+        "scale-4": "f82dd528080540f2c1ef63dde61d0d74cb9fd78e8e2a7c3cb302ec4b7d8e9d73"
+      }
+    },
+    "10.4": {
+      "status": "accepted",
+      "method": "Visual review of all eight images together against the question and A/B direction; targeted replacements re-reviewed.",
+      "sourceSha256": {
+        "scene": "33e0a15f35fc8a6663fecb6c3ee9bfe60d86bae349a6d11b8a59d19e58a79563",
+        "left": "e8af67774992934d2adf51d8df8dbf490a3c116fec98eca9e5be926c5580d493",
+        "right": "20d6dcc577d3ae610877cfff098183f30b639ffe1aacfcc0455645b1d0429f8c",
+        "scale-0": "a5698bb7a890442b250ec2d140d8d942ccf863b226098f92289ef72f19d7ea0d",
+        "scale-1": "2cd76430f3541b4dcdb8647b31c263a434420186fe88d2ac27a39b00db7accb8",
+        "scale-2": "0701ef1103f961dcecf1d2ab349c545c0e964fdb90e5fb0b19612453520b10f5",
+        "scale-3": "596d78badbb912bad3b51bd9d3171803c9d798424db9498f516ffe83b799d3ab",
+        "scale-4": "9ecb27e080adb69a4b7f589a15d25b5a19640d10b6543202fc93b58299d3bdc0"
+      }
+    }
+  }
+}

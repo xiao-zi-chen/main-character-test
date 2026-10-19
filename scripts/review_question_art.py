@@ -4,7 +4,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 root=Path(__file__).resolve().parent.parent
-production=json.loads((root/'content/question-art-five-prompts.json').read_text(encoding='utf-8'))
+production=json.loads((root/'content/question-art-production.json').read_text(encoding='utf-8'))
 stage=root/'public/question-art'
 output=root/'docs/assets'
 output.mkdir(exist_ok=True)
@@ -24,5 +24,5 @@ for start in range(0,len(ready),5):
                 image.thumbnail((288,160))
                 canvas.paste(image,(column*288,row*210+30))
             draw.text((column*288+8,row*210+6),question['id']+' / '+kind,font=font,fill='#23372d')
-    canvas.save(output/f'question-art-v7-overview-{start//5+1}.jpg',quality=92)
+    canvas.save(output/f'question-art-overview-{start//5+1}.jpg',quality=92)
 print(f'Review sheets contain {len(ready)} complete questions ({len(ready)*8} images).')

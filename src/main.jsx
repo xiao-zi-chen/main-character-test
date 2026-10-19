@@ -19,6 +19,7 @@ import { DestinyRadar } from './visuals/Cinematic.jsx';
 import { durationLabel, mediaAsset } from './media.js';
 import { questionCopy } from './data/question-copy.js';
 import { QuestionArt } from './components/QuestionArt.jsx';
+import { ReactionPreview } from './components/ReactionPreview.jsx';
 import { ShareDialog } from './components/ShareDialog.jsx';
 import { questionReactions } from './data/question-reactions.js';
 import { preloadQuestionArt, preloadQuestionReactions } from './question-art.js';
@@ -69,10 +70,14 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
   const heading = useRef(null);
   const [submitError, setSubmitError] = useState('');
   const [collectionRecovery, setCollectionRecovery] = useState(null);
+  const [reactionPreview, setReactionPreview] = useState(null);
+  const previewSequence = useRef(0);
+  const closeReactionPreview = useCallback(() => setReactionPreview(null), []);
   const choose = useCallback(value => {
     setQuiz(old => ({ ...old, answers: { ...old.answers, [old.questionIds[old.index]]: value }, submitted: false }));
+    setReactionPreview({ questionId: question.id, value, sequence: ++previewSequence.current });
     return true;
-  }, [setQuiz]);
+  }, [setQuiz, question.id]);
   const next = useCallback(() => {
     if (!isAnswer(selected) || collectionRecovery) return;
     setSubmitError('');
@@ -119,6 +124,7 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
   }, [questionIds]);
   useLayoutEffect(() => { window.NBTICollector?.show(question.id); }, [question.id]);
   useEffect(() => { heading.current?.focus({ preventScroll: true }); }, [index]);
+  useEffect(closeReactionPreview, [question.id, closeReactionPreview]);
   useEffect(() => { preloadQuestionArt(questionIds[index + 1]); }, [index, questionIds]);
   useEffect(() => { preloadQuestionReactions(question.id); }, [question.id]);
   useEffect(() => {
@@ -142,6 +148,7 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
         <div className="question-content" key={question.id}><span className="question-kicker">主角请就位 · 你的第 {index + 1} 个选择</span>
           <div className="question-scene"><QuestionArt id={question.id} kind={isAnswer(selected) ? `scale-${selected}` : 'scene'} alt={isAnswer(selected) ? `你的反应：${questionReactions[question.id][selected].caption}` : '这一次，你在故事里'} priority zoomable/><h1 id="question-title" ref={heading} tabIndex={-1}>{question.prompt}</h1></div>
           <AnswerScale value={selected} options={question.options} onChoose={choose} questionId={question.id}/>
+          {reactionPreview?.questionId === question.id && <ReactionPreview key={reactionPreview.sequence} questionId={question.id} value={reactionPreview.value} onClose={closeReactionPreview}/>}
         </div>
         {submitError && <div className="quiz-submit-error" role="alert"><p>{submitError}</p>{collectionRecovery && <button className="text-button" onClick={collectionRecovery === 'reload' ? () => window.location.reload() : onRestart}>{collectionRecovery === 'reload' ? '重新加载页面' : '重新开始测试'}<RotateCcw size={14}/></button>}</div>}
         <div className="question-actions"><button className="text-button" disabled={index === 0 || Boolean(collectionRecovery)} onClick={previous}><ArrowLeft size={16} /> 上一题</button><button className="button button-lime" disabled={!isAnswer(selected) || Boolean(collectionRecovery)} onClick={next}>{index === SESSION_SIZE - 1 ? '揭晓我的主角' : '下一幕'}{index === SESSION_SIZE - 1 ? <Sparkles size={18} /> : <ArrowRight size={19} />}</button></div>

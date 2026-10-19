@@ -9,5 +9,6 @@ __pycache__/
 .env.*
 !.env.example
 *.log
+output/imagegen/chatanywhere-image25/
 交付/
 H3生成结果_*/

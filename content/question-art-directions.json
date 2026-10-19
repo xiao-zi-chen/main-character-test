@@ -1,42 +1,362 @@
 {
-  "1.1": {"id":"watercolor-travel","label":"旅行水彩","family":"watercolor","medium":"Transparent watercolor on white cold-pressed paper, loose architectural washes, fine pencil contours, airy travel sketchbook illustration. Visible paper grain, luminous white highlights, not a digital cartoon.","protagonist":"a young woman with a long auburn braid, round spectacles, a mustard yellow raincoat and navy jeans","palette":"cobalt blue, lemon yellow, white paper and terracotta","setting":"a leafy seaside neighborhood with small independent shops"},
-  "2.1": {"id":"clay-desk","label":"黏土定格","family":"clay","medium":"Photographed handmade clay stop-motion miniature. Rounded sculpted human puppets, visible fingerprints on matte plasticine, tiny tactile furniture, soft studio light and shallow depth of field. Truly three-dimensional, not drawn.","protagonist":"a clay young man with tightly curled dark hair, a plum purple sweatshirt and cream trousers","palette":"lavender, apricot, cream and plum","setting":"a compact attic home office with sloped windows and tiny handcrafted props"},
-  "3.1": {"id":"pop-comic","label":"波普美漫","family":"comic","medium":"Bold American pop comic illustration, thick black contour ink, vivid flat colors, halftone Ben-Day dot shading, energetic but readable facial acting. No speech balloons or lettering.","protagonist":"a young Black woman with a high curly ponytail, red varsity jacket and white shirt","palette":"signal red, cyan, bright yellow and deep black","setting":"a lively retro diner with checked flooring and round cafe tables"},
-  "4.1": {"id":"pixel-savepoint","label":"像素游戏","family":"pixel","medium":"Authentic 16-bit pixel art, clearly visible square pixel clusters, limited color palette, crisp stair-step silhouettes, retro adventure-game backgrounds, absolutely no smooth painted gradients or realistic rendering.","protagonist":"a young man with spiky silver hair, a cobalt blue hoodie and orange headphones","palette":"indigo, electric blue, orange and lilac","setting":"a compact gaming lounge with a console, CRT screen and beanbag chairs"},
-  "5.1": {"id":"fashion-marker","label":"时装马克笔","family":"marker","medium":"Editorial fashion drawing in alcohol marker and fine black pen. Confident sketchy lines, translucent marker streaks, elegant elongated human figures, large clean color fields on ivory paper.","protagonist":"a tall young woman with a straight black bob, a bright magenta blazer and wide white trousers","palette":"fuchsia, ivory, charcoal and pale blush","setting":"a modern rooftop gathering with tall windows and a snack bar"},
-  "6.1": {"id":"risograph-progress","label":"双色孔版印刷","family":"print","medium":"Two-color risograph print on uncoated paper. Blue and vermilion ink layers, visible misregistration, grainy flat silhouettes, simple expressive human faces, deliberate graphic composition.","protagonist":"a young man with wavy shoulder-length hair, a striped polo shirt and an orange knit cap","palette":"vermilion, ultramarine and off-white paper only","setting":"a small contemporary studio with a wall pinboard and desk plants"},
-  "7.1": {"id":"sunlight-film","label":"日光胶片摄影","family":"photography","medium":"Natural live-action 35mm color film photographs of a real human, candid lifestyle editorial, realistic skin texture and anatomy, sunlight on linen, gentle film grain. Not illustration, not anime, not 3D animation.","protagonist":"a woman in her early thirties with dark hair in a messy bun, a pale blue linen blouse and loose white trousers","palette":"sky blue, white linen, honey sunlight and natural wood","setting":"a bright apartment with large windows, a low sofa and a painting desk"},
-  "8.1": {"id":"art-nouveau-cafe","label":"新艺术装饰画","family":"decorative","medium":"Art Nouveau illustrative panels with elegant flowing contours, stylized botanical shapes integrated into the setting, flat jewel colors, delicate decorative linework and graceful human figures. No poster titles or outer ornamental border.","protagonist":"a young woman with flowing chestnut hair, a deep burgundy dress and a small pearl necklace","palette":"burgundy, peacock blue, antique gold and cream","setting":"a cafe with curved woodwork, floral glass and a riverside walkway"},
-  "9.1": {"id":"ink-family","label":"国风水墨设色","family":"ink","medium":"Contemporary Chinese ink-and-wash painting on textured rice paper. Expressive black brush lines, translucent vermilion and blue washes, generous unpainted white areas, restrained natural human faces. No calligraphy, seals or text.","protagonist":"a young man with cropped black hair, a rust-red knit sweater and dark trousers","palette":"ink black, vermilion, muted blue and rice-paper white","setting":"a modern Chinese home with walnut furniture, a reading chair and round family dinner table"},
-  "10.1": {"id":"layered-paper-craft","label":"立体剪纸","family":"paper","medium":"A photographed layered cut-paper diorama. Every person, desk and object is made from precisely cut colored paper, visible paper edges, overlapping layers and cast shadows. Flat paper faces with simple eyes, rich dimensional construction.","protagonist":"a young paper-cut woman with two black braids, a turquoise apron and a coral long-sleeve top","palette":"turquoise, coral, ochre and cream","setting":"a craft workroom made of folded paper with tidy shelves of materials"},
-  "1.2": {"id":"lowpoly-video","label":"低多边形三维","family":"lowpoly","medium":"Low-poly 3D illustration with obvious faceted polygonal surfaces, angular human characters, simple geometric furniture, ambient occlusion and soft directional light. No drawn outlines, no smooth photoreal faces.","protagonist":"a young man with an angular dark-blue undercut, an orange T-shirt and slate shorts","palette":"burnt orange, slate blue, pale gray and soft cyan","setting":"a minimal apartment with angular furniture and a large modular sofa"},
-  "2.2": {"id":"midcentury-travel","label":"复古旅行海报","family":"poster","medium":"Mid-century screen-printed travel illustration, strong simplified geometric architecture, flat graphic human silhouettes, limited spot colors, subtle printing texture. Absolutely no poster captions or lettering.","protagonist":"a young woman with a short chestnut pixie haircut, a navy trench coat and scarlet shoulder bag","palette":"navy, tomato red, cream and powder blue","setting":"a walkable tram neighborhood with a cozy corner cafe"},
-  "3.2": {"id":"charcoal-conversation","label":"炭笔素描","family":"drawing","medium":"Expressive charcoal and white-chalk figure drawing on gray paper. Hand-smudged tonal masses, crisp charcoal accents, realistic human anatomy, sensitive faces, entirely grayscale, visible textured paper.","protagonist":"a man in his thirties with round glasses, a close-cropped beard and a plain dark cardigan","palette":"charcoal black, gray paper and white chalk only","setting":"an intimate quiet tea room with soft window light"},
-  "4.2": {"id":"fauvist-gathering","label":"高彩油画","family":"oil","medium":"Vibrant modern figurative oil painting with thick palette-knife impasto, expressive visible brushstrokes, saturated nonliteral colors and clear readable gestures. Painterly canvas surface, not cartoon line art.","protagonist":"a woman with short copper curls, a turquoise blouse and yellow earrings","palette":"cobalt, orange, turquoise and acid yellow","setting":"a colorful sunroom with friends around a low coffee table"},
-  "5.2": {"id":"collage-gallery","label":"拼贴画","family":"collage","medium":"Handmade editorial collage from torn colored paper and cropped photographic textures. Cut-out human faces and garments, rough torn edges, playful asymmetrical composition, no text scraps or newspaper lettering.","protagonist":"a young man with dark curly hair, a cobalt overshirt and beige trousers","palette":"cobalt, coral pink, kraft brown and white","setting":"a contemporary art gallery with framed flower paintings and blank walls"},
-  "6.2": {"id":"clearline-comic","label":"欧式清线漫画","family":"comic","medium":"European clear-line comic drawing, precise uniform fine black outlines, flat bright colors without hatching, detailed readable environments, expressive natural human faces. No text or speech balloons.","protagonist":"a young woman with a strawberry-blonde ponytail, a cherry red turtleneck and denim overalls","palette":"cherry red, sky blue, butter yellow and clean white","setting":"a small neighborhood drawing class with wooden worktables"},
-  "7.2": {"id":"cel-animation","label":"赛璐璐动画","family":"animation","medium":"Hand-painted 1990s cel animation stills, clean expressive anime faces, crisp two-tone cel shadows, detailed painted backgrounds, subtle analog film texture. Distinct traditional animation production design.","protagonist":"a young man with navy-black hair tied in a short ponytail, an ivory shirt and a red artist apron","palette":"deep red, ivory, muted violet and sky blue","setting":"a personal art studio with an easel, colored paper and a broad daylight window"},
-  "8.2": {"id":"isometric-maps","label":"等距微缩模型","family":"diorama","medium":"Macro photograph of ONE handcrafted clay miniature character at a simple tabletop. Elevated three-quarter close view of the expressive face and oversized hands, tactile matte painted clay, clean soft studio shadows, a completely plain cream backdrop. One single continuous scene; no inset or background map, no printing or typography.","protagonist":"a miniature woman with a black topknot, a tangerine jacket and white sneakers","palette":"tangerine, teal, sand and white","setting":"a tiny mapmaker's home studio with miniature hills and route maps on a large desk"},
-  "9.2": {"id":"needlefelt-home","label":"羊毛毡定格","family":"felt","medium":"Handmade needle-felt wool puppet photography. Soft fuzzy fibers visible on human puppet faces, clothes and furniture, tiny stitched details, cozy stop-motion set lighting. Material must clearly be fuzzy wool, not smooth clay.","protagonist":"a felt young woman with dark yarn hair in a bun, a lilac cardigan and a mustard skirt","palette":"lilac, mustard, dusty pink and oatmeal","setting":"a cozy wool-felt living room with a sofa, separate armchair and a knitted rug"},
-  "10.2": {"id":"neon-street-film","label":"霓虹都市摄影","family":"photography","medium":"Cinematic live-action night street photography, realistic human, rain-polished pavement, luminous cyan and coral shop lights, deep shadows, sharp skin texture with soft bokeh. No illustrations or cartoon faces.","protagonist":"a young woman with a chin-length silver bob, a charcoal coat and a bright coral scarf","palette":"cyan neon, coral neon, deep navy and rain-gray","setting":"a contemporary city street at blue hour, parcel counter and a glowing flower shop; no legible signage"},
-  "1.3": {"id":"colored-pencil-debate","label":"彩铅速写","family":"pencil","medium":"Hand-drawn colored-pencil illustration on ivory sketch paper, overlapping pencil hatch marks, soft uneven outlines, delicate human portrait detail, visibly dry wax-pencil texture.","protagonist":"a young woman with dark curly hair and round brass glasses, wearing a lavender knit vest over a white blouse","palette":"lavender, sepia, leaf green and ivory","setting":"a small book cafe with mismatched chairs and generous natural light"},
-  "2.3": {"id":"manga-night","label":"黑白日漫","family":"manga","medium":"Black-and-white manga pages with controlled fine ink linework, crisp black shapes, screentone gradients and expressive but natural human faces. Monochrome only, no captions, no speech bubbles.","protagonist":"a young man with straight black hair falling over one eyebrow, a striped pajama shirt and dark lounge trousers","palette":"pure black, white and gray screentone only","setting":"a compact bedroom at night with a travel bag, bedside lamp and alarm clock"},
-  "3.3": {"id":"geometric-editorial","label":"几何扁平插画","family":"flat","medium":"Bold contemporary geometric editorial illustration. Simplified human figures built from clean shapes, oversized expressive hands, flat solid colors, no painterly texture, no 3D shading, crisp edges.","protagonist":"a young Black man with close-cropped hair, a coral jacket and a navy T-shirt","palette":"coral, navy, mint and pale peach","setting":"an open coworking room with a simple rectangular collaboration table"},
-  "4.3": {"id":"cyanotype-mystery","label":"蓝晒插画","family":"cyanotype","medium":"Cyanotype-inspired photographic illustration, deep Prussian blue silhouettes and white illuminated details on textured blue paper, poetic photographic contours, visible chemical-print texture. Blue and white only, not regular color cartoon.","protagonist":"a woman with a high ponytail, round glasses and a white button-up shirt","palette":"Prussian blue, pale cyan and white only","setting":"a quiet desk by a window, a phone and geometric puzzle notes"},
-  "5.3": {"id":"soft-3d-animation","label":"柔光三维动画","family":"3d-animation","medium":"High-quality stylized 3D animated-film stills, appealing rounded adult human characters, sculpted hair, detailed fabric materials, soft subsurface lighting and cinematic depth. No 2D painted outlines.","protagonist":"a young woman with a voluminous dark curly bob, a sunflower yellow bomber jacket and white sneakers","palette":"sunflower yellow, aqua, cream and soft plum","setting":"a bright modern coffee shop entrance with glass doors and potted plants"},
-  "6.3": {"id":"duotone-photography","label":"黑白街拍人物","family":"photography","medium":"Black-and-white documentary lifestyle photography of a real adult human, strong window light, rich silver-gelatin tones, candid expression, realistic skin and clothes, subtle photographic grain. No illustration.","protagonist":"a man in his thirties with a shaved head, dark rectangular glasses and a white ribbed sweater","palette":"silver black, pearl white and neutral grays only","setting":"a modest modern apartment with a phone, notebook and a small creative workbench"},
-  "7.3": {"id":"wooden-puppet","label":"木偶微缩片场","family":"wood","medium":"Photographed hand-carved wooden human puppets in a miniature workshop. Visible wood grain, simple painted eyes, articulated joints, tiny fabric clothes and warm cinematic practical light. Clearly real wooden objects.","protagonist":"a wooden young man puppet with carved brown hair, a brick-red fabric vest and cream sleeves","palette":"walnut brown, brick red, cream and muted blue","setting":"a tiny architectural craft workshop with a model house, model boat and loose planning cards"},
-  "8.3": {"id":"blueprint-linework","label":"技术蓝图插画","family":"technical","medium":"Elegant architectural blueprint drawing with fine white and cyan technical linework on deep blue paper. Human figures and furniture drawn as precise outlined forms, a few orange accents, no numbers or annotations.","protagonist":"a woman with a short asymmetrical haircut, an orange work jacket and rolled-up sleeves","palette":"blueprint navy, cyan, white and small orange accents","setting":"a maker workshop with worktables and rows of small storage boxes"},
-  "9.3": {"id":"gouache-food","label":"美食广告水粉","family":"gouache","medium":"Playful hand-painted food editorial in opaque gouache, broad brush shapes, creamy paint texture, friendly rounded human faces, exaggerated appetizing food colors, bold simple compositions.","protagonist":"a young woman with long dark hair in a low braid, a white T-shirt and bright orange dungarees","palette":"tomato orange, peach, turquoise and cream","setting":"a small breakfast nook with a single diner, a noodle bowl and a phone"},
-  "10.3": {"id":"embroidery-festival","label":"刺绣布艺","family":"textile","medium":"Hand-embroidered textile illustration photographed in detail. Every human and object rendered in colored thread and fabric applique, visible stitch direction and linen weave, tidy stitched faces, soft textile relief.","protagonist":"a young embroidered man with black thread hair, a vivid blue jacket and a yellow backpack","palette":"royal blue, yellow, red thread and natural linen","setting":"a cheerful community arts venue with music, crafts and small picture displays"},
-  "1.4": {"id":"pastel-city","label":"粉彩城市画","family":"pastel","medium":"Soft oil-pastel illustration on rough dark paper, luminous chalky color blocks, confident loose contours, textured atmospheric city scenes and warm expressive people.","protagonist":"a young woman with a high auburn bun, a cream trench coat and a violet scarf","palette":"violet, cream, brick orange and midnight blue","setting":"an unfamiliar city street with a modern casual restaurant and a tiny local noodle kitchen"},
-  "2.4": {"id":"fashion-magazine-photo","label":"清爽生活摄影","family":"photography","medium":"Bright high-key editorial lifestyle photography, real adult human, crisp white interior, natural skin, subtle soft shadows and clean composition. Magazine photo quality, no drawing, no clay, no CGI.","protagonist":"a young East Asian man with wavy dark hair, a salmon pink polo shirt and cream trousers","palette":"white, salmon pink, light oak and soft blue","setting":"a bright white apartment with a pale sofa, simple calendar and headphones"},
-  "3.4": {"id":"linocut-advice","label":"套色木刻版画","family":"woodcut","medium":"Two-ink linocut woodblock print. Strong carved black contour shapes, visible gouged hatching, rough print texture and a second ochre ink layer. Stylized human figures with clearly readable pointing and listening gestures.","protagonist":"a woman in her thirties with shoulder-length wavy hair, an ochre blouse and dark vest","palette":"ink black, ochre and natural cream paper only","setting":"a small cafe table with a fragile paper tower model and tea cups"},
-  "4.4": {"id":"surreal-cinema","label":"超现实电影插画","family":"surreal","medium":"Surreal cinematic matte-painting illustration with realistic adult figures, deep dreamlike perspective, glowing colored light and imaginative floating forms only when specified. Rich dark theatrical atmosphere, not cozy storybook art.","protagonist":"a young man with a silver streak in black hair, a midnight blue velvet jacket and a white scarf","palette":"midnight blue, plum, moonlight silver and electric amber","setting":"a small art-house cinema lobby at night with plain glowing panels and no writing"},
-  "5.4": {"id":"retro-anime-train","label":"复古动画电影","family":"animation","medium":"Retro hand-painted anime film stills with delicate realistic proportions, soft cel shading, atmospheric detailed train backgrounds, gentle analog film grain and contemplative human acting.","protagonist":"a young woman with a long dark ponytail, a burgundy cardigan and a cream dress","palette":"burgundy, sage-gray seats, cream and soft landscape blue","setting":"a sunlit regional train carriage with large windows and passing countryside"},
-  "6.4": {"id":"toy-brick-team","label":"积木人偶场景","family":"toy","medium":"Photographed interlocking toy-brick diorama with original block-shaped human mini figures, plastic studded surfaces, articulated toy hands, clean high-detail macro photography and soft studio shadows. No brands or logos.","protagonist":"an original blocky human toy figure with dark plastic hair, a purple torso and tan legs","palette":"purple, turquoise, yellow and light gray plastic","setting":"a toy-brick creative workshop with a collaborative tabletop construction"},
-  "7.4": {"id":"botanical-sketch","label":"植物手账速写","family":"botanical","medium":"Delicate botanical sketchbook illustration mixing fine sepia pen, restrained green watercolor and precisely drawn human figures. Detailed leaves and park plants, generous cream-paper negative space, no written notes.","protagonist":"a young woman with a long black braid, a pale pink cardigan and a brown linen skirt","palette":"botanical green, dusty rose, sepia and cream","setting":"a leafy public garden with a wooden bench and branching paths"},
-  "8.4": {"id":"landscape-oil","label":"山野风景油画","family":"landscape","medium":"Plein-air landscape oil painting on coarse canvas. Visible broken brush strokes, expansive hills and moving cloud light, a small naturalistically painted human figure in the landscape, muted realistic colors.","protagonist":"a hiker in their thirties with short dark hair, a bright orange windbreaker and a blue daypack","palette":"sky blue, grass green, cloud white and orange","setting":"a spacious green hillside where a paved village road and a narrow wildflower trail diverge"},
-  "9.4": {"id":"cinema-noir","label":"黑金电影感","family":"noir","medium":"Stylized noir film photography of real human adults, high-contrast black shadows, warm golden practical lights, cinematic night reflections, realistic skin and fabric, subtle film grain. Restrained gold and black treatment, not illustration.","protagonist":"a young man with neatly combed dark hair, a camel overcoat and a black turtleneck","palette":"golden amber, black, warm gray and pale highlights","setting":"a city cafe and a quiet lamplit street after an evening gathering"},
-  "10.4": {"id":"ceramic-porcelain-world","label":"陶瓷釉面三维","family":"ceramic","medium":"A miniature world made of glazed ceramic figurines and hand-thrown pottery, photographed with gentle reflections. Shiny porcelain human faces, rounded glazed hair, tactile clay props and soft studio lighting, clearly sculptural ceramic material.","protagonist":"a ceramic young woman figurine with glossy dark hair in two small buns, a cobalt blue apron and white sleeves","palette":"cobalt blue, porcelain white, terracotta and soft jade","setting":"a pottery studio with a worktable, unfinished clay bowl and sculptural planter"}
+  "1.1": {
+    "id": "chinese-daily-1-1",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 27, oval face, straight black hair in a low ponytail, an ivory T-shirt, teal cotton overshirt and dark jeans",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "A contemporary Chinese neighborhood tea cafe adjoining a pottery workshop. LEFT: a simple wooden chair and a small table with a white lidded tea cup. RIGHT: a low pottery wheel, wet reddish clay and a stool. Keep both areas visible in one continuous real room. Only the protagonist is present."
+  },
+  "2.1": {
+    "id": "chinese-daily-2-1",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 26, short softly curled black hair, navy cotton polo shirt and khaki trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "A small Chinese apartment workspace. LEFT: laptop, worksheets and a finished-work tray. RIGHT: acoustic guitar on a stand beside a relaxed chair. One person only. No readable screens or writing."
+  },
+  "3.1": {
+    "id": "chinese-daily-3-1",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 27, shoulder-length black hair tied half up, brick-red casual shirt and dark trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "FOUR Chinese friends at a round cafe table. The protagonist in red, storyteller in blue, two listeners in beige and green. Keep these people and clothing distinct. A simple small travel photograph lies on the table, no writing."
+  },
+  "4.1": {
+    "id": "chinese-daily-4-1",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 25, slightly tousled short black hair, muted cobalt hoodie and gray sweatpants",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "Two Chinese friends on a modest apartment sofa with game controllers and a television showing a simple game landscape without interface text. The friend wears a beige T-shirt. No floating fantasy objects."
+  },
+  "5.1": {
+    "id": "chinese-daily-5-1",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 29, straight shoulder-length black hair, muted rose blazer over a white top and dark jeans",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "A casual Chinese friend's apartment gathering with FOUR distinct adult guests near a snack table. A quiet chair is at the left edge; people chat toward the right. Ordinary fruit, tea and snacks, no alcohol emphasis."
+  },
+  "6.1": {
+    "id": "chinese-daily-6-1",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 30, medium-short wavy black hair, dark green knit polo and black trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "One person at a modest Chinese home craft desk. A phone shows a friend's beautifully finished ceramic vase; a real unfinished clay bowl, sponge and pottery tools sit on the desk. No other people or text."
+  },
+  "7.1": {
+    "id": "chinese-daily-7-1",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 32, black hair in a casual low bun, pale blue linen shirt and soft beige trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "One person in a sunny Chinese apartment. LEFT: comfortable sofa, tea and a magazine. RIGHT: a desk with a cherished unfinished watercolor and brushes. Both areas visible in one real room."
+  },
+  "8.1": {
+    "id": "chinese-daily-8-1",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 29, long straight black hair, warm cream cardigan and a muted burgundy dress",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "Exactly TWO Chinese adults, protagonist woman and a short-haired man in navy jacket and ivory shirt, in a quiet contemporary cafe opening onto a riverside walkway. Keep this same couple and outfits throughout."
+  },
+  "9.1": {
+    "id": "chinese-daily-9-1",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 29, short black hair, clean-shaven oval face, a burgundy knit sweater, navy trousers and indoor slippers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "One continuous Chinese family apartment living and dining room. LEFT: a gray-green reading armchair, open book and reading lamp. RIGHT: a round wooden dinner table with rice bowls, chopsticks, steamed dishes, three Chinese relatives: gray-haired grandmother in purple, grandfather in blue, younger sister in mustard. They stay at the table. The red-sweater protagonist appears exactly once."
+  },
+  "10.1": {
+    "id": "chinese-daily-10-1",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 26, two low black braids, muted red long-sleeve shirt and teal cotton apron",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "ONE adult at a home craft desk with colored paper, scissors, glue and a simple wordless drawing of a PAPER HOUSE. Materials for free experimentation are at the other side."
+  },
+  "1.2": {
+    "id": "chinese-daily-1-2",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 25, short textured black hair, round face, a muted rust cotton T-shirt and gray lounge trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "A small Chinese apartment sofa and low table. A tablet offers two large wordless video thumbnails: a familiar Chinese family drama portrait on the LEFT and an unfamiliar planet documentary on the RIGHT. No other people in the room."
+  },
+  "2.2": {
+    "id": "chinese-daily-2-2",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 29, straight black pixie cut, navy trench jacket and red-brown shoulder bag",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "A Chinese residential doorway, a simple wristwatch and a small neighborhood cafe with an empty meeting chair. Show only the protagonist; there is no friend yet. Ordinary city surroundings and no readable signage."
+  },
+  "3.2": {
+    "id": "chinese-daily-3-2",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 33, short black hair, rectangular glasses, charcoal cardigan and ivory shirt",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "Two Chinese friends at a simple tea table in a modest apartment. The protagonist has a diagram made of wooden geometric blocks; the friend in pale blue looks upset. Two cups of tea sit nearby, no writing."
+  },
+  "4.2": {
+    "id": "chinese-daily-4-2",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 34, wavy shoulder-length black hair, soft teal blouse and cream trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "FOUR Chinese adult friends at a simple tea table, protagonist in teal and friends in beige, blue and muted coral. A relaxed pause in conversation, cups on the table."
+  },
+  "5.2": {
+    "id": "chinese-daily-5-2",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 27, short slightly curled black hair, cobalt overshirt and beige trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "Exactly TWO Chinese adults in a small contemporary art gallery with framed flower paintings and blank walls: protagonist in cobalt and a distinct woman with shoulder-length black hair wearing mustard. No background people."
+  },
+  "6.2": {
+    "id": "chinese-daily-6-2",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 24, black ponytail with a simple red hair tie, red cotton turtleneck and denim overalls",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "Two Chinese friends at a home drawing table: protagonist in red and an experienced friend with short black hair, glasses and pale yellow shirt. Each has a pencil and sketch paper."
+  },
+  "7.2": {
+    "id": "chinese-daily-7-2",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 25, straight black hair tied low, cream shirt and burgundy cotton apron",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "ONE person alone at a home art desk. LEFT: colorful origami paper and a paper crane. RIGHT: a cherished unfinished watercolor landscape on an easel. No class or other people."
+  },
+  "8.2": {
+    "id": "chinese-daily-8-2",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 26, neat black topknot, warm orange cardigan and ivory trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "ONE real adult at a simple wooden desk. Two large UNLABELLED sheets: one shows a clear thick teal route toward a tiny house drawing, the other is mostly blank. A green pencil rests nearby. No printed commercial map or readable letters."
+  },
+  "9.2": {
+    "id": "chinese-daily-9-2",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 28, shoulder-length black hair tied half up, soft lavender sweater and ochre trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "Exactly TWO close Chinese friends in a modest apartment living room: protagonist in lavender and friend with a short black bob wearing forest green. LEFT armchair with a book, RIGHT sofa with a phone and headphones."
+  },
+  "10.2": {
+    "id": "chinese-daily-10-2",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 29, short black hair, moss-green casual jacket and dark trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "ONE protagonist carrying a small plain PARCEL on a Chinese neighborhood street. A practical parcel-service counter is ahead on the main route; an inviting small flower alley opens to the side. No readable business signs."
+  },
+  "1.3": {
+    "id": "chinese-daily-1-3",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 30, short black bob, thin oval spectacles, pale lavender cardigan and white blouse",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "A plain Chinese cafe table. The protagonist and a distinct Chinese male friend in an olive shirt discuss a simple wooden-block arrangement. An old personal sketch notebook lies beside the blocks. Two people only."
+  },
+  "2.3": {
+    "id": "chinese-daily-2-3",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 24, straight black fringe, blue-gray striped pajamas and dark slippers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "An ordinary Chinese bedroom at night with a bedside lamp, small travel bag, laid-out clothes, wallet and analog alarm clock. One person only."
+  },
+  "3.3": {
+    "id": "chinese-daily-3-3",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 30, neatly cropped black hair, muted orange overshirt and dark blue T-shirt",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "THREE Chinese adults at a shared project table: protagonist in orange between two teammates in green and navy. Two conflicting model layouts and cups of water are on the table, no printed text."
+  },
+  "4.3": {
+    "id": "chinese-daily-4-3",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 26, black high ponytail, round glasses, ivory blouse and navy skirt",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "A bright Chinese apartment desk with several large geometric puzzle pieces and a phone showing only a small portrait photograph of a Chinese friend. No chat interface, speech bubbles or writing. One person only."
+  },
+  "5.3": {
+    "id": "chinese-daily-5-3",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 26, black hair in a loose low bun, warm yellow casual jacket and blue jeans",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "Exactly TWO Chinese adults at a neighborhood cafe doorway: protagonist in yellow and a short-haired man in teal. Their phones have blank-grid calendars without readable labels."
+  },
+  "6.3": {
+    "id": "chinese-daily-6-3",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 31, rectangular black glasses, short neatly cropped black hair, a charcoal cotton sweatshirt and beige trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "A modest contemporary Chinese apartment drawing desk beside a bright window, plain wall and wooden chair. On the desk are the protagonist's unfinished landscape pencil sketch, a pencil, and a phone showing only a small photograph of a friend's polished landscape painting. No written interface. One person only."
+  },
+  "7.3": {
+    "id": "chinese-daily-7-3",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 29, short natural black hair, rust-red casual vest over an ivory shirt and navy trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "ONE person alone at a Chinese home craft table. A handmade MODEL HOUSE and a small MODEL BOAT prototype are clearly different. Loose blank planning cards and craft materials lie nearby."
+  },
+  "8.3": {
+    "id": "chinese-daily-8-3",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 27, side-swept black hair, muted orange work shirt and dark trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "THREE Chinese coworkers at a practical studio workbench. A row of plain boxes demonstrates a familiar process; a second empty work area allows trying another arrangement. No text or screens."
+  },
+  "9.3": {
+    "id": "chinese-daily-9-3",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 25, black hair in two low braids, white cotton T-shirt and orange casual overalls",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "ONE person at a Chinese noodle-shop table with a large steaming bowl of noodles, chopsticks and a phone. No other diners visible and no readable signs or chat bubbles."
+  },
+  "10.3": {
+    "id": "chinese-daily-10-3",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 30, black hair tied in a low ponytail, dusty blue blouse and beige trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "A small Chinese community culture center with adjacent open areas: a hands-on clay workshop, acoustic music corner and photo exhibition. Protagonist appears once; a few distinct adults remain in their own activity areas."
+  },
+  "1.4": {
+    "id": "chinese-daily-1-4",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 28, black hair in a neat bun, beige casual jacket and muted plum scarf",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "A clean everyday Chinese neighborhood food court with a familiar rice-meal counter on the LEFT and a local handmade-noodle counter on the RIGHT. Rice plate, chopsticks and steaming noodles are clearly distinct. One Chinese female friend in a denim jacket accompanies the protagonist. No readable signs."
+  },
+  "2.4": {
+    "id": "chinese-daily-2-4",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 28, side-parted black hair, dusty coral knit top and cream trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "A Chinese apartment living room with a desk calendar containing only blank squares, a pencil, phone, headphones and sofa. One person only."
+  },
+  "3.4": {
+    "id": "chinese-daily-3-4",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 31, chin-length black bob, mustard blouse and black trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "TWO Chinese friends at a craft table. The friend in coral is excited about a SMALL PAPER MODEL TOWER with a visibly narrow unstable base. The protagonist can inspect the model or listen over tea. No trees or real buildings."
+  },
+  "4.4": {
+    "id": "chinese-daily-4-4",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 28, natural side-parted black hair, dark indigo jacket and light gray scarf",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "THREE Chinese friends near a contemporary neighborhood cinema lounge with plain walls. A phone contains one actual film still of a seaside lighthouse, and a blank sketchpad is available. Other friends wear olive and tan. No readable posters."
+  },
+  "5.4": {
+    "id": "chinese-daily-5-4",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 28, long black ponytail, burgundy cardigan over an ivory T-shirt and dark trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "Exactly TWO Chinese passengers in adjacent seats of a Chinese high-speed train: protagonist by the window and a gray-haired man in a brown casual jacket beside her. A book rests on the protagonist's lap, green scenery through window."
+  },
+  "6.4": {
+    "id": "chinese-daily-6-4",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 27, short black bob tucked behind one ear, pale violet work shirt and cream trousers",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "THREE Chinese adults around a realistic wooden architectural model in a small design studio. Protagonist in violet, experienced teammates in teal and beige. Each person appears once."
+  },
+  "7.4": {
+    "id": "chinese-daily-7-4",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 28, long black braid, muted pink blouse and brown skirt",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "TWO Chinese friends on a bench in an ordinary city park. Protagonist has a notebook with a simple wordless drawing of a home and paintbrush; several park paths diverge beyond the bench. Friend wears light blue."
+  },
+  "8.4": {
+    "id": "chinese-daily-8-4",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 31, short black hair, burnt-orange outdoor jacket and dark blue backpack",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "A quiet greenway near a Chinese city. One broad maintained paved path and one narrow grassy wildflower trail diverge. Bamboo and ordinary park trees, no foreign landmark or readable signs. One person only."
+  },
+  "9.4": {
+    "id": "chinese-daily-9-4",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese man aged 30, neat black hair, camel casual jacket over a charcoal T-shirt and dark jeans",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "FOUR close Chinese friends outside a small neighborhood hotpot restaurant at night, warm ordinary city street lighting. Protagonist in camel, friends in green, navy and beige. A quiet homeward path left and another gathering spot right, no readable signs."
+  },
+  "10.4": {
+    "id": "chinese-daily-10-4",
+    "label": "中国日常写实",
+    "family": "photography",
+    "medium": "Live-action realistic photograph, a candid frame from a contemporary Chinese slice-of-life short drama. Real adult Chinese faces with natural skin texture, ordinary everyday clothing, grounded practical lighting, a natural 35mm lens, believable proportions and physical objects. No illustration, cartoon, anime, doll, CGI figure, Western fashion editorial or beauty-filter skin.",
+    "protagonist": "A Chinese woman aged 27, dark hair in a loose bun, ivory blouse and dark blue linen apron",
+    "palette": "natural skin tones, neutral interiors and the specified everyday clothing colors",
+    "setting": "ONE adult at a realistic home pottery desk. A lopsided unfinished clay bowl, a wordless drawing of a SMOOTH ROUND BOWL and a small GREEN PLANT sit nearby. No doll or figurine style."
+  }
 }

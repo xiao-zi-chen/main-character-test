@@ -11,7 +11,8 @@ test('each degree shows its own concrete reaction, survives reload and resets fo
     if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify({ version: 4, questionIds: ids, answers: {}, index: 0, submitted: false }));
   }, { key: STORAGE_KEY, ids });
   await page.goto('/#/test');
-  await expect(page.locator('.illustrated-choice p,.answer-reaction-caption,.answer-scale-instruction')).toHaveCount(0);
+  await expect(page.locator('.answer-option-text')).toHaveCount(2);
+  await expect(page.locator('.answer-reaction-caption,.answer-scale-instruction')).toHaveCount(0);
   const image = page.locator('.question-scene img');
   await expect(image).toHaveAttribute('src', /1-1\/scene.webp/);
   for (let value = 0; value < 5; value++) {
@@ -19,10 +20,15 @@ test('each degree shows its own concrete reaction, survives reload and resets fo
     await expect(image).toHaveAttribute('src', new RegExp(`1-1/scale-${value}.webp`));
     await expect.poll(() => image.evaluate(el => el.complete && el.naturalWidth >= 1000)).toBe(true);
     await expect(image).toHaveAttribute('alt', `你的反应：${questionReactions['1.1'][value].caption}`);
-    await expect(page.locator('.question-content')).not.toContainText(questionReactions['1.1'][value].caption);
+    const preview = page.getByRole('region', { name: '所选反应预览' });
+    await expect(preview).toBeVisible();
+    await expect(preview.locator('img')).toHaveAttribute('src', new RegExp(`1-1/scale-${value}.webp`));
+    if (value > 0 && value < 4) await expect(page.locator('.question-content')).not.toContainText(questionReactions['1.1'][value].caption);
     await expect(page.getByRole('button', { name: '下一幕', exact: true })).toBeInViewport();
   }
+  await expect(page.getByRole('region', { name: '所选反应预览' })).toHaveCount(0, { timeout: 5000 });
   await page.reload();
+  await expect(page.getByRole('region', { name: '所选反应预览' })).toHaveCount(0);
   await expect(image).toHaveAttribute('src', /scale-4.webp/);
   await page.getByRole('button', { name: '下一幕', exact: true }).click();
   await expect(image).toHaveAttribute('src', /scene.webp/);

@@ -1,0 +1,121 @@
+{
+  "2.1/right": {
+    "reason": "Remove duplicate guitars.",
+    "action": "Turn fully away from the OPEN unfinished laptop and actively play guitar with both hands, enjoying the present break while loose work waits behind."
+  },
+  "2.1/scale-3": {
+    "reason": "Remove duplicate guitars.",
+    "action": "Sit holding the guitar and lightly practice, a small prepared worksheet pile visible on the desk, occasional glance toward work."
+  },
+  "2.1/scale-4": {
+    "reason": "Remove duplicate guitars.",
+    "action": "Turn fully away from the OPEN unfinished laptop and actively play guitar with both hands, enjoying the present break while loose work waits behind."
+  },
+  "6.1/right": {
+    "reason": "Remove competing screen imagery entirely; strengthen attention to own activity.",
+    "action": "Shape a rough clay bowl with BOTH hands, shoulders relaxed, contented eyes focused only on the clay, comfortable with personal progress.",
+    "settingOverride": "A small Chinese home pottery desk beside a window. The tabletop contains ONLY the clay bowl, a sponge, a water cup and clay tools. Electronics are stored in a closed drawer outside the frame. Plain wall and simple empty shelves behind."
+  },
+  "6.1/scale-4": {
+    "reason": "Remove competing screen imagery entirely; strengthen attention to own activity.",
+    "action": "Shape a rough clay bowl with BOTH hands, shoulders relaxed, contented eyes focused only on the clay, comfortable with personal progress.",
+    "settingOverride": "A small Chinese home pottery desk beside a window. The tabletop contains ONLY the clay bowl, a sponge, a water cup and clay tools. Electronics are stored in a closed drawer outside the frame. Plain wall and simple empty shelves behind."
+  },
+  "7.1/scale-4": {
+    "reason": "Remove distracting extra person.",
+    "action": "Lean fully into the cherished watercolor at the RIGHT desk, brush actively touching paper and absorbed bright eyes, deeply engaged in the long-awaited hobby."
+  },
+  "10.1/scene": {
+    "reason": "Remove unrelated background people.",
+    "action": "Look between a clear finished-house sketch and loose colorful paper shapes before starting a creation."
+  },
+  "10.1/scale-3": {
+    "reason": "Remove unrelated background people.",
+    "action": "Playfully arrange different paper shapes and notice an emerging house possibility, discovery leads and a result begins to form."
+  },
+  "2.2/scene": {
+    "reason": "Make leaving home distinct from arriving at the cafe.",
+    "action": "At the doorway with bag ready, compare a simple route map on the phone with the wristwatch."
+  },
+  "2.2/left": {
+    "reason": "Make leaving home distinct from arriving at the cafe.",
+    "action": "Step calmly out of the home doorway at the planned moment, bag on shoulder, one glance at wristwatch, no waiting at the venue yet."
+  },
+  "2.2/scale-0": {
+    "reason": "Make leaving home distinct from arriving at the cafe.",
+    "action": "Step calmly out of the home doorway at the planned moment, bag on shoulder, one glance at wristwatch, no waiting at the venue yet."
+  },
+  "5.2/scale-3": {
+    "reason": "Separate a brief polite reply from enthusiastic conversation.",
+    "action": "Stand with torso and feet facing the flower painting, arms relaxed at the sides. Briefly turn just the head over one shoulder to give the mustard-shirted woman a polite small answering nod, then return attention to the painting. The woman remains a little behind. Do not raise a hand, demonstrate the painting, or invite a longer conversation."
+  },
+  "2.3/scene": {
+    "reason": "Remove clock numerals and any small product text.",
+    "action": "Sit beside the open travel bag considering the clothes, essentials and alarm clock before an early train."
+  },
+  "2.3/left": {
+    "reason": "Remove clock numerals and any small product text.",
+    "action": "Neatly pack and ZIP the travel bag, clothes carefully laid out and alarm clock checked, finger verifying everything is ready before sleep."
+  },
+  "2.3/right": {
+    "reason": "Remove clock numerals and any small product text.",
+    "action": "Lie down comfortably and switch OFF the bedside lamp, a lightly packed essentials bag beside the bed and other choices left for morning."
+  },
+  "2.3/scale-0": {
+    "reason": "Remove clock numerals and any small product text.",
+    "action": "Neatly pack and ZIP the travel bag, clothes carefully laid out and alarm clock checked, finger verifying everything is ready before sleep."
+  },
+  "2.3/scale-1": {
+    "reason": "Remove clock numerals and any small product text.",
+    "action": "Pack almost everything neatly and check the clock, leave only one small scarf on the chair for morning, focused calm preparation."
+  },
+  "2.3/scale-2": {
+    "reason": "Remove clock numerals and any small product text.",
+    "action": "Put wallet and essential items into a half-packed bag, set an alarm, leave optional clothing undecided on the chair, relaxed practical expression."
+  },
+  "2.3/scale-3": {
+    "reason": "Remove clock numerals and any small product text.",
+    "action": "Drop a few essentials into a small bag beside the bed, yawn and reach toward the lamp, only minimal preparation before sleep."
+  },
+  "2.3/scale-4": {
+    "reason": "Remove clock numerals and any small product text.",
+    "action": "Lie down comfortably and switch OFF the bedside lamp, a lightly packed essentials bag beside the bed and other choices left for morning."
+  },
+  "4.3/left": {
+    "reason": "Remove competing screen imagery entirely; strengthen attention to own activity.",
+    "action": "Fit colorful tangram pieces together with BOTH hands, eyes focused on finding the solution, calm absorbed face.",
+    "settingOverride": "A simple wooden desk beside an apartment window. On the entire tabletop there are ONLY colorful geometric puzzle pieces and one plain ceramic mug. A closed drawer beneath the desk contains all electronic devices. Bare cream wall behind, no photographs or frames."
+  },
+  "4.3/scale-0": {
+    "reason": "Remove competing screen imagery entirely; strengthen attention to own activity.",
+    "action": "Fit colorful tangram pieces together with BOTH hands, eyes focused on finding the solution, calm absorbed face.",
+    "settingOverride": "A simple wooden desk beside an apartment window. On the entire tabletop there are ONLY colorful geometric puzzle pieces and one plain ceramic mug. A closed drawer beneath the desk contains all electronic devices. Bare cream wall behind, no photographs or frames."
+  },
+  "6.3/left": {
+    "reason": "Remove competing screen imagery entirely; strengthen attention to own activity.",
+    "action": "Actively draw a landscape with a pencil, eyes absorbed in own sketch, relaxed shoulders and a calm contented expression.",
+    "settingOverride": "A simple wooden desk beside a bright apartment window. On the tabletop are ONLY an unfinished landscape sketch, pencils and an eraser. All electronics are put away out of sight. The wall behind is plain, no picture frames."
+  },
+  "6.3/scale-0": {
+    "reason": "Remove competing screen imagery entirely; strengthen attention to own activity.",
+    "action": "Actively draw a landscape with a pencil, eyes absorbed in own sketch, relaxed shoulders and a calm contented expression.",
+    "settingOverride": "A simple wooden desk beside a bright apartment window. On the tabletop are ONLY an unfinished landscape sketch, pencils and an eraser. All electronics are put away out of sight. The wall behind is plain, no picture frames."
+  },
+  "8.3/scale-4": {
+    "reason": "Make the strongest alternative method clearly differ from the established row.",
+    "action": "At the new work area, actively stack plain cardboard boxes into a compact two-level staggered arrangement, clearly different from the old single straight row still visible on the left. Both hands build the alternative, two colleagues watch curiously. The new arrangement must be visibly unlike a straight row."
+  },
+  "7.4/right": {
+    "reason": "Show an open future through exploration; remove extra friend and explicit plan drawing.",
+    "action": "Close a PLAIN UNMARKED notebook and tuck it under one arm with no drawing visible. Stand up and take a first curious step toward the branching park paths, open relaxed gesture toward the different paths. Exactly ONE female friend in light blue stays seated on the bench. The protagonist is exploring rather than presenting a specific life plan."
+  },
+  "7.4/scale-4": {
+    "reason": "Show an open future through exploration; remove extra friend and explicit plan drawing.",
+    "action": "Close a PLAIN UNMARKED notebook and tuck it under one arm with no drawing visible. Stand up and take a first curious step toward the branching park paths, open relaxed gesture toward the different paths. Exactly ONE female friend in light blue stays seated on the bench. The protagonist is exploring rather than presenting a specific life plan."
+  },
+  "9.4/scale-4": {
+    "reason": "Remove an incidental blurred shop sign detected in text review.",
+    "action": "Walk CLOSE TOGETHER with all three friends toward the next gathering, animated shared conversation and engaged eye contact, enthusiastic continued company.",
+    "settingOverride": "Four close Chinese friends walking together along a quiet residential alley at night. Plain unmarked wooden building facades, soft warm circular lanterns and leafy trees. The entire background has NO businesses, shop fronts, billboards, banners, signage, menus, lettering or posters. No other people."
+  }
+}

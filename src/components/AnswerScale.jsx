@@ -37,7 +37,7 @@ export function AnswerScale({ value, options, onChoose, questionId }) {
   return <div className={`answer-scale ${answered ? 'has-answer' : ''}`}>
     <div className="answer-scale-anchors" aria-label="量表两端的反应">
       {options.map((option, index) => <button type="button" className={`answer-scale-anchor ${questionId ? 'illustrated-choice' : ''} ${answered && value === (index === 0 ? SCALE_MIN : SCALE_MAX) ? 'selected' : ''}`} onClick={() => commit(index === 0 ? SCALE_MIN : SCALE_MAX)} key={index} id={index === 0 ? 'answer-scale-left' : 'answer-scale-right'} aria-pressed={answered && value === (index === 0 ? SCALE_MIN : SCALE_MAX)} aria-label={`${index === 0 ? '左侧反应' : '右侧反应'}：${option}`}>
-        {questionId ? <QuestionArt key={`${questionId}-${index}`} id={questionId} kind={index === 0 ? 'left' : 'right'} alt=""/> : <><span>{index === 0 ? '左侧反应' : '右侧反应'}</span><p>{option}</p></>}
+        {questionId ? <><QuestionArt key={`${questionId}-${index}`} id={questionId} kind={index === 0 ? 'left' : 'right'} alt=""/><p className="answer-option-text">{option}</p></> : <><span>{index === 0 ? '左侧反应' : '右侧反应'}</span><p>{option}</p></>}
       </button>)}
     </div>
     <div ref={track} className={`answer-scale-track ${draft !== null ? 'dragging' : ''}`} role="slider" tabIndex={0}

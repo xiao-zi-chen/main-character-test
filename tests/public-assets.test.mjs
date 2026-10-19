@@ -40,7 +40,7 @@ test('release includes current videos and fallback images without obsolete alter
   assert.ok(!files.includes('media/villain-calmer_voice.m4a'));
   assert.ok(!files.includes('media/villain-calmer_portrait.png'));
   assert.ok(!files.some(name=>name.endsWith('.md')));
-  assert.deepEqual(publicEntryPaths,['collector.js','public-config.js','favicon.svg']);
+  assert.deepEqual(publicEntryPaths,['collector.js','public-config.js','favicon.svg','question-art-review.html']);
 });
 
 test('release rejects path traversal, remote paths and wrong media types',()=>{

@@ -1,4 +1,4 @@
-// Five concrete reactions in the unchanged left-to-right scoring order.
+// Nonverbal expressions follow the unchanged A/B scoring direction. Captions are for accessibility only.
 export const questionReactions = {
   "1.1": [
     {
@@ -8,7 +8,7 @@ export const questionReactions = {
     },
     {
       "caption": "还是去常去的店，也看看附近的新店",
-      "face": "(˘ᴗ˘)",
+      "face": "(・ᴗ・)",
       "symbol": "☕"
     },
     {
@@ -18,24 +18,24 @@ export const questionReactions = {
     },
     {
       "caption": "想试新地方，先选个轻松体验",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧ᴗ・)",
       "symbol": "🏺"
     },
     {
       "caption": "去没试过的地方，看看会发生什么",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧▽✧)",
       "symbol": "🏺"
     }
   ],
   "2.1": [
     {
       "caption": "提前完成，后面两天心里踏实",
-      "face": "(˘ᴗ˘)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "✓"
     },
     {
       "caption": "先完成大部分，留一点收尾",
-      "face": "(˘ᴗ˘)",
+      "face": "(・_・)",
       "symbol": "✓"
     },
     {
@@ -45,24 +45,24 @@ export const questionReactions = {
     },
     {
       "caption": "先放松一下，但留出准备时间",
-      "face": "(^ᴗ^)",
+      "face": "(・ᴗ・)",
       "symbol": "🎸"
     },
     {
       "caption": "先做别的，临近截止再集中完成",
-      "face": "(^ᴗ^)",
+      "face": "(˘ᴗ˘)",
       "symbol": "🎸"
     }
   ],
   "3.1": [
     {
       "caption": "自然地补充一下，事情还是说准好",
-      "face": "(・○・)",
+      "face": "(•̀_•́)",
       "symbol": "👥"
     },
     {
       "caption": "轻轻补充一句，不打断气氛",
-      "face": "(・○・)",
+      "face": "(・_・)",
       "symbol": "👥"
     },
     {
@@ -72,12 +72,12 @@ export const questionReactions = {
     },
     {
       "caption": "先接住话题，散场再轻声提醒",
-      "face": "(・ᴗ・)",
+      "face": "(｡•ᴗ•｡)",
       "symbol": "🤫"
     },
     {
       "caption": "先接着聊，找私下的机会再提醒",
-      "face": "(・ᴗ・)",
+      "face": "(´ᴗ`)",
       "symbol": "🤫"
     }
   ],
@@ -89,7 +89,7 @@ export const questionReactions = {
     },
     {
       "caption": "想象别的人生，也想想当前这一关",
-      "face": "(✧○✧)",
+      "face": "(✧ᴗ・)",
       "symbol": "🌌"
     },
     {
@@ -104,7 +104,7 @@ export const questionReactions = {
     },
     {
       "caption": "先把眼前这关过好，再想下一关",
-      "face": "(・ᴗ・)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "🎮"
     }
   ],
@@ -116,17 +116,17 @@ export const questionReactions = {
     },
     {
       "caption": "先和身边一个人聊几句",
-      "face": "(＾▽＾)",
+      "face": "(^ᴗ^)",
       "symbol": "👋"
     },
     {
       "caption": "先观察，遇到合适的人再聊",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
       "caption": "主要安静待着，有人来就聊两句",
-      "face": "(˘ᴗ˘)",
+      "face": "(˘ᴗ・)",
       "symbol": "🍰"
     },
     {
@@ -138,7 +138,7 @@ export const questionReactions = {
   "6.1": [
     {
       "caption": "替他开心，也忍不住看看自己落后没",
-      "face": "(・_・;)",
+      "face": "(•́︿•̀)",
       "symbol": "📊"
     },
     {
@@ -148,12 +148,12 @@ export const questionReactions = {
     },
     {
       "caption": "祝福朋友，也想想自己的节奏",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
       "caption": "主要按自己节奏，偶尔参考朋友",
-      "face": "(˘ᴗ˘)",
+      "face": "(｡•ᴗ•｡)",
       "symbol": "🌱"
     },
     {
@@ -165,12 +165,12 @@ export const questionReactions = {
   "7.1": [
     {
       "caption": "随心看看，什么轻松就做什么",
-      "face": "(˘ᴗ˘)",
+      "face": "(・○・)",
       "symbol": "🫧"
     },
     {
       "caption": "先轻松逛逛，有兴致再碰爱好",
-      "face": "(˘ᴗ˘)",
+      "face": "(・ᴗ・)",
       "symbol": "🫧"
     },
     {
@@ -180,12 +180,12 @@ export const questionReactions = {
     },
     {
       "caption": "主要做爱好，也给自己留点空闲",
-      "face": "(✧ᴗ✧)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "🎨"
     },
     {
       "caption": "投入一直惦记的爱好，终于有空了",
-      "face": "(✧ᴗ✧)",
+      "face": "(ง•̀ᴗ•́)ง",
       "symbol": "🎨"
     }
   ],
@@ -197,7 +197,7 @@ export const questionReactions = {
     },
     {
       "caption": "想聊清关系，也不急着一次定完",
-      "face": "(˘ᴗ˘)",
+      "face": "(・ᴗ・)",
       "symbol": "🤝"
     },
     {
@@ -207,12 +207,12 @@ export const questionReactions = {
     },
     {
       "caption": "先自在相处，需要时再聊定位",
-      "face": "(^ᴗ^)",
+      "face": "(✧ᴗ・)",
       "symbol": "🫧"
     },
     {
       "caption": "先享受相处，不急着套进固定定义",
-      "face": "(^ᴗ^)",
+      "face": "(✧▽✧)",
       "symbol": "🫧"
     }
   ],
@@ -224,12 +224,12 @@ export const questionReactions = {
     },
     {
       "caption": "先给家人打个招呼，今晚留给自己",
-      "face": "(˘ᴗ˘)",
+      "face": "(˘ᴗ・)",
       "symbol": "📖"
     },
     {
       "caption": "陪家人吃一会儿，也留独处时间",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
@@ -239,14 +239,14 @@ export const questionReactions = {
     },
     {
       "caption": "回去围坐一桌，热闹也让人充电",
-      "face": "(^ᴗ^)",
+      "face": "(＾▽＾)",
       "symbol": "🍲"
     }
   ],
   "10.1": [
     {
       "caption": "脑子里有个成品，想把它做出来",
-      "face": "(・ᴗ・)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "🎯"
     },
     {
@@ -261,12 +261,12 @@ export const questionReactions = {
     },
     {
       "caption": "先享受尝试，慢慢形成成品想法",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧ᴗ・)",
       "symbol": "🎨"
     },
     {
       "caption": "过程应该很好玩，先试了再看",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧▽✧)",
       "symbol": "🎨"
     }
   ],
@@ -278,7 +278,7 @@ export const questionReactions = {
     },
     {
       "caption": "先看追更，顺便瞄一眼新主题",
-      "face": "(˘ᴗ˘)",
+      "face": "(・ᴗ・)",
       "symbol": "↻"
     },
     {
@@ -288,19 +288,19 @@ export const questionReactions = {
     },
     {
       "caption": "先试新主题，感兴趣就继续",
-      "face": "(✧○✧)",
+      "face": "(✧ᴗ・)",
       "symbol": "🪐"
     },
     {
       "caption": "首页的陌生主题，说不定打开新世界",
-      "face": "(✧○✧)",
+      "face": "(✧▽✧)",
       "symbol": "🪐"
     }
   ],
   "2.2": [
     {
       "caption": "按算好的时间出门，不用多等",
-      "face": "(・ᴗ・)",
+      "face": "(˘ᴗ˘)",
       "symbol": "🚪"
     },
     {
@@ -315,19 +315,19 @@ export const questionReactions = {
     },
     {
       "caption": "提前一些到，不用等太久",
-      "face": "(˘ᴗ˘)",
+      "face": "(・_・)",
       "symbol": "⌛"
     },
     {
       "caption": "再提前一点，给路上留些余量",
-      "face": "(˘ᴗ˘)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "⌛"
     }
   ],
   "3.2": [
     {
       "caption": "先把理由说明白，再一起讨论",
-      "face": "(・_・)",
+      "face": "(•̀_•́)",
       "symbol": "🧩"
     },
     {
@@ -342,12 +342,12 @@ export const questionReactions = {
     },
     {
       "caption": "先安慰，再简短说说想法",
-      "face": "(˘ᴗ˘)",
+      "face": "(｡•ᴗ•｡)",
       "symbol": "🫶"
     },
     {
       "caption": "先照顾情绪，平静下来再聊事情",
-      "face": "(˘ᴗ˘)",
+      "face": "(´ᴗ`)",
       "symbol": "🫶"
     }
   ],
@@ -359,17 +359,17 @@ export const questionReactions = {
     },
     {
       "caption": "轻轻起个头，看看大家想不想聊",
-      "face": "(＾▽＾)",
+      "face": "(^ᴗ^)",
       "symbol": "👋"
     },
     {
       "caption": "先等一下，有话题再接上",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
       "caption": "安心享受安静，有人开口就接话",
-      "face": "(˘ᴗ˘)",
+      "face": "(˘ᴗ・)",
       "symbol": "🍵"
     },
     {
@@ -381,7 +381,7 @@ export const questionReactions = {
   "5.2": [
     {
       "caption": "顺势聊下去，可能就认识新朋友了",
-      "face": "(^ᴗ^)",
+      "face": "(＾▽＾)",
       "symbol": "🤝"
     },
     {
@@ -391,12 +391,12 @@ export const questionReactions = {
     },
     {
       "caption": "礼貌聊几句，再看想不想继续",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
       "caption": "简单回应，感兴趣的话题再多聊",
-      "face": "(˘ᴗ˘)",
+      "face": "(˘ᴗ・)",
       "symbol": "🖼️"
     },
     {
@@ -408,34 +408,34 @@ export const questionReactions = {
   "6.2": [
     {
       "caption": "正好请教一下，按自己的节奏学",
-      "face": "(・○・)",
+      "face": "(˘ᴗ˘)",
       "symbol": "🤝"
     },
     {
       "caption": "请教为主，也想练得更熟一点",
-      "face": "(・○・)",
+      "face": "(｡•ᴗ•｡)",
       "symbol": "🤝"
     },
     {
       "caption": "向朋友学，也给自己一点挑战",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
       "caption": "想快点追上，也愿意请教方法",
-      "face": "(ง•̀_•́)ง",
+      "face": "(・_・;)",
       "symbol": "✍️"
     },
     {
       "caption": "有点受刺激，想尽快追上他的水平",
-      "face": "(ง•̀_•́)ง",
+      "face": "(•́︿•̀)",
       "symbol": "✍️"
     }
   ],
   "7.2": [
     {
       "caption": "试试新方向，现在的机会也值得抓",
-      "face": "(・ᴗ・)",
+      "face": "(・○・)",
       "symbol": "↗"
     },
     {
@@ -450,7 +450,7 @@ export const questionReactions = {
     },
     {
       "caption": "继续喜欢的事，也小试别的机会",
-      "face": "(ง•̀ᴗ•́)ง",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "🌱"
     },
     {
@@ -462,7 +462,7 @@ export const questionReactions = {
   "8.2": [
     {
       "caption": "路标清楚，能到达期待的地方",
-      "face": "(・ᴗ・)",
+      "face": "(˘ᴗ˘)",
       "symbol": "📍"
     },
     {
@@ -477,12 +477,12 @@ export const questionReactions = {
     },
     {
       "caption": "主要画自己的路，保留有用路标",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧ᴗ・)",
       "symbol": "✏️"
     },
     {
       "caption": "留着很多空白，可以画自己的路",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧▽✧)",
       "symbol": "✏️"
     }
   ],
@@ -494,12 +494,12 @@ export const questionReactions = {
     },
     {
       "caption": "各做各的，偶尔分享一个小发现",
-      "face": "(˘ᴗ˘)",
+      "face": "(˘ᴗ・)",
       "symbol": "📖"
     },
     {
       "caption": "有时一起分享，有时各自放松",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
@@ -509,14 +509,14 @@ export const questionReactions = {
     },
     {
       "caption": "很多小事都想分享，常常保持联系",
-      "face": "(^ᴗ^)",
+      "face": "(＾▽＾)",
       "symbol": "🤝"
     }
   ],
   "10.2": [
     {
       "caption": "先把原定的事办完，再考虑绕回来",
-      "face": "(・ᴗ・)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "🎯"
     },
     {
@@ -531,24 +531,24 @@ export const questionReactions = {
     },
     {
       "caption": "先逛一会儿，也记得原定的事",
-      "face": "(✧○✧)",
+      "face": "(✧ᴗ・)",
       "symbol": "↗"
     },
     {
       "caption": "进去逛逛，沿途的发现也很重要",
-      "face": "(✧○✧)",
+      "face": "(✧▽✧)",
       "symbol": "↗"
     }
   ],
   "1.3": [
     {
       "caption": "追问一下，也许有我没见过的角度",
-      "face": "(・○・)",
+      "face": "(✧▽✧)",
       "symbol": "🔎"
     },
     {
       "caption": "愿意追问，也拿旧经验对照",
-      "face": "(・○・)",
+      "face": "(✧ᴗ・)",
       "symbol": "🔎"
     },
     {
@@ -558,24 +558,24 @@ export const questionReactions = {
     },
     {
       "caption": "先信熟悉经验，也听听新解释",
-      "face": "(˘_˘)",
+      "face": "(・ᴗ・)",
       "symbol": "📒"
     },
     {
       "caption": "先保留判断，熟悉的经验更让我信服",
-      "face": "(˘_˘)",
+      "face": "(˘ᴗ˘)",
       "symbol": "📒"
     }
   ],
   "2.3": [
     {
       "caption": "东西装好，路线和闹钟都确认",
-      "face": "(・ᴗ・)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "🧳"
     },
     {
       "caption": "主要都备好，小细节明早再说",
-      "face": "(・ᴗ・)",
+      "face": "(・_・)",
       "symbol": "🧳"
     },
     {
@@ -585,7 +585,7 @@ export const questionReactions = {
     },
     {
       "caption": "简单准备一下，就早点休息",
-      "face": "(˘ᴗ˘)",
+      "face": "(・ᴗ・)",
       "symbol": "💤"
     },
     {
@@ -597,7 +597,7 @@ export const questionReactions = {
   "3.3": [
     {
       "caption": "听清各自的依据，看看哪边说得通",
-      "face": "(・_・)",
+      "face": "(•̀_•́)",
       "symbol": "⚖️"
     },
     {
@@ -612,24 +612,24 @@ export const questionReactions = {
     },
     {
       "caption": "先缓和气氛，再核对依据",
-      "face": "(˘ᴗ˘)",
+      "face": "(｡•ᴗ•｡)",
       "symbol": "🫶"
     },
     {
       "caption": "弄清各自的感受，先缓和下来",
-      "face": "(˘ᴗ˘)",
+      "face": "(´ᴗ`)",
       "symbol": "🫶"
     }
   ],
   "4.3": [
     {
       "caption": "先解出来，看看答案是什么",
-      "face": "(・_・)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "🧩"
     },
     {
       "caption": "先试着解，也好奇朋友为什么问",
-      "face": "(・_・)",
+      "face": "(・ᴗ・)",
       "symbol": "🧩"
     },
     {
@@ -639,19 +639,19 @@ export const questionReactions = {
     },
     {
       "caption": "先问缘由，也顺手试解一下",
-      "face": "(・○・)",
+      "face": "(✧ᴗ・)",
       "symbol": "👤"
     },
     {
       "caption": "他为什么问这个，背后有故事吗",
-      "face": "(・○・)",
+      "face": "(✧○✧)",
       "symbol": "👤"
     }
   ],
   "5.3": [
     {
       "caption": "接着约时间，让下次真的发生",
-      "face": "(^ᴗ^)",
+      "face": "(＾▽＾)",
       "symbol": "📅"
     },
     {
@@ -661,12 +661,12 @@ export const questionReactions = {
     },
     {
       "caption": "交换联系方式，看看彼此安排",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
       "caption": "先保持联系，暂时不定具体时间",
-      "face": "(˘ᴗ˘)",
+      "face": "(˘ᴗ・)",
       "symbol": "👋"
     },
     {
@@ -683,12 +683,12 @@ export const questionReactions = {
     },
     {
       "caption": "看一会儿，给自己的项目找灵感",
-      "face": "(˘ᴗ˘)",
+      "face": "(｡•ᴗ•｡)",
       "symbol": "🌱"
     },
     {
       "caption": "参考别人的成果，也看自己的进展",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
@@ -698,7 +698,7 @@ export const questionReactions = {
     },
     {
       "caption": "多看几遍，确认自己有没有掉队",
-      "face": "(・_・;)",
+      "face": "(•́︿•̀)",
       "symbol": "📊"
     }
   ],
@@ -710,7 +710,7 @@ export const questionReactions = {
     },
     {
       "caption": "愿意调整目标，保留在意的部分",
-      "face": "(・○・)",
+      "face": "(・ᴗ・)",
       "symbol": "🧭"
     },
     {
@@ -720,19 +720,19 @@ export const questionReactions = {
     },
     {
       "caption": "保留核心目标，其他部分可以变",
-      "face": "(・ᴗ・)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "🎯"
     },
     {
       "caption": "方式可以换，核心愿望还想留住",
-      "face": "(・ᴗ・)",
+      "face": "(ง•̀ᴗ•́)ง",
       "symbol": "🎯"
     }
   ],
   "8.3": [
     {
       "caption": "现有做法能用，先按惯例推进",
-      "face": "(・ᴗ・)",
+      "face": "(˘ᴗ˘)",
       "symbol": "↻"
     },
     {
@@ -747,12 +747,12 @@ export const questionReactions = {
     },
     {
       "caption": "试个新办法，也保留有效的步骤",
-      "face": "(・○・)",
+      "face": "(✧ᴗ・)",
       "symbol": "💡"
     },
     {
       "caption": "问问为什么，也许有另一种办法",
-      "face": "(・○・)",
+      "face": "(✧▽✧)",
       "symbol": "💡"
     }
   ],
@@ -764,12 +764,12 @@ export const questionReactions = {
     },
     {
       "caption": "大多看看，偶尔回应一下",
-      "face": "(˘ᴗ˘)",
+      "face": "(˘ᴗ・)",
       "symbol": "🔒"
     },
     {
       "caption": "想分享的小事才发出来",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
@@ -779,19 +779,19 @@ export const questionReactions = {
     },
     {
       "caption": "也发一点小事，参与彼此的生活",
-      "face": "(^ᴗ^)",
+      "face": "(＾▽＾)",
       "symbol": "📷"
     }
   ],
   "10.3": [
     {
       "caption": "挑最想去的一场，从头体验到尾",
-      "face": "(˘ᴗ˘)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "🎟️"
     },
     {
       "caption": "以最想去的一场为主，顺便看看别的",
-      "face": "(˘ᴗ˘)",
+      "face": "(・ᴗ・)",
       "symbol": "🎟️"
     },
     {
@@ -801,12 +801,12 @@ export const questionReactions = {
     },
     {
       "caption": "多走几场，特别喜欢的就多待一会儿",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧ᴗ・)",
       "symbol": "↔"
     },
     {
       "caption": "每场感受一点，多看看不同内容",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧▽✧)",
       "symbol": "↔"
     }
   ],
@@ -818,7 +818,7 @@ export const questionReactions = {
     },
     {
       "caption": "大多选熟悉的，也尝一口当地味",
-      "face": "(˘ᴗ˘)",
+      "face": "(・ᴗ・)",
       "symbol": "🍱"
     },
     {
@@ -828,24 +828,24 @@ export const questionReactions = {
     },
     {
       "caption": "选当地小店，先试容易接受的菜",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧ᴗ・)",
       "symbol": "🍜"
     },
     {
       "caption": "没见过的小店，试试当地的新鲜感",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧▽✧)",
       "symbol": "🍜"
     }
   ],
   "2.4": [
     {
       "caption": "早点定时间地点，方便安排其他事",
-      "face": "(・ᴗ・)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "📅"
     },
     {
       "caption": "先定大致安排，还能小调整",
-      "face": "(・ᴗ・)",
+      "face": "(・_・)",
       "symbol": "📅"
     },
     {
@@ -855,7 +855,7 @@ export const questionReactions = {
     },
     {
       "caption": "先留个空档，细节临近再定",
-      "face": "(˘ᴗ˘)",
+      "face": "(・ᴗ・)",
       "symbol": "🎧"
     },
     {
@@ -867,7 +867,7 @@ export const questionReactions = {
   "3.4": [
     {
       "caption": "把风险说具体，免得之后吃亏",
-      "face": "(・_・)",
+      "face": "(•̀_•́)",
       "symbol": "🔎"
     },
     {
@@ -882,19 +882,19 @@ export const questionReactions = {
     },
     {
       "caption": "先支持他，找机会提一个建议",
-      "face": "(˘ᴗ˘)",
+      "face": "(｡•ᴗ•｡)",
       "symbol": "☕"
     },
     {
       "caption": "先理解他的期待，再慢慢提建议",
-      "face": "(˘ᴗ˘)",
+      "face": "(´ᴗ`)",
       "symbol": "☕"
     }
   ],
   "4.4": [
     {
       "caption": "按已经演出来的剧情理解就好",
-      "face": "(・ᴗ・)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "🎞️"
     },
     {
@@ -909,7 +909,7 @@ export const questionReactions = {
     },
     {
       "caption": "顺着剧情想象另一种可能",
-      "face": "(✧○✧)",
+      "face": "(✧ᴗ・)",
       "symbol": "🚀"
     },
     {
@@ -926,17 +926,17 @@ export const questionReactions = {
     },
     {
       "caption": "聊一阵，也留一点自己的时间",
-      "face": "(＾▽＾)",
+      "face": "(^ᴗ^)",
       "symbol": "👥"
     },
     {
       "caption": "聊聊、看看书，都挺舒服",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
       "caption": "简短回应，之后继续看书",
-      "face": "(˘ᴗ˘)",
+      "face": "(˘ᴗ・)",
       "symbol": "📖"
     },
     {
@@ -948,17 +948,17 @@ export const questionReactions = {
   "6.4": [
     {
       "caption": "安心，能学习，也能贡献自己的部分",
-      "face": "(^ᴗ^)",
+      "face": "(˘ᴗ˘)",
       "symbol": "🤝"
     },
     {
       "caption": "大多觉得安心，重要环节多检查",
-      "face": "(^ᴗ^)",
+      "face": "(｡•ᴗ•｡)",
       "symbol": "🤝"
     },
     {
       "caption": "既期待学习，也有一点压力",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
@@ -968,19 +968,19 @@ export const questionReactions = {
     },
     {
       "caption": "压力，担心不够好拖了后腿",
-      "face": "(・_・;)",
+      "face": "(•́︿•̀)",
       "symbol": "🔎"
     }
   ],
   "7.4": [
     {
       "caption": "有一些在意的方向，想慢慢靠近",
-      "face": "(・ᴗ・)",
+      "face": "(ง•̀ᴗ•́)ง",
       "symbol": "🎯"
     },
     {
       "caption": "有想靠近的生活，也愿意调整",
-      "face": "(・ᴗ・)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "🎯"
     },
     {
@@ -990,12 +990,12 @@ export const questionReactions = {
     },
     {
       "caption": "多体验为主，也记住当下喜欢什么",
-      "face": "(✧ᴗ✧)",
+      "face": "(・ᴗ・)",
       "symbol": "🧭"
     },
     {
       "caption": "还想多体验，答案也许会变化",
-      "face": "(✧ᴗ✧)",
+      "face": "(・○・)",
       "symbol": "🧭"
     }
   ],
@@ -1007,7 +1007,7 @@ export const questionReactions = {
     },
     {
       "caption": "主要走稳妥路线，偶尔看看岔路",
-      "face": "(˘ᴗ˘)",
+      "face": "(・ᴗ・)",
       "symbol": "🛤️"
     },
     {
@@ -1017,12 +1017,12 @@ export const questionReactions = {
     },
     {
       "caption": "探索自己的走法，也参考成熟路线",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧ᴗ・)",
       "symbol": "🧭"
     },
     {
       "caption": "留一点空间，试试自己的走法",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧▽✧)",
       "symbol": "🧭"
     }
   ],
@@ -1034,17 +1034,17 @@ export const questionReactions = {
     },
     {
       "caption": "准备回家，再陪朋友聊几句",
-      "face": "(˘ᴗ˘)",
+      "face": "(˘ᴗ・)",
       "symbol": "🏠"
     },
     {
       "caption": "看精力和气氛，再决定待多久",
-      "face": "( ˙꒳˙ )",
+      "face": "(・ᴗ・)",
       "symbol": "↔"
     },
     {
       "caption": "再陪一阵，累了就先回去",
-      "face": "(＾▽＾)",
+      "face": "(^ᴗ^)",
       "symbol": "👥"
     },
     {
@@ -1056,12 +1056,12 @@ export const questionReactions = {
   "10.4": [
     {
       "caption": "尽量修回原样，完成最初的想法",
-      "face": "(・_・)",
+      "face": "(•̀ᴗ•́)و",
       "symbol": "🏺"
     },
     {
       "caption": "尽量做回原样，接受一点小变化",
-      "face": "(・_・)",
+      "face": "(・ᴗ・)",
       "symbol": "🏺"
     },
     {
@@ -1071,12 +1071,12 @@ export const questionReactions = {
     },
     {
       "caption": "顺着变化做，留一点最初的想法",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧ᴗ・)",
       "symbol": "🪴"
     },
     {
       "caption": "顺着变化做下去，看看会得到什么",
-      "face": "(✧ᴗ✧)",
+      "face": "(✧▽✧)",
       "symbol": "🪴"
     }
   ]
