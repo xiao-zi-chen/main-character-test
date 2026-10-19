@@ -11,13 +11,15 @@ test('each degree shows its own concrete reaction, survives reload and resets fo
     if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify({ version: 4, questionIds: ids, answers: {}, index: 0, submitted: false }));
   }, { key: STORAGE_KEY, ids });
   await page.goto('/#/test');
+  await expect(page.locator('.illustrated-choice p,.answer-reaction-caption,.answer-scale-instruction')).toHaveCount(0);
   const image = page.locator('.question-scene img');
   await expect(image).toHaveAttribute('src', /1-1\/scene.webp/);
   for (let value = 0; value < 5; value++) {
     await page.getByRole('button', { name: labels[value], exact: true }).click();
     await expect(image).toHaveAttribute('src', new RegExp(`1-1/scale-${value}.webp`));
     await expect.poll(() => image.evaluate(el => el.complete && el.naturalWidth >= 1000)).toBe(true);
-    await expect(page.locator('.answer-reaction-caption')).toHaveText(questionReactions['1.1'][value].caption);
+    await expect(image).toHaveAttribute('alt', `你的反应：${questionReactions['1.1'][value].caption}`);
+    await expect(page.locator('.question-content')).not.toContainText(questionReactions['1.1'][value].caption);
     await expect(page.getByRole('button', { name: '下一幕', exact: true })).toBeInViewport();
   }
   await page.reload();
@@ -33,6 +35,18 @@ test('each degree shows its own concrete reaction, survives reload and resets fo
   await page.getByRole('button', { name: '中立', exact: true }).click();
   await expect(image).toHaveAttribute('src', /scale-2.webp/);
   await expect.poll(() => image.evaluate(el => el.complete && el.naturalWidth > 0)).toBe(true);
+  const enlarge = page.getByRole('button', { name: '放大当前画面' });
+  await enlarge.click();
+  const dialog = page.getByRole('dialog', { name: '查看画面' });
+  await expect(dialog.locator('img')).toHaveAttribute('src', /1-1\/scale-2.webp/);
+  await expect.poll(() => dialog.locator('img').evaluate(el => el.complete && el.naturalWidth > 0)).toBe(true);
+  await page.keyboard.press('ArrowRight');
+  await page.keyboard.press('a');
+  await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
+  await expect(page.locator('.answer-scale-track')).toHaveAttribute('aria-valuenow', '2');
+  await page.keyboard.press('Escape');
+  await expect(dialog).toHaveCount(0);
+  await expect(enlarge).toBeFocused();
   await page.screenshot({ path: `.work/five-reactions-${testInfo.project.name}.png`, fullPage: true });
 });
 

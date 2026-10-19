@@ -123,7 +123,7 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
   useEffect(() => { preloadQuestionReactions(question.id); }, [question.id]);
   useEffect(() => {
     const onKey = event => {
-      if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || ['INPUT', 'TEXTAREA'].includes(event.target.tagName) || event.target.closest('[role="slider"]')) return;
+      if (document.querySelector('dialog[open]') || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || ['INPUT', 'TEXTAREA'].includes(event.target.tagName) || event.target.closest('[role="slider"]')) return;
       if (['a', 'A', '1'].includes(event.key)) { event.preventDefault(); choose(0); }
       if (['b', 'B', '2'].includes(event.key)) { event.preventDefault(); choose(4); }
       if (event.key === 'ArrowLeft') { event.preventDefault(); previous(); }
@@ -140,7 +140,7 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
       <section className="question-section" aria-labelledby="question-title">
         <div className="question-meta"><span>第{['一', '二', '三', '四'][actIndex]}幕 <i /> {acts[actIndex].title}</span><span>SCENE {String(index + 1).padStart(2, '0')}</span></div>
         <div className="question-content" key={question.id}><span className="question-kicker">主角请就位 · 你的第 {index + 1} 个选择</span>
-          <div className="question-scene"><QuestionArt id={question.id} kind={isAnswer(selected) ? `scale-${selected}` : 'scene'} alt={isAnswer(selected) ? `你的反应：${questionReactions[question.id][selected].caption}` : '这一次，你在故事里'} priority/><h1 id="question-title" ref={heading} tabIndex={-1}>{question.prompt}</h1></div>
+          <div className="question-scene"><QuestionArt id={question.id} kind={isAnswer(selected) ? `scale-${selected}` : 'scene'} alt={isAnswer(selected) ? `你的反应：${questionReactions[question.id][selected].caption}` : '这一次，你在故事里'} priority zoomable/><h1 id="question-title" ref={heading} tabIndex={-1}>{question.prompt}</h1></div>
           <AnswerScale value={selected} options={question.options} onChoose={choose} questionId={question.id}/>
         </div>
         {submitError && <div className="quiz-submit-error" role="alert"><p>{submitError}</p>{collectionRecovery && <button className="text-button" onClick={collectionRecovery === 'reload' ? () => window.location.reload() : onRestart}>{collectionRecovery === 'reload' ? '重新加载页面' : '重新开始测试'}<RotateCcw size={14}/></button>}</div>}
