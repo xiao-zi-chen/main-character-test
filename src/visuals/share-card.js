@@ -70,21 +70,12 @@ export async function createRoleCard(role, portraitUrl) {
   ctx.beginPath();ctx.moveTo(90,1805);ctx.lineTo(810,1805);ctx.stroke();
   ctx.fillStyle='#929aae';
   ctx.font='20px "Microsoft YaHei", sans-serif';
-  ctx.fillText(`我的剧情搭档：${roleById[role.partner].name}。你来认领吗？`,90,1856,720);
+  const partner=role.castIds.length===2 ? roleById[role.castIds.find(id=>id!==role.id)] : null;
+  ctx.fillText(partner ? `我的剧情搭档：${partner.name}` : '每一种人生，都有自己的主角。',90,1856,720);
   ctx.fillStyle='#74849a';ctx.font='14px "Microsoft YaHei", sans-serif';
   ctx.fillText('作者：拾壹、我燃起来了、FhwuTrqr、Le Prince Grenouille',90,1880,720);
   return canvas;
 }
 
-export async function downloadRoleCard(role, portraitUrl) {
-  const canvas=await createRoleCard(role,portraitUrl);
-  const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));
-  if(!blob) throw new Error('角色卡生成失败');
-  const url=URL.createObjectURL(blob);
-  const link=document.createElement('a');
-  link.href=url;link.download=`我的主角剧本-${role.name}.png`;
-  link.click();
-  setTimeout(()=>URL.revokeObjectURL(url),10000);
-}
 import { roles, roleById } from '../data/roles.js';
 import { relationships } from '../data/relationships.js';

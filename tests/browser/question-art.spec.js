@@ -56,7 +56,7 @@ test('illustrated choices save the correct endpoints and a failed image leaves b
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
 });
 
-test('finishing automatically shows the matched film; blocked autoplay offers a working play button', async ({ page }) => {
+test('finishing automatically shows the matched film; blocked autoplay resumes by touching the film', async ({ page }) => {
   await page.addInitScript(({ key, ids }) => {
     if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify({ version: 4, questionIds: ids, answers: {}, index: 0, submitted: false }));
     const play = HTMLMediaElement.prototype.play;
@@ -78,11 +78,12 @@ test('finishing automatically shows the matched film; blocked autoplay offers a 
   await page.getByRole('button', { name: '揭晓我的主角', exact: true }).click();
   const dialog = page.getByRole('dialog');
   await expect(dialog).toBeVisible();
-  const roleName = await dialog.getByRole('heading').innerText();
+  const roleName = await page.locator('.result-copy h1').innerText();
+  await expect(dialog).toHaveAttribute('aria-label',roleName+'的短片');
   expect(await page.locator('.result-copy h1').innerText()).toBe(roleName);
-  await expect(dialog.getByRole('button', { name: '播放视频', exact: true }).first()).toBeVisible();
+  await expect(dialog.locator('button')).toHaveCount(1);
   await page.evaluate(() => { window.allowVideoPlay = true; });
-  await dialog.getByRole('button', { name: '播放视频', exact: true }).first().click();
+  await dialog.locator('video').click();
   await expect.poll(() => dialog.locator('video').evaluate(video => !video.paused && video.currentTime > 0)).toBe(true);
   await page.getByRole('button', { name: '关闭弹窗', exact: true }).click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(roleName);

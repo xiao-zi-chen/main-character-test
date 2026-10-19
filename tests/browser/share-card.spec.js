@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { mkdir, readFile } from 'node:fs/promises';
 import { roles } from '../../src/data/roles.js';
 import { HIDDEN_STORAGE_KEY } from '../../src/hidden-rules.js';
 import { drawQuestions } from '../../src/question-session.js';
@@ -12,8 +11,6 @@ function answersFor(role,questionIds) {
 
 test('exported portraits preserve all 28 individual portraits at their native aspect ratios', async ({ page },testInfo)=>{
   test.setTimeout(150000);
-  const directory=`.work/share-card-fix/${testInfo.project.name}`;
-  await mkdir(directory,{recursive:true});
   const errors=[];
   page.on('pageerror',error=>errors.push(error.message));
   const profiles={};
@@ -35,14 +32,15 @@ test('exported portraits preserve all 28 individual portraits at their native as
     await expect(page.getByRole('heading',{level:1})).toHaveText(role.name);
     await expect(page.locator('.result-media img')).toHaveAttribute('src',/\?v=/);
     const portraitUrl=await page.locator('.result-media img').getAttribute('src');
-    const downloading=page.waitForEvent('download');
     await page.getByRole('button',{name:'保存我的角色卡',exact:true}).click();
-    const download=await downloading;
-    const filename=`${directory}/${role.id}.png`;
-    await download.saveAs(filename);
-    expect(download.suggestedFilename()).toBe(`我的主角剧本-${role.name}.png`);
-
-    const png=(await readFile(filename)).toString('base64');
+    const image=page.locator('.save-role-card');
+    await expect(image).toBeVisible();
+    await expect.poll(()=>image.evaluate(img=>img.naturalWidth)).toBe(900);
+    const imageUrl=await image.getAttribute('src');
+    expect(imageUrl).toMatch(/\.png\?v=/);
+    const response=await page.request.get(imageUrl);
+    expect(response.headers()['content-type']).toContain('image/png');
+    const png=(await response.body()).toString('base64');
     const comparison=await page.evaluate(async ({png,portraitUrl})=>{
       const original=new Image();original.src=portraitUrl;
       const exported=new Image();exported.src=`data:image/png;base64,${png}`;

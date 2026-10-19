@@ -13,5 +13,8 @@ test('the selected 28-character catalog has complete, distinct social identities
     }
     assert.notEqual(role.id, role.partner);
   }
-  for (const role of regularRoles) assert.equal(roleById[role.partner].partner, role.id);
+  for (const role of regularRoles) {
+    if(role.castIds.length===1) assert.equal(role.partner,null);
+    else { assert.equal(roleById[role.partner].partner,role.id); assert.equal(roleById[role.partner].filmId,role.filmId); }
+  }
 });

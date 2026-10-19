@@ -26,8 +26,8 @@ export function publicAssetPaths(manifest) {
     paths.add(`media/${media.video}`);
     paths.add(`worlds/${id}.svg`);
     // Match mediaAsset(): a missing image field uses the role's default JPG.
-    for (const kind of ['portrait', 'poster', 'avatar']) {
-      const filename = media[kind] === undefined ? `${id}.jpg` : media[kind];
+    for (const kind of ['portrait', 'poster', 'avatar', 'card']) {
+      const filename = media[kind] === undefined && kind !== 'card' ? `${id}.jpg` : media[kind];
       if (typeof filename !== 'string' || !imagePattern.test(filename)) {
         throw new Error(`Invalid ${kind} filename for ${id}`);
       }

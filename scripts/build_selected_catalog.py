@@ -20,9 +20,6 @@ assert len(films) == 17
 cast_ids = [person['id'] for film in films for person in film['cast']]
 assert len(cast_ids) == len(set(cast_ids)) == 28
 assert set(cast_ids) == set(profiles)
-single_pairs = {'apocalypse-caterer':'immortal-support', 'immortal-support':'apocalypse-caterer',
-                'never-give-up':'plot-rewriter', 'plot-rewriter':'never-give-up',
-                'lucky-disaster':'spotlight-extra', 'spotlight-extra':'lucky-disaster'}
 roles, relationships, manifest, reports = [], {}, {}, []
 media = ROOT / 'public/media'
 staging = ROOT / '.work/selected-catalog'
@@ -55,7 +52,7 @@ for film in films:
             cropped.thumbnail((900,1280),Image.Resampling.LANCZOS)
             cropped.convert('RGB').save(staging / portrait_name, quality=92, method=6)
         portrait_bytes = (staging / portrait_name).read_bytes()
-        partner = next((p['id'] for p in film['cast'] if p['id'] != key),single_pairs.get(key))
+        partner = next((p['id'] for p in film['cast'] if p['id'] != key),None)
         roles.append(dict(id=key,number=f'{len(roles)+1:02d}',name=person['name'],shortName=person['name'],
                           english=key.replace('-',' ').upper(),category=info['category'],genre=film['title'],
                           color=info['color'],icon=info['icon'],symbol='star',filmId=film['id'],

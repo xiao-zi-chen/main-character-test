@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { regularRoles as roles } from '../../src/data/roles.js';
 import { readFile } from 'node:fs/promises';
-import { formatPlaybackTime } from '../../src/media.js';
 import { STORAGE_KEY } from '../../src/engine.js';
 
 const media=JSON.parse(await readFile(new URL('../../public/media/manifest.json',import.meta.url),'utf8'));
@@ -25,23 +24,19 @@ test('simple landing, searchable directory, videos and modal keyboard controls',
   await page.getByRole('button', { name: '预览心之所向', exact: true }).click();
   const dialog = page.getByRole('dialog');
   await expect(dialog).toBeVisible();
-  await dialog.getByRole('button', { name: '播放视频', exact: true }).first().click();
+  await dialog.getByRole('button', {name:'观看心之所向的短片',exact:true}).click();
   await expect.poll(() => dialog.locator('video').evaluate(video => video.currentTime > 0 && !video.muted)).toBe(true);
   expect(await dialog.locator('video').evaluate(video => video.duration)).toBeCloseTo(media['plot-rewriter'].duration, 1);
-  await expect(dialog.locator('.video-duration')).toHaveText(formatPlaybackTime(media['plot-rewriter'].duration));
   await expect(dialog.locator('video')).toHaveAttribute('src',new RegExp(`${media['plot-rewriter'].video}\\?v=${media['plot-rewriter'].videoRevision}`));
-  await dialog.getByRole('button', { name: '暂停视频' }).click();
-  await dialog.getByRole('button', { name: '关闭声音' }).click();
-  await expect(dialog.locator('video')).toHaveJSProperty('muted', true);
-  await dialog.getByRole('button', { name: '开启声音' }).click();
-  await expect(dialog.locator('video')).toHaveJSProperty('muted', false);
-  await expect(dialog.getByRole('button', { name: '关闭声音' })).toBeVisible();
+  await expect(dialog.locator('button')).toHaveCount(1);
+  await expect(dialog.locator('video')).toHaveJSProperty('loop',false);
   await page.keyboard.press('Escape');
   await expect(dialog).toHaveCount(0);
   expect(errors).toEqual([]);
 });
 
 test('20-question journey persists, navigates back, reveals and exports a real result', async ({ page }, testInfo) => {
+  let revealStarted;
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('/');
@@ -74,9 +69,11 @@ test('20-question journey persists, navigates back, reveals and exports a real r
       await expect(slider).toHaveAttribute('aria-valuenow', '4');
       await expect(page.locator('.site-header')).toHaveCount(0);
     }
+    if(i===19) revealStarted=Date.now();
     await page.getByRole('button', { name: i === 19 ? '揭晓我的主角' : '下一幕', exact: true }).click();
   }
   await expect(page).toHaveURL(/#\/result$/);
+  expect(Date.now()-revealStarted).toBeGreaterThanOrEqual(1900);
   await expect(page.getByRole('dialog')).toBeVisible();
   await expect.poll(() => page.locator('dialog video').evaluate(video => !video.muted && !video.paused && video.currentTime > 0)).toBe(true);
   await page.getByRole('button', { name: '关闭弹窗', exact: true }).click();
@@ -92,11 +89,10 @@ test('20-question journey persists, navigates back, reveals and exports a real r
   await page.getByRole('button', { name: '收起倾向' }).click();
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: `.work/result-${testInfo.project.name}.png`, fullPage: true });
-  const downloadPromise=page.waitForEvent('download');
   await page.getByRole('button', { name: '保存我的角色卡' }).click();
-  const download=await downloadPromise;
-  expect(download.suggestedFilename()).toContain(name);
-  await download.saveAs(`.work/share-${testInfo.project.name}.png`);
+  await expect(page.locator('.save-role-card')).toBeVisible();
+  await expect.poll(()=>page.locator('.save-role-card').evaluate(image=>image.naturalWidth)).toBe(900);
+  await expect(page.getByText('长按图片，保存到相册')).toBeVisible();
   await page.reload();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(name);
   await expect(page.getByRole('dialog')).toHaveCount(0);
@@ -118,7 +114,7 @@ test('shared character links are public previews; incomplete answers cannot open
     await page.getByRole('button', {name:`观看${role.name}的短片`}).click();
     await expect.poll(() => page.locator('dialog video').evaluate(v => v.readyState >= 2)).toBe(true);
     expect(await page.locator('dialog video').evaluate(v => v.duration)).toBeCloseTo(media[role.id].duration, 1);
-    await expect(page.locator('.video-duration')).toHaveText(formatPlaybackTime(media[role.id].duration));
+    await expect(page.locator('dialog button')).toHaveCount(1);
 
     await page.locator('dialog video').evaluate(video=>new Promise((resolve,reject)=>{
       video.addEventListener('seeked',resolve,{once:true});

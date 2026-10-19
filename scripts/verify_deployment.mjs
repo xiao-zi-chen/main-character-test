@@ -58,12 +58,14 @@ for(const role of roles) {
   if(media?.status!=='final') throw new Error(`Missing final video: ${role.id}`);
   const video=await readFile(new URL(`../dist/media/${media.video}`,import.meta.url));
   if(createHash('sha256').update(video).digest('hex')!==media.sha256) throw new Error(`Video hash mismatch: ${role.id}`);
-  for(const type of ['portrait','poster','avatar','voice','subtitles']) {
+  for(const type of ['portrait','poster','avatar','card','voice','subtitles']) {
     if(media[type]) await access(new URL(`../dist/media/${media[type]}`,import.meta.url));
   }
 }
 for(const role of roles) {
   const media=manifest[role.id];
+  const card=await readFile(new URL(`../dist/media/${media.card}`,import.meta.url));
+  if(createHash('sha256').update(card).digest('hex')!==media.cardSha256) throw new Error(`Card hash mismatch: ${role.id}`);
   const portrait=await readFile(new URL(`../dist/media/${media.portrait}`,import.meta.url));
   if(createHash('sha256').update(portrait).digest('hex')!==media.portraitSha256) throw new Error(`Portrait hash mismatch: ${role.id}`);
 }

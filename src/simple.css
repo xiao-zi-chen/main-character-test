@@ -216,3 +216,17 @@ body :is(h1,h2,h3,button,a,p,span){letter-spacing:0}
 .film-cast a[aria-current="page"] { border-color:#dce9d4; background:#243b30; }
 .film-cast img { width:42px; height:52px; object-fit:cover; border-radius:4px; }
 .film-cast span { font-size:13px; overflow-wrap:anywhere; }
+
+/* The film owns the viewport; the close control is the only visible UI. */
+.modal.video-modal { position:fixed; inset:0; margin:0; width:100vw; height:100dvh; max-width:none; max-height:none; padding:0; border:0; border-radius:0; background:#000; overflow:hidden; display:block; }
+.modal.video-modal:not([open]) { display:none; }
+.modal.video-modal>.video-player { width:100%; height:100%; margin:0; border:0; border-radius:0; aspect-ratio:auto; }
+.modal.video-modal .video-player>video { display:block; width:100%; height:100%; object-fit:contain; }
+.modal.video-modal>.modal-close { position:absolute; top:max(12px,env(safe-area-inset-top)); right:max(12px,env(safe-area-inset-right)); background:#0006; border:0; color:#fff; }
+.role-film-preview { width:100%; padding:0; border:0; background:#000; position:relative; cursor:pointer; }
+.role-film-preview img { display:block; width:100%; max-height:65dvh; object-fit:contain; }
+.modal.card-modal { width:520px; padding:56px 16px 20px; background:#101713; }
+.card-modal>p { text-align:center; margin:0 0 16px; color:#edf1ed; }
+.card-modal .save-role-card { display:block; width:100%; height:auto; -webkit-touch-callout:default; user-select:auto; -webkit-user-select:auto; }
+.simple-reveal .reveal-loading>i { animation-duration:2s; }
+.video-player>.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }

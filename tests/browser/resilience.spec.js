@@ -38,11 +38,11 @@ test('blocked autoplay keeps sound enabled and permits a manual play request', a
   await page.goto('/#/role/plot-rewriter');
   await page.getByRole('button', { name: '观看心之所向的短片' }).click();
   const video = page.locator('dialog video');
-  await expect(page.locator('.big-play')).toBeVisible();
+  await expect(page.locator('dialog button')).toHaveCount(1);
   await expect(page.locator('.video-loading')).toHaveCount(0);
   await expect(video).toHaveJSProperty('muted', false);
   expect(await page.evaluate(() => window.videoPlayMutes)).toEqual([false]);
-  await page.locator('.big-play').click();
+  await video.click();
   await expect.poll(() => video.evaluate(element => element.currentTime > 0 && !element.paused && !element.muted)).toBe(true);
   expect(await page.evaluate(() => window.videoPlayMutes)).toEqual([false, false]);
 });
@@ -73,16 +73,17 @@ test('modal traps keyboard focus, keeps text readable and restores its trigger',
   expect(await roleButton.evaluate(element=>getComputedStyle(element).color)).toBe('rgb(24, 39, 30)');
 });
 
-test('landscape video controls stay inside the player and remain tappable', async ({page})=>{
+test('landscape close control remains tappable', async ({page})=>{
   await page.setViewportSize({width:852,height:393});
   await page.goto('/#/role/royal-chef');
   await page.getByRole('button',{name:/^观看.*的短片$/}).click();
-  const layout=await page.locator('.video-player').evaluate(player=>{
-    const bounds=player.getBoundingClientRect();
-    return {left:bounds.left,right:bounds.right,controls:[...player.querySelectorAll('.video-controls .icon-button')].map(control=>{const box=control.getBoundingClientRect();return {left:box.left,right:box.right,width:box.width,height:box.height};})};
-  });
-  for(const control of layout.controls){expect(control.left).toBeGreaterThanOrEqual(layout.left);expect(control.right).toBeLessThanOrEqual(layout.right);expect(control.width).toBeGreaterThanOrEqual(44);expect(control.height).toBeGreaterThanOrEqual(44);}
-  await expect(page.getByRole('link',{name:'下载角色短片'})).toBeInViewport();
+  const close=page.getByRole('button',{name:'关闭弹窗'});
+  await expect(close).toBeInViewport();
+  const box=await close.boundingBox();
+  expect(box.width).toBeGreaterThanOrEqual(44);
+  expect(box.height).toBeGreaterThanOrEqual(44);
+  await close.click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
 });
 
 test('a failed short film can be retried without losing the result', async ({ page }) => {
@@ -90,8 +91,8 @@ test('a failed short film can be retried without losing the result', async ({ pa
   await page.route('**/media/film-follow-your-heart.mp4*', route=>blocked?route.abort():route.continue());
   await page.goto('/#/role/plot-rewriter');
   await page.getByRole('button',{name:'观看心之所向的短片'}).click();
-  const retry=page.getByRole('button',{name:'重新加载',exact:true});
-  await expect(retry).toBeVisible();
+  const retry=page.locator('dialog video');
+  await expect.poll(()=>retry.evaluate(video=>Boolean(video.error))).toBe(true);
   blocked=false;
   await retry.click();
   await expect.poll(()=>page.locator('dialog video').evaluate(video=>video.currentTime>0&&!video.paused)).toBe(true);
@@ -196,7 +197,7 @@ test('phone sharing uses the native sheet and cancelling it does not show an err
     }});
   });
   await page.goto('/#/role/plot-rewriter');
-  await page.getByRole('button',{name:'找 TA 来认领'}).click();
+  await page.getByRole('button',{name:'分享剧本',exact:true}).click();
   const invitations=await page.evaluate(()=>window.sharedInvitations);
   expect(invitations).toHaveLength(1);
   expect(invitations[0].text).toContain('心之所向');

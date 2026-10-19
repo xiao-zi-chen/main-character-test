@@ -15,7 +15,7 @@ for role in roles:
     entry=manifest[role['id']]
     assert entry['status']=='final'
     assert hashlib.sha256((build/'media'/entry['video']).read_bytes()).hexdigest()==entry['sha256']
-    for kind in ['portrait','poster','avatar','voice','subtitles']:
+    for kind in ['portrait','poster','avatar','card','voice','subtitles']:
         if kind in entry: assert (build/'media'/entry[kind]).is_file()
 target.parent.mkdir(parents=True,exist_ok=True)
 staged=target.with_name(target.stem+'.staging.zip')

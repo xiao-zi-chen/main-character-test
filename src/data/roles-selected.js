@@ -247,7 +247,7 @@ export const selectedRoles = [
       "总想留个台阶"
     ],
     "reminder": "先听清谁受了委屈，再谈大家怎么和好。",
-    "partner": "immortal-support",
+    "partner": null,
     "beats": [],
     "profile": [
       25,
@@ -411,7 +411,7 @@ export const selectedRoles = [
       "不轻易否定自己"
     ],
     "reminder": "坚持想去的地方，也可以更换到达的方法。",
-    "partner": "plot-rewriter",
+    "partner": null,
     "beats": [],
     "profile": [
       25,
@@ -465,7 +465,7 @@ export const selectedRoles = [
       "狼狈了还能接梗"
     ],
     "reminder": "尝鲜之前，给自己和同伴留一个退出选项。",
-    "partner": "spotlight-extra",
+    "partner": null,
     "beats": [],
     "profile": [
       100,
@@ -739,7 +739,7 @@ export const selectedRoles = [
       "愿意认真靠近热爱"
     ],
     "reminder": "把心中的方向说出来，让同行的人也能看见。",
-    "partner": "never-give-up",
+    "partner": null,
     "beats": [],
     "profile": [
       75,
@@ -1123,7 +1123,7 @@ export const selectedRoles = [
       "看得见共同兴趣"
     ],
     "reminder": "连接之前也看看对方的节奏，慢一点同样能靠近。",
-    "partner": "lucky-disaster",
+    "partner": null,
     "beats": [],
     "profile": [
       100,
@@ -1507,7 +1507,7 @@ export const selectedRoles = [
       "解决办法很具体"
     ],
     "reminder": "把服务做好，也允许别人为自己的选择负责。",
-    "partner": "apocalypse-caterer",
+    "partner": null,
     "beats": [],
     "profile": [
       25,
