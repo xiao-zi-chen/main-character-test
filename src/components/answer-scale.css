@@ -5,10 +5,10 @@
 .answer-scale-anchor:last-child > span { color: #a8c3dc; }
 .answer-scale-anchor p { margin: 9px 0 0; font-size: 13px; line-height: 1.9; color: #d8dce3; overflow-wrap: anywhere; }
 .answer-scale-instruction { margin: 25px 0 22px; font-size: 11px; line-height: 1.8; color: #99a8be; text-align: center; }
-.answer-scale-track { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); height: 46px; border: 1px solid #8292a654; border-radius: 7px; background: linear-gradient(90deg, #c49861b0, #e9d6b25e 43%, #becddd52 57%, #708eafc2); cursor: pointer; touch-action: none; user-select: none; outline: none; }
+.answer-scale-track { position: relative; display: grid; grid-template-columns: repeat(15, minmax(0, 1fr)); height: 46px; border: 1px solid #8292a654; border-radius: 7px; background: linear-gradient(90deg, #c49861b0, #e9d6b25e 43%, #becddd52 57%, #708eafc2); cursor: pointer; touch-action: none; user-select: none; outline: none; }
 .answer-scale-track:focus-visible { outline: 2px solid #eed4a8; outline-offset: 7px; }
 .answer-scale-cell { min-width: 0; border-right: 1px solid #0c182c6e; }
-.answer-scale-cell:nth-child(5) { border-right: 0; }
+.answer-scale-cell:nth-child(15) { border-right: 0; }
 .answer-scale-cell.major-boundary { border-right: 4px solid #ebd0a3; box-shadow: 1px 0 0 #111d31; }
 .answer-scale-thumb { position: absolute; top: -8px; height: 60px; width: 20px; transform: translateX(-50%); display: grid; place-items: center; background: linear-gradient(135deg, #f6e5c8, #d2aa74); border: 1px solid #f6e4c6; border-radius: 5px; box-shadow: 0 4px 14px #0006; opacity: .62; pointer-events: none; transition: left .12s ease, opacity .15s ease; }
 .answer-scale-thumb i { width: 4px; height: 16px; border-inline: 1px solid #69553296; }

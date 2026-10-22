@@ -1,4 +1,8 @@
+import { confirmAnswer } from './quiz-helpers.js';
 import { test, expect } from '@playwright/test';
+import { questions, dimensions } from '../../src/data/questions.js';
+import { hiddenRoles } from '../../src/data/roles.js';
+import { STORAGE_KEY } from '../../src/engine.js';
 
 test('home loads one cover and result loads video only after an explicit request', async ({ page }) => {
   const mediaRequests=[];
@@ -73,6 +77,61 @@ test('modal traps keyboard focus, keeps text readable and restores its trigger',
   expect(await roleButton.evaluate(element=>getComputedStyle(element).color)).toBe('rgb(24, 39, 30)');
 });
 
+test('every reachable modal closes from outside and preserves inside clicks, image menus and drags', async ({ page }) => {
+  async function checkModal(title, insideSelector) {
+    const dialog = page.getByRole('dialog', { name: title, exact: true });
+    await expect(dialog).toBeVisible();
+    const inside = dialog.locator(insideSelector).first();
+    await inside.click();
+    await expect(dialog).toBeVisible();
+    if (insideSelector === 'img') {
+      expect(await inside.evaluate(element => element.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, cancelable: true })))).toBe(true);
+      await expect(dialog).toBeVisible();
+    }
+    const bounds = await inside.boundingBox();
+    await inside.dispatchEvent('pointerdown', { pointerId: 1, pointerType: 'touch', clientX: bounds.x + 1, clientY: bounds.y + 1, button: 0 });
+    await dialog.dispatchEvent('pointerup', { pointerId: 1, pointerType: 'touch', clientX: 2, clientY: 2, button: 0 });
+    await dialog.dispatchEvent('click', { clientX: 2, clientY: 2 });
+    await expect(dialog).toBeVisible();
+    await page.mouse.click(2, 2);
+    await expect(dialog).toHaveCount(0);
+  }
+  await page.goto('/');
+  await page.getByRole('button', { name: '关于测试', exact: true }).click();
+  await checkModal('关于测试', 'h2');
+  if (hiddenRoles.length) {
+    for (let i = 0; i < 5; i++) await page.locator('.simple-brand').click();
+    await checkModal('彩蛋导演室', 'h2');
+  }
+  await page.goto('/#/characters');
+  await page.getByRole('button', { name: '预览心之所向', exact: true }).click();
+  await checkModal('心之所向的角色预告', 'h2');
+  if (hiddenRoles.length) {
+    await page.locator('.gallery-secret').click();
+    await checkModal('隐藏剧本线索', 'h2');
+  }
+  await page.goto('/#/role/plot-rewriter');
+  await page.getByRole('button', { name: '观看心之所向的短片', exact: true }).click();
+  await checkModal('心之所向的短片', 'video');
+  await page.getByRole('button', { name: '分享剧本', exact: true }).first().click();
+  await page.getByRole('button', { name: '朋友圈', exact: true }).click();
+  await checkModal('分享剧本', 'img');
+  await page.goto('/#/test');
+  await page.getByRole('button', { name: '放大当前画面', exact: true }).click();
+  await checkModal('查看画面', 'img');
+
+  const questionIds = dimensions.flatMap(dimension => questions.filter(question => question.dimension === dimension.id).slice(0, 2).map(question => question.id));
+  await page.evaluate(({ key, questionIds }) => {
+    localStorage.setItem(key, JSON.stringify({ version: 5, questionIds, answers: Object.fromEntries(questionIds.map(id => [id, 7])), index: 19, submitted: true }));
+  }, { key: STORAGE_KEY, questionIds });
+  await page.goto('/?modal-check=result#/result');
+  await page.getByRole('button', { name: '保存我的角色卡', exact: true }).click();
+  await checkModal('保存角色卡', 'img');
+  await page.getByRole('button', { name: '再选一次，我有别的剧本', exact: true }).click();
+  await checkModal('重新选角', 'h2');
+  await expect(page).toHaveURL(/#\/result$/);
+});
+
 test('landscape close control remains tappable', async ({page})=>{
   await page.setViewportSize({width:852,height:393});
   await page.goto('/#/role/royal-chef');
@@ -110,9 +169,9 @@ test('collection rejection shows a recoverable error and preserves the chosen re
   });
   await page.getByRole('button',{name:'下一幕',exact:true}).click();
   await expect(page.getByRole('alert')).toContainText('答案还在');
-  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow','4');
+  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow','14');
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
-  await page.getByRole('button',{name:'下一幕',exact:true}).click();
+  await confirmAnswer(page);
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
   await expect(page.getByRole('alert')).toHaveCount(0);
 });
@@ -125,7 +184,7 @@ test('blocked browser storage still allows the current quiz to continue', async 
   await page.goto('/#/test');
   await expect(page.locator('.quiz-topline')).toContainText('浏览器暂时无法保存');
   await page.locator('.answer-scale-anchor').first().click();
-  await page.getByRole('button',{name:'下一幕',exact:true}).click();
+  await confirmAnswer(page);
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
 });
 
@@ -136,10 +195,10 @@ test('a missing collector preserves the selected draft and offers a page reload'
   await page.getByRole('button', { name: '下一幕', exact: true }).click();
   await expect(page.getByRole('alert')).toContainText('答题记录服务暂未加载');
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
-  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '4');
+  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '14');
   await page.getByRole('button', { name: '重新加载页面', exact: true }).click();
-  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '4');
-  await page.getByRole('button', { name: '下一幕', exact: true }).click();
+  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '14');
+  await confirmAnswer(page);
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
 });
 
@@ -147,23 +206,23 @@ test('lost confirmed records require an explicit new attempt without inventing t
   await page.goto('/#/test');
   for (let i = 0; i < 2; i++) {
     await page.getByRole('slider').press('Home');
-    await page.getByRole('button', { name: '下一幕', exact: true }).click();
+    await confirmAnswer(page);
   }
-  const before = await page.evaluate(() => JSON.parse(localStorage.getItem('main-character-casting:v4')));
+  const before = await page.evaluate(() => JSON.parse(localStorage.getItem('main-character-casting:v5')));
   // The outgoing document saves on pagehide. Remove only its collector state
   // in the next document, before collector.js can restore it.
   await page.addInitScript(() => localStorage.removeItem('nbti:collector:v1'));
   await page.reload();
   await expect(page.getByRole('alert')).toContainText('答题记录未能完整恢复');
   await expect(page.locator('.quiz-counter')).toHaveText('03 / 20');
-  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('main-character-casting:v4')).answers)).toEqual(before.answers);
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('main-character-casting:v5')).answers)).toEqual(before.answers);
   expect(await page.evaluate(() => window.NBTICollector.snapshot().runs[0].answers)).toEqual([]);
   await page.getByRole('button', { name: '重新开始测试', exact: true }).click();
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
   await expect(page.getByRole('slider')).toHaveAttribute('data-selected', 'false');
   await expect(page.getByRole('alert')).toHaveCount(0);
   await page.getByRole('slider').press('End');
-  await page.getByRole('button', { name: '下一幕', exact: true }).click();
+  await confirmAnswer(page);
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
 });
 
@@ -173,13 +232,14 @@ test('an unconfirmed completion cannot reveal a result and offers a fresh attemp
   for (let i = 0; i < 20; i++) {
     await page.getByRole('slider').press('Home');
     if (i === 19) await page.evaluate(() => { window.NBTICollector = { ...window.NBTICollector, complete: () => false }; });
-    await page.getByRole('button', { name: i === 19 ? '揭晓我的主角' : '下一幕', exact: true }).click();
+    if (i === 19) await page.getByRole('button', { name: '揭晓我的主角', exact: true }).click();
+    else await confirmAnswer(page);
   }
   await expect(page).toHaveURL(/#\/test$/);
   await expect(page.getByRole('alert')).toContainText('答题记录未能完整恢复');
   await expect(page.getByRole('button', { name: '揭晓我的主角', exact: true })).toBeDisabled();
   const state = await page.evaluate(() => ({
-    progress: JSON.parse(localStorage.getItem('main-character-casting:v4')),
+    progress: JSON.parse(localStorage.getItem('main-character-casting:v5')),
     collector: window.NBTICollector.snapshot()
   }));
   expect(state.progress.submitted).toBe(false);

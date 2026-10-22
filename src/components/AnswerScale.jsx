@@ -1,12 +1,11 @@
 import React, { useRef, useState } from 'react';
 import { isAnswer } from '../engine.js';
-import { SCALE_MIN, SCALE_MAX } from '../data/answer-scale.js';
+import { SCALE_MIN, SCALE_MAX, SCALE_LABELS as labels, SCALE_SHORTCUTS, reactionIndex } from '../data/answer-scale.js';
 import './answer-scale.css';
 import { QuestionArt } from './QuestionArt.jsx';
 
-const labels = ['更接近左侧', '偏左', '中立', '偏右', '更接近右侧'];
 const middle = (SCALE_MIN + SCALE_MAX) / 2;
-const labelFor = value => labels[value];
+const labelFor = value => labels[reactionIndex(value)];
 
 export function AnswerScale({ value, options, onChoose, questionId }) {
   const track = useRef(null);
@@ -69,10 +68,10 @@ export function AnswerScale({ value, options, onChoose, questionId }) {
       }}
       onPointerCancel={event => { if (gesture.current?.pointerId === event.pointerId) cancel(); }}
       onLostPointerCapture={() => { if (gesture.current) cancel(); }}>
-      {Array.from({ length: cellCount }, (_, index) => <span key={index} className="answer-scale-cell" aria-hidden="true" />)}
+      {Array.from({ length: cellCount }, (_, index) => <span key={index} className={`answer-scale-cell${(index + 1) % 3 === 0 && index < cellCount - 1 ? ' major-boundary' : ''}`} aria-hidden="true" />)}
       <span className="answer-scale-thumb" style={{ left: `${(displayed - SCALE_MIN + .5) / cellCount * 100}%` }} aria-hidden="true"><i /></span>
     </div>
-    <div className="answer-scale-labels">{labels.map((label, index) => <button type="button" key={label} aria-pressed={answered && value === index} onClick={() => commit(index)} className={(answered || draft !== null) && index === displayed ? 'active' : ''}>{label}</button>)}</div>
+    <div className="answer-scale-labels">{labels.map((label, index) => <button type="button" key={label} aria-pressed={answered && value === SCALE_SHORTCUTS[index]} onClick={() => commit(SCALE_SHORTCUTS[index])} className={(answered || draft !== null) && index === reactionIndex(displayed) ? 'active' : ''}>{label}</button>)}</div>
     <p className="answer-scale-selection" id="answer-scale-selection" role="status" aria-live="polite">
       {answered ? <><span className="scale-selection-mark">✓</span> 已选择：{labelFor(value)}<small>第 {value + 1} / {cellCount} 档</small></> : '还没决定，也可以选择中立'}
     </p>

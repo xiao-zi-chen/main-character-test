@@ -1,3 +1,4 @@
+import { confirmAnswer } from './quiz-helpers.js';
 import { test, expect } from '@playwright/test';
 import { questions, dimensions } from '../../src/data/questions.js';
 import { questionCopy } from '../../src/data/question-copy.js';
@@ -32,7 +33,7 @@ test('all forty questions have eight distinct decodable images', async ({ page }
 test('illustrated choices save the correct endpoints and a failed image leaves both choices usable', async ({ page }) => {
   const questionIds = ['9.1', ...ids.filter(id => id !== '9.1')];
   await page.addInitScript(({ key, questionIds }) => {
-    if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify({ version: 4, questionIds, answers: {}, index: 0, submitted: false }));
+    if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify({ version: 5, questionIds, answers: {}, index: 0, submitted: false }));
   }, { key: STORAGE_KEY, questionIds });
   await page.goto('/#/test');
   await expect(page.locator('.question-art img')).toHaveCount(3);
@@ -45,20 +46,20 @@ test('illustrated choices save the correct endpoints and a failed image leaves b
   await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '0');
   await right.locator('img').click();
   await expect(right).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '4');
+  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '14');
   await page.route('**/question-art/9-1/*.webp*', route => route.abort());
   await page.reload();
   await expect(page.locator('.question-art-fallback')).toHaveCount(3);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(questionCopy['9.1'].prompt);
   await expect(right).toHaveAttribute('aria-pressed', 'true');
   await left.click();
-  await page.getByRole('button', { name: '下一幕', exact: true }).click();
+  await confirmAnswer(page);
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
 });
 
 test('finishing automatically shows the matched film; blocked autoplay resumes by touching the film', async ({ page }) => {
   await page.addInitScript(({ key, ids }) => {
-    if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify({ version: 4, questionIds: ids, answers: {}, index: 0, submitted: false }));
+    if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify({ version: 5, questionIds: ids, answers: {}, index: 0, submitted: false }));
     const play = HTMLMediaElement.prototype.play;
     document.addEventListener('play', event => {
       if (!window.allowVideoPlay && event.target instanceof HTMLMediaElement) event.target.pause();
@@ -71,11 +72,11 @@ test('finishing automatically shows the matched film; blocked autoplay resumes b
   await page.goto('/#/test');
   for (let index = 0; index < ids.length - 1; index++) {
     await page.getByRole('slider').press('Home');
-    await page.getByRole('button', { name: '下一幕', exact: true }).click();
+    await confirmAnswer(page);
   }
   await page.getByRole('slider').press('Enter');
   await expect(page.getByRole('dialog')).toHaveCount(0);
-  await page.getByRole('button', { name: '揭晓我的主角', exact: true }).click();
+  await confirmAnswer(page, { final: true });
   const dialog = page.getByRole('dialog');
   await expect(dialog).toBeVisible();
   const roleName = await page.locator('.result-copy h1').innerText();

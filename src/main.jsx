@@ -9,6 +9,7 @@ import {
 import { SESSION_SIZE, questionById, newProgress } from './question-session.js';
 import { roles, hiddenRoles, roleById } from './data/roles.js';
 import { relationships } from './data/relationships.js';
+import { getFilmPartner } from './film-partner.js';
 import { readHiddenState, saveHiddenState, canViewRole } from './hidden-rules.js';
 import { answeredCount, getResult, isAnswer, isComplete, readProgress, saveProgress } from './engine.js';
 import { AnswerScale } from './components/AnswerScale.jsx';
@@ -21,7 +22,7 @@ import { questionCopy } from './data/question-copy.js';
 import { QuestionArt } from './components/QuestionArt.jsx';
 import { ReactionPreview } from './components/ReactionPreview.jsx';
 import { ShareDialog } from './components/ShareDialog.jsx';
-import { questionReactions } from './data/question-reactions.js';
+import { SCALE_MIN, SCALE_MAX } from './data/answer-scale.js';
 import { preloadQuestionArt, preloadQuestionReactions } from './question-art.js';
 
 import './styles.css';
@@ -31,6 +32,7 @@ import './experience.css';
 
 import './simple.css';
 import './question-art.css';
+import './components/film-partner.css';
 import {SimpleHeader, SimpleHome, SimpleFooter, CharacterGallery} from './components/SimpleExperience.jsx';
 const iconMap = { Crown, Sun, Ghost, BookOpen, ScanLine, Gem, MessageCircleHeart, Orbit, Flower2, CookingPot, Wrench, FileCheck2, BriefcaseBusiness, Clapperboard, Cpu, Sparkles, ShieldCheck, Search };
 const acts = [
@@ -72,23 +74,35 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
   const [collectionRecovery, setCollectionRecovery] = useState(null);
   const [reactionPreview, setReactionPreview] = useState(null);
   const previewSequence = useRef(0);
-  const closeReactionPreview = useCallback(() => setReactionPreview(null), []);
+  const pendingAdvance = useRef(null);
+  const closeReactionPreview = useCallback(() => {
+    const pending = pendingAdvance.current;
+    if (!pending) return;
+    pendingAdvance.current = null;
+    setReactionPreview(null);
+    if (pending.index === SESSION_SIZE - 1) {
+      setQuiz(old => ({ ...old, submitted: true }));
+      onFinish();
+    } else setQuiz(old => ({ ...old, index: pending.index + 1 }));
+  }, [setQuiz, onFinish]);
   const choose = useCallback(value => {
+    if (pendingAdvance.current) return false;
     setQuiz(old => ({ ...old, answers: { ...old.answers, [old.questionIds[old.index]]: value }, submitted: false }));
-    setReactionPreview({ questionId: question.id, value, sequence: ++previewSequence.current });
     return true;
-  }, [setQuiz, question.id]);
+  }, [setQuiz]);
   const next = useCallback(() => {
-    if (!isAnswer(selected) || collectionRecovery) return;
+    if (!isAnswer(selected) || collectionRecovery || pendingAdvance.current) return;
     setSubmitError('');
     const collector = window.NBTICollector;
-    if (typeof collector?.answer !== 'function' || typeof collector?.complete !== 'function') {
+    if (typeof collector?.answer !== 'function' || typeof collector?.complete !== 'function' || typeof collector?.leave !== 'function') {
       setSubmitError('答题记录服务暂未加载，答案还在，请重新加载页面后继续。');
       setCollectionRecovery('reload');
       return;
     }
     try {
       if (collector.answer(question.id, selected) !== true) throw new Error('Answer was not recorded');
+      // Confirmation ends answer time; viewing the reaction must not count as thinking.
+      collector.leave();
       if (index === SESSION_SIZE - 1 && collector.complete() !== true) {
         setSubmitError('本轮答题记录未能完整恢复，请重新开始测试，以准确记录选择和用时。');
         setCollectionRecovery('restart');
@@ -98,14 +112,15 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
       setSubmitError('这一步暂时未能保存，答案还在，请再试一次。');
       return;
     }
-    if (index === SESSION_SIZE - 1) {
-      setQuiz(old => ({ ...old, submitted: true }));
-
-      onFinish();
-    }
-    else setQuiz(old => ({ ...old, index: Math.min(old.index + 1, SESSION_SIZE - 1) }));
-  }, [selected, index, question.id, onFinish, setQuiz, collectionRecovery]);
-  const previous = useCallback(() => { setSubmitError(''); setQuiz(old => ({ ...old, index: Math.max(0, old.index - 1) })); }, [setQuiz]);
+    const pending = { questionId: question.id, index, value: selected, sequence: ++previewSequence.current };
+    pendingAdvance.current = pending;
+    setReactionPreview(pending);
+  }, [selected, index, question.id, collectionRecovery]);
+  const previous = useCallback(() => {
+    if (pendingAdvance.current) return;
+    setSubmitError('');
+    setQuiz(old => ({ ...old, index: Math.max(0, old.index - 1) }));
+  }, [setQuiz]);
   useLayoutEffect(() => {
     setCollectionRecovery(null);
     setSubmitError('');
@@ -124,14 +139,13 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
   }, [questionIds]);
   useLayoutEffect(() => { window.NBTICollector?.show(question.id); }, [question.id]);
   useEffect(() => { heading.current?.focus({ preventScroll: true }); }, [index]);
-  useEffect(closeReactionPreview, [question.id, closeReactionPreview]);
   useEffect(() => { preloadQuestionArt(questionIds[index + 1]); }, [index, questionIds]);
   useEffect(() => { preloadQuestionReactions(question.id); }, [question.id]);
   useEffect(() => {
     const onKey = event => {
-      if (document.querySelector('dialog[open]') || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || ['INPUT', 'TEXTAREA'].includes(event.target.tagName) || event.target.closest('[role="slider"]')) return;
-      if (['a', 'A', '1'].includes(event.key)) { event.preventDefault(); choose(0); }
-      if (['b', 'B', '2'].includes(event.key)) { event.preventDefault(); choose(4); }
+      if (pendingAdvance.current || document.querySelector('dialog[open]') || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || ['INPUT', 'TEXTAREA'].includes(event.target.tagName) || event.target.closest('[role="slider"]')) return;
+      if (['a', 'A', '1'].includes(event.key)) { event.preventDefault(); choose(SCALE_MIN); }
+      if (['b', 'B', '2'].includes(event.key)) { event.preventDefault(); choose(SCALE_MAX); }
       if (event.key === 'ArrowLeft') { event.preventDefault(); previous(); }
       if ((event.key === 'Enter' && event.target.tagName !== 'BUTTON' && event.target.tagName !== 'A') || event.key === 'ArrowRight') { event.preventDefault(); next(); }
     };
@@ -139,33 +153,35 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
     return () => document.removeEventListener('keydown', onKey);
   }, [choose, previous, next]);
   const actRole=roles[[1,6,5,8][actIndex]];
-  return <main id="main-content" className="quiz-page page-width" style={{'--world-color':actRole.color}}>
+  return <main id="main-content" className="quiz-page page-width" inert={Boolean(reactionPreview)} style={{'--world-color':actRole.color}}>
     <div className="quiz-topline"><button className="text-button" onClick={() => go('/')}><ArrowLeft size={16} /> 返回片场</button><span>{storageOkay ? <><ShieldCheck size={13} /> 进度已保存在此浏览器</> : '浏览器暂时无法保存，请在本页完成测试'}</span><span className="quiz-counter">{String(index + 1).padStart(2, '0')} <span>/ {SESSION_SIZE}</span></span></div>
     <div className="quiz-progress" role="progressbar" aria-label="答题进度" aria-valuenow={count} aria-valuemin={0} aria-valuemax={SESSION_SIZE}><i style={{ width: `${count / SESSION_SIZE * 100}%` }} /></div>
     <div className="quiz-layout"><aside className="quiz-sidebar"><div className="act-list">{acts.map((act, i) => <div className={`act ${i === actIndex ? 'current' : ''} ${i < actIndex ? 'done' : ''}`} key={act.title} aria-current={i === actIndex ? 'step' : undefined}><span className="act-number">{i < actIndex ? <Check size={16} /> : `0${i + 1}`}</span><div><h3>第{['一', '二', '三', '四'][i]}幕 · {act.title}</h3><p>{act.description}</p></div></div>)}</div></aside>
       <section className="question-section" aria-labelledby="question-title">
         <div className="question-meta"><span>第{['一', '二', '三', '四'][actIndex]}幕 <i /> {acts[actIndex].title}</span><span>SCENE {String(index + 1).padStart(2, '0')}</span></div>
         <div className="question-content" key={question.id}><span className="question-kicker">主角请就位 · 你的第 {index + 1} 个选择</span>
-          <div className="question-scene"><QuestionArt id={question.id} kind={isAnswer(selected) ? `scale-${selected}` : 'scene'} alt={isAnswer(selected) ? `你的反应：${questionReactions[question.id][selected].caption}` : '这一次，你在故事里'} priority zoomable/><h1 id="question-title" ref={heading} tabIndex={-1}>{question.prompt}</h1></div>
+          <div className="question-scene"><QuestionArt id={question.id} kind="scene" alt="这一次，你在故事里" priority zoomable/><h1 id="question-title" ref={heading} tabIndex={-1}>{question.prompt}</h1></div>
           <AnswerScale value={selected} options={question.options} onChoose={choose} questionId={question.id}/>
           {reactionPreview?.questionId === question.id && <ReactionPreview key={reactionPreview.sequence} questionId={question.id} value={reactionPreview.value} onClose={closeReactionPreview}/>}
         </div>
         {submitError && <div className="quiz-submit-error" role="alert"><p>{submitError}</p>{collectionRecovery && <button className="text-button" onClick={collectionRecovery === 'reload' ? () => window.location.reload() : onRestart}>{collectionRecovery === 'reload' ? '重新加载页面' : '重新开始测试'}<RotateCcw size={14}/></button>}</div>}
-        <div className="question-actions"><button className="text-button" disabled={index === 0 || Boolean(collectionRecovery)} onClick={previous}><ArrowLeft size={16} /> 上一题</button><button className="button button-lime" disabled={!isAnswer(selected) || Boolean(collectionRecovery)} onClick={next}>{index === SESSION_SIZE - 1 ? '揭晓我的主角' : '下一幕'}{index === SESSION_SIZE - 1 ? <Sparkles size={18} /> : <ArrowRight size={19} />}</button></div>
+        <div className="question-actions"><button className="text-button" disabled={index === 0 || Boolean(collectionRecovery) || Boolean(reactionPreview)} onClick={previous}><ArrowLeft size={16} /> 上一题</button><button className="button button-lime" disabled={!isAnswer(selected) || Boolean(collectionRecovery) || Boolean(reactionPreview)} onClick={next}>{index === SESSION_SIZE - 1 ? '揭晓我的主角' : '下一幕'}{index === SESSION_SIZE - 1 ? <Sparkles size={18} /> : <ArrowRight size={19} />}</button></div>
       </section>
     </div>
   </main>;
 }
 
+const revealDurationMs = 4000;
 function Reveal({ onDone }) {
-  useEffect(() => { const timer = window.setTimeout(onDone, 2000); return () => window.clearTimeout(timer); }, [onDone]);
-  return <main id="main-content" className="reveal-page simple-reveal" aria-live="polite"><Clapperboard size={48}/><h1>你的主角，即将登场。</h1><p>20 个选择，拼出独一无二的你。</p><div className="reveal-loading"><i/></div></main>;
+  useEffect(() => { const timer = window.setTimeout(onDone, revealDurationMs); return () => window.clearTimeout(timer); }, [onDone]);
+  return <main id="main-content" className="reveal-page simple-reveal" style={{ '--reveal-duration': `${revealDurationMs}ms` }} aria-live="polite"><Clapperboard size={48}/><h1>你的主角，即将登场。</h1><p>20 个选择，拼出独一无二的你。</p><div className="reveal-loading"><i/></div></main>;
 }
 
 function Result({ result, generic, manifest, onRestart, onStart, startLabel, onShare, toast, onPreview, onWatch, onSaveCard, hasResult }) {
   const { role, scores } = result;
   const [showAll, setShowAll] = useState(false);
   const relationship = relationships[role.id];
+  const partner = getFilmPartner(role);
   return <main id="main-content" className="result-page page-width" style={{ '--role-color': role.color }}>
     <div className="result-topline"><button className="text-button" onClick={() => go(generic && hasResult ? '/result' : '/')}><ArrowLeft size={16}/> {generic && hasResult ? '返回我的结果' : '返回首页'}</button><span className="result-context">{generic ? 'TA 的主角人设' : '你的主角人设'}</span></div>
     <div className="result-layout"><div className="result-media"><button className="result-video-preview" onClick={() => onWatch(role)} aria-label={`观看${role.name}的短片`}><img src={mediaAsset(role,manifest[role.id])} alt={`${role.name}的影片封面`}/><span className="preview-play"><Play size={22} fill="currentColor"/></span><span className="preview-duration">{durationLabel(manifest[role.id])}短片</span></button></div>
@@ -175,6 +191,14 @@ function Result({ result, generic, manifest, onRestart, onStart, startLabel, onS
       </div>
     </div>
     <section className="relationship-section" aria-labelledby="relationship-title"><span className="eyebrow muted">YOU, IN SOMEONE ELSE'S STORY</span><h2 id="relationship-title">和你相处，会发现</h2><dl className="relationship-details"><div><dt>熟人眼里的你</dt><dd>{relationship.familiar}</dd></div><div><dt>你的偏爱藏在这里</dt><dd>{relationship.affection}</dd></div><div><dt>最容易被误会的瞬间</dt><dd>{relationship.friction}</dd></div></dl></section>
+    {partner && <section className="film-partner" aria-label="同片搭档" style={{ '--partner-color': partner.color }}>
+      <div className="film-partner-header"><span className="film-partner-icon" aria-hidden="true"><RoleIcon role={partner} size={28}/></span><div className="film-partner-heading"><p>{relationship.bond}</p><h2>{partner.name}</h2></div><a className="film-partner-link" href={`#/role/${partner.id}`}>看看 TA 的剧本 <ArrowUpRight size={19}/></a></div>
+      <div className="film-partner-body">
+        <img className="film-partner-portrait" src={mediaAsset(partner, manifest[partner.id])} alt={`${partner.name}的角色画像`} loading="lazy"/>
+        <div className="film-partner-description"><p className="film-partner-copy">{relationships[partner.id].familiar}</p><p className="film-partner-chemistry">{relationship.chemistry}</p></div>
+      </div>
+      <div className="film-partner-invite"><p>{relationship.prompt}</p><button className="button button-outline" onClick={() => onShare(role, partner)}><Share2 size={18}/>找 TA 来认领</button></div>
+    </section>}
     <details className="result-more"><summary>展开剧情与性格倾向 <ChevronDown size={18}/></summary>    <div className="result-detail-grid"><section className="story-panel"><span className="eyebrow muted">YOUR HIGHLIGHT SCENE</span><h2>如果镜头给到你。</h2><p>{role.description}</p><p>{role.story}</p><ol className="scene-beats">{role.beats.map((beat,i)=><li key={beat}><span>{["开局","反转","高光"][i]}</span><p>{beat}</p></li>)}</ol><DialogueScript role={role}/><div className="director-note"><Star /><div><span>给主角的一句话</span><p>{role.reminder}</p></div></div></section>
       {!generic && scores ? <section className="traits-panel"><div className="trait-heading"><div><span className="eyebrow muted">YOUR CHARACTER DNA</span><h2>你的主角底色</h2></div><ScanLine size={25} /></div><p className="trait-explanation">根据你的选择呈现的倾向，不是能力评分。</p><DestinyRadar scores={scores} color={role.color}/><p className="radar-caption">各维度量表倾向 · 下方为你的明显倾向</p><div className="traits">{(showAll ? scores : [...scores].sort((a,b)=>Math.abs(b.value-50)-Math.abs(a.value-50)).slice(0,5)).map(score => <div className="trait" key={score.id}><div><span>{score.label}</span><span>{score.value < 50 ? score.low : score.high}<b>{score.value < 50 ? 100-score.value : score.value}%</b></span></div><div className="trait-track"><i style={{ width: `${score.value < 50 ? 100-score.value : score.value}%` }} /></div></div>)}</div><button className="text-button all-traits" onClick={() => setShowAll(v=>!v)}>{showAll ? '收起倾向' : '查看全部 10 个倾向'}<ChevronDown size={15} className={showAll ? 'rotated' : ''} /></button></section> : <section className="generic-panel"><RoleIcon role={role} size={56} strokeWidth={1} /><h2>这会是你的主角剧本吗？</h2><p>20 个日常选择，找到属于你的那一种人生。</p><button className="button button-outline" onClick={onStart}>现在开始选角 <ArrowUpRight size={18} /></button></section>}
     </div>
@@ -245,7 +269,7 @@ function App() {
     setModal(null);
     go('/test');
   };
-  const onShare = role => setModal({kind:'share',role});
+  const onShare = (role, partner) => setModal({kind:'share',role,partner});
   const requestedRole = route.startsWith('/role/') && Object.hasOwn(roleById, route.slice(6)) ? roleById[route.slice(6)] : null;
   const lockedRole = requestedRole?.hidden && !canViewRole(requestedRole,hiddenState);
   const resultRole = lockedRole ? null : requestedRole;
@@ -264,7 +288,7 @@ function App() {
     {modal?.kind==='hidden-hint' && <Modal title="隐藏剧本线索" onClose={closeModal} className="small-modal"><LockKeyhole className="modal-symbol" size={32}/><h2>有些剧本，不在常规名单里。</h2><p>试着连续点击首页左上角的“主角请就位”五次，进入彩蛋导演室。开启彩蛋设置后，再由你的完整答案决定是否揭晓。</p><button className="button button-lime" onClick={()=>{closeModal();go('/');}}>去片场看看 <ArrowRight size={18}/></button></Modal>}
     {modal?.kind==='secrets' && <Modal title="彩蛋导演室" onClose={closeModal} className="small-modal secret-settings"><Clapperboard className="modal-symbol" size={34}/><h2>彩蛋导演室</h2><p>开启后，特殊的答题组合才有机会产生两份隐藏剧本。普通结果仍然照常匹配。</p><label className="secret-toggle"><input type="checkbox" checked={hiddenState.enabled} onChange={event=>setHiddenState(old=>({...old,enabled:event.target.checked}))}/><span>允许解锁隐藏剧本</span></label><p className="secret-count">已解锁 {hiddenState.unlocked.length} / {hiddenRoles.length} 份隐藏档案</p><button className="button button-lime" onClick={()=>{closeModal();onStart();}}>带着这个设置继续 <ArrowRight size={18}/></button><button className="text-button" onClick={()=>{setHiddenState({enabled:false,unlocked:[]});toast('彩蛋记录已清空，隐藏模式已关闭');}}>清空彩蛋记录并关闭</button></Modal>}
     {modal?.kind==='restart' && <Modal title="重新选角" onClose={closeModal} className="small-modal"><RotateCcw className="modal-symbol" size={31} /><h2>再开一个新剧本？</h2><p>重新测试会重新抽取 20 道题，并清空本轮回答。你可以先保存角色卡，也可以保留答案回去修改。</p><button className="button button-lime" onClick={()=>{const fresh=newProgress();window.NBTICollector?.start({resume:false,questionIds:fresh.questionIds});setQuiz(fresh);setModal(null);go('/test');}}>重新开始 <ArrowRight size={18} /></button><button className="button button-outline" onClick={()=>{window.NBTICollector?.start({resume:true,questionIds:quiz.questionIds});setQuiz(old=>({...old,index:0,submitted:false}));setModal(null);go('/test');}}>保留答案，回去修改</button><button className="text-button" onClick={closeModal}>先留在这个剧本</button></Modal>}
-    {modal?.kind==='share' && <ShareDialog role={modal.role} media={manifest[modal.role.id]} onClose={closeModal}/>}
+    {modal?.kind==='share' && <ShareDialog role={modal.role} partner={modal.partner} media={manifest[modal.role.id]} onClose={closeModal}/>}
     <div className={`toast ${toastMessage?'visible':''}`} role="status" aria-live="polite"><Check size={16} />{toastMessage}</div>
   </>;
 }

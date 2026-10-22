@@ -18,5 +18,5 @@ export function QuestionArt({ id, kind = 'scene', alt, priority = false, zoomabl
       : <img key={source} src={source} alt={alt} width="1536" height="1024" decoding="async" fetchPriority={priority ? 'high' : 'auto'} onLoad={onReady} onError={() => { setFailedSource(source); onReady?.(); }}/>}
     {cue && <span className="question-art-cue" aria-hidden="true"><span>{cue.symbol}</span><span>{cue.face}</span></span>}
     {zoomable && <span className="question-art-expand" aria-hidden="true"><Maximize2 size={16}/></span>}
-  </Container>{expanded && <Modal title="查看画面" className="image-zoom-modal" onClose={()=>setExpanded(false)}><QuestionArt id={id} kind={kind} alt={alt}/></Modal>}</>;
+  </Container>{expanded && <Modal title="查看画面" className="image-zoom-modal" onClose={()=>setExpanded(false)}><QuestionArt id={id} kind={kind} alt={alt}/><div className="reaction-preview-actions"><span>长按图片可保存</span><a href={source} download={`NBTI-${id}-${kind}.webp`}>保存图片</a></div></Modal>}</>;
 }

@@ -1,3 +1,4 @@
+import { confirmAnswer } from './quiz-helpers.js';
 import {test,expect} from '@playwright/test';
 import {questions,dimensions} from '../../src/data/questions.js';
 import {STORAGE_KEY} from '../../src/engine.js';
@@ -10,7 +11,7 @@ test('all forty questions fit in one phone screen, including both choices and na
     const ids=dimensions.flatMap(d=>questions.filter(q=>q.dimension===d.id).sort((a,b)=>Number(b.id===target.id)-Number(a.id===target.id)).slice(0,2).map(q=>q.id));
     return [target.id,[target.id,...ids.filter(id=>id!==target.id)]];
   }));
-  await page.addInitScript(({key,fixtures})=>{const q=new URL(location.href).searchParams.get('question');if(fixtures[q])localStorage.setItem(key,JSON.stringify({version:4,questionIds:fixtures[q],answers:{},index:0,submitted:false}));},{key:STORAGE_KEY,fixtures});
+  await page.addInitScript(({key,fixtures})=>{const q=new URL(location.href).searchParams.get('question');if(fixtures[q])localStorage.setItem(key,JSON.stringify({version:5,questionIds:fixtures[q],answers:{},index:0,submitted:false}));},{key:STORAGE_KEY,fixtures});
   for(const viewport of [{width:320,height:568},{width:390,height:844}]) {
     await page.setViewportSize(viewport);
     for(const question of questions) {
@@ -44,19 +45,19 @@ test('refresh keeps a draw, finish records twenty responses and restart makes a 
   const first=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)).questionIds,STORAGE_KEY);
   expect(validQuestionIds(first)).toBe(true);
   await page.locator('.answer-scale-anchor').first().click();
-  await page.getByRole('button',{name:'下一幕',exact:true}).click();
+  await confirmAnswer(page);
   await page.reload();
   expect(await page.evaluate(key=>JSON.parse(localStorage.getItem(key)).questionIds,STORAGE_KEY)).toEqual(first);
   for(let i=1;i<20;i++){
     await page.locator('.answer-scale-anchor').last().click();
-    await page.getByRole('button',{name:i===19?'揭晓我的主角':'下一幕',exact:true}).click();
+    await confirmAnswer(page, { final: i === 19 });
   }
   await expect(page).toHaveURL(/#\/result$/);
   await expect(page.getByRole('dialog')).toBeVisible();
   await page.getByRole('button',{name:'关闭弹窗',exact:true}).click();
   const collected=await page.evaluate(()=>window.NBTICollector.snapshot());
   const run=collected.runs.find(r=>r.session.id===collected.activeSessionId);
-  expect(run.session.questionnaireVersion).toBe('nbti-2026-10-17-scale5-sample20');
+  expect(run.session.questionnaireVersion).toBe('nbti-2026-10-20-scale15-sample20');
   expect(run.session.questionIds).toEqual(first);
   expect(run.answers).toHaveLength(20);
   expect(run.session.completedAt).toBeTruthy();

@@ -4,9 +4,10 @@ import { HIDDEN_STORAGE_KEY } from '../../src/hidden-rules.js';
 import { drawQuestions } from '../../src/question-session.js';
 import { questions, dimensions } from '../../src/data/questions.js';
 import { STORAGE_KEY, getResult } from '../../src/engine.js';
+import { SCALE_MAX } from '../../src/data/answer-scale.js';
 
 function answersFor(role,questionIds) {
-  return Object.fromEntries(questionIds.map(id=>{const q=questions.find(item=>item.id===id);const units=Math.round(role.profile[dimensions.findIndex(d=>d.id===q.dimension)]*4/100);return [id,q.highAnswer==='A'?4-units:units];}));
+  return Object.fromEntries(questionIds.map(id=>{const q=questions.find(item=>item.id===id);const units=Math.round(role.profile[dimensions.findIndex(d=>d.id===q.dimension)]*SCALE_MAX/100);return [id,q.highAnswer==='A'?SCALE_MAX-units:units];}));
 }
 
 test('exported portraits preserve all 28 individual portraits at their native aspect ratios', async ({ page },testInfo)=>{
@@ -23,7 +24,7 @@ test('exported portraits preserve all 28 individual portraits at their native as
   await page.addInitScript(({key,profiles,hiddenKey,hiddenIds,questionIds})=>{
     const role=new URL(location.href).searchParams.get('shareCardRole');
     if(profiles[role]) {
-      localStorage.setItem(key,JSON.stringify({version:4,questionIds,answers:profiles[role],index:19,submitted:true}));
+      localStorage.setItem(key,JSON.stringify({version:5,questionIds,answers:profiles[role],index:19,submitted:true}));
       localStorage.setItem(hiddenKey,JSON.stringify({version:1,enabled:hiddenIds.includes(role),unlocked:[]}));
     }
   },{key:STORAGE_KEY,profiles,questionIds,hiddenKey:HIDDEN_STORAGE_KEY,hiddenIds:roles.filter(role=>role.hidden).map(role=>role.id)});

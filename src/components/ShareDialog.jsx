@@ -5,11 +5,13 @@ import { mediaAsset } from '../media.js';
 import { relationships } from '../data/relationships.js';
 import './share-dialog.css';
 
-export function ShareDialog({ role, media, onClose }) {
+export function ShareDialog({ role, partner, media, onClose }) {
   const url = new URL(window.location.href);
   url.search = '';
-  url.hash = `/role/${role.id}`;
-  const invitation = `我的主角人设是「${role.name}」：${relationships[role.id].identity}\n来看看我的剧本，你会是哪一种主角？`;
+  url.hash = `/role/${partner?.id ?? role.id}`;
+  const invitation = partner
+    ? `「${role.name}」×「${partner.name}」\n${relationships[role.id].chemistry}\n这段故事里的「${partner.name}」让我想到了你。来看看 TA 的剧本，要不要一起对号入座？`
+    : `我的主角人设是「${role.name}」：${relationships[role.id].identity}\n来看看我的剧本，你会是哪一种主角？`;
   const text = `${invitation}\n${url.href}`;
   const cardUrl = mediaAsset(role, media, 'card');
   const [card, setCard] = useState(null);
@@ -51,7 +53,7 @@ export function ShareDialog({ role, media, onClose }) {
       setMessage(withImage ? '长按下方角色卡保存，再打开微信发布朋友圈；邀请文案也可以复制。' : '复制下方剧本邀请，粘贴到微信、QQ 或其他聊天中。');
       return;
     }
-    const data = { title: `${role.name} · 我的主角剧本`, text: invitation, url: url.href };
+    const data = { title: partner ? `${role.name} × ${partner.name} · 同片搭档` : `${role.name} · 我的主角剧本`, text: invitation, url: url.href };
     if (withImage) {
       if (!card || !navigator.canShare?.({ files: [card.file] })) {
         setShowCard(true);
@@ -69,9 +71,9 @@ export function ShareDialog({ role, media, onClose }) {
       }
     } finally { setBusy(false); }
   };
-  return <Modal title="分享剧本" onClose={onClose} className="small-modal script-share-modal">
-    <Share2 className="modal-symbol" size={28}/><h2>把你的主角剧本，分享出去。</h2>
-    <p className="share-role-name">{role.name}</p>
+  return <Modal title={partner ? '分享同片搭档' : '分享剧本'} onClose={onClose} className="small-modal script-share-modal">
+    <Share2 className="modal-symbol" size={28}/><h2>{partner ? '这部短片里的另一个主角，会是 TA 吗？' : '把你的主角剧本，分享出去。'}</h2>
+    <p className="share-role-name">{partner ? `${role.name} × ${partner.name}` : role.name}</p>
     <div className="share-destinations">
       <button className="button button-lime" disabled={busy} onClick={() => share(false)}><Share2 size={18}/>更多分享方式</button>
       <button className="button button-outline" onClick={copy}><Copy size={18}/>复制剧本邀请</button>

@@ -5,7 +5,7 @@ import { regularRoles as roles, mediaPath } from '../src/data/roles.js';
 import { mediaAsset } from '../src/media.js';
 import { mediaBaseUrl } from '../src/runtime-config.js';
 import { scoreAnswers, getResult, cleanAnswers, readProgress, saveProgress, isAnswer, answeredCount, isComplete, STORAGE_KEY, LEGACY_STORAGE_KEY } from '../src/engine.js';
-import { SCALE_MIN, SCALE_MAX, SCALE_MID, SCALE_STEPS, QUESTIONNAIRE_VERSION } from '../src/data/answer-scale.js';
+import { SCALE_MIN, SCALE_MAX, SCALE_MID, SCALE_STEPS, SCALE_SHORTCUTS, reactionIndex, QUESTIONNAIRE_VERSION } from '../src/data/answer-scale.js';
 
 const opposite = value => value === 'A' ? 'B' : 'A';
 const endpoint = value => value === 'A' ? SCALE_MIN : SCALE_MAX;
@@ -103,9 +103,9 @@ test('endpoint responses exactly preserve binary scores, weighted distances and 
   }
 });
 
-test('all 5 levels score continuously, neutral is 50 and each reverse question preserves direction', () => {
-  assert.equal(SCALE_STEPS, 5);
-  assert.equal(QUESTIONNAIRE_VERSION, 'nbti-2026-10-17-scale5-sample20');
+test('all 15 levels score continuously, neutral is 50 and each reverse question preserves direction', () => {
+  assert.equal(SCALE_STEPS, 15);
+  assert.equal(QUESTIONNAIRE_VERSION, 'nbti-2026-10-20-scale15-sample20');
   for (let highUnits = SCALE_MIN; highUnits <= SCALE_MAX; highUnits++) {
     const answers = Object.fromEntries(questions.map(q => [q.id, q.highAnswer === 'A' ? SCALE_MAX - highUnits : highUnits]));
     assert.ok(scoreAnswers(answers).every(score => score.value === Math.round(highUnits / SCALE_MAX * 100)));
@@ -123,22 +123,33 @@ test('half-point rounding uses exact integer response units', () => {
   const dimension = dimensions.find(d => questions.filter(q => q.dimension === d.id).length === 4);
   const items = questions.filter(q => q.dimension === dimension.id);
   const answers = { ...allHigh };
-  const highUnits = [3, 3, 4, 4];
-  items.forEach((q, i) => { answers[q.id] = q.highAnswer === 'A' ? SCALE_MAX - highUnits[i] : highUnits[i]; });
-  assert.equal(scoreAnswers(answers).find(score => score.id === dimension.id).value, 88);
+  for (const [highUnits, expected] of [[[1, 2, 2, 2], 13], [[12, 12, 12, 13], 88]]) {
+    items.forEach((q, i) => { answers[q.id] = q.highAnswer === 'A' ? SCALE_MAX - highUnits[i] : highUnits[i]; });
+    assert.equal(scoreAnswers(answers).find(score => score.id === dimension.id).value, expected);
+  }
 });
 
 test('strict numeric scale validation counts the zero endpoint and excludes forged or missing answers', () => {
-  assert.ok(Array.from({ length: 5 }, (_, value) => isAnswer(value)).every(Boolean));
-  for (const value of ['A', 'B', '0', '4', -1, 5, 7, 14, 1.5, null, undefined, true, false, NaN, Infinity, {}, []]) {
+  assert.ok(Array.from({ length: 15 }, (_, value) => isAnswer(value)).every(Boolean));
+  for (const value of ['A', 'B', '0', '14', -1, 15, 1.5, null, undefined, true, false, NaN, Infinity, {}, []]) {
     assert.equal(isAnswer(value), false);
   }
-  assert.deepEqual(cleanAnswers({ '1.1': 0, '2.1': 4, '3.1': '7', '4.1': 7.5, unknown: 7 }), { '1.1': 0, '2.1': 4 });
+  assert.deepEqual(cleanAnswers({ '1.1': 0, '2.1': 14, '3.1': '7', '4.1': 7.5, unknown: 7 }), { '1.1': 0, '2.1': 14 });
   assert.equal(answeredCount({ '1.1': 0 }), 1);
   assert.equal(answeredCount(), 0);
   assert.deepEqual(cleanAnswers(Object.create({ '1.1': 0 })), {});
   assert.equal(isComplete(Object.fromEntries(questions.map(q => [q.id, 0]))), true);
   assert.equal(isComplete(Object.fromEntries(questions.map(q => [q.id, 'A']))), false);
+});
+
+test('fifteen exact answers map to five artwork groups with explicit boundaries and shortcuts', () => {
+  assert.deepEqual(SCALE_SHORTCUTS, [0, 4, 7, 10, 14]);
+  assert.deepEqual(Array.from({ length: 15 }, (_, value) => reactionIndex(value)), [
+    0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4,
+  ]);
+  for (const boundary of [3, 6, 9, 12]) {
+    assert.equal(reactionIndex(boundary) - reactionIndex(boundary - 1), 1);
+  }
 });
 
 test('same answers give the same result; incomplete answers never produce a result', () => {

@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const STORAGE_KEY = 'nbti:collector:v1';
-  const VERSION = 'nbti-2026-10-17-scale5-sample20';
+  const VERSION = 'nbti-2026-10-20-scale15-sample20';
   let state;
   let storageAvailable = true;
   const newToken = () => Array.from(crypto.getRandomValues(new Uint8Array(32)),
@@ -201,7 +201,7 @@
     persist();
   }
   function answer(questionId, scaleValue) {
-    if (!Number.isInteger(scaleValue) || scaleValue < 0 || scaleValue > 4) return false;
+    if (!Number.isInteger(scaleValue) || scaleValue < 0 || scaleValue > 14) return false;
     if (activeRun()?.session.questionnaireVersion !== VERSION) return false;
     const id = String(questionId);
     if (!activeRun()?.session.questionIds?.includes(id)) return false;
