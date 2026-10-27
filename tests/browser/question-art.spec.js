@@ -6,7 +6,7 @@ import { STORAGE_KEY } from '../../src/engine.js';
 
 const ids = dimensions.flatMap(d => questions.filter(q => q.dimension === d.id).slice(0, 2).map(q => q.id));
 
-test('all forty questions have eight distinct decodable images', async ({ page }) => {
+test('all forty questions have eight decodable image paths', async ({ page }) => {
   await page.goto('/');
   const assets = await page.evaluate(async ids => {
     return Promise.all(ids.map(async id => {

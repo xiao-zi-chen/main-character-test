@@ -66,6 +66,22 @@ for(const role of roles) {
   const media=manifest[role.id];
   const card=await readFile(new URL(`../dist/media/${media.card}`,import.meta.url));
   if(createHash('sha256').update(card).digest('hex')!==media.cardSha256) throw new Error(`Card hash mismatch: ${role.id}`);
+  if(['imagegen-film-reference','composite-film-reference'].includes(media.cardSource)) {
+    if(media.cardTitle!==role.name || card.length<24 || card.subarray(0,8).toString('hex')!=='89504e470d0a1a0a' || card.subarray(12,16).toString('ascii')!=='IHDR') throw new Error(`Invalid character card: ${role.id}`);
+    if(!isDeepStrictEqual([card.readUInt32BE(16),card.readUInt32BE(20)],media.cardSize)) throw new Error(`Card dimensions mismatch: ${role.id}`);
+  }
+  if(media.cardSource==='composite-film-reference') {
+    if(media.cardDescription!==role.description || media.cardTagline!==role.tagline) throw new Error(`Character card copy mismatch: ${role.id}`);
+    if(media.cardQrUrl!=='https://www.nbti.cn/' || media.cardLayoutVersion!==1) throw new Error(`Invalid character card QR or layout: ${role.id}`);
+    if(typeof media.cardArtwork!=='string' || !/^[a-z0-9_-]+\.png$/.test(media.cardArtwork) || media.cardArtwork===media.card || !/^[a-f0-9]{64}$/.test(media.cardArtworkSha256)) throw new Error(`Invalid character card artwork source: ${role.id}`);
+    if(!isDeepStrictEqual(media.cardArtworkSize,[1024,1536]) || media.cardSize[0]!==1024 || media.cardSize[1]<=1536) throw new Error(`Character card must contain its full artwork and footer: ${role.id}`);
+    // The original artwork is an input to the composer, not an extra public
+    // download. Only the final image containing copy and QR is deployed.
+    if(expected.has(`media/${media.cardArtwork}`)) throw new Error(`Uncomposed artwork is unexpectedly public: ${role.id}`);
+    const artwork=await readFile(new URL(`../public/media/${media.cardArtwork}`,import.meta.url));
+    if(createHash('sha256').update(artwork).digest('hex')!==media.cardArtworkSha256 || artwork.length<24 || artwork.subarray(0,8).toString('hex')!=='89504e470d0a1a0a') throw new Error(`Character card artwork hash or format mismatch: ${role.id}`);
+    if(!isDeepStrictEqual([artwork.readUInt32BE(16),artwork.readUInt32BE(20)],media.cardArtworkSize)) throw new Error(`Character card artwork dimensions mismatch: ${role.id}`);
+  }
   const portrait=await readFile(new URL(`../dist/media/${media.portrait}`,import.meta.url));
   if(createHash('sha256').update(portrait).digest('hex')!==media.portraitSha256) throw new Error(`Portrait hash mismatch: ${role.id}`);
 }

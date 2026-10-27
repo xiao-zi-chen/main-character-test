@@ -1,81 +1,71 @@
-// A portrait-first sharing layout. The full source image stays visible:
-// artwork, text and decoration each have their own space on the card.
-export async function createRoleCard(role, portraitUrl) {
-  await document.fonts.ready;
-  const portrait=new Image();
-  // COS images need CORS permission to keep the canvas exportable.
-  portrait.crossOrigin='anonymous';
-  portrait.src=portraitUrl;
-  await portrait.decode();
-  if(!portrait.naturalWidth || !portrait.naturalHeight) throw new Error('封面尺寸无效');
-
-  const canvas=document.createElement('canvas');
-  canvas.width=900;
-  canvas.height=1920;
-  const ctx=canvas.getContext('2d');
-  if(!ctx) throw new Error('无法创建角色卡');
-
-  ctx.fillStyle='#090f1a';
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-  ctx.strokeStyle='#454754';
-  ctx.strokeRect(28,28,844,1864);
-
-  ctx.fillStyle=role.color;
-  ctx.beginPath();
-  ctx.moveTo(65,55);ctx.lineTo(69,69);ctx.lineTo(83,73);ctx.lineTo(69,77);
-  ctx.lineTo(65,91);ctx.lineTo(61,77);ctx.lineTo(47,73);ctx.lineTo(61,69);
-  ctx.closePath();ctx.fill();
-  ctx.font='bold 23px "Microsoft YaHei", sans-serif';
-  ctx.fillText('主角请就位',96,82);
-  ctx.font='13px Arial, sans-serif';
-  ctx.fillText('THE MAIN CHARACTER PROJECT',256,81);
-  ctx.textAlign='right';
-  ctx.fillText(`${role.hidden?'SECRET':'NO.'} ${role.number} / ${roles.length}`,810,81);
-  ctx.textAlign='left';
-
-  const frame={x:90,y:128,width:720,height:1280};
-  ctx.fillStyle='#111b2a';
-  ctx.fillRect(frame.x,frame.y,frame.width,frame.height);
-  // Contain the complete image. 720×1280 source covers render at native size.
-  // Other aspect ratios retain the full composition with centered margins.
-  const scale=Math.min(frame.width/portrait.naturalWidth,frame.height/portrait.naturalHeight);
-  const width=portrait.naturalWidth*scale;
-  const height=portrait.naturalHeight*scale;
-  ctx.drawImage(portrait,frame.x+(frame.width-width)/2,frame.y+(frame.height-height)/2,width,height);
-  ctx.strokeStyle='#465268';
-  ctx.strokeRect(frame.x-4,frame.y-4,frame.width+8,frame.height+8);
-
-  ctx.fillStyle=role.color;
-  ctx.font='20px "Microsoft YaHei", sans-serif';
-  ctx.fillText(`我的主角剧本 / ${role.genre}`,90,1468,720);
-  ctx.fillStyle='#f8efe2';
-  ctx.font='bold 64px "Microsoft YaHei", sans-serif';
-  ctx.fillText(role.name,87,1563,723);
-  ctx.fillStyle='#b4b9ca';
-  ctx.font='26px "Microsoft YaHei", sans-serif';
-  ctx.fillText(relationships[role.id].identity,90,1630,720);
-
-  ctx.font='20px "Microsoft YaHei", sans-serif';
-  let chipX=90,chipY=1681;
-  for(const talent of role.talents) {
-    const chipWidth=Math.min(720,Math.ceil(ctx.measureText(talent).width)+28);
-    if(chipX+chipWidth>810) { chipX=90;chipY+=55; }
-    ctx.fillStyle='#172436';ctx.fillRect(chipX,chipY,chipWidth,41);
-    ctx.strokeStyle='#3e4d63';ctx.strokeRect(chipX+.5,chipY+.5,chipWidth-1,40);
-    ctx.fillStyle=role.color;ctx.fillText(talent,chipX+14,chipY+28,chipWidth-28);
-    chipX+=chipWidth+12;
+import qr from '../../content/character-card-qr.json';
+export const CARD_SITE_URL = 'https://www.nbti.cn/';
+export const CARD_LAYOUT_VERSION = 1;
+const FONT = '"Microsoft YaHei", "PingFang SC", sans-serif';
+function wrapText(ctx, text, width) {
+  const lines = [];
+  let line = '';
+  for (const character of Array.from(text)) {
+    if (line && ctx.measureText(line + character).width > width) {
+      if (/^[，。！？；：、）》」』】]$/.test(character) && Array.from(line).length > 1) {
+        const letters = Array.from(line), tail = letters.pop();
+        lines.push(letters.join('')); line = tail + character;
+      } else { lines.push(line); line = character; }
+    } else line += character;
   }
-
-  ctx.strokeStyle='#383f50';
-  ctx.beginPath();ctx.moveTo(90,1805);ctx.lineTo(810,1805);ctx.stroke();
-  ctx.fillStyle='#929aae';
-  ctx.font='20px "Microsoft YaHei", sans-serif';
-  const partner=role.castIds.length===2 ? roleById[role.castIds.find(id=>id!==role.id)] : null;
-  ctx.fillText(partner ? `我的剧情搭档：${partner.name}` : '每一种人生，都有自己的主角。',90,1856,720);
-  ctx.fillStyle='#74849a';ctx.font='14px "Microsoft YaHei", sans-serif';
-  ctx.fillText('作者：拾壹、我燃起来了、FhwuTrqr、Le Prince Grenouille',90,1880,720);
+  if (line) lines.push(line);
+  return lines;
+}
+function drawQr(ctx, box) {
+  if (qr.url !== CARD_SITE_URL || qr.modules.length < 21 || qr.modules.some(row => row.length !== qr.modules.length || row.some(cell => cell !== 0 && cell !== 1))) throw new Error('二维码数据无效');
+  ctx.fillStyle = '#ffffff'; ctx.fillRect(box.x, box.y, box.size, box.size);
+  ctx.fillStyle = '#000000';
+  qr.modules.forEach((row,y) => row.forEach((dark,x) => {
+    if (dark) ctx.fillRect(box.x+(x+4)*box.moduleSize,box.y+(y+4)*box.moduleSize,box.moduleSize,box.moduleSize);
+  }));
+}
+// Preserve the original artwork; append readable text and a scannable code.
+export async function createRoleCard(role, artworkUrl) {
+  await document.fonts.ready;
+  const artwork = new Image(); artwork.crossOrigin = 'anonymous'; artwork.src = artworkUrl;
+  await artwork.decode();
+  if (artwork.naturalWidth !== 1024 || artwork.naturalHeight !== 1536) throw new Error('角色原图须为1024×1536');
+  if (!role.tagline || !role.description) throw new Error('角色简介不能为空');
+  const canvas = document.createElement('canvas'), ctx = canvas.getContext('2d');
+  if (!ctx) throw new Error('无法创建角色卡');
+  ctx.font = `600 46px ${FONT}`;
+  const taglineLines = wrapText(ctx,role.tagline,896);
+  ctx.font = `38px ${FONT}`;
+  const descriptionLines = wrapText(ctx,role.description,896);
+  const taglineTop = 1636, descriptionTop = taglineTop+taglineLines.length*64+28;
+  const descriptionBottom = descriptionTop+descriptionLines.length*58;
+  const size = (qr.modules.length+8)*8;
+  const height = Math.max(2496,Math.ceil((descriptionBottom+40+48+size+68)/32)*32);
+  const qrBox = {x:64,y:height-68-size,moduleSize:8,size};
+  const dividerY = qrBox.y-48;
+  canvas.width=1024; canvas.height=height;
+  ctx.fillStyle='#101a16'; ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.drawImage(artwork,0,0);
+  ctx.strokeStyle='#9d8050'; ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(22,1536);ctx.lineTo(22,height-24);ctx.lineTo(1002,height-24);ctx.lineTo(1002,1536);ctx.stroke();
+  ctx.textBaseline='top';ctx.fillStyle='#c0a673';ctx.font=`28px ${FONT}`;
+  ctx.fillText('我的主角剧本',64,1576);
+  ctx.fillStyle='#f2e7ce';ctx.font=`600 46px ${FONT}`;
+  taglineLines.forEach((line,i)=>ctx.fillText(line,64,taglineTop+i*64));
+  ctx.fillStyle='#d0d8cd';ctx.font=`38px ${FONT}`;
+  descriptionLines.forEach((line,i)=>ctx.fillText(line,64,descriptionTop+i*58));
+  ctx.strokeStyle='#4c5546';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(64,dividerY);ctx.lineTo(960,dividerY);ctx.stroke();
+  drawQr(ctx,qrBox);
+  const footerX=qrBox.x+qrBox.size+48,footerY=qrBox.y+34;
+  ctx.fillStyle='#f2e7ce';ctx.font=`600 40px ${FONT}`;ctx.fillText('你会是哪一种主角？',footerX,footerY);
+  ctx.fillStyle='#c1cdbf';ctx.font=`32px ${FONT}`;ctx.fillText('扫码，领取你的主角剧本',footerX,footerY+66);
+  ctx.fillStyle='#d8bc83';ctx.font='32px Arial, sans-serif';ctx.fillText('www.nbti.cn',footerX,footerY+124);
+  ctx.fillStyle='#91a18f';ctx.font=`24px ${FONT}`;ctx.fillText('主角请就位 · NBTI',footerX,footerY+178);
+  canvas.cardLayout={version:CARD_LAYOUT_VERSION,width:canvas.width,height,
+    artwork:{x:0,y:0,width:1024,height:1536},
+    tagline:{text:role.tagline,lines:taglineLines,x:64,y:taglineTop,fontSize:46,lineHeight:64,width:896},
+    description:{text:role.description,lines:descriptionLines,x:64,y:descriptionTop,fontSize:38,lineHeight:58,width:896},
+    qr:{...qrBox,url:CARD_SITE_URL,quietZoneModules:4},dividerY};
   return canvas;
 }
-
-import { roles, roleById } from '../data/roles.js';
-import { relationships } from '../data/relationships.js';

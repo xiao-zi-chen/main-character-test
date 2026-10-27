@@ -5,16 +5,18 @@ import { drawQuestions } from '../../src/question-session.js';
 import { questions, dimensions } from '../../src/data/questions.js';
 import { STORAGE_KEY, getResult } from '../../src/engine.js';
 import { SCALE_MAX } from '../../src/data/answer-scale.js';
+import { createHash } from 'node:crypto';
 
 function answersFor(role,questionIds) {
   return Object.fromEntries(questionIds.map(id=>{const q=questions.find(item=>item.id===id);const units=Math.round(role.profile[dimensions.findIndex(d=>d.id===q.dimension)]*SCALE_MAX/100);return [id,q.highAnswer==='A'?SCALE_MAX-units:units];}));
 }
 
-test('exported portraits preserve all 28 individual portraits at their native aspect ratios', async ({ page },testInfo)=>{
+test('all 28 saved character cards load the full artwork, description and homepage QR without cropping', async ({ page })=>{
   test.setTimeout(150000);
   const errors=[];
   page.on('pageerror',error=>errors.push(error.message));
   const profiles={};
+  const manifest=await (await page.request.get('/media/manifest.json')).json();
   const questionIds=drawQuestions();
   for(const role of roles) {
     const answers=answersFor(role,questionIds);
@@ -32,39 +34,35 @@ test('exported portraits preserve all 28 individual portraits at their native as
     await page.goto(`/?shareCardRole=${role.id}#/result`);
     await expect(page.getByRole('heading',{level:1})).toHaveText(role.name);
     await expect(page.locator('.result-media img')).toHaveAttribute('src',/\?v=/);
-    const portraitUrl=await page.locator('.result-media img').getAttribute('src');
     await page.getByRole('button',{name:'保存我的角色卡',exact:true}).click();
     const image=page.locator('.save-role-card');
     await expect(image).toBeVisible();
-    await expect.poll(()=>image.evaluate(img=>img.naturalWidth)).toBe(900);
+    const entry=manifest[role.id];
+    expect(entry.cardSource).toBe('composite-film-reference');
+    expect(entry.cardTitle).toBe(role.name);
+    expect(entry.cardDescription).toBe(role.description);
+    expect(entry.cardTagline).toBe(role.tagline);
+    expect(entry.cardQrUrl).toBe('https://www.nbti.cn/');
+    expect(entry.cardLayoutVersion).toBe(1);
+    expect(entry.cardArtworkSize).toEqual([1024,1536]);
+    expect(entry.cardArtwork).not.toBe(entry.card);
+    expect(entry.cardArtworkSha256).toMatch(/^[a-f0-9]{64}$/);
+    const expectedSize=entry.cardSize;
+    expect(expectedSize[0]).toBe(1024);
+    expect(expectedSize[1]).toBeGreaterThan(entry.cardArtworkSize[1]);
+    await expect.poll(()=>image.evaluate(img=>[img.naturalWidth,img.naturalHeight])).toEqual(expectedSize);
     const imageUrl=await image.getAttribute('src');
     expect(imageUrl).toMatch(/\.png\?v=/);
+    expect(imageUrl).toContain(`/media/${entry.card}`);
     const response=await page.request.get(imageUrl);
     expect(response.headers()['content-type']).toContain('image/png');
-    const png=(await response.body()).toString('base64');
-    const comparison=await page.evaluate(async ({png,portraitUrl})=>{
-      const original=new Image();original.src=portraitUrl;
-      const exported=new Image();exported.src=`data:image/png;base64,${png}`;
-      await Promise.all([original.decode(),exported.decode()]);
-      const source=document.createElement('canvas');source.width=900;source.height=1920;
-      const sourceContext=source.getContext('2d');
-      sourceContext.fillStyle='#111b2a';sourceContext.fillRect(90,128,720,1280);
-      const scale=Math.min(720/original.naturalWidth,1280/original.naturalHeight);
-      const width=original.naturalWidth*scale,height=original.naturalHeight*scale;
-      sourceContext.drawImage(original,90+(720-width)/2,128+(1280-height)/2,width,height);
-      const output=document.createElement('canvas');output.width=exported.naturalWidth;output.height=exported.naturalHeight;
-      const outputContext=output.getContext('2d');outputContext.drawImage(exported,0,0);
-      // Compare the complete source, including all four corners, the head and
-      // the bottom of the image. A square crop or fading overlay must fail.
-      const expected=sourceContext.getImageData(90,128,720,1280).data;
-      const actual=outputContext.getImageData(90,128,720,1280).data;
-      let differentChannels=0;
-      for(let i=0;i<expected.length;i++) if(expected[i]!==actual[i]) differentChannels++;
-      return {size:[exported.naturalWidth,exported.naturalHeight],sourceSize:[original.naturalWidth,original.naturalHeight],differentChannels};
-    },{png,portraitUrl});
-    expect(comparison.sourceSize.every(size=>size>0)).toBe(true);
-    expect(comparison.size).toEqual([900,1920]);
-    expect(comparison.differentChannels,`${role.name}: the complete original photo must remain intact`).toBe(0);
+    const png=await response.body();
+    expect(png.subarray(0,8).toString('hex')).toBe('89504e470d0a1a0a');
+    expect(createHash('sha256').update(png).digest('hex')).toBe(entry.cardSha256);
+    expect([png.readUInt32BE(16),png.readUInt32BE(20)]).toEqual(expectedSize);
+    const display=await image.evaluate(img=>({width:img.clientWidth,height:img.clientHeight}));
+    expect(display.width).toBeGreaterThan(0);
+    expect(Math.abs(display.height-display.width*expectedSize[1]/expectedSize[0]),`${role.name}: the complete artwork and footer must retain their native aspect ratio`).toBeLessThanOrEqual(1.5);
   }
   expect(errors).toEqual([]);
 });

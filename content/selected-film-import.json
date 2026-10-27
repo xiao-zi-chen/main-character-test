@@ -214,9 +214,9 @@
   },
   {
     "filmId": "royal-kitchen",
-    "source": "I:/题目/H3生成结果_20260930/15秒MiniMax原生声画版/royal-chef.mp4",
+    "source": "视频/edb5ceb2d1e1e6bf4a50fdbaaa50e23b_raw.mp4",
     "file": "film-royal-kitchen.mp4",
-    "sha256": "c2cfc20d6767eb60bdd49348892dc2acd5cff1c202c3ff5e0dbaf97ac8e64f68",
+    "sha256": "ee6893d07f4f9f78e175fed0bbb76f29cf505bcd018f62e76980b5d76b3196f7",
     "cast": [
       {
         "id": "royal-client",
@@ -224,10 +224,10 @@
         "portrait": {
           "time": 3,
           "crop": [
-            0.1,
-            0.27,
-            0.49,
-            0.4
+            0.01,
+            0.18,
+            0.8,
+            0.54
           ]
         }
       },
@@ -235,12 +235,12 @@
         "id": "royal-chef",
         "name": "乙方",
         "portrait": {
-          "time": 11.1,
+          "time": 5,
           "crop": [
-            0.32,
             0.12,
-            0.65,
-            0.53
+            0.14,
+            0.88,
+            0.72
           ]
         }
       }

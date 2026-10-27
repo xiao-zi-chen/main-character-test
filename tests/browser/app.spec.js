@@ -101,7 +101,7 @@ test('20-question journey persists, navigates back, reveals and exports a real r
   await page.screenshot({ path: `.work/result-${testInfo.project.name}.png`, fullPage: true });
   await page.getByRole('button', { name: '保存我的角色卡' }).click();
   await expect(page.locator('.save-role-card')).toBeVisible();
-  await expect.poll(()=>page.locator('.save-role-card').evaluate(image=>image.naturalWidth)).toBe(900);
+  await expect.poll(()=>page.locator('.save-role-card').evaluate(image=>image.naturalWidth)).toBeGreaterThanOrEqual(900);
   await expect(page.getByText('长按图片，保存到相册')).toBeVisible();
   await page.reload();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(name);

@@ -1,5 +1,35 @@
 主角请就位 · 十五档量表、28 人物与 17 影片版
 
+2026-10-27 最新题图与独立角色卡（当前本地版本）：
+本轮使用根 alter_images/ 中最新200张WebP，逐文件原样复制，40题共320个兼容图片路径。
+题图 revision 为 2026-10-27-workbook-images-25530045d720；题文和图片顺序沿用同日早前确认的结果。
+按 视频排序(4).xlsx 与实际影片画面，使用 image_gen 为17部影片的28个角色分别绘制卡片。
+每张卡仅有该角色，人物下方写完整称号，统一1024×1536 PNG；双人影片各自独立成卡。
+public/media/manifest.json 的 card 字段引用新卡；保存角色卡及朋友圈分享均使用这些原图。
+cardSha256、cardSize、cardTitle、cardSource 记录内容摘要、尺寸、称号及生成来源。
+保存原图与总览位于 NBTI/output/character-cards-2026-10-27/；index.html 可集中浏览，prompts.json 保留提示词及参考来源。
+scripts/install_character_cards.py 校验表格称号、全部28张原图及逐图审查记录，备份旧卡后更新清单。
+scripts/export_role_cards.mjs 会跳过 imagegen-film-reference 卡片，避免被旧版拼图导出覆盖。
+重新构建使用 NBTI 根目录 npm.cmd run frontend:build，随后重启本地服务。
+当前本地 http://127.0.0.1:3000 已同步；云服务器和COS/CDN尚未更新。
+后续云发布需要 question-art/、28张新PNG和media/manifest.json，并同步服务端静态白名单，详见 CLOUD_DEPLOY.txt。
+问卷版本、15档计分、抽题、后端采集和数据库结构沿用现有版本，已有答卷保留。
+本地HTTP哈希、双端下载及28项浏览器回归最终通过；备份、补测说明与详细报告见 NBTI/DEPLOY.txt。
+
+2026-10-27 早前本地替换题图记录：
+使用 NBTI 根目录 alter_images/ 的 200 张图，同步 prompt.xlsx 的 40 道题文和两端选项。
+每题 5 档图无损转换 WebP；原第 3 张为场景，首尾档兼作左右端点，共保留 320 个图像路径。
+8.1 按原图片编号 5/4/3/2/1 排列；7.4 按 1/5/4/3/2 排列，其余保持原编号。
+原图像素和尺寸不变，辅助描述跟随新图，不显示旧场景的 emoji 叠层。
+按用户要求不增加问卷版本；15 档、评分、匹配和20题平衡抽样不变，数据库不迁移或清空。
+已有同版本答卷导出时会使用新题文；旧题文与图片已私有备份，位置见根 DEPLOY.txt。
+已部署到本地 http://127.0.0.1:3000，尚未发布云服务器或 COS/CDN。
+脚本 scripts/import_workbook_art.py 导入根目录素材，scripts/verify_question_art.mjs 校验当前来源。
+题图缓存 revision 为 2026-10-27-workbook-images-7c21fcfb2f35，后续修改媒体需重新构建。
+本次首次构建使用根命令 npm.cmd run frontend:build -- --replace-question-copy，后续普通构建不需要该参数。
+20 项计分/抽题/白名单检查及 20 项双端浏览器回归通过；实际本地服务 324 项文件哈希一致。
+8.1/7.4 新图排列和确认后弹图均通过，测试采集请求被拦截，详细记录见根 DEPLOY.txt。
+
 2026-10-22 同片搭档：
 结果页为 11 组双人视频中的 22 个角色显示搭档区，6 个单人角色不显示。
 复用搭档的独立画像、现有介绍及同片剧情，桌面图文并排、手机图上文下，图片完整显示。

@@ -7,6 +7,11 @@ import { questionReactions } from '../src/data/question-reactions.js';
 
 const root = new URL('../public/question-art/', import.meta.url);
 const manifest = JSON.parse(await readFile(new URL('manifest.json', root), 'utf8'));
+if (manifest.importType === 'workbook-images') {
+  const { verifyWorkbookQuestionArt } = await import('./verify_workbook_question_art.mjs');
+  await verifyWorkbookQuestionArt({ manifest, root, questions, questionCopy, questionReactions });
+  process.exit(0);
+}
 const prompts = JSON.parse(await readFile(new URL('../content/question-art-production.json', import.meta.url), 'utf8'));
 const directions = JSON.parse(await readFile(new URL('../content/question-art-directions.json', import.meta.url), 'utf8'));
 assert.equal(Object.keys(manifest.questions).length, questions.length, 'Artwork must cover the entire question bank');

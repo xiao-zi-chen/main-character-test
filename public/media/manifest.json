@@ -14,8 +14,24 @@
     "sha256": "b2163927f8d2e8fbacd08c9b8fc98f9d9f03746602cd38c45848db9946237544",
     "portraitSha256": "c5a6dbd44a40287910cc657a77c2d705ee3a9c30a979d6d0e5ab0fda102077c1",
     "videoRevision": "b2163927f8d2",
-    "card": "chovy-son-card-33fc5c90599e.png",
-    "cardSha256": "33fc5c90599e468177b7c53ecb6ef982000e383f6f45481d65eb4b261587e126"
+    "card": "chovy-son-card-da4328f95c2a.png",
+    "cardSha256": "da4328f95c2a24761a8df0098662e2092de9bd63a7c6747dd495a4bc2b0a118a",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "儿子我chovy",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你对迫在眉睫的问题很敏感，发现危险就马上提醒。比起别人怎么看，你更在意身边的人是否安全。 你觉得已经说得够明白，对方可能还没跟上你的判断。",
+    "cardTagline": "事态已经很急，你先拉着大家离开现场。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "chovy-son-card-35933538d4a3.png",
+    "cardArtworkSha256": "35933538d4a33f7276528d753277d36e32772fa7583be6dded1a6bfc3933a8fa",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "face-keeper": {
     "status": "final",
@@ -32,8 +48,24 @@
     "sha256": "b2163927f8d2e8fbacd08c9b8fc98f9d9f03746602cd38c45848db9946237544",
     "portraitSha256": "d5a23ac337373ad073a4022c1ac36ed4b62a4422d7a6fe9fe451e20e54d9d3bc",
     "videoRevision": "b2163927f8d2",
-    "card": "face-keeper-card-5f7d0b18d8bf.png",
-    "cardSha256": "5f7d0b18d8bfbea4c1a184ceec88115fc62ca640bb0b5e33cc862927a619089a"
+    "card": "face-keeper-card-4f423e45d673.png",
+    "cardSha256": "4f423e45d673da20e43d13c45e084389fd94cdba578167e1c1eca271606b16f2",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "别让人笑话",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你非常在意体面，会把细节打理得妥妥当当。外界的评价在你心里很有分量，有时甚至盖过了眼前更紧要的事情。 你想维护共同的体面，对方却可能觉得自己的感受排在了别人眼光后面。",
+    "cardTagline": "事情可以乱，你在别人眼里的样子不能乱。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "face-keeper-card-c95e2aeb846a.png",
+    "cardArtworkSha256": "c95e2aeb846a681036360739e38452764c6d7ae08afb9e5d52edc60e5ca50bdb",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "villain-calmer": {
     "status": "final",
@@ -50,8 +82,24 @@
     "sha256": "8ac821b9592cb4fd3e211cf2e527bb83b038f066426c778a54839f9684cf5f09",
     "portraitSha256": "3b63d85321f3ef2bd7004c48d628e5d02871e180338be1aa208ced3ff4652b34",
     "videoRevision": "8ac821b9592c",
-    "card": "villain-calmer-card-ce74fd0e8f81.png",
-    "cardSha256": "ce74fd0e8f81c97523af1f9405659f5ca924cdb4d738bcb24904709d03393614"
+    "card": "villain-calmer-card-30f8bb1cd898.png",
+    "cardSha256": "30f8bb1cd898f6d4184eb37b76e63b56921c41e125896fa6e1091f627df3b941",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "无奈员工",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你重视议程和交付，擅长把散开的注意力拉回事情本身。面对随时改变方向的人，你通常先把工作做完，再默默叹一口气。 你看起来无奈又冷静，其实只是希望自己的准备被认真对待。",
+    "cardTagline": "别人追着热点跑，你把没讲完的重点讲完。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "villain-calmer-card-c54fdac0564a.png",
+    "cardArtworkSha256": "c54fdac0564a45c7a890edeb6c9768e0956f27530d465e253e8b8ecf37563996",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "trend-boss": {
     "status": "final",
@@ -68,8 +116,24 @@
     "sha256": "8ac821b9592cb4fd3e211cf2e527bb83b038f066426c778a54839f9684cf5f09",
     "portraitSha256": "2e01ce54f82aa9c34d997bdb1dc0ed714833f028effd4992c270a6a807b05e24",
     "videoRevision": "8ac821b9592c",
-    "card": "trend-boss-card-bb1351d8696e.png",
-    "cardSha256": "bb1351d8696eecd168899cf3cd050414e59da972d0ca75c096619eb443266432"
+    "card": "trend-boss-card-0bf7cfeac609.png",
+    "cardSha256": "0bf7cfeac60908c7f228b272054574d08d2da58d30186de3ddb63b3eee363f23",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "追热点的老板",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你对新鲜事反应很快，热情来得直接，常能带动身边的人。不过刚开始的计划，容易被下一个更亮眼的目标抢走位置。 你只是发现了新方向，别人却还在收拾上一轮的准备。",
+    "cardTagline": "新的亮点一出现，你的注意力已经出发了。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "trend-boss-card-0cdd6e00b8cf.png",
+    "cardArtworkSha256": "0cdd6e00b8cff893cfa1f47062e36f8d0a027929ed1e40bad57cb471ab3a654c",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "apocalypse-caterer": {
     "status": "final",
@@ -86,8 +150,24 @@
     "sha256": "1461b0352c159d422b5e52f1c2b4e13a91a17be376e18e1ae5374db39f9e3bb4",
     "portraitSha256": "f1499590b17169c9ff62ec26705a8e4fb9788ee3e961d48ed326614d4c92e067",
     "videoRevision": "1461b0352c15",
-    "card": "apocalypse-caterer-card-5d99a9b54f9a.png",
-    "cardSha256": "5d99a9b54f9a7d5b18fc66bdccce7096766ea874c45f003ca4199cd14b963f6d"
+    "card": "apocalypse-caterer-card-26ff232f62bf.png",
+    "cardSha256": "26ff232f62bf6a3eefd4e9cd2c4728834a2a38dfadddaa9d7963fabfd714e8f7",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "和稀泥和事老",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你很在意关系能不能继续，习惯先缓和气氛、让大家坐回同一张桌子。有时为了把场面稳住，真正的问题也被一起搁下了。 你想让事情过去，受委屈的人却还在等一个被认真听见的机会。",
+    "cardTagline": "气氛刚要变僵，你已经把劝和的话接上了。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "apocalypse-caterer-card-4a075024f4b2.png",
+    "cardArtworkSha256": "4a075024f4b286332c55ea0afe417c2c0ec9416d03c2df5abd72541e1f615df4",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "dragon-office-worker": {
     "status": "final",
@@ -104,8 +184,24 @@
     "sha256": "b4810b52a72a09c154327f3a0ca545ee919e32c045bbdf442d946da59ba92cb0",
     "portraitSha256": "455a5dab92943a5da8053d5ca663c7743e5f77862af5842c45dcdaa7a8d48822",
     "videoRevision": "b4810b52a72a",
-    "card": "dragon-office-worker-card-69a96a80e996.png",
-    "cardSha256": "69a96a80e996a7d71f76d6e45973de209416043a71d87d25ae359781eeabdcc9"
+    "card": "dragon-office-worker-card-317684b1b441.png",
+    "cardSha256": "317684b1b441804401dc1d7be3d02b403a9bd4a438b26d03c78037cbd818f25c",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "急急急男主",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你行动快，也很在意关键时刻有没有担当。遇到紧张局面，证明自己的冲动有时比理解状况更快。 你想保护大家，太早行动却可能让旁人来不及把话说完。",
+    "cardTagline": "话还没听完，你已经决定自己先上。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "dragon-office-worker-card-b919f91182c7.png",
+    "cardArtworkSha256": "b919f91182c7be7710d013aa2fff8b681f82df71f7ec32e6dd5f61da205e3d65",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "calm-responder": {
     "status": "final",
@@ -122,8 +218,24 @@
     "sha256": "b4810b52a72a09c154327f3a0ca545ee919e32c045bbdf442d946da59ba92cb0",
     "portraitSha256": "37f14fa0131107f3a7209c476cbc401b8876a368606303ac4e15dfee65708979",
     "videoRevision": "b4810b52a72a",
-    "card": "calm-responder-card-a115a04d4f4c.png",
-    "cardSha256": "a115a04d4f4cd230e77383c4d5c9d0559428d17095bf80fe78fd39cccc5b37e5"
+    "card": "calm-responder-card-0ea8e9c10401.png",
+    "cardSha256": "0ea8e9c10401afd7bf6edd0ce37f337ef67fdbbf642e4567129f821c61dd54c4",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "我知道你很急但是你先别急",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你习惯听完信息再下判断，愿意把混乱的问题一点点解释清楚。面对别人突然的冲动，你既着急，又想把事实再说明白。 你在补充事实，对方可能以为你在泼冷水。",
+    "cardTagline": "先把人数和降落伞数清楚，再决定怎么做。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "calm-responder-card-e283ee5341ae.png",
+    "cardArtworkSha256": "e283ee5341ae9b828cc0169bcebb65fd37e1f5d4912b93f845484b1a36ab7064",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "never-give-up": {
     "status": "final",
@@ -140,8 +252,24 @@
     "sha256": "450a04a397fbd92045e631e9e08c47b851986f046c43d043b7c1a05afd75df16",
     "portraitSha256": "8a54b9251f09b06c8ada7cc629bf46aa196081173f804bd07d9276bf92fd0e80",
     "videoRevision": "450a04a397fb",
-    "card": "never-give-up-card-e31513ca0d9d.png",
-    "cardSha256": "e31513ca0d9d29a592808a5ca685205b643fe22b5f55ec3401a060400059b196"
+    "card": "never-give-up-card-c5ed896ae1f5.png",
+    "cardSha256": "c5ed896ae1f52e4b9ebd3aec065f3d221112cb1cbcc8c3bd17f9f3ba313bc98c",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "永不言弃",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "认定的目标会在你心里待很久。你能扛住冷眼，也愿意继续尝试，但有时会把改变办法误解成放弃自己。 你把坚持看得很重，别人建议换路时容易被你听成否定。",
+    "cardTagline": "时间换了好几页，你还是不想给自己判输。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "never-give-up-card-95f8b6b31fca.png",
+    "cardArtworkSha256": "95f8b6b31fca6088eb233bf1a9ad90a8dee109c5b5e3e85404366123a12099a3",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "lucky-disaster": {
     "status": "final",
@@ -158,8 +286,24 @@
     "sha256": "e1b66784bae549402f169338996c93a921741a8afe55a9a347078babd0caba10",
     "portraitSha256": "c1e146e13a3a2bfd97845d6e3c26df9f507b8b163e2284ce2f457e47eed71133",
     "videoRevision": "e1b66784bae5",
-    "card": "lucky-disaster-card-23c83e374399.png",
-    "cardSha256": "23c83e37439950a8613950c8f0d0aeaa9b4c3161648592a58db7fda9ffb6bb34"
+    "card": "lucky-disaster-card-69033280a3e6.png",
+    "cardSha256": "69033280a3e63bec802dd64db0ea4297668eabda4afd67b21f3266ef524e1d39",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "刺激过头了",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你容易被新体验吸引，敢于先试试看。出乎预料的结果会让你一边吐槽一边继续走，生活在你身边很少完全照着计划来。 你的即兴可能很好玩，也可能超出对方愿意承担的范围。",
+    "cardTagline": "你是真的想来点刺激，也是真的没想到会这样。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "lucky-disaster-card-de3408cdd498.png",
+    "cardArtworkSha256": "de3408cdd49863a2db80e31077c7e95153ba3282dfde37b58cf1d2d441a6b974",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "rule-breaker": {
     "status": "final",
@@ -176,8 +320,24 @@
     "sha256": "2543f9605c998f1d8a7a5a96ebff018c669a0187875cecc8cadfb6de28f48773",
     "portraitSha256": "f7aa4d1a3d882148573dafa8287b61448ad51dcdd05a10580560dc7e10002098",
     "videoRevision": "2543f9605c99",
-    "card": "rule-breaker-card-31b26dbe8a78.png",
-    "cardSha256": "31b26dbe8a78a83c07b9ef5414d60b5f62568cb949ace824054681eac1937084"
+    "card": "rule-breaker-card-f23ef51eeed6.png",
+    "cardSha256": "f23ef51eeed6cc25b6326a701ad23a7c0c311853e31e0257ecf1f176adf34745",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "规则就是用来打破的",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你不会立刻接受别人给出的限制，喜欢拆开规则看看它到底约束了什么。遇到死路时，你常能找到一个让大家愣住的入口。 你觉得自己严格遵守了字面意思，旁人却可能需要替结果收场。",
+    "cardTagline": "不许踏出这扇门，那就带着整扇门走。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "rule-breaker-card-839f382b7fab.png",
+    "cardArtworkSha256": "839f382b7fabebf22bb581bed25f066ebc4e46544b048f99fc898b76f7725e94",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "social-shield": {
     "status": "final",
@@ -194,44 +354,92 @@
     "sha256": "2543f9605c998f1d8a7a5a96ebff018c669a0187875cecc8cadfb6de28f48773",
     "portraitSha256": "d9dd060de6afd994d985703e257a4446b8d66c91d69807d14ab7425d7cd573e1",
     "videoRevision": "2543f9605c99",
-    "card": "social-shield-card-e009978c22a7.png",
-    "cardSha256": "e009978c22a7310e9d218c8ee848e9fb59431975a59333f98eae3353d291b8d5"
+    "card": "social-shield-card-db10a0b00b6d.png",
+    "cardSha256": "db10a0b00b6d455bc0e1dcc68ee42f8dd8f8b5a2f582f498a3b7aae7b95d62bd",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "那我给了呗",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你擅长配合身边的人，即便场面突然变得离谱，也会先找到自己能接住的位置。关系里的默契和照应对你很重要。 你配合得太快，别人容易忘记你也有自己的想法。",
+    "cardTagline": "你还没想通他的办法，手已经帮忙扶上去了。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "social-shield-card-bd9e8950f3ce.png",
+    "cardArtworkSha256": "bd9e8950f3ce4d452a0c057666525b936f4aa12ddff9888be4b39581963284de",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "royal-client": {
     "status": "final",
     "video": "film-royal-kitchen.mp4",
     "filmId": "royal-kitchen",
-    "duration": 15,
-    "width": 720,
-    "height": 1280,
+    "duration": 15.072,
+    "width": 480,
+    "height": 854,
     "hasAudio": true,
     "portrait": "royal-client-selected.webp",
     "poster": "royal-client-selected.webp",
     "avatar": "royal-client-selected.webp",
-    "revision": "81630de748c4",
-    "sha256": "c2cfc20d6767eb60bdd49348892dc2acd5cff1c202c3ff5e0dbaf97ac8e64f68",
-    "portraitSha256": "b522daee8f6f81cf4e3a5068c358b072144f879f7110c1d069b0b3f45c9e61de",
-    "videoRevision": "c2cfc20d6767",
-    "card": "royal-client-card-e0507dc7b473.png",
-    "cardSha256": "e0507dc7b47347890a3fca484e99dcbfa4678a2f4b3a670a52b040aedb240c40"
+    "revision": "6f0255fbfacd",
+    "sha256": "ee6893d07f4f9f78e175fed0bbb76f29cf505bcd018f62e76980b5d76b3196f7",
+    "portraitSha256": "41bf823690ab61cd851b7b4813bad436eae0ed053b371560a870c4aa1dff4195",
+    "videoRevision": "ee6893d07f4f",
+    "card": "royal-client-card-de2f863ebea7.png",
+    "cardSha256": "de2f863ebea7e9f90e9bbbff1a608c3defc4cd9bd04ee41c772ef0e381ae498a",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "甲方",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你能提出鲜明的愿望，也不太愿意被已有的选项限制。你会推动别人尝试新的方案，但有时忽略了要求背后的成本。 你以为只多改一点，对方可能需要重做整套方案。",
+    "cardTagline": "想要什么你说得很清楚，怎么做到先交给高手。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "royal-client-card-5a0ec077ddfd.png",
+    "cardArtworkSha256": "5a0ec077ddfd9fdd8788ce56628f2c9bd6bbcc335f15998de7752888999ab95b",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "royal-chef": {
     "status": "final",
     "video": "film-royal-kitchen.mp4",
     "filmId": "royal-kitchen",
-    "duration": 15,
-    "width": 720,
-    "height": 1280,
+    "duration": 15.072,
+    "width": 480,
+    "height": 854,
     "hasAudio": true,
     "portrait": "royal-chef-selected.webp",
     "poster": "royal-chef-selected.webp",
     "avatar": "royal-chef-selected.webp",
-    "revision": "c675ab9726a6",
-    "sha256": "c2cfc20d6767eb60bdd49348892dc2acd5cff1c202c3ff5e0dbaf97ac8e64f68",
-    "portraitSha256": "bdd55be177e42edb3f32813da0f656abf357bbb2b3e7d53a6c1f1e650be2b533",
-    "videoRevision": "c2cfc20d6767",
-    "card": "royal-chef-card-1cb066c18f4b.png",
-    "cardSha256": "1cb066c18f4b1be9e328a26491b47c5c6a23ca48a78ef7941e7ce34673d0f170"
+    "revision": "75afdaff077a",
+    "sha256": "ee6893d07f4f9f78e175fed0bbb76f29cf505bcd018f62e76980b5d76b3196f7",
+    "portraitSha256": "7077f90526585febf2f7883cc28e40a77c8bae79cf2f16c9b25426b322c65e72",
+    "videoRevision": "ee6893d07f4f",
+    "card": "royal-chef-card-83f3409d7de2.png",
+    "cardSha256": "83f3409d7de2843f5cdd437fc36d570b76e008c8cc9bc8e617ba69c8b199af53",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "乙方",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你擅长把模糊的要求翻译成行动，边想办法边动手。别人提出离谱点子时，你通常已经在估算材料、步骤和能不能赶上。 你太习惯解决问题，容易把自己的需要排到最后。",
+    "cardTagline": "再抽象的愿望，到你手里也得有个能端上桌的做法。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "royal-chef-card-ca11a092a30e.png",
+    "cardArtworkSha256": "ca11a092a30e4bf7525697c997e6bc2a3ab22953214fc75b1c9936b20b33c802",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "plot-rewriter": {
     "status": "final",
@@ -248,8 +456,24 @@
     "sha256": "072a0d8214734b6b02eeb1e6017902236937829888e12ac7f7536b156e8c3129",
     "portraitSha256": "8d44f89e5bb427d039677520cc147c048007cced761e6be9fd37eeadcd3caebc",
     "videoRevision": "072a0d821473",
-    "card": "plot-rewriter-card-66e0dbaf11a9.png",
-    "cardSha256": "66e0dbaf11a9527582f6881a2a6b524a07e4ac75ab61faef20c7f213224dba7f"
+    "card": "plot-rewriter-card-1a78ac06e40a.png",
+    "cardSha256": "1a78ac06e40a6e0010dcf039033eca81ac16ec59e696f0d3bf3f8c2f1110954a",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "心之所向",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你珍惜内心的想象，也愿意把它变成具体的尝试。你会先独自想清楚方向，再带着自己的节奏行动，不太容易被一时热闹牵走。 你心里的画面已经很完整，旁人却可能还没看见你想去哪里。",
+    "cardTagline": "心里有一个想去的地方，你就认真朝那里走。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "plot-rewriter-card-14a803539db5.png",
+    "cardArtworkSha256": "14a803539db581bf652873e86ccc9ca50a2ba7ac5e60ee36bca2df784e5d5980",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "hidden-player": {
     "status": "final",
@@ -266,8 +490,24 @@
     "sha256": "f64b31de855f9699b03338d17e89fb600113af7d485c966dc1273f96b702f3a6",
     "portraitSha256": "b257d3e2811e6401d9d51373edf1970ef496f7cc41760f80a76c3930507d0a54",
     "videoRevision": "f64b31de855f",
-    "card": "hidden-player-card-62f386c12439.png",
-    "cardSha256": "62f386c12439d6223184a2eb96c49b74b915fc6c69e8d74c2488914c05ba270c"
+    "card": "hidden-player-card-1285ba415f7d.png",
+    "cardSha256": "1285ba415f7d0648aceaab0a5aec110815cc44678c941d9f0e9ed10c8f19fe81",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "阿斯塔顿",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你有明确的忠诚和原则，不会因为对方声音大就改变立场。真正行动时，你更信赖充分准备和自己认定的标准。 你的边界很坚定，有时也让愿意沟通的人找不到入口。",
+    "cardTagline": "别人的威势再大，你也知道自己认可谁。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "hidden-player-card-6f4f4d80a168.png",
+    "cardArtworkSha256": "6f4f4d80a16869f4e0b07492a5e8b04eb89240900e16ee6a130973bce71fc120",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "flexible-challenger": {
     "status": "final",
@@ -284,8 +524,24 @@
     "sha256": "f64b31de855f9699b03338d17e89fb600113af7d485c966dc1273f96b702f3a6",
     "portraitSha256": "fc3bf62625c7322074bb1d779166945c5e92f26cf07d749d616c74b06f5adffd",
     "videoRevision": "f64b31de855f",
-    "card": "flexible-challenger-card-dbe470c39bcc.png",
-    "cardSha256": "dbe470c39bcce01322fc7a620772416a296aa9d163043f4f0fa9c5ae9a6a1f5a"
+    "card": "flexible-challenger-card-efc0f2ac23dd.png",
+    "cardSha256": "efc0f2ac23dd67b2b52ea2210f90a2e5feecdeb1ab8487a61f6fc384febc07ce",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "大丈夫（能屈能伸）",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你很会观察眼前的力量变化，不会为了维持一句狠话把自己逼进死角。能屈能伸是你的生存智慧，有时也让人摸不清你的底线。 你觉得是在及时调整，旁人可能觉得你的态度变得太快。",
+    "cardTagline": "形势一变，你会立刻为自己换一个站位。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "flexible-challenger-card-d1dcc92d6a4f.png",
+    "cardArtworkSha256": "d1dcc92d6a4f73d2855c3a9f205118a9bf620ce7eccd0a4d294bec1a8eceeceb",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "chaos-director": {
     "status": "final",
@@ -302,8 +558,24 @@
     "sha256": "7f39657918840db2084bd70eef08e2f80933df7a60eeb8f23faf888252307cfd",
     "portraitSha256": "fa1e775098ae82049c629cb7e0e409029f3710063c4f8f7a6f2eaa2012156bd2",
     "videoRevision": "7f3965791884",
-    "card": "chaos-director-card-2a9d667ab46b.png",
-    "cardSha256": "2a9d667ab46b5161168f12b422c089e03e4bb6cea34e62e5a7cc6ba7276258b7"
+    "card": "chaos-director-card-d349c557ac62.png",
+    "cardSha256": "d349c557ac62a24301e8f20f58757975423d8e2885cfecd4c986c9a69ed8f232",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "反套路脑回路",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你喜欢打破预期，常能从一本正经的局面里找到幽默出口。灵感来得快，表达也大胆，身边的人经常要愣半秒才接上你的节奏。 你觉得只是在活跃气氛，对方可能还在认真处理问题。",
+    "cardTagline": "所有人都在等标准答案，你先从另一条路进场。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "chaos-director-card-45f1fd2fcc1e.png",
+    "cardArtworkSha256": "45f1fd2fcc1e6108cea2a31889184f3fe92cbb95818cc17ea194ef92dd5a4ad2",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "chaos-witness": {
     "status": "final",
@@ -320,8 +592,24 @@
     "sha256": "7f39657918840db2084bd70eef08e2f80933df7a60eeb8f23faf888252307cfd",
     "portraitSha256": "e70cf92f03a607bb84fad270569cb75c633c660ce372c6ed7caeccccd2a65f46",
     "videoRevision": "7f3965791884",
-    "card": "chaos-witness-card-d0d89a0870b7.png",
-    "cardSha256": "d0d89a0870b77898101dac283c1e886575b5a2c8791cc49674b508bd2d05d4a8"
+    "card": "chaos-witness-card-aa28428c33df.png",
+    "cardSha256": "aa28428c33df1f7ad9a11583c577a9495b773bfcfce5af092d9eff43fc547a28",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "兄弟别搞",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你对场面的边界很敏感，常在朋友越玩越远的时候及时提醒。你不是不喜欢幽默，只是会先想到接下来会不会不好收场。 你的提醒容易听起来扫兴，其实是在替大家考虑后续。",
+    "cardTagline": "他刚开始发挥，你已经准备提醒一句：兄弟别搞。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "chaos-witness-card-c7895bce9ceb.png",
+    "cardArtworkSha256": "c7895bce9ceb02f577024c399c875a8bcdb3ec9d87e305132c78a530124d564d",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "public-roaster": {
     "status": "final",
@@ -338,8 +626,24 @@
     "sha256": "00b9245e243f4eaaeebba2593ad0b62f1a76733267d5c4938588f2cf152698d3",
     "portraitSha256": "d9f2da2b752bfdca1fc336f991211124cec5efcd5516a53a45e73b65bc410d88",
     "videoRevision": "00b9245e243f",
-    "card": "public-roaster-card-588dbec2e86e.png",
-    "cardSha256": "588dbec2e86ebeeb605c8fb73c953ce347720bb4972173f1ae02ff194033b4fa"
+    "card": "public-roaster-card-7919887cd050.png",
+    "cardSha256": "7919887cd050489a057f2794bb1be136044776a7950cfc0ec07f6faad970ae4e",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "闲的没事笑话笑话你们",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你观察细节很快，也很愿意表达自己的判断。普通日常到了你嘴里很容易变成一段热闹点评，但锋利的评价有时会先刺到别人。 你觉得是随口一说，对方可能觉得自己一直被检查。",
+    "cardTagline": "别人还在寒暄，你已经发现了沙发上的那件衣服。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "public-roaster-card-bf6f09113904.png",
+    "cardArtworkSha256": "bf6f091139049921b8948486ce6869037abb60755ba871679d5cbb4263768de7",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "quiet-bystander": {
     "status": "final",
@@ -356,8 +660,24 @@
     "sha256": "00b9245e243f4eaaeebba2593ad0b62f1a76733267d5c4938588f2cf152698d3",
     "portraitSha256": "9e6e5b4e4f567db93f5ab031357619731b06ad20c83d72792f16895e2055226b",
     "videoRevision": "00b9245e243f",
-    "card": "quiet-bystander-card-9712c25a293f.png",
-    "cardSha256": "9712c25a293f7f2fa39f2e0531686fb8faed21b1fc153b0cd62eb13e4ed0cf9a"
+    "card": "quiet-bystander-card-bf6746ac1402.png",
+    "cardSha256": "bf6746ac14026c7afb04bcde84ce6537096ac897ec520c3df25d9b96981bc559",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "我跟他不熟",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你更愿意先观察，不急着加入每一次点评。熟人的表现让你尴尬时，你会悄悄拉开一点距离，留住自己的态度。 你的克制可能被误会成冷淡，其实只是没想替别人站队。",
+    "cardTagline": "你可以站在热闹旁边，但不必认领所有人的发言。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "quiet-bystander-card-e4064c091bda.png",
+    "cardArtworkSha256": "e4064c091bdad09bcc9f93ac1a8baebac22691c5e9d3ce6b8a357a899350153f",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "spotlight-extra": {
     "status": "final",
@@ -374,8 +694,24 @@
     "sha256": "779ff260d186f1fd6ed5585a4dc7d3b7b629a0be0897f7e3ac3f77c7fa9aad6b",
     "portraitSha256": "cf53d7d67649265edf9fd269f4d2c04f6126e2c34b7e183040ac46eebba2abad",
     "videoRevision": "779ff260d186",
-    "card": "spotlight-extra-card-71bfff8de972.png",
-    "cardSha256": "71bfff8de97246858582f747d97567bd5947c6591e5d68729b1d5cb9e573872f"
+    "card": "spotlight-extra-card-b5778b00406b.png",
+    "cardSha256": "b5778b00406b7611990ee07fc2e1b14bb304381c4388c8ef5f145195bfefe367",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "链接一下",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你对人有好奇心，能主动找到共同话题。你喜欢促成新的连接，也常能看见两个原本不认识的人为什么会聊得来。 你的热情推进得很快，对方可能还需要一点熟悉的时间。",
+    "cardTagline": "从一句招呼开始，你愿意把陌生人接进自己的世界。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "spotlight-extra-card-6205801b9f5f.png",
+    "cardArtworkSha256": "6205801b9f5fe7da417ae1faeaa4c5fe20492294bfa191e9d42ca95573c1a8fb",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "mind-reader": {
     "status": "final",
@@ -392,8 +728,24 @@
     "sha256": "99ff48aa01b66995310aa0963decd079a186376ed3e412cbe3ba87d0d9785173",
     "portraitSha256": "a7c8d328e91d0604cef6d2eae440d8f8d95073f32796a839c7166be9d8850761",
     "videoRevision": "99ff48aa01b6",
-    "card": "mind-reader-card-a5fd6ea7ba40.png",
-    "cardSha256": "a5fd6ea7ba40caa4b9eb5f930502502f169024e9f60f99b7bd654deb433cdd00"
+    "card": "mind-reader-card-8321417e5c31.png",
+    "cardSha256": "8321417e5c31c7320d293a6aff41354c0f3e0d40361c4f6c9cfc42c29618b471",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "读心团宠",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你对人的表情和气氛很敏锐，脑子里也总有自己的旁白。丰富的联想让你很有趣，只是有时心里的反应会比表面的礼貌更诚实。 你以为自己只是心里想想，表情却可能已经把答案说出来了。",
+    "cardTagline": "表面还在认真听，心里的小剧场已经演完一轮。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "mind-reader-card-b9a01f7844f5.png",
+    "cardArtworkSha256": "b9a01f7844f57bef3328bbabf79ae4e9de3252f71fc489e833b22e8bf7ebf9b6",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "frustrated-courtier": {
     "status": "final",
@@ -410,8 +762,24 @@
     "sha256": "99ff48aa01b66995310aa0963decd079a186376ed3e412cbe3ba87d0d9785173",
     "portraitSha256": "79efc4e6522c64a7039371dbd4d238c745174b6c0fc2c6e6fbbf15aac88c1f20",
     "videoRevision": "99ff48aa01b6",
-    "card": "frustrated-courtier-card-293568934eaf.png",
-    "cardSha256": "293568934eafd1d4e13737ebe30184e850a44187f6ae6301aee7868d7367e772"
+    "card": "frustrated-courtier-card-03f66680a143.png",
+    "cardSha256": "03f66680a143f76431a769cad64bf5da609ebeb3b8ff0d3c885b0cee5397305a",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "总感觉有火发不出",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你在意秩序和分寸，不喜欢被当面拆穿。即使情绪已经翻涌，也会顾及场合，把想说的话压在表情和停顿里。 你忍得越久，别人越不清楚问题究竟在哪里。",
+    "cardTagline": "你已经听见了，但还在找一个合适的发作理由。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "frustrated-courtier-card-5524fddbd660.png",
+    "cardArtworkSha256": "5524fddbd6605eed32d6d92fc6fc175f78713c4c554e7869f71875b875e91cd3",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "stage-lead": {
     "status": "final",
@@ -428,8 +796,24 @@
     "sha256": "f7c5d2ae14210f11b159a322b03bc00519653074f9a470af1edd48cb59b0891f",
     "portraitSha256": "e927e9dc7a4da937353d05ea34cff3de241b281854b75b4d1d00ed93e4726ec0",
     "videoRevision": "f7c5d2ae1421",
-    "card": "stage-lead-card-d2ac0f290ae5.png",
-    "cardSha256": "d2ac0f290ae5165d8e562b842da529e2f6264e24057322a8a3df14e3a9ec2f41"
+    "card": "stage-lead-card-e915e2124eb4.png",
+    "cardSha256": "e915e2124eb404e0bc96822dbd13b78fd8bb158c989aed9dc3941f39fadc1cbc",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "台上主角",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你进入状态很快，愿意全情投入眼前的角色和目标。你希望自己的表达有分量，也愿意为一个重要时刻反复准备。 你太投入自己的节奏，有时会忘记看看整个场面需要什么。",
+    "cardTagline": "镜头一开，你就认真相信自己正在演的故事。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "stage-lead-card-18c1250f38f9.png",
+    "cardArtworkSha256": "18c1250f38f91faa9f8f63b032c2e5499fb612e96999197d0cbaf2e77b1916cc",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "cosmic-director": {
     "status": "final",
@@ -446,8 +830,24 @@
     "sha256": "f7c5d2ae14210f11b159a322b03bc00519653074f9a470af1edd48cb59b0891f",
     "portraitSha256": "e363a5f31e55b8cd8f5827e760f60e4805feced06f3b327ccdfa44e40083f4ac",
     "videoRevision": "f7c5d2ae1421",
-    "card": "cosmic-director-card-89a933fc6747.png",
-    "cardSha256": "89a933fc67476fd6f95db21ecc1960a6f840a3245809a98e9ab0592c9a7457c0"
+    "card": "cosmic-director-card-e6ceb5227ac7.png",
+    "cardSha256": "e6ceb5227ac7ba1bd9e7f47fe74cc15882029817acf5b8d2e2757168b5723cae",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "台下大手",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你习惯从全局看问题，能指出具体哪里需要调整。比起只喊加油，你更愿意把走位、节奏和配合安排清楚，让大家一起完成。 你的指导很具体，有时却容易让对方觉得自己一直在被纠正。",
+    "cardTagline": "你看得见主角，也看得见整个场面怎样才能接上。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "cosmic-director-card-1fbdd03dd4a8.png",
+    "cardArtworkSha256": "1fbdd03dd4a86ea8264e0d16d272e268c1893da85905713e0a2c4343f41a20b1",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "reborn-queen": {
     "status": "final",
@@ -464,8 +864,24 @@
     "sha256": "5b2b23d8f43e0b2b04800900e457bb5160562a63290f5e04511289a0d92dd623",
     "portraitSha256": "ed5764f37b99c9f3bbb836975774fb25c5cb6c1eb88c729b1b1bbc5bd3b823f2",
     "videoRevision": "5b2b23d8f43e",
-    "card": "reborn-queen-card-49cbc2f4d904.png",
-    "cardSha256": "49cbc2f4d9043b179d237c0590e4f5f07d62eaba8cc87f6d25b3177586d19849"
+    "card": "reborn-queen-card-645f4b694923.png",
+    "cardSha256": "645f4b69492397f7894b57cabaeda848615f4e44666037e28c2e735add8f0018",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "这一世我将拿回属于我的一切",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你目标明确，也会从经历里整理下一次的策略。被辜负之后，你更愿意靠自己的判断重新安排生活，把主动权一点点收回来。 你忙着防备旧伤，身边人可能还没理解眼前这份紧绷从何而来。",
+    "cardTagline": "吃过的亏你记得，这次想把选择权拿回自己手里。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "reborn-queen-card-3694d2261464.png",
+    "cardArtworkSha256": "3694d22614649a27ab390bda61052640bd891b3126263cf38f055c8c4e4e9028",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "queen-companion": {
     "status": "final",
@@ -482,8 +898,24 @@
     "sha256": "5b2b23d8f43e0b2b04800900e457bb5160562a63290f5e04511289a0d92dd623",
     "portraitSha256": "7ad8f83e4c94469f3a09c1c384457c9d605a1f4e42f8da02a40d7ccd215d57d0",
     "videoRevision": "5b2b23d8f43e",
-    "card": "queen-companion-card-905b48b99ff6.png",
-    "cardSha256": "905b48b99ff6d155356efcf19cb8baf6b71bcf8e30442bf4261dfa79fec08f5f"
+    "card": "queen-companion-card-a7280c3f2651.png",
+    "cardSha256": "a7280c3f2651a5c1a9be3a2590645ff99928cb7ce4f1a60cb34eb36861cb416a",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "又谁得罪你了",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你习惯把宏大的情绪拉回具体的日常。熟人突然进入一场大戏时，你既会疑惑，也愿意待在旁边弄清楚他真正需要什么。 你的务实可能听起来不够共情，其实只是想知道能帮上什么忙。",
+    "cardTagline": "她已经准备改写命运，你先想知道今天又发生了什么。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "queen-companion-card-b1a6d4fbd26f.png",
+    "cardArtworkSha256": "b1a6d4fbd26fd1f2fc22060da905bc2ad091f1bb75e10bfa9fceefe5cd57b860",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   },
   "immortal-support": {
     "status": "final",
@@ -500,7 +932,23 @@
     "sha256": "c477e94ddf9f3eed693dec24e2bab6aaffdc7e8b56a010c3a061c69d89c7af5f",
     "portraitSha256": "e046ced3cc616da5d3c00e360a4d82b2f1b2b5eece15da68767a7c5cd0d5b066",
     "videoRevision": "c477e94ddf9f",
-    "card": "immortal-support-card-c6f3cf45295e.png",
-    "cardSha256": "c6f3cf45295ee9dbd19da48c3bbb4b3cc30f16f75a794052fb6146c4d0e4c90e"
+    "card": "immortal-support-card-f440e9e2c2df.png",
+    "cardSha256": "f440e9e2c2dfe2a51a6af1be6834dce87f4157cbf91c09a873349046f9266e9b",
+    "cardSize": [
+      1024,
+      2496
+    ],
+    "cardTitle": "我的手里不允许有差评",
+    "cardSource": "composite-film-reference",
+    "cardDescription": "你重视反馈和完成度，愿意耐心排查细节。面对抱怨，你会先找到故障在哪里，再一步步把事情修到能正常运行。 你很想把每个问题处理好，容易把所有不满意都揽成自己的责任。",
+    "cardTagline": "问题到了你这里，就得有一个能真正用上的解决办法。",
+    "cardQrUrl": "https://www.nbti.cn/",
+    "cardLayoutVersion": 1,
+    "cardArtwork": "immortal-support-card-74369c5abf7a.png",
+    "cardArtworkSha256": "74369c5abf7a2a07bc1a69a141684a74905db10984e17bc00c3fac2e0b46a4c1",
+    "cardArtworkSize": [
+      1024,
+      1536
+    ]
   }
 }
