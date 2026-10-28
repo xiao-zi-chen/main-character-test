@@ -5,14 +5,14 @@ import { relationships } from '../data/relationships.js';
 import { canViewRole } from '../hidden-rules.js';
 import { mediaAsset } from '../media.js';
 import { SESSION_SIZE } from '../question-session.js';
+import homeCover from '../assets/home-cover.webp?inline';
 
 export function SimpleHeader({ onSecretTap, onAbout }) {
   return <header className="simple-header"><a href="#/" className="simple-brand" onClick={onSecretTap} aria-label="主角请就位，返回首页"><Clapperboard size={22}/><span>主角请就位</span></a><nav aria-label="主导航"><button onClick={onAbout} aria-label="关于测试" title="关于测试"><Info size={20}/></button></nav></header>;
 }
 
-export function SimpleHome({ count, onStart, manifest }) {
-  const role=roles.find(item=>item.id==='plot-rewriter');
-  return <main id="main-content" className="simple-home"><section className="opening-scene" aria-labelledby="opening-title"><img className="opening-image" src={mediaAsset(role,manifest[role.id])} alt="月光下的白衣主角" fetchPriority="high"/><div className="opening-shade"/><div className="opening-copy"><p className="opening-caption">每一种你，都值得一场好戏</p><h1 id="opening-title">主角请就位</h1><p className="opening-description">找到你的人设。<br/>也找到那个，和你接得上戏的人。</p><button className="opening-start" onClick={onStart}>{count===SESSION_SIZE?'查看我的主角剧本':count>0?`继续测试 · ${count}/${SESSION_SIZE}`:'测测我的主角人设'}<ArrowRight size={20}/></button><span className="opening-note">20 个选择 · 约 2 分钟 · 无需登录</span></div></section></main>;
+export function SimpleHome({ count, onStart }) {
+  return <main id="main-content" className="simple-home"><section className="opening-scene" aria-labelledby="opening-title"><img className="opening-image" src={homeCover} alt="帷幕拉开，一位主角走向晨光中的山河" fetchPriority="high"/><div className="opening-shade"/><div className="opening-copy"><p className="opening-caption">每一种你，都值得一场好戏</p><h1 id="opening-title">主角请就位</h1><p className="opening-description">找到你的人设。<br/>也找到那个，和你接得上戏的人。</p><button className="opening-start" onClick={onStart}>{count===SESSION_SIZE?'查看我的主角剧本':count>0?`继续测试 · ${count}/${SESSION_SIZE}`:'测测我的主角人设'}<ArrowRight size={20}/></button><span className="opening-note">20 个选择 · 约 2 分钟 · 无需登录</span></div></section></main>;
 }
 
 export function CharacterGallery({manifest,hiddenState,onPreview,onHiddenHint}) {

@@ -6,7 +6,10 @@
 .film-partner-heading h2 { color:#e6eee0; font-size:22px; line-height:1.5; margin:0; overflow-wrap:anywhere; }
 .film-partner-link { display:inline-flex; gap:10px; align-items:center; min-height:44px; color:#b9a17c; font-size:13px; }
 .film-partner-body { display:grid; grid-template-columns:180px minmax(0,1fr); gap:24px; align-items:center; margin:24px 0; }
-.film-partner-portrait { display:block; width:100%; height:auto; max-height:320px; object-fit:contain; border:1px solid #ffffff16; border-radius:12px; background:#ffffff03; }
+.film-partner-artwork { width:100%; overflow:hidden; border-radius:12px; background:#ffffff03; outline:1px solid #ffffff16; }
+/* Share cards contain the original artwork first, then copy and a QR footer.
+   Show the complete artwork at its original ratio without repeating that footer. */
+.film-partner-portrait { display:block; width:100%; height:auto; max-height:none; }
 .film-partner-description { min-width:0; }
 .film-partner-copy { color:#b2c0b6; font-size:14px; line-height:2; margin:0 0 14px; }
 .film-partner-chemistry { color:#a5baae; font-size:13px; line-height:1.9; margin:0; }
@@ -20,7 +23,7 @@
   .film-partner-heading h2 { font-size:19px; }
   .film-partner-link { width:100%; margin-top:5px; }
   .film-partner-body { grid-template-columns:minmax(0,1fr); gap:20px; }
-  .film-partner-portrait { width:min(100%,220px); max-height:360px; justify-self:center; }
+  .film-partner-artwork { width:min(100%,220px); justify-self:center; }
   .film-partner-invite { flex-direction:column; align-items:stretch; gap:18px; }
   .film-partner-invite .button { width:100%; }
 }

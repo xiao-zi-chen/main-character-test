@@ -5,6 +5,7 @@ import { QuestionArt } from './QuestionArt.jsx';
 import { questionReactions } from '../data/question-reactions.js';
 import { SCALE_LABELS as labels, reactionIndex } from '../data/answer-scale.js';
 import { questionArt } from '../question-art.js';
+import { ImageDownloadButton } from './ImageDownloadButton.jsx';
 
 // Feedback after confirming an answer; closing it continues to the next scene.
 export function ReactionPreview({ questionId, value, onClose }) {
@@ -38,8 +39,8 @@ export function ReactionPreview({ questionId, value, onClose }) {
       onContextMenu={() => { menuOpen.current = true; pause(); }}>
       <div className="reaction-preview-heading"><span>{labels[group]}</span><button ref={closeButton} type="button" aria-label="关闭选择预览" onClick={onClose}><X size={20}/></button></div>
       <QuestionArt id={questionId} kind={`scale-${group}`} alt={`你的反应：${questionReactions[questionId][group].caption}`} priority onReady={() => setReady(true)}/>
-      <div className="reaction-preview-actions"><span>长按图片可保存</span><a href={questionArt(questionId, `scale-${group}`)} download={`NBTI-${questionId}-scale-${group}.webp`}
-        onClick={() => { menuOpen.current = true; pause(); }}><Download size={16}/>保存图片</a></div>
+      <div className="reaction-preview-actions"><span>长按图片可保存</span><ImageDownloadButton source={questionArt(questionId, `scale-${group}`)} filename={`NBTI-${questionId}-scale-${group}.webp`}
+        onStart={() => { menuOpen.current = true; pause(); }}><Download size={16}/>保存图片</ImageDownloadButton></div>
     </div>
   </div>, document.body);
 }

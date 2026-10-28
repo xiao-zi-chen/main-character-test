@@ -1,6 +1,46 @@
 主角请就位 · 十五档量表、28 人物与 17 影片版
 
-2026-10-27 最新题图与独立角色卡（当前本地版本）：
+2026-10-28 答题图片 CDN 直连：
+本地与 https://www.nbti.cn/ 均已完成发布，桌面及 iPhone 16 的题图、预加载与真实下载验证通过。
+question-art.js 与视频、角色卡共用 runtime-config.js 的 mediaBaseUrl。
+云端设为 https://static.nbti.cn/ 时，所有题图与预加载直接从 CDN 获取；本地留空仍使用本地文件。
+继续使用题图清单 revision；保存图片按钮跨域获取 Blob 后下载，不跳离网页。
+COS 已有 question-art/ 无需重复上传，本次只需同步前端构建；后端与数据库无需变更。
+
+2026-10-28 阿斯塔特名称修正（已发布）：
+hidden-player角色名、文案与配对描述已更新，源表Sheet1!H11同步；人物匹配与影片不变。
+完整卡改为hidden-player-card-976fc72f4740.png，含修正后的原画称号、简介及首页二维码。
+只需上传 ../output/astartes-update-2026-10-28/cos-upload/media/ 中2个文件到COS media/目录。
+COS/CDN 新卡与清单已可用，新版网站前端和静态白名单已于 2026-10-28 发布。
+
+2026-10-28 保存卡与视频封面：
+保存角色卡完整图按屏幕高度缩放，一屏可见；四周预留24px和安全区，点击留白关闭，保留长按保存原图。
+结果页、角色预告和播放前封面使用 RoleCardArtwork 展示对应角色卡的原画与称号。
+视频首次playing后隐藏封面；影片文件、默认声音、结尾停帧保持原行为。
+本地与 https://www.nbti.cn/ 已发布；复用已有CDN角色卡，无需上传COS。
+本地8项、公网6项检查通过：完整卡展示/关闭/长按/答卷保留、新封面和视频播放；公网测试拦截写请求。
+
+2026-10-27 双角色配对区图片：
+11组双角色影片对应22个页面，同片搭档统一使用media.card中的角色卡原画与称号。
+film-partner-artwork按cardArtworkSize裁切完整卡顶部，避免在配对文案旁重复展示卡片说明和二维码。
+不再使用本区旧截图；复用线上已有角色卡文件，无需重新上传COS。
+本地与 https://www.nbti.cn/ 已发布，桌面/iPhone16/320px布局和所有配对关系检查通过。
+
+2026-10-27 新首页封面：
+首页独立采用 src/assets/home-cover.webp，通过 Vite ?inline 内嵌前端，不再借用角色截图。
+本地和 https://www.nbti.cn/ 均已发布，无需上传COS；角色卡、影片和答卷不受影响。
+原图及提示词位于 ../output/home-cover-2026-10-27/；桌面和iPhone16显示、答题入口均通过。
+
+2026-10-27 完整角色卡与云端发布：
+28张角色卡均组装为单张PNG，含完整原画、现有角色文案、指向 https://www.nbti.cn/ 的二维码。
+src/visuals/share-card.js 负责组装，content/character-card-qr.json保存二维码矩阵。
+运行 node scripts/export_role_cards.mjs 可重建完整卡并更新public/media/manifest.json。
+cardArtwork记录原画输入，发布白名单只包含card引用的完整成品。
+NBTI/output/complete-character-cards-2026-10-27/index.html 提供预览下载。
+本地 http://127.0.0.1:3000 和线上 https://www.nbti.cn 已同步，发布记录见根CLOUD_DEPLOY.txt。
+问卷版本和数据库结构保持现状，未清空答卷。
+
+2026-10-27 早前题图与独立角色卡记录：
 本轮使用根 alter_images/ 中最新200张WebP，逐文件原样复制，40题共320个兼容图片路径。
 题图 revision 为 2026-10-27-workbook-images-25530045d720；题文和图片顺序沿用同日早前确认的结果。
 按 视频排序(4).xlsx 与实际影片画面，使用 image_gen 为17部影片的28个角色分别绘制卡片。

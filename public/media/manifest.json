@@ -490,20 +490,20 @@
     "sha256": "f64b31de855f9699b03338d17e89fb600113af7d485c966dc1273f96b702f3a6",
     "portraitSha256": "b257d3e2811e6401d9d51373edf1970ef496f7cc41760f80a76c3930507d0a54",
     "videoRevision": "f64b31de855f",
-    "card": "hidden-player-card-1285ba415f7d.png",
-    "cardSha256": "1285ba415f7d0648aceaab0a5aec110815cc44678c941d9f0e9ed10c8f19fe81",
+    "card": "hidden-player-card-976fc72f4740.png",
+    "cardSha256": "976fc72f47404c184918a6f188b1bda61c7f91b48548a95a396eba03ba701f64",
     "cardSize": [
       1024,
       2496
     ],
-    "cardTitle": "阿斯塔顿",
+    "cardTitle": "阿斯塔特",
     "cardSource": "composite-film-reference",
-    "cardDescription": "你有明确的忠诚和原则，不会因为对方声音大就改变立场。真正行动时，你更信赖充分准备和自己认定的标准。 你的边界很坚定，有时也让愿意沟通的人找不到入口。",
-    "cardTagline": "别人的威势再大，你也知道自己认可谁。",
+    "cardDescription": "像阿斯塔特一样，你认定自己的忠诚与原则，不会因为对方声势浩大就改变立场。真正行动时，你更相信充分准备和自己认可的标准。 你的边界很坚定，有时也让愿意沟通的人找不到入口。",
+    "cardTagline": "你认定的原则，不会被别人的气势改写。",
     "cardQrUrl": "https://www.nbti.cn/",
     "cardLayoutVersion": 1,
-    "cardArtwork": "hidden-player-card-6f4f4d80a168.png",
-    "cardArtworkSha256": "6f4f4d80a16869f4e0b07492a5e8b04eb89240900e16ee6a130973bce71fc120",
+    "cardArtwork": "hidden-player-art-3f38abcbf3e6.png",
+    "cardArtworkSha256": "3f38abcbf3e6b22708b2126a33af475075f47979aa5df5ac7b366bb5b662b2aa",
     "cardArtworkSize": [
       1024,
       1536

@@ -9,7 +9,8 @@ test('home loads one cover and result loads video only after an explicit request
   page.on('request', request => { if(request.url().includes('/media/')) mediaRequests.push(request.url()); });
   await page.goto('/');
   await expect.poll(()=>page.locator('.opening-image').evaluate(image=>image.complete&&image.naturalWidth>0)).toBe(true);
-  expect(mediaRequests.filter(url=>url.includes('plot-rewriter-selected.webp'))).toHaveLength(1);
+  await expect(page.locator('.opening-image')).toHaveAttribute('src', /^data:image\/webp;base64,/);
+  expect(mediaRequests.filter(url=>url.includes('plot-rewriter-selected.webp'))).toHaveLength(0);
   expect(mediaRequests.some(url=>url.includes('.mp4'))).toBe(false);
   await page.goto('/#/role/plot-rewriter');
   await expect(page.locator('.result-video-preview img')).toBeVisible();

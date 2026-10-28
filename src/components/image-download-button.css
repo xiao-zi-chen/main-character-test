@@ -1,0 +1,5 @@
+.image-download-action { display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+.image-download-button { display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:0; border:0; background:transparent; color:#edf4df; font:inherit; cursor:pointer; }
+.image-download-button:disabled { cursor:wait; opacity:.75; }
+.image-download-button:focus-visible { outline:2px solid #edf4df; outline-offset:3px; border-radius:3px; }
+.image-download-error { max-width:220px; color:#ffd4c7; line-height:1.5; text-align:right; }

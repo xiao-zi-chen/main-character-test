@@ -1,11 +1,12 @@
 ﻿import React, { useEffect, useRef, useState } from 'react';
 import { mediaPath } from '../data/roles.js';
-import { mediaAsset } from '../media.js';
+import { RoleCardArtwork } from './RoleCardArtwork.jsx';
 
 export function VideoPlayer({ role, media, autoplay = false }) {
   const ref = useRef(null);
   const ended = useRef(false);
   const [message, setMessage] = useState('');
+  const [hasPlayed, setHasPlayed] = useState(false);
   const src = mediaPath(role, 'mp4', media?.videoRevision ?? media?.revision);
 
   function play() {
@@ -19,6 +20,7 @@ export function VideoPlayer({ role, media, autoplay = false }) {
     const video = ref.current;
     ended.current = false;
     setMessage('');
+    setHasPlayed(false);
     const pauseOther = event => { if (event.detail !== video) video.pause(); };
     const pauseHidden = () => { if (document.hidden) video.pause(); };
     // WeChat may grant sound playback when its bridge becomes ready.
@@ -36,13 +38,13 @@ export function VideoPlayer({ role, media, autoplay = false }) {
   }, [src, autoplay]);
 
   return <div className="video-player">
-    <video ref={ref} src={src} poster={mediaAsset(role, media)} playsInline
+    <video ref={ref} src={src} playsInline
       webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5-page"
       preload="auto" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback"
       aria-label={`${role.name}的短片，轻触画面播放`} tabIndex={0}
       onClick={play} onKeyDown={event => { if (event.key === ' ' || event.key === 'Enter') { event.preventDefault(); play(); } }}
       onPlay={event => document.dispatchEvent(new CustomEvent('casting:video-play', { detail:event.currentTarget }))}
-      onPlaying={() => setMessage('')}
+      onPlaying={() => { setMessage(''); setHasPlayed(true); }}
       onError={() => setMessage('短片加载失败，轻触画面重试')}
       onEnded={event => {
         ended.current = true;
@@ -51,6 +53,7 @@ export function VideoPlayer({ role, media, autoplay = false }) {
         // Keep a decoded frame on browsers that clear the video at its duration.
         if (Number.isFinite(video.duration)) video.currentTime = Math.max(0, video.duration - 0.04);
       }}/>
+    {!hasPlayed && <div className="video-card-poster" aria-hidden="true"><RoleCardArtwork role={role} media={media}/></div>}
     <span className="sr-only" role="status">{message}</span>
   </div>;
 }

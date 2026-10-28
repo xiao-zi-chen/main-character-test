@@ -12,6 +12,43 @@ const partnerById = Object.fromEntries(selection.films.flatMap(film => film.cast
 ])));
 const pairedRoles = roles.filter(role => partnerById[role.id]);
 
+async function expectPartnerArtwork(section, partner) {
+  const entry = media[partner.id];
+  const portrait = section.getByRole('img', { name: `${partner.name}的角色画像`, exact: true });
+  const artwork = section.locator('.film-partner-artwork');
+  await expect(portrait).toHaveClass('film-partner-portrait');
+  expect(await portrait.getAttribute('src')).toContain(`/media/${entry.card}?v=${entry.revision}`);
+  await portrait.scrollIntoViewIfNeeded();
+  await expect.poll(() => portrait.evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
+  await expect(artwork).toHaveCSS('overflow', 'hidden');
+  const crop = await artwork.evaluate(frame => {
+    const image = frame.querySelector('img');
+    const box = frame.getBoundingClientRect();
+    const picture = image.getBoundingClientRect();
+    return {
+      naturalSize: [image.naturalWidth, image.naturalHeight],
+      ratio: frame.clientWidth / frame.clientHeight,
+      imageRatio: picture.width / picture.height,
+      topOffset: picture.top - box.top,
+      leftOffset: picture.left - box.left,
+      widthDifference: picture.width - frame.clientWidth,
+      visibleSourceHeight: frame.clientHeight / picture.height * image.naturalHeight,
+      imageHeight: picture.height,
+      frameHeight: frame.clientHeight,
+    };
+  });
+  expect(crop.naturalSize).toEqual(entry.cardSize);
+  expect(Math.abs(crop.ratio - entry.cardArtworkSize[0] / entry.cardArtworkSize[1])).toBeLessThan(0.01);
+  expect(Math.abs(crop.imageRatio - entry.cardSize[0] / entry.cardSize[1])).toBeLessThan(0.001);
+  expect(Math.abs(crop.topOffset)).toBeLessThanOrEqual(1);
+  expect(Math.abs(crop.leftOffset)).toBeLessThanOrEqual(1);
+  expect(Math.abs(crop.widthDifference)).toBeLessThanOrEqual(1);
+  // The complete card stays undistorted; only its original artwork is visible.
+  // The description and QR footer must remain outside the clipping frame.
+  expect(Math.abs(crop.visibleSourceHeight - entry.cardArtworkSize[1])).toBeLessThanOrEqual(2);
+  expect(crop.imageHeight).toBeGreaterThan(crop.frameHeight);
+}
+
 async function installSharing(page) {
   await page.addInitScript(() => {
     window.copiedInvitations = [];
@@ -43,12 +80,7 @@ test('all 28 public roles show only their actual film partner and every pair lin
     await expect(section).toContainText(relationships[role.id].chemistry);
     await expect(section).toContainText(relationships[role.id].prompt);
     await expect(section.locator('.film-partner-icon svg')).toHaveCount(1);
-    const portrait = section.getByRole('img', { name: `${partner.name}的角色画像`, exact: true });
-    await expect(portrait).toHaveClass('film-partner-portrait');
-    expect(await portrait.getAttribute('src')).toContain(`/media/${media[partner.id].portrait}?v=${media[partner.id].revision}`);
-    await portrait.scrollIntoViewIfNeeded();
-    await expect.poll(() => portrait.evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
-    expect(await portrait.evaluate(image => getComputedStyle(image).objectFit)).toBe('contain');
+    await expectPartnerArtwork(section, partner);
     const link = section.getByRole('link', { name: '看看 TA 的剧本' });
     await expect(link).toHaveAttribute('href', `#/role/${partner.id}`);
     const progress = await page.evaluate(key => localStorage.getItem(key), STORAGE_KEY);
@@ -124,8 +156,7 @@ test('partner cards and invitations fit long names on desktop and narrow phones'
       await page.goto(`/#/role/${role.id}`);
       const section = page.locator('.film-partner');
       await expect(section).toBeVisible();
-      await section.locator('.film-partner-portrait').scrollIntoViewIfNeeded();
-      await expect.poll(() => section.locator('.film-partner-portrait').evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
+      await expectPartnerArtwork(section, partnerById[role.id]);
       expect(await section.evaluate(element => [...element.querySelectorAll('*')].every(child => {
         const box = child.getBoundingClientRect();
         return box.left >= -1 && box.right <= innerWidth + 1;

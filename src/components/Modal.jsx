@@ -5,6 +5,11 @@ export function Modal({ title, onClose, children, className = '' }) {
   const ref = useRef(null);
   const backdropPressed = useRef(false);
   const outside = event => {
+    // A saved card leaves a generous dismiss area around the actual image.
+    // Keep image taps/long presses native, including the system Save Image menu.
+    if (event.currentTarget.classList.contains('card-modal')) {
+      return !event.target.closest('.save-role-card, button, a, input, textarea, select, [role="button"]');
+    }
     // The full-screen video element includes object-fit letterboxing. Treat
     // those black margins as the backdrop while keeping the film tappable.
     if (event.currentTarget.classList.contains('video-modal') && event.target.tagName === 'VIDEO') {

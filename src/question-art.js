@@ -1,8 +1,10 @@
-// Keep question artwork local to the site, including deployments under a subpath.
+// Use the same runtime media origin as videos and cards; local builds retain
+// their Vite base through mediaBaseUrl().
 import { revision as artRevision } from '../public/question-art/manifest.json';
+import { mediaBaseUrl } from './runtime-config.js';
 
 export function questionArt(id, kind = 'scene') {
-  return `${import.meta.env.BASE_URL}question-art/${id.replace('.', '-')}/${kind}.webp?v=${encodeURIComponent(artRevision)}`;
+  return `${mediaBaseUrl()}question-art/${id.replace('.', '-')}/${kind}.webp?v=${encodeURIComponent(artRevision)}`;
 }
 
 export function preloadQuestionArt(id) {

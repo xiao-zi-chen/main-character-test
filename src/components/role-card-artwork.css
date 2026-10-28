@@ -1,0 +1,8 @@
+.role-card-artwork { display:block; width:100%; overflow:hidden; }
+.role-card-artwork>img { display:block; width:100%; height:auto; max-height:none; }
+.result-video-preview:has(>.role-card-artwork) { aspect-ratio:auto; }
+.result-video-preview>.role-card-artwork>img { height:auto; max-height:none; }
+.role-film-preview.result-video-preview { width:min(100%,calc(65dvh * 2 / 3)); margin-inline:auto; flex-shrink:0; }
+.result-video-preview:has(>.role-card-artwork) .preview-duration { bottom:5px; left:auto; right:5px; padding:3px 6px; border-radius:4px; font-size:10px; }
+.video-card-poster { position:absolute; inset:0; display:grid; place-items:center; pointer-events:none; background:#000; }
+.video-card-poster>.role-card-artwork { width:min(100%,calc(100dvh * 9 / 16)); }
