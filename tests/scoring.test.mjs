@@ -76,7 +76,7 @@ test('all 28 selected characters are reachable with graded responses close to th
   }
 });
 
-test('endpoint responses exactly preserve binary scores, weighted distances and every ranked role', () => {
+test('endpoint responses preserve binary scores and raw weighted distances while ranking by calibrated matching distance', () => {
   const records = [
     Object.fromEntries(questions.map(q => [q.id, 'A'])),
     Object.fromEntries(questions.map(q => [q.id, 'B'])),
@@ -98,8 +98,11 @@ test('endpoint responses exactly preserve binary scores, weighted distances and 
     assert.deepEqual(scoreAnswers(answers), expectedScores);
     const result = getResult(answers);
     const expectedRanking = oldRanking(expectedScores);
-    assert.deepEqual(result.ranking.map(item => [item.role.id, item.distance]), expectedRanking.map(item => [item.role.id, item.distance]));
-    assert.equal(result.role.id, expectedRanking[0].role.id);
+    const distancesById = ranking => Object.fromEntries(ranking.map(item => [item.role.id, item.distance]));
+    assert.deepEqual(distancesById(result.ranking), distancesById(expectedRanking));
+    assert.ok(result.ranking.every(item => Number.isFinite(item.matchingDistance)));
+    assert.ok(result.ranking.every((item, index, ranking) => index === 0 || ranking[index - 1].matchingDistance <= item.matchingDistance));
+    assert.equal(result.role.id, result.ranking[0].role.id);
   }
 });
 

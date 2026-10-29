@@ -79,6 +79,7 @@ test('modal traps keyboard focus, keeps text readable and restores its trigger',
 });
 
 test('every reachable modal closes from outside and preserves inside clicks, image menus and drags', async ({ page }) => {
+  await page.route('**/api/collect', route => route.fulfill({ json: { ok: true } }));
   async function checkModal(title, insideSelector) {
     const dialog = page.getByRole('dialog', { name: title, exact: true });
     await expect(dialog).toBeVisible();
@@ -115,8 +116,7 @@ test('every reachable modal closes from outside and preserves inside clicks, ima
   await page.getByRole('button', { name: '观看心之所向的短片', exact: true }).click();
   await checkModal('心之所向的短片', 'video');
   await page.getByRole('button', { name: '分享剧本', exact: true }).first().click();
-  await page.getByRole('button', { name: '保存角色卡', exact: true }).click();
-  await checkModal('分享剧本', 'img');
+  await checkModal('分享剧本', 'h2');
   await page.goto('/#/test');
   await page.getByRole('button', { name: '放大当前画面', exact: true }).click();
   await checkModal('查看画面', 'img');

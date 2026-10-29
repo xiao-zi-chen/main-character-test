@@ -91,6 +91,9 @@ test('previous and next buttons navigate on desktop and mobile; preview keeps th
 test('horizontal page drags no longer navigate; slider drags still select without submitting', async ({ page }, testInfo) => {
   const mobile = testInfo.project.name === 'mobile';
   await page.goto('/#/test');
+  // This checks app-level gestures. CDP touch drags can otherwise trigger the
+  // browser's own history overscroll and return to the initial about:blank.
+  await page.evaluate(() => { document.documentElement.style.overscrollBehaviorX = 'none'; });
   const slider = page.getByRole('slider');
   await slider.scrollIntoViewIfNeeded();
   const bounds = await slider.boundingBox();

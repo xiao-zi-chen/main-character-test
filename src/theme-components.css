@@ -1,0 +1,140 @@
+/* Shared surfaces follow the active palette; artwork and film frames keep their
+   original colors. These overrides intentionally leave component geometry alone. */
+html[data-theme] .modal:not(.video-modal) {
+  color:var(--theme-text);
+  background:var(--theme-panel-raised);
+  border-color:var(--theme-border-strong);
+  box-shadow:var(--theme-shadow);
+}
+html[data-theme] .modal::backdrop,
+html[data-theme] .reaction-preview::backdrop { background:var(--theme-overlay); }
+html[data-theme] .modal .modal-close {
+  color:var(--theme-text);
+  background:var(--theme-panel);
+  border-color:var(--theme-border-strong);
+}
+html[data-theme] .modal h2,
+html[data-theme] .card-modal>p { color:var(--theme-text); }
+html[data-theme] .small-modal p,
+html[data-theme] .modal-role-copy .preview-relationship,
+html[data-theme] .modal-story>p { color:var(--theme-muted); }
+html[data-theme] .modal .modal-symbol,
+html[data-theme] .modal-role-copy .modal-tagline,
+html[data-theme] .preview-profile { color:var(--theme-accent); }
+html[data-theme] .modal .share-input {
+  background:var(--theme-panel-sunken);
+  color:var(--theme-text);
+  border-color:var(--theme-border-strong);
+}
+html[data-theme] .modal .share-input::placeholder { color:var(--theme-subtle); }
+html[data-theme] .secret-toggle {
+  color:var(--theme-text);
+  background:var(--theme-accent-soft);
+  border-color:var(--theme-border);
+}
+html[data-theme] .secret-toggle input { accent-color:var(--theme-accent); }
+html[data-theme] .small-modal .secret-count { color:var(--theme-muted) !important; }
+html[data-theme] .hidden-result-badge {
+  color:var(--theme-warm);
+  background:var(--theme-panel);
+  border-color:var(--theme-border-strong);
+}
+html[data-theme] .toast {
+  color:var(--theme-text);
+  background:var(--theme-panel-raised);
+  border-color:var(--theme-border-strong);
+  box-shadow:var(--theme-shadow);
+}
+
+/* Partner descriptions and share tools use the same neutral card layers. */
+html[data-theme] .film-partner,
+html[data-theme] .result-share-footer,
+html[data-theme] .share-fallback { border-color:var(--theme-border); }
+html[data-theme] .film-partner-icon {
+  color:var(--theme-secondary);
+  border-color:var(--theme-border-strong);
+  background:var(--theme-panel);
+}
+html[data-theme] .film-partner-artwork {
+  background:var(--theme-panel-sunken);
+  outline-color:var(--theme-border);
+}
+html[data-theme] .film-partner-heading h2,
+html[data-theme] .film-partner-invite p,
+html[data-theme] .script-share-modal .share-role-name { color:var(--theme-text); }
+html[data-theme] .film-partner-heading>p,
+html[data-theme] .film-partner-copy,
+html[data-theme] .film-partner-chemistry,
+html[data-theme] .result-share-footer p,
+html[data-theme] .script-share-modal .share-status,
+html[data-theme] .share-fallback summary { color:var(--theme-muted); }
+html[data-theme] .film-partner-link { color:var(--theme-warm); }
+html[data-theme] .wechat-share-guide {
+  border-color:var(--theme-border-strong);
+  background:var(--theme-panel-sunken);
+}
+html[data-theme] .wechat-share-guide strong { color:var(--theme-text); }
+html[data-theme] .wechat-share-arrow { color:var(--theme-accent); }
+
+/* Story notes and the result radar share a restrained blue/lilac emphasis. */
+html[data-theme] .director-note { border-color:var(--theme-border); }
+html[data-theme] .director-note>svg,
+html[data-theme] .director-note span { color:var(--theme-warm); }
+html[data-theme] .director-note p,
+html[data-theme] .scene-beats p { color:var(--theme-muted); }
+html[data-theme] .scene-beats>li { border-color:var(--theme-border); }
+html[data-theme] .scene-beats>li>span { color:var(--theme-accent); }
+html[data-theme] .dialogue-script {
+  border-color:var(--theme-border);
+  background:var(--theme-panel-sunken);
+}
+html[data-theme] .dialogue-script summary { color:var(--theme-text); }
+html[data-theme] .dialogue-script li>span { color:var(--theme-subtle); }
+html[data-theme] .dialogue-script li>p { color:var(--theme-muted); }
+html[data-theme] .destiny-radar,
+html[data-theme] .radar-caption { color:var(--theme-muted); }
+html[data-theme] .destiny-radar>polygon[fill-opacity] {
+  fill:var(--theme-accent);
+  stroke:var(--theme-accent);
+}
+html[data-theme] .destiny-radar>circle { fill:var(--theme-accent); }
+html[data-theme] .trait-heading>svg { color:var(--theme-accent); }
+
+/* Films always retain dark letterboxing and bright controls, even in light mode. */
+html[data-theme] .video-player,
+html[data-theme] .modal.video-modal,
+html[data-theme] .modal .video-player,
+html[data-theme] .result-video-preview,
+html[data-theme] .role-film-preview {
+  background:#111218;
+  border-color:#454753;
+}
+html[data-theme] .modal.video-modal>.modal-close,
+html[data-theme] .preview-play,
+html[data-theme] .preview-duration,
+html[data-theme] .modal .big-play {
+  color:#f3f2f7;
+  background:#171820d9;
+  border-color:#d5d6e080;
+}
+html[data-theme] .result-video-preview:hover .preview-play { background:#363946ed; }
+html[data-theme] .modal .video-controls,
+html[data-theme] .modal .video-duration,
+html[data-theme] .native-sound-button,
+html[data-theme] .video-error,
+html[data-theme] .video-loading {
+  color:#eeedf4;
+  background:#171820ed;
+  border-color:#73788a;
+}
+html[data-theme] .modal .video-controls .icon-button,
+html[data-theme] .modal .video-error p { color:#eeedf4; }
+html[data-theme] .video-error span { color:#bdc0ce; }
+html[data-theme] .video-error .button {
+  color:#242a39;
+  background:#c3cce2;
+  border-color:#c3cce2;
+}
+html[data-theme] .modal .video-track { background:#aeb5c736; }
+html[data-theme] .modal .video-track>i { background:#c3cce2; }
+html[data-theme] .loading-spinner { border-color:#aeb5c736; border-top-color:#c3cce2; }

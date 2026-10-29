@@ -14,7 +14,7 @@ import { readHiddenState, saveHiddenState, canViewRole } from './hidden-rules.js
 import { answeredCount, getResult, isAnswer, isComplete, readProgress, saveProgress } from './engine.js';
 import { AnswerScale } from './components/AnswerScale.jsx';
 import { Modal } from './components/Modal.jsx';
-import { VideoPlayer } from './components/VideoPlayer.jsx';
+import { VideoDialog } from './components/VideoDialog.jsx';
 import { RoleCardArtwork } from './components/RoleCardArtwork.jsx';
 import mediaManifest from '../public/media/manifest.json';
 import { DestinyRadar } from './visuals/Cinematic.jsx';
@@ -23,6 +23,7 @@ import { questionCopy } from './data/question-copy.js';
 import { QuestionArt } from './components/QuestionArt.jsx';
 import { ReactionPreview } from './components/ReactionPreview.jsx';
 import { ShareDialog } from './components/ShareDialog.jsx';
+import { ThemeToggle } from './components/ThemeToggle.jsx';
 import { SCALE_MIN, SCALE_MAX } from './data/answer-scale.js';
 import { preloadQuestionArt, preloadQuestionReactions } from './question-art.js';
 
@@ -35,6 +36,7 @@ import './simple.css';
 import './question-art.css';
 import './components/film-partner.css';
 import {SimpleHeader, SimpleHome, SimpleFooter, CharacterGallery} from './components/SimpleExperience.jsx';
+import './theme.css';
 const iconMap = { Crown, Sun, Ghost, BookOpen, ScanLine, Gem, MessageCircleHeart, Orbit, Flower2, CookingPot, Wrench, FileCheck2, BriefcaseBusiness, Clapperboard, Cpu, Sparkles, ShieldCheck, Search };
 const acts = [
   { title: '本能登场', description: '听听你的第一反应', caption: '不必想太久，第一直觉就很好。' },
@@ -182,7 +184,7 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
   }, [choose, previous, next]);
   const actRole=roles[[1,6,5,8][actIndex]];
   return <main id="main-content" className="quiz-page page-width" inert={Boolean(reactionPreview)} style={{'--world-color':actRole.color}}>
-    <div className="quiz-topline"><button className="text-button" onClick={() => go('/')}><ArrowLeft size={16} /> 返回片场</button><span>{storageOkay ? <><ShieldCheck size={13} /> 进度已保存在此浏览器</> : '浏览器暂时无法保存，请在本页完成测试'}</span><span className="quiz-counter">{String(index + 1).padStart(2, '0')} <span>/ {SESSION_SIZE}</span></span></div>
+    <div className="quiz-topline"><button className="text-button" onClick={() => go('/')}><ArrowLeft size={16} /> 返回片场</button><span>{storageOkay ? <><ShieldCheck size={13} /> 进度已保存在此浏览器</> : '浏览器暂时无法保存，请在本页完成测试'}</span><ThemeToggle/><span className="quiz-counter">{String(index + 1).padStart(2, '0')} <span>/ {SESSION_SIZE}</span></span></div>
     <div className="quiz-progress" role="progressbar" aria-label="答题进度" aria-valuenow={count} aria-valuemin={0} aria-valuemax={SESSION_SIZE}><i style={{ width: `${count / SESSION_SIZE * 100}%` }} /></div>
     <div className="quiz-layout"><aside className="quiz-sidebar"><div className="act-list">{acts.map((act, i) => <div className={`act ${i === actIndex ? 'current' : ''} ${i < actIndex ? 'done' : ''}`} key={act.title} aria-current={i === actIndex ? 'step' : undefined}><span className="act-number">{i < actIndex ? <Check size={16} /> : `0${i + 1}`}</span><div><h3>第{['一', '二', '三', '四'][i]}幕 · {act.title}</h3><p>{act.description}</p></div></div>)}</div></aside>
       <section className="question-section" aria-labelledby="question-title">
@@ -319,11 +321,11 @@ function App() {
     {modal?.kind==='about' && <Modal title="关于测试" onClose={closeModal} className="small-modal"><h2>你的选择，你的故事。</h2><p>每轮从 40 道日常情境中抽取 20 道，约 2 分钟。按平时的反应回答，就会遇见属于你的主角人设。</p><p>这是剧情娱乐测试，没有标准答案，也不是心理诊断。进度保存在当前浏览器，随时可以回来继续。网站会匿名记录选择与答题用时，用于改进测试。</p><button className="button button-lime" onClick={onStart}>开始我的故事 <ArrowRight size={18}/></button></Modal>}
     {modal?.kind==='role' && <Modal title={modal.role.name+'的角色预告'} onClose={closeModal} className="role-modal"><button className="role-film-preview result-video-preview" onClick={()=>setModal({kind:'video',role:modal.role})} aria-label={`观看${modal.role.name}的短片`}><RoleCardArtwork role={modal.role} media={manifest[modal.role.id]} alt={`${modal.role.name}的影片封面`}/><span className="preview-play"><Play size={22} fill="currentColor"/></span></button><div className="modal-role-copy"><h2>{modal.role.name}</h2><p className="modal-tagline">{relationships[modal.role.id].identity}</p><p className="preview-relationship">{relationships[modal.role.id].familiar}</p><button className="button button-lime" onClick={onStart}>{complete ? '查看我的结果' : count ? '继续我的测试' : '测测我的主角人设'} <ArrowRight size={18}/></button><button className="preview-profile" onClick={()=>{closeModal();go('/role/'+modal.role.id);}}>认识这个角色 <ArrowRight size={16}/></button></div></Modal>}
     {modal?.kind==='card' && <Modal title="保存角色卡" onClose={closeModal} className="card-modal"><p>长按图片，保存到相册</p><img className="save-role-card" src={mediaAsset(modal.role,manifest[modal.role.id],'card')} alt={`我的主角剧本：${modal.role.name}`} onError={()=>toast('图片加载失败，请关闭后重试')}/></Modal>}
-    {modal?.kind==='video' && <Modal title={modal.role.name+'的短片'} onClose={closeModal} className="video-modal"><VideoPlayer role={modal.role} media={manifest[modal.role.id]} autoplay/></Modal>}
+    {modal?.kind==='video' && <VideoDialog role={modal.role} media={manifest[modal.role.id]} onClose={closeModal}/>}
     {modal?.kind==='hidden-hint' && <Modal title="隐藏剧本线索" onClose={closeModal} className="small-modal"><LockKeyhole className="modal-symbol" size={32}/><h2>有些剧本，不在常规名单里。</h2><p>试着连续点击首页左上角的“主角请就位”五次，进入彩蛋导演室。开启彩蛋设置后，再由你的完整答案决定是否揭晓。</p><button className="button button-lime" onClick={()=>{closeModal();go('/');}}>去片场看看 <ArrowRight size={18}/></button></Modal>}
     {modal?.kind==='secrets' && <Modal title="彩蛋导演室" onClose={closeModal} className="small-modal secret-settings"><Clapperboard className="modal-symbol" size={34}/><h2>彩蛋导演室</h2><p>开启后，特殊的答题组合才有机会产生两份隐藏剧本。普通结果仍然照常匹配。</p><label className="secret-toggle"><input type="checkbox" checked={hiddenState.enabled} onChange={event=>setHiddenState(old=>({...old,enabled:event.target.checked}))}/><span>允许解锁隐藏剧本</span></label><p className="secret-count">已解锁 {hiddenState.unlocked.length} / {hiddenRoles.length} 份隐藏档案</p><button className="button button-lime" onClick={()=>{closeModal();onStart();}}>带着这个设置继续 <ArrowRight size={18}/></button><button className="text-button" onClick={()=>{setHiddenState({enabled:false,unlocked:[]});toast('彩蛋记录已清空，隐藏模式已关闭');}}>清空彩蛋记录并关闭</button></Modal>}
     {modal?.kind==='restart' && <Modal title="重新选角" onClose={closeModal} className="small-modal"><RotateCcw className="modal-symbol" size={31} /><h2>再开一个新剧本？</h2><p>重新测试会重新抽取 20 道题，并清空本轮回答。你可以先保存角色卡，也可以保留答案回去修改。</p><button className="button button-lime" onClick={()=>{const fresh=newProgress();window.NBTICollector?.start({resume:false,questionIds:fresh.questionIds});setQuiz(fresh);setModal(null);go('/test');}}>重新开始 <ArrowRight size={18} /></button><button className="button button-outline" onClick={()=>{window.NBTICollector?.start({resume:true,questionIds:quiz.questionIds});setQuiz(old=>({...old,index:0,submitted:false}));setModal(null);go('/test');}}>保留答案，回去修改</button><button className="text-button" onClick={closeModal}>先留在这个剧本</button></Modal>}
-    {modal?.kind==='share' && <ShareDialog role={modal.role} partner={modal.partner} media={manifest[modal.role.id]} onClose={closeModal}/>}
+    {modal?.kind==='share' && <ShareDialog role={modal.role} partner={modal.partner} onClose={closeModal}/>}
     <div className={`toast ${toastMessage?'visible':''}`} role="status" aria-live="polite"><Check size={16} />{toastMessage}</div>
   </>;
 }

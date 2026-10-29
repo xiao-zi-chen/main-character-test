@@ -1,12 +1,14 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { questionReactions } from '../data/question-reactions.js';
+import { reactionCaptions } from '../data/reaction-captions.js';
 import { reactionIndex } from '../data/answer-scale.js';
 import { questionArt } from '../question-art.js';
 
 // An optional, untimed look at the selected scene. Dismissing it never submits.
 export function ReactionPreview({ questionId, value, onClose }) {
   const group = reactionIndex(value);
+  const caption = reactionCaptions[questionId][group];
   const dialogRef = useRef(null);
   const backdropPressed = useRef(false);
 
@@ -32,7 +34,7 @@ export function ReactionPreview({ questionId, value, onClose }) {
   return createPortal(<dialog ref={dialogRef} className="reaction-preview" aria-label="所选反应预览" aria-description="点击图片外的空白处或按 Escape 键返回答题。" tabIndex={-1}
     onCancel={event => { event.preventDefault(); onClose(); }}
     onKeyDown={event => {
-      // The picture has no controls. Keep keyboard focus within the lightbox.
+      // The scene has no controls. Keep keyboard focus within the lightbox.
       if (event.key === 'Tab') event.preventDefault();
       event.stopPropagation();
     }}
@@ -47,7 +49,10 @@ export function ReactionPreview({ questionId, value, onClose }) {
       if (backdropPressed.current && event.target === event.currentTarget) onClose();
       backdropPressed.current = false;
     }}>
-    <img className="reaction-preview-image" src={questionArt(questionId, `scale-${group}`)}
-      alt={`你的反应：${questionReactions[questionId][group].caption}`} decoding="async" fetchPriority="high"/>
+    <figure className="reaction-preview-scene">
+      <img className="reaction-preview-image" src={questionArt(questionId, `scale-${group}`)}
+        alt={`你的反应：${questionReactions[questionId][group].caption}`} decoding="async" fetchPriority="high"/>
+      <figcaption className="reaction-preview-caption">{caption}</figcaption>
+    </figure>
   </dialog>, document.body);
 }

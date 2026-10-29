@@ -6,9 +6,10 @@ import { canViewRole } from '../hidden-rules.js';
 import { mediaAsset } from '../media.js';
 import { SESSION_SIZE } from '../question-session.js';
 import homeCover from '../assets/home-cover.webp?inline';
+import { ThemeToggle } from './ThemeToggle.jsx';
 
 export function SimpleHeader({ onSecretTap, onAbout }) {
-  return <header className="simple-header"><a href="#/" className="simple-brand" onClick={onSecretTap} aria-label="主角请就位，返回首页"><Clapperboard size={22}/><span>主角请就位</span></a><nav aria-label="主导航"><button onClick={onAbout} aria-label="关于测试" title="关于测试"><Info size={20}/></button></nav></header>;
+  return <header className="simple-header"><a href="#/" className="simple-brand" onClick={onSecretTap} aria-label="主角请就位，返回首页"><Clapperboard size={22}/><span>主角请就位</span></a><nav aria-label="主导航"><ThemeToggle/><button onClick={onAbout} aria-label="关于测试" title="关于测试"><Info size={20}/></button></nav></header>;
 }
 
 export function SimpleHome({ count, onStart }) {

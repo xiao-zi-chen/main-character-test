@@ -3,6 +3,7 @@ import { regularRoles, roleById } from './data/roles.js';
 import { SCALE_MIN, SCALE_MAX } from './data/answer-scale.js';
 import { hiddenRoleForScores } from './hidden-rules.js';
 import { allQuestionIds, questionById, validQuestionIds, newProgress } from './question-session.js';
+import { MATCHING_VERSION, ROLE_DISTANCE_OFFSETS } from './data/role-calibration.js';
 
 export const STORAGE_KEY = 'main-character-casting:v5';
 export const LEGACY_STORAGE_KEY = 'main-character-casting:v1';
@@ -57,13 +58,17 @@ export function rankRoles(scores) {
   return regularRoles.map(role => {
     const totalWeight = role.weights.reduce((a, b) => a + b, 0);
     const distance = scores.reduce((sum, score, i) => sum + role.weights[i] * ((score.value - role.profile[i]) / 100) ** 2, 0) / totalWeight;
-    return { role, distance };
-  }).sort((a, b) => a.distance - b.distance || a.role.number.localeCompare(b.role.number));
+    // Keep the original personality distance for inspection. A fixed, offline
+    // correction reduces the advantage of central profiles, without rerolling
+    // results or depending on other participants' answers.
+    const matchingDistance = distance + (ROLE_DISTANCE_OFFSETS[role.id] ?? 0);
+    return { role, distance, matchingDistance };
+  }).sort((a, b) => a.matchingDistance - b.matchingDistance || a.role.number.localeCompare(b.role.number));
 }
 
 export function getResult(answers, options = {}) {
   const scores = scoreAnswers(answers, options.questionIds);
   const ranking = rankRoles(scores);
   const hiddenId = options.hiddenEnabled ? hiddenRoleForScores(scores) : null;
-  return { role: hiddenId ? roleById[hiddenId] : ranking[0].role, scores, ranking, hiddenUnlocked: Boolean(hiddenId) };
+  return { role: hiddenId ? roleById[hiddenId] : ranking[0].role, scores, ranking, hiddenUnlocked: Boolean(hiddenId), matchingVersion: MATCHING_VERSION };
 }
