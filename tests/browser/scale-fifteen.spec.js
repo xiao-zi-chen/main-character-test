@@ -8,7 +8,7 @@ const labels = ['更接近左侧', '偏左', '中立', '偏右', '更接近右�
 const shortcuts = [0, 4, 7, 10, 14];
 const ids = dimensions.flatMap(dimension => questions.filter(question => question.dimension === dimension.id).slice(0, 2).map(question => question.id));
 
-test('fifteen exact choices share five reaction groups and submit only on Next', async ({ page }) => {
+test('fifteen exact choices share five reaction groups and submit only on next', async ({ page }) => {
   await page.goto('/#/test');
   const slider = page.getByRole('slider');
   await expect(slider).toHaveAttribute('aria-valuemax', '14');
@@ -25,7 +25,7 @@ test('fifteen exact choices share five reaction groups and submit only on Next',
     await expect(slider).toHaveAttribute('aria-valuenow', String(value));
     const group = Math.floor(value / 3);
     await expect(page.locator('.question-scene img')).toHaveAttribute('src', /\/scene\.webp/);
-    await expect(page.getByRole('region', { name: '所选反应预览' })).toHaveCount(0);
+    await expect(page.getByRole('dialog', { name: '所选反应预览' })).toHaveCount(0);
     await expect(page.locator('.answer-scale-labels .active')).toHaveText(labels[group]);
     const draft = await page.evaluate(key => JSON.parse(localStorage.getItem(key)), STORAGE_KEY);
     expect(draft.answers[draft.questionIds[0]]).toBe(value);

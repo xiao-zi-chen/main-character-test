@@ -4,7 +4,11 @@ import {questions,dimensions} from '../../src/data/questions.js';
 import {STORAGE_KEY} from '../../src/engine.js';
 import {validQuestionIds} from '../../src/question-session.js';
 
-test('all forty questions fit in one phone screen, including both choices and navigation',async({page},testInfo)=>{
+test.beforeEach(async ({ page }) => {
+  await page.route('**/api/collect', route => route.fulfill({ json: { ok: true } }));
+});
+
+test('all forty questions fit in one phone screen, including choices and navigation buttons',async({page},testInfo)=>{
   test.skip(testInfo.project.name!=='mobile');
   test.setTimeout(120000);
   const fixtures=Object.fromEntries(questions.map(target=>{
@@ -18,11 +22,13 @@ test('all forty questions fit in one phone screen, including both choices and na
       await page.goto(`/?question=${question.id}#/test`);
       await expect(page.getByRole('slider')).toBeVisible();
       const layout=await page.evaluate(()=>{
-        const rect=selector=>{const r=document.querySelector(selector).getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right};};
-        return {height:innerHeight,width:innerWidth,scroll:document.documentElement.scrollHeight,scrollWidth:document.documentElement.scrollWidth,meta:rect('.question-meta'),kicker:rect('.question-kicker'),selection:rect('.answer-scale-selection'),heading:rect('#question-title'),anchors:rect('.answer-scale-anchors'),slider:rect('.answer-scale-track'),actions:rect('.question-actions')};
+        const rect=selector=>{const r=document.querySelector(selector).getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,width:r.width};};
+        return {height:innerHeight,width:innerWidth,scroll:document.documentElement.scrollHeight,scrollWidth:document.documentElement.scrollWidth,quiz:rect('.quiz-layout'),section:rect('.question-section'),scene:rect('.question-scene'),scale:rect('.answer-scale'),meta:rect('.question-meta'),kicker:rect('.question-kicker'),selection:rect('.answer-scale-selection'),heading:rect('#question-title'),anchors:rect('.answer-scale-anchors'),slider:rect('.answer-scale-track'),actions:rect('.question-actions')};
       });
       expect(layout.scroll,`${question.id} at ${viewport.width}`).toBeLessThanOrEqual(layout.height+1);
       expect(layout.scrollWidth).toBeLessThanOrEqual(layout.width);
+      expect(Math.abs(layout.section.width-layout.quiz.width),`${question.id}: question section must fill the phone layout`).toBeLessThanOrEqual(1);
+      for(const key of ['scene','scale']) expect(Math.abs(layout[key].width-layout.section.width),`${question.id}: ${key} must fill the question width`).toBeLessThanOrEqual(1);
       for(const key of ['heading','anchors','slider','actions']){expect(layout[key].top).toBeGreaterThanOrEqual(0);expect(layout[key].bottom).toBeLessThanOrEqual(layout.height);}
       expect(layout.heading.bottom).toBeLessThanOrEqual(layout.anchors.top);
       expect(layout.meta.bottom).toBeLessThanOrEqual(layout.heading.top);
@@ -33,7 +39,9 @@ test('all forty questions fit in one phone screen, including both choices and na
       await expect(page.locator('.question-scene img')).toBeInViewport();
       await expect(page.locator('.answer-option-text')).toHaveCount(2);
       await expect(page.locator('.answer-reaction-caption')).toHaveCount(0);
-      await expect(page.getByRole('button',{name:'下一幕',exact:true})).toBeInViewport();
+      await expect(page.getByRole('button',{name:'看看我的这一幕',exact:true})).toBeInViewport();
+      await expect(page.getByRole('button',{name:'上一题',exact:true})).toBeInViewport();
+      await expect(page.getByRole('button',{name:'下一题',exact:true})).toBeInViewport();
       expect(await page.evaluate(()=>document.documentElement.scrollHeight)).toBeLessThanOrEqual(viewport.height+1);
     }
     await page.screenshot({path:`.work/quiz-screen-${viewport.width}.png`});

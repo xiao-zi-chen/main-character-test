@@ -74,54 +74,77 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
   const [submitError, setSubmitError] = useState('');
   const [collectionRecovery, setCollectionRecovery] = useState(null);
   const [reactionPreview, setReactionPreview] = useState(null);
+  const [navigationFeedback, setNavigationFeedback] = useState('');
   const previewSequence = useRef(0);
-  const pendingAdvance = useRef(null);
+  const previewOpen = useRef(false);
+  const navigationPending = useRef(false);
   const closeReactionPreview = useCallback(() => {
-    const pending = pendingAdvance.current;
-    if (!pending) return;
-    pendingAdvance.current = null;
+    if (!previewOpen.current) return;
+    previewOpen.current = false;
     setReactionPreview(null);
-    if (pending.index === SESSION_SIZE - 1) {
-      setQuiz(old => ({ ...old, submitted: true }));
-      onFinish();
-    } else setQuiz(old => ({ ...old, index: pending.index + 1 }));
-  }, [setQuiz, onFinish]);
+    window.NBTICollector?.show(question.id);
+  }, [question.id]);
+  const openReactionPreview = useCallback(() => {
+    if (!isAnswer(selected) || previewOpen.current || navigationPending.current) return;
+    // Looking at the picture is voluntary and does not submit an answer or add thinking time.
+    window.NBTICollector?.leave();
+    previewOpen.current = true;
+    setReactionPreview({ questionId: question.id, value: selected, sequence: ++previewSequence.current });
+  }, [question.id, selected]);
   const choose = useCallback(value => {
-    if (pendingAdvance.current) return false;
+    if (previewOpen.current || navigationPending.current) return false;
+    setNavigationFeedback('');
     setQuiz(old => ({ ...old, answers: { ...old.answers, [old.questionIds[old.index]]: value }, submitted: false }));
     return true;
   }, [setQuiz]);
   const next = useCallback(() => {
-    if (!isAnswer(selected) || collectionRecovery || pendingAdvance.current) return;
+    if (collectionRecovery || previewOpen.current || navigationPending.current) return;
+    if (!isAnswer(selected)) {
+      setNavigationFeedback('先选好你的反应，再点击下一题继续这一场戏。');
+      return;
+    }
+    navigationPending.current = true;
+    setNavigationFeedback('');
     setSubmitError('');
     const collector = window.NBTICollector;
     if (typeof collector?.answer !== 'function' || typeof collector?.complete !== 'function' || typeof collector?.leave !== 'function') {
+      navigationPending.current = false;
       setSubmitError('答题记录服务暂未加载，答案还在，请重新加载页面后继续。');
       setCollectionRecovery('reload');
       return;
     }
     try {
       if (collector.answer(question.id, selected) !== true) throw new Error('Answer was not recorded');
-      // Confirmation ends answer time; viewing the reaction must not count as thinking.
+      // Advancing to the next question confirms the current answer once.
       collector.leave();
       if (index === SESSION_SIZE - 1 && collector.complete() !== true) {
+        navigationPending.current = false;
         setSubmitError('本轮答题记录未能完整恢复，请重新开始测试，以准确记录选择和用时。');
         setCollectionRecovery('restart');
         return;
       }
     } catch {
+      navigationPending.current = false;
       setSubmitError('这一步暂时未能保存，答案还在，请再试一次。');
       return;
     }
-    const pending = { questionId: question.id, index, value: selected, sequence: ++previewSequence.current };
-    pendingAdvance.current = pending;
-    setReactionPreview(pending);
-  }, [selected, index, question.id, collectionRecovery]);
+    if (index === SESSION_SIZE - 1) {
+      setQuiz(old => ({ ...old, submitted: true }));
+      onFinish();
+    } else setQuiz(old => ({ ...old, index: index + 1 }));
+  }, [selected, index, question.id, collectionRecovery, setQuiz, onFinish]);
   const previous = useCallback(() => {
-    if (pendingAdvance.current) return;
+    if (collectionRecovery || previewOpen.current || navigationPending.current) return;
+    if (index === 0) {
+      setNavigationFeedback('这已经是故事的第一幕了。');
+      return;
+    }
+    navigationPending.current = true;
+    window.NBTICollector?.leave();
+    setNavigationFeedback('');
     setSubmitError('');
     setQuiz(old => ({ ...old, index: Math.max(0, old.index - 1) }));
-  }, [setQuiz]);
+  }, [index, collectionRecovery, setQuiz]);
   useLayoutEffect(() => {
     setCollectionRecovery(null);
     setSubmitError('');
@@ -131,20 +154,24 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
     const state = collector.snapshot();
     const run = state.runs.find(item => item.session.id === state.activeSessionId);
     const recorded = new Set(run?.answers.map(answer => answer.questionId));
-    // Earlier pages were confirmed with Next. A later page can still contain a
+    // Earlier pages were confirmed by advancing. A later page can still contain a
     // local draft after Back, so it must not be mistaken for a lost event.
     if (questionIds.slice(0, index).some(id => !recorded.has(id))) {
       setSubmitError('本轮答题记录未能完整恢复，请重新开始测试，以准确记录选择和用时。');
       setCollectionRecovery('restart');
     }
   }, [questionIds]);
-  useLayoutEffect(() => { window.NBTICollector?.show(question.id); }, [question.id]);
+  useLayoutEffect(() => {
+    navigationPending.current = false;
+    setNavigationFeedback('');
+    window.NBTICollector?.show(question.id);
+  }, [question.id]);
   useEffect(() => { heading.current?.focus({ preventScroll: true }); }, [index]);
   useEffect(() => { preloadQuestionArt(questionIds[index + 1]); }, [index, questionIds]);
   useEffect(() => { preloadQuestionReactions(question.id); }, [question.id]);
   useEffect(() => {
     const onKey = event => {
-      if (pendingAdvance.current || document.querySelector('dialog[open]') || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || ['INPUT', 'TEXTAREA'].includes(event.target.tagName) || event.target.closest('[role="slider"]')) return;
+      if (previewOpen.current || navigationPending.current || document.querySelector('dialog[open], [role="dialog"][aria-modal="true"]') || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || ['INPUT', 'TEXTAREA', 'SELECT'].includes(event.target.tagName) || event.target.closest('[role="slider"], [contenteditable="true"]')) return;
       if (['a', 'A', '1'].includes(event.key)) { event.preventDefault(); choose(SCALE_MIN); }
       if (['b', 'B', '2'].includes(event.key)) { event.preventDefault(); choose(SCALE_MAX); }
       if (event.key === 'ArrowLeft') { event.preventDefault(); previous(); }
@@ -163,10 +190,15 @@ function Quiz({ quiz, setQuiz, onFinish, onRestart, storageOkay }) {
         <div className="question-content" key={question.id}><span className="question-kicker">主角请就位 · 你的第 {index + 1} 个选择</span>
           <div className="question-scene"><QuestionArt id={question.id} kind="scene" alt="这一次，你在故事里" priority zoomable/><h1 id="question-title" ref={heading} tabIndex={-1}>{question.prompt}</h1></div>
           <AnswerScale value={selected} options={question.options} onChoose={choose} questionId={question.id}/>
+          <div className="question-preview-slot">{isAnswer(selected) && <button type="button" className="question-preview-trigger button button-outline" onClick={openReactionPreview}><Sparkles size={17}/>看看我的这一幕</button>}</div>
           {reactionPreview?.questionId === question.id && <ReactionPreview key={reactionPreview.sequence} questionId={question.id} value={reactionPreview.value} onClose={closeReactionPreview}/>}
         </div>
         {submitError && <div className="quiz-submit-error" role="alert"><p>{submitError}</p>{collectionRecovery && <button className="text-button" onClick={collectionRecovery === 'reload' ? () => window.location.reload() : onRestart}>{collectionRecovery === 'reload' ? '重新加载页面' : '重新开始测试'}<RotateCcw size={14}/></button>}</div>}
-        <div className="question-actions"><button className="text-button" disabled={index === 0 || Boolean(collectionRecovery) || Boolean(reactionPreview)} onClick={previous}><ArrowLeft size={16} /> 上一题</button><button className="button button-lime" disabled={!isAnswer(selected) || Boolean(collectionRecovery) || Boolean(reactionPreview)} onClick={next}>{index === SESSION_SIZE - 1 ? '揭晓我的主角' : '下一幕'}{index === SESSION_SIZE - 1 ? <Sparkles size={18} /> : <ArrowRight size={19} />}</button></div>
+        <nav className="question-actions" aria-label="题目导航">
+          <button type="button" className="button button-outline" disabled={index === 0 || Boolean(collectionRecovery) || Boolean(reactionPreview)} onClick={previous}><ArrowLeft size={19}/>上一题</button>
+          <button type="button" className="button button-lime" disabled={!isAnswer(selected) || Boolean(collectionRecovery) || Boolean(reactionPreview)} onClick={next}>{index === SESSION_SIZE - 1 ? '揭晓我的主角' : '下一题'}{index === SESSION_SIZE - 1 ? <Sparkles size={18}/> : <ArrowRight size={19}/>}</button>
+        </nav>
+        {navigationFeedback && <p className="quiz-navigation-feedback" role="status">{navigationFeedback}</p>}
       </section>
     </div>
   </main>;

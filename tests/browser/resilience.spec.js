@@ -1,4 +1,4 @@
-import { confirmAnswer } from './quiz-helpers.js';
+import { confirmAnswer, navigateQuestion } from './quiz-helpers.js';
 import { test, expect } from '@playwright/test';
 import { questions, dimensions } from '../../src/data/questions.js';
 import { hiddenRoles } from '../../src/data/roles.js';
@@ -115,7 +115,7 @@ test('every reachable modal closes from outside and preserves inside clicks, ima
   await page.getByRole('button', { name: '观看心之所向的短片', exact: true }).click();
   await checkModal('心之所向的短片', 'video');
   await page.getByRole('button', { name: '分享剧本', exact: true }).first().click();
-  await page.getByRole('button', { name: '朋友圈', exact: true }).click();
+  await page.getByRole('button', { name: '保存角色卡', exact: true }).click();
   await checkModal('分享剧本', 'img');
   await page.goto('/#/test');
   await page.getByRole('button', { name: '放大当前画面', exact: true }).click();
@@ -168,7 +168,7 @@ test('collection rejection shows a recoverable error and preserves the chosen re
     let rejected=false;
     window.NBTICollector={...window.NBTICollector,answer:(...args)=>{if(!rejected){rejected=true;return false;}return original(...args);}};
   });
-  await page.getByRole('button',{name:'下一幕',exact:true}).click();
+  await navigateQuestion(page, 'next');
   await expect(page.getByRole('alert')).toContainText('答案还在');
   await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow','14');
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
@@ -193,7 +193,7 @@ test('a missing collector preserves the selected draft and offers a page reload'
   await page.goto('/#/test');
   await page.getByRole('slider').press('End');
   await page.evaluate(() => { window.NBTICollector = undefined; });
-  await page.getByRole('button', { name: '下一幕', exact: true }).click();
+  await navigateQuestion(page, 'next');
   await expect(page.getByRole('alert')).toContainText('答题记录服务暂未加载');
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
   await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '14');
@@ -233,17 +233,19 @@ test('an unconfirmed completion cannot reveal a result and offers a fresh attemp
   for (let i = 0; i < 20; i++) {
     await page.getByRole('slider').press('Home');
     if (i === 19) await page.evaluate(() => { window.NBTICollector = { ...window.NBTICollector, complete: () => false }; });
-    if (i === 19) await page.getByRole('button', { name: '揭晓我的主角', exact: true }).click();
+    if (i === 19) await navigateQuestion(page, 'next');
     else await confirmAnswer(page);
   }
   await expect(page).toHaveURL(/#\/test$/);
   await expect(page.getByRole('alert')).toContainText('答题记录未能完整恢复');
-  await expect(page.getByRole('button', { name: '揭晓我的主角', exact: true })).toBeDisabled();
+  await navigateQuestion(page, 'next');
+  await expect(page.locator('.quiz-counter')).toHaveText('20 / 20');
   const state = await page.evaluate(() => ({
     progress: JSON.parse(localStorage.getItem('main-character-casting:v5')),
     collector: window.NBTICollector.snapshot()
   }));
   expect(state.progress.submitted).toBe(false);
+  expect(state.collector.runs.find(run => run.session.id === state.collector.activeSessionId).answers).toHaveLength(20);
   expect(state.collector.runs.find(run => run.session.id === state.collector.activeSessionId).session.completedAt).toBeNull();
   await expect(page.getByRole('button', { name: '重新开始测试', exact: true })).toBeVisible();
 });
@@ -259,7 +261,7 @@ test('phone sharing uses the native sheet and cancelling it does not show an err
   });
   await page.goto('/#/role/plot-rewriter');
   await page.getByRole('button',{name:'分享剧本',exact:true}).first().click();
-  await page.getByRole('button',{name:'更多分享方式',exact:true}).click();
+  await page.getByRole('button',{name:'分享给朋友',exact:true}).click();
   const invitations=await page.evaluate(()=>window.sharedInvitations);
   expect(invitations).toHaveLength(1);
   expect(invitations[0].text).toContain('心之所向');

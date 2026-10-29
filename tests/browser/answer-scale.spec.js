@@ -1,8 +1,12 @@
-import { confirmAnswer } from './quiz-helpers.js';
+import { confirmAnswer, navigateQuestion } from './quiz-helpers.js';
 import { test, expect } from '@playwright/test';
 import { mkdir } from 'node:fs/promises';
 import { questions } from '../../src/data/questions.js';
 import { STORAGE_KEY, LEGACY_STORAGE_KEY } from '../../src/engine.js';
+
+test.beforeEach(async ({ page }) => {
+  await page.route('**/api/collect', route => route.fulfill({ json: { ok: true } }));
+});
 
 async function start(page) {
   await page.goto('/');
@@ -13,18 +17,20 @@ async function start(page) {
 test('scale requires an explicit response and supports neutral, zero, keyboard and reload', async ({ page }) => {
   await start(page);
   const slider = page.getByRole('slider');
-  const next = page.getByRole('button', { name: '下一幕', exact: true });
+  const preview = page.getByRole('button', { name: '看看我的这一幕', exact: true });
   await expect(slider).toHaveAttribute('aria-valuenow', '7');
   await expect(slider).toHaveAttribute('data-selected', 'false');
   await expect(page.locator('.answer-scale-cell')).toHaveCount(15);
   await expect(page.locator('.answer-scale-cell.major-boundary')).toHaveCount(4);
   await expect(page.locator('.answer-scale-labels .active')).toHaveCount(0);
-  await expect(next).toBeDisabled();
+  await expect(preview).toHaveCount(0);
+  await navigateQuestion(page, 'next');
+  await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
   await slider.focus();
   await slider.press('Enter');
   await expect(slider).toHaveAttribute('data-selected', 'true');
   await expect(page.locator('.answer-scale-labels .active')).toHaveText('中立');
-  await expect(next).toBeEnabled();
+  await expect(preview).toBeEnabled();
   // Enter on the slider chooses neutral locally, without submitting the answer.
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
   await confirmAnswer(page);
@@ -33,7 +39,7 @@ test('scale requires an explicit response and supports neutral, zero, keyboard a
   await slider.focus();
   await slider.press('Home');
   await expect(slider).toHaveAttribute('aria-valuenow', '0');
-  await expect(next).toBeEnabled();
+  await expect(preview).toBeEnabled();
   await slider.press('ArrowRight');
   await expect(slider).toHaveAttribute('aria-valuenow', '1');
   await slider.press('ArrowLeft');
@@ -43,16 +49,16 @@ test('scale requires an explicit response and supports neutral, zero, keyboard a
   await confirmAnswer(page);
   await page.reload();
   await expect(page.locator('.quiz-counter')).toHaveText('03 / 20');
-  await page.getByRole('button', { name: '上一题', exact: true }).click();
+  await navigateQuestion(page, 'previous');
   await expect(slider).toHaveAttribute('aria-valuenow', '0');
-  await expect(next).toBeEnabled();
+  await expect(preview).toBeEnabled();
   const progress = await page.evaluate(key => JSON.parse(localStorage.getItem(key)), STORAGE_KEY);
   expect(progress.version).toBe(5);
   expect(progress.answers[progress.questionIds[0]]).toBe(7);
   expect(progress.answers[progress.questionIds[1]]).toBe(0);
 });
 
-test('scale adjustments stay local; Next submits once, and returning to revise submits the final value', async ({ page }) => {
+test('scale adjustments stay local; next submits once, and returning to revise submits the final value', async ({ page }) => {
   await start(page);
   const firstId=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)).questionIds[0],STORAGE_KEY);
   await page.evaluate(() => {
@@ -77,15 +83,15 @@ test('scale adjustments stay local; Next submits once, and returning to revise s
   });
   await expect(slider).toHaveAttribute('aria-valuenow', '14');
   expect(await page.evaluate(() => window.__scaleAnswers.length)).toBe(0);
-  await expect(page.getByRole('region', { name: '所选反应预览' })).toHaveCount(0);
-  await expect(page.getByRole('button', { name: '下一幕', exact: true })).toBeDisabled();
+  await expect(page.getByRole('dialog', { name: '所选反应预览' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: '看看我的这一幕', exact: true })).toHaveCount(0);
   await slider.evaluate(element => {
     const bounds = element.getBoundingClientRect();
     element.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, pointerId: 11, button: 0, clientX: bounds.right - 2 }));
   });
   await expect(slider).toHaveAttribute('aria-valuenow', '14');
   expect(await page.evaluate(() => window.__scaleAnswers)).toEqual([]);
-  await expect(page.getByRole('region', { name: '所选反应预览' })).toHaveCount(0);
+  await expect(page.getByRole('dialog', { name: '所选反应预览' })).toHaveCount(0);
   await expect(page.locator('.question-scene img')).toHaveAttribute('src', /scene\.webp/);
   await slider.evaluate(element => {
     const bounds = element.getBoundingClientRect();
@@ -102,18 +108,18 @@ test('scale adjustments stay local; Next submits once, and returning to revise s
   await confirmAnswer(page);
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
   expect(await page.evaluate(() => window.__scaleAnswers)).toEqual([[firstId, 0]]);
-  await page.getByRole('button', { name: '上一题', exact: true }).click();
+  await navigateQuestion(page, 'previous');
   await expect(slider).toHaveAttribute('aria-valuenow', '0');
   await slider.press('End');
   await expect(slider).toHaveAttribute('aria-valuenow', '14');
   expect(await page.evaluate(() => window.__scaleAnswers.length)).toBe(1);
-  // Collector refusal blocks Next while retaining the locally chosen answer.
+  // Collector refusal blocks next while retaining the draft.
   await page.evaluate(() => {
     window.__acceptScaleAnswer = window.NBTICollector.answer;
     window.__refusedScaleCalls = 0;
     window.NBTICollector = { ...window.NBTICollector, answer: () => { window.__refusedScaleCalls++; return false; } };
   });
-  await page.getByRole('button', { name: '下一幕', exact: true }).click();
+  await navigateQuestion(page, 'next');
   await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
   await expect(slider).toHaveAttribute('aria-valuenow', '14');
   expect(await page.evaluate(() => window.__refusedScaleCalls)).toBe(1);
@@ -136,7 +142,7 @@ test('obsolete binary browser progress is removed before a fresh scale attempt',
   expect(await page.evaluate(key => localStorage.getItem(key), LEGACY_STORAGE_KEY)).toBeNull();
 });
 
-test('phone scale fits; touch release selects locally and Next submits the value', async ({ page, context }, testInfo) => {
+test('phone scale fits; touch release selects locally and next submits the value', async ({ page, context }, testInfo) => {
   test.skip(testInfo.project.name !== 'mobile', 'Uses the phone touch context.');
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
@@ -161,6 +167,7 @@ test('phone scale fits; touch release selects locally and Next submits the value
     await touch.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [point(1)] });
     await touch.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [point(10)] });
     await expect(slider).toHaveAttribute('aria-valuenow', '10');
+    await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
     await expect(page.locator('.answer-scale-labels .active')).toHaveText('偏右');
     await expect(slider).toHaveAttribute('data-selected', 'false');
     await touch.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });

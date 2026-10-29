@@ -1,4 +1,4 @@
-import { confirmAnswer, finishReactionPreview } from './quiz-helpers.js';
+import { confirmAnswer, navigateQuestion } from './quiz-helpers.js';
 import { test, expect } from '@playwright/test';
 import { regularRoles as roles } from '../../src/data/roles.js';
 import { readFile } from 'node:fs/promises';
@@ -41,14 +41,17 @@ test('20-question journey persists, navigates back, reveals and exports a real r
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('/');
   await page.getByRole('button', { name: '测测我的主角人设', exact: true }).click();
-  await expect(page.getByRole('button', { name: '下一幕', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: '上一题', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: '下一题', exact: true })).toBeDisabled();
+  await navigateQuestion(page, 'next');
+  await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
   await page.keyboard.press('b');
   await page.keyboard.press('Enter');
-  await finishReactionPreview(page);
+  await expect(page.getByRole('dialog', { name: '所选反应预览' })).toHaveCount(0);
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
   await page.reload();
   await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
-  await page.getByRole('button', { name: '上一题', exact: true }).click();
+  await navigateQuestion(page, 'previous');
   await expect(page.getByRole('slider')).toHaveAttribute('aria-valuenow', '14');
   await page.screenshot({ path: `.work/quiz-${testInfo.project.name}.png`, fullPage: true });
   for (let i = 0; i < 20; i++) {

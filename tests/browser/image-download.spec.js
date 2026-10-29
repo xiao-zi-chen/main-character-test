@@ -35,21 +35,20 @@ test('zoomed question image downloads from CDN without navigating away', async (
   expect(page.url()).toBe(url);
 });
 
-test('reaction image download pauses dismissal and still permits outside dismissal', async ({ page }) => {
+test('manual reaction uses the CDN image directly and keeps native saving available', async ({ page }) => {
   await prepare(page);
   await page.getByRole('slider').press('End');
-  await page.getByRole('button', { name: '下一幕', exact: true }).click();
-  const preview = page.getByRole('region', { name: '所选反应预览' });
+  await page.getByRole('button', { name: '看看我的这一幕', exact: true }).click();
+  const preview = page.getByRole('dialog', { name: '所选反应预览' });
   await expect(preview).toBeVisible();
-  await page.clock.install();
-  await page.clock.pauseAt(new Date());
-  await saveImage(page, preview);
-  await page.clock.runFor(11000);
-  await expect(preview).toBeVisible();
-  await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
+  const art = preview.locator('img');
+  await expect(art).toHaveAttribute('src', /^https:\/\/images\.nbti-test\.invalid\/question-art\//);
+  await expect.poll(() => art.evaluate(el => el.complete && el.naturalWidth > 0)).toBe(true);
+  expect(await art.evaluate(el => el.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, cancelable: true })))).toBe(true);
+  await expect(preview.locator('button,a')).toHaveCount(0);
   await page.mouse.click(2, 2);
   await expect(preview).toHaveCount(0);
-  await expect(page.locator('.quiz-counter')).toHaveText('02 / 20');
+  await expect(page.locator('.quiz-counter')).toHaveText('01 / 20');
 });
 
 test('blocked CDN download reports failure, preserves long-press and can retry', async ({ page }) => {

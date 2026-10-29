@@ -105,13 +105,14 @@ test('pair invitations copy and natively share both names and the partner previe
     await page.locator('.film-partner').getByRole('button', { name: '找 TA 来认领' }).click();
     const dialog = page.getByRole('dialog', { name: '分享同片搭档' });
     await expect(dialog).toBeVisible();
+    await dialog.getByText('复制链接与文案', { exact: true }).click();
     const invitation = await dialog.getByRole('textbox', { name: '角色分享邀请' }).inputValue();
     const expectedUrl = new URL(`/#/role/${partner.id}`, page.url()).href;
     for (const fragment of [role.name, partner.name, relationships[role.id].chemistry, expectedUrl]) expect(invitation).toContain(fragment);
     expect(invitation).not.toMatch(/private-session|private-token|\?session=|\?token=/);
     await dialog.getByRole('button', { name: '复制剧本邀请', exact: true }).click();
     expect(await page.evaluate(() => window.copiedInvitations.at(-1))).toBe(invitation);
-    await dialog.getByRole('button', { name: '更多分享方式', exact: true }).click();
+    await dialog.getByRole('button', { name: '分享给朋友', exact: true }).click();
     const native = await page.evaluate(() => window.nativeInvitations.at(-1));
     expect(native.title).toContain(role.name);
     expect(native.title).toContain(partner.name);
@@ -138,6 +139,7 @@ test('visiting and sharing a partner preserves the completed personal answer she
   await page.locator('.film-partner').getByRole('link', { name: '看看 TA 的剧本' }).click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(partnerById[role.id].name);
   await page.locator('.film-partner').getByRole('button', { name: '找 TA 来认领' }).click();
+  await page.getByText('复制链接与文案', { exact: true }).click();
   await page.getByRole('button', { name: '复制剧本邀请', exact: true }).click();
   await page.getByRole('button', { name: '关闭弹窗', exact: true }).click();
   await page.getByRole('button', { name: '返回我的结果', exact: true }).click();

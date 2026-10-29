@@ -1,13 +1,32 @@
-.script-share-modal { max-width:560px; }
+.modal.script-share-modal { width:520px; max-width:calc(100vw - 48px); max-height:calc(100svh - 48px); padding:32px; }
 .script-share-modal h2 { font-size:23px; line-height:1.5; }
-.share-role-name { color:#dce9d4; }
+.script-share-modal .modal-symbol { margin:0 0 18px; }
+.script-share-modal .share-role-name { color:#dce9d4; margin:12px 0; }
 .share-destinations { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0; }
-.share-destinations .button { padding:12px 10px; min-width:0; font-size:13px; }
-.share-status { min-height:44px; font-size:13px; line-height:1.7; color:#c5d3c8; }
-.script-share-modal .share-invitation { min-height:130px; margin:10px 0; width:100%; }
-.share-card-preview>p { font-size:12px; line-height:1.7; }
-.share-card-preview>img { display:block; width:min(100%,300px); height:auto; margin:14px auto; border-radius:8px; }
+.share-destinations .button { padding:12px 10px; min-width:0; font-size:13px; gap:8px; white-space:normal; }
+.script-share-modal .share-status { min-height:24px; margin:14px 0; font-size:13px; line-height:1.7; color:#c5d3c8; }
+.wechat-share-guide { border:1px solid #536d5e; border-radius:8px; padding:18px; background:#0e1913; text-align:left; }
+.wechat-share-guide strong { display:block; padding-right:30px; color:#e4eddf; font-size:15px; line-height:1.8; }
+.wechat-share-arrow { float:right; margin:-6px -8px 4px 6px; color:#c3d8ae; }
+.script-share-modal .wechat-share-guide p { margin:8px 0 0; font-size:13px; line-height:1.8; }
+.script-share-modal .wechat-share-guide .wechat-share-note { color:#98aea0; font-size:12px; }
+.share-fallback { border-top:1px solid #34483d; padding-top:14px; margin-top:18px; text-align:left; }
+.share-fallback summary { cursor:pointer; color:#b7c9bd; font-size:13px; line-height:24px; width:fit-content; }
+.script-share-modal .share-invitation { min-height:130px; margin:14px 0 6px; width:100%; resize:vertical; }
+.share-fallback .text-button { min-height:44px; }
+.share-card-preview { border-top:1px solid #34483d; padding-top:20px; margin-top:20px; }
+.share-card-preview h3 { font-size:16px; font-weight:600; color:#e4eddf; }
+.script-share-modal .share-card-preview p { font-size:12px; line-height:1.7; margin:10px 0; }
+.share-card-preview>img { display:block; width:auto; height:auto; max-width:100%; max-height:55svh; margin:16px auto; border-radius:8px; object-fit:contain; -webkit-touch-callout:default; user-select:auto; -webkit-user-select:auto; }
+.share-card-preview>img[hidden] { display:none; }
 .share-card-actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+.share-card-actions .button { min-height:46px; padding:10px 14px; font-size:13px; gap:8px; }
+.share-card-error { color:#e0cbb8; }
+.share-card-error .text-button { min-height:44px; }
 .result-share-footer { border-top:1px solid #34483d; padding:24px 0; margin-top:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
 .result-share-footer p { color:#bac9c0; line-height:1.7; }
-@media(max-width:480px) { .result-share-footer { align-items:flex-start; flex-direction:column; } .script-share-modal h2 { font-size:20px; } }
+@media(max-width:480px) {
+  .result-share-footer { align-items:flex-start; flex-direction:column; }
+  .modal.script-share-modal { padding:26px 18px; }
+  .script-share-modal h2 { font-size:20px; }
+}
