@@ -113,8 +113,8 @@ export const selectedRoles = [
   {
     "id": "villain-calmer",
     "number": "03",
-    "name": "无奈员工",
-    "shortName": "无奈员工",
+    "name": "老板又去追热点了",
+    "shortName": "老板又去追热点了",
     "english": "VILLAIN CALMER",
     "category": "职场喜剧",
     "genre": "老板又去追热点了",

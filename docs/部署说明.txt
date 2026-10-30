@@ -1,5 +1,57 @@
 主角请就位 · 十五档量表、28 人物与 17 影片版
 
+2026-10-30 “老板又去追热点了”角色卡更新（本地及云端已发布）：
+原“无奈员工”角色 id 仍为 villain-calmer，名称改为“老板又去追热点了”；匹配参数与视频保持不变。
+参照原片重画员工手持激光笔、橘猫扑向红点的场景，沿用现有金色边框与标题风格。
+完整分享卡包含新原画、既有描述和二维码；原图及393px手机缩图均解码到 https://www.nbti.cn/。
+已同步角色源码、内容清单及 视频排序(4).xlsx 的 H3，避免后续导入恢复旧名。
+新完整卡 media/villain-calmer-card-ba4f520a0de1.png；新头像/封面 media/villain-calmer-portrait-9092cec05405.webp。
+原画仅作拼装源，不扩大公开白名单；页面通过完整卡的顶部裁切显示新场景。
+本地构建 index-CUe_yDd7.js、index-CZZCjJKL.css，入口 http://127.0.0.1:3000/#/role/villain-calmer。
+原画、分享卡、预览、生成提示词和验证记录在 output/trend-employee-update-2026-10-30/。
+该目录 cos-upload/media/ 内3个文件已上传到 COS 的 media/：新完整PNG、新封面WebP、manifest.json。
+COS及CDN清单均核对一致，新图片GET/HEAD/Range和CORS正常，未发现旧清单缓存。
+当前云端 /opt/nbti-releases/20261030T085936Z-trend-employee，构建与本地一致。
+本地手机/电脑检查通过：新名称、结果封面、搭档卡、视频加载均正常，无浏览器报错，未提交测试答卷。
+公网手机/电脑检查也通过，卡图确认从static.nbti.cn加载；人数统计、邮件监控、gzip保持正常，未修改答卷。
+发布及回退明细见根CLOUD_DEPLOY.txt；证据 .local/trend-card-update/live-check.json。
+
+2026-10-30 作者署名与人数 API（本地与线上已应用）：
+作者更新为 十一不停/always0512/Utakata/Le Prince Grenouille。
+首页数字通过 GET /api/participation 获取 {displayCount}，前端仅显示返回字符串并加 +，保留封面上方金色字样。
+人数以完成整份测试的参与者去重统计为基础；计算及 k/w 一位小数格式化均在后端，前端没有计算参数。
+服务端每进程 60 秒共享缓存及并发请求合并，前端也使用短期缓存；首次获取失败隐藏人数行，不影响答题。
+源码：src/components/SimpleExperience.jsx、src/participation.js；服务端模块为根目录 server/participation.mjs。
+该阶段线上 /opt/nbti-releases/20261030T075007Z-participation-count，构建 index-C9WhOIC6.js、index-CZZCjJKL.css。
+后端发布必须包含新模块（根 scripts/package-cloud.mjs 已更新）；不涉及媒体更新，无需上传 COS。
+验证：46 项后端测试、8 项手机/电脑前端测试、4 项本地正式构建明暗主题检查通过。未修改数据库结构或清理答卷。
+公网另有 4 项手机/电脑及明暗主题验证通过，线上首页数字、作者与布局正常，未提交生产测试答卷。
+以下固定人数文案及旧版本目录均为历史记录，以本节为准。
+
+2026-10-30 上线前人数文案调整（本地与线上已应用）：
+文案移到封面图上方，8.3k+ 使用金色衬线艺术字；其他文字使用明暗主题正文色并加粗。
+源码仍在 SimpleExperience.jsx 和 simple.css（opening-participation、opening-participation-number）。
+当前线上目录 /opt/nbti-releases/20261030T054609Z-launch-heading；构建 index-Cgs_tZA3.js、index-CZZCjJKL.css。
+本地与公网各 4 项手机/电脑和明暗模式显示检查通过，无需更新 COS。
+随后按用户要求清空云端测试答卷，两张业务表保留且行数归零；清理及备份详情见根 DATABASE.txt。
+
+2026-10-30 首页文案与系统更新（本地与线上已应用）：
+封面图下方显示“目前 8.3k+ 人次完成测试”，居中并适配明暗模式；这是固定展示文案。
+文案在 src/components/SimpleExperience.jsx，布局在 src/simple.css 的 opening-participation。
+该阶段构建 index-DtSCm2cF.js、index-DVR0Yfov.css；线上目录 /opt/nbti-releases/20261030T053144Z-home-count。
+不涉及媒体变更，无需上传 COS；数据库和加固后的后端保留，推荐服务仍停用。
+服务器其余 198 个系统包已更新，并重启至内核 6.8.0-147-generic，待更新数量为 0。
+本地与公网各 4 项手机/电脑、明暗模式首页检查通过，未提交生产答卷。
+部署和备份详情见根 CLOUD_DEPLOY.txt 与 SECURITY_REVIEW_2026-10-30.txt。
+
+2026-10-30 服务安全加固（本地与线上已应用）：
+该阶段云端发布目录 /opt/nbti-releases/20261030T051017Z-security，Node v24.22.2。
+前端继续使用 index-DG58ZTNA.js、index-kWqewAcA.css，本次无需重传 COS。
+采集接口增加并发、排队和批量边界；新答卷首次提交须含已确认答案，已有完成/重试兼容。
+根目录本地启动脚本优先使用 .local/node-runtime/node.exe（v24.22.2）。
+本轮 39 项后端测试、本地双端完整答题及公网双端页面/视频检查通过。
+数据库无需迁移；推荐服务仍停用。部署与安全详情见根 CLOUD_DEPLOY.txt、SECURITY_REVIEW_2026-10-30.txt。
+
 2026-10-29 “看看我的这一幕”增加逐图说明（已发布）：
 https://www.nbti.cn/ 当前版本为 /opt/nbti-releases/20261029T143008Z-reaction-captions。
 40题、200张选择图各有一句简短说明，参考prompt.xlsx编写，图下显示并适配明暗模式。

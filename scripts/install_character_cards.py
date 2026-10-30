@@ -45,7 +45,9 @@ def main():
         digest = sha(data)
         review = reviewed[key]
         assert review['title'] == person['name'] and review['sha256'] == digest
-        assert review['singleCharacter'] and review['titleChecked'] and review['identityChecked']
+        # This employee card explicitly includes the cat chasing his laser dot.
+        requested_cat_scene = key == 'villain-calmer' and review.get('singleHumanCharacter') and review.get('requestedSupportingAnimal')
+        assert (review['singleCharacter'] or requested_cat_scene) and review['titleChecked'] and review['identityChecked']
         with Image.open(path) as image:
             image.load()
             assert image.format == 'PNG' and image.width >= 900 and image.height > image.width

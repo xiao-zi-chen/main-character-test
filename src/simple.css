@@ -32,6 +32,10 @@ body :is(h1,h2,h3,button,a,p,span){letter-spacing:0}
 .opening-start{display:flex;align-items:center;justify-content:space-between;gap:36px;margin:auto;min-height:54px;min-width:260px;padding:14px 22px;background:#dce9d4;color:#18271e;border-radius:5px;font-size:15px;font-weight:650;transition:background .2s}
 .opening-start:hover{background:#f0f5e9}
 .opening-note{display:block;margin-top:15px;font-size:11px;color:#bdc9bf}
+.opening-participation{margin:0;padding:10px 20px 14px;text-align:center;font-size:14px;font-weight:700;line-height:1.7;color:var(--theme-text,#e8e6eb)}
+.opening-participation-number{display:inline-block;margin:0 4px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(26px,3vw,30px);font-style:italic;font-weight:700;line-height:1.2;vertical-align:-2px;color:#dfbc73;background:linear-gradient(120deg,#b98b38 0%,#f1d496 45%,#c99b49 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+:root[data-theme='light'] .opening-participation-number{color:#936b27;background-image:linear-gradient(120deg,#805617 0%,#b48833 48%,#875c1a 100%)}
+@media(forced-colors:active){.opening-participation-number{background:none;-webkit-text-fill-color:currentColor;color:CanvasText}}
 .simple-footer{max-width:1200px;margin:0 auto;padding:24px 36px calc(24px + env(safe-area-inset-bottom));border-top:1px solid #ffffff12;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:11px;line-height:1.8;color:#8e9e94}
 .simple-footer span{overflow-wrap:anywhere}
 .simple-footer a:hover{text-decoration:underline}
