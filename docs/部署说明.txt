@@ -1,4 +1,54 @@
-主角请就位 · 十五档量表、28 人物与 17 影片版
+看见你自己 · black-mirror 分支（本地与云端）
+
+2026-10-31 22:52 新增本版本独立分享：
+结果页“分享给朋友”进入公开分享页 https://www.nbti.cn/black-mirror/#/share，并打开系统分享/复制或微信、QQ菜单指引。
+朋友无需先答题即可看分享页；从分享页开始答题和最终查看结果都留在black-mirror版本，不跳到根短剧版。
+分享不传个人答案和会话参数；微信/QQ菜单转发的当前地址也已切到该公开分享页。
+根短剧版继续使用 /#/role/<角色ID> 分享剧本，未修改其构建。
+当前组合发布 20261031T145219Z-black-mirror-sharing；JS index-CR-UFIRc.js，CSS index-C2yW8c82.css，无需上传COS。
+本地12项手机/电脑检查通过；测试代码 mirror-sharing.spec.js 已纳入本分支浏览器套件。
+公网子站另有10项手机/电脑分享测试全部通过，链接保持子目录且不携带答案或会话参数。
+
+2026-10-31 22:33 云端入口调整：
+本分支正式地址为 https://www.nbti.cn/black-mirror/；https://www.nbti.cn/ 恢复之前的角色匹配版。
+当前组合发布 /opt/nbti-releases/20261031T143327Z-split-routes；本分支构建放在 black-mirror/ 子目录，使用相对入口资源和 # 路由。
+Vite 保持 base: './'，API 继续走根 /api/*，public-config.js 由 Nginx 转到现有 Node 配置接口，题图仍走 CDN。
+浏览器测试支持 NBTI_E2E_BASE_URL=https://www.nbti.cn/black-mirror/；测试入口使用 ./，采集请求被 mock，不写生产答卷。
+子目录公网16项手机/电脑测试全部通过；根角色版及子站的双端资源、CDN、刷新和返回检查也通过。
+本地预览仍为 http://127.0.0.1:3000/。后续云端发布需保留根角色版，仅更新 black-mirror/ 和对应 Nginx 白名单，不能直接用本分支覆盖根站。
+两版沿用同一浏览器身份、答题进度和采集队列，后端及数据库保持不变；部署配置、回退方法见根 CLOUD_DEPLOY.txt。
+以下旧入口、构建号为历史记录。
+
+2026-10-31 21:49 首次结果黑屏改为点击/轻触一次返回人格解析，键盘一次Enter同样返回；文艺版逐句流程保留。
+本地及线上已更新：/opt/nbti-releases/20261031T134950Z-black-mirror-single-tap，JS为 assets/index-xfa3MsCK.js。
+不涉及图片、后端或数据库更新。
+
+2026-10-31 21:32 按更正删除页脚作者整项，仅显示备案信息，不显示“匿名”占位文字。
+本地及线上已更新：/opt/nbti-releases/20261031T133245Z-black-mirror-no-credit，JS为 assets/index-Dm9WsvB0.js。
+
+2026-10-31 21:28 页脚作者已改为“匿名”，本地及线上均已更新，备案信息保留。
+当前线上 /opt/nbti-releases/20261031T132858Z-black-mirror-anonymous；JS为 assets/index-azSSoXo_.js。
+不涉及后端、数据库或COS资源变更；下方其他构建编号为历史记录。
+
+2026-10-31 09:07 已部署云服务器：
+入口 https://www.nbti.cn/；版本 /opt/nbti-releases/20261031T010714Z-black-mirror。
+与下方本地构建一致；封面PNG/GIF随网站发布，题图继续使用原CDN，无需重传COS。
+数据库和后端协议未改动，邮件监控持续运行；回退目录及操作记录见 NBTI/CLOUD_DEPLOY.txt。
+公网16项手机/电脑浏览器回归通过；测试拦截采集写入，没有创建生产测试答卷。
+
+2026-10-31 同步 personality-test-clean：
+黑洞封面、黑屏人格卡片、笑脸 GIF、文艺版和十维人格解析已同步到本分支。
+保留随机 20 题、十五档量表、进度恢复、确认下一题时采集答案及用时。
+题库、320 张答题图片、采集协议和人数 API 均沿用现有内容；后端业务及数据库结构无需调整。
+本分支构建产物不再包含旧角色影片、角色卡及 worlds，历史源码/素材仍保留在仓库。
+本地发布脚本已支持 Vite 导入的哈希 PNG/GIF，并继续按精确资源白名单发布。
+在 NBTI 根目录执行 node scripts/build-frontend.mjs --skip-media-hashes，然后重启本地服务。
+本地预览 http://127.0.0.1:3000/；初次同步仅部署本地，随后按上述记录发布云端。
+当前构建 assets/index-84GaEnXf.js、assets/index-C1aJMECw.css。
+本地旧产物备份在 NBTI/.local/frontend-backups/2026-10-31T00-52-12-613Z/。
+浏览器回归使用 mirror-flow.spec.js，覆盖电脑与手机的完整答题、人格卡与解析流程。
+验证：38项单元测试、16项本地正式服务浏览器测试全部通过；浏览器测试拦截采集写入，不写测试答卷。
+下方均为旧版历史部署记录，不代表当前 black-mirror 分支的页面内容。
 
 2026-10-30 “老板又去追热点了”角色卡更新（本地及云端已发布）：
 原“无奈员工”角色 id 仍为 villain-calmer，名称改为“老板又去追热点了”；匹配参数与视频保持不变。

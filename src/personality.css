@@ -1,0 +1,128 @@
+/* The supplied poster contains its own copy, so keep it whole and place the CTA below. */
+.opening-poster,
+:root[data-theme] .opening-poster { height: auto; min-height: 0; max-height: none; background: #000; }
+.opening-poster .opening-image {
+  position: static; z-index: auto; width: 100%; height: min(66svh, 720px);
+  object-fit: contain; object-position: center;
+}
+.opening-poster .opening-copy { position: static; padding: 18px 20px 24px; }
+.opening-poster .opening-start { position: relative; justify-content: center; padding-inline: 48px; text-align: center; }
+.opening-poster .opening-start>svg { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); }
+.opening-poster .opening-heading {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+:root[data-theme] .opening-poster .opening-note { color: #bdb9ca; }
+
+/* After the reveal animation, the card is black in either theme. */
+body[data-screen='/mirror'],
+body[data-screen='/card'],
+:root[data-theme] body[data-screen='/mirror'],
+:root[data-theme] body[data-screen='/card'] {
+  background: #000;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+body[data-screen='/reveal'] #nbti-save-status,
+body[data-screen='/mirror'] #nbti-save-status,
+body[data-screen='/card'] #nbti-save-status { display: none; }
+.mirror-screen { position: fixed; inset: 0; z-index: 2000; background: #000; }
+.mirror-screen:focus { outline: none; }
+.mirror-surface {
+  position: absolute; inset: 0; display: block; width: 100%; height: 100%;
+  margin: 0; padding: 0; border: 0; border-radius: 0; background: #000;
+  color: #fff; cursor: default; touch-action: manipulation; user-select: none;
+}
+.mirror-surface:focus-visible { outline: none; }
+.mirror-message {
+  position: absolute; top: calc(env(safe-area-inset-top, 0px) + 40px);
+  left: 20px; right: 20px; color: #fff;
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  font-size: clamp(14px, 2vw, 17px); font-weight: 400; line-height: 1.8; text-align: center;
+}
+.mirror-message>span { min-width: 0; }
+.mirror-gif { flex: 0 0 auto; width: 88px; height: 88px; object-fit: contain; }
+.mirror-edition-toggle {
+  position: absolute; z-index: 1; top: 50%; right: calc(16px + env(safe-area-inset-right, 0px));
+  transform: translateY(-50%); min-height: 44px; padding: 10px 14px;
+  border: 1px solid #ffffff55; border-radius: 24px; color: #ddd; background: #000;
+  font-size: 12px; line-height: 1.6;
+}
+.mirror-edition-toggle:hover { border-color: #fff; color: #fff; }
+.mirror-literary-line {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(680px, calc(100% - 64px)); color: #efefef;
+  font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  font-size: clamp(20px, 3vw, 30px); font-weight: 400; letter-spacing: .08em; line-height: 2;
+  text-align: center; text-wrap: balance; animation: mirror-words-appear 2.8s ease-out both;
+}
+.mirror-literary-leave { animation: mirror-words-leave .7s ease-in both; }
+@keyframes mirror-words-appear { from { opacity: 0; filter: blur(5px); } to { opacity: 1; filter: blur(0); } }
+@keyframes mirror-words-leave { from { opacity: 1; } to { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .mirror-literary-line { animation: none; }
+  .mirror-literary-leave { opacity: 0; }
+}
+.personality-result { max-width: 960px; padding-top: 8px; padding-bottom: 52px; }
+.personality-back { min-height: 44px; }
+.personality-card-entry { padding: 64px 20px 68px; text-align: center; border-bottom: 1px solid var(--theme-border); }
+.personality-card-entry>svg { margin-bottom: 20px; color: var(--theme-accent); }
+.personality-eyebrow { display: block; font-size: 10px; letter-spacing: 2px; color: var(--theme-subtle); }
+.personality-card-entry h1 { margin: 15px 0 32px; font-size: clamp(25px, 4vw, 36px); font-weight: 600; letter-spacing: -.5px; }
+.personality-card-entry .button { min-height: 54px; white-space: normal; }
+.personality-analysis { padding-top: 48px; }
+.personality-analysis-heading h2 { margin-top: 12px; font-size: 28px; font-weight: 600; }
+.personality-analysis-heading p { margin-top: 12px; color: var(--theme-muted); font-size: 13px; }
+.personality-overview { margin-top: 28px; padding: 24px; border: 1px solid var(--theme-border); border-radius: 8px; background: var(--theme-panel); }
+.personality-overview h3 { font-size: 15px; font-weight: 600; }
+.personality-overview p { margin-top: 12px; font-size: 14px; line-height: 1.9; color: var(--theme-muted); }
+.personality-dimensions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
+.personality-dimension { min-width: 0; padding: 30px 0; border-bottom: 1px solid var(--theme-border); }
+.personality-dimension-heading { display: flex; align-items: center; gap: 10px; }
+.personality-dimension-heading>span { font-size: 11px; color: var(--theme-subtle); }
+.personality-dimension-heading h3 { font-size: 15px; font-weight: 600; }
+.personality-dimension-heading strong { margin-left: auto; font-size: 11px; font-weight: 500; color: var(--theme-accent); }
+.personality-dimension>p { margin: 16px 0 22px; color: var(--theme-muted); font-size: 12px; line-height: 1.9; min-height: 46px; }
+.personality-scale { position: relative; height: 5px; margin-inline: 5px; border-radius: 5px; background: var(--theme-border); }
+.personality-scale::after { content: ''; position: absolute; left: 50%; top: -3px; bottom: -3px; width: 1px; background: var(--theme-subtle); opacity: .5; }
+.personality-scale i { position: absolute; z-index: 1; top: 50%; width: 10px; height: 10px; border-radius: 50%; background: var(--theme-accent); transform: translate(-50%, -50%); }
+.personality-poles { display: flex; justify-content: space-between; gap: 16px; margin-top: 13px; color: var(--theme-subtle); font-size: 10px; }
+.personality-note { margin-top: 24px; color: var(--theme-subtle); font-size: 11px; line-height: 1.9; }
+.personality-result-actions { padding-top: 12px; text-align: center; }
+.personality-result-actions .text-button { min-height: 44px; }
+.personality-share-entry { margin-top: 14px; }
+.personality-invitation { max-width: 880px; padding-bottom: 40px; }
+.personality-invitation>.text-button { min-height: 44px; margin-bottom: 16px; }
+.personality-invitation-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 1px solid var(--theme-border); border-radius: 12px; overflow: hidden; background: var(--theme-panel); }
+.personality-invitation-cover { width: 100%; height: 100%; max-height: 620px; object-fit: contain; background: #000; }
+.personality-invitation-copy { padding: 40px 28px; align-self: center; }
+.personality-invitation-copy h1 { margin: 14px 0 22px; font-size: clamp(26px, 4vw, 36px); }
+.personality-invitation-copy>p:not(.personality-eyebrow) { color: var(--theme-muted); font-size: 14px; line-height: 1.9; margin-bottom: 24px; }
+.personality-invitation-copy .button { width: 100%; margin-top: 12px; min-height: 48px; }
+.personality-invitation-note { display: block; color: var(--theme-subtle); text-align: center; font-size: 12px; margin-top: 20px; }
+.modal.personality-share-modal { width: 480px; max-width: calc(100vw - 40px); max-height: calc(100svh - 48px); padding: 34px 28px; }
+.personality-share-modal h2 { padding-right: 28px; font-size: 23px; line-height: 1.5; }
+.personality-share-modal>.button { min-height: 48px; }
+.personality-share-modal .personality-share-status { margin: 14px 0 20px; color: var(--theme-muted); }
+.personality-share-fallback { border-top: 1px solid var(--theme-border); padding-top: 16px; }
+.personality-share-fallback summary { cursor: pointer; color: var(--theme-muted); font-size: 13px; }
+.personality-share-fallback textarea { margin-top: 14px; min-height: 130px; resize: vertical; overflow-wrap: anywhere; }
+.personality-share-fallback .text-button { min-height: 44px; }
+.modal.personality-message-guide { padding-top: 72px; }
+.personality-share-guide>svg { float: right; color: var(--theme-accent); }
+.personality-share-guide strong { display: block; padding-right: 42px; font-size: 17px; line-height: 1.8; }
+.personality-share-modal .personality-share-guide p { color: var(--theme-muted); margin: 16px 0 0; font-size: 14px; line-height: 1.9; }
+@media (max-width: 640px) {
+  .personality-invitation-card { grid-template-columns: 1fr; }
+  .personality-invitation-cover { height: 30svh; }
+  .personality-invitation-copy { padding: 26px 22px; }
+  .mirror-message { left: 16px; right: 16px; gap: 12px; }
+  .mirror-gif { width: 64px; height: 64px; }
+  .personality-result { width: calc(100% - 40px); }
+  .personality-card-entry { padding: 44px 0 48px; }
+  .personality-card-entry .button { width: 100%; gap: 12px; padding-inline: 16px; }
+  .personality-analysis { padding-top: 36px; }
+  .personality-dimensions { grid-template-columns: 1fr; }
+  .personality-dimension>p { min-height: 0; }
+  .personality-overview { padding: 20px; }
+}

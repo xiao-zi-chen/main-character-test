@@ -9,7 +9,7 @@ export async function finishReactionPreview(page) {
 
 export async function navigateQuestion(page, direction = 'next') {
   const button = page.getByRole('button', {
-    name: direction === 'previous' ? /^上一题$/ : /^(下一题|揭晓我的主角)$/,
+    name: direction === 'previous' ? /^上一题$/ : /^(下一题|揭晓我的人格|揭晓我的主角)$/,
   });
   await expect(button).toBeVisible();
   // Some callers intentionally try advancing an unselected or blocked session.

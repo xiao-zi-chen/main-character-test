@@ -9,19 +9,23 @@ const verifyHashes = !process.argv.includes('--skip-media-hashes');
 const hashMatches = (buffer, expected) => !verifyHashes || createHash('sha256').update(buffer).digest('hex') === expected;
 if (!verifyHashes) console.log('Skipping media SHA256 checks by request; file, format, metadata and public allowlist checks remain enabled.');
 
-const manifest=JSON.parse(await readFile(new URL('../dist/media/manifest.json',import.meta.url),'utf8'));
-const sourceManifest=JSON.parse(await readFile(new URL('../public/media/manifest.json',import.meta.url),'utf8'));
-if(!isDeepStrictEqual(manifest,sourceManifest)) {
-  throw new Error('Built media manifest differs from public/media/manifest.json. Rebuild the current frontend before deployment.');
-}
-if(roles.length!==28) throw new Error('Expected twenty-eight selected character results');
-if(!isDeepStrictEqual(Object.keys(manifest).sort(),roles.map(role=>role.id).sort())) {
-  throw new Error('Media manifest must contain exactly the current character IDs.');
+let manifest=null;
+try { manifest=JSON.parse(await readFile(new URL('../dist/media/manifest.json',import.meta.url),'utf8')); }
+catch(error) { if(error.code!=='ENOENT') throw error; }
+if(manifest) {
+  const sourceManifest=JSON.parse(await readFile(new URL('../public/media/manifest.json',import.meta.url),'utf8'));
+  if(!isDeepStrictEqual(manifest,sourceManifest)) {
+    throw new Error('Built media manifest differs from public/media/manifest.json. Rebuild the current frontend before deployment.');
+  }
+  if(roles.length!==28) throw new Error('Expected twenty-eight selected character results');
+  if(!isDeepStrictEqual(Object.keys(manifest).sort(),roles.map(role=>role.id).sort())) {
+    throw new Error('Media manifest must contain exactly the current character IDs.');
+  }
 }
 const art=JSON.parse(await readFile(new URL('../dist/question-art/manifest.json',import.meta.url),'utf8'));
 const sourceArt=JSON.parse(await readFile(new URL('../public/question-art/manifest.json',import.meta.url),'utf8'));
 if(!isDeepStrictEqual(art,sourceArt)) throw new Error('Built question artwork manifest differs from source. Rebuild before deployment.');
-const expected=new Set(['index.html',...publicEntryPaths,...publicAssetPaths(manifest),...questionArtPaths(art)]);
+const expected=new Set(['index.html',...publicEntryPaths,...(manifest ? publicAssetPaths(manifest) : []),...questionArtPaths(art)]);
 const expectedDirectories=new Set(['assets']);
 for(const filename of expected) {
   const parts=filename.split('/');
@@ -31,6 +35,22 @@ const html=await readFile(new URL('../dist/index.html',import.meta.url),'utf8');
 // The application currently has one eager entry with no dynamic imports.
 // Do not accept unrelated old bundles just because their extension is valid.
 const referencedBundles=new Set([...html.matchAll(/(?:src|href)="\.\/(assets\/[A-Za-z0-9_-]+\.(?:js|css))"/g)].map(match=>match[1]));
+// Imported PNG/GIF assets belong to the current release only when Vite's
+// current entry code references their exact hashed name. Never publish every
+// image left in assets/, or accept arbitrary public/source paths.
+const referencedImages=new Set();
+const rasterName='[A-Za-z0-9_-]+-[A-Za-z0-9_-]{8}\\.(?:png|gif|webp|jpe?g)';
+for(const filename of referencedBundles) {
+  const url=new URL(`../dist/${filename}`,import.meta.url);
+  const info=await lstat(url);
+  if(!info.isFile() || info.isSymbolicLink()) throw new Error(`Invalid application bundle: ${filename}`);
+  const code=await readFile(url,'utf8');
+  const pattern=filename.endsWith('.js')
+    ? new RegExp(`new URL\\(\\s*["'](${rasterName})["']\\s*,\\s*import\\.meta\\.url\\s*\\)`, 'g')
+    : new RegExp(`url\\(\\s*["']?(?:\\./)?(${rasterName})["']?\\s*\\)`, 'g');
+  for(const match of code.matchAll(pattern)) referencedImages.add(`assets/${match[1]}`);
+}
+for(const filename of referencedImages) expected.add(filename);
 const seen=new Set();
 const bundledAssets=[];
 async function inspect(directory='') {
@@ -57,7 +77,7 @@ for(const filename of referencedBundles) if(!bundledAssets.includes(filename)) t
 if(!bundledAssets.some(name=>name.endsWith('.js')) || !bundledAssets.some(name=>name.endsWith('.css'))) {
   throw new Error('Missing bundled application code or styles.');
 }
-for(const role of roles) {
+for(const role of manifest ? roles : []) {
   const media=manifest[role.id];
   if(media?.status!=='final') throw new Error(`Missing final video: ${role.id}`);
   if (verifyHashes) {
@@ -68,7 +88,7 @@ for(const role of roles) {
     if(media[type]) await access(new URL(`../dist/media/${media[type]}`,import.meta.url));
   }
 }
-for(const role of roles) {
+for(const role of manifest ? roles : []) {
   const media=manifest[role.id];
   const card=await readFile(new URL(`../dist/media/${media.card}`,import.meta.url));
   if(!hashMatches(card,media.cardSha256)) throw new Error(`Card hash mismatch: ${role.id}`);
@@ -103,4 +123,4 @@ for(const question of questions) {
     if(!hashMatches(image,asset.sha256)) throw new Error(`Question image hash mismatch: ${asset.file}`);
   }
 }
-console.log(`Verified deployment whitelist (${expected.size} public files), entry point, ${roles.length} character portraits, 17 shared films, and 320 question images.`);
+console.log(`Verified deployment whitelist (${expected.size} public files), entry point, ${referencedImages.size} imported images, ${manifest ? `${roles.length} character portraits and 17 shared films, ` : ''}and 320 question images.`);

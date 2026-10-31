@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { relative, dirname, resolve } from 'node:path';
 import { copyFile, lstat, mkdir, readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { publicAssetPaths, publicEntryPaths, questionArtPaths } from './scripts/public-assets.mjs';
+import { publicEntryPaths, questionArtPaths } from './scripts/public-assets.mjs';
 const root=dirname(fileURLToPath(import.meta.url));
 function currentPublicAssets() {
   let output;
@@ -12,9 +12,8 @@ function currentPublicAssets() {
     apply: 'build',
     configResolved(config) { output=resolve(config.root,config.build.outDir); },
     async writeBundle() {
-      const manifest=JSON.parse(await readFile(resolve(root,'public/media/manifest.json'),'utf8'));
       const art=JSON.parse(await readFile(resolve(root,'public/question-art/manifest.json'),'utf8'));
-      for(const filename of [...publicAssetPaths(manifest),...publicEntryPaths,...questionArtPaths(art)]) {
+      for(const filename of [...publicEntryPaths,...questionArtPaths(art)]) {
         const source=resolve(root,'public',filename);
         const info=await lstat(source);
         if(!info.isFile() || info.isSymbolicLink()) throw new Error(`Expected a normal public file: ${filename}`);
